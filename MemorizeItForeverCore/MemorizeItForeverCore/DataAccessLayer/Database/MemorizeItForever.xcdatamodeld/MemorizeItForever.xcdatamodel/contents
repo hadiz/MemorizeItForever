@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="SetEntity" representedClassName=".SetEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="words" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WordEntity" inverseName="set" inverseEntity="WordEntity" syncable="YES"/>
+    </entity>
+    <entity name="WordEntity" representedClassName=".WordEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="phrase" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="set" maxCount="1" deletionRule="Nullify" destinationEntity="SetEntity" inverseName="words" inverseEntity="SetEntity" syncable="YES"/>
+        <relationship name="wordHistories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WordHistoryEntity" inverseName="word" inverseEntity="WordHistoryEntity" syncable="YES"/>
+        <relationship name="wordInProgresses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WordInProgressEntity" inverseName="word" inverseEntity="WordInProgressEntity" syncable="YES"/>
+    </entity>
+    <entity name="WordHistoryEntity" representedClassName=".WordHistoryEntity" syncable="YES">
+        <attribute name="columnNo" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="failureCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="word" maxCount="1" deletionRule="Nullify" destinationEntity="WordEntity" inverseName="wordHistories" inverseEntity="WordEntity" syncable="YES"/>
+    </entity>
+    <entity name="WordInProgressEntity" representedClassName=".WordInProgressEntity" syncable="YES">
+        <attribute name="column" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="word" maxCount="1" deletionRule="Nullify" destinationEntity="WordEntity" inverseName="wordInProgresses" inverseEntity="WordEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SetEntity" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="WordEntity" positionX="-54" positionY="9" width="128" height="165"/>
+        <element name="WordHistoryEntity" positionX="-36" positionY="54" width="128" height="105"/>
+        <element name="WordInProgressEntity" positionX="-18" positionY="72" width="128" height="105"/>
+    </elements>
+</model>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "BaseManagedObjectContext.initializeContext() -&gt; ():BaseManagedObjectContext.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "persistentContainer.viewContext&#10;persistentContainer.viewContext&#10;">
+            </PersistentString>
+            <PersistentString
+               value = "persistentContainer.viewContext">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BaseManagedObjectContext.set(context : NSManagedObjectContext) -&gt; ():BaseManagedObjectContext.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.initializeContext() -&gt; ():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "persistentContainer.viewContext">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BaseDataAccess.init() -&gt; BaseDataAccess&lt;A&gt;:BaseDataAccess.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "BaseManagedObjectContext.sharedInstance">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.(managedObjectModel.getter).(closure #1):AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Bundle.main.url(forResource: &quot;MemorizeItForever&quot;, withExtension: &quot;momd&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
