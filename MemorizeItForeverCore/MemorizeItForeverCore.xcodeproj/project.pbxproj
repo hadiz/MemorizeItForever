@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		431AD8DC1DB3945F004EBEA7 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */; };
 		43434A8F1DB262800005B59F /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43434A851DB262800005B59F /* MemorizeItForeverCore.framework */; };
-		43434A941DB262800005B59F /* MemorizeItForeverCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434A931DB262800005B59F /* MemorizeItForeverCoreTests.swift */; };
 		43434A961DB262800005B59F /* MemorizeItForeverCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 43434A881DB262800005B59F /* MemorizeItForeverCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43434AA81DB360660005B59F /* BaseDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434AA21DB360660005B59F /* BaseDataAccess.swift */; };
 		43434AA91DB360660005B59F /* BaseManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434AA31DB360660005B59F /* BaseManagedObjectContext.swift */; };
@@ -42,6 +41,12 @@
 		43434AEF1DB366860005B59F /* WordInProgressEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434AE71DB366860005B59F /* WordInProgressEntity+CoreDataProperties.swift */; };
 		43434AF01DB366860005B59F /* WordEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434AE81DB366860005B59F /* WordEntity+CoreDataClass.swift */; };
 		43434AF11DB366860005B59F /* WordEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434AE91DB366860005B59F /* WordEntity+CoreDataProperties.swift */; };
+		4388744B1DB7A2740030C016 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		4388744C1DB7A5660030C016 /* BaseLocalDataAccess.framework in Resources */ = {isa = PBXBuildFile; fileRef = 431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */; };
+		4388744F1DB7A6510030C016 /* SetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388744E1DB7A6510030C016 /* SetModelTests.swift */; };
+		438874511DB7A6C70030C016 /* WordModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874501DB7A6C70030C016 /* WordModelTests.swift */; };
+		438874531DB7A7320030C016 /* WordHistoryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874521DB7A7320030C016 /* WordHistoryModelTests.swift */; };
+		438874551DB7A7C60030C016 /* WordInProgressModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874541DB7A7C60030C016 /* WordInProgressModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +65,6 @@
 		43434A881DB262800005B59F /* MemorizeItForeverCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemorizeItForeverCore.h; sourceTree = "<group>"; };
 		43434A891DB262800005B59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43434A8E1DB262800005B59F /* MemorizeItForeverCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeItForeverCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		43434A931DB262800005B59F /* MemorizeItForeverCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeItForeverCoreTests.swift; sourceTree = "<group>"; };
 		43434A951DB262800005B59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43434AA21DB360660005B59F /* BaseDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseDataAccess.swift; path = DataAccessLayer/DataAccess/BaseDataAccess.swift; sourceTree = "<group>"; };
 		43434AA31DB360660005B59F /* BaseManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseManagedObjectContext.swift; path = DataAccessLayer/DataAccess/BaseManagedObjectContext.swift; sourceTree = "<group>"; };
@@ -93,6 +97,10 @@
 		43434AE71DB366860005B59F /* WordInProgressEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WordInProgressEntity+CoreDataProperties.swift"; path = "DataAccessLayer/Database/WordInProgressEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		43434AE81DB366860005B59F /* WordEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WordEntity+CoreDataClass.swift"; path = "DataAccessLayer/Database/WordEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		43434AE91DB366860005B59F /* WordEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WordEntity+CoreDataProperties.swift"; path = "DataAccessLayer/Database/WordEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4388744E1DB7A6510030C016 /* SetModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetModelTests.swift; path = ModelsTests/SetModelTests.swift; sourceTree = "<group>"; };
+		438874501DB7A6C70030C016 /* WordModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordModelTests.swift; path = ModelsTests/WordModelTests.swift; sourceTree = "<group>"; };
+		438874521DB7A7320030C016 /* WordHistoryModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordHistoryModelTests.swift; path = ModelsTests/WordHistoryModelTests.swift; sourceTree = "<group>"; };
+		438874541DB7A7C60030C016 /* WordInProgressModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordInProgressModelTests.swift; path = ModelsTests/WordInProgressModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43434A8F1DB262800005B59F /* MemorizeItForeverCore.framework in Frameworks */,
+				4388744B1DB7A2740030C016 /* BaseLocalDataAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +158,7 @@
 		43434A921DB262800005B59F /* MemorizeItForeverCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				43434A931DB262800005B59F /* MemorizeItForeverCoreTests.swift */,
+				4388744D1DB7A62C0030C016 /* ModelTests */,
 				43434A951DB262800005B59F /* Info.plist */,
 			);
 			path = MemorizeItForeverCoreTests;
@@ -272,9 +281,9 @@
 			children = (
 				43434AD51DB3622F0005B59F /* MemorizeItModelProtocol.swift */,
 				43434AD61DB3622F0005B59F /* SetModel.swift */,
+				43434AD91DB3622F0005B59F /* WordModel.swift */,
 				43434AD71DB3622F0005B59F /* WordHistoryModel.swift */,
 				43434AD81DB3622F0005B59F /* WordInProgressModel.swift */,
-				43434AD91DB3622F0005B59F /* WordModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -285,6 +294,17 @@
 				431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */,
 			);
 			name = Libs;
+			sourceTree = "<group>";
+		};
+		4388744D1DB7A62C0030C016 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				4388744E1DB7A6510030C016 /* SetModelTests.swift */,
+				438874501DB7A6C70030C016 /* WordModelTests.swift */,
+				438874521DB7A7320030C016 /* WordHistoryModelTests.swift */,
+				438874541DB7A7C60030C016 /* WordInProgressModelTests.swift */,
+			);
+			name = ModelTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4388744C1DB7A5660030C016 /* BaseLocalDataAccess.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +459,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43434A941DB262800005B59F /* MemorizeItForeverCoreTests.swift in Sources */,
+				4388744F1DB7A6510030C016 /* SetModelTests.swift in Sources */,
+				438874551DB7A7C60030C016 /* WordInProgressModelTests.swift in Sources */,
+				438874511DB7A6C70030C016 /* WordModelTests.swift in Sources */,
+				438874531DB7A7320030C016 /* WordHistoryModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,8 +632,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2X8HVN46BZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MemorizeItForeverCore/Libs",
+				);
 				INFOPLIST_FILE = MemorizeItForeverCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "$(inherited) @executable_path/Frameworks @loader_path";
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -621,8 +650,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2X8HVN46BZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MemorizeItForeverCore/Libs",
+				);
 				INFOPLIST_FILE = MemorizeItForeverCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "$(inherited) @executable_path/Frameworks @loader_path";
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
