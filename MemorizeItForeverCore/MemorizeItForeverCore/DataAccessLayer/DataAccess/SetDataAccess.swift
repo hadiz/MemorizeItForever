@@ -19,7 +19,7 @@ class SetDataAccess: BaseDataAccess<SetEntity>  {
         }
     }
     
-    func saveSetEntity(_ setModel: SetModel) throws{
+    func save(_ setModel: SetModel) throws{
         do{
             let setEntity = try dataAccess.createNewInstance()
             setEntity.id = generateId()
@@ -35,7 +35,7 @@ class SetDataAccess: BaseDataAccess<SetEntity>  {
         }
     }
     
-    func editSetEntity(_ setModel: SetModel) throws{
+    func edit(_ setModel: SetModel) throws{
         do{
             guard let id = setModel.setId else{
                 throw EntityCRUDError.failEditEntity(getEntityName())
@@ -54,7 +54,7 @@ class SetDataAccess: BaseDataAccess<SetEntity>  {
         }
     }
     
-    func deleteSetEntity(_ setModel: SetModel) throws{
+    func delete(_ setModel: SetModel) throws{
         do{
             guard let id = setModel.setId else{
                 throw EntityCRUDError.failDeleteEntity(getEntityName())
@@ -72,7 +72,7 @@ class SetDataAccess: BaseDataAccess<SetEntity>  {
         }
     }
     
-    func fetchSets() throws -> [SetModel] {
+    func fetchAll() throws -> [SetModel] {
         do{
             return try fetchModels(predicate: nil, sort: nil)
         }
@@ -81,7 +81,7 @@ class SetDataAccess: BaseDataAccess<SetEntity>  {
         }
     }
     
-    func fetchSet(_ id: UUID) throws -> SetModel? {
+    func fetch(_ id: UUID) throws -> SetModel? {
         do{
             if let set = try fetchEntity(withId: id){
                 return try set.toModel() as? SetModel
@@ -96,17 +96,17 @@ class SetDataAccess: BaseDataAccess<SetEntity>  {
         }
     }
     
-    private func fetchSets(_ predicateProtocol: PredicateProtocol?) throws -> [SetModel] {
-        do{
-            let sets = try fetchEntities(predicate: predicateProtocol, sort: nil)
-            return try sets.toModels()
-        }
-        catch ModelError.failCreateModel(let model){
-            throw ModelError.failCreateModel(model)
-        }
-        catch let error as NSError{
-            throw  DataAccessError.failFetchData(error.localizedDescription)
-        }
-    }
+//    private func fetchSets(_ predicateProtocol: PredicateProtocol?) throws -> [SetModel] {
+//        do{
+//            let sets = try fetchEntities(predicate: predicateProtocol, sort: nil)
+//            return try sets.toModels()
+//        }
+//        catch ModelError.failCreateModel(let model){
+//            throw ModelError.failCreateModel(model)
+//        }
+//        catch let error as NSError{
+//            throw  DataAccessError.failFetchData(error.localizedDescription)
+//        }
+//    }
     
 }

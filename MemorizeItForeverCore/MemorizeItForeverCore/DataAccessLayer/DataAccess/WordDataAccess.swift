@@ -11,7 +11,7 @@ import BaseLocalDataAccess
 
 class WordDataAccess: BaseDataAccess<WordEntity> {
     
-    func saveWordEntity(_ wordModel: WordModel) throws{
+    func save(_ wordModel: WordModel) throws{
         guard let setId = wordModel.setId else{
             throw EntityCRUDError.failSaveEntity(getEntityName())
         }
@@ -32,7 +32,7 @@ class WordDataAccess: BaseDataAccess<WordEntity> {
         }
     }
     
-    func fetchWords(fetchLimit: Int? = nil) throws -> [WordModel] {
+    func fetch(fetchLimit: Int? = nil) throws -> [WordModel] {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue,direction: SortDirectionEnum.ascending )
             return try fetchModels(predicate: nil, sort: sort, fetchLimit: fetchLimit)
@@ -42,7 +42,7 @@ class WordDataAccess: BaseDataAccess<WordEntity> {
         }
     }
     
-    func fetchWordsNotStartedStatus(fetchLimit: Int) throws -> [WordModel] {
+    func fetchWithNotStartedStatus(fetchLimit: Int) throws -> [WordModel] {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue,direction: SortDirectionEnum.ascending )
             let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: WordStatus.notStarted.rawValue)
@@ -53,7 +53,7 @@ class WordDataAccess: BaseDataAccess<WordEntity> {
         }
     }
     
-    func fetchLastWord(_ wordStatus: WordStatus) throws -> WordModel? {
+    func fetchLast(_ wordStatus: WordStatus) throws -> WordModel? {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue, direction: SortDirectionEnum.descending)
             let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: wordStatus.rawValue)
@@ -68,7 +68,7 @@ class WordDataAccess: BaseDataAccess<WordEntity> {
         }
     }
     
-    func editWordEntity(_ wordModel: WordModel) throws{
+    func edit(_ wordModel: WordModel) throws{
         do{
             guard let id = wordModel.wordId else{
                 throw EntityCRUDError.failEditEntity(getEntityName())
@@ -91,7 +91,7 @@ class WordDataAccess: BaseDataAccess<WordEntity> {
         }
     }
     
-    func deleteWordEntity(_ wordModel: WordModel) throws{
+    func delete(_ wordModel: WordModel) throws{
         do{
             guard let id = wordModel.wordId else{
                 throw EntityCRUDError.failDeleteEntity(getEntityName())

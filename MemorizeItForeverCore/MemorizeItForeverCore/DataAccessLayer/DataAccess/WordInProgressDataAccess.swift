@@ -9,7 +9,7 @@ import Foundation
 import BaseLocalDataAccess
 
 class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity> {
-    func fetchWordInProgress() throws -> [WordInProgressModel]{
+    func fetch() throws -> [WordInProgressModel]{
         do{
             return try fetchModels(predicate: nil, sort: nil)
         }
@@ -18,7 +18,7 @@ class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity> {
         }
     }
     
-    func saveWordInProgressEntity(_ wordInProgressModel: WordInProgressModel) throws{
+    func save(_ wordInProgressModel: WordInProgressModel) throws{
         guard let wordId = wordInProgressModel.word?.wordId else{
             throw EntityCRUDError.failSaveEntity(getEntityName())
         }
@@ -40,7 +40,7 @@ class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity> {
         }
     }
     
-    func editWordInProgressEntity(_ wordInProgressModel: WordInProgressModel) throws{
+    func edit(_ wordInProgressModel: WordInProgressModel) throws{
         do{
             guard let id = wordInProgressModel.wordInProgressId else{
                 throw EntityCRUDError.failSaveEntity(getEntityName())
@@ -62,7 +62,7 @@ class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity> {
         }
     }
     
-    func deleteWordInProgressEntity(_ wordInProgressModel: WordInProgressModel) throws{
+    func delete(_ wordInProgressModel: WordInProgressModel) throws{
         do{
             guard let id = wordInProgressModel.wordInProgressId else{
                 throw EntityCRUDError.failDeleteEntity(getEntityName())
@@ -80,7 +80,7 @@ class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity> {
         }
     }
 
-    func fetchWordInProgressByWordId(_ wordInProgressModel: WordInProgressModel) throws -> WordInProgressModel?{
+    func fetchByWordId(_ wordInProgressModel: WordInProgressModel) throws -> WordInProgressModel?{
         guard let wordId = wordInProgressModel.word?.wordId, let word = fetchWordEntity(wordId as UUID) else{
             throw EntityCRUDError.failFetchEntity(getEntityName())
         }
@@ -101,7 +101,7 @@ class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity> {
         }
     }
     
-    func fetchWordInProgressByDateAndColumn(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]{
+    func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]{
         guard let date = wordInProgressModel.date?.getDate(), let column = wordInProgressModel.column else{
             throw EntityCRUDError.failFetchEntity(getEntityName())
         }
@@ -122,7 +122,7 @@ class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity> {
         }
     }
     
-    func fetchWordInProgressByDateAndOlder(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]{
+    func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]{
         guard let date = wordInProgressModel.date?.getDate() else{
             throw EntityCRUDError.failFetchEntity(getEntityName())
         }

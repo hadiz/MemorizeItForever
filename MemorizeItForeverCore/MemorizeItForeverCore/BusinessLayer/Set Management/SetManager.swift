@@ -32,7 +32,7 @@ public class SetManager {
             if try setDataAccess.fetchSetNumber() == 0{
                 var set = SetModel()
                 set.name = "Default"
-                try setDataAccess.saveSetEntity(set)
+                try setDataAccess.save(set)
             }
         }
         catch{
@@ -44,7 +44,7 @@ public class SetManager {
         do{
             var set = SetModel()
             set.name = setName
-            try setDataAccess.saveSetEntity(set)
+            try setDataAccess.save(set)
         }
         catch{
             
@@ -56,7 +56,7 @@ public class SetManager {
             var set = SetModel()
             set.name = setName
             set.setId = setModel.setId
-            try setDataAccess.editSetEntity(set)
+            try setDataAccess.edit(set)
         }
         catch{
             
@@ -66,7 +66,7 @@ public class SetManager {
    public func delete(_ setModel: SetModel) -> Bool{
         do{
             if try ifSetIsdeletable(){
-                try setDataAccess.deleteSetEntity(setModel)
+                try setDataAccess.delete(setModel)
                 return true
             }
             else{
@@ -82,7 +82,7 @@ public class SetManager {
     
     public func get() -> [SetModel]{
         do{
-           return try setDataAccess.fetchSets()
+           return try setDataAccess.fetchAll()
         }
         catch{
             

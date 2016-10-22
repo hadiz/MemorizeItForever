@@ -11,12 +11,12 @@ import BaseLocalDataAccess
 
 class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity> {
     
-    func saveOrUpdateWordHistoryEntity(_ wordHistoryModel: WordHistoryModel) throws{
+    func saveOrUpdate(_ wordHistoryModel: WordHistoryModel) throws{
         guard let wordId = wordHistoryModel.word?.wordId else{
             throw EntityCRUDError.failSaveEntity(getEntityName())
         }
         do{
-            var wordHistoryEntity = try fetchWordHistoryEntityByWordIdAndColumnNo(wordHistoryModel)
+            var wordHistoryEntity = try fetchByWordIdAndColumnNo(wordHistoryModel)
             if wordHistoryEntity == nil{
                 wordHistoryEntity = try dataAccess.createNewInstance()
                 wordHistoryEntity?.id = generateId()
@@ -39,7 +39,7 @@ class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity> {
         }
     }
     
-    func fetchWordHistoryByWordId(_ wordHistoryModel: WordHistoryModel) throws ->  [WordHistoryModel]{
+    func fetchByWordId(_ wordHistoryModel: WordHistoryModel) throws ->  [WordHistoryModel]{
         guard let wordId = wordHistoryModel.word?.wordId, let word = fetchWordEntity(wordId as UUID) else{
             throw EntityCRUDError.failFetchEntity(getEntityName())
         }
@@ -56,7 +56,7 @@ class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity> {
         }
     }
     
-    func countWordHistoryByWordId(_ wordHistoryModel: WordHistoryModel) throws -> Int{
+    func countByWordId(_ wordHistoryModel: WordHistoryModel) throws -> Int{
         guard let wordId = wordHistoryModel.word?.wordId, let word = fetchWordEntity(wordId as UUID) else{
             throw EntityCRUDError.failFetchEntity(getEntityName())
         }
@@ -72,7 +72,7 @@ class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity> {
         }
     }
     
-   private func fetchWordHistoryEntityByWordIdAndColumnNo(_ wordHistoryModel: WordHistoryModel) throws ->  WordHistoryEntity?{
+   private func fetchByWordIdAndColumnNo(_ wordHistoryModel: WordHistoryModel) throws ->  WordHistoryEntity?{
         guard let columnNo = wordHistoryModel.columnNo, let wordId = wordHistoryModel.word?.wordId else{
             throw EntityCRUDError.failFetchEntity(getEntityName())
         }
