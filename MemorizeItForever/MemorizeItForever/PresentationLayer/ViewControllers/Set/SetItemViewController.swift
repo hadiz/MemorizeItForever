@@ -58,6 +58,7 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
                 self.setName.text = setModel.name
             })
         }
+        
     }
 
     override func didReceiveMemoryWarning() {

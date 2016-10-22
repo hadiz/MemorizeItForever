@@ -12,7 +12,7 @@ struct WordModel: Equatable, MemorizeItModelProtocol {
     var wordId: UUID?
     var phrase: String?
     var meaning: String?
-    var order: UInt32?
+    var order: Int32?
     var setId: UUID?
     var status: Int16? = WordStatus.notStarted.rawValue
 }

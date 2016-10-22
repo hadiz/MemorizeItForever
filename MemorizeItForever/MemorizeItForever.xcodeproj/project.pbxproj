@@ -29,6 +29,8 @@
 		43434B0C1DB3676A0005B59F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43434B0A1DB3676A0005B59F /* LaunchScreen.storyboard */; };
 		43434B171DB3676A0005B59F /* MemorizeItForeverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434B161DB3676A0005B59F /* MemorizeItForeverTests.swift */; };
 		43434B221DB3676A0005B59F /* MemorizeItForeverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434B211DB3676A0005B59F /* MemorizeItForeverUITests.swift */; };
+		438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */; };
+		4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		43434B1D1DB3676A0005B59F /* MemorizeItForeverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeItForeverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43434B211DB3676A0005B59F /* MemorizeItForeverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeItForeverUITests.swift; sourceTree = "<group>"; };
 		43434B231DB3676A0005B59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceDelegateProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceDelegateProtocol.swift; sourceTree = "<group>"; };
+		438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,7 @@
 		432B755D1DB37E66003C6574 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				438874561DB7ABD10030C016 /* MemorizeItTableDataSource */,
 				432B75601DB38262003C6574 /* Extensions */,
 				432B755E1DB37E82003C6574 /* Enum.swift */,
 			);
@@ -263,6 +268,15 @@
 				43434B231DB3676A0005B59F /* Info.plist */,
 			);
 			path = MemorizeItForeverUITests;
+			sourceTree = "<group>";
+		};
+		438874561DB7ABD10030C016 /* MemorizeItTableDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */,
+				438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */,
+			);
+			name = MemorizeItTableDataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,12 +420,14 @@
 			files = (
 				432B754B1DB37B41003C6574 /* SetTableDataSource.swift in Sources */,
 				432B75511DB37B64003C6574 /* TabBarController.swift in Sources */,
+				4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */,
 				432B755F1DB37E82003C6574 /* Enum.swift in Sources */,
 				432B73431DB51E2200A76FC7 /* CustomBackgroundView.swift in Sources */,
 				432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */,
 				432B73411DB51C4B00A76FC7 /* NotificationCenterExtension.swift in Sources */,
 				432B754C1DB37B41003C6574 /* SetViewController.swift in Sources */,
 				432B754A1DB37B41003C6574 /* SetItemViewController.swift in Sources */,
+				438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */,
 				432B75501DB37B64003C6574 /* MemorizeItViewController.swift in Sources */,
 				432B75641DB38DF9003C6574 /* UIColorExtension.swift in Sources */,
 				43434AFF1DB3676A0005B59F /* AppDelegate.swift in Sources */,

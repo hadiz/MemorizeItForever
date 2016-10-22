@@ -27,7 +27,7 @@ class WordEntity: NSManagedObject, EntityProtocol {
         
         var word = WordModel()
         word.status = self.status
-        word.order = UInt32(self.order)
+        word.order = self.order
         word.wordId = UUID(uuidString: id)
         word.setId = UUID(uuidString: setId)
         word.meaning = self.meaning
