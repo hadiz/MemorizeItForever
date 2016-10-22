@@ -16,20 +16,8 @@ class SetViewController: UIViewController, UIPopoverPresentationControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Set List"
         
-        dataSource = SetTableDataSource(handleTap: didSelectSet)
-        tableView.dataSource = dataSource
-        tableView.delegate = dataSource
-        
-        fetchData()
-        
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(SetViewController.addAction))
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(SetViewController.editAction))
-     
-       
+        initializeViewController()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,7 +30,27 @@ class SetViewController: UIViewController, UIPopoverPresentationControllerDelega
         NotificationCenter.default.removeObserver(self)
     }
     
-    func didSelectSet(_ model: MemorizeItModelProtocol?){
+    private func initializeViewController(){
+        title = "Set List"
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(SetViewController.addAction))
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(SetViewController.editAction))
+        
+        let weakSelf = self
+        
+        dataSource = SetTableDataSource(handleTap: {[weak weakSelf] (memorizeItModel) in
+            if let weakSelf = weakSelf{
+                weakSelf.didSelectSet(memorizeItModel)
+            }
+            })
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        
+        fetchData()
+    }
+    
+    private func didSelectSet(_ model: MemorizeItModelProtocol?){
         presentSetItemViewController(EntityMode.edit, setModel: model as? SetModel)
     }
     
@@ -51,7 +59,7 @@ class SetViewController: UIViewController, UIPopoverPresentationControllerDelega
     }
     
     func editAction(){
-         tableView.setEditing(true, animated: true)
+        tableView.setEditing(true, animated: true)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(SetViewController.doneAction))
     }
     
@@ -65,10 +73,14 @@ class SetViewController: UIViewController, UIPopoverPresentationControllerDelega
     }
     
     func fetchData(){
-        let manager  = SetManager()
-        let sets = manager.get().flatMap{$0 as MemorizeItModelProtocol}
-        dataSource?.setModels(sets)
-        tableView.reloadData()
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
+            let manager  = SetManager()
+            let sets = manager.get().flatMap{$0 as MemorizeItModelProtocol}
+            self.dataSource?.setModels(sets)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        })
     }
     
     private func presentSetItemViewController(_ entityMode: EntityMode, setModel: SetModel? = nil){
