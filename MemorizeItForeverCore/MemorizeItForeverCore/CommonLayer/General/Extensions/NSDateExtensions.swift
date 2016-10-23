@@ -18,9 +18,11 @@ extension Date{
     }
     
     func addDay(_ days: Int) -> Date? {
-        let components = DateComponents()
-        (components as NSDateComponents).setValue(days, forComponent: NSCalendar.Unit.day);
-        return (Calendar.current as NSCalendar).date(byAdding: components, to: self, options: NSCalendar.Options(rawValue: 0))
+//        let components = DateComponents()
+//        (components as NSDateComponents).setValue(days, forComponent: NSCalendar.Unit.day);
+//        return (Calendar.current as NSCalendar).date(byAdding: components, to: self, options: NSCalendar.Options(rawValue: 0))
+        
+        return self.addingTimeInterval(Double(days) * 24 * 60 * 60)
     }
     
     func equalToDateWithoutTime(_ dateToCompare: Date) -> Bool {

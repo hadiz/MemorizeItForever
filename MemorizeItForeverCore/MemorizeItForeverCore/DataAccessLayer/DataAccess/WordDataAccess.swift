@@ -45,7 +45,7 @@ class WordDataAccess: BaseDataAccess<WordEntity> {
     func fetchWithNotStartedStatus(fetchLimit: Int) throws -> [WordModel] {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue,direction: SortDirectionEnum.ascending )
-            let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: WordStatus.notStarted.rawValue)
+            let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(WordStatus.notStarted.rawValue))
             return try fetchModels(predicate: predicaet, sort: sort, fetchLimit: fetchLimit)
         }
         catch let error as NSError{
@@ -56,7 +56,7 @@ class WordDataAccess: BaseDataAccess<WordEntity> {
     func fetchLast(_ wordStatus: WordStatus) throws -> WordModel? {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue, direction: SortDirectionEnum.descending)
-            let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: wordStatus.rawValue)
+            let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(wordStatus.rawValue))
             let words: [WordModel] = try fetchModels(predicate: predicaet, sort: sort, fetchLimit: 1)
             if words.count == 1{
                 return words[0]

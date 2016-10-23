@@ -11,6 +11,20 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "WordHistoryDataAccess.saveOrUpdate(WordHistoryModel) throws -&gt; ():WordHistoryDataAccess.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WordFlowsTests.testDoNotFetchWordsForPuttingInPreColumnIfAlreadyFetched() -&gt; ():WordFlowsTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "WordStatus.notStarted.rawValue">
+            </PersistentString>
+            <PersistentString
+               value = "words![1].status">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "WordHistoryDataAccess.fetchByWordIdAndColumnNo(WordHistoryModel) throws -&gt; WordHistoryEntity?:WordHistoryDataAccess.swift">
          <PersistentStrings>
             <PersistentString
@@ -37,6 +51,14 @@
          <PersistentStrings>
             <PersistentString
                value = "test.predicateFormat">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WordFlowsTests.(testAddDayExtension() -&gt; ()).(implicit closure #1):WordFlowsTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "now.addDay(1)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

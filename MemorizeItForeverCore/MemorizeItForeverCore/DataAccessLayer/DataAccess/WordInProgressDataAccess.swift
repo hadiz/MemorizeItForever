@@ -106,7 +106,7 @@ class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity> {
             throw EntityCRUDError.failFetchEntity(getEntityName())
         }
         
-        let predicateObject1 = PredicateObject(fieldName: WordInProgressEntity.Fields.Column.rawValue, operatorName: .equal, value: column)
+        let predicateObject1 = PredicateObject(fieldName: WordInProgressEntity.Fields.Column.rawValue, operatorName: .equal, value: Int(column))
         let predicateObject2 = PredicateObject(fieldName: WordInProgressEntity.Fields.Date.rawValue, operatorName: .equal, value: date)
         
         var predicateCompound = PredicateCompoundObject(compoundOperator: CompoundOperatorEnum.and)
