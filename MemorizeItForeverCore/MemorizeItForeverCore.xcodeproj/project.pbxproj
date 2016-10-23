@@ -39,6 +39,14 @@
 		43434AEF1DB366860005B59F /* WordInProgressEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434AE71DB366860005B59F /* WordInProgressEntity+CoreDataProperties.swift */; };
 		43434AF01DB366860005B59F /* WordEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434AE81DB366860005B59F /* WordEntity+CoreDataClass.swift */; };
 		43434AF11DB366860005B59F /* WordEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434AE91DB366860005B59F /* WordEntity+CoreDataProperties.swift */; };
+		434419691DBBA745006F77C9 /* SetDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434419671DBBA745006F77C9 /* SetDataAccessTests.swift */; };
+		4344196A1DBBA745006F77C9 /* WordDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434419681DBBA745006F77C9 /* WordDataAccessTests.swift */; };
+		4344196C1DBBA7A2006F77C9 /* FakeWordDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344196B1DBBA7A2006F77C9 /* FakeWordDataAccess.swift */; };
+		4344196E1DBBA895006F77C9 /* TestFlowHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344196D1DBBA895006F77C9 /* TestFlowHelper.swift */; };
+		436DCA401DBC99B200992708 /* WordInProgressDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCA3F1DBC99B200992708 /* WordInProgressDataAccessTests.swift */; };
+		436DCA421DBC99EE00992708 /* FakeWordInProgressDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCA411DBC99EE00992708 /* FakeWordInProgressDataAccess.swift */; };
+		436DCA441DBC9ACE00992708 /* WordHistoryDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCA431DBC9ACE00992708 /* WordHistoryDataAccessTests.swift */; };
+		436DCA461DBC9B0B00992708 /* FakeWordHistoryDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCA451DBC9B0B00992708 /* FakeWordHistoryDataAccess.swift */; };
 		4388744B1DB7A2740030C016 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		4388744C1DB7A5660030C016 /* BaseLocalDataAccess.framework in Resources */ = {isa = PBXBuildFile; fileRef = 431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */; };
 		4388744F1DB7A6510030C016 /* SetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388744E1DB7A6510030C016 /* SetModelTests.swift */; };
@@ -51,6 +59,7 @@
 		43DBA2201DBB5DA00017E733 /* WordEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBA21F1DBB5DA00017E733 /* WordEntityTests.swift */; };
 		43DBA2221DBB63C70017E733 /* WordHistoryEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBA2211DBB63C70017E733 /* WordHistoryEntityTests.swift */; };
 		43DBA2241DBB64B80017E733 /* WordInProgressEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBA2231DBB64B80017E733 /* WordInProgressEntityTests.swift */; };
+		43DBA2291DBB857C0017E733 /* FakeSetDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBA2281DBB857C0017E733 /* FakeSetDataAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +108,14 @@
 		43434AE71DB366860005B59F /* WordInProgressEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WordInProgressEntity+CoreDataProperties.swift"; path = "DataAccessLayer/Database/WordInProgressEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		43434AE81DB366860005B59F /* WordEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WordEntity+CoreDataClass.swift"; path = "DataAccessLayer/Database/WordEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		43434AE91DB366860005B59F /* WordEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WordEntity+CoreDataProperties.swift"; path = "DataAccessLayer/Database/WordEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		434419671DBBA745006F77C9 /* SetDataAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetDataAccessTests.swift; path = DataAccessTests/SetDataAccessTests.swift; sourceTree = "<group>"; };
+		434419681DBBA745006F77C9 /* WordDataAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordDataAccessTests.swift; path = DataAccessTests/WordDataAccessTests.swift; sourceTree = "<group>"; };
+		4344196B1DBBA7A2006F77C9 /* FakeWordDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeWordDataAccess.swift; path = Helper/FakeWordDataAccess.swift; sourceTree = "<group>"; };
+		4344196D1DBBA895006F77C9 /* TestFlowHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestFlowHelper.swift; path = Helper/TestFlowHelper.swift; sourceTree = "<group>"; };
+		436DCA3F1DBC99B200992708 /* WordInProgressDataAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordInProgressDataAccessTests.swift; path = DataAccessTests/WordInProgressDataAccessTests.swift; sourceTree = "<group>"; };
+		436DCA411DBC99EE00992708 /* FakeWordInProgressDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeWordInProgressDataAccess.swift; path = Helper/FakeWordInProgressDataAccess.swift; sourceTree = "<group>"; };
+		436DCA431DBC9ACE00992708 /* WordHistoryDataAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordHistoryDataAccessTests.swift; path = DataAccessTests/WordHistoryDataAccessTests.swift; sourceTree = "<group>"; };
+		436DCA451DBC9B0B00992708 /* FakeWordHistoryDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeWordHistoryDataAccess.swift; path = Helper/FakeWordHistoryDataAccess.swift; sourceTree = "<group>"; };
 		4388744E1DB7A6510030C016 /* SetModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetModelTests.swift; path = ModelsTests/SetModelTests.swift; sourceTree = "<group>"; };
 		438874501DB7A6C70030C016 /* WordModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordModelTests.swift; path = ModelsTests/WordModelTests.swift; sourceTree = "<group>"; };
 		438874521DB7A7320030C016 /* WordHistoryModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordHistoryModelTests.swift; path = ModelsTests/WordHistoryModelTests.swift; sourceTree = "<group>"; };
@@ -109,6 +126,7 @@
 		43DBA21F1DBB5DA00017E733 /* WordEntityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordEntityTests.swift; path = EntitiesTests/WordEntityTests.swift; sourceTree = "<group>"; };
 		43DBA2211DBB63C70017E733 /* WordHistoryEntityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordHistoryEntityTests.swift; path = EntitiesTests/WordHistoryEntityTests.swift; sourceTree = "<group>"; };
 		43DBA2231DBB64B80017E733 /* WordInProgressEntityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordInProgressEntityTests.swift; path = EntitiesTests/WordInProgressEntityTests.swift; sourceTree = "<group>"; };
+		43DBA2281DBB857C0017E733 /* FakeSetDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeSetDataAccess.swift; path = Helper/FakeSetDataAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +184,7 @@
 		43434A921DB262800005B59F /* MemorizeItForeverCoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				43DBA2251DBB84E00017E733 /* DataAccessTests */,
 				4388745E1DB7AF390030C016 /* Helper */,
 				4388745B1DB7ADFB0030C016 /* EntitiesTests */,
 				4388744D1DB7A62C0030C016 /* ModelsTests */,
@@ -323,8 +342,24 @@
 			children = (
 				4388745F1DB7AF6F0030C016 /* InMemoryManagedObjectContext.swift */,
 				43C092D01DB7B12A00C4A15F /* EntityCreationHelper.swift */,
+				43DBA2281DBB857C0017E733 /* FakeSetDataAccess.swift */,
+				4344196B1DBBA7A2006F77C9 /* FakeWordDataAccess.swift */,
+				4344196D1DBBA895006F77C9 /* TestFlowHelper.swift */,
+				436DCA411DBC99EE00992708 /* FakeWordInProgressDataAccess.swift */,
+				436DCA451DBC9B0B00992708 /* FakeWordHistoryDataAccess.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		43DBA2251DBB84E00017E733 /* DataAccessTests */ = {
+			isa = PBXGroup;
+			children = (
+				434419671DBBA745006F77C9 /* SetDataAccessTests.swift */,
+				434419681DBBA745006F77C9 /* WordDataAccessTests.swift */,
+				436DCA3F1DBC99B200992708 /* WordInProgressDataAccessTests.swift */,
+				436DCA431DBC9ACE00992708 /* WordHistoryDataAccessTests.swift */,
+			);
+			name = DataAccessTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,10 +517,19 @@
 				4388744F1DB7A6510030C016 /* SetModelTests.swift in Sources */,
 				43DBA2221DBB63C70017E733 /* WordHistoryEntityTests.swift in Sources */,
 				438874551DB7A7C60030C016 /* WordInProgressModelTests.swift in Sources */,
+				4344196A1DBBA745006F77C9 /* WordDataAccessTests.swift in Sources */,
+				43DBA2291DBB857C0017E733 /* FakeSetDataAccess.swift in Sources */,
+				434419691DBBA745006F77C9 /* SetDataAccessTests.swift in Sources */,
 				438874511DB7A6C70030C016 /* WordModelTests.swift in Sources */,
 				43DBA2201DBB5DA00017E733 /* WordEntityTests.swift in Sources */,
+				436DCA421DBC99EE00992708 /* FakeWordInProgressDataAccess.swift in Sources */,
 				43C092D11DB7B12A00C4A15F /* EntityCreationHelper.swift in Sources */,
+				4344196E1DBBA895006F77C9 /* TestFlowHelper.swift in Sources */,
+				436DCA461DBC9B0B00992708 /* FakeWordHistoryDataAccess.swift in Sources */,
 				4388745D1DB7AE310030C016 /* SetEntityTests.swift in Sources */,
+				436DCA441DBC9ACE00992708 /* WordHistoryDataAccessTests.swift in Sources */,
+				436DCA401DBC99B200992708 /* WordInProgressDataAccessTests.swift in Sources */,
+				4344196C1DBBA7A2006F77C9 /* FakeWordDataAccess.swift in Sources */,
 				438874531DB7A7320030C016 /* WordHistoryModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

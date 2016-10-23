@@ -7,8 +7,17 @@
 //
 
 import CoreData
+import BaseLocalDataAccess
 
-class InMemoryManagedObjectContext {
+class InMemoryManagedObjectContext: ManagedObjectContextProtocol  {
+    
+    private var context: NSManagedObjectContext?
+    public func get() throws -> NSManagedObjectContext{
+        if context == nil {
+            context = setUpInMemoryManagedObjectContext()
+        }
+        return context!
+    }
     
     func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext{
         let memorizeItForeverCoreBundle = Bundle(identifier: "org.somesimplesolutions.MemorizeItForeverCore")

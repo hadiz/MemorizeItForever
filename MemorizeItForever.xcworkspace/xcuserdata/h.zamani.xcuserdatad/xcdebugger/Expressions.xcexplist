@@ -3,13 +3,18 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "BaseManagedObjectContext.initializeContext() -&gt; ():BaseManagedObjectContext.swift">
+         contextName = "AppDelegate.(managedObjectModel.getter).(closure #1):AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "persistentContainer.viewContext&#10;persistentContainer.viewContext&#10;">
+               value = "Bundle.main.url(forResource: &quot;MemorizeItForever&quot;, withExtension: &quot;momd&quot;)">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WordHistoryDataAccess.fetchByWordIdAndColumnNo(WordHistoryModel) throws -&gt; WordHistoryEntity?:WordHistoryDataAccess.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "persistentContainer.viewContext">
+               value = "predicateObject1.toNSPredicate()?.predicateFormat">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -17,10 +22,21 @@
          contextName = "BaseManagedObjectContext.set(context : NSManagedObjectContext) -&gt; ():BaseManagedObjectContext.swift">
       </ContextState>
       <ContextState
-         contextName = "AppDelegate.initializeContext() -&gt; ():AppDelegate.swift">
+         contextName = "BaseManagedObjectContext.initializeContext() -&gt; ():BaseManagedObjectContext.swift">
          <PersistentStrings>
             <PersistentString
                value = "persistentContainer.viewContext">
+            </PersistentString>
+            <PersistentString
+               value = "persistentContainer.viewContext&#10;persistentContainer.viewContext&#10;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SetDataAccess.fetch(UUID) throws -&gt; SetModel?:SetDataAccess.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "test.predicateFormat">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,10 +49,59 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "AppDelegate.(managedObjectModel.getter).(closure #1):AppDelegate.swift">
+         contextName = "WordDataAccess.save(WordModel) throws -&gt; ():WordDataAccess.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Bundle.main.url(forResource: &quot;MemorizeItForever&quot;, withExtension: &quot;momd&quot;)">
+               value = "error.localizedDescription">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GenericDataAccess.createNewInstance() throws -&gt; A:GenericDataAccess.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "entity">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GenericDataAccess.fetchEntity(predicate : PredicateProtocol?, sort : SortProtocol?, fetchLimit : Int?) throws -&gt; [A]:GenericDataAccess.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetchRequest.predicate.predicateFormat">
+            </PersistentString>
+            <PersistentString
+               value = "fetchRequest.predicate">
+            </PersistentString>
+            <PersistentString
+               value = "predicate?.toNSPredicate()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GenericDataAccess.saveEntity(A) throws -&gt; ():GenericDataAccess.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "error.localizedDescription">
+            </PersistentString>
+            <PersistentString
+               value = "print(error)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.initializeContext() -&gt; ():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "persistentContainer.viewContext">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SetDataAccessTests.testFetchSetWithId() -&gt; ():SetDataAccessTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sets![0].setId!">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

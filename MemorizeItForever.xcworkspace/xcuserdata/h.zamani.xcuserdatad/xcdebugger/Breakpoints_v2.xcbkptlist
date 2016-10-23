@@ -243,5 +243,467 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCoreTests/Helper/FakeSetDataAccess.swift"
+            timestampString = "498828727.709266"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "FakeSetDataAccess"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCoreTests/SetDataAccessTests/SetDataAccessTests.swift"
+            timestampString = "498837157.234443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "testFetchSetWithId()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCoreTests/SetDataAccessTests/SetDataAccessTests.swift"
+            timestampString = "498837157.234443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "testFetchSetWithId()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCore/DataAccessLayer/DataAccess/SetDataAccess.swift"
+            timestampString = "498837074.400202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "fetch(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCoreTests/SetDataAccessTests/SetDataAccessTests.swift"
+            timestampString = "498837157.234443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "testFetchSetWithId()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCoreTests/DataAccessTests/WordDataAccessTests.swift"
+            timestampString = "498837799.652495"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "testFetchLimitWorkFine()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCoreTests/DataAccessTests/WordDataAccessTests.swift"
+            timestampString = "498837822.929089"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "testFetchLimitWorkFine()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverCoreTests.WordDataAccessTests.testFetchLimitWorkFine () -&gt; ()"
+                  moduleName = "MemorizeItForeverCoreTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForeverCore/MemorizeItForeverCoreTests/DataAccessTests/WordDataAccessTests.swift"
+                  timestampString = "498899219.627645"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "3112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverCoreTests.WordDataAccessTests.(testFetchLimitWorkFine () -&gt; ()).(implicit closure #1)"
+                  moduleName = "MemorizeItForeverCoreTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForeverCore/MemorizeItForeverCoreTests/DataAccessTests/WordDataAccessTests.swift"
+                  timestampString = "498899219.629318"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverCoreTests.WordDataAccessTests.(testFetchLimitWorkFine () -&gt; ()).(implicit closure #2)"
+                  moduleName = "MemorizeItForeverCoreTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForeverCore/MemorizeItForeverCoreTests/DataAccessTests/WordDataAccessTests.swift"
+                  timestampString = "498899219.630921"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "13">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverCoreTests.WordDataAccessTests.(testFetchLimitWorkFine () -&gt; ()).(implicit closure #3)"
+                  moduleName = "MemorizeItForeverCoreTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForeverCore/MemorizeItForeverCoreTests/DataAccessTests/WordDataAccessTests.swift"
+                  timestampString = "498899219.632348"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCoreTests/DataAccessTests/WordDataAccessTests.swift"
+            timestampString = "498837835.236855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "testFetchLimitWorkFine()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCore/DataAccessLayer/DataAccess/WordDataAccess.swift"
+            timestampString = "498837898.924255"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "save(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCore/DataAccessLayer/DataAccess/WordDataAccess.swift"
+            timestampString = "498837899.542882"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "save(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BaseLocalDataAccess/BaseLocalDataAccess/Base/GenericDataAccess.swift"
+            timestampString = "498838288.000832"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "saveEntity(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCore/DataAccessLayer/DataAccess/WordDataAccess.swift"
+            timestampString = "498838444.716642"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "save(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCoreTests/DataAccessTests/WordHistoryDataAccessTests.swift"
+            timestampString = "498899918.274887"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "testSaveIncrementFailureCountWordHistory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCore/DataAccessLayer/DataAccess/WordHistoryDataAccess.swift"
+            timestampString = "498901175.656039"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "fetchByWordIdAndColumnNo(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverCore.WordHistoryDataAccess.(fetchByWordIdAndColumnNo in _47573E1A87228837E1E48156668AAD7B) (MemorizeItForeverCore.WordHistoryModel) throws -&gt; Swift.Optional&lt;MemorizeItForeverCore.WordHistoryEntity&gt;"
+                  moduleName = "MemorizeItForeverCore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForeverCore/MemorizeItForeverCore/DataAccessLayer/DataAccess/WordHistoryDataAccess.swift"
+                  timestampString = "498904378.934411"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "455">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverCore.WordHistoryDataAccess.(fetchByWordIdAndColumnNo in _47573E1A87228837E1E48156668AAD7B) (MemorizeItForeverCore.WordHistoryModel) throws -&gt; Swift.Optional&lt;MemorizeItForeverCore.WordHistoryEntity&gt;"
+                  moduleName = "MemorizeItForeverCore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForeverCore/MemorizeItForeverCore/DataAccessLayer/DataAccess/WordHistoryDataAccess.swift"
+                  timestampString = "498904378.935946"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "530">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCoreTests/DataAccessTests/WordHistoryDataAccessTests.swift"
+            timestampString = "498902458.485611"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "testFetchWordHistoryByWordIdAndColumnNo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCoreTests/Helper/TestFlowHelper.swift"
+            timestampString = "498902865.41745"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "NewWordModel(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BaseLocalDataAccess/BaseLocalDataAccess/Base/GenericDataAccess.swift"
+            timestampString = "498903009.700497"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "fetchEntity(predicate:sort:fetchLimit:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BaseLocalDataAccess/BaseLocalDataAccess/Base/GenericDataAccess.swift"
+            timestampString = "498903013.13253"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fetchEntity(predicate:sort:fetchLimit:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCoreTests/DataAccessTests/WordHistoryDataAccessTests.swift"
+            timestampString = "498903263.04492"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "testFetchWordHistoryByWordIdAndColumnNo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BaseLocalDataAccess/BaseLocalDataAccess/Base/GenericDataAccess.swift"
+            timestampString = "498903863.964414"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "fetchEntity(predicate:sort:fetchLimit:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BaseLocalDataAccess.GenericDataAccess.fetchEntity (predicate : Swift.Optional&lt;BaseLocalDataAccess.PredicateProtocol&gt;, sort : Swift.Optional&lt;BaseLocalDataAccess.SortProtocol&gt;, fetchLimit : Swift.Optional&lt;Swift.Int&gt;) throws -&gt; Swift.Array&lt;A&gt;"
+                  moduleName = "BaseLocalDataAccess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/BaseLocalDataAccess/BaseLocalDataAccess/Base/GenericDataAccess.swift"
+                  timestampString = "498903863.96846"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1124">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BaseLocalDataAccess.GenericDataAccess.fetchEntity (predicate : Swift.Optional&lt;BaseLocalDataAccess.PredicateProtocol&gt;, sort : Swift.Optional&lt;BaseLocalDataAccess.SortProtocol&gt;, fetchLimit : Swift.Optional&lt;Swift.Int&gt;) throws -&gt; Swift.Array&lt;A&gt;"
+                  moduleName = "BaseLocalDataAccess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/BaseLocalDataAccess/BaseLocalDataAccess/Base/GenericDataAccess.swift"
+                  timestampString = "498903863.970097"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1172">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BaseLocalDataAccess/BaseLocalDataAccess/Base/GenericDataAccess.swift"
+            timestampString = "498903867.114183"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "fetchEntity(predicate:sort:fetchLimit:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

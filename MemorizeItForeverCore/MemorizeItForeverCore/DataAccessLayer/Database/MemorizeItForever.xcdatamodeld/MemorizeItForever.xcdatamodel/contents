@@ -3,14 +3,14 @@
     <entity name="SetEntity" representedClassName=".SetEntity" syncable="YES">
         <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="words" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WordEntity" inverseName="set" inverseEntity="WordEntity" syncable="YES"/>
+        <relationship name="words" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WordEntity" inverseName="set" inverseEntity="WordEntity" syncable="YES"/>
     </entity>
     <entity name="WordEntity" representedClassName=".WordEntity" syncable="YES">
         <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="meaning" attributeType="String" syncable="YES"/>
         <attribute name="order" attributeType="Integer 32" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="phrase" attributeType="String" syncable="YES"/>
-        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="status" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="set" maxCount="1" deletionRule="Nullify" destinationEntity="SetEntity" inverseName="words" inverseEntity="SetEntity" syncable="YES"/>
         <relationship name="wordHistories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WordHistoryEntity" inverseName="word" inverseEntity="WordHistoryEntity" syncable="YES"/>
         <relationship name="wordInProgresses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WordInProgressEntity" inverseName="word" inverseEntity="WordInProgressEntity" syncable="YES"/>

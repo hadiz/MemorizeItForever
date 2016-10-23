@@ -9,7 +9,7 @@ import Foundation
 import BaseLocalDataAccess
 
 class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity> {
-    func fetch() throws -> [WordInProgressModel]{
+    func fetchAll() throws -> [WordInProgressModel]{
         do{
             return try fetchModels(predicate: nil, sort: nil)
         }

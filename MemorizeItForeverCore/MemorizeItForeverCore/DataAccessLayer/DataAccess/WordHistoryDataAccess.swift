@@ -80,13 +80,13 @@ class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity> {
         guard let word = fetchWordEntity(wordId as UUID) else{
             throw EntityCRUDError.failFetchEntity(getEntityName())
         }
-        
-        let predicateObject1 = PredicateObject(fieldName: WordHistoryEntity.Fields.ColumnNo.rawValue, operatorName: .equal, value: columnNo)
+
+        let predicateObject1 = PredicateObject(fieldName: WordHistoryEntity.Fields.ColumnNo.rawValue, operatorName: .equal, value: Int(columnNo))
         let predicateObject2 = PredicateObject(fieldName:  WordHistoryEntity.Fields.Word.rawValue, operatorName: .equal, value: word)
         var predicateCompoundObject = PredicateCompoundObject(compoundOperator: .and)
         predicateCompoundObject.appendPredicate(predicateObject1)
         predicateCompoundObject.appendPredicate(predicateObject2)
-        
+    
         do{
             let items = try fetchEntities(predicate: predicateCompoundObject, sort: nil)
             let count = items.count

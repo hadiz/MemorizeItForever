@@ -21,7 +21,7 @@ class WordDataAccess: BaseDataAccess<WordEntity> {
             wordEntity.meaning = wordModel.meaning
             wordEntity.order = try setOrder()
             wordEntity.phrase = wordModel.phrase
-            wordEntity.set = fetchSetEntity(setId)
+            wordEntity.set =  fetchSetEntity(setId)
             try dataAccess.saveEntity(wordEntity)
         }
         catch EntityCRUDError.failNewEntity(let entityName){
@@ -32,7 +32,7 @@ class WordDataAccess: BaseDataAccess<WordEntity> {
         }
     }
     
-    func fetch(fetchLimit: Int? = nil) throws -> [WordModel] {
+    func fetchAll(fetchLimit: Int? = nil) throws -> [WordModel] {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue,direction: SortDirectionEnum.ascending )
             return try fetchModels(predicate: nil, sort: sort, fetchLimit: fetchLimit)
