@@ -27,10 +27,14 @@
 		43434B041DB3676A0005B59F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43434B021DB3676A0005B59F /* Main.storyboard */; };
 		43434B091DB3676A0005B59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43434B081DB3676A0005B59F /* Assets.xcassets */; };
 		43434B0C1DB3676A0005B59F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43434B0A1DB3676A0005B59F /* LaunchScreen.storyboard */; };
-		43434B171DB3676A0005B59F /* MemorizeItForeverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434B161DB3676A0005B59F /* MemorizeItForeverTests.swift */; };
 		43434B221DB3676A0005B59F /* MemorizeItForeverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434B211DB3676A0005B59F /* MemorizeItForeverUITests.swift */; };
+		4349EAB01DBE4B260097DABD /* ApplySettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349EAAF1DBE4B260097DABD /* ApplySettingsTests.swift */; };
+		4349EAB41DBE4BAE0097DABD /* SetTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */; };
 		438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */; };
 		4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */; };
+		43D217B61DBE4564007819A7 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D217B51DBE4564007819A7 /* Helper.swift */; };
+		43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */; };
+		43F2179A1DBE509C0005BF26 /* FakeSetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217991DBE509C0005BF26 /* FakeSetTableDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,13 +92,17 @@
 		43434B0B1DB3676A0005B59F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43434B0D1DB3676A0005B59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43434B121DB3676A0005B59F /* MemorizeItForeverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeItForeverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		43434B161DB3676A0005B59F /* MemorizeItForeverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeItForeverTests.swift; sourceTree = "<group>"; };
 		43434B181DB3676A0005B59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43434B1D1DB3676A0005B59F /* MemorizeItForeverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeItForeverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43434B211DB3676A0005B59F /* MemorizeItForeverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeItForeverUITests.swift; sourceTree = "<group>"; };
 		43434B231DB3676A0005B59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4349EAAF1DBE4B260097DABD /* ApplySettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplySettingsTests.swift; path = AppDelegateTests/ApplySettingsTests.swift; sourceTree = "<group>"; };
+		4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSourceTests.swift; path = DataSourcesTests/SetTableDataSourceTests.swift; sourceTree = "<group>"; };
 		438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceDelegateProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceDelegateProtocol.swift; sourceTree = "<group>"; };
 		438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceProtocol.swift; sourceTree = "<group>"; };
+		43D217B51DBE4564007819A7 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = General/Helper.swift; sourceTree = "<group>"; };
+		43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetViewControllerTests.swift; path = ViewControllersTests/SetViewControllerTests.swift; sourceTree = "<group>"; };
+		43F217991DBE509C0005BF26 /* FakeSetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeSetTableDataSource.swift; path = General/FakeSetTableDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,7 +263,10 @@
 		43434B151DB3676A0005B59F /* MemorizeItForeverTests */ = {
 			isa = PBXGroup;
 			children = (
-				43434B161DB3676A0005B59F /* MemorizeItForeverTests.swift */,
+				43F217961DBE50080005BF26 /* ViewControllersTests */,
+				4349EAAE1DBE4AF60097DABD /* DataSourcesTests */,
+				43D217B71DBE45E4007819A7 /* AppDelegateTests */,
+				43D217B41DBE4533007819A7 /* Helper */,
 				43434B181DB3676A0005B59F /* Info.plist */,
 			);
 			path = MemorizeItForeverTests;
@@ -270,6 +281,14 @@
 			path = MemorizeItForeverUITests;
 			sourceTree = "<group>";
 		};
+		4349EAAE1DBE4AF60097DABD /* DataSourcesTests */ = {
+			isa = PBXGroup;
+			children = (
+				4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */,
+			);
+			name = DataSourcesTests;
+			sourceTree = "<group>";
+		};
 		438874561DB7ABD10030C016 /* MemorizeItTableDataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +296,31 @@
 				438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */,
 			);
 			name = MemorizeItTableDataSource;
+			sourceTree = "<group>";
+		};
+		43D217B41DBE4533007819A7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				43D217B51DBE4564007819A7 /* Helper.swift */,
+				43F217991DBE509C0005BF26 /* FakeSetTableDataSource.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		43D217B71DBE45E4007819A7 /* AppDelegateTests */ = {
+			isa = PBXGroup;
+			children = (
+				4349EAAF1DBE4B260097DABD /* ApplySettingsTests.swift */,
+			);
+			name = AppDelegateTests;
+			sourceTree = "<group>";
+		};
+		43F217961DBE50080005BF26 /* ViewControllersTests */ = {
+			isa = PBXGroup;
+			children = (
+				43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */,
+			);
+			name = ViewControllersTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +398,7 @@
 					43434B111DB3676A0005B59F = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2X8HVN46BZ;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 43434AFA1DB3676A0005B59F;
 					};
@@ -439,7 +484,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43434B171DB3676A0005B59F /* MemorizeItForeverTests.swift in Sources */,
+				43D217B61DBE4564007819A7 /* Helper.swift in Sources */,
+				43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */,
+				4349EAB01DBE4B260097DABD /* ApplySettingsTests.swift in Sources */,
+				4349EAB41DBE4BAE0097DABD /* SetTableDataSourceTests.swift in Sources */,
+				43F2179A1DBE509C0005BF26 /* FakeSetTableDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,11 +675,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2X8HVN46BZ;
 				INFOPLIST_FILE = MemorizeItForeverTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemorizeItForever.app/MemorizeItForever";
 			};
@@ -641,6 +692,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2X8HVN46BZ;
 				INFOPLIST_FILE = MemorizeItForeverTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
