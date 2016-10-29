@@ -1,15 +1,14 @@
 //
-//  CustomBackgroundView.swift
+//  MITextField.swift
 //  MemorizeItForever
 //
-//  Created by Hadi Zamani on 10/17/16.
+//  Created by Hadi Zamani on 10/26/16.
 //  Copyright © 2016 SomeSimpleSolutions. All rights reserved.
 //
 
 import UIKit
 
-final class CustomBackgroundView: UIView {
-    
+final class MITextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
@@ -21,6 +20,6 @@ final class CustomBackgroundView: UIView {
     }
     
     private func initialize(){
-        self.backgroundColor = ColorPicker().backgroundView
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
 }

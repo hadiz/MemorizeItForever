@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SetManager {
+final public class SetManager {
     
     private var _dataAccess: SetDataAccess?
     private var setDataAccess: SetDataAccess{

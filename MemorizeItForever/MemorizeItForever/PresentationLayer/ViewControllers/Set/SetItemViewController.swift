@@ -24,8 +24,7 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
         
         self.view.backgroundColor = UIColor.white
         
-        setName = UITextField()
-        setName.translatesAutoresizingMaskIntoConstraints = false
+        setName = MITextField()
         setName.becomeFirstResponder()
         
         self.view.addSubview(setName)

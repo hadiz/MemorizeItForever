@@ -10,7 +10,7 @@ import UIKit
 import MemorizeItForeverCore
 
 
-class SetTableDataSource: NSObject, MemorizeItTableDataSourceProtocol {
+final class SetTableDataSource: NSObject, MemorizeItTableDataSourceProtocol {
     var setModels: [SetModel]?
     var handleTap: TypealiasHelper.handleTapClosure?
     

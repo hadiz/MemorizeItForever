@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import BaseLocalDataAccess
 
-public class BaseManagedObjectContext: ManagedObjectContextProtocol {
+final public class BaseManagedObjectContext: ManagedObjectContextProtocol {
     
     public static let sharedInstance = BaseManagedObjectContext()
     

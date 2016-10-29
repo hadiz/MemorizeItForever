@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "AppDelegate.(managedObjectModel.getter).(closure #1):AppDelegate.swift">
+         contextName = "ReviewPhraseViewControllerTests.testHasPreviousbarButton() -&gt; ():ReviewPhraseViewControllerTests.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Bundle.main.url(forResource: &quot;MemorizeItForever&quot;, withExtension: &quot;momd&quot;)">
+               value = "previousBarButton!.possibleTitles">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -14,13 +14,10 @@
          contextName = "WordHistoryDataAccess.saveOrUpdate(WordHistoryModel) throws -&gt; ():WordHistoryDataAccess.swift">
       </ContextState>
       <ContextState
-         contextName = "WordFlowsTests.testDoNotFetchWordsForPuttingInPreColumnIfAlreadyFetched() -&gt; ():WordFlowsTests.swift">
+         contextName = "AppDelegate.(managedObjectModel.getter).(closure #1):AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "WordStatus.notStarted.rawValue">
-            </PersistentString>
-            <PersistentString
-               value = "words![1].status">
+               value = "Bundle.main.url(forResource: &quot;MemorizeItForever&quot;, withExtension: &quot;momd&quot;)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -34,6 +31,25 @@
       </ContextState>
       <ContextState
          contextName = "BaseManagedObjectContext.set(context : NSManagedObjectContext) -&gt; ():BaseManagedObjectContext.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WordFlowsTests.testDoNotFetchWordsForPuttingInPreColumnIfAlreadyFetched() -&gt; ():WordFlowsTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "WordStatus.notStarted.rawValue">
+            </PersistentString>
+            <PersistentString
+               value = "words![1].status">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ReviewPhraseViewController.viewDidLoad() -&gt; ():ReviewPhraseViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "labelHolder!.layer.frame">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "BaseManagedObjectContext.initializeContext() -&gt; ():BaseManagedObjectContext.swift">
@@ -79,14 +95,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GenericDataAccess.createNewInstance() throws -&gt; A:GenericDataAccess.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "entity">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "GenericDataAccess.fetchEntity(predicate : PredicateProtocol?, sort : SortProtocol?, fetchLimit : Int?) throws -&gt; [A]:GenericDataAccess.swift">
          <PersistentStrings>
             <PersistentString
@@ -108,6 +116,14 @@
             </PersistentString>
             <PersistentString
                value = "print(error)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GenericDataAccess.createNewInstance() throws -&gt; A:GenericDataAccess.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "entity">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

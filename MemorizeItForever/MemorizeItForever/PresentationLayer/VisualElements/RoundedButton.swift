@@ -8,18 +8,15 @@
 
 import UIKit
 
-class RoundedButton: UIButton {
+final class RoundedButton: UIButton {
     
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        
         let width = bounds.width < bounds.height ? bounds.width : bounds.height
         
         let newRect = CGRect(x: bounds.midX - width / 2, y: bounds.midY - width / 2, width: width, height: width)
         
         let path = UIBezierPath(ovalIn: newRect)
-        let buttonColor  = UIColor(red: 10, green: 106, blue: 184)
+        let buttonColor = UIColor(red: 10, green: 106, blue: 184)
         
         buttonColor.setFill()
         
@@ -33,8 +30,19 @@ class RoundedButton: UIButton {
         
         self.titleLabel?.textAlignment = NSTextAlignment.center
         self.titleLabel?.backgroundColor = buttonColor
-        
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initialize()
+    }
+    
+    private func initialize(){
+        self.backgroundColor = ColorPicker().backgroundView
+    }
 }

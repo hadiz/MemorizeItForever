@@ -9,7 +9,7 @@
 import UIKit
 import MemorizeItForeverCore
 
-class SetViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+final class SetViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet var tableView: UITableView!
     var dataSource: MemorizeItTableDataSourceProtocol?

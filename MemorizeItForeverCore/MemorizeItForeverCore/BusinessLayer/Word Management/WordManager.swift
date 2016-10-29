@@ -28,7 +28,7 @@ private func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class WordManager {
+final class WordManager {
     
     private var _dataAccess: WordDataAccess?
     private var wordDataAccess: WordDataAccess{

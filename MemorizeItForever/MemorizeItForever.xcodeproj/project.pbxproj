@@ -28,13 +28,22 @@
 		43434B091DB3676A0005B59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43434B081DB3676A0005B59F /* Assets.xcassets */; };
 		43434B0C1DB3676A0005B59F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43434B0A1DB3676A0005B59F /* LaunchScreen.storyboard */; };
 		43434B221DB3676A0005B59F /* MemorizeItForeverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434B211DB3676A0005B59F /* MemorizeItForeverUITests.swift */; };
+		4344DE661DC0DAB200FBA130 /* MITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344DE651DC0DAB200FBA130 /* MITextField.swift */; };
+		4344DE681DC0E53800FBA130 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344DE671DC0E53800FBA130 /* ColorPicker.swift */; };
+		4344DE6A1DC0EAE600FBA130 /* MILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344DE691DC0EAE600FBA130 /* MILabel.swift */; };
+		4344DE6C1DC0EB3700FBA130 /* MIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344DE6B1DC0EB3700FBA130 /* MIButton.swift */; };
 		4349EAB01DBE4B260097DABD /* ApplySettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349EAAF1DBE4B260097DABD /* ApplySettingsTests.swift */; };
 		4349EAB41DBE4BAE0097DABD /* SetTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */; };
 		438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */; };
 		4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */; };
-		43D217B61DBE4564007819A7 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D217B51DBE4564007819A7 /* Helper.swift */; };
+		43D217B61DBE4564007819A7 /* MockAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D217B51DBE4564007819A7 /* MockAppDelegate.swift */; };
+		43EE6CE01DC4E17A00873D18 /* MIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EE6CDF1DC4E17A00873D18 /* MIView.swift */; };
 		43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */; };
 		43F2179A1DBE509C0005BF26 /* FakeSetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217991DBE509C0005BF26 /* FakeSetTableDataSource.swift */; };
+		43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */; };
+		43F217D91DBF5AAF0005BF26 /* ReviewPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217D81DBF5AAF0005BF26 /* ReviewPhraseViewController.swift */; };
+		43F217DB1DBF8A770005BF26 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DA1DBF8A770005BF26 /* Enum.swift */; };
+		43F217DD1DBF9EAA0005BF26 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DC1DBF9EAA0005BF26 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,13 +105,22 @@
 		43434B1D1DB3676A0005B59F /* MemorizeItForeverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeItForeverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43434B211DB3676A0005B59F /* MemorizeItForeverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeItForeverUITests.swift; sourceTree = "<group>"; };
 		43434B231DB3676A0005B59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4344DE651DC0DAB200FBA130 /* MITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITextField.swift; path = PresentationLayer/VisualElements/MITextField.swift; sourceTree = "<group>"; };
+		4344DE671DC0E53800FBA130 /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPicker.swift; path = General/ColorPicker.swift; sourceTree = "<group>"; };
+		4344DE691DC0EAE600FBA130 /* MILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MILabel.swift; path = PresentationLayer/VisualElements/MILabel.swift; sourceTree = "<group>"; };
+		4344DE6B1DC0EB3700FBA130 /* MIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIButton.swift; path = PresentationLayer/VisualElements/MIButton.swift; sourceTree = "<group>"; };
 		4349EAAF1DBE4B260097DABD /* ApplySettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplySettingsTests.swift; path = AppDelegateTests/ApplySettingsTests.swift; sourceTree = "<group>"; };
 		4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSourceTests.swift; path = DataSourcesTests/SetTableDataSourceTests.swift; sourceTree = "<group>"; };
 		438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceDelegateProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceDelegateProtocol.swift; sourceTree = "<group>"; };
 		438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceProtocol.swift; sourceTree = "<group>"; };
-		43D217B51DBE4564007819A7 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = General/Helper.swift; sourceTree = "<group>"; };
+		43D217B51DBE4564007819A7 /* MockAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockAppDelegate.swift; path = General/MockAppDelegate.swift; sourceTree = "<group>"; };
+		43EE6CDF1DC4E17A00873D18 /* MIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIView.swift; path = PresentationLayer/VisualElements/MIView.swift; sourceTree = "<group>"; };
 		43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetViewControllerTests.swift; path = ViewControllersTests/SetViewControllerTests.swift; sourceTree = "<group>"; };
 		43F217991DBE509C0005BF26 /* FakeSetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeSetTableDataSource.swift; path = General/FakeSetTableDataSource.swift; sourceTree = "<group>"; };
+		43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewControllerTests.swift; path = ViewControllersTests/ReviewPhraseViewControllerTests.swift; sourceTree = "<group>"; };
+		43F217D81DBF5AAF0005BF26 /* ReviewPhraseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewController.swift; path = PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift; sourceTree = "<group>"; };
+		43F217DA1DBF8A770005BF26 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = General/Enum.swift; sourceTree = "<group>"; };
+		43F217DC1DBF9EAA0005BF26 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = General/Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +173,10 @@
 			children = (
 				432B75441DB37ABF003C6574 /* RoundedButton.swift */,
 				432B73421DB51E2200A76FC7 /* CustomBackgroundView.swift */,
+				4344DE651DC0DAB200FBA130 /* MITextField.swift */,
+				4344DE691DC0EAE600FBA130 /* MILabel.swift */,
+				4344DE6B1DC0EB3700FBA130 /* MIButton.swift */,
+				43EE6CDF1DC4E17A00873D18 /* MIView.swift */,
 			);
 			name = VisualElements;
 			sourceTree = "<group>";
@@ -162,6 +184,7 @@
 		432B75431DB37AA8003C6574 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				43F217D71DBF5A8E0005BF26 /* ReviewPhrase */,
 				432B754D1DB37B4B003C6574 /* Main */,
 				432B75461DB37AE3003C6574 /* Set */,
 			);
@@ -210,6 +233,7 @@
 				438874561DB7ABD10030C016 /* MemorizeItTableDataSource */,
 				432B75601DB38262003C6574 /* Extensions */,
 				432B755E1DB37E82003C6574 /* Enum.swift */,
+				4344DE671DC0E53800FBA130 /* ColorPicker.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -301,8 +325,10 @@
 		43D217B41DBE4533007819A7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				43D217B51DBE4564007819A7 /* Helper.swift */,
+				43D217B51DBE4564007819A7 /* MockAppDelegate.swift */,
 				43F217991DBE509C0005BF26 /* FakeSetTableDataSource.swift */,
+				43F217DA1DBF8A770005BF26 /* Enum.swift */,
+				43F217DC1DBF9EAA0005BF26 /* Helper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -319,8 +345,17 @@
 			isa = PBXGroup;
 			children = (
 				43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */,
+				43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */,
 			);
 			name = ViewControllersTests;
+			sourceTree = "<group>";
+		};
+		43F217D71DBF5A8E0005BF26 /* ReviewPhrase */ = {
+			isa = PBXGroup;
+			children = (
+				43F217D81DBF5AAF0005BF26 /* ReviewPhraseViewController.swift */,
+			);
+			name = ReviewPhrase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,15 +500,21 @@
 			files = (
 				432B754B1DB37B41003C6574 /* SetTableDataSource.swift in Sources */,
 				432B75511DB37B64003C6574 /* TabBarController.swift in Sources */,
+				4344DE6A1DC0EAE600FBA130 /* MILabel.swift in Sources */,
 				4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */,
 				432B755F1DB37E82003C6574 /* Enum.swift in Sources */,
 				432B73431DB51E2200A76FC7 /* CustomBackgroundView.swift in Sources */,
 				432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */,
 				432B73411DB51C4B00A76FC7 /* NotificationCenterExtension.swift in Sources */,
 				432B754C1DB37B41003C6574 /* SetViewController.swift in Sources */,
+				4344DE681DC0E53800FBA130 /* ColorPicker.swift in Sources */,
+				4344DE6C1DC0EB3700FBA130 /* MIButton.swift in Sources */,
 				432B754A1DB37B41003C6574 /* SetItemViewController.swift in Sources */,
 				438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */,
+				43F217D91DBF5AAF0005BF26 /* ReviewPhraseViewController.swift in Sources */,
+				4344DE661DC0DAB200FBA130 /* MITextField.swift in Sources */,
 				432B75501DB37B64003C6574 /* MemorizeItViewController.swift in Sources */,
+				43EE6CE01DC4E17A00873D18 /* MIView.swift in Sources */,
 				432B75641DB38DF9003C6574 /* UIColorExtension.swift in Sources */,
 				43434AFF1DB3676A0005B59F /* AppDelegate.swift in Sources */,
 				432B75451DB37ABF003C6574 /* RoundedButton.swift in Sources */,
@@ -484,11 +525,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43D217B61DBE4564007819A7 /* Helper.swift in Sources */,
+				43D217B61DBE4564007819A7 /* MockAppDelegate.swift in Sources */,
+				43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */,
 				43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */,
 				4349EAB01DBE4B260097DABD /* ApplySettingsTests.swift in Sources */,
+				43F217DB1DBF8A770005BF26 /* Enum.swift in Sources */,
 				4349EAB41DBE4BAE0097DABD /* SetTableDataSourceTests.swift in Sources */,
 				43F2179A1DBE509C0005BF26 /* FakeSetTableDataSource.swift in Sources */,
+				43F217DD1DBF9EAA0005BF26 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

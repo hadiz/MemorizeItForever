@@ -6,6 +6,6 @@
 //  Copyright © 2016 SomeSimpleSolution. All rights reserved.
 //
 
-public class TypealiasHelper{
+final public class TypealiasHelper{
     public typealias handleTapClosure = (_ model: MemorizeItModelProtocol) -> Void
 }

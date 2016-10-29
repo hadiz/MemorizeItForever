@@ -82,6 +82,9 @@
                                                 <variation key="heightClass=regular-widthClass=regular">
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="reviewPhraseAction:" destination="FwN-R0-hcu" eventType="touchUpInside" id="WCk-x6-hv9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
