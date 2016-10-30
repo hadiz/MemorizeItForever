@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class RoundedButton: UIButton {
+class RoundedButton: UIButton {
     
     override func draw(_ rect: CGRect) {
         let width = bounds.width < bounds.height ? bounds.width : bounds.height
@@ -16,7 +16,7 @@ final class RoundedButton: UIButton {
         let newRect = CGRect(x: bounds.midX - width / 2, y: bounds.midY - width / 2, width: width, height: width)
         
         let path = UIBezierPath(ovalIn: newRect)
-        let buttonColor = UIColor(red: 10, green: 106, blue: 184)
+        let buttonColor = ColorPicker().backgroundButton
         
         buttonColor.setFill()
         
@@ -43,6 +43,6 @@ final class RoundedButton: UIButton {
     }
     
     private func initialize(){
-        self.backgroundColor = ColorPicker().backgroundView
+        self.backgroundColor = UIColor.clear
     }
 }

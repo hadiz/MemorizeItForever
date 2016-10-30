@@ -21,6 +21,10 @@ final class MILabel: UILabel {
     
     private func initialize(){
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.lineBreakMode = .byWordWrapping
+        self.numberOfLines = 0
+        self.textAlignment = .center
+        self.font = self.font.withSize(25)
     }
 }
 

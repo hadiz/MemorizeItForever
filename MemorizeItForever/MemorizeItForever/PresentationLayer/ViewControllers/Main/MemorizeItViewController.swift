@@ -24,39 +24,17 @@ final class MemorizeItViewController: UIViewController {
     private func setTapped(_ sender: AnyObject){
         let storyboard : UIStoryboard = UIStoryboard(name: "SetManagement",bundle: nil)
         let setViewController: SetViewController = storyboard.instantiateViewController(withIdentifier: "SetViewController") as! SetViewController
-        
-        let nav1 = UINavigationController()
-        nav1.viewControllers = [setViewController]
-        nav1.modalPresentationStyle = .popover
-        setViewController.preferredContentSize = CGSize(width: self.view.frame.width  / 2, height: 250)
-        
-        let popoverPresentationController = nav1.popoverPresentationController
-        popoverPresentationController?.sourceView = sender as? UIView
-        popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: sender.frame.size.width, height: sender.frame.size.height)
-        popoverPresentationController?.delegate = setViewController
-        
-        popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.any
-        
-        present(nav1, animated: true, completion: nil)
-        
+        let contentSize = CGSize(width: self.view.frame.width  / 2, height: 250)
+        self.presentingPopover(setViewController, sourceView: sender as! UIView, popoverArrowDirection: .any, contentSize: contentSize)
     }
     
     private func reviewPhraseTapped(_ sender: AnyObject){
         let reviewPhraseViewController = ReviewPhraseViewController()
-        let nav1 = UINavigationController()
-        nav1.viewControllers = [reviewPhraseViewController]
-        nav1.modalPresentationStyle = .popover
-        reviewPhraseViewController.preferredContentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
-        
-        let popoverPresentationController = nav1.popoverPresentationController
-        popoverPresentationController?.sourceView = sender as? UIView
-        popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: sender.frame.size.width, height: sender.frame.size.height)
-        popoverPresentationController?.delegate = reviewPhraseViewController
-        
-        popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.any
-        
-        present(nav1, animated: true, completion: nil)
+       let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
+        self.presentingPopover(reviewPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }
+    
+    
     
     @IBAction func setAction(_ sender: AnyObject) {
         setTapped(sender)

@@ -87,18 +87,8 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
         let setItemViewController = SetItemViewController()
         setItemViewController.entityMode = entityMode
         setItemViewController.setModel  = setModel
-        let nav1 = UINavigationController()
-        nav1.viewControllers = [setItemViewController]
-        nav1.modalPresentationStyle = .popover
-        setItemViewController.preferredContentSize = CGSize(width: self.view.frame.width , height: 200)
         
-        let popoverPresentationController = nav1.popoverPresentationController
-        popoverPresentationController?.sourceView = self.tableView
-        popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        popoverPresentationController?.delegate = setItemViewController
-        
-        popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.any
-        
-        present(nav1, animated: true, completion: nil)
+        let size = CGSize(width: self.view.frame.width , height: 200)
+        self.presentingPopover(setItemViewController, sourceView: self.tableView, popoverArrowDirection: .any, contentSize: size)
     }
 }

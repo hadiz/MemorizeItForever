@@ -12,4 +12,9 @@ final class ColorPicker {
     lazy var backgroundView: UIColor = {
        return UIColor(red: 245, green: 149, blue: 71)
     }()
+    
+    lazy var backgroundButton: UIColor = {
+        return UIColor(red: 10, green: 106, blue: 184)
+    }()
+    
 }
