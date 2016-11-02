@@ -21,5 +21,7 @@ final class MITextField: UITextField {
     
     private func initialize(){
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.borderStyle = .roundedRect
+        self.clearButtonMode = .whileEditing
     }
 }

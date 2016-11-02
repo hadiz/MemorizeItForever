@@ -16,3 +16,12 @@ enum EntityMode: String{
     case save
     case edit
 }
+enum SwipeDirection{
+    case left
+    case right
+}
+enum CardViewPosition{
+    case current
+    case previous
+    case next
+}

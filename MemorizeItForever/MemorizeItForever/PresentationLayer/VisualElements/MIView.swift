@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MIView: UIView {
+class MIView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()

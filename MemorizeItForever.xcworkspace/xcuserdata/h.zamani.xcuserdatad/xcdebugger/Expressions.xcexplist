@@ -3,55 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ReviewPhraseViewControllerTests.testHasPreviousbarButton() -&gt; ():ReviewPhraseViewControllerTests.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "previousBarButton!.possibleTitles">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WordHistoryDataAccess.saveOrUpdate(WordHistoryModel) throws -&gt; ():WordHistoryDataAccess.swift">
-      </ContextState>
-      <ContextState
-         contextName = "AppDelegate.(managedObjectModel.getter).(closure #1):AppDelegate.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Bundle.main.url(forResource: &quot;MemorizeItForever&quot;, withExtension: &quot;momd&quot;)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WordHistoryDataAccess.fetchByWordIdAndColumnNo(WordHistoryModel) throws -&gt; WordHistoryEntity?:WordHistoryDataAccess.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "predicateObject1.toNSPredicate()?.predicateFormat">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "BaseManagedObjectContext.set(context : NSManagedObjectContext) -&gt; ():BaseManagedObjectContext.swift">
-      </ContextState>
-      <ContextState
-         contextName = "WordFlowsTests.testDoNotFetchWordsForPuttingInPreColumnIfAlreadyFetched() -&gt; ():WordFlowsTests.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "WordStatus.notStarted.rawValue">
-            </PersistentString>
-            <PersistentString
-               value = "words![1].status">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ReviewPhraseViewController.viewDidLoad() -&gt; ():ReviewPhraseViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "labelHolder!.layer.frame">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "BaseManagedObjectContext.initializeContext() -&gt; ():BaseManagedObjectContext.swift">
          <PersistentStrings>
             <PersistentString
@@ -63,10 +14,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SetDataAccess.fetch(UUID) throws -&gt; SetModel?:SetDataAccess.swift">
+         contextName = "WordDataAccess.save(WordModel) throws -&gt; ():WordDataAccess.swift">
          <PersistentStrings>
             <PersistentString
-               value = "test.predicateFormat">
+               value = "error.localizedDescription">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -79,18 +30,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "BaseDataAccess.init() -&gt; BaseDataAccess&lt;A&gt;:BaseDataAccess.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "BaseManagedObjectContext.sharedInstance">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WordDataAccess.save(WordModel) throws -&gt; ():WordDataAccess.swift">
+         contextName = "GenericDataAccess.saveEntity(A) throws -&gt; ():GenericDataAccess.swift">
          <PersistentStrings>
             <PersistentString
                value = "error.localizedDescription">
+            </PersistentString>
+            <PersistentString
+               value = "print(error)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -109,13 +55,34 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GenericDataAccess.saveEntity(A) throws -&gt; ():GenericDataAccess.swift">
+         contextName = "ReviewPhraseViewControllerTests.testHasPreviousbarButton() -&gt; ():ReviewPhraseViewControllerTests.swift">
          <PersistentStrings>
             <PersistentString
-               value = "error.localizedDescription">
+               value = "previousBarButton!.possibleTitles">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.(managedObjectModel.getter).(closure #1):AppDelegate.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "print(error)">
+               value = "Bundle.main.url(forResource: &quot;MemorizeItForever&quot;, withExtension: &quot;momd&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BaseDataAccess.init() -&gt; BaseDataAccess&lt;A&gt;:BaseDataAccess.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "BaseManagedObjectContext.sharedInstance">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SetManager.ifSetIsdeletable() throws -&gt; Bool:SetManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "setDataAccess.fetchSetNumber()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -128,6 +95,23 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "BaseManagedObjectContext.set(context : NSManagedObjectContext) -&gt; ():BaseManagedObjectContext.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WordHistoryDataAccess.saveOrUpdate(WordHistoryModel) throws -&gt; ():WordHistoryDataAccess.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SetDataAccess.fetch(UUID) throws -&gt; SetModel?:SetDataAccess.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "test.predicateFormat">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ReviewPhraseViewController.gestureRecognizer(UIGestureRecognizer, shouldReceive : UITouch) -&gt; Bool:ReviewPhraseViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "AppDelegate.initializeContext() -&gt; ():AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
@@ -136,10 +120,65 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ReviewPhraseViewController.swapCards(direction : SwipeDirection) -&gt; ():ReviewPhraseViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "index - 1 &lt; 1">
+            </PersistentString>
+            <PersistentString
+               value = "index">
+            </PersistentString>
+            <PersistentString
+               value = "index - 1">
+            </PersistentString>
+            <PersistentString
+               value = "list[nextIndex]![0]">
+            </PersistentString>
+            <PersistentString
+               value = "nextIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WordHistoryDataAccess.fetchByWordIdAndColumnNo(WordHistoryModel) throws -&gt; WordHistoryEntity?:WordHistoryDataAccess.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "predicateObject1.toNSPredicate()?.predicateFormat">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SetDataAccessTests.testFetchSetWithId() -&gt; ():SetDataAccessTests.swift">
          <PersistentStrings>
             <PersistentString
                value = "sets![0].setId!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ReviewPhraseViewController.updateIndex(incremental : Bool) -&gt; ():ReviewPhraseViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "index">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WordFlowsTests.testDoNotFetchWordsForPuttingInPreColumnIfAlreadyFetched() -&gt; ():WordFlowsTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "WordStatus.notStarted.rawValue">
+            </PersistentString>
+            <PersistentString
+               value = "words![1].status">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ReviewPhraseViewController.viewDidLoad() -&gt; ():ReviewPhraseViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentCardView?.layer.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

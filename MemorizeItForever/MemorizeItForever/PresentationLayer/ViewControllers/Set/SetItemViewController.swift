@@ -19,13 +19,20 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if entityMode == .save{
+            self.title = "New Set"
+        }
+        else{
+            self.title = "Edit Set"
+        }
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(SetItemViewController.saveAction))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(SetItemViewController.cancelAction))
         
         self.view.backgroundColor = UIColor.white
         
         setName = MITextField()
-        setName.becomeFirstResponder()
+        setName.placeholder = "Name"
         
         self.view.addSubview(setName)
         
