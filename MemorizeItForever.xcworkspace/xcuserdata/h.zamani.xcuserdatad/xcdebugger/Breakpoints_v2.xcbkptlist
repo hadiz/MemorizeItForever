@@ -967,22 +967,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "499792097.267039"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/VisualElements/MICardView.swift"
             timestampString = "499699043.92417"
             startingColumnNumber = "9223372036854775807"
@@ -1000,11 +984,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "499792097.267039"
+            timestampString = "500048468.601433"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "panning(recognizer:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1016,11 +1000,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "499792097.267039"
+            timestampString = "500048468.601433"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "panning(recognizer:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1032,27 +1016,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "499792999.201869"
+            timestampString = "500048468.601433"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
-            landmarkName = "swapCards(direction:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "499792999.201869"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
             landmarkName = "updateIndex(incremental:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1064,27 +1032,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "499792999.201869"
+            timestampString = "500048468.601433"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "swapCards(direction:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "499792097.267039"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "adaptivePresentationStyle(for:)"
             landmarkType = "7">
          </BreakpointContent>

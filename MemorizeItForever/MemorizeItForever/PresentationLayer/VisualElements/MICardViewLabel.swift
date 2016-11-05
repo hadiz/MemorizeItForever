@@ -2,13 +2,13 @@
 //  MILabel.swift
 //  MemorizeItForever
 //
-//  Created by Hadi Zamani on 11/5/16.
+//  Created by Hadi Zamani on 10/26/16.
 //  Copyright © 2016 SomeSimpleSolutions. All rights reserved.
 //
 
 import UIKit
 
-final class MILabel: UILabel {
+final class MICardViewLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
@@ -21,6 +21,10 @@ final class MILabel: UILabel {
     
     private func initialize(){
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.lineBreakMode = .byWordWrapping
+        self.numberOfLines = 0
+        self.textAlignment = .center
+        self.font = self.font.withSize(25)
     }
 }
 

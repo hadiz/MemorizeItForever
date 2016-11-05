@@ -1,5 +1,5 @@
 //
-//  MILabel.swift
+//  MISwitch.swift
 //  MemorizeItForever
 //
 //  Created by Hadi Zamani on 11/5/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MILabel: UILabel {
+final class MISwitch: UISwitch {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
@@ -23,4 +23,3 @@ final class MILabel: UILabel {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
-

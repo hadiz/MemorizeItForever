@@ -22,7 +22,7 @@ class MICardView: MIView {
         return self
     }
     // TODO resolve wrong flip in different cards
-    func flipAction(){
+    func flip(){
         if(showingPhrase){
             UIView.transition(from: phrase!, to: meaning!, duration: 1, options: [.transitionFlipFromRight ,.showHideTransitionViews], completion: nil)
             showingPhrase = false
@@ -38,8 +38,29 @@ class MICardView: MIView {
         self.meaning?.text = meaning
     }
     
+    
+    func changeFrontIfNeeded(showingPhrase: Bool){
+        if self.showingPhrase != showingPhrase{
+            if showingPhrase {
+                phrase?.isHidden = false
+                meaning?.isHidden = true
+            }
+            else{
+                phrase?.isHidden = true
+                meaning?.isHidden = false
+            }
+            self.showingPhrase = showingPhrase
+        }
+    }
+    
+    func flipIfNeeded(showingPhrase: Bool){
+        if self.showingPhrase != showingPhrase{
+            flip()
+        }
+    }
+    
     private func initSelf(){
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(MICardView.flipAction))
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(MICardView.flip))
         doubleTap.numberOfTapsRequired = 2
         self.addGestureRecognizer(doubleTap)
         
@@ -50,10 +71,10 @@ class MICardView: MIView {
     }
     
     private func defineControls(phraseText: String, meaningText: String){
-        phrase = MILabel()
+        phrase = MICardViewLabel()
         phrase?.text = phraseText
         
-        meaning = MILabel()
+        meaning = MICardViewLabel()
         meaning?.text = meaningText
         meaning?.isHidden = true
     }

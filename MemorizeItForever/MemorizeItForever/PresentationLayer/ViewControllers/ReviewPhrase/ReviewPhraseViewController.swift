@@ -10,18 +10,19 @@ import UIKit
 
 final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate {
     
-    private var phrase: UILabel?
-    private var meaning: UILabel?
+    private var counter: UILabel?
+    private var switchText: UILabel?
+    private var frontBackswitch: UISwitch?
     private var firstCardView: MICardView?
     private var secondCardView: MICardView?
     private var thidCardView: MICardView?
     private var flip: UIButton?
     private var done: UIButton?
     
-    private var c1: NSLayoutConstraint?
-    private var c2: NSLayoutConstraint?
-    private var c3: NSLayoutConstraint?
-    private var c4: NSLayoutConstraint?
+    private var nextCardLeadingCnst: NSLayoutConstraint?
+    private var previousCardTrailingCnst: NSLayoutConstraint?
+    private var currentCardLeadingCnst: NSLayoutConstraint?
+    private var currentCardTrailingCnst: NSLayoutConstraint?
     
     private var swipeRight: UISwipeGestureRecognizer?
     private var swipeLeft: UISwipeGestureRecognizer?
@@ -29,6 +30,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     
     private var list = [1:["phrase1","meaning1"],2:["phrase2","meaning2"],3:["phrase3","meaning3"],4:["phrase4","meaning4"],5:["phrase5","meaning5"]]
     private var index = 1
+    private var showFront = true
     
     
     private var cardViewsDic: Dictionary<CardViewPosition, MICardView> = [:]
@@ -37,19 +39,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Review Phrases"
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Previous", style: .plain, target: self, action: #selector(ReviewPhraseViewController.previousbarButtonTapHandler))
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReviewPhraseViewController.nextbarButtonTapHandler))
-        
-        defineControls()
-        addControls()
-        applyAutoLayout()
-        
-        panningGesture = UIPanGestureRecognizer(target: self, action: #selector(ReviewPhraseViewController.panning))
-        self.view.addGestureRecognizer(panningGesture!)
-        
+        initial()
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,7 +56,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     }
     
     func flipTapHandler(){
-        cardViewsDic[.current]?.flipAction()
+        cardViewsDic[.current]?.flip()
     }
     
     func doneTapHandler(){
@@ -102,6 +92,29 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         return .none
     }
     
+    func frontBackswitchAction(_ sender: UISwitch){
+        showFront = sender.isOn
+        updateSwitchText()
+        cardViewsDic[.current]?.flipIfNeeded(showingPhrase: showFront)
+    }
+    
+    private func initial(){
+        self.title = "Review Phrases"
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Previous", style: .plain, target: self, action: #selector(ReviewPhraseViewController.previousbarButtonTapHandler))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReviewPhraseViewController.nextbarButtonTapHandler))
+        
+        defineControls()
+        addControls()
+        applyAutoLayout()
+        
+        panningGesture = UIPanGestureRecognizer(target: self, action: #selector(ReviewPhraseViewController.panning))
+        self.view.addGestureRecognizer(panningGesture!)
+        updateCounter()
+        updateSwitchText()
+    }
+    
     private func swipe(speed: CGFloat){
         if speed > 0{
             swapCards(direction: .right)
@@ -128,6 +141,14 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     }
     private func defineControls(){
         
+        counter = MILabel()
+        
+        switchText = MILabel()
+        
+        frontBackswitch = MISwitch()
+        frontBackswitch?.isOn = true
+        frontBackswitch?.addTarget(self, action: #selector(ReviewPhraseViewController.frontBackswitchAction), for: UIControlEvents.valueChanged)
+        
         firstCardView = MICardView().initialize(phrase: list[index]![0], meaning: list[index]![1])
         secondCardView = MICardView().initialize(phrase: list[index + 1]![0], meaning: list[index + 1]![1])
         thidCardView = MICardView().initialize(phrase: list[list.count]![0], meaning: list[list.count]![1])
@@ -151,12 +172,18 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         self.view.addSubview(thidCardView!)
         self.view.addSubview(flip!)
         self.view.addSubview(done!)
+        self.view.addSubview(counter!)
+        self.view.addSubview(switchText!)
+        self.view.addSubview(frontBackswitch!)
     }
     
     private func applyAutoLayout(){
         var viewDic: Dictionary<String,Any> = [:]
         var constraintList: [NSLayoutConstraint] = []
         
+        viewDic["switchText"] = switchText!
+        viewDic["frontBackswitch"] = frontBackswitch!
+        viewDic["counter"] = counter!
         viewDic["flip"] = flip!
         viewDic["done"] = done!
         viewDic["topLayoutGuide"] = topLayoutGuide
@@ -168,7 +195,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         let metrics = ["buttonSize":buttonSize]
         
         let hCardViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:[flip(buttonSize)]-|", options: [], metrics: metrics, views: viewDic)
-        let vCardViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[currentCardView]-[done(buttonSize)]-[bottomLayoutGuide]", options: [], metrics: metrics, views: viewDic)
+        let vCardViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[counter(21.5)]-[currentCardView]-[done(buttonSize)]-[bottomLayoutGuide]", options: [], metrics: metrics, views: viewDic)
         
         let vFlipCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[flip(buttonSize)]", options: [], metrics: metrics, views: viewDic)
         
@@ -176,35 +203,57 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         constraintList += vCardViewCnst
         constraintList += vFlipCnst
         
-        NSLayoutConstraint(item: done!, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view!, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0).isActive = true
+        let hCounterCnst = NSLayoutConstraint(item: counter!, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view!, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         
-        NSLayoutConstraint(item: done!, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.width, multiplier: 1, constant: buttonSize).isActive = true
+        let hDoneCnst = NSLayoutConstraint(item: done!, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view!, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         
-        NSLayoutConstraint(item: secondCardView!, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0).isActive = true
+        let hDoneWidthCnst = NSLayoutConstraint(item: done!, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.width, multiplier: 1, constant: buttonSize)
         
-        NSLayoutConstraint(item: secondCardView!, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0).isActive = true
+        let hFrontBackswitchCnst = NSLayoutConstraint(item: frontBackswitch!, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: flip!, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         
-        NSLayoutConstraint(item: secondCardView!, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0).isActive = true
+        let hSwitchTextCnst = NSLayoutConstraint(item: switchText!, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: frontBackswitch!, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         
+        let vSwitchTextCnst = NSLayoutConstraint(item: switchText!, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self.view!, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: -15)
         
-        NSLayoutConstraint(item: thidCardView!, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0).isActive = true
+        let vFrontBackswitchCnst = NSLayoutConstraint(item: frontBackswitch!, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self.view!, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 15)
         
-        NSLayoutConstraint(item: thidCardView!, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0).isActive = true
+        let vSecondCardViewTopCnst = NSLayoutConstraint(item: secondCardView!, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
         
-        NSLayoutConstraint(item: thidCardView!, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0).isActive = true
+        let hSecondCardViewWidthCnst = NSLayoutConstraint(item: secondCardView!, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
         
-        c1 = NSLayoutConstraint(item: secondCardView!, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
-        c1?.isActive = true
+        let vSecondCardViewHeightCnst = NSLayoutConstraint(item: secondCardView!, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0)
         
-        c2 = NSLayoutConstraint(item: thidCardView!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
-        c2?.isActive = true
+        let vThirdCardViewTopCnst = NSLayoutConstraint(item: thidCardView!, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
         
-        c3 = NSLayoutConstraint(item: firstCardView!, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 8)
-        c3?.isActive = true
+        let hThirdCardViewWidthCnst = NSLayoutConstraint(item: thidCardView!, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
         
-        c4 = NSLayoutConstraint(item: firstCardView!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: flip, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: -8)
-        c4?.isActive = true
+        let vThirdCardViewHeightCnst = NSLayoutConstraint(item: thidCardView!, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0)
         
+        nextCardLeadingCnst = NSLayoutConstraint(item: secondCardView!, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        
+        previousCardTrailingCnst = NSLayoutConstraint(item: thidCardView!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+        
+        currentCardLeadingCnst = NSLayoutConstraint(item: firstCardView!, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 8)
+        
+        currentCardTrailingCnst = NSLayoutConstraint(item: firstCardView!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: flip, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: -8)
+        
+        constraintList.append(hCounterCnst)
+        constraintList.append(hDoneCnst)
+        constraintList.append(hDoneWidthCnst)
+        constraintList.append(hFrontBackswitchCnst)
+        constraintList.append(hSwitchTextCnst)
+        constraintList.append(vSwitchTextCnst)
+        constraintList.append(vFrontBackswitchCnst)
+        constraintList.append(vSecondCardViewTopCnst)
+        constraintList.append(hSecondCardViewWidthCnst)
+        constraintList.append(vSecondCardViewHeightCnst)
+        constraintList.append(vThirdCardViewTopCnst)
+        constraintList.append(hThirdCardViewWidthCnst)
+        constraintList.append(vThirdCardViewHeightCnst)
+        constraintList.append(nextCardLeadingCnst!)
+        constraintList.append(previousCardTrailingCnst!)
+        constraintList.append(currentCardLeadingCnst!)
+        constraintList.append(currentCardTrailingCnst!)
         
         NSLayoutConstraint.activate(constraintList)
     }
@@ -212,62 +261,77 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     private func swapCards(direction: SwipeDirection){
         switch direction {
         case .left:
-            
-            updateIndex(incremental: true)
-            
-            let tempCardView = cardViewsDic[.current]
-            cardViewsDic[.current] = cardViewsDic[.next]
-            cardViewsDic[.next] = cardViewsDic[.previous]
-            cardViewsDic[.previous] = tempCardView
-            
-            let nextIndex = index + 1 > list.count ?  1 : index + 1
-            cardViewsDic[.next]?.updateText(phrase: list[nextIndex]![0], meaning: list[nextIndex]![1], index: nextIndex)
-            
-            animate(){
-                self.cardViewsDic[.current]!.center.x = self.cardViewCenter!
-                self.cardViewsDic[.previous]!.layer.frame.origin.x = -1 * self.cardViewsDic[.current]!.layer.frame.width
-            }
-            
+            swipeCardLeft()
             break
         case .right:
-            updateIndex(incremental: false)
-            
-            let tempCardView = cardViewsDic[.current]
-            cardViewsDic[.current] = cardViewsDic[.previous]
-            cardViewsDic[.previous] = cardViewsDic[.next]
-            cardViewsDic[.next] = tempCardView
-            
-            let nextIndex = index - 1 < 1 ?  list.count : index - 1
-            cardViewsDic[.previous]?.updateText(phrase: list[nextIndex]![0], meaning: list[nextIndex]![1], index: nextIndex)
-            
-            animate(){
-                self.cardViewsDic[.current]!.center.x = self.cardViewCenter!
-                self.cardViewsDic[.next]!.layer.frame.origin.x = self.view.layer.frame.width
-            }
-            
+            swipeCardRight()
             break
         }
+        updateCounter()
+        self.cardViewsDic[.current]!.changeFrontIfNeeded(showingPhrase: showFront)
+        updateConstraint()
+    }
+    
+    private func swipeCardLeft(){
+        updateIndex(incremental: true)
         
-        self.view.removeConstraint(c1!)
-        self.view.removeConstraint(c2!)
-        self.view.removeConstraint(c3!)
-        self.view.removeConstraint(c4!)
+        let tempCardView = cardViewsDic[.current]
+        cardViewsDic[.current] = cardViewsDic[.next]
+        cardViewsDic[.next] = cardViewsDic[.previous]
+        cardViewsDic[.previous] = tempCardView
         
-        c1 = NSLayoutConstraint(item: cardViewsDic[.next]!, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
-        c1?.isActive = true
+        let nextIndex = index + 1 > list.count ?  1 : index + 1
+        cardViewsDic[.next]?.updateText(phrase: list[nextIndex]![0], meaning: list[nextIndex]![1], index: nextIndex)
         
-        c2 = NSLayoutConstraint(item: cardViewsDic[.previous]!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
-        c2?.isActive = true
+        animate(){
+            self.cardViewsDic[.current]!.center.x = self.cardViewCenter!
+            self.cardViewsDic[.previous]!.layer.frame.origin.x = -1 * self.cardViewsDic[.current]!.layer.frame.width
+        }
+    }
+    
+    private func swipeCardRight(){
+        updateIndex(incremental: false)
         
-        c3 = NSLayoutConstraint(item: cardViewsDic[.current]!, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 8)
-        c3?.isActive = true
+        let tempCardView = cardViewsDic[.current]
+        cardViewsDic[.current] = cardViewsDic[.previous]
+        cardViewsDic[.previous] = cardViewsDic[.next]
+        cardViewsDic[.next] = tempCardView
         
-        c4 = NSLayoutConstraint(item: cardViewsDic[.current]!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: flip, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: -8)
-        c4?.isActive = true
+        let nextIndex = index - 1 < 1 ?  list.count : index - 1
+        cardViewsDic[.previous]?.updateText(phrase: list[nextIndex]![0], meaning: list[nextIndex]![1], index: nextIndex)
+        
+        animate(){
+            self.cardViewsDic[.current]!.center.x = self.cardViewCenter!
+            self.cardViewsDic[.next]!.layer.frame.origin.x = self.view.layer.frame.width
+        }
+    }
+    
+    private func updateConstraint(){
+        var constraintList: [NSLayoutConstraint] = []
+        
+        self.view.removeConstraint(nextCardLeadingCnst!)
+        self.view.removeConstraint(previousCardTrailingCnst!)
+        self.view.removeConstraint(currentCardLeadingCnst!)
+        self.view.removeConstraint(currentCardTrailingCnst!)
+        
+        nextCardLeadingCnst = NSLayoutConstraint(item: cardViewsDic[.next]!, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        
+        previousCardTrailingCnst = NSLayoutConstraint(item: cardViewsDic[.previous]!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+        
+        currentCardLeadingCnst = NSLayoutConstraint(item: cardViewsDic[.current]!, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 8)
+        
+        currentCardTrailingCnst = NSLayoutConstraint(item: cardViewsDic[.current]!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: flip, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: -8)
+        
+        constraintList.append(nextCardLeadingCnst!)
+        constraintList.append(previousCardTrailingCnst!)
+        constraintList.append(currentCardLeadingCnst!)
+        constraintList.append(currentCardTrailingCnst!)
+        
+        NSLayoutConstraint.activate(constraintList)
     }
     
     private func animate(animations: @escaping () -> Swift.Void){
-        UIView.animate(withDuration: 0.1){
+        UIView.animate(withDuration: 0.2){
             animations()
         }
     }
@@ -284,6 +348,19 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
             if index < 1{
                 index = list.count
             }
+        }
+    }
+    
+    private func updateCounter(){
+        counter?.text = "\(index) / \(list.count)"
+    }
+    
+    private func updateSwitchText(){
+        if showFront{
+            switchText?.text = "Show back"
+        }
+        else{
+            switchText?.text = "Show front"
         }
     }
 }
