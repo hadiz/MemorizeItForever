@@ -46,6 +46,14 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         initial()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let current = cardViewsDic[.current] else {
+            fatalError(cardViewsDicFatalError)
+        }
+        cardViewCenter = current.center.x
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -90,12 +98,6 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
             else{
                 pan()
             }
-        }
-        else if recognizer.state == .began{
-            guard cardViewCenter == nil else{
-                return
-            }
-            cardViewCenter = current.center.x
         }
     }
     
@@ -172,8 +174,10 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         frontBackswitch.addTarget(self, action: #selector(ReviewPhraseViewController.frontBackswitchAction), for: UIControlEvents.valueChanged)
         
         firstCardView = MICardView().initialize(phrase: list[index]![0], meaning: list[index]![1])
-        secondCardView = MICardView().initialize(phrase: list[index + 1]![0], meaning: list[index + 1]![1])
-        thidCardView = MICardView().initialize(phrase: list[list.count]![0], meaning: list[list.count]![1])
+        let nextIndex = getNextIndex()
+        secondCardView = MICardView().initialize(phrase: list[nextIndex]![0], meaning: list[nextIndex]![1])
+        let previousIndex = getPreviousIndex()
+        thidCardView = MICardView().initialize(phrase: list[previousIndex]![0], meaning: list[previousIndex]![1])
         
         cardViewsDic[.current] = firstCardView
         cardViewsDic[.next] = secondCardView
@@ -317,12 +321,12 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
             fatalError(cardViewsDicFatalError)
         }
         
-        let nextIndex = index + 1 > list.count ?  1 : index + 1
+        let nextIndex = getNextIndex()
         next.updateText(phrase: list[nextIndex]![0], meaning: list[nextIndex]![1], index: nextIndex)
         
         animate(){
             current.center.x = self.cardViewCenter!
-            previous.layer.frame.origin.x = -1 * self.cardViewsDic[.current]!.layer.frame.width
+            previous.layer.frame.origin.x = -1 * current.layer.frame.width
         }
     }
     
@@ -338,7 +342,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
             fatalError(cardViewsDicFatalError)
         }
 
-        let nextIndex = index - 1 < 1 ?  list.count : index - 1
+        let nextIndex = getPreviousIndex()
         previous.updateText(phrase: list[nextIndex]![0], meaning: list[nextIndex]![1], index: nextIndex)
         
         animate(){
@@ -416,6 +420,13 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         animation.subtype = showFront ? kCATransitionFromLeft : kCATransitionFromRight
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
         switchText.layer.add(animation, forKey: changeTextTransition)
-        
+    }
+    
+    private func getNextIndex() -> Int{
+       return index + 1 > list.count ?  1 : index + 1
+    }
+    
+    private func getPreviousIndex() -> Int{
+        return index - 1 < 1 ?  list.count : index - 1
     }
 }

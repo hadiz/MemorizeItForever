@@ -92,6 +92,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ReviewPhraseViewController.viewDidAppear(Bool) -&gt; ():ReviewPhraseViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cardViewCenter">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "GenericDataAccess.createNewInstance() throws -&gt; A:GenericDataAccess.swift">
          <PersistentStrings>
             <PersistentString
@@ -153,6 +161,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ReviewPhraseViewController.panning(recognizer : UIPanGestureRecognizer) -&gt; ():ReviewPhraseViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "current.center.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SetDataAccessTests.testFetchSetWithId() -&gt; ():SetDataAccessTests.swift">
          <PersistentStrings>
             <PersistentString
@@ -165,6 +181,17 @@
          <PersistentStrings>
             <PersistentString
                value = "index">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ReviewPhraseViewController.pan() -&gt; ():ReviewPhraseViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "current.center.x">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.layer.frame.width">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

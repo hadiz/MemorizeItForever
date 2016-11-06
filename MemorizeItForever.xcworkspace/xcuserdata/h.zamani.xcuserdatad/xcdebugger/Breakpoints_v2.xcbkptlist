@@ -984,11 +984,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "500125457.183815"
+            timestampString = "500131388.556173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "panning(recognizer:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1000,11 +1000,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "500125457.183815"
+            timestampString = "500132437.314923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "panning(recognizer:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1016,11 +1016,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "500129455.284097"
+            timestampString = "500132437.314923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "392"
-            endingLineNumber = "392"
+            startingLineNumber = "396"
+            endingLineNumber = "396"
             landmarkName = "updateIndex(incremental:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1032,11 +1032,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "500125457.183815"
+            timestampString = "500132437.314923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "adaptivePresentationStyle(for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1112,11 +1112,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
-            timestampString = "500129455.284097"
+            timestampString = "500132437.314923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "419"
-            endingLineNumber = "419"
+            startingLineNumber = "422"
+            endingLineNumber = "422"
             landmarkName = "updateAnimation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1198,6 +1198,22 @@
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "setUserDefaultSet()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift"
+            timestampString = "500132437.314923"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "pan()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
