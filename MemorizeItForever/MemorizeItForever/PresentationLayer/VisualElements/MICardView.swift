@@ -9,8 +9,8 @@
 import UIKit
 
 class MICardView: MIView {
-     private var phrase: UILabel?
-     private var meaning: UILabel?
+     private var phrase: UILabel!
+     private var meaning: UILabel!
      private var showingPhrase = true
     
     func initialize(phrase: String, meaning: String) -> MICardView{
@@ -21,33 +21,33 @@ class MICardView: MIView {
         
         return self
     }
-    // TODO resolve wrong flip in different cards
+    
     func flip(){
         if(showingPhrase){
-            UIView.transition(from: phrase!, to: meaning!, duration: 1, options: [.transitionFlipFromRight ,.showHideTransitionViews], completion: nil)
+            UIView.transition(from: phrase, to: meaning, duration: 1, options: [.transitionFlipFromRight ,.showHideTransitionViews], completion: nil)
             showingPhrase = false
         }
         else{
-            UIView.transition(from: meaning!, to: phrase!, duration: 1, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)
+            UIView.transition(from: meaning, to: phrase, duration: 1, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)
             showingPhrase = true
         }
     }
     
     func updateText(phrase: String, meaning: String, index: Int){
-        self.phrase?.text = phrase
-        self.meaning?.text = meaning
+        self.phrase.text = phrase
+        self.meaning.text = meaning
     }
     
     
     func changeFrontIfNeeded(showingPhrase: Bool){
         if self.showingPhrase != showingPhrase{
             if showingPhrase {
-                phrase?.isHidden = false
-                meaning?.isHidden = true
+                phrase.isHidden = false
+                meaning.isHidden = true
             }
             else{
-                phrase?.isHidden = true
-                meaning?.isHidden = false
+                phrase.isHidden = true
+                meaning.isHidden = false
             }
             self.showingPhrase = showingPhrase
         }
@@ -72,24 +72,24 @@ class MICardView: MIView {
     
     private func defineControls(phraseText: String, meaningText: String){
         phrase = MICardViewLabel()
-        phrase?.text = phraseText
+        phrase.text = phraseText
         
         meaning = MICardViewLabel()
-        meaning?.text = meaningText
-        meaning?.isHidden = true
+        meaning.text = meaningText
+        meaning.isHidden = true
     }
     
     private func addControls(){
-        self.addSubview(phrase!)
-        self.addSubview(meaning!)
+        self.addSubview(phrase)
+        self.addSubview(meaning)
     }
     
     private func applyAutoLayout(){
         var viewDic: Dictionary<String,Any> = [:]
         var constraintList: [NSLayoutConstraint] = []
         
-        viewDic["phrase"] = phrase!
-        viewDic["meaning"] = meaning!
+        viewDic["phrase"] = phrase
+        viewDic["meaning"] = meaning
         
         let hPhraseCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|[phrase]|", options: [], metrics: nil, views: viewDic)
         let vPhraseCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:|[phrase]|", options: [], metrics: nil, views: viewDic)

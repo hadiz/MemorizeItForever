@@ -26,6 +26,7 @@ public enum Settings: String{
     case judgeMyself
     case phraseColor
     case meaningColor
+    case defaultSet
 }
 enum MemorizeColumns: Int16 {
     case pre = 0

@@ -3,13 +3,18 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "BaseManagedObjectContext.initializeContext() -&gt; ():BaseManagedObjectContext.swift">
+         contextName = "ReviewPhraseViewController.viewDidLoad() -&gt; ():ReviewPhraseViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "persistentContainer.viewContext">
+               value = "currentCardView?.layer.frame">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SetManager.setUserDefaultSet() -&gt; ():SetManager.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "persistentContainer.viewContext&#10;persistentContainer.viewContext&#10;">
+               value = "sets[0].toDic()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -71,18 +76,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "BaseDataAccess.init() -&gt; BaseDataAccess&lt;A&gt;:BaseDataAccess.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "BaseManagedObjectContext.sharedInstance">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "SetManager.ifSetIsdeletable() throws -&gt; Bool:SetManager.swift">
          <PersistentStrings>
             <PersistentString
                value = "setDataAccess.fetchSetNumber()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BaseDataAccess.init() -&gt; BaseDataAccess&lt;A&gt;:BaseDataAccess.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "BaseManagedObjectContext.sharedInstance">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -95,21 +100,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "BaseManagedObjectContext.set(context : NSManagedObjectContext) -&gt; ():BaseManagedObjectContext.swift">
-      </ContextState>
-      <ContextState
-         contextName = "WordHistoryDataAccess.saveOrUpdate(WordHistoryModel) throws -&gt; ():WordHistoryDataAccess.swift">
-      </ContextState>
-      <ContextState
-         contextName = "SetDataAccess.fetch(UUID) throws -&gt; SetModel?:SetDataAccess.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "test.predicateFormat">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "ReviewPhraseViewController.gestureRecognizer(UIGestureRecognizer, shouldReceive : UITouch) -&gt; Bool:ReviewPhraseViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "BaseManagedObjectContext.set(context : NSManagedObjectContext) -&gt; ():BaseManagedObjectContext.swift">
       </ContextState>
       <ContextState
          contextName = "AppDelegate.initializeContext() -&gt; ():AppDelegate.swift">
@@ -120,13 +114,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SetDataAccess.fetch(UUID) throws -&gt; SetModel?:SetDataAccess.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "test.predicateFormat">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WordHistoryDataAccess.saveOrUpdate(WordHistoryModel) throws -&gt; ():WordHistoryDataAccess.swift">
+      </ContextState>
+      <ContextState
          contextName = "ReviewPhraseViewController.swapCards(direction : SwipeDirection) -&gt; ():ReviewPhraseViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "index - 1 &lt; 1">
             </PersistentString>
             <PersistentString
-               value = "index">
+               value = "nextIndex">
             </PersistentString>
             <PersistentString
                value = "index - 1">
@@ -135,7 +140,7 @@
                value = "list[nextIndex]![0]">
             </PersistentString>
             <PersistentString
-               value = "nextIndex">
+               value = "index">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -175,10 +180,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ReviewPhraseViewController.viewDidLoad() -&gt; ():ReviewPhraseViewController.swift">
+         contextName = "BaseManagedObjectContext.initializeContext() -&gt; ():BaseManagedObjectContext.swift">
          <PersistentStrings>
             <PersistentString
-               value = "currentCardView?.layer.frame">
+               value = "persistentContainer.viewContext&#10;persistentContainer.viewContext&#10;">
+            </PersistentString>
+            <PersistentString
+               value = "persistentContainer.viewContext">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

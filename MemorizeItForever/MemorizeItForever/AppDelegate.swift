@@ -21,7 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setUserDefaults()
         initializeContext()
         
-        SetManager().createDefaultSet()
+        let setManager = SetManager()
+        setManager.createDefaultSet()
+        setManager.setUserDefaultSet()
         return true
     }
     

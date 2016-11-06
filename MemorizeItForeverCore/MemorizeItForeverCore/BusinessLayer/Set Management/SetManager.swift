@@ -40,6 +40,22 @@ final public class SetManager {
         }
     }
     
+    public func setUserDefaultSet() {
+        do{
+            
+            let sets = try setDataAccess.fetchAll()
+            if sets.count > 0{
+                let defaults = UserDefaults.standard
+                if defaults.object(forKey: Settings.defaultSet.rawValue) == nil{
+                    defaults.setValue(sets[0].toDic(), forKey: Settings.defaultSet.rawValue)
+                }
+            }
+        }
+        catch{
+            
+        }
+    }
+    
    public func save(_ setName: String){
         do{
             var set = SetModel()
