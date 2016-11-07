@@ -10,7 +10,7 @@ import Foundation
 import  MemorizeItForeverCore
 extension NotificationCenter{
     
-    func postNotification(_ notificationNameEnum: NotificationEnum, object: AnyObject?){
+    func post(_ notificationNameEnum: NotificationEnum, object: AnyObject?){
         self.post(name: Notification.Name(rawValue: notificationNameEnum.rawValue), object: Wrapper(wrappedValue: object))
     }
     

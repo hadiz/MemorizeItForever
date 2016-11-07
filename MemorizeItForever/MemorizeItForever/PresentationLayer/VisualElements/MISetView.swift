@@ -9,7 +9,7 @@
 import UIKit
 import MemorizeItForeverCore
 
-class MISetView: MIView {
+final class MISetView: MIView {
     private var setFixed: UILabel!
     private var set: UILabel!
     
@@ -28,10 +28,22 @@ class MISetView: MIView {
         set.font = set.font.withSize(size)
     }
     
+    func changeSet(){
+        if let setDic = UserDefaults.standard.object(forKey: Settings.defaultSet.rawValue) as? Dictionary<String, Any>,
+            let setModel = SetModel(dictionary: setDic) {
+            set.text = setModel.name
+        }
+        else{
+            set.text = "Not Specified"
+            set.textColor = UIColor.red
+        }
+    }
+    
     private func initialize(){
         defineControls()
         addControls()
         applyAutoLayout()
+        NotificationCenter.default.addObserver(self, selector: #selector(MISetView.changeSet), notificationNameEnum: .setChanged, object: nil)
     }
     
     private func defineControls(){
@@ -40,15 +52,8 @@ class MISetView: MIView {
         setFixed.textColor = UIColor.gray
         
         set = MILabel()
-        if let setDic = UserDefaults.standard.object(forKey: Settings.defaultSet.rawValue) as? Dictionary<String, Any>,
-           let setModel = SetModel(dictionary: setDic) {
-            set.text = setModel.name
-            set.textColor = UIColor.darkGray
-        }
-        else{
-            set.text = "Not Specified"
-            set.textColor = UIColor.red
-        }
+        set.textColor = UIColor.darkGray
+        changeSet()
     }
     
     private func addControls(){

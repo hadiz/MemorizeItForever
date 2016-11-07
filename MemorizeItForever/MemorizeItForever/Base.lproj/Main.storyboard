@@ -38,232 +38,255 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TAw-Vl-GLc">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dR-GG-PLP">
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXJ-md-47j" customClass="CustomBackgroundView" customModule="MemorizeItForever">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TAw-Vl-GLc">
                                         <subviews>
-                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="SHp-bt-Moh" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXJ-md-47j" customClass="CustomBackgroundView" customModule="MemorizeItForever">
+                                                <subviews>
+                                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="SHp-bt-Moh" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="SHp-bt-Moh" secondAttribute="height" multiplier="1:1" id="3LX-Uk-6lY"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Test Yourself"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="3LX-Uk-6lY"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        </variation>
+                                                    </button>
+                                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="oLn-zR-W4J" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="height" multiplier="1:1" id="LZT-cj-bnY"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Review Pharses"/>
+                                                        <variation key="heightClass=compact-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="reviewPhraseAction:" destination="FwN-R0-hcu" eventType="touchUpInside" id="WCk-x6-hv9"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="SHp-bt-Moh" secondAttribute="height" multiplier="1:1" id="3LX-Uk-6lY"/>
+                                                    <constraint firstItem="oLn-zR-W4J" firstAttribute="height" secondItem="rXJ-md-47j" secondAttribute="height" priority="750" id="9Q0-nN-rYh"/>
+                                                    <constraint firstItem="SHp-bt-Moh" firstAttribute="width" secondItem="rXJ-md-47j" secondAttribute="width" multiplier="1/2" priority="750" id="JED-Nx-RwE"/>
+                                                    <constraint firstItem="SHp-bt-Moh" firstAttribute="height" secondItem="oLn-zR-W4J" secondAttribute="height" id="KUc-Dd-VC8"/>
+                                                    <constraint firstItem="oLn-zR-W4J" firstAttribute="centerY" secondItem="rXJ-md-47j" secondAttribute="centerY" id="Nyq-SV-zKg"/>
+                                                    <constraint firstItem="SHp-bt-Moh" firstAttribute="centerY" secondItem="rXJ-md-47j" secondAttribute="centerY" id="R3j-81-SDd"/>
+                                                    <constraint firstItem="oLn-zR-W4J" firstAttribute="width" secondItem="rXJ-md-47j" secondAttribute="width" multiplier="1/2" priority="750" id="Vhq-oT-PQ5"/>
+                                                    <constraint firstItem="SHp-bt-Moh" firstAttribute="height" secondItem="rXJ-md-47j" secondAttribute="height" priority="750" id="W27-dn-FGa"/>
+                                                    <constraint firstItem="SHp-bt-Moh" firstAttribute="leading" secondItem="oLn-zR-W4J" secondAttribute="trailing" priority="750" constant="8" id="b2i-o3-46s"/>
+                                                    <constraint firstItem="SHp-bt-Moh" firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="width" id="j58-bt-k2S"/>
+                                                    <constraint firstItem="SHp-bt-Moh" firstAttribute="centerX" secondItem="rXJ-md-47j" secondAttribute="centerX" multiplier="3/2" constant="4" id="j6e-tE-ZaC"/>
+                                                    <constraint firstItem="oLn-zR-W4J" firstAttribute="centerX" secondItem="rXJ-md-47j" secondAttribute="centerX" multiplier="1/2" constant="-4" id="zfI-re-ao6"/>
                                                 </constraints>
-                                                <state key="normal" title="Test Yourself"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="3LX-Uk-6lY"/>
+                                                        <exclude reference="JED-Nx-RwE"/>
+                                                        <exclude reference="W27-dn-FGa"/>
+                                                        <exclude reference="b2i-o3-46s"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=compact-widthClass=compact">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                                </variation>
-                                                <variation key="heightClass=compact-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11.5"/>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                </variation>
-                                            </button>
-                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="oLn-zR-W4J" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BN5-em-EWI" customClass="CustomBackgroundView" customModule="MemorizeItForever">
+                                                <subviews>
+                                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ZGz-7V-ukg" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <state key="normal" title="Add  New  Pharses"/>
+                                                        <variation key="heightClass=compact-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        </variation>
+                                                    </button>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="height" multiplier="1:1" id="LZT-cj-bnY"/>
+                                                    <constraint firstItem="ZGz-7V-ukg" firstAttribute="width" secondItem="BN5-em-EWI" secondAttribute="width" multiplier="1/2" priority="750" id="1TY-QB-2hM"/>
+                                                    <constraint firstItem="ZGz-7V-ukg" firstAttribute="height" secondItem="BN5-em-EWI" secondAttribute="height" priority="750" id="4hy-KT-SIs"/>
+                                                    <constraint firstItem="ZGz-7V-ukg" firstAttribute="centerX" secondItem="BN5-em-EWI" secondAttribute="centerX" id="hJj-5a-aem"/>
+                                                    <constraint firstItem="ZGz-7V-ukg" firstAttribute="centerY" secondItem="BN5-em-EWI" secondAttribute="centerY" id="kvZ-mZ-CXu"/>
                                                 </constraints>
-                                                <state key="normal" title="Review Pharses"/>
-                                                <variation key="heightClass=compact-widthClass=compact">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="1TY-QB-2hM"/>
+                                                        <exclude reference="4hy-KT-SIs"/>
+                                                    </mask>
                                                 </variation>
-                                                <variation key="heightClass=compact-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11.5"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HL0-lW-q8H" customClass="CustomBackgroundView" customModule="MemorizeItForever">
+                                                <subviews>
+                                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Q8u-BP-BJB" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Q8u-BP-BJB" secondAttribute="height" multiplier="1:1" id="2aS-lQ-Lup"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <state key="normal" title="Pharses Management"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="2aS-lQ-Lup"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        </variation>
+                                                    </button>
+                                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="6dT-sG-0DS" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="6dT-sG-0DS" secondAttribute="height" multiplier="1:1" id="Eax-3V-syO"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <state key="normal" title="Sets Management"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="Eax-3V-syO"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="setAction:" destination="FwN-R0-hcu" eventType="touchUpInside" id="Rf4-wS-jvL"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Q8u-BP-BJB" firstAttribute="centerX" secondItem="HL0-lW-q8H" secondAttribute="centerX" multiplier="3/2" constant="4" id="1AF-xP-nUV"/>
+                                                    <constraint firstItem="Q8u-BP-BJB" firstAttribute="height" secondItem="HL0-lW-q8H" secondAttribute="height" priority="750" id="43R-x2-gI6"/>
+                                                    <constraint firstItem="Q8u-BP-BJB" firstAttribute="centerY" secondItem="HL0-lW-q8H" secondAttribute="centerY" id="AMR-4g-Mxl"/>
+                                                    <constraint firstItem="6dT-sG-0DS" firstAttribute="width" secondItem="HL0-lW-q8H" secondAttribute="width" multiplier="1/2" priority="750" id="K6b-1I-IG0"/>
+                                                    <constraint firstItem="6dT-sG-0DS" firstAttribute="height" secondItem="HL0-lW-q8H" secondAttribute="height" priority="750" id="Ufn-eY-g01"/>
+                                                    <constraint firstItem="6dT-sG-0DS" firstAttribute="centerX" secondItem="HL0-lW-q8H" secondAttribute="centerX" multiplier="1/2" constant="-4" id="lgA-vw-lhw"/>
+                                                    <constraint firstItem="6dT-sG-0DS" firstAttribute="centerY" secondItem="HL0-lW-q8H" secondAttribute="centerY" id="stR-yb-Ats"/>
+                                                    <constraint firstItem="Q8u-BP-BJB" firstAttribute="width" secondItem="HL0-lW-q8H" secondAttribute="width" multiplier="1/2" priority="750" id="zSs-Vq-Ac3"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="K6b-1I-IG0"/>
+                                                        <exclude reference="Ufn-eY-g01"/>
+                                                        <exclude reference="43R-x2-gI6"/>
+                                                        <exclude reference="zSs-Vq-Ac3"/>
+                                                    </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                </variation>
-                                                <connections>
-                                                    <action selector="reviewPhraseAction:" destination="FwN-R0-hcu" eventType="touchUpInside" id="WCk-x6-hv9"/>
-                                                </connections>
-                                            </button>
+                                            </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="oLn-zR-W4J" firstAttribute="height" secondItem="rXJ-md-47j" secondAttribute="height" priority="750" id="9Q0-nN-rYh"/>
-                                            <constraint firstItem="SHp-bt-Moh" firstAttribute="width" secondItem="rXJ-md-47j" secondAttribute="width" multiplier="1/2" priority="750" id="JED-Nx-RwE"/>
-                                            <constraint firstItem="SHp-bt-Moh" firstAttribute="height" secondItem="oLn-zR-W4J" secondAttribute="height" id="KUc-Dd-VC8"/>
-                                            <constraint firstItem="oLn-zR-W4J" firstAttribute="centerY" secondItem="rXJ-md-47j" secondAttribute="centerY" id="Nyq-SV-zKg"/>
-                                            <constraint firstItem="SHp-bt-Moh" firstAttribute="centerY" secondItem="rXJ-md-47j" secondAttribute="centerY" id="R3j-81-SDd"/>
-                                            <constraint firstItem="oLn-zR-W4J" firstAttribute="width" secondItem="rXJ-md-47j" secondAttribute="width" multiplier="1/2" priority="750" id="Vhq-oT-PQ5"/>
-                                            <constraint firstItem="SHp-bt-Moh" firstAttribute="height" secondItem="rXJ-md-47j" secondAttribute="height" priority="750" id="W27-dn-FGa"/>
-                                            <constraint firstItem="SHp-bt-Moh" firstAttribute="leading" secondItem="oLn-zR-W4J" secondAttribute="trailing" priority="750" constant="8" id="b2i-o3-46s"/>
-                                            <constraint firstItem="SHp-bt-Moh" firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="width" id="j58-bt-k2S"/>
-                                            <constraint firstItem="SHp-bt-Moh" firstAttribute="centerX" secondItem="rXJ-md-47j" secondAttribute="centerX" multiplier="3/2" constant="4" id="j6e-tE-ZaC"/>
-                                            <constraint firstItem="oLn-zR-W4J" firstAttribute="centerX" secondItem="rXJ-md-47j" secondAttribute="centerX" multiplier="1/2" constant="-4" id="zfI-re-ao6"/>
+                                            <constraint firstItem="6dT-sG-0DS" firstAttribute="width" secondItem="SHp-bt-Moh" secondAttribute="width" id="1xm-kV-kut"/>
+                                            <constraint firstItem="Q8u-BP-BJB" firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="width" id="88r-HY-a5H"/>
+                                            <constraint firstItem="ZGz-7V-ukg" firstAttribute="width" secondItem="SHp-bt-Moh" secondAttribute="width" id="9qg-B3-EEA"/>
+                                            <constraint firstItem="6dT-sG-0DS" firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="width" id="E0y-Xo-5CJ"/>
+                                            <constraint firstItem="ZGz-7V-ukg" firstAttribute="height" secondItem="SHp-bt-Moh" secondAttribute="height" id="O5U-BP-78Y"/>
+                                            <constraint firstItem="ZGz-7V-ukg" firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="width" id="VFw-K0-hcY"/>
+                                            <constraint firstItem="6dT-sG-0DS" firstAttribute="height" secondItem="oLn-zR-W4J" secondAttribute="height" id="ZaQ-nh-7rg"/>
+                                            <constraint firstItem="Q8u-BP-BJB" firstAttribute="width" secondItem="SHp-bt-Moh" secondAttribute="width" id="cJw-0p-2VR"/>
+                                            <constraint firstItem="Q8u-BP-BJB" firstAttribute="height" secondItem="oLn-zR-W4J" secondAttribute="height" id="ik4-KT-QTY"/>
+                                            <constraint firstItem="6dT-sG-0DS" firstAttribute="height" secondItem="SHp-bt-Moh" secondAttribute="height" id="iwx-0J-PMA"/>
+                                            <constraint firstItem="Q8u-BP-BJB" firstAttribute="height" secondItem="SHp-bt-Moh" secondAttribute="height" id="ky9-UM-zaj"/>
+                                            <constraint firstItem="ZGz-7V-ukg" firstAttribute="height" secondItem="oLn-zR-W4J" secondAttribute="height" id="pva-vK-Ixp"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="JED-Nx-RwE"/>
-                                                <exclude reference="W27-dn-FGa"/>
-                                                <exclude reference="b2i-o3-46s"/>
+                                                <exclude reference="9qg-B3-EEA"/>
+                                                <exclude reference="O5U-BP-78Y"/>
+                                                <exclude reference="1xm-kV-kut"/>
+                                                <exclude reference="iwx-0J-PMA"/>
+                                                <exclude reference="cJw-0p-2VR"/>
+                                                <exclude reference="ky9-UM-zaj"/>
                                             </mask>
                                         </variation>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BN5-em-EWI" customClass="CustomBackgroundView" customModule="MemorizeItForever">
-                                        <subviews>
-                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ZGz-7V-ukg" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" title="Add  New  Pharses"/>
-                                                <variation key="heightClass=compact-widthClass=compact">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                                </variation>
-                                                <variation key="heightClass=compact-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11.5"/>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                </variation>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="ZGz-7V-ukg" firstAttribute="width" secondItem="BN5-em-EWI" secondAttribute="width" multiplier="1/2" priority="750" id="1TY-QB-2hM"/>
-                                            <constraint firstItem="ZGz-7V-ukg" firstAttribute="height" secondItem="BN5-em-EWI" secondAttribute="height" priority="750" id="4hy-KT-SIs"/>
-                                            <constraint firstItem="ZGz-7V-ukg" firstAttribute="centerX" secondItem="BN5-em-EWI" secondAttribute="centerX" id="hJj-5a-aem"/>
-                                            <constraint firstItem="ZGz-7V-ukg" firstAttribute="centerY" secondItem="BN5-em-EWI" secondAttribute="centerY" id="kvZ-mZ-CXu"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="1TY-QB-2hM"/>
-                                                <exclude reference="4hy-KT-SIs"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HL0-lW-q8H" customClass="CustomBackgroundView" customModule="MemorizeItForever">
-                                        <subviews>
-                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Q8u-BP-BJB" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Q8u-BP-BJB" secondAttribute="height" multiplier="1:1" id="2aS-lQ-Lup"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" title="Pharses Management"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="2aS-lQ-Lup"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="heightClass=compact-widthClass=compact">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                                </variation>
-                                                <variation key="heightClass=compact-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11.5"/>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                </variation>
-                                            </button>
-                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="6dT-sG-0DS" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="6dT-sG-0DS" secondAttribute="height" multiplier="1:1" id="Eax-3V-syO"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" title="Sets Management"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="Eax-3V-syO"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="heightClass=compact-widthClass=compact">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                                </variation>
-                                                <variation key="heightClass=compact-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11.5"/>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                </variation>
-                                                <connections>
-                                                    <action selector="setAction:" destination="FwN-R0-hcu" eventType="touchUpInside" id="Rf4-wS-jvL"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Q8u-BP-BJB" firstAttribute="centerX" secondItem="HL0-lW-q8H" secondAttribute="centerX" multiplier="3/2" constant="4" id="1AF-xP-nUV"/>
-                                            <constraint firstItem="Q8u-BP-BJB" firstAttribute="height" secondItem="HL0-lW-q8H" secondAttribute="height" priority="750" id="43R-x2-gI6"/>
-                                            <constraint firstItem="Q8u-BP-BJB" firstAttribute="centerY" secondItem="HL0-lW-q8H" secondAttribute="centerY" id="AMR-4g-Mxl"/>
-                                            <constraint firstItem="6dT-sG-0DS" firstAttribute="width" secondItem="HL0-lW-q8H" secondAttribute="width" multiplier="1/2" priority="750" id="K6b-1I-IG0"/>
-                                            <constraint firstItem="6dT-sG-0DS" firstAttribute="height" secondItem="HL0-lW-q8H" secondAttribute="height" priority="750" id="Ufn-eY-g01"/>
-                                            <constraint firstItem="6dT-sG-0DS" firstAttribute="centerX" secondItem="HL0-lW-q8H" secondAttribute="centerX" multiplier="1/2" constant="-4" id="lgA-vw-lhw"/>
-                                            <constraint firstItem="6dT-sG-0DS" firstAttribute="centerY" secondItem="HL0-lW-q8H" secondAttribute="centerY" id="stR-yb-Ats"/>
-                                            <constraint firstItem="Q8u-BP-BJB" firstAttribute="width" secondItem="HL0-lW-q8H" secondAttribute="width" multiplier="1/2" priority="750" id="zSs-Vq-Ac3"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="K6b-1I-IG0"/>
-                                                <exclude reference="Ufn-eY-g01"/>
-                                                <exclude reference="43R-x2-gI6"/>
-                                                <exclude reference="zSs-Vq-Ac3"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="6dT-sG-0DS" firstAttribute="width" secondItem="SHp-bt-Moh" secondAttribute="width" id="1xm-kV-kut"/>
-                                    <constraint firstItem="Q8u-BP-BJB" firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="width" id="88r-HY-a5H"/>
-                                    <constraint firstItem="ZGz-7V-ukg" firstAttribute="width" secondItem="SHp-bt-Moh" secondAttribute="width" id="9qg-B3-EEA"/>
-                                    <constraint firstItem="6dT-sG-0DS" firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="width" id="E0y-Xo-5CJ"/>
-                                    <constraint firstItem="ZGz-7V-ukg" firstAttribute="height" secondItem="SHp-bt-Moh" secondAttribute="height" id="O5U-BP-78Y"/>
-                                    <constraint firstItem="ZGz-7V-ukg" firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="width" id="VFw-K0-hcY"/>
-                                    <constraint firstItem="6dT-sG-0DS" firstAttribute="height" secondItem="oLn-zR-W4J" secondAttribute="height" id="ZaQ-nh-7rg"/>
-                                    <constraint firstItem="Q8u-BP-BJB" firstAttribute="width" secondItem="SHp-bt-Moh" secondAttribute="width" id="cJw-0p-2VR"/>
-                                    <constraint firstItem="Q8u-BP-BJB" firstAttribute="height" secondItem="oLn-zR-W4J" secondAttribute="height" id="ik4-KT-QTY"/>
-                                    <constraint firstItem="6dT-sG-0DS" firstAttribute="height" secondItem="SHp-bt-Moh" secondAttribute="height" id="iwx-0J-PMA"/>
-                                    <constraint firstItem="Q8u-BP-BJB" firstAttribute="height" secondItem="SHp-bt-Moh" secondAttribute="height" id="ky9-UM-zaj"/>
-                                    <constraint firstItem="ZGz-7V-ukg" firstAttribute="height" secondItem="oLn-zR-W4J" secondAttribute="height" id="pva-vK-Ixp"/>
+                                    <constraint firstItem="TAw-Vl-GLc" firstAttribute="top" secondItem="9dR-GG-PLP" secondAttribute="top" id="A4s-MT-Hla"/>
+                                    <constraint firstAttribute="bottom" secondItem="TAw-Vl-GLc" secondAttribute="bottom" id="EdG-kr-jjA"/>
+                                    <constraint firstItem="TAw-Vl-GLc" firstAttribute="leading" secondItem="9dR-GG-PLP" secondAttribute="leading" id="GJF-cx-xqq"/>
+                                    <constraint firstAttribute="trailing" secondItem="TAw-Vl-GLc" secondAttribute="trailing" id="vu3-Yt-3Oc"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1xm-kV-kut"/>
-                                        <exclude reference="iwx-0J-PMA"/>
-                                        <exclude reference="cJw-0p-2VR"/>
-                                        <exclude reference="ky9-UM-zaj"/>
-                                        <exclude reference="9qg-B3-EEA"/>
-                                        <exclude reference="O5U-BP-78Y"/>
-                                    </mask>
-                                </variation>
-                            </stackView>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZp-KG-jpm">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvy-vc-sba">
+                                        <state key="normal" title="Change"/>
+                                        <connections>
+                                            <action selector="changeSetAction:" destination="FwN-R0-hcu" eventType="touchUpInside" id="D9Z-4b-Ako"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnI-7f-5WW" customClass="MISetView" customModule="MemorizeItForever" customModuleProvider="target"/>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.30177119006849318" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="RnI-7f-5WW" firstAttribute="top" secondItem="rZp-KG-jpm" secondAttribute="topMargin" id="EWh-Hp-bVD"/>
+                                    <constraint firstItem="RnI-7f-5WW" firstAttribute="bottom" secondItem="rZp-KG-jpm" secondAttribute="bottomMargin" id="ZUi-ey-naD"/>
+                                    <constraint firstItem="gvy-vc-sba" firstAttribute="leading" secondItem="RnI-7f-5WW" secondAttribute="trailing" id="bRX-SZ-3El"/>
+                                    <constraint firstItem="gvy-vc-sba" firstAttribute="centerX" secondItem="rZp-KG-jpm" secondAttribute="centerX" id="jvd-NI-z4h"/>
+                                    <constraint firstItem="RnI-7f-5WW" firstAttribute="leading" secondItem="rZp-KG-jpm" secondAttribute="leadingMargin" id="oeY-T1-uOj"/>
+                                    <constraint firstAttribute="height" constant="30" id="ryG-Io-cNm"/>
+                                    <constraint firstItem="gvy-vc-sba" firstAttribute="centerY" secondItem="rZp-KG-jpm" secondAttribute="centerY" id="vnX-vr-tvA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="wyA-E3-Hlq" firstAttribute="top" secondItem="TAw-Vl-GLc" secondAttribute="bottom" id="6cU-ch-ZOX"/>
-                            <constraint firstItem="TAw-Vl-GLc" firstAttribute="leading" secondItem="SVS-JA-D5F" secondAttribute="leadingMargin" id="7WB-Zm-fxm"/>
-                            <constraint firstItem="TAw-Vl-GLc" firstAttribute="top" secondItem="jwu-J1-o6P" secondAttribute="bottom" id="WoF-bL-nSC"/>
-                            <constraint firstItem="wyA-E3-Hlq" firstAttribute="top" secondItem="TAw-Vl-GLc" secondAttribute="bottom" id="hlM-FT-5qh"/>
-                            <constraint firstItem="TAw-Vl-GLc" firstAttribute="leading" secondItem="SVS-JA-D5F" secondAttribute="leading" id="jPg-0Z-Lex"/>
-                            <constraint firstItem="TAw-Vl-GLc" firstAttribute="top" secondItem="jwu-J1-o6P" secondAttribute="bottom" id="sJn-VY-T2t"/>
-                            <constraint firstAttribute="trailing" secondItem="TAw-Vl-GLc" secondAttribute="trailing" id="vkY-Hz-GP0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TAw-Vl-GLc" secondAttribute="trailing" id="xmr-YP-5lW"/>
+                            <constraint firstAttribute="trailing" secondItem="rZp-KG-jpm" secondAttribute="trailing" id="2oI-ke-iTK"/>
+                            <constraint firstItem="rZp-KG-jpm" firstAttribute="top" secondItem="9dR-GG-PLP" secondAttribute="bottom" id="2y3-Ly-6en"/>
+                            <constraint firstItem="rZp-KG-jpm" firstAttribute="leading" secondItem="SVS-JA-D5F" secondAttribute="leading" id="A01-fV-OaW"/>
+                            <constraint firstItem="9dR-GG-PLP" firstAttribute="leading" secondItem="SVS-JA-D5F" secondAttribute="leadingMargin" id="JnE-Ca-Waj"/>
+                            <constraint firstItem="9dR-GG-PLP" firstAttribute="top" secondItem="jwu-J1-o6P" secondAttribute="bottom" id="laQ-ui-KI6"/>
+                            <constraint firstItem="wyA-E3-Hlq" firstAttribute="top" secondItem="rZp-KG-jpm" secondAttribute="bottom" id="sRW-d7-eSM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9dR-GG-PLP" secondAttribute="trailing" id="t3g-yn-aEJ"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="jPg-0Z-Lex"/>
-                                <exclude reference="sJn-VY-T2t"/>
-                                <exclude reference="vkY-Hz-GP0"/>
-                                <exclude reference="6cU-ch-ZOX"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="MemorizeIt!" id="LFR-sb-oHv" userLabel="MemorizeIt!"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T98-OF-bo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-323" y="-572"/>
+            <point key="canvasLocation" x="-324" y="-572.56371814092961"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DMy-hS-Re1">

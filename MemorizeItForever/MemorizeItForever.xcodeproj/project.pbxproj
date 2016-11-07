@@ -37,6 +37,9 @@
 		4349EAB41DBE4BAE0097DABD /* SetTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */; };
 		435824D61DCE083B00842C73 /* MILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435824D51DCE083B00842C73 /* MILabel.swift */; };
 		435824D81DCE0D9500842C73 /* MISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435824D71DCE0D9500842C73 /* MISwitch.swift */; };
+		43687B701DD0AB2200E1EDB5 /* ChangeSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */; };
+		43687B721DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */; };
+		43687B741DD0AE0800E1EDB5 /* MITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B731DD0AE0800E1EDB5 /* MITableView.swift */; };
 		438651C71DC61607007BC89D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C61DC61607007BC89D /* UIViewControllerExtension.swift */; };
 		438651C91DC7426B007BC89D /* MICardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C81DC7426B007BC89D /* MICardView.swift */; };
 		438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */; };
@@ -119,6 +122,9 @@
 		4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSourceTests.swift; path = DataSourcesTests/SetTableDataSourceTests.swift; sourceTree = "<group>"; };
 		435824D51DCE083B00842C73 /* MILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MILabel.swift; path = PresentationLayer/VisualElements/MILabel.swift; sourceTree = "<group>"; };
 		435824D71DCE0D9500842C73 /* MISwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MISwitch.swift; path = PresentationLayer/VisualElements/MISwitch.swift; sourceTree = "<group>"; };
+		43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewController.swift; path = PresentationLayer/ViewControllers/Set/ChangeSetViewController.swift; sourceTree = "<group>"; };
+		43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSource.swift; path = PresentationLayer/ViewControllers/Set/ChangeSetTableDataSource.swift; sourceTree = "<group>"; };
+		43687B731DD0AE0800E1EDB5 /* MITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITableView.swift; path = PresentationLayer/VisualElements/MITableView.swift; sourceTree = "<group>"; };
 		438651C61DC61607007BC89D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = General/Extensions/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		438651C81DC7426B007BC89D /* MICardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardView.swift; path = PresentationLayer/VisualElements/MICardView.swift; sourceTree = "<group>"; };
 		438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceDelegateProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceDelegateProtocol.swift; sourceTree = "<group>"; };
@@ -191,6 +197,7 @@
 				435824D51DCE083B00842C73 /* MILabel.swift */,
 				435824D71DCE0D9500842C73 /* MISwitch.swift */,
 				4345C7AC1DCF4B45003808AD /* MISetView.swift */,
+				43687B731DD0AE0800E1EDB5 /* MITableView.swift */,
 			);
 			name = VisualElements;
 			sourceTree = "<group>";
@@ -211,6 +218,8 @@
 				432B75471DB37B41003C6574 /* SetItemViewController.swift */,
 				432B75481DB37B41003C6574 /* SetTableDataSource.swift */,
 				432B75491DB37B41003C6574 /* SetViewController.swift */,
+				43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */,
+				43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */,
 			);
 			name = Set;
 			sourceTree = "<group>";
@@ -513,13 +522,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43687B721DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift in Sources */,
 				432B754B1DB37B41003C6574 /* SetTableDataSource.swift in Sources */,
 				432B75511DB37B64003C6574 /* TabBarController.swift in Sources */,
 				4344DE6A1DC0EAE600FBA130 /* MICardViewLabel.swift in Sources */,
+				43687B701DD0AB2200E1EDB5 /* ChangeSetViewController.swift in Sources */,
 				4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */,
 				432B755F1DB37E82003C6574 /* Enum.swift in Sources */,
 				4345C7AD1DCF4B45003808AD /* MISetView.swift in Sources */,
 				438651C71DC61607007BC89D /* UIViewControllerExtension.swift in Sources */,
+				43687B741DD0AE0800E1EDB5 /* MITableView.swift in Sources */,
 				432B73431DB51E2200A76FC7 /* CustomBackgroundView.swift in Sources */,
 				432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */,
 				432B73411DB51C4B00A76FC7 /* NotificationCenterExtension.swift in Sources */,

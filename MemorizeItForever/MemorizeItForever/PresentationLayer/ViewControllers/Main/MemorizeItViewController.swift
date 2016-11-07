@@ -42,5 +42,10 @@ final class MemorizeItViewController: UIViewController {
     @IBAction func reviewPhraseAction(_ sender: AnyObject) {
         reviewPhraseTapped(sender)
     }
+    @IBAction func changeSetAction(_ sender: AnyObject) {
+        let changeSetViewController = ChangeSetViewController()
+        let contentSize = CGSize(width: self.view.frame.width  / 2, height: 250)
+        self.presentingPopover(changeSetViewController, sourceView: sender as! UIView, popoverArrowDirection: .any, contentSize: contentSize)
+    }
 
 }

@@ -85,7 +85,7 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
             edit()
         }
         self.dismiss(animated: true, completion: nil)
-        NotificationCenter.default.postNotification(.setViewControllerReload, object: nil)
+        NotificationCenter.default.post(.setViewControllerReload, object: nil)
     }
     
     func cancelAction(){
