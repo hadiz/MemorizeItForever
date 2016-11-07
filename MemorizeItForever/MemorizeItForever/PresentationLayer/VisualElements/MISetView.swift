@@ -23,6 +23,10 @@ final class MISetView: MIView {
         initialize()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func setFontSize(_ size: CGFloat){
         setFixed.font = setFixed.font.withSize(size)
         set.font = set.font.withSize(size)
