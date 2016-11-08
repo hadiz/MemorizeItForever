@@ -11,18 +11,18 @@ import XCTest
 
 class WordInProgressModelTests: XCTestCase {
     
-    var wordInProgress: WordInProgressModel?
-    var word: WordModel?
+    var wordInProgress: WordInProgressModel!
+    var word: WordModel!
     
     override func setUp() {
         super.setUp()
         
         word = WordModel()
-        word!.phrase = "book"
-        word!.meaning = "livre"
-        word!.wordId = UUID()
+        word.phrase = "book"
+        word.meaning = "livre"
+        word.wordId = UUID()
         wordInProgress = WordInProgressModel()
-        wordInProgress!.word = word
+        wordInProgress.word = word
     }
     
     override func tearDown() {
@@ -33,24 +33,24 @@ class WordInProgressModelTests: XCTestCase {
     }
     
     func testWordInProgressHasWord() {
-        XCTAssertEqual(wordInProgress!.word, self.word!, "WordInProgress should provide word ")
+        XCTAssertEqual(wordInProgress.word, self.word, "WordInProgress should provide word ")
     }
     
     func testWordInProgressHasDate() {
         let date = Date()
-        wordInProgress!.date = date
-        XCTAssertEqual(wordInProgress!.date, date, "WordInProgress should provide date field")
+        wordInProgress.date = date
+        XCTAssertEqual(wordInProgress.date, date, "WordInProgress should provide date field")
     }
     
     func testWordInProgressHasColumn() {
-        wordInProgress!.column = 1
-        XCTAssertEqual(wordInProgress!.column, 1, "WordInProgress should provide column field")
+        wordInProgress.column = 1
+        XCTAssertEqual(wordInProgress.column, 1, "WordInProgress should provide column field")
     }
     
     func testWordInProgressHasId(){
         let id = UUID()
-        wordInProgress!.wordInProgressId = id
-        XCTAssertEqual(wordInProgress!.wordInProgressId, id, "WordInProgress should provide wordInProgressId field")
+        wordInProgress.wordInProgressId = id
+        XCTAssertEqual(wordInProgress.wordInProgressId, id, "WordInProgress should provide wordInProgressId field")
     }
     
 }

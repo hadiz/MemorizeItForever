@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		431196D91DB3958100F7BE7F /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; };
 		431196DA1DB3958100F7BE7F /* MemorizeItForeverCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43262A411DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */; };
+		43262A431DD1CAC30029C27E /* ChangeSetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */; };
+		43262A451DD1EF380029C27E /* AddPhraseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A441DD1EF380029C27E /* AddPhraseViewControllerTests.swift */; };
+		43262A471DD1F1BE0029C27E /* ReviewPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A461DD1F1BE0029C27E /* ReviewPhraseViewController.swift */; };
+		43262A491DD1F1D60029C27E /* AddPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A481DD1F1D60029C27E /* AddPhraseViewController.swift */; };
+		43262A4B1DD2000D0029C27E /* VFLBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A4A1DD2000D0029C27E /* VFLBasedViewController.swift */; };
+		43262A4D1DD2071E0029C27E /* MITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A4C1DD2071E0029C27E /* MITextView.swift */; };
 		432B733E1DB5149B00A76FC7 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */; };
 		432B733F1DB5149B00A76FC7 /* BaseLocalDataAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		432B73411DB51C4B00A76FC7 /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B73401DB51C4B00A76FC7 /* NotificationCenterExtension.swift */; };
@@ -49,7 +56,6 @@
 		43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */; };
 		43F2179A1DBE509C0005BF26 /* FakeSetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217991DBE509C0005BF26 /* FakeSetTableDataSource.swift */; };
 		43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */; };
-		43F217D91DBF5AAF0005BF26 /* ReviewPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217D81DBF5AAF0005BF26 /* ReviewPhraseViewController.swift */; };
 		43F217DB1DBF8A770005BF26 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DA1DBF8A770005BF26 /* Enum.swift */; };
 		43F217DD1DBF9EAA0005BF26 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DC1DBF9EAA0005BF26 /* Helper.swift */; };
 /* End PBXBuildFile section */
@@ -88,6 +94,13 @@
 
 /* Begin PBXFileReference section */
 		431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSourceTests.swift; path = DataSourcesTests/ChangeSetTableDataSourceTests.swift; sourceTree = "<group>"; };
+		43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewControllerTests.swift; path = ViewControllersTests/ChangeSetViewControllerTests.swift; sourceTree = "<group>"; };
+		43262A441DD1EF380029C27E /* AddPhraseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPhraseViewControllerTests.swift; path = ViewControllersTests/AddPhraseViewControllerTests.swift; sourceTree = "<group>"; };
+		43262A461DD1F1BE0029C27E /* ReviewPhraseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewController.swift; path = PresentationLayer/ViewControllers/Phrase/ReviewPhraseViewController.swift; sourceTree = "<group>"; };
+		43262A481DD1F1D60029C27E /* AddPhraseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPhraseViewController.swift; path = PresentationLayer/ViewControllers/Phrase/AddPhraseViewController.swift; sourceTree = "<group>"; };
+		43262A4A1DD2000D0029C27E /* VFLBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VFLBasedViewController.swift; path = PresentationLayer/ViewControllers/Main/VFLBasedViewController.swift; sourceTree = "<group>"; };
+		43262A4C1DD2071E0029C27E /* MITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITextView.swift; path = PresentationLayer/VisualElements/MITextView.swift; sourceTree = "<group>"; };
 		432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = MemorizeItForever/Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
 		432B73401DB51C4B00A76FC7 /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationCenterExtension.swift; path = General/Extensions/NotificationCenterExtension.swift; sourceTree = "<group>"; };
 		432B73421DB51E2200A76FC7 /* CustomBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBackgroundView.swift; path = PresentationLayer/VisualElements/CustomBackgroundView.swift; sourceTree = "<group>"; };
@@ -134,7 +147,6 @@
 		43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetViewControllerTests.swift; path = ViewControllersTests/SetViewControllerTests.swift; sourceTree = "<group>"; };
 		43F217991DBE509C0005BF26 /* FakeSetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeSetTableDataSource.swift; path = General/FakeSetTableDataSource.swift; sourceTree = "<group>"; };
 		43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewControllerTests.swift; path = ViewControllersTests/ReviewPhraseViewControllerTests.swift; sourceTree = "<group>"; };
-		43F217D81DBF5AAF0005BF26 /* ReviewPhraseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewController.swift; path = PresentationLayer/ViewControllers/ReviewPhrase/ReviewPhraseViewController.swift; sourceTree = "<group>"; };
 		43F217DA1DBF8A770005BF26 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = General/Enum.swift; sourceTree = "<group>"; };
 		43F217DC1DBF9EAA0005BF26 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = General/Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +210,7 @@
 				435824D71DCE0D9500842C73 /* MISwitch.swift */,
 				4345C7AC1DCF4B45003808AD /* MISetView.swift */,
 				43687B731DD0AE0800E1EDB5 /* MITableView.swift */,
+				43262A4C1DD2071E0029C27E /* MITextView.swift */,
 			);
 			name = VisualElements;
 			sourceTree = "<group>";
@@ -205,7 +218,7 @@
 		432B75431DB37AA8003C6574 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				43F217D71DBF5A8E0005BF26 /* ReviewPhrase */,
+				43F217D71DBF5A8E0005BF26 /* Phrase */,
 				432B754D1DB37B4B003C6574 /* Main */,
 				432B75461DB37AE3003C6574 /* Set */,
 			);
@@ -229,6 +242,7 @@
 			children = (
 				432B754E1DB37B64003C6574 /* MemorizeItViewController.swift */,
 				432B754F1DB37B64003C6574 /* TabBarController.swift */,
+				43262A4A1DD2000D0029C27E /* VFLBasedViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -333,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */,
+				43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */,
 			);
 			name = DataSourcesTests;
 			sourceTree = "<group>";
@@ -370,16 +385,19 @@
 			children = (
 				43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */,
 				43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */,
+				43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */,
+				43262A441DD1EF380029C27E /* AddPhraseViewControllerTests.swift */,
 			);
 			name = ViewControllersTests;
 			sourceTree = "<group>";
 		};
-		43F217D71DBF5A8E0005BF26 /* ReviewPhrase */ = {
+		43F217D71DBF5A8E0005BF26 /* Phrase */ = {
 			isa = PBXGroup;
 			children = (
-				43F217D81DBF5AAF0005BF26 /* ReviewPhraseViewController.swift */,
+				43262A461DD1F1BE0029C27E /* ReviewPhraseViewController.swift */,
+				43262A481DD1F1D60029C27E /* AddPhraseViewController.swift */,
 			);
-			name = ReviewPhrase;
+			name = Phrase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,8 +541,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				43687B721DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift in Sources */,
+				43262A491DD1F1D60029C27E /* AddPhraseViewController.swift in Sources */,
 				432B754B1DB37B41003C6574 /* SetTableDataSource.swift in Sources */,
+				43262A4B1DD2000D0029C27E /* VFLBasedViewController.swift in Sources */,
 				432B75511DB37B64003C6574 /* TabBarController.swift in Sources */,
+				43262A4D1DD2071E0029C27E /* MITextView.swift in Sources */,
 				4344DE6A1DC0EAE600FBA130 /* MICardViewLabel.swift in Sources */,
 				43687B701DD0AB2200E1EDB5 /* ChangeSetViewController.swift in Sources */,
 				4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */,
@@ -542,13 +563,13 @@
 				432B754A1DB37B41003C6574 /* SetItemViewController.swift in Sources */,
 				438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */,
 				435824D61DCE083B00842C73 /* MILabel.swift in Sources */,
-				43F217D91DBF5AAF0005BF26 /* ReviewPhraseViewController.swift in Sources */,
 				4344DE661DC0DAB200FBA130 /* MITextField.swift in Sources */,
 				432B75501DB37B64003C6574 /* MemorizeItViewController.swift in Sources */,
 				43EE6CE01DC4E17A00873D18 /* MIView.swift in Sources */,
 				432B75641DB38DF9003C6574 /* UIColorExtension.swift in Sources */,
 				43434AFF1DB3676A0005B59F /* AppDelegate.swift in Sources */,
 				438651C91DC7426B007BC89D /* MICardView.swift in Sources */,
+				43262A471DD1F1BE0029C27E /* ReviewPhraseViewController.swift in Sources */,
 				432B75451DB37ABF003C6574 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,7 +579,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D217B61DBE4564007819A7 /* MockAppDelegate.swift in Sources */,
+				43262A411DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift in Sources */,
+				43262A451DD1EF380029C27E /* AddPhraseViewControllerTests.swift in Sources */,
 				43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */,
+				43262A431DD1CAC30029C27E /* ChangeSetViewControllerTests.swift in Sources */,
 				43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */,
 				4349EAB01DBE4B260097DABD /* ApplySettingsTests.swift in Sources */,
 				43F217DB1DBF8A770005BF26 /* Enum.swift in Sources */,

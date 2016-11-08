@@ -11,17 +11,17 @@ import XCTest
 
 class WordHistoryModelTests: XCTestCase {
     
-    var wordHistory: WordHistoryModel?
-    var word: WordModel?
+    var wordHistory: WordHistoryModel!
+    var word: WordModel!
     
     override func setUp() {
         super.setUp()
         
         word = WordModel()
-        word!.phrase = "book"
-        word!.meaning = "livre"
+        word.phrase = "book"
+        word.meaning = "livre"
         wordHistory = WordHistoryModel()
-        wordHistory!.word = word
+        wordHistory.word = word
     }
     
     override func tearDown() {
@@ -32,23 +32,23 @@ class WordHistoryModelTests: XCTestCase {
     }
     
     func testWordHistoryHasWord() {
-        XCTAssertEqual(wordHistory!.word, self.word!, "WordHistory should provide word field")
+        XCTAssertEqual(wordHistory.word, self.word, "WordHistory should provide word field")
     }
     
     func testWordHistoryHasColumnNo() {
-        wordHistory!.columnNo = 1
-        XCTAssertEqual(wordHistory!.columnNo,  1, "WordHistory should provide columnNo field")
+        wordHistory.columnNo = 1
+        XCTAssertEqual(wordHistory.columnNo,  1, "WordHistory should provide columnNo field")
     }
     
     func testWordHistoryHasFailCount() {
-        wordHistory!.failureCount = 1
-        XCTAssertEqual(wordHistory!.failureCount,  1, "WordHistory should provide failCount field")
+        wordHistory.failureCount = 1
+        XCTAssertEqual(wordHistory.failureCount,  1, "WordHistory should provide failCount field")
     }
     
     func testWordHistoryHasId(){
         let id = UUID()
-        wordHistory!.wordHistoryId = id
-        XCTAssertEqual(wordHistory!.wordHistoryId, id, "WordHistory should provide wordHistoryId field")
+        wordHistory.wordHistoryId = id
+        XCTAssertEqual(wordHistory.wordHistoryId, id, "WordHistory should provide wordHistoryId field")
     }
 
 }

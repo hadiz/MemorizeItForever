@@ -11,7 +11,7 @@ import MemorizeItForeverCore
 
 final class SetItemViewController: UIViewController, UIPopoverPresentationControllerDelegate {
 
-    private var setName: UITextField!
+    var setName: UITextField!
     
     var entityMode: EntityMode?
     var setModel: SetModel?

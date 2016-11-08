@@ -9,7 +9,6 @@
 import UIKit
 import MemorizeItForeverCore
 
-
 final class ChangeSetTableDataSource: NSObject, MemorizeItTableDataSourceProtocol {
     var setModels: [SetModel]?
     var handleTap: TypealiasHelper.handleTapClosure?

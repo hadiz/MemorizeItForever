@@ -1,8 +1,8 @@
 //
-//  SetTableDataSourceTests.swift
+//  ChangeSetTableDataSourceTests.swift
 //  MemorizeItForever
 //
-//  Created by Hadi Zamani on 10/24/16.
+//  Created by Hadi Zamani on 11/8/16.
 //  Copyright © 2016 SomeSimpleSolutions. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import XCTest
 import MemorizeItForeverCore
 @testable import MemorizeItForever
 
-class SetTableDataSourceTests: XCTestCase {
+class ChangeSetTableDataSourceTests: XCTestCase {
     
     var set: SetModel!
     var dataSource: MemorizeItTableDataSourceProtocol!
@@ -19,7 +19,7 @@ class SetTableDataSourceTests: XCTestCase {
     override func setUp() {
         super.setUp()
         set = SetModel(setId: UUID(), name: "Default")
-        dataSource = SetTableDataSource()
+        dataSource = ChangeSetTableDataSource()
         dataSource.setModels([set])
         firstItemIndex = IndexPath(item: 0, section: 0)
     }

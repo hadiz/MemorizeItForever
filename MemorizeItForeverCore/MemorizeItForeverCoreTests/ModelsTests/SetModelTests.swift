@@ -11,7 +11,7 @@ import XCTest
 
 class SetModelTests: XCTestCase {
     
-    var set: SetModel?
+    var set: SetModel!
     
     override func setUp() {
         super.setUp()
@@ -26,13 +26,13 @@ class SetModelTests: XCTestCase {
     
     func testSetHasSetId(){
         let id = UUID()
-        set!.setId = id
-        XCTAssertEqual(set!.setId, id, "Set should provide setId field")
+        set.setId = id
+        XCTAssertEqual(set.setId, id, "Set should provide setId field")
     }
     
     func testSetHasName(){
-        set!.name = "FrenchToEnglish"
-        XCTAssertEqual(set!.name, "FrenchToEnglish", "Set should provide name field")
+        set.name = "FrenchToEnglish"
+        XCTAssertEqual(set.name, "FrenchToEnglish", "Set should provide name field")
     }
     
 }

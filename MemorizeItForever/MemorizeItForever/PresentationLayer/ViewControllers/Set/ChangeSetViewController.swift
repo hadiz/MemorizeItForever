@@ -9,10 +9,10 @@
 import UIKit
 import MemorizeItForeverCore
 
-class ChangeSetViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentationControllerDelegate {
     
-    private var tableView: UITableView!
-    private var dataSource: MemorizeItTableDataSourceProtocol?
+    var tableView: UITableView!
+    var dataSource: MemorizeItTableDataSourceProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +31,10 @@ class ChangeSetViewController: UIViewController, UIPopoverPresentationController
     
     private func initializeViewController(){
         title = "Change Set"
-        defineControls()
-        addControls()
-        applyAutoLayout()
         fetchData()
     }
     
-    private func defineControls(){
+    override func defineControls(){
         tableView = MITableView()
         let weakSelf = self
         
@@ -50,16 +47,13 @@ class ChangeSetViewController: UIViewController, UIPopoverPresentationController
         tableView.delegate = dataSource
     }
     
-    private func addControls(){
+    override func addControls(){
         self.view.addSubview(tableView)
     }
     
-    private func applyAutoLayout(){
-        var viewDic: Dictionary<String,Any> = [:]
+    override func applyAutoLayout(){
         var constraintList: [NSLayoutConstraint] = []
-        
-        viewDic["topLayoutGuide"] = topLayoutGuide
-        viewDic["bottomLayoutGuide"] = bottomLayoutGuide
+
         viewDic["tableView"] = tableView
         
         let hTableViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[tableView]-|", options: [], metrics: nil, views: viewDic)

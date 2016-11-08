@@ -12,7 +12,7 @@ import CoreData
 
 class SetEntityTests: XCTestCase {
     
-    var managedObjectContext: NSManagedObjectContext?
+    var managedObjectContext: NSManagedObjectContext!
     
     override func setUp() {
         super.setUp()
@@ -27,17 +27,17 @@ class SetEntityTests: XCTestCase {
     }
     
     func testCreateANewObjectOfSetEntity() {
-        let entity = NSEntityDescription.insertNewObject(forEntityName: Entities.setEntity.rawValue, into: managedObjectContext!)
+        let entity = NSEntityDescription.insertNewObject(forEntityName: Entities.setEntity.rawValue, into: managedObjectContext)
         XCTAssertNotNil(entity, "Should be able to define a new set entity")
     }
     
     func testSaveANewSetEntity() {
         var result = false
-        if let entity = NSEntityDescription.insertNewObject(forEntityName: Entities.setEntity.rawValue, into: managedObjectContext!) as? SetEntity{
+        if let entity = NSEntityDescription.insertNewObject(forEntityName: Entities.setEntity.rawValue, into: managedObjectContext) as? SetEntity{
             entity.id = "1"
             entity.name = "set1"
             do{
-                try managedObjectContext?.save()
+                try managedObjectContext.save()
                 result = true
             }
             catch{
@@ -50,10 +50,10 @@ class SetEntityTests: XCTestCase {
     
     func testCouldNotSaveANewSetWithoutIdProperty() {
         var result = false
-        if let entity = NSEntityDescription.insertNewObject(forEntityName: Entities.setEntity.rawValue, into: managedObjectContext!) as? SetEntity{
+        if let entity = NSEntityDescription.insertNewObject(forEntityName: Entities.setEntity.rawValue, into: managedObjectContext) as? SetEntity{
             entity.name = "set1"
             do{
-                try managedObjectContext?.save()
+                try managedObjectContext.save()
                 result = true
             }
             catch{
@@ -64,10 +64,10 @@ class SetEntityTests: XCTestCase {
     }
     func testCouldNotSaveANewSetWithoutNameProperty() {
         var result = false
-        if let entity = NSEntityDescription.insertNewObject(forEntityName: Entities.setEntity.rawValue, into: managedObjectContext!) as? SetEntity{
+        if let entity = NSEntityDescription.insertNewObject(forEntityName: Entities.setEntity.rawValue, into: managedObjectContext) as? SetEntity{
             entity.id = "1"
             do{
-                try managedObjectContext?.save()
+                try managedObjectContext.save()
                 result = true
             }
             catch{
@@ -84,7 +84,7 @@ class SetEntityTests: XCTestCase {
             let fetchRequest = NSFetchRequest<SetEntity>(entityName: Entities.setEntity.rawValue)
             
             do{
-                let setEntities = try managedObjectContext!.fetch(fetchRequest)
+                let setEntities = try managedObjectContext.fetch(fetchRequest)
                     if setEntities.count > 0{
                         XCTAssertEqual(setEntities[0].name, "set1", "Should be able to fetch set entity")
                         result = true
@@ -105,12 +105,12 @@ class SetEntityTests: XCTestCase {
             let fetchRequest = NSFetchRequest<SetEntity>(entityName: Entities.setEntity.rawValue)
             
             do{
-                 let setEntities = try managedObjectContext!.fetch(fetchRequest)
+                 let setEntities = try managedObjectContext.fetch(fetchRequest)
                     if setEntities.count > 0{
                         let setEntity = setEntities[0]
                         setEntity.name = "Edited Set Entity"
                         do{
-                            try managedObjectContext?.save()
+                            try managedObjectContext.save()
                         }
                         catch{
                             result = false
@@ -125,7 +125,7 @@ class SetEntityTests: XCTestCase {
         let fetchRequest = NSFetchRequest<SetEntity>(entityName: Entities.setEntity.rawValue)
         
         do{
-            let setEntities = try managedObjectContext!.fetch(fetchRequest)
+            let setEntities = try managedObjectContext.fetch(fetchRequest)
                 if setEntities.count > 0{
                     XCTAssertEqual(setEntities[0].name, "Edited Set Entity", "Should be able to edit set entity")
                     result = true
@@ -146,13 +146,13 @@ class SetEntityTests: XCTestCase {
             let fetchRequest = NSFetchRequest<SetEntity>(entityName: Entities.setEntity.rawValue)
             
             do{
-                 let setEntities = try managedObjectContext!.fetch(fetchRequest)
+                 let setEntities = try managedObjectContext.fetch(fetchRequest)
                     if setEntities.count > 0{
                         let setEntity = setEntities[0]
-                        managedObjectContext?.delete(setEntity)
+                        managedObjectContext.delete(setEntity)
                         do{
-                            try managedObjectContext?.save()
-                            let setEntities2 = try managedObjectContext!.fetch(fetchRequest)
+                            try managedObjectContext.save()
+                            let setEntities2 = try managedObjectContext.fetch(fetchRequest)
                                 XCTAssertEqual(setEntities2.count, 0, "Should be able to delete set entity")
                                 result = setEntities2.count == 0
                         }
@@ -191,7 +191,7 @@ class SetEntityTests: XCTestCase {
     
     fileprivate func SaveSetEntity() -> (succcessful: Bool, entity: SetEntity?){
         let entityCreationHelper = EntityCreationHelper()
-        return entityCreationHelper.SaveSetEntity(managedObjectContext!)
+        return entityCreationHelper.SaveSetEntity(managedObjectContext)
     }
     
 }

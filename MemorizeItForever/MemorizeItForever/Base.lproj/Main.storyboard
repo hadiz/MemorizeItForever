@@ -48,7 +48,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="SHp-bt-Moh" secondAttribute="height" multiplier="1:1" id="3LX-Uk-6lY"/>
                                                         </constraints>
-                                                        <state key="normal" title="Test Yourself"/>
+                                                        <state key="normal" title="Take a Test"/>
                                                         <variation key="default">
                                                             <mask key="constraints">
                                                                 <exclude reference="3LX-Uk-6lY"/>
@@ -71,7 +71,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="height" multiplier="1:1" id="LZT-cj-bnY"/>
                                                         </constraints>
-                                                        <state key="normal" title="Review Pharses"/>
+                                                        <state key="normal" title="Review Pharse"/>
                                                         <variation key="heightClass=compact-widthClass=compact">
                                                             <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                         </variation>
@@ -114,7 +114,7 @@
                                                 <subviews>
                                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ZGz-7V-ukg" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <state key="normal" title="Add  New  Pharses"/>
+                                                        <state key="normal" title="Add  Pharse"/>
                                                         <variation key="heightClass=compact-widthClass=compact">
                                                             <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                         </variation>
@@ -149,7 +149,7 @@
                                                             <constraint firstAttribute="width" secondItem="Q8u-BP-BJB" secondAttribute="height" multiplier="1:1" id="2aS-lQ-Lup"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <state key="normal" title="Pharses Management"/>
+                                                        <state key="normal" title="Pharse Management"/>
                                                         <variation key="default">
                                                             <mask key="constraints">
                                                                 <exclude reference="2aS-lQ-Lup"/>
@@ -173,7 +173,7 @@
                                                             <constraint firstAttribute="width" secondItem="6dT-sG-0DS" secondAttribute="height" multiplier="1:1" id="Eax-3V-syO"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <state key="normal" title="Sets Management"/>
+                                                        <state key="normal" title="Set Management"/>
                                                         <variation key="default">
                                                             <mask key="constraints">
                                                                 <exclude reference="Eax-3V-syO"/>
@@ -232,12 +232,12 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="9qg-B3-EEA"/>
-                                                <exclude reference="O5U-BP-78Y"/>
                                                 <exclude reference="1xm-kV-kut"/>
                                                 <exclude reference="iwx-0J-PMA"/>
                                                 <exclude reference="cJw-0p-2VR"/>
                                                 <exclude reference="ky9-UM-zaj"/>
+                                                <exclude reference="9qg-B3-EEA"/>
+                                                <exclude reference="O5U-BP-78Y"/>
                                             </mask>
                                         </variation>
                                     </stackView>

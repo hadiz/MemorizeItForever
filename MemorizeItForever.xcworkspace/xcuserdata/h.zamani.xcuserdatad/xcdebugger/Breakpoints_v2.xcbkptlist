@@ -916,15 +916,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/ReviewPhraseViewControllerTests.swift"
-            timestampString = "499505126.861135"
+            timestampString = "500303482.366958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "mockDoneTapHandler()"
             landmarkType = "7">
          </BreakpointContent>
@@ -932,15 +932,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/ReviewPhraseViewControllerTests.swift"
-            timestampString = "499504796.582353"
+            timestampString = "500303482.366958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "tearDown()"
             landmarkType = "7">
          </BreakpointContent>
@@ -948,17 +948,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/ReviewPhraseViewControllerTests.swift"
-            timestampString = "499505152.20795"
+            timestampString = "500303482.366958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "testNextBarButtonTapHandled()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverTests.ReviewPhraseViewControllerTests.testNextBarButtonTapHandled () -&gt; ()"
+                  moduleName = "MemorizeItForeverTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/ReviewPhraseViewControllerTests.swift"
+                  timestampString = "500289466.211164"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1885">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverTests.ReviewPhraseViewControllerTests.(testNextBarButtonTapHandled () -&gt; ()).(implicit closure #2)"
+                  moduleName = "MemorizeItForeverTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/ReviewPhraseViewControllerTests.swift"
+                  timestampString = "500289466.213124"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverTests.ReviewPhraseViewControllerTests.(testNextBarButtonTapHandled () -&gt; ()).(implicit closure #3)"
+                  moduleName = "MemorizeItForeverTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/ReviewPhraseViewControllerTests.swift"
+                  timestampString = "500289466.215133"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1288,11 +1335,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/Set/ChangeSetViewController.swift"
-            timestampString = "500221834.902455"
+            timestampString = "500303169.794661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "didSelectSet(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1304,11 +1351,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/Set/ChangeSetViewController.swift"
-            timestampString = "500221863.331893"
+            timestampString = "500303169.794661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "defineControls()"
             landmarkType = "7">
             <Locations>
@@ -1352,11 +1399,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/Set/ChangeSetTableDataSource.swift"
-            timestampString = "500221880.274611"
+            timestampString = "500288548.675186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1368,11 +1415,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/Set/ChangeSetViewController.swift"
-            timestampString = "500221977.42019"
+            timestampString = "500303169.794661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "didSelectSet(_:)"
             landmarkType = "7">
             <Locations>
@@ -1407,6 +1454,38 @@
                   offsetFromSymbolStart = "817">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/ChangeSetViewControllerTests.swift"
+            timestampString = "500303418.672757"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "testChangeSetViewControllerHasATableView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/Main/VFLBasedViewController.swift"
+            timestampString = "500303206.385917"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

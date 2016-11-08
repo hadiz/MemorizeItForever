@@ -8,7 +8,7 @@
 import Foundation
 import BaseLocalDataAccess
 
-final class SetDataAccess: BaseDataAccess<SetEntity>  {
+class SetDataAccess: BaseDataAccess<SetEntity>  {
      func fetchSetNumber() throws -> Int {
         
         do{

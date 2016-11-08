@@ -12,13 +12,13 @@ import BaseLocalDataAccess
 
 class WordInProgressDataAccessTests: XCTestCase {
     
-    var wordInProgressDataAccess: WordInProgressDataAccess?
-    var context: ManagedObjectContextProtocol?
+    var wordInProgressDataAccess: WordInProgressDataAccess!
+    var context: ManagedObjectContextProtocol!
 
     override func setUp() {
         super.setUp()
         context = InMemoryManagedObjectContext()
-        wordInProgressDataAccess = FakeWordInProgressDataAccess(context: context!)
+        wordInProgressDataAccess = FakeWordInProgressDataAccess(context: context)
     }
     
     override func tearDown() {
@@ -28,13 +28,13 @@ class WordInProgressDataAccessTests: XCTestCase {
     }
     
     func testSaveWordInProgress(){
-        let word = newWordModel(context!)
+        let word = newWordModel(context)
         var inProgressModel = WordInProgressModel()
         inProgressModel.column = 0
         inProgressModel.date = Date()
         inProgressModel.word = word
         do{
-            try wordInProgressDataAccess?.save(inProgressModel)
+            try wordInProgressDataAccess.save(inProgressModel)
         }
         catch{
             XCTFail("should be able to save a wordInProgress")
@@ -42,15 +42,15 @@ class WordInProgressDataAccessTests: XCTestCase {
     }
     
     func testFetchWordInProgress() {
-        let word = newWordModel(context!)
+        let word = newWordModel(context)
         var inProgressModel = WordInProgressModel()
         inProgressModel.column = 0
         inProgressModel.date = Date()
         inProgressModel.word = word
         do{
-            try wordInProgressDataAccess?.save(inProgressModel)
-            let wordInProgresses = try wordInProgressDataAccess?.fetchAll()
-            XCTAssertEqual(wordInProgresses?.count, 1, "should be able to fetch wordInProgresses")
+            try wordInProgressDataAccess.save(inProgressModel)
+            let wordInProgresses = try wordInProgressDataAccess.fetchAll()
+            XCTAssertEqual(wordInProgresses.count, 1, "should be able to fetch wordInProgresses")
         }
         catch{
             XCTFail("should be able to fetch wordInProgresses")
@@ -58,20 +58,20 @@ class WordInProgressDataAccessTests: XCTestCase {
     }
     
     func testEditWordInProgress(){
-        let word = newWordModel(context!)
+        let word = newWordModel(context)
         var inProgressModel = WordInProgressModel()
         inProgressModel.column = 0
         inProgressModel.date = Date()
         inProgressModel.word = word
         do{
-            try wordInProgressDataAccess?.save(inProgressModel)
-            var wordInProgresses = try wordInProgressDataAccess?.fetchAll()[0]
-            wordInProgresses?.column = 2
-            wordInProgresses?.date = Date().addDay(4)
-            try wordInProgressDataAccess?.edit(wordInProgresses!)
-            let newWordInProgresses = try wordInProgressDataAccess?.fetchAll()[0]
-            XCTAssertEqual(newWordInProgresses!.column, 2, "should be able to edit the column field")
-            XCTAssertEqual(newWordInProgresses!.date!.equalToDateWithoutTime(Date().addDay(4)!), true, "should be able to edit the date field")
+            try wordInProgressDataAccess.save(inProgressModel)
+            var wordInProgresses = try wordInProgressDataAccess.fetchAll()[0]
+            wordInProgresses.column = 2
+            wordInProgresses.date = Date().addDay(4)
+            try wordInProgressDataAccess.edit(wordInProgresses)
+            let newWordInProgresses = try wordInProgressDataAccess.fetchAll()[0]
+            XCTAssertEqual(newWordInProgresses.column, 2, "should be able to edit the column field")
+            XCTAssertEqual(newWordInProgresses.date!.equalToDateWithoutTime(Date().addDay(4)!), true, "should be able to edit the date field")
         }
         catch{
             XCTFail("should be able to edit a wordInProgress")
@@ -80,19 +80,19 @@ class WordInProgressDataAccessTests: XCTestCase {
     
     func testDeleteWordInProgresses(){
         do{
-            let word = newWordModel(context!)
+            let word = newWordModel(context)
             var inProgressModel = WordInProgressModel()
             inProgressModel.column = 0
             inProgressModel.date = Date()
             inProgressModel.word = word
-            try wordInProgressDataAccess?.save(inProgressModel)
+            try wordInProgressDataAccess.save(inProgressModel)
             
-            var wordInProgresses = try wordInProgressDataAccess?.fetchAll()
+            var wordInProgresses = try wordInProgressDataAccess.fetchAll()
             
-            try wordInProgressDataAccess!.delete(wordInProgresses![0])
-            let newWordInProgresses = try wordInProgressDataAccess?.fetchAll()
+            try wordInProgressDataAccess.delete(wordInProgresses[0])
+            let newWordInProgresses = try wordInProgressDataAccess.fetchAll()
             
-            XCTAssertEqual(newWordInProgresses!.count, 0, "Should be able to delete a wordInProgresses")
+            XCTAssertEqual(newWordInProgresses.count, 0, "Should be able to delete a wordInProgresses")
         }
         catch{
             XCTFail("Should be able to delete a InProgresses")

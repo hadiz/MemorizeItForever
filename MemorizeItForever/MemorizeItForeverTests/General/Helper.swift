@@ -8,6 +8,8 @@
 
 import Foundation
 
+var key = 0
+
 class Helper {
     static func methodSwizzling(_ cls: Swift.AnyClass!, origin: Selector!, swizzled: Selector!){
         let originalMethod = class_getInstanceMethod(cls, origin)

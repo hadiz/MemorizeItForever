@@ -12,7 +12,7 @@ import CoreData
 
 class WordEntityTests: XCTestCase {
     
-    var managedObjectContext: NSManagedObjectContext?
+    var managedObjectContext: NSManagedObjectContext!
     
     override func setUp() {
         super.setUp()
@@ -25,21 +25,21 @@ class WordEntityTests: XCTestCase {
     }
     
     func testCreateANewObjectOfWordEntity() {
-        let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext!)
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext)
         XCTAssertNotNil(entity, "should be able to define a new Word entity")
     }
     
     func testSaveANewWordEntity() {
         var result = false
         if let setEntity = SaveSetEntity().entity{
-            if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext!) as? WordEntity{
+            if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext) as? WordEntity{
                 entity.id = "1"
                 entity.meaning = "book"
                 entity.order = 1
                 entity.phrase = "livre"
                 entity.set = setEntity
                 do{
-                    try managedObjectContext?.save()
+                    try managedObjectContext.save()
                     result = true
                 }
                 catch {
@@ -53,13 +53,13 @@ class WordEntityTests: XCTestCase {
     func testCouldNotSaveANewWordWithoutIdProperty() {
         var result = false
         if let setEntity = SaveSetEntity().entity{
-            if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext!) as? WordEntity{
+            if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext) as? WordEntity{
                 entity.meaning = "book"
                 entity.order = 1
                 entity.phrase = "livre"
                 entity.set = setEntity
                 do{
-                    try managedObjectContext?.save()
+                    try managedObjectContext.save()
                     result = true
                 }
                 catch{
@@ -73,13 +73,13 @@ class WordEntityTests: XCTestCase {
     func testCouldNotSaveANewWordWithoutMeaningProperty() {
         var result = false
         if let setEntity = SaveSetEntity().entity{
-            if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext!) as? WordEntity{
+            if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext) as? WordEntity{
                 entity.id = "1"
                 entity.order = 1
                 entity.phrase = "livre"
                 entity.set = setEntity
                 do{
-                    try managedObjectContext?.save()
+                    try managedObjectContext.save()
                     result = true
                 }
                 catch{
@@ -93,13 +93,13 @@ class WordEntityTests: XCTestCase {
     func testCouldNotSaveANewWordWithoutOrderProperty() {
         var result = false
         if let setEntity = SaveSetEntity().entity{
-            if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext!) as? WordEntity{
+            if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext) as? WordEntity{
                 entity.id = "1"
                 entity.meaning = "book"
                 entity.phrase = "livre"
                 entity.set = setEntity
                 do{
-                    try managedObjectContext?.save()
+                    try managedObjectContext.save()
                     result = true
                 }
                 catch{
@@ -113,13 +113,13 @@ class WordEntityTests: XCTestCase {
     func testCouldNotSaveANewWordWithoutPhraseProperty() {
         var result = false
         if let setEntity = SaveSetEntity().entity{
-            if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext!) as? WordEntity{
+            if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext) as? WordEntity{
                 entity.id = "1"
                 entity.meaning = "book"
                 entity.order = 1
                 entity.set = setEntity
                 do{
-                    try managedObjectContext?.save()
+                    try managedObjectContext.save()
                     result = true
                 }
                 catch{
@@ -132,13 +132,13 @@ class WordEntityTests: XCTestCase {
     
     func testCouldNotSaveANewWordWithoutSetProperty() {
         var result = false
-        if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext!) as? WordEntity{
+        if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContext) as? WordEntity{
             entity.id = "1"
             entity.meaning = "book"
             entity.order = 1
             entity.phrase = "livre"
             do{
-                try managedObjectContext?.save()
+                try managedObjectContext.save()
                 result = true
             }
             catch{
@@ -155,7 +155,7 @@ class WordEntityTests: XCTestCase {
             let fetchRequest = NSFetchRequest<WordEntity>(entityName: "WordEntity")
             
             do{
-                 let wordEntities = try managedObjectContext!.fetch(fetchRequest)
+                 let wordEntities = try managedObjectContext.fetch(fetchRequest)
                     if wordEntities.count > 0{
                         XCTAssertEqual(wordEntities[0].phrase, "livre", "Should be able to fetch word Entity")
                         result = true
@@ -177,12 +177,12 @@ class WordEntityTests: XCTestCase {
             let fetchRequest = NSFetchRequest<WordEntity>(entityName: "WordEntity")
             
             do{
-                 let wordEntities = try managedObjectContext!.fetch(fetchRequest)
+                 let wordEntities = try managedObjectContext.fetch(fetchRequest)
                     if wordEntities.count > 0{
                         let wordEntity = wordEntities[0]
                         wordEntity.phrase = "Edited word Entity"
                         do{
-                            try managedObjectContext?.save()
+                            try managedObjectContext.save()
                             result = true
                         }
                         catch{
@@ -199,7 +199,7 @@ class WordEntityTests: XCTestCase {
         let fetchRequest = NSFetchRequest<WordEntity>(entityName: "WordEntity")
         
         do{
-            let wordEntities = try managedObjectContext!.fetch(fetchRequest)
+            let wordEntities = try managedObjectContext.fetch(fetchRequest)
                 if wordEntities.count > 0{
                     XCTAssertEqual(wordEntities[0].phrase, "Edited word Entity", "Should be able to edit Word Entity")
                     result = true
@@ -222,7 +222,7 @@ class WordEntityTests: XCTestCase {
             let fetchRequest = NSFetchRequest<WordEntity>(entityName: "WordEntity")
             
             do{
-                let wordEntities = try managedObjectContext!.fetch(fetchRequest)
+                let wordEntities = try managedObjectContext.fetch(fetchRequest)
                     if wordEntities.count > 0{
                         let wordEntity = wordEntities[0]
                         XCTAssertEqual(wordEntity.status, WordStatus.notStarted.rawValue, "Status field should have a default value NotStarted")
@@ -244,12 +244,12 @@ class WordEntityTests: XCTestCase {
             let fetchRequest = NSFetchRequest<WordEntity>(entityName: "WordEntity")
             
             do{
-                let wordEntities = try managedObjectContext!.fetch(fetchRequest)
+                let wordEntities = try managedObjectContext.fetch(fetchRequest)
                     if wordEntities.count > 0{
                         let wordEntity = wordEntities[0]
                         wordEntity.status = WordStatus.inProgress.rawValue
                         do{
-                            try managedObjectContext?.save()
+                            try managedObjectContext.save()
                             result = true
                         }
                         catch{
@@ -265,7 +265,7 @@ class WordEntityTests: XCTestCase {
         let fetchRequest = NSFetchRequest<WordEntity>(entityName: "WordEntity")
         
         do{
-            let wordEntities = try managedObjectContext!.fetch(fetchRequest)
+            let wordEntities = try managedObjectContext.fetch(fetchRequest)
                 if wordEntities.count > 0{
                     XCTAssertEqual(wordEntities[0].status, WordStatus.inProgress.rawValue, "Should be able to edit status field property")
                     result = true
@@ -287,13 +287,13 @@ class WordEntityTests: XCTestCase {
             let fetchRequest = NSFetchRequest<WordEntity>(entityName: "WordEntity")
             
             do{
-                let wordEntities = try managedObjectContext!.fetch(fetchRequest)
+                let wordEntities = try managedObjectContext.fetch(fetchRequest)
                     if wordEntities.count > 0{
                         let wordEntity = wordEntities[0]
-                        managedObjectContext?.delete(wordEntity)
+                        managedObjectContext.delete(wordEntity)
                         do{
-                            try managedObjectContext?.save()
-                            let wordEntities2 = try managedObjectContext!.fetch(fetchRequest)
+                            try managedObjectContext.save()
+                            let wordEntities2 = try managedObjectContext.fetch(fetchRequest)
                                 XCTAssertEqual(wordEntities2.count, 0, "Should be able to delete a Word entity")
                                 result = wordEntities2.count == 0
                         }
@@ -336,12 +336,12 @@ class WordEntityTests: XCTestCase {
     
     fileprivate func SaveSetEntity() -> (succcessful: Bool, entity: SetEntity?){
         let entityCreationHelper = EntityCreationHelper()
-        return entityCreationHelper.SaveSetEntity(managedObjectContext!)
+        return entityCreationHelper.SaveSetEntity(managedObjectContext)
     }
     
     fileprivate func SaveWordEntity() -> (succcessful: Bool, entity: WordEntity?){
         let entityCreationHelper = EntityCreationHelper()
-        return entityCreationHelper.SaveWordEntity(managedObjectContext!)
+        return entityCreationHelper.SaveWordEntity(managedObjectContext)
     }
     
 }

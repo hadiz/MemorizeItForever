@@ -12,3 +12,8 @@ enum ReviewPhraseViewControllerEnum {
     case flipButtonTap
     case doneButtonTap
 }
+
+enum AddPhraseViewControllerEnum {
+    case doneBarButtonTap
+    case nextBarButtonTap
+}

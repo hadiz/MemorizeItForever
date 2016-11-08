@@ -12,13 +12,13 @@ import BaseLocalDataAccess
 
 class WordHistoryDataAccessTests: XCTestCase {
     
-    var wordHistoryDataAccess: WordHistoryDataAccess?
-    var context: ManagedObjectContextProtocol?
+    var wordHistoryDataAccess: WordHistoryDataAccess!
+    var context: ManagedObjectContextProtocol!
     
     override func setUp() {
         super.setUp()
         context = InMemoryManagedObjectContext()
-        wordHistoryDataAccess = FakeWordHistoryDataAccess(context: context!)
+        wordHistoryDataAccess = FakeWordHistoryDataAccess(context: context)
     }
     
     override func tearDown() {
@@ -28,13 +28,13 @@ class WordHistoryDataAccessTests: XCTestCase {
     }
     
     func testSaveWordHistory(){
-        let word = newWordModel(context!)
+        let word = newWordModel(context)
         var historyModel = WordHistoryModel()
         historyModel.columnNo = 3
         historyModel.failureCount = 1
         historyModel.word = word
         do{
-            try wordHistoryDataAccess?.saveOrUpdate(historyModel)
+            try wordHistoryDataAccess.saveOrUpdate(historyModel)
         }
         catch{
             XCTFail("should be able to save a wordHistory")
@@ -42,13 +42,13 @@ class WordHistoryDataAccessTests: XCTestCase {
     }
     
     func testFetchWordHistoryByWordIdAndColumnNo(){
-        let word = newWordModel(context!)
+        let word = newWordModel(context)
         var historyModel = WordHistoryModel()
         historyModel.columnNo = 3
         historyModel.word = word
         do{
-            try wordHistoryDataAccess?.saveOrUpdate(historyModel)
-            let newHistoryModels = try wordHistoryDataAccess!.fetchByWordId(historyModel)
+            try wordHistoryDataAccess.saveOrUpdate(historyModel)
+            let newHistoryModels = try wordHistoryDataAccess.fetchByWordId(historyModel)
             XCTAssertEqual(newHistoryModels[0].columnNo, 3, "columnNo should be the given data(here is 3)")
             XCTAssertEqual(newHistoryModels[0].failureCount, 1, "failureCount should be the given data(here is 1)")
         }
@@ -58,14 +58,14 @@ class WordHistoryDataAccessTests: XCTestCase {
     }
     
     func testSaveIncrementFailureCountWordHistory(){
-        let word = newWordModel(context!)
+        let word = newWordModel(context)
         var historyModel = WordHistoryModel()
         historyModel.columnNo = 3
         historyModel.word = word
         do{
-            try wordHistoryDataAccess?.saveOrUpdate(historyModel)
-            try wordHistoryDataAccess?.saveOrUpdate(historyModel)
-            let newHistoryModels = try wordHistoryDataAccess!.fetchByWordId(historyModel)
+            try wordHistoryDataAccess.saveOrUpdate(historyModel)
+            try wordHistoryDataAccess.saveOrUpdate(historyModel)
+            let newHistoryModels = try wordHistoryDataAccess.fetchByWordId(historyModel)
             XCTAssertEqual(newHistoryModels[0].columnNo, 3, "columnNo should be the given data(here is 3)")
             XCTAssertEqual(newHistoryModels[0].failureCount, 2, "failureCount should be the given data(here is 2)")
         }

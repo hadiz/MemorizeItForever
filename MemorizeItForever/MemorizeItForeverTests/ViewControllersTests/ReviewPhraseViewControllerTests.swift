@@ -11,26 +11,27 @@ import XCTest
 
 class ReviewPhraseViewControllerTests: XCTestCase {
     
-    var reviewPhraseViewController: ReviewPhraseViewController?
+    var reviewPhraseViewController: ReviewPhraseViewController!
     
     override func setUp() {
         super.setUp()
         reviewPhraseViewController = ReviewPhraseViewController()
+        _ = reviewPhraseViewController.view
     }
     
     override func tearDown() {
-        reviewPhraseViewController = nil
+        objc_removeAssociatedObjects(reviewPhraseViewController)
         super.tearDown()
     }
     
     func testHasTitle() {
-        reviewPhraseViewController?.viewDidLoad()
-        XCTAssertEqual(reviewPhraseViewController?.title, "Review Phrases","View controller should have a title")
+        reviewPhraseViewController.viewDidLoad()
+        XCTAssertEqual(reviewPhraseViewController.title, "Review Phrases","View controller should have a title")
     }
     
     func testHasPreviousbarButton() {
-        reviewPhraseViewController?.viewDidLoad()
-        let previousBarButton = reviewPhraseViewController?.navigationItem.leftBarButtonItem
+        reviewPhraseViewController.viewDidLoad()
+        let previousBarButton = reviewPhraseViewController.navigationItem.leftBarButtonItem
         XCTAssertEqual(previousBarButton?.title, "Previous","View controller should have a left bar button titled 'Previous'")
     }
     
@@ -41,16 +42,16 @@ class ReviewPhraseViewControllerTests: XCTestCase {
 
         Helper.methodSwizzling(ReviewPhraseViewController.self, origin: originalSelector, swizzled: swizzledSelector)
         
-        reviewPhraseViewController?.viewDidLoad()
-        let previousBarButton = reviewPhraseViewController?.navigationItem.leftBarButtonItem
+        reviewPhraseViewController.viewDidLoad()
+        let previousBarButton = reviewPhraseViewController.navigationItem.leftBarButtonItem
         UIApplication.shared.sendAction(previousBarButton!.action!, to: previousBarButton!.target, from: self, for: nil)
         let result = objc_getAssociatedObject(reviewPhraseViewController, &key) as! ReviewPhraseViewControllerEnum
         XCTAssertEqual(result, .previousBarButtonTap,"should handle previous bar button item tap")
     }
     
     func testHasNextBarButton() {
-        reviewPhraseViewController?.viewDidLoad()
-        let nextBarButton = reviewPhraseViewController?.navigationItem.rightBarButtonItem
+        reviewPhraseViewController.viewDidLoad()
+        let nextBarButton = reviewPhraseViewController.navigationItem.rightBarButtonItem
         XCTAssertEqual(nextBarButton?.title, "Next","View controller should have a right bar button titled 'Next'")
     }
 
@@ -61,28 +62,28 @@ class ReviewPhraseViewControllerTests: XCTestCase {
         
         Helper.methodSwizzling(ReviewPhraseViewController.self, origin: originalSelector, swizzled: swizzledSelector)
         
-        reviewPhraseViewController?.viewDidLoad()
-        let nextBarButton = reviewPhraseViewController?.navigationItem.rightBarButtonItem
+        reviewPhraseViewController.viewDidLoad()
+        let nextBarButton = reviewPhraseViewController.navigationItem.rightBarButtonItem
         UIApplication.shared.sendAction(nextBarButton!.action!, to: nextBarButton!.target, from: self, for: nil)
         let result = objc_getAssociatedObject(reviewPhraseViewController, &key) as! ReviewPhraseViewControllerEnum
         XCTAssertEqual(result, .nextBarButtonTap ,"should handle next bar button item tap")
     }
     
-    func testHasPhraseLabel() {
-        reviewPhraseViewController?.viewDidLoad()
-        reviewPhraseViewController?.phrase?.text = "Book"
-        XCTAssertEqual(reviewPhraseViewController?.phrase?.text, "Book","View controller should have a phrase label")
+    func testHasCounterLable() {
+        reviewPhraseViewController.viewDidLoad()
+        reviewPhraseViewController.counter?.text = "1 / 5"
+        XCTAssertEqual(reviewPhraseViewController.counter?.text, "1 / 5","View controller should have a phrase label")
     }
     
-    func testHasMeaningLabel() {
-        reviewPhraseViewController?.viewDidLoad()
-        reviewPhraseViewController?.meaning?.text = "Livre"
-        XCTAssertEqual(reviewPhraseViewController?.meaning?.text, "Livre","View controller should have a phrase label")
+    func testHasSwitchTextLabel() {
+        reviewPhraseViewController.viewDidLoad()
+        reviewPhraseViewController.switchText?.text = "Show Back"
+        XCTAssertEqual(reviewPhraseViewController.switchText?.text, "Show Back","View controller should have a phrase label")
     }
-    
+
     func testHasFlipButton() {
-        reviewPhraseViewController?.viewDidLoad()
-        XCTAssertEqual(reviewPhraseViewController?.flip?.titleLabel?.text, "Flip!","View controller should have a flip button")
+        reviewPhraseViewController.viewDidLoad()
+        XCTAssertEqual(reviewPhraseViewController.flip?.titleLabel?.text, "Flip","View controller should have a flip button")
     }
     
     func testFlipButtonTapHandled() {
@@ -92,15 +93,15 @@ class ReviewPhraseViewControllerTests: XCTestCase {
         
         Helper.methodSwizzling(ReviewPhraseViewController.self, origin: originalSelector, swizzled: swizzledSelector)
         
-        reviewPhraseViewController?.viewDidLoad()
-        reviewPhraseViewController?.flip?.sendActions(for: .touchUpInside)
+        reviewPhraseViewController.viewDidLoad()
+        reviewPhraseViewController.flip?.sendActions(for: .touchUpInside)
         let result = objc_getAssociatedObject(reviewPhraseViewController, &key) as! ReviewPhraseViewControllerEnum
         XCTAssertEqual(result, .flipButtonTap ,"should handle flip button tap")
     }
     
     func testHasDoneButton() {
-        reviewPhraseViewController?.viewDidLoad()
-        XCTAssertEqual(reviewPhraseViewController?.done?.titleLabel?.text, "Done","View controller should have a done button")
+        reviewPhraseViewController.viewDidLoad()
+        XCTAssertEqual(reviewPhraseViewController.done?.titleLabel?.text, "Done","View controller should have a done button")
     }
     
     func testDoneButtonTapHandled() {
@@ -110,14 +111,14 @@ class ReviewPhraseViewControllerTests: XCTestCase {
         
         Helper.methodSwizzling(ReviewPhraseViewController.self, origin: originalSelector, swizzled: swizzledSelector)
         
-        reviewPhraseViewController?.viewDidLoad()
-        reviewPhraseViewController?.done?.sendActions(for: .touchUpInside)
+        reviewPhraseViewController.viewDidLoad()
+        reviewPhraseViewController.done?.sendActions(for: .touchUpInside)
         let result = objc_getAssociatedObject(reviewPhraseViewController, &key) as! ReviewPhraseViewControllerEnum
         XCTAssertEqual(result, .doneButtonTap ,"should handle done button tap")
     }
 
 }
-var key = 0
+
 extension ReviewPhraseViewController{
     func mockPreviousbarButtonTapHandler(){
         objc_setAssociatedObject(self, &key, ReviewPhraseViewControllerEnum.previousBarButtonTap, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
