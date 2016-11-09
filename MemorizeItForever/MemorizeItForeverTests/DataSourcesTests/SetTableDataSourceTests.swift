@@ -18,7 +18,9 @@ class SetTableDataSourceTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        set = SetModel(setId: UUID(), name: "Default")
+        set = SetModel()
+        set.setId = UUID()
+        set.name = "Default"
         dataSource = SetTableDataSource()
         dataSource.setModels([set])
         firstItemIndex = IndexPath(item: 0, section: 0)
@@ -37,8 +39,12 @@ class SetTableDataSourceTests: XCTestCase {
     }
     
     func testReturnTwoRowForTwoSets(){
-        let set = SetModel(setId: UUID(), name: "Default")
-        let set2 = SetModel(setId: UUID(), name: "Default2")
+        var set = SetModel()
+        set.setId = UUID()
+        set.name = "Default"
+        var set2 = SetModel()
+        set2.setId = UUID()
+        set2.name = "Default2"
         dataSource.setModels([set, set2])
         let numberOfRows = dataSource.tableView(UITableView(), numberOfRowsInSection: 0)
         XCTAssertEqual(numberOfRows, 2, "It should Just 2 row in tableView because we have just 2 sets")

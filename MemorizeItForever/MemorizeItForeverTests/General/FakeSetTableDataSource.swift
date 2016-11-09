@@ -30,7 +30,10 @@ class FakeSetTableDataSource: NSObject, MemorizeItTableDataSourceProtocol{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        handleTap!(SetModel(setId: UUID(), name: "Default"))
+        var setModel = SetModel()
+        setModel.setId = UUID()
+        setModel.name = "Default"
+        handleTap!(setModel)
     }
     
 }

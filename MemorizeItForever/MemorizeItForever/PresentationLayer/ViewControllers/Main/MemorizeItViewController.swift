@@ -34,7 +34,17 @@ final class MemorizeItViewController: UIViewController {
         self.presentingPopover(reviewPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }
     
+    private func changeSetTapped(_ sender: AnyObject){
+        let changeSetViewController = ChangeSetViewController()
+        let contentSize = CGSize(width: self.view.frame.width  / 2, height: 250)
+        self.presentingPopover(changeSetViewController, sourceView: sender as! UIView, popoverArrowDirection: .any, contentSize: contentSize)
+    }
     
+    private func addPhraseTapped(_ sender: AnyObject){
+        let addPhraseViewController = AddPhraseViewController()
+        let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
+        self.presentingPopover(addPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
+    }
     
     @IBAction func setAction(_ sender: AnyObject) {
         setTapped(sender)
@@ -43,9 +53,11 @@ final class MemorizeItViewController: UIViewController {
         reviewPhraseTapped(sender)
     }
     @IBAction func changeSetAction(_ sender: AnyObject) {
-        let changeSetViewController = ChangeSetViewController()
-        let contentSize = CGSize(width: self.view.frame.width  / 2, height: 250)
-        self.presentingPopover(changeSetViewController, sourceView: sender as! UIView, popoverArrowDirection: .any, contentSize: contentSize)
+        changeSetTapped(sender)
+    }
+    
+    @IBAction func addPhraseAction(_ sender: AnyObject) {
+        addPhraseTapped(sender)
     }
 
 }

@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class AddPhraseViewController: VFLBasedViewController {
+final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentationControllerDelegate {
 
     var desc: UILabel!
-    var phrase: UITextView!
+    var phrase: MITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ final class AddPhraseViewController: VFLBasedViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(AddPhraseViewController.nextBarButtonTapHandler))
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -33,7 +33,10 @@ final class AddPhraseViewController: VFLBasedViewController {
     }
     
     func nextBarButtonTapHandler(){
-        
+       let result = phrase.validate { () -> Bool in
+            !phrase.text.isEmpty
+        }
+        print(result)
     }
     
     override func defineControls(){
@@ -41,6 +44,10 @@ final class AddPhraseViewController: VFLBasedViewController {
         desc.text = "Write the Phrase here"
         
         phrase = MITextView()
+        phrase.layer.borderColor = UIColor.lightGray.cgColor
+        phrase.layer.borderWidth = 1.0
+        phrase.layer.cornerRadius = 20.0
+        phrase.alpha = 0.7
     }
     
      override func addControls(){
@@ -52,20 +59,24 @@ final class AddPhraseViewController: VFLBasedViewController {
         var constraintList: [NSLayoutConstraint] = []
         
         viewDic["desc"] = desc
-        viewDic["phrase"] = desc
+        viewDic["phrase"] = phrase
         
         let hDescCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[desc]", options: [], metrics: nil, views: viewDic)
-        let vDescCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[desc(21.5)]", options: [], metrics: nil, views: viewDic)
+        let vDescCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[desc(21.5)]-[phrase]-30-[bottomLayoutGuide]", options: [], metrics: nil, views: viewDic)
         
         let hPhraseCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[phrase]-|", options: [], metrics: nil, views: viewDic)
-        let vPhraseCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[desc]-[phrase]-[bottomLayoutGuide]", options: [], metrics: nil, views: viewDic)
+
 
         constraintList += hDescCnst
         constraintList += vDescCnst
         
         constraintList += hPhraseCnst
-        constraintList += vPhraseCnst
         
          NSLayoutConstraint.activate(constraintList)
     }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
 }
+

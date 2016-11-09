@@ -22,4 +22,17 @@ final class MITextView: UITextView {
     private func initialize(){
         self.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    func validate(validation: () -> Bool) -> Bool{
+        if validation(){
+        
+            return true
+        }
+        else{
+            self.layer.borderColor = UIColor.red.cgColor
+            self.layer.borderWidth = 3.0
+            return false
+        }
+        
+    }
 }

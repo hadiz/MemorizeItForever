@@ -13,12 +13,6 @@ public struct SetModel: MemorizeItModelProtocol {
     public init(){
         
     }
-    
-    public init(setId: UUID, name: String) {
-        self.setId = setId
-        self.name = name
-    }
-    
     public init?(dictionary: Dictionary<String, Any>) {
         guard let id = dictionary["setId"] as? String, let name = dictionary["name"] as? String else{
             return nil
