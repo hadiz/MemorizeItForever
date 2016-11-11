@@ -28,45 +28,16 @@ private func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-final class WordManager {
+final class WordManager: WordManagerProtocol {
     
-    private var _dataAccess: WordDataAccess?
-    private var wordDataAccess: WordDataAccess{
-        guard let dataAccess = _dataAccess else{
-            _dataAccess = WordDataAccess()
-            return _dataAccess!
-        }
-        return dataAccess
-    }
+    private var wordDataAccess: WordDataAccessProtocol
+    private var wordInProgressDataAccess: WordInProgressDataAccessProtocol?
+    private var wordHistoryDataAccess: WordHistoryDataAccessProtocol?
     
-    private var _wodInProgressDataAccess: WordInProgressDataAccess?
-    private var wordInProgressDataAccess: WordInProgressDataAccess{
-        guard let inProgressDataAccess = _wodInProgressDataAccess else{
-            _wodInProgressDataAccess = WordInProgressDataAccess()
-            return _wodInProgressDataAccess!
-        }
-        return inProgressDataAccess
-    }
-    
-    private var _wodHistoryDataAccess: WordHistoryDataAccess?
-    private var wordHistoryDataAccess: WordHistoryDataAccess{
-        guard let historyDataAccess = _wodHistoryDataAccess else{
-            _wodHistoryDataAccess = WordHistoryDataAccess()
-            return _wodHistoryDataAccess!
-        }
-        return historyDataAccess
-    }
-    
-    init(){
-        _dataAccess = nil
-        _wodInProgressDataAccess = nil
-        _wodHistoryDataAccess = nil
-    }
-    
-    init(dataAccess: WordDataAccess, wordInProgressDataAccess: WordInProgressDataAccess?, wodHistoryDataAccess: WordHistoryDataAccess?){
-        _dataAccess = dataAccess
-        _wodInProgressDataAccess = wordInProgressDataAccess
-        _wodHistoryDataAccess = wodHistoryDataAccess
+    init(wordDataAccess: WordDataAccessProtocol, wordInProgressDataAccess: WordInProgressDataAccessProtocol?, wodHistoryDataAccess: WordHistoryDataAccessProtocol?){
+        self.wordDataAccess = wordDataAccess
+        self.wordInProgressDataAccess = wordInProgressDataAccess
+        self.wordHistoryDataAccess = wodHistoryDataAccess
     }
     
     func saveWord(_ phrase: String, meaninig: String, setId: UUID){
@@ -107,6 +78,9 @@ final class WordManager {
     }
     
     func putWordInPreColumn(_ wordModel: WordModel) throws{
+        guard let wordInProgressDataAccess = wordInProgressDataAccess else {
+            fatalError("wordInProgressDataAccess not initialiazed")
+        }
         var inProgressModel = WordInProgressModel()
         inProgressModel.column = MemorizeColumns.pre.rawValue
         inProgressModel.date = Date().addDay(MemorizeColumns.pre.days) 
@@ -167,6 +141,9 @@ final class WordManager {
     }
     
     func fetchWordsForReview() throws -> [WordModel]{
+        guard let wordInProgressDataAccess = wordInProgressDataAccess else {
+            fatalError("wordInProgressDataAccess not initialiazed")
+        }
         do{
             var wordInProgress = WordInProgressModel()
             wordInProgress.date = Date().addDay(1)
@@ -186,6 +163,9 @@ final class WordManager {
     }
     
     func fetchWordsToExamin() throws -> [WordInProgressModel]{
+        guard let wordInProgressDataAccess = wordInProgressDataAccess else {
+            fatalError("wordInProgressDataAccess not initialiazed")
+        }
         // it should fetch words for today and all words that belongs to past
         do{
             var wordInProgress = WordInProgressModel()
@@ -200,6 +180,12 @@ final class WordManager {
     }
     
     private func allowPutWordsInPreColumn() throws -> Bool{
+        guard let wordInProgressDataAccess = wordInProgressDataAccess else {
+            fatalError("wordInProgressDataAccess not initialiazed")
+        }
+        guard let wordHistoryDataAccess = wordHistoryDataAccess else {
+            fatalError("wordHistoryDataAccess not initialiazed")
+        }
         do{
             let word = try wordDataAccess.fetchLast(.inProgress)
             if word == nil {
@@ -228,6 +214,9 @@ final class WordManager {
     }
     
     private func rePutWordInPreColumn(_ wordInProgressModel: WordInProgressModel) throws{
+        guard let wordInProgressDataAccess = wordInProgressDataAccess else {
+            fatalError("wordInProgressDataAccess not initialiazed")
+        }
         var inProgressModel = WordInProgressModel()
         inProgressModel.column = MemorizeColumns.pre.rawValue
         inProgressModel.date = Date().addDay(MemorizeColumns.pre.days)
@@ -242,6 +231,9 @@ final class WordManager {
     }
     
     private func registerInWordHistory(_ wordInProgressModel: WordInProgressModel) throws{
+        guard let wordHistoryDataAccess = wordHistoryDataAccess else {
+            fatalError("wordHistoryDataAccess not initialiazed")
+        }
         var wordHistory = WordHistoryModel()
         wordHistory.columnNo = wordInProgressModel.column
         wordHistory.word = wordInProgressModel.word
@@ -267,6 +259,9 @@ final class WordManager {
     }
     
     private func deleteWordInProgress(_ wordInProgressModel: WordInProgressModel) throws{
+        guard let wordInProgressDataAccess = wordInProgressDataAccess else {
+            fatalError("wordInProgressDataAccess not initialiazed")
+        }
         do{
             try wordInProgressDataAccess.delete(wordInProgressModel)
         }
@@ -292,6 +287,9 @@ final class WordManager {
     }
     
     private func progressWord(_ wordInProgressModel: WordInProgressModel) throws{
+        guard let wordInProgressDataAccess = wordInProgressDataAccess else {
+            fatalError("wordInProgressDataAccess not initialiazed")
+        }
         if let column = wordInProgressModel.column{
             let nextStep = findNextStep(column)
             var newWordInProgressModel = WordInProgressModel()

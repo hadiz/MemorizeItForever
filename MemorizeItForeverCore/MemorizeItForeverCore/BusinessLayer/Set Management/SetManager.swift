@@ -8,23 +8,12 @@
 
 import Foundation
 
-final public class SetManager {
+final public class SetManager: SetManagerProtocol {
     
-    private var _dataAccess: SetDataAccess?
-    private var setDataAccess: SetDataAccess{
-        guard let dataAccess = _dataAccess else{
-            _dataAccess = SetDataAccess()
-            return _dataAccess!
-        }
-        return dataAccess
-    }
-    
-    public init(){
-        _dataAccess = nil
-    }
-    
-    init(dataAccess: SetDataAccess){
-        _dataAccess = dataAccess
+    private var setDataAccess: SetDataAccessProtocol
+
+    init(dataAccess: SetDataAccessProtocol){
+        setDataAccess = dataAccess
     }
     
     public func createDefaultSet() {

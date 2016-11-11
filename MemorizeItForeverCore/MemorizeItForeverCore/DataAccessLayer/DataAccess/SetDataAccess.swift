@@ -8,7 +8,7 @@
 import Foundation
 import BaseLocalDataAccess
 
-class SetDataAccess: BaseDataAccess<SetEntity>  {
+class SetDataAccess: BaseDataAccess<SetEntity>, SetDataAccessProtocol  {
      func fetchSetNumber() throws -> Int {
         
         do{
@@ -81,25 +81,12 @@ class SetDataAccess: BaseDataAccess<SetEntity>  {
         }
     }
     
-    func fetch(_ id: UUID) throws -> SetModel? {
-        do{
-            if let set = try fetchEntity(withId: id){
-                return try set.toModel() as? SetModel
-            }
-            return nil
-        }
-        catch ModelError.failCreateModel(let model){
-            throw ModelError.failCreateModel(model)
-        }
-        catch let error as NSError{
-            throw  DataAccessError.failFetchData(error.localizedDescription)
-        }
-    }
-    
-//    private func fetchSets(_ predicateProtocol: PredicateProtocol?) throws -> [SetModel] {
+//    func fetch(_ id: UUID) throws -> SetModel? {
 //        do{
-//            let sets = try fetchEntities(predicate: predicateProtocol, sort: nil)
-//            return try sets.toModels()
+//            if let set = try fetchEntity(withId: id){
+//                return try set.toModel() as? SetModel
+//            }
+//            return nil
 //        }
 //        catch ModelError.failCreateModel(let model){
 //            throw ModelError.failCreateModel(model)

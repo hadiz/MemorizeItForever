@@ -14,14 +14,16 @@ import MemorizeItForeverCore
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    var setManager: SetManagerProtocol?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setUserDefaults()
         initializeContext()
         
-        let setManager = SetManager()
+        guard let setManager = setManager else {
+            fatalError("setManager is not initialiazed")
+        }
         setManager.createDefaultSet()
         setManager.setUserDefaultSet()
         return true

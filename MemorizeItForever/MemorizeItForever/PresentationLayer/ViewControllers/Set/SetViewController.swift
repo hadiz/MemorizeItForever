@@ -13,6 +13,7 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
     
     @IBOutlet var tableView: UITableView!
     var dataSource: MemorizeItTableDataSourceProtocol?
+    var setManager: SetManagerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,9 +74,11 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
     }
     
     func fetchData(){
+        guard let setManager = setManager else {
+            fatalError("setManager is not initialiazed")
+        }
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
-            let manager  = SetManager()
-            let sets = manager.get().flatMap{$0 as MemorizeItModelProtocol}
+            let sets = setManager.get().flatMap{$0 as MemorizeItModelProtocol}
             self.dataSource?.setModels(sets)
             DispatchQueue.main.async {
                 self.tableView.reloadData()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ColorPicker {
+final class ColorPicker: ColorPickerProtocol {
     lazy var backgroundView: UIColor = {
        return UIColor(red: 245, green: 149, blue: 71)
     }()

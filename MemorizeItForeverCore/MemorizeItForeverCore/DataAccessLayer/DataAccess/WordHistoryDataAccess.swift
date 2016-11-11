@@ -9,7 +9,7 @@
 import Foundation
 import BaseLocalDataAccess
 
-class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity> {
+class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity>, WordHistoryDataAccessProtocol {
     
     func saveOrUpdate(_ wordHistoryModel: WordHistoryModel) throws{
         guard let wordId = wordHistoryModel.word?.wordId else{

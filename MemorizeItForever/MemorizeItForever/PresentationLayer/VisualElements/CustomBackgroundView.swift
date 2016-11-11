@@ -10,6 +10,8 @@ import UIKit
 
 final class CustomBackgroundView: UIView {
     
+    var colorPicker: ColorPickerProtocol?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
@@ -21,6 +23,9 @@ final class CustomBackgroundView: UIView {
     }
     
     private func initialize(){
-        self.backgroundColor = ColorPicker().backgroundView
+        guard let colorPicker = colorPicker else {
+            fatalError("colorPicker is not initialized")
+        }
+        self.backgroundColor = colorPicker.backgroundView
     }
 }

@@ -22,8 +22,4 @@ class BaseDataAccess<T>: DataAccessProtocol where T: EntityProtocol, T: AnyObjec
             fatalError(error.localizedDescription)
         }
     }
-    
-    convenience init(){
-        self.init(context: BaseManagedObjectContext.sharedInstance)
-    }
 }

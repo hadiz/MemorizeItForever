@@ -9,7 +9,7 @@
 import Foundation
 import BaseLocalDataAccess
 
-class WordDataAccess: BaseDataAccess<WordEntity> {
+class WordDataAccess: BaseDataAccess<WordEntity>, WordDataAccessProtocol {
     
     func save(_ wordModel: WordModel) throws{
         guard let setId = wordModel.setId else{

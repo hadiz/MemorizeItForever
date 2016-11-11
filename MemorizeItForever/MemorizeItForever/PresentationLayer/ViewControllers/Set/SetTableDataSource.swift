@@ -14,6 +14,8 @@ final class SetTableDataSource: NSObject, MemorizeItTableDataSourceProtocol {
     var setModels: [SetModel]?
     var handleTap: TypealiasHelper.handleTapClosure?
     
+    var setManager: SetManagerProtocol?
+    
     required init(handleTap: TypealiasHelper.handleTapClosure? = nil) {
         self.handleTap = handleTap
     }
@@ -49,9 +51,12 @@ final class SetTableDataSource: NSObject, MemorizeItTableDataSourceProtocol {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard let setManager = setManager else {
+            fatalError("setManager is not initialiazed")
+        }
         if editingStyle == UITableViewCellEditingStyle.delete {
             let set = setModels![(indexPath as NSIndexPath).row]
-            if SetManager().delete(set){
+            if setManager.delete(set){
                 setModels?.remove(at: (indexPath as NSIndexPath).row)
                 tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
             }

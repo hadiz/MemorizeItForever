@@ -8,16 +8,16 @@
 import Foundation
 import BaseLocalDataAccess
 
-class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity> {
-    func fetchAll() throws -> [WordInProgressModel]{
-        do{
-            return try fetchModels(predicate: nil, sort: nil)
-        }
-        catch let error as NSError{
-            throw DataAccessError.failFetchData(error.localizedDescription)
-        }
-    }
-    
+class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity>, WordInProgressDataAccessProtocol {
+//    func fetchAll() throws -> [WordInProgressModel]{
+//        do{
+//            return try fetchModels(predicate: nil, sort: nil)
+//        }
+//        catch let error as NSError{
+//            throw DataAccessError.failFetchData(error.localizedDescription)
+//        }
+//    }
+//    
     func save(_ wordInProgressModel: WordInProgressModel) throws{
         guard let wordId = wordInProgressModel.word?.wordId else{
             throw EntityCRUDError.failSaveEntity(getEntityName())

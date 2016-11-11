@@ -13,6 +13,8 @@ class MICardView: MIView {
      private var meaning: UILabel!
      private var showingPhrase = true
     
+    var colorPicker: ColorPickerProtocol?
+    
     func initialize(phrase: String, meaning: String) -> MICardView{
         initSelf()
         defineControls(phraseText: phrase, meaningText: meaning)
@@ -60,12 +62,15 @@ class MICardView: MIView {
     }
     
     private func initSelf(){
+        guard let colorPicker = colorPicker else {
+            fatalError("colorPicker is not initialized")
+        }
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(MICardView.flip))
         doubleTap.numberOfTapsRequired = 2
         self.addGestureRecognizer(doubleTap)
         
         self.isUserInteractionEnabled = true
-        self.backgroundColor = ColorPicker().backgroundView.withAlphaComponent(0.7)
+        self.backgroundColor = colorPicker.backgroundView.withAlphaComponent(0.7)
         self.layer.cornerRadius = 20.0
         self.clipsToBounds = true
     }
