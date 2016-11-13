@@ -9,16 +9,17 @@
 import MemorizeItForeverCore
 @testable import MemorizeItForever
 
-class FakeSetTableDataSource: NSObject, MemorizeItTableDataSourceProtocol{
+class FakeSetTableDataSource: NSObject, SetTableDataSourceProtocol{
     
     var handleTap: TypealiasHelper.handleTapClosure?
+    var setManager: SetManagerProtocol?
     
     func setModels(_ models: [MemorizeItModelProtocol]) {
         
     }
     
-    required init(handleTap: TypealiasHelper.handleTapClosure?) {
-        self.handleTap = handleTap
+    required init(setManager: SetManagerProtocol?) {
+        self.setManager = setManager
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

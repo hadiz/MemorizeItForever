@@ -1429,11 +1429,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/ChangeSetViewControllerTests.swift"
-            timestampString = "500303418.672757"
+            timestampString = "500738229.913699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "testChangeSetViewControllerHasATableView()"
             landmarkType = "7">
          </BreakpointContent>

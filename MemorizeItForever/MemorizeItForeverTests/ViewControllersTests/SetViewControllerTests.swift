@@ -13,19 +13,21 @@ import MemorizeItForeverCore
 class SetViewControllerTests: XCTestCase {
     
     var setViewController: SetViewController!
-    var dataSource: MemorizeItTableDataSourceProtocol!
+    var dataSource: SetTableDataSourceProtocol!
     var tableView: UITableView!
     var tappedSetModel: SetModel!
     
     override func setUp() {
         super.setUp()
-        dataSource = FakeSetTableDataSource(handleTap: { (model) in
+        dataSource = FakeSetTableDataSource(setManager: nil)
+        dataSource.handleTap = { (model) in
             self.tappedSetModel = model as? SetModel
-        })
+        }
         tableView = UITableView()
         setViewController = SetViewController()
         setViewController.dataSource = dataSource
         setViewController.tableView = tableView
+        setViewController.setManager = MockSetManager()
     }
     
     override func tearDown() {

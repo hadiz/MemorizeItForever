@@ -52,6 +52,7 @@
 		438651C91DC7426B007BC89D /* MICardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C81DC7426B007BC89D /* MICardView.swift */; };
 		438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */; };
 		4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */; };
+		43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D871DD8A812000296DB /* MockSetManager.swift */; };
 		43D217B61DBE4564007819A7 /* MockAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D217B51DBE4564007819A7 /* MockAppDelegate.swift */; };
 		43EE6CE01DC4E17A00873D18 /* MIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EE6CDF1DC4E17A00873D18 /* MIView.swift */; };
 		43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */; };
@@ -150,6 +151,7 @@
 		438651C81DC7426B007BC89D /* MICardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardView.swift; path = PresentationLayer/VisualElements/MICardView.swift; sourceTree = "<group>"; };
 		438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceDelegateProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceDelegateProtocol.swift; sourceTree = "<group>"; };
 		438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceProtocol.swift; sourceTree = "<group>"; };
+		43BF3D871DD8A812000296DB /* MockSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockSetManager.swift; path = General/MockSetManager.swift; sourceTree = "<group>"; };
 		43D217B51DBE4564007819A7 /* MockAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockAppDelegate.swift; path = General/MockAppDelegate.swift; sourceTree = "<group>"; };
 		43EE6CDF1DC4E17A00873D18 /* MIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIView.swift; path = PresentationLayer/VisualElements/MIView.swift; sourceTree = "<group>"; };
 		43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetViewControllerTests.swift; path = ViewControllersTests/SetViewControllerTests.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				43F217991DBE509C0005BF26 /* FakeSetTableDataSource.swift */,
 				43F217DA1DBF8A770005BF26 /* Enum.swift */,
 				43F217DC1DBF9EAA0005BF26 /* Helper.swift */,
+				43BF3D871DD8A812000296DB /* MockSetManager.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				43262A411DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift in Sources */,
 				43262A451DD1EF380029C27E /* AddPhraseViewControllerTests.swift in Sources */,
 				43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */,
+				43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */,
 				43262A431DD1CAC30029C27E /* ChangeSetViewControllerTests.swift in Sources */,
 				43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */,
 				4349EAB01DBE4B260097DABD /* ApplySettingsTests.swift in Sources */,

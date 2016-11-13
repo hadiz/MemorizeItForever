@@ -13,7 +13,7 @@ import MemorizeItForeverCore
 class ChangeSetTableDataSourceTests: XCTestCase {
     
     var set: SetModel!
-    var dataSource: MemorizeItTableDataSourceProtocol!
+    var dataSource: SetTableDataSourceProtocol!
     var firstItemIndex: IndexPath!
     
     override func setUp() {
@@ -56,16 +56,18 @@ class ChangeSetTableDataSourceTests: XCTestCase {
     }
     
     func testSetTableDataSourceCanHoldAClouserForHandleTap(){
-        dataSource = SetTableDataSource(handleTap: { (model) in
-        })
+        dataSource = SetTableDataSource(setManager: nil)
+        dataSource.handleTap = { (model) in
+        }
         XCTAssertNotNil((dataSource as? SetTableDataSource)!.handleTap, "SetTableDataSource can handle an clouser for handling tap event")
     }
     
     func testHandleTapClosureIsCalledWhenTapped(){
         var tapped = false
-        dataSource = SetTableDataSource(handleTap: { (model) in
+         dataSource = SetTableDataSource(setManager: nil)
+        dataSource.handleTap = { (model) in
             tapped = true
-        })
+        }
         dataSource.setModels([set])
         dataSource.tableView!(UITableView(), didSelectRowAt: firstItemIndex)
         XCTAssertTrue(tapped,"HandleTap clouser should be called in didSelectRowAtIndexPath action")
@@ -73,9 +75,10 @@ class ChangeSetTableDataSourceTests: XCTestCase {
     
     func testHandleTapClosureHasSetModelInstanceWhenTapped(){
         var setModel: SetModel? = nil
-        dataSource = SetTableDataSource(handleTap: { (model) in
+        dataSource = SetTableDataSource(setManager: nil)
+        dataSource.handleTap = { (model) in
             setModel = model as? SetModel
-        })
+        }
         dataSource.setModels([set])
         dataSource.tableView!(UITableView(), didSelectRowAt: firstItemIndex)
         XCTAssertEqual(setModel?.name, "Default","HandleTap clouser should hold  a setModel instance")

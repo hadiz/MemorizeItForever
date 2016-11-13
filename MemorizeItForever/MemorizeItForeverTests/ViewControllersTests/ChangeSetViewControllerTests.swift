@@ -13,16 +13,18 @@ import MemorizeItForeverCore
 class ChangeSetViewControllerTests: XCTestCase {
     
     var changeSetViewController: ChangeSetViewController!
-    var dataSource: MemorizeItTableDataSourceProtocol!
+    var dataSource: SetTableDataSourceProtocol!
     var tappedSetModel: SetModel!
     
     override func setUp() {
         super.setUp()
-        dataSource = FakeSetTableDataSource(handleTap: { (model) in
+        dataSource = FakeSetTableDataSource(setManager: nil)
+        dataSource.handleTap = { (model) in
             self.tappedSetModel = model as? SetModel
-        })
+        }
         changeSetViewController = ChangeSetViewController()
         changeSetViewController.dataSource = dataSource
+        changeSetViewController.setManager = MockSetManager()
         _ = changeSetViewController.view
     }
     
