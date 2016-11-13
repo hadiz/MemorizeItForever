@@ -47,6 +47,7 @@
 		43687B701DD0AB2200E1EDB5 /* ChangeSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */; };
 		43687B721DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */; };
 		43687B741DD0AE0800E1EDB5 /* MITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B731DD0AE0800E1EDB5 /* MITableView.swift */; };
+		43690E6B1DD73062009918A3 /* SwinjectStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */; };
 		438651C71DC61607007BC89D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C61DC61607007BC89D /* UIViewControllerExtension.swift */; };
 		438651C91DC7426B007BC89D /* MICardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C81DC7426B007BC89D /* MICardView.swift */; };
 		438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */; };
@@ -58,7 +59,11 @@
 		43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */; };
 		43F217DB1DBF8A770005BF26 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DA1DBF8A770005BF26 /* Enum.swift */; };
 		43F217DD1DBF9EAA0005BF26 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DC1DBF9EAA0005BF26 /* Helper.swift */; };
+		43FFEF001DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FFEEFF1DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift */; };
+		5D90CEEFA0AFA79BE6A8B249 /* Pods_MemorizeItForeverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D95E4CC91AF68432451792 /* Pods_MemorizeItForeverUITests.framework */; };
+		6D356D1EBD3CFDEB6FE1AAC7 /* Pods_MemorizeItForeverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */; };
 		91A64D5A1DD5019B003D45B8 /* ColorPickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */; };
+		99676274E6B4EC39B12973A7 /* Pods_MemorizeItForever.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D367F8F551F0C992CD66FF5B /* Pods_MemorizeItForever.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +99,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSourceTests.swift; path = DataSourcesTests/ChangeSetTableDataSourceTests.swift; sourceTree = "<group>"; };
 		43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewControllerTests.swift; path = ViewControllersTests/ChangeSetViewControllerTests.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 		43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewController.swift; path = PresentationLayer/ViewControllers/Set/ChangeSetViewController.swift; sourceTree = "<group>"; };
 		43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSource.swift; path = PresentationLayer/ViewControllers/Set/ChangeSetTableDataSource.swift; sourceTree = "<group>"; };
 		43687B731DD0AE0800E1EDB5 /* MITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITableView.swift; path = PresentationLayer/VisualElements/MITableView.swift; sourceTree = "<group>"; };
+		43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwinjectStoryboardExtension.swift; path = General/Extensions/SwinjectStoryboardExtension.swift; sourceTree = "<group>"; };
 		438651C61DC61607007BC89D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = General/Extensions/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		438651C81DC7426B007BC89D /* MICardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardView.swift; path = PresentationLayer/VisualElements/MICardView.swift; sourceTree = "<group>"; };
 		438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceDelegateProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceDelegateProtocol.swift; sourceTree = "<group>"; };
@@ -150,7 +157,16 @@
 		43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewControllerTests.swift; path = ViewControllersTests/ReviewPhraseViewControllerTests.swift; sourceTree = "<group>"; };
 		43F217DA1DBF8A770005BF26 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = General/Enum.swift; sourceTree = "<group>"; };
 		43F217DC1DBF9EAA0005BF26 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = General/Helper.swift; sourceTree = "<group>"; };
+		43FFEEFF1DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSourceProtocol.swift; path = PresentationLayer/ViewControllers/Set/SetTableDataSourceProtocol.swift; sourceTree = "<group>"; };
+		4B81EED2D509757874FBDBF8 /* Pods-MemorizeItForeverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverUITests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverUITests/Pods-MemorizeItForeverUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6679E0A0F5D471CD444280C5 /* Pods-MemorizeItForever.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForever.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever.release.xcconfig"; sourceTree = "<group>"; };
+		74D95E4CC91AF68432451792 /* Pods_MemorizeItForeverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		788E35C8B548D4C13533ED0E /* Pods-MemorizeItForeverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverUITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverUITests/Pods-MemorizeItForeverUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E62AF06CBBFF1F21EF001EC /* Pods-MemorizeItForeverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverTests/Pods-MemorizeItForeverTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerProtocol.swift; path = General/ColorPickerProtocol.swift; sourceTree = "<group>"; };
+		9B59621F049206CEEAF3FB71 /* Pods-MemorizeItForeverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverTests/Pods-MemorizeItForeverTests.release.xcconfig"; sourceTree = "<group>"; };
+		D367F8F551F0C992CD66FF5B /* Pods_MemorizeItForever.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForever.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6DEDC3A393830EE0841B5D6 /* Pods-MemorizeItForever.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForever.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +176,7 @@
 			files = (
 				432B733E1DB5149B00A76FC7 /* BaseLocalDataAccess.framework in Frameworks */,
 				431196D91DB3958100F7BE7F /* MemorizeItForeverCore.framework in Frameworks */,
+				99676274E6B4EC39B12973A7 /* Pods_MemorizeItForever.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D356D1EBD3CFDEB6FE1AAC7 /* Pods_MemorizeItForeverTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,12 +192,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D90CEEFA0AFA79BE6A8B249 /* Pods_MemorizeItForeverUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		215F7727A385111B0F252E7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6DEDC3A393830EE0841B5D6 /* Pods-MemorizeItForever.debug.xcconfig */,
+				6679E0A0F5D471CD444280C5 /* Pods-MemorizeItForever.release.xcconfig */,
+				8E62AF06CBBFF1F21EF001EC /* Pods-MemorizeItForeverTests.debug.xcconfig */,
+				9B59621F049206CEEAF3FB71 /* Pods-MemorizeItForeverTests.release.xcconfig */,
+				788E35C8B548D4C13533ED0E /* Pods-MemorizeItForeverUITests.debug.xcconfig */,
+				4B81EED2D509757874FBDBF8 /* Pods-MemorizeItForeverUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		431AD8CC1DB39148004EBEA7 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				432B75471DB37B41003C6574 /* SetItemViewController.swift */,
+				43FFEEFF1DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift */,
 				432B75481DB37B41003C6574 /* SetTableDataSource.swift */,
 				432B75491DB37B41003C6574 /* SetViewController.swift */,
 				43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */,
@@ -262,6 +295,9 @@
 			isa = PBXGroup;
 			children = (
 				432B75571DB37D6E003C6574 /* MemorizeItForeverCore.framework */,
+				D367F8F551F0C992CD66FF5B /* Pods_MemorizeItForever.framework */,
+				0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */,
+				74D95E4CC91AF68432451792 /* Pods_MemorizeItForeverUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -285,6 +321,7 @@
 				432B75611DB382B5003C6574 /* UITableViewCellExtension.swift */,
 				432B73401DB51C4B00A76FC7 /* NotificationCenterExtension.swift */,
 				438651C61DC61607007BC89D /* UIViewControllerExtension.swift */,
+				43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -299,6 +336,7 @@
 				43434B201DB3676A0005B59F /* MemorizeItForeverUITests */,
 				43434AFC1DB3676A0005B59F /* Products */,
 				432B75561DB37D6E003C6574 /* Frameworks */,
+				215F7727A385111B0F252E7B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -410,10 +448,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43434B261DB3676A0005B59F /* Build configuration list for PBXNativeTarget "MemorizeItForever" */;
 			buildPhases = (
+				16EC97DB817BC02DAAFE2907 /* [CP] Check Pods Manifest.lock */,
 				43434AF71DB3676A0005B59F /* Sources */,
 				43434AF81DB3676A0005B59F /* Frameworks */,
 				43434AF91DB3676A0005B59F /* Resources */,
 				431196D71DB3957100F7BE7F /* Embed Frameworks */,
+				1DD423217C0483DB226F0678 /* [CP] Embed Pods Frameworks */,
+				51D611DDE868094DBC7502B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -428,9 +469,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43434B291DB3676A0005B59F /* Build configuration list for PBXNativeTarget "MemorizeItForeverTests" */;
 			buildPhases = (
+				0BFB814059BC7AF98CAD1E46 /* [CP] Check Pods Manifest.lock */,
 				43434B0E1DB3676A0005B59F /* Sources */,
 				43434B0F1DB3676A0005B59F /* Frameworks */,
 				43434B101DB3676A0005B59F /* Resources */,
+				E57EF64C7E5043B911C296B6 /* [CP] Embed Pods Frameworks */,
+				E57C2065951C53FA4A43CF78 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -446,9 +490,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43434B2C1DB3676A0005B59F /* Build configuration list for PBXNativeTarget "MemorizeItForeverUITests" */;
 			buildPhases = (
+				0932460C53C1E69B95266CA5 /* [CP] Check Pods Manifest.lock */,
 				43434B191DB3676A0005B59F /* Sources */,
 				43434B1A1DB3676A0005B59F /* Frameworks */,
 				43434B1B1DB3676A0005B59F /* Resources */,
+				446EAEB8B55BA4AAA4B4359D /* [CP] Embed Pods Frameworks */,
+				1D031453A888D412B6BD22BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -538,6 +585,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0932460C53C1E69B95266CA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0BFB814059BC7AF98CAD1E46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		16EC97DB817BC02DAAFE2907 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1D031453A888D412B6BD22BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MemorizeItForeverUITests/Pods-MemorizeItForeverUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1DD423217C0483DB226F0678 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		446EAEB8B55BA4AAA4B4359D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MemorizeItForeverUITests/Pods-MemorizeItForeverUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51D611DDE868094DBC7502B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E57C2065951C53FA4A43CF78 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MemorizeItForeverTests/Pods-MemorizeItForeverTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E57EF64C7E5043B911C296B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MemorizeItForeverTests/Pods-MemorizeItForeverTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		43434AF71DB3676A0005B59F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -550,6 +735,7 @@
 				43262A4B1DD2000D0029C27E /* VFLBasedViewController.swift in Sources */,
 				432B75511DB37B64003C6574 /* TabBarController.swift in Sources */,
 				43262A4D1DD2071E0029C27E /* MITextView.swift in Sources */,
+				43690E6B1DD73062009918A3 /* SwinjectStoryboardExtension.swift in Sources */,
 				4344DE6A1DC0EAE600FBA130 /* MICardViewLabel.swift in Sources */,
 				43687B701DD0AB2200E1EDB5 /* ChangeSetViewController.swift in Sources */,
 				4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */,
@@ -562,6 +748,7 @@
 				432B73411DB51C4B00A76FC7 /* NotificationCenterExtension.swift in Sources */,
 				435824D81DCE0D9500842C73 /* MISwitch.swift in Sources */,
 				432B754C1DB37B41003C6574 /* SetViewController.swift in Sources */,
+				43FFEF001DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift in Sources */,
 				4344DE681DC0E53800FBA130 /* ColorPicker.swift in Sources */,
 				4344DE6C1DC0EB3700FBA130 /* MIButton.swift in Sources */,
 				432B754A1DB37B41003C6574 /* SetItemViewController.swift in Sources */,
@@ -665,6 +852,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -715,6 +903,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -742,12 +931,15 @@
 		};
 		43434B271DB3676A0005B59F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6DEDC3A393830EE0841B5D6 /* Pods-MemorizeItForever.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2X8HVN46BZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/MemorizeItForever/Libs",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = MemorizeItForever/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -759,12 +951,15 @@
 		};
 		43434B281DB3676A0005B59F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6679E0A0F5D471CD444280C5 /* Pods-MemorizeItForever.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2X8HVN46BZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/MemorizeItForever/Libs",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = MemorizeItForever/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -776,6 +971,7 @@
 		};
 		43434B2A1DB3676A0005B59F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E62AF06CBBFF1F21EF001EC /* Pods-MemorizeItForeverTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -793,6 +989,7 @@
 		};
 		43434B2B1DB3676A0005B59F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B59621F049206CEEAF3FB71 /* Pods-MemorizeItForeverTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -809,6 +1006,7 @@
 		};
 		43434B2D1DB3676A0005B59F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 788E35C8B548D4C13533ED0E /* Pods-MemorizeItForeverUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2X8HVN46BZ;
@@ -823,6 +1021,7 @@
 		};
 		43434B2E1DB3676A0005B59F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B81EED2D509757874FBDBF8 /* Pods-MemorizeItForeverUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2X8HVN46BZ;

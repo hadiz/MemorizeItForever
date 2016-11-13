@@ -12,13 +12,19 @@ import MemorizeItForeverCore
 final class SetViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet var tableView: UITableView!
-    var dataSource: MemorizeItTableDataSourceProtocol?
+    var dataSource: SetTableDataSourceProtocol?
     var setManager: SetManagerProtocol?
+    var setItemViewController: SetItemViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeViewController()
+        print("init SetViewController")
+    }
+    
+    deinit {
+        print("DEINIT SetViewController")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,20 +44,24 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(SetViewController.editAction))
         
+        guard let dataSource = dataSource else {
+            fatalError("dataSource is not initialiazed")
+        }
+
         let weakSelf = self
-        
-        dataSource = SetTableDataSource(handleTap: {[weak weakSelf] (memorizeItModel) in
+        dataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
             if let weakSelf = weakSelf{
                 weakSelf.didSelectSet(memorizeItModel)
             }
-            })
+        }
+        
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         
         fetchData()
     }
     
-    private func didSelectSet(_ model: MemorizeItModelProtocol?){
+    func didSelectSet(_ model: MemorizeItModelProtocol?){
         presentSetItemViewController(EntityMode.edit, setModel: model as? SetModel)
     }
     
@@ -87,11 +97,14 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
     }
     
     private func presentSetItemViewController(_ entityMode: EntityMode, setModel: SetModel? = nil){
-        let setItemViewController = SetItemViewController()
+        guard let setItemViewController = setItemViewController else {
+            fatalError("setItemViewController is not initialized")
+        }
         setItemViewController.entityMode = entityMode
         setItemViewController.setModel  = setModel
         
         let size = CGSize(width: self.view.frame.width , height: 200)
         self.presentingPopover(setItemViewController, sourceView: self.tableView, popoverArrowDirection: .any, contentSize: size)
+        
     }
 }

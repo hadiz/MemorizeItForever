@@ -10,17 +10,17 @@ import Foundation
 import CoreData
 import BaseLocalDataAccess
 
-class WordEntity: NSManagedObject, EntityProtocol {
+public class WordEntity: NSManagedObject, EntityProtocol {
     
-    static var entityName: String{
+    public static var entityName: String{
         return Entities.wordEntity.rawValue
     }
     
-    static var idField: String{
+    public static var idField: String{
         return Fields.Id.rawValue
     }
     
-    func toModel() throws -> ModelProtocol {
+    public func toModel() throws -> ModelProtocol {
         guard let id = self.id, let setId = self.set?.id else{
             throw ModelError.failCreateModel(Models.wordModel.rawValue)
         }
@@ -35,7 +35,7 @@ class WordEntity: NSManagedObject, EntityProtocol {
         return word
     }
     
-    enum Fields: String {
+    public enum Fields: String {
         case Id = "id"
         case Meaning = "meaning"
         case Order = "order"
@@ -43,6 +43,4 @@ class WordEntity: NSManagedObject, EntityProtocol {
         case Status = "status"
         case Set = "set"
     }
-
-
 }

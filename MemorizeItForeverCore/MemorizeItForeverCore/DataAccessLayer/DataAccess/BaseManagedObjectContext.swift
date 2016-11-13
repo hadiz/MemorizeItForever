@@ -12,18 +12,13 @@ import BaseLocalDataAccess
 
 final public class BaseManagedObjectContext: ManagedObjectContextProtocol {
     
-    public static let sharedInstance = BaseManagedObjectContext()
     
-    private var context: NSManagedObjectContext?
+    var context: NSManagedObjectContext?
     
-    private init(){
-        
-    }
-    
-    public func set(context: NSManagedObjectContext){
+    public init(context: NSManagedObjectContext){
         self.context = context
     }
-    
+
     public func get() throws -> NSManagedObjectContext{
         guard let context = self.context else{
             throw ContextErrors.creation("NSManagedObjectContext was not set")

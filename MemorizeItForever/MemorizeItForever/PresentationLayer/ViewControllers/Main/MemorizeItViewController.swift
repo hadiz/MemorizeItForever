@@ -9,13 +9,15 @@
 import UIKit
 
 final class MemorizeItViewController: UIViewController {
-
+    
+    var changeSetViewController: ChangeSetViewController?
+    var addPhraseViewController: AddPhraseViewController?
+    var reviewPhraseViewController: ReviewPhraseViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,19 +31,25 @@ final class MemorizeItViewController: UIViewController {
     }
     
     private func reviewPhraseTapped(_ sender: AnyObject){
-        let reviewPhraseViewController = ReviewPhraseViewController()
-       let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
+        guard let reviewPhraseViewController = reviewPhraseViewController else {
+            fatalError("reviewPhraseViewController is not initialized")
+        }
+        let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(reviewPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }
     
     private func changeSetTapped(_ sender: AnyObject){
-        let changeSetViewController = ChangeSetViewController()
+        guard let changeSetViewController = changeSetViewController else {
+            fatalError("changeSetViewController is not initialized")
+        }
         let contentSize = CGSize(width: self.view.frame.width  / 2, height: 250)
         self.presentingPopover(changeSetViewController, sourceView: sender as! UIView, popoverArrowDirection: .any, contentSize: contentSize)
     }
     
     private func addPhraseTapped(_ sender: AnyObject){
-        let addPhraseViewController = AddPhraseViewController()
+        guard let addPhraseViewController = addPhraseViewController else {
+            fatalError("addPhraseViewController is not initialized")
+        }
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(addPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }
@@ -59,5 +67,5 @@ final class MemorizeItViewController: UIViewController {
     @IBAction func addPhraseAction(_ sender: AnyObject) {
         addPhraseTapped(sender)
     }
-
+    
 }

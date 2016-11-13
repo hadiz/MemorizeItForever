@@ -12,7 +12,7 @@ import MemorizeItForeverCore
 final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentationControllerDelegate {
     
     var tableView: UITableView!
-    var dataSource: MemorizeItTableDataSourceProtocol?
+    var dataSource: SetTableDataSourceProtocol?
     
     var setManager: SetManagerProtocol?
     
@@ -20,6 +20,12 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
         super.viewDidLoad()
         
         initializeViewController()
+        
+        print("init ChangeSetViewController")
+    }
+    
+    deinit {
+        print("DEINIT ChangeSetViewController")
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,13 +44,17 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
     
     override func defineControls(){
         tableView = MITableView()
-        let weakSelf = self
+       
+        guard let dataSource = dataSource else {
+            fatalError("dataSource is not initialiazed")
+        }
         
-        dataSource = ChangeSetTableDataSource(handleTap: {[weak weakSelf] (memorizeItModel) in
+        let weakSelf = self
+        dataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
             if let weakSelf = weakSelf{
                 weakSelf.didSelectSet(memorizeItModel)
             }
-            })
+            }
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
     }

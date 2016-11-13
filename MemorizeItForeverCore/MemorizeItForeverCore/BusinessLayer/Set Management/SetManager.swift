@@ -12,7 +12,7 @@ final public class SetManager: SetManagerProtocol {
     
     private var setDataAccess: SetDataAccessProtocol
 
-    init(dataAccess: SetDataAccessProtocol){
+    public init(dataAccess: SetDataAccessProtocol){
         setDataAccess = dataAccess
     }
     

@@ -16,16 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var setManager: SetManagerProtocol?
     
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setUserDefaults()
-        initializeContext()
+//        initializeContext()
         
-        guard let setManager = setManager else {
-            fatalError("setManager is not initialiazed")
-        }
-        setManager.createDefaultSet()
-        setManager.setUserDefaultSet()
+//        guard let setManager = setManager else {
+//            fatalError("setManager is not initialiazed")
+//        }
+//        setManager.createDefaultSet()
+//        setManager.setUserDefaultSet()
         return true
     }
     
@@ -72,16 +74,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    private func initializeContext(){
-        var context: NSManagedObjectContext
-        if #available(iOS 10.0, *) {
-            context = persistentContainer.viewContext
-        } else {
-            context = managedObjectContext
-        }
-        
-        BaseManagedObjectContext.sharedInstance.set(context: context)
-    }
+//    private func initializeContext(){
+//        var context: NSManagedObjectContext
+//        if #available(iOS 10.0, *) {
+//            context = persistentContainer.viewContext
+//        } else {
+//            context = managedObjectContext
+//        }
+//        
+//        BaseManagedObjectContext.sharedInstance.set(context: context)
+//    }
         // MARK: - Core Data stack
     
     @available(iOS 10.0, *)

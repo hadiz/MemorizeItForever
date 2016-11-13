@@ -8,8 +8,8 @@
 import Foundation
 import BaseLocalDataAccess
 
-class SetDataAccess: BaseDataAccess<SetEntity>, SetDataAccessProtocol  {
-     func fetchSetNumber() throws -> Int {
+public class SetDataAccess: BaseDataAccess<SetEntity>, SetDataAccessProtocol  {
+     public func fetchSetNumber() throws -> Int {
         
         do{
             return try dataAccess.fetchEntityCount()
@@ -19,7 +19,7 @@ class SetDataAccess: BaseDataAccess<SetEntity>, SetDataAccessProtocol  {
         }
     }
     
-    func save(_ setModel: SetModel) throws{
+    public func save(_ setModel: SetModel) throws{
         do{
             let setEntity = try dataAccess.createNewInstance()
             setEntity.id = generateId()
@@ -35,7 +35,7 @@ class SetDataAccess: BaseDataAccess<SetEntity>, SetDataAccessProtocol  {
         }
     }
     
-    func edit(_ setModel: SetModel) throws{
+    public func edit(_ setModel: SetModel) throws{
         do{
             guard let id = setModel.setId else{
                 throw EntityCRUDError.failEditEntity(getEntityName())
@@ -54,7 +54,7 @@ class SetDataAccess: BaseDataAccess<SetEntity>, SetDataAccessProtocol  {
         }
     }
     
-    func delete(_ setModel: SetModel) throws{
+    public func delete(_ setModel: SetModel) throws{
         do{
             guard let id = setModel.setId else{
                 throw EntityCRUDError.failDeleteEntity(getEntityName())
@@ -72,7 +72,7 @@ class SetDataAccess: BaseDataAccess<SetEntity>, SetDataAccessProtocol  {
         }
     }
     
-    func fetchAll() throws -> [SetModel] {
+    public func fetchAll() throws -> [SetModel] {
         do{
             return try fetchModels(predicate: nil, sort: nil)
         }

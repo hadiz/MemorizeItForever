@@ -9,20 +9,20 @@
 import UIKit
 
 class RoundedButton: UIButton {
-    
-    var colorPicker: ColorPickerProtocol?
+    //TODO
+//    var colorPicker: ColorPickerProtocol?
     
     override func draw(_ rect: CGRect) {
-        guard let colorPicker = colorPicker else {
-            fatalError("colorPicker is not initialized")
-        }
+//        guard let colorPicker = colorPicker else {
+//            fatalError("colorPicker is not initialized")
+//        }
         
         let width = bounds.width < bounds.height ? bounds.width : bounds.height
         
         let newRect = CGRect(x: bounds.midX - width / 2, y: bounds.midY - width / 2, width: width, height: width)
         
         let path = UIBezierPath(ovalIn: newRect)
-        let buttonColor = colorPicker.backgroundButton
+        let buttonColor = ColorPicker.shared.backgroundButton
         
         buttonColor.setFill()
         

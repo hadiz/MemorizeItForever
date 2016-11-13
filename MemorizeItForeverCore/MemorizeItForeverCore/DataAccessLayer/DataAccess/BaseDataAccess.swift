@@ -9,11 +9,11 @@
 import BaseLocalDataAccess
 import CoreData
 
-class BaseDataAccess<T>: DataAccessProtocol where T: EntityProtocol, T: AnyObject, T: NSFetchRequestResult {
-    var dataAccess: GenericDataAccess<T>
+public class BaseDataAccess<T>: DataAccessProtocol where T: EntityProtocol, T: AnyObject, T: NSFetchRequestResult {
+    public var dataAccess: GenericDataAccess<T>
     var context: ManagedObjectContextProtocol
     
-    init(context: ManagedObjectContextProtocol){
+    public init(context: ManagedObjectContextProtocol){
         do{
             self.context = context
             dataAccess = try GenericDataAccess<T>(context: context)

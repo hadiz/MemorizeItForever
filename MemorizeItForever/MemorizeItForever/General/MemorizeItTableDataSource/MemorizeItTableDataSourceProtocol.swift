@@ -11,5 +11,4 @@ import MemorizeItForeverCore
 
 public protocol MemorizeItTableDataSourceProtocol: UITableViewDataSource, UITableViewDelegate {
     func setModels(_ models: [MemorizeItModelProtocol])
-    init(handleTap: TypealiasHelper.handleTapClosure?)
 }

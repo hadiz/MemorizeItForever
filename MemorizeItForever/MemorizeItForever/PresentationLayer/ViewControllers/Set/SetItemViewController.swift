@@ -10,7 +10,7 @@ import UIKit
 import MemorizeItForeverCore
 
 final class SetItemViewController: UIViewController, UIPopoverPresentationControllerDelegate {
-
+    
     var setName: UITextField!
     
     var entityMode: EntityMode?
@@ -19,13 +19,6 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if entityMode == .save{
-            self.title = "New Set"
-        }
-        else{
-            self.title = "Edit Set"
-        }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(SetItemViewController.saveAction))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(SetItemViewController.cancelAction))
@@ -38,7 +31,7 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
         self.view.addSubview(setName)
         
         let views: Dictionary<String, AnyObject> = ["setName": setName,
-                     "topLayoutGuide": topLayoutGuide]
+                                                    "topLayoutGuide": topLayoutGuide]
         
         var allConstraints: [NSLayoutConstraint] = []
         
@@ -59,21 +52,39 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
         allConstraints += vSetNameCnst
         
         NSLayoutConstraint.activate(allConstraints)
+        print("init SetItemViewController")
+    }
+    
+    deinit {
+        print("DEINIT SetItemViewController")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        if let setModel = setModel , entityMode == .edit{
-            DispatchQueue.main.async(execute: {
-                self.setName.text = setModel.name
-            })
+        if entityMode == .save{
+            self.title = "New Set"
+        }
+        else{
+            self.title = "Edit Set"
         }
         
+        DispatchQueue.main.async(execute: {
+            if let setModel = self.setModel, self.entityMode == .edit{
+                self.setName.text = setModel.name
+            }
+            else{
+                self.setName.text = ""
+            }
+        })
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
     
-
+    
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }

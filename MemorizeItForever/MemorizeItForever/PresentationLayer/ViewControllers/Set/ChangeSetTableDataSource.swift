@@ -9,17 +9,22 @@
 import UIKit
 import MemorizeItForeverCore
 
-final class ChangeSetTableDataSource: NSObject, MemorizeItTableDataSourceProtocol {
+final class ChangeSetTableDataSource: NSObject, SetTableDataSourceProtocol {
     var setModels: [SetModel]?
     var handleTap: TypealiasHelper.handleTapClosure?
     var setId: UUID?
     
-    required init(handleTap: TypealiasHelper.handleTapClosure? = nil) {
-        self.handleTap = handleTap
+    required init(setManager: SetManagerProtocol? = nil) {
         if let setDic = UserDefaults.standard.object(forKey: Settings.defaultSet.rawValue) as? Dictionary<String, Any>,
             let setModel = SetModel(dictionary: setDic) {
             setId = setModel.setId
         }
+        
+        print("init ChangeSetTableDataSource")
+    }
+    
+    deinit {
+        print("DEINIT ChangeSetTableDataSource")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

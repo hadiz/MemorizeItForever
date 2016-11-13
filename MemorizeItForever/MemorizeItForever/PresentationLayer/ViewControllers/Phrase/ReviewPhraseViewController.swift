@@ -289,10 +289,8 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
         switch direction {
         case .left:
             swipeCardLeft()
-            break
         case .right:
             swipeCardRight()
-            break
         }
         guard let current = cardViewsDic[.current] else {
             fatalError(cardViewsDicFatalError)

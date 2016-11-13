@@ -10,16 +10,20 @@ import UIKit
 import MemorizeItForeverCore
 
 
-final class SetTableDataSource: NSObject, MemorizeItTableDataSourceProtocol {
+final class SetTableDataSource: NSObject, SetTableDataSourceProtocol {
     var setModels: [SetModel]?
     var handleTap: TypealiasHelper.handleTapClosure?
-    
     var setManager: SetManagerProtocol?
     
-    required init(handleTap: TypealiasHelper.handleTapClosure? = nil) {
-        self.handleTap = handleTap
+    required init(setManager: SetManagerProtocol?) {
+        self.setManager = setManager
+         print("init SetTableDataSource")
     }
-
+  
+    deinit {
+        print("DEINIT SetTableDataSource")
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sets = setModels else{
             return 0
