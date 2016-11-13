@@ -36,6 +36,10 @@ extension SwinjectStoryboard {
             SetManager(dataAccess: r.resolve(SetDataAccessProtocol.self)!)
         }
         
+        defaultContainer.registerForStoryboard(TabBarController.self) { r, c in
+            c.setManager = r.resolve(SetManagerProtocol.self)
+        }
+        
         defaultContainer.registerForStoryboard(MemorizeItViewController.self) { r, c in
             c.changeSetViewController = r.resolve(ChangeSetViewController.self)
             c.addPhraseViewController = r.resolve(AddPhraseViewController.self)

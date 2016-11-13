@@ -28,6 +28,11 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
         print("DEINIT ChangeSetViewController")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -39,7 +44,6 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
     
     private func initializeViewController(){
         title = "Change Set"
-        fetchData()
     }
     
     override func defineControls(){

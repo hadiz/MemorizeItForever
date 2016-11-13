@@ -10,7 +10,7 @@ target 'MemorizeItForever' do
 
   # Pods for MemorizeItForever
 
-	pod 'Swinject', '2.0.0-beta.2'
+    pod 'Swinject', '2.0.0-beta.2'
     pod 'SwinjectStoryboard', '1.0.0-beta.2'
 
   target 'MemorizeItForeverTests' do
