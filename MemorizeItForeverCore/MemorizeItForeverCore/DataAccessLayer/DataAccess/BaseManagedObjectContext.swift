@@ -11,18 +11,13 @@ import CoreData
 import BaseLocalDataAccess
 
 final public class BaseManagedObjectContext: ManagedObjectContextProtocol {
-    
-    
-    var context: NSManagedObjectContext?
+    var context: NSManagedObjectContext!
     
     public init(context: NSManagedObjectContext){
         self.context = context
     }
 
-    public func get() throws -> NSManagedObjectContext{
-        guard let context = self.context else{
-            throw ContextErrors.creation("NSManagedObjectContext was not set")
-        }
+    public func get() -> NSManagedObjectContext{
         return context
     }
 }

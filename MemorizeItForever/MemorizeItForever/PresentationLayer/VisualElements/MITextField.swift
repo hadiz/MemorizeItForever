@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MITextField: UITextField {
+final class MITextField: UITextField, ValidatableProtocol {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
@@ -23,5 +23,16 @@ final class MITextField: UITextField {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.borderStyle = .roundedRect
         self.clearButtonMode = .whileEditing
+    }
+    
+    // MARK: ValidatableProtocol
+    
+    func applyError(){
+        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.borderWidth = 3.0
+    }
+    
+    func clearError(){
+        self.borderStyle = .roundedRect
     }
 }

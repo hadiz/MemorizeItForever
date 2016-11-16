@@ -10,13 +10,26 @@ import Foundation
 import BaseLocalDataAccess
 @testable import MemorizeItForeverCore
 
-class FakeSetDataAccess: SetDataAccess {
+class FakeSetDataAccess: SetDataAccessProtocol {
     
-    override init(context initialContext: ManagedObjectContextProtocol){
-        super.init(context: initialContext)
+    func fetchSetNumber() throws -> Int {
+        return 0
     }
     
-    convenience init(){
-        self.init(context: InMemoryManagedObjectContext())
+    func save(_ setModel: SetModel) throws {
+        
+    }
+    
+    func edit(_ setModel: SetModel) throws {
+        
+    }
+    
+    func delete(_ setModel: SetModel) throws {
+        
+    }
+    
+    func fetchAll() throws -> [SetModel] {
+       return []
     }
 }
+

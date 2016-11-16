@@ -11,11 +11,13 @@ import XCTest
 
 class SetDataAccessTests: XCTestCase {
     
-    var setDataAccess: SetDataAccess!
+    var setDataAccess: SetDataAccessProtocol!
     
     override func setUp() {
         super.setUp()
-        setDataAccess = FakeSetDataAccess()
+        let managedObjectContext = InMemoryManagedObjectContext()
+        let dataAccess = MockGenericDataAccess<SetEntity>(context: managedObjectContext)
+        setDataAccess = FakeSetDataAccess(genericDataAccess: dataAccess)
     }
     
     override func tearDown() {
@@ -67,25 +69,6 @@ class SetDataAccessTests: XCTestCase {
         }
         catch{
             XCTFail("should be able to fetch sets")
-        }
-    }
-    
-    func testFetchSetWithId(){
-        do{
-            var setModel = SetModel()
-            setModel.name = "Default"
-            try setDataAccess.save(setModel)
-            
-            var setModel1 = SetModel()
-            setModel1.name = "Default1"
-            try setDataAccess.save(setModel1)
-            
-            let sets = try setDataAccess.fetchAll()
-            let newSet = try setDataAccess.fetch(sets[0].setId!)
-            XCTAssertNotNil(newSet, "should be able to fetch set with Id")
-        }
-        catch{
-            XCTFail("should be able to fetch  with Id")
         }
     }
     

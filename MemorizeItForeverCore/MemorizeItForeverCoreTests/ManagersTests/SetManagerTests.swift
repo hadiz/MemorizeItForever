@@ -12,8 +12,8 @@ import BaseLocalDataAccess
 
 class SetManagerTests: XCTestCase {
     
-    var setManager: SetManager!
-    var setDataAccess: SetDataAccess!
+    var setManager: SetManagerProtocol!
+    var setDataAccess: SetDataAccessProtocol!
     
     override func setUp() {
         super.setUp()

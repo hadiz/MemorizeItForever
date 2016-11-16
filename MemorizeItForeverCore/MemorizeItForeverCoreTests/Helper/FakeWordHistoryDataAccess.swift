@@ -10,12 +10,14 @@ import Foundation
 import BaseLocalDataAccess
 @testable import MemorizeItForeverCore
 
-class FakeWordHistoryDataAccess: WordHistoryDataAccess {
-    override init(context initialContext: ManagedObjectContextProtocol){
-        super.init(context: initialContext)
+class FakeWordHistoryDataAccess: WordHistoryDataAccessProtocol {
+    func fetchByWordId(_ wordHistoryModel: WordHistoryModel) throws -> [WordHistoryModel] {
+        return []
     }
-    
-    convenience init(){
-        self.init(context: InMemoryManagedObjectContext())
+    func countByWordId(_ wordHistoryModel: WordHistoryModel) throws -> Int {
+        return 0
+    }
+    func saveOrUpdate(_ wordHistoryModel: WordHistoryModel) throws {
+        
     }
 }

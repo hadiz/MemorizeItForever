@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct WordModel: Equatable, MemorizeItModelProtocol {
+public struct WordModel: Equatable, MemorizeItModelProtocol {
     var wordId: UUID?
     var phrase: String?
     var meaning: String?
@@ -17,6 +17,6 @@ struct WordModel: Equatable, MemorizeItModelProtocol {
     var status: Int16? = WordStatus.notStarted.rawValue
 }
 
-func ==(lhs: WordModel, rhs: WordModel) -> Bool {
+public func ==(lhs: WordModel, rhs: WordModel) -> Bool {
     return lhs.wordId == rhs.wordId
 }

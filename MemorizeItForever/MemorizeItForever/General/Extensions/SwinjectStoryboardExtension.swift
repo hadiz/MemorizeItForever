@@ -26,10 +26,10 @@ extension SwinjectStoryboard {
             
             let managedObjectContext = BaseManagedObjectContext(context: context)
             return managedObjectContext
-        }.inObjectScope(ObjectScope.container)
+            }.inObjectScope(ObjectScope.container)
         
         defaultContainer.register(SetDataAccessProtocol.self){ r in
-            SetDataAccess(context: r.resolve(ManagedObjectContextProtocol.self)!)
+            SetDataAccess(genericDataAccess: r.resolve(GenericDataAccess<SetEntity>.self)!)
         }
         
         defaultContainer.register(SetManagerProtocol.self){ r in
@@ -45,35 +45,36 @@ extension SwinjectStoryboard {
             c.addPhraseViewController = r.resolve(AddPhraseViewController.self)
             c.reviewPhraseViewController = r.resolve(ReviewPhraseViewController.self)
         }
-
+        
         defaultContainer.registerForStoryboard(SetViewController.self) { r, c in
             c.setManager = r.resolve(SetManagerProtocol.self)
             c.setItemViewController = r.resolve(SetItemViewController.self)
             c.dataSource = r.resolve(SetTableDataSourceProtocol.self, name: "SetTableDataSource")
         }
-
+        
         defaultContainer.register(SetItemViewController.self) { r in
             let controller = SetItemViewController()
             controller.setManager = r.resolve(SetManagerProtocol.self)
             return controller
         }
-
+        
         defaultContainer.register(ChangeSetViewController.self) { r in
             let controller = ChangeSetViewController()
             controller.setManager = r.resolve(SetManagerProtocol.self)
             controller.dataSource = r.resolve(SetTableDataSourceProtocol.self, name: "ChangeSetTableDataSource")
             return controller
-        }.inObjectScope(.none)
+            }.inObjectScope(.none)
         
         defaultContainer.register(AddPhraseViewController.self) { r in
             let controller = AddPhraseViewController()
+            controller.validator = r.resolve(ValidatorProtocol.self)
             return controller
-        }.inObjectScope(.none)
+            }.inObjectScope(.none)
         
         defaultContainer.register(ReviewPhraseViewController.self) { r in
             let controller = ReviewPhraseViewController()
             return controller
-        }.inObjectScope(.none)
+            }.inObjectScope(.none)
         
         defaultContainer.register(SetTableDataSourceProtocol.self, name: "SetTableDataSource") { r in
             SetTableDataSource(setManager: r.resolve(SetManagerProtocol.self))
@@ -83,5 +84,12 @@ extension SwinjectStoryboard {
             ChangeSetTableDataSource(setManager: r.resolve(SetManagerProtocol.self))
         }
         
+        defaultContainer.register(ValidatorProtocol.self){ r in
+            Validator()
+        }
+        
+        defaultContainer.register(GenericDataAccess<SetEntity>.self){ r in
+            GenericDataAccess<SetEntity>(context: r.resolve(ManagedObjectContextProtocol.self)!)
+        }
     }
 }

@@ -16,4 +16,6 @@ enum ReviewPhraseViewControllerEnum {
 enum AddPhraseViewControllerEnum {
     case doneBarButtonTap
     case nextBarButtonTap
+    case saveBarButtonTap
+    case previousBarButtonTap
 }

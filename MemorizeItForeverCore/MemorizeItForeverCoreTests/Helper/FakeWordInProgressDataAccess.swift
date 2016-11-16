@@ -10,12 +10,24 @@ import Foundation
 import BaseLocalDataAccess
 @testable import MemorizeItForeverCore
 
-class FakeWordInProgressDataAccess: WordInProgressDataAccess {
-    override init(context initialContext: ManagedObjectContextProtocol){
-        super.init(context: initialContext)
+class FakeWordInProgressDataAccess: WordInProgressDataAccessProtocol {
+    func save(_ wordInProgressModel: WordInProgressModel) throws {
+        
+    }
+    func edit(_ wordInProgressModel: WordInProgressModel) throws {
+        
     }
     
-    convenience init(){
-        self.init(context: InMemoryManagedObjectContext())
+    func delete(_ wordInProgressModel: WordInProgressModel) throws {
+        
+    }
+    func fetchByWordId(_ wordInProgressModel: WordInProgressModel) throws -> WordInProgressModel? {
+        return nil
+    }
+    func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel] {
+        return []
+    }
+    func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel] {
+        return []
     }
 }

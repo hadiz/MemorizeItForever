@@ -11,18 +11,25 @@ import BaseLocalDataAccess
 
 class WordDataAccess: BaseDataAccess<WordEntity>, WordDataAccessProtocol {
     
+    var setDataAccess: GenericDataAccess<SetEntity>!
+    
+    init(genericDataAccess: GenericDataAccess<WordEntity>, setDataAccess: GenericDataAccess<SetEntity>) {
+        super.init(genericDataAccess: genericDataAccess)
+        self.setDataAccess = setDataAccess
+    }
+    
     func save(_ wordModel: WordModel) throws{
         guard let setId = wordModel.setId else{
-            throw EntityCRUDError.failSaveEntity(getEntityName())
+            throw EntityCRUDError.failSaveEntity(genericDataAccess.getEntityName())
         }
         do{
-            let wordEntity = try dataAccess.createNewInstance()
-            wordEntity.id = generateId()
+            let wordEntity = try genericDataAccess.createNewInstance()
+            wordEntity.id = genericDataAccess.generateId()
             wordEntity.meaning = wordModel.meaning
             wordEntity.order = try setOrder()
             wordEntity.phrase = wordModel.phrase
             wordEntity.set =  fetchSetEntity(setId)
-            try dataAccess.saveEntity(wordEntity)
+            try genericDataAccess.saveEntity(wordEntity)
         }
         catch EntityCRUDError.failNewEntity(let entityName){
             throw EntityCRUDError.failNewEntity(entityName)
@@ -35,7 +42,7 @@ class WordDataAccess: BaseDataAccess<WordEntity>, WordDataAccessProtocol {
     func fetchAll(fetchLimit: Int? = nil) throws -> [WordModel] {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue,direction: SortDirectionEnum.ascending )
-            return try fetchModels(predicate: nil, sort: sort, fetchLimit: fetchLimit)
+            return try genericDataAccess.fetchModels(predicate: nil, sort: sort, fetchLimit: fetchLimit)
         }
         catch let error as NSError{
             throw  DataAccessError.failFetchData(error.localizedDescription)
@@ -46,7 +53,7 @@ class WordDataAccess: BaseDataAccess<WordEntity>, WordDataAccessProtocol {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue,direction: SortDirectionEnum.ascending )
             let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(WordStatus.notStarted.rawValue))
-            return try fetchModels(predicate: predicaet, sort: sort, fetchLimit: fetchLimit)
+            return try genericDataAccess.fetchModels(predicate: predicaet, sort: sort, fetchLimit: fetchLimit)
         }
         catch let error as NSError{
             throw  DataAccessError.failFetchData(error.localizedDescription)
@@ -57,7 +64,7 @@ class WordDataAccess: BaseDataAccess<WordEntity>, WordDataAccessProtocol {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue, direction: SortDirectionEnum.descending)
             let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(wordStatus.rawValue))
-            let words: [WordModel] = try fetchModels(predicate: predicaet, sort: sort, fetchLimit: 1)
+            let words: [WordModel] = try genericDataAccess.fetchModels(predicate: predicaet, sort: sort, fetchLimit: 1)
             if words.count == 1{
                 return words[0]
             }
@@ -71,16 +78,16 @@ class WordDataAccess: BaseDataAccess<WordEntity>, WordDataAccessProtocol {
     func edit(_ wordModel: WordModel) throws{
         do{
             guard let id = wordModel.wordId else{
-                throw EntityCRUDError.failEditEntity(getEntityName())
+                throw EntityCRUDError.failEditEntity(genericDataAccess.getEntityName())
             }
             
-            if let wordEntity = try fetchEntity(withId: id){
+            if let wordEntity = try genericDataAccess.fetchEntity(withId: id){
                 wordEntity.meaning = wordModel.meaning
                 wordEntity.phrase = wordModel.phrase
                 if let status = wordModel.status{
                     wordEntity.status = status
                 }
-                try dataAccess.saveEntity(wordEntity)
+                try genericDataAccess.saveEntity(wordEntity)
             }
             else{
                 throw DataAccessError.failFetchData("There is no Word entity with id: \(id)")
@@ -94,11 +101,11 @@ class WordDataAccess: BaseDataAccess<WordEntity>, WordDataAccessProtocol {
     func delete(_ wordModel: WordModel) throws{
         do{
             guard let id = wordModel.wordId else{
-                throw EntityCRUDError.failDeleteEntity(getEntityName())
+                throw EntityCRUDError.failDeleteEntity(genericDataAccess.getEntityName())
             }
             
-            if let wordEntity = try fetchEntity(withId: id){
-                try dataAccess.deleteEntity(wordEntity)
+            if let wordEntity = try genericDataAccess.fetchEntity(withId: id){
+                try genericDataAccess.deleteEntity(wordEntity)
             }
             else{
                 throw DataAccessError.failFetchData("There is no Word entity with id: \(id)")
@@ -110,8 +117,11 @@ class WordDataAccess: BaseDataAccess<WordEntity>, WordDataAccessProtocol {
     }
     
     private func fetchSetEntity(_ setId: UUID) -> SetEntity?{
+        guard let setDataAccess = setDataAccess else {
+            fatalError("setDataAccess is not initialized")
+        }
         do{
-            return try SetDataAccess(context: context).fetchEntity(withId: setId)
+            return try setDataAccess.fetchEntity(withId: setId)
         }
         catch{
             return nil
@@ -121,7 +131,7 @@ class WordDataAccess: BaseDataAccess<WordEntity>, WordDataAccessProtocol {
     private func setOrder() throws -> Int32{
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue, direction: SortDirectionEnum.descending)
-            let words = try fetchEntities(predicate: nil, sort: sort , fetchLimit: 1)
+            let words = try genericDataAccess.fetchEntities(predicate: nil, sort: sort , fetchLimit: 1)
             if words.count > 0{
                 let order = words[0].order
                 return order + 1

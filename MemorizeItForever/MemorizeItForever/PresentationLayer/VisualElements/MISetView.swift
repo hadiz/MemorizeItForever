@@ -22,6 +22,7 @@ final class MISetView: MIView {
         super.init(coder: aDecoder)
         initialize()
     }
+
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -58,6 +59,7 @@ final class MISetView: MIView {
         set = MILabel()
         set.textColor = UIColor.darkGray
         changeSet()
+
     }
     
     private func addControls(){

@@ -11,15 +11,22 @@ import BaseLocalDataAccess
 
 class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity>, WordHistoryDataAccessProtocol {
     
+    var wordDataAccess: GenericDataAccess<WordEntity>!
+    
+    init(genericDataAccess: GenericDataAccess<WordHistoryEntity>, wordDataAccess: GenericDataAccess<WordEntity>) {
+        super.init(genericDataAccess: genericDataAccess)
+        self.wordDataAccess = wordDataAccess
+    }
+    
     func saveOrUpdate(_ wordHistoryModel: WordHistoryModel) throws{
         guard let wordId = wordHistoryModel.word?.wordId else{
-            throw EntityCRUDError.failSaveEntity(getEntityName())
+            throw EntityCRUDError.failSaveEntity(genericDataAccess.getEntityName())
         }
         do{
             var wordHistoryEntity = try fetchByWordIdAndColumnNo(wordHistoryModel)
             if wordHistoryEntity == nil{
-                wordHistoryEntity = try dataAccess.createNewInstance()
-                wordHistoryEntity?.id = generateId()
+                wordHistoryEntity = try genericDataAccess.createNewInstance()
+                wordHistoryEntity?.id = genericDataAccess.generateId()
                 if let columnNo = wordHistoryModel.columnNo{
                     wordHistoryEntity?.columnNo = columnNo
                 }
@@ -29,7 +36,7 @@ class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity>, WordHistoryDataA
             else{
                 wordHistoryEntity!.failureCount = wordHistoryEntity!.failureCount + 1
             }
-            try dataAccess.saveEntity(wordHistoryEntity!)
+            try genericDataAccess.saveEntity(wordHistoryEntity!)
         }
         catch EntityCRUDError.failNewEntity(let entityName){
             throw EntityCRUDError.failNewEntity(entityName)
@@ -41,7 +48,7 @@ class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity>, WordHistoryDataA
     
     func fetchByWordId(_ wordHistoryModel: WordHistoryModel) throws ->  [WordHistoryModel]{
         guard let wordId = wordHistoryModel.word?.wordId, let word = fetchWordEntity(wordId as UUID) else{
-            throw EntityCRUDError.failFetchEntity(getEntityName())
+            throw EntityCRUDError.failFetchEntity(genericDataAccess.getEntityName())
         }
         
         let predicateObject = PredicateObject(fieldName: WordHistoryEntity.Fields.Word.rawValue, operatorName: .equal, value: word)
@@ -49,7 +56,7 @@ class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity>, WordHistoryDataA
         let sort = SortObject(fieldName: WordHistoryEntity.Fields.ColumnNo.rawValue, direction: .ascending)
         
         do{
-            return try fetchModels(predicate: predicateObject, sort: sort)
+            return try genericDataAccess.fetchModels(predicate: predicateObject, sort: sort)
         }
         catch{
             throw error
@@ -58,14 +65,14 @@ class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity>, WordHistoryDataA
     
     func countByWordId(_ wordHistoryModel: WordHistoryModel) throws -> Int{
         guard let wordId = wordHistoryModel.word?.wordId, let word = fetchWordEntity(wordId as UUID) else{
-            throw EntityCRUDError.failFetchEntity(getEntityName())
+            throw EntityCRUDError.failFetchEntity(genericDataAccess.getEntityName())
         }
         
         let predicateObject = PredicateObject(fieldName: WordHistoryEntity.Fields.Word.rawValue, operatorName: .equal, value: word)
         
         
         do{
-            return try dataAccess.fetchEntityCount(predicate: predicateObject)
+            return try genericDataAccess.fetchEntityCount(predicate: predicateObject)
         }
         catch{
             throw error
@@ -74,11 +81,11 @@ class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity>, WordHistoryDataA
     
    private func fetchByWordIdAndColumnNo(_ wordHistoryModel: WordHistoryModel) throws ->  WordHistoryEntity?{
         guard let columnNo = wordHistoryModel.columnNo, let wordId = wordHistoryModel.word?.wordId else{
-            throw EntityCRUDError.failFetchEntity(getEntityName())
+            throw EntityCRUDError.failFetchEntity(genericDataAccess.getEntityName())
         }
         
         guard let word = fetchWordEntity(wordId as UUID) else{
-            throw EntityCRUDError.failFetchEntity(getEntityName())
+            throw EntityCRUDError.failFetchEntity(genericDataAccess.getEntityName())
         }
 
         let predicateObject1 = PredicateObject(fieldName: WordHistoryEntity.Fields.ColumnNo.rawValue, operatorName: .equal, value: Int(columnNo))
@@ -88,7 +95,7 @@ class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity>, WordHistoryDataA
         predicateCompoundObject.appendPredicate(predicateObject2)
     
         do{
-            let items = try fetchEntities(predicate: predicateCompoundObject, sort: nil)
+            let items = try genericDataAccess.fetchEntities(predicate: predicateCompoundObject, sort: nil)
             let count = items.count
             if count > 1{
                 throw EntityCRUDError.failFetchEntity("More than one recoed is retrieved")
@@ -106,8 +113,11 @@ class WordHistoryDataAccess: BaseDataAccess<WordHistoryEntity>, WordHistoryDataA
     }
     
     private func fetchWordEntity(_ wordId: UUID) -> WordEntity?{
+        guard let wordDataAccess = wordDataAccess else {
+            fatalError("wordDataAccess is not initialized")
+        }
         do{
-            return try WordDataAccess(context: context).fetchEntity(withId: wordId)
+            return try wordDataAccess.fetchEntity(withId: wordId)
         }
         catch{
             return nil

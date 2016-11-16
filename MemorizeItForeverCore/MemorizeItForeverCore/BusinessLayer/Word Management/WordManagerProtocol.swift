@@ -7,5 +7,7 @@
 //
 
 public protocol WordManagerProtocol {
-    
+    func saveWord(_ phrase: String, meaninig: String, setId: UUID)
+    func editWord(_ wordModel: WordModel, phrase: String, meaninig: String)
+    func deleteWord(_ wordModel: WordModel)
 }

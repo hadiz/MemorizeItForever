@@ -12,38 +12,38 @@ public class SetDataAccess: BaseDataAccess<SetEntity>, SetDataAccessProtocol  {
      public func fetchSetNumber() throws -> Int {
         
         do{
-            return try dataAccess.fetchEntityCount()
+            return try genericDataAccess.fetchEntityCount()
         }
         catch{
-            throw EntityCRUDError.failFetchEntityCount(getEntityName())
+            throw EntityCRUDError.failFetchEntityCount(genericDataAccess.getEntityName())
         }
     }
     
     public func save(_ setModel: SetModel) throws{
         do{
-            let setEntity = try dataAccess.createNewInstance()
-            setEntity.id = generateId()
+            let setEntity = try genericDataAccess.createNewInstance()
+            setEntity.id = genericDataAccess.generateId()
             setEntity.name = setModel.name
             
-            try dataAccess.saveEntity(setEntity)
+            try genericDataAccess.saveEntity(setEntity)
         }
         catch EntityCRUDError.failNewEntity(let entityName){
             throw EntityCRUDError.failNewEntity(entityName)
         }
         catch{
-            throw EntityCRUDError.failSaveEntity(getEntityName())
+            throw EntityCRUDError.failSaveEntity(genericDataAccess.getEntityName())
         }
     }
     
     public func edit(_ setModel: SetModel) throws{
         do{
             guard let id = setModel.setId else{
-                throw EntityCRUDError.failEditEntity(getEntityName())
+                throw EntityCRUDError.failEditEntity(genericDataAccess.getEntityName())
             }
             
-            if let setEntity = try fetchEntity(withId: id){
+            if let setEntity = try genericDataAccess.fetchEntity(withId: id){
                 setEntity.name = setModel.name
-                try dataAccess.saveEntity(setEntity)
+                try genericDataAccess.saveEntity(setEntity)
             }
             else{
                 throw DataAccessError.failFetchData("There is no Set entity with id: \(id)")
@@ -57,11 +57,11 @@ public class SetDataAccess: BaseDataAccess<SetEntity>, SetDataAccessProtocol  {
     public func delete(_ setModel: SetModel) throws{
         do{
             guard let id = setModel.setId else{
-                throw EntityCRUDError.failDeleteEntity(getEntityName())
+                throw EntityCRUDError.failDeleteEntity(genericDataAccess.getEntityName())
             }
             
-            if let setEntity = try fetchEntity(withId: id){
-                try dataAccess.deleteEntity(setEntity)
+            if let setEntity = try genericDataAccess.fetchEntity(withId: id){
+                try genericDataAccess.deleteEntity(setEntity)
             }
             else{
                 throw DataAccessError.failFetchData("There is no Set entity with id: \(id)")
@@ -74,26 +74,10 @@ public class SetDataAccess: BaseDataAccess<SetEntity>, SetDataAccessProtocol  {
     
     public func fetchAll() throws -> [SetModel] {
         do{
-            return try fetchModels(predicate: nil, sort: nil)
+            return try genericDataAccess.fetchModels(predicate: nil, sort: nil)
         }
         catch let error as NSError{
             throw  DataAccessError.failFetchData(error.localizedDescription)
         }
     }
-    
-//    func fetch(_ id: UUID) throws -> SetModel? {
-//        do{
-//            if let set = try fetchEntity(withId: id){
-//                return try set.toModel() as? SetModel
-//            }
-//            return nil
-//        }
-//        catch ModelError.failCreateModel(let model){
-//            throw ModelError.failCreateModel(model)
-//        }
-//        catch let error as NSError{
-//            throw  DataAccessError.failFetchData(error.localizedDescription)
-//        }
-//    }
-    
 }

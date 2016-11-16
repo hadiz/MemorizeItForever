@@ -12,7 +12,7 @@ import BaseLocalDataAccess
 class InMemoryManagedObjectContext: ManagedObjectContextProtocol  {
     
     private var context: NSManagedObjectContext?
-    public func get() throws -> NSManagedObjectContext{
+    public func get() -> NSManagedObjectContext{
         if context == nil {
             context = setUpInMemoryManagedObjectContext()
         }

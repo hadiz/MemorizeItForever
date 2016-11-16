@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MITextView: UITextView {
+final class MITextView: UITextView, ValidatableProtocol {
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         initialize()
@@ -21,18 +21,21 @@ final class MITextView: UITextView {
     
     private func initialize(){
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.layer.cornerRadius = 18.0
+        self.text = " "
+        addBorder()
     }
     
-    func validate(validation: () -> Bool) -> Bool{
-        if validation(){
-        
-            return true
-        }
-        else{
-            self.layer.borderColor = UIColor.red.cgColor
-            self.layer.borderWidth = 3.0
-            return false
-        }
-        
+    func applyError(){
+        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.borderWidth = 3.0
+    }
+    func clearError(){
+        addBorder()
+    }
+    
+    private func addBorder(){
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = 1.0
     }
 }
