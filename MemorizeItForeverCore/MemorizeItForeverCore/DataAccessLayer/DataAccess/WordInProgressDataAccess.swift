@@ -8,24 +8,25 @@
 import Foundation
 import BaseLocalDataAccess
 
-class WordInProgressDataAccess: BaseDataAccess<WordInProgressEntity>, WordInProgressDataAccessProtocol {
+class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
     
+    var genericDataAccess: GenericDataAccess<WordInProgressEntity>!
     var wordDataAccess: GenericDataAccess<WordEntity>!
     
     init(genericDataAccess: GenericDataAccess<WordInProgressEntity>, wordDataAccess: GenericDataAccess<WordEntity>) {
-        super.init(genericDataAccess: genericDataAccess)
         self.wordDataAccess = wordDataAccess
+        self.genericDataAccess = genericDataAccess
     }
     
-//    func fetchAll() throws -> [WordInProgressModel]{
-//        do{
-//            return try fetchModels(predicate: nil, sort: nil)
-//        }
-//        catch let error as NSError{
-//            throw DataAccessError.failFetchData(error.localizedDescription)
-//        }
-//    }
-//
+    func fetchAll() throws -> [WordInProgressModel]{
+        do{
+            return try genericDataAccess.fetchModels(predicate: nil, sort: nil)
+        }
+        catch let error as NSError{
+            throw DataAccessError.failFetchData(error.localizedDescription)
+        }
+    }
+
     func save(_ wordInProgressModel: WordInProgressModel) throws{
         guard let wordId = wordInProgressModel.word?.wordId else{
             throw EntityCRUDError.failSaveEntity(genericDataAccess.getEntityName())

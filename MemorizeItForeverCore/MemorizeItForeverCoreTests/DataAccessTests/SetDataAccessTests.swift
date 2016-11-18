@@ -17,7 +17,7 @@ class SetDataAccessTests: XCTestCase {
         super.setUp()
         let managedObjectContext = InMemoryManagedObjectContext()
         let dataAccess = MockGenericDataAccess<SetEntity>(context: managedObjectContext)
-        setDataAccess = FakeSetDataAccess(genericDataAccess: dataAccess)
+        setDataAccess = SetDataAccess(genericDataAccess: dataAccess)
     }
     
     override func tearDown() {

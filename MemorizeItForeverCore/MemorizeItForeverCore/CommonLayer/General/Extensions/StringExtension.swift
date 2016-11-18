@@ -1,16 +1,14 @@
 //
 //  StringExtension.swift
-//  MemorizeItForever
+//  MemorizeItForeverCore
 //
-//  Created by Hadi Zamani on 11/14/16.
+//  Created by Hadi Zamani on 11/18/16.
 //  Copyright © 2016 SomeSimpleSolutions. All rights reserved.
 //
 
-import Foundation
-
-extension String
+public extension String
 {
-    func trim() -> String
+   public func trim() -> String
     {
         return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }

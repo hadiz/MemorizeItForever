@@ -6,7 +6,10 @@
 //  Copyright © 2016 SomeSimpleSolutions. All rights reserved.
 //
 
+import BaseLocalDataAccess
+
 protocol WordDataAccessProtocol {
+//    init(genericDataAccess: GenericDataAccess<WordEntity>, setDataAccess: GenericDataAccess<SetEntity>)
     func save(_ wordModel: WordModel) throws
     func edit(_ wordModel: WordModel) throws
     func delete(_ wordModel: WordModel) throws

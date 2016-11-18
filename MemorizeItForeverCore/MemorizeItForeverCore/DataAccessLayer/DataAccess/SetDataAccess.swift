@@ -8,7 +8,14 @@
 import Foundation
 import BaseLocalDataAccess
 
-public class SetDataAccess: BaseDataAccess<SetEntity>, SetDataAccessProtocol  {
+public class SetDataAccess: SetDataAccessProtocol  {
+    
+    private var genericDataAccess: GenericDataAccess<SetEntity>!
+    
+    public init(genericDataAccess: GenericDataAccess<SetEntity>) {
+        self.genericDataAccess = genericDataAccess
+    }
+    
      public func fetchSetNumber() throws -> Int {
         
         do{

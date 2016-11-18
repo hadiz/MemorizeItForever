@@ -6,7 +6,10 @@
 //  Copyright © 2016 SomeSimpleSolutions. All rights reserved.
 //
 
+import BaseLocalDataAccess
+
 protocol WordHistoryDataAccessProtocol {
+//    init(genericDataAccess: GenericDataAccess<WordHistoryEntity>, wordDataAccess: GenericDataAccess<WordEntity>)
     func fetchByWordId(_ wordHistoryModel: WordHistoryModel) throws ->  [WordHistoryModel]
     func countByWordId(_ wordHistoryModel: WordHistoryModel) throws -> Int
     func saveOrUpdate(_ wordHistoryModel: WordHistoryModel) throws

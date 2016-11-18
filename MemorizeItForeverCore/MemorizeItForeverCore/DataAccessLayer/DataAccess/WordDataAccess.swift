@@ -9,13 +9,14 @@
 import Foundation
 import BaseLocalDataAccess
 
-class WordDataAccess: BaseDataAccess<WordEntity>, WordDataAccessProtocol {
+class WordDataAccess: WordDataAccessProtocol {
     
-    var setDataAccess: GenericDataAccess<SetEntity>!
+    private var genericDataAccess: GenericDataAccess<WordEntity>!
+    private var setDataAccess: GenericDataAccess<SetEntity>!
     
     init(genericDataAccess: GenericDataAccess<WordEntity>, setDataAccess: GenericDataAccess<SetEntity>) {
-        super.init(genericDataAccess: genericDataAccess)
         self.setDataAccess = setDataAccess
+        self.genericDataAccess = genericDataAccess
     }
     
     func save(_ wordModel: WordModel) throws{

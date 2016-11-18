@@ -50,7 +50,6 @@
 		436DCAA41DBCF73E00992708 /* SetManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCAA11DBCF73E00992708 /* SetManagerTests.swift */; };
 		436DCAA51DBCF73E00992708 /* WordFlowsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCAA21DBCF73E00992708 /* WordFlowsTests.swift */; };
 		436DCAA61DBCF73E00992708 /* WordManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCAA31DBCF73E00992708 /* WordManagerTests.swift */; };
-		438150301DDC77B30040F2F9 /* WordFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381502F1DDC77B30040F2F9 /* WordFlowManager.swift */; };
 		438150321DDC77C10040F2F9 /* WordFlowManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438150311DDC77C10040F2F9 /* WordFlowManagerProtocol.swift */; };
 		438150451DDCB10F0040F2F9 /* MockGenericDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438150441DDCB10F0040F2F9 /* MockGenericDataAccess.swift */; };
 		4388744B1DB7A2740030C016 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -66,12 +65,16 @@
 		43DBA2221DBB63C70017E733 /* WordHistoryEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBA2211DBB63C70017E733 /* WordHistoryEntityTests.swift */; };
 		43DBA2241DBB64B80017E733 /* WordInProgressEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBA2231DBB64B80017E733 /* WordInProgressEntityTests.swift */; };
 		43DBA2291DBB857C0017E733 /* FakeSetDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBA2281DBB857C0017E733 /* FakeSetDataAccess.swift */; };
+		911897E41DDF00BE001FC74B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911897E31DDF00BE001FC74B /* Helper.swift */; };
+		911897E61DDF0156001FC74B /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911897E51DDF0156001FC74B /* Enum.swift */; };
+		911897E81DDF134E001FC74B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911897E71DDF134E001FC74B /* StringExtension.swift */; };
 		91A64D4E1DD49C73003D45B8 /* SetDataAccessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D4D1DD49C72003D45B8 /* SetDataAccessProtocol.swift */; };
 		91A64D501DD49DA5003D45B8 /* WordDataAccessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D4F1DD49DA5003D45B8 /* WordDataAccessProtocol.swift */; };
 		91A64D521DD49DE2003D45B8 /* WordInProgressDataAccessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D511DD49DE2003D45B8 /* WordInProgressDataAccessProtocol.swift */; };
 		91A64D541DD49E1C003D45B8 /* WordHistoryDataAccessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D531DD49E1C003D45B8 /* WordHistoryDataAccessProtocol.swift */; };
 		91A64D561DD4FEA4003D45B8 /* SetManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D551DD4FEA4003D45B8 /* SetManagerProtocol.swift */; };
 		91A64D581DD50077003D45B8 /* WordManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D571DD50077003D45B8 /* WordManagerProtocol.swift */; };
+		91A64D5C1DDCF85E003D45B8 /* WordFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D5B1DDCF85E003D45B8 /* WordFlowManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +134,6 @@
 		436DCAA11DBCF73E00992708 /* SetManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetManagerTests.swift; path = ManagersTests/SetManagerTests.swift; sourceTree = "<group>"; };
 		436DCAA21DBCF73E00992708 /* WordFlowsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordFlowsTests.swift; path = ManagersTests/WordFlowsTests.swift; sourceTree = "<group>"; };
 		436DCAA31DBCF73E00992708 /* WordManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordManagerTests.swift; path = ManagersTests/WordManagerTests.swift; sourceTree = "<group>"; };
-		4381502F1DDC77B30040F2F9 /* WordFlowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordFlowManager.swift; path = "BusinessLayer/Word Management/WordFlowManager.swift"; sourceTree = "<group>"; };
 		438150311DDC77C10040F2F9 /* WordFlowManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordFlowManagerProtocol.swift; path = "BusinessLayer/Word Management/WordFlowManagerProtocol.swift"; sourceTree = "<group>"; };
 		438150441DDCB10F0040F2F9 /* MockGenericDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockGenericDataAccess.swift; path = Helper/MockGenericDataAccess.swift; sourceTree = "<group>"; };
 		4388744E1DB7A6510030C016 /* SetModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetModelTests.swift; path = ModelsTests/SetModelTests.swift; sourceTree = "<group>"; };
@@ -145,12 +147,16 @@
 		43DBA2211DBB63C70017E733 /* WordHistoryEntityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordHistoryEntityTests.swift; path = EntitiesTests/WordHistoryEntityTests.swift; sourceTree = "<group>"; };
 		43DBA2231DBB64B80017E733 /* WordInProgressEntityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordInProgressEntityTests.swift; path = EntitiesTests/WordInProgressEntityTests.swift; sourceTree = "<group>"; };
 		43DBA2281DBB857C0017E733 /* FakeSetDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeSetDataAccess.swift; path = Helper/FakeSetDataAccess.swift; sourceTree = "<group>"; };
+		911897E31DDF00BE001FC74B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Helper/Helper.swift; sourceTree = "<group>"; };
+		911897E51DDF0156001FC74B /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Helper/Enum.swift; sourceTree = "<group>"; };
+		911897E71DDF134E001FC74B /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = CommonLayer/General/Extensions/StringExtension.swift; sourceTree = "<group>"; };
 		91A64D4D1DD49C72003D45B8 /* SetDataAccessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetDataAccessProtocol.swift; path = DataAccessLayer/DataAccess/Protocols/SetDataAccessProtocol.swift; sourceTree = "<group>"; };
 		91A64D4F1DD49DA5003D45B8 /* WordDataAccessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordDataAccessProtocol.swift; path = DataAccessLayer/DataAccess/Protocols/WordDataAccessProtocol.swift; sourceTree = "<group>"; };
 		91A64D511DD49DE2003D45B8 /* WordInProgressDataAccessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordInProgressDataAccessProtocol.swift; path = DataAccessLayer/DataAccess/Protocols/WordInProgressDataAccessProtocol.swift; sourceTree = "<group>"; };
 		91A64D531DD49E1C003D45B8 /* WordHistoryDataAccessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordHistoryDataAccessProtocol.swift; path = DataAccessLayer/DataAccess/Protocols/WordHistoryDataAccessProtocol.swift; sourceTree = "<group>"; };
 		91A64D551DD4FEA4003D45B8 /* SetManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetManagerProtocol.swift; path = "BusinessLayer/Set Management/SetManagerProtocol.swift"; sourceTree = "<group>"; };
 		91A64D571DD50077003D45B8 /* WordManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordManagerProtocol.swift; path = "BusinessLayer/Word Management/WordManagerProtocol.swift"; sourceTree = "<group>"; };
+		91A64D5B1DDCF85E003D45B8 /* WordFlowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordFlowManager.swift; path = "BusinessLayer/Word Management/WordFlowManager.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,7 +278,7 @@
 				43434AB51DB360EB0005B59F /* WordManager.swift */,
 				91A64D571DD50077003D45B8 /* WordManagerProtocol.swift */,
 				438150311DDC77C10040F2F9 /* WordFlowManagerProtocol.swift */,
-				4381502F1DDC77B30040F2F9 /* WordFlowManager.swift */,
+				91A64D5B1DDCF85E003D45B8 /* WordFlowManager.swift */,
 			);
 			name = "Word Management";
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				43434AC11DB3620C0005B59F /* memorizeColumnsExtensions.swift */,
 				43434AC21DB3620C0005B59F /* NSDateExtensions.swift */,
 				43434AC41DB3620C0005B59F /* NSUserDefaultsExtensions.swift */,
+				911897E71DDF134E001FC74B /* StringExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -349,8 +356,8 @@
 			isa = PBXGroup;
 			children = (
 				436DCAA11DBCF73E00992708 /* SetManagerTests.swift */,
-				436DCAA21DBCF73E00992708 /* WordFlowsTests.swift */,
 				436DCAA31DBCF73E00992708 /* WordManagerTests.swift */,
+				436DCAA21DBCF73E00992708 /* WordFlowsTests.swift */,
 			);
 			name = ManagersTests;
 			sourceTree = "<group>";
@@ -388,6 +395,8 @@
 				436DCA411DBC99EE00992708 /* FakeWordInProgressDataAccess.swift */,
 				436DCA451DBC9B0B00992708 /* FakeWordHistoryDataAccess.swift */,
 				438150441DDCB10F0040F2F9 /* MockGenericDataAccess.swift */,
+				911897E31DDF00BE001FC74B /* Helper.swift */,
+				911897E51DDF0156001FC74B /* Enum.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -544,10 +553,10 @@
 				43434ADB1DB3622F0005B59F /* SetModel.swift in Sources */,
 				43434AEC1DB366860005B59F /* WordHistoryEntity+CoreDataClass.swift in Sources */,
 				43434AEE1DB366860005B59F /* WordInProgressEntity+CoreDataClass.swift in Sources */,
+				911897E81DDF134E001FC74B /* StringExtension.swift in Sources */,
 				43434AAC1DB360660005B59F /* WordHistoryDataAccess.swift in Sources */,
 				43434AC81DB3620C0005B59F /* NSDateExtensions.swift in Sources */,
 				43434AB61DB360EB0005B59F /* WordManager.swift in Sources */,
-				438150301DDC77B30040F2F9 /* WordFlowManager.swift in Sources */,
 				91A64D501DD49DA5003D45B8 /* WordDataAccessProtocol.swift in Sources */,
 				43434AA91DB360660005B59F /* BaseManagedObjectContext.swift in Sources */,
 				91A64D541DD49E1C003D45B8 /* WordHistoryDataAccessProtocol.swift in Sources */,
@@ -562,6 +571,7 @@
 				91A64D561DD4FEA4003D45B8 /* SetManagerProtocol.swift in Sources */,
 				43434ACE1DB362170005B59F /* TypealiasHelper.swift in Sources */,
 				43434AD31DB362220005B59F /* Enum.swift in Sources */,
+				91A64D5C1DDCF85E003D45B8 /* WordFlowManager.swift in Sources */,
 				43434AC71DB3620C0005B59F /* memorizeColumnsExtensions.swift in Sources */,
 				43434AEB1DB366860005B59F /* SetEntity+CoreDataProperties.swift in Sources */,
 				43434ADE1DB3622F0005B59F /* WordModel.swift in Sources */,
@@ -590,11 +600,13 @@
 				436DCAA61DBCF73E00992708 /* WordManagerTests.swift in Sources */,
 				436DCA461DBC9B0B00992708 /* FakeWordHistoryDataAccess.swift in Sources */,
 				4388745D1DB7AE310030C016 /* SetEntityTests.swift in Sources */,
+				911897E61DDF0156001FC74B /* Enum.swift in Sources */,
 				438150451DDCB10F0040F2F9 /* MockGenericDataAccess.swift in Sources */,
 				436DCA441DBC9ACE00992708 /* WordHistoryDataAccessTests.swift in Sources */,
 				436DCA401DBC99B200992708 /* WordInProgressDataAccessTests.swift in Sources */,
 				4344196C1DBBA7A2006F77C9 /* FakeWordDataAccess.swift in Sources */,
 				438874531DB7A7320030C016 /* WordHistoryModelTests.swift in Sources */,
+				911897E41DDF00BE001FC74B /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

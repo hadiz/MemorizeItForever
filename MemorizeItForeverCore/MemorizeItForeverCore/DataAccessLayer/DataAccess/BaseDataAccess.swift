@@ -1,19 +1,25 @@
+////
+////  BaseDataAccess.swift
+////  MemorizeItForever
+////
+////  Created by Hadi Zamani on 4/30/16.
+////  Copyright © 2016 SomeSimpleSolution. All rights reserved.
+////
 //
-//  BaseDataAccess.swift
-//  MemorizeItForever
+//import BaseLocalDataAccess
+//import CoreData
 //
-//  Created by Hadi Zamani on 4/30/16.
-//  Copyright © 2016 SomeSimpleSolution. All rights reserved.
+//public protocol BaseDataAccessProtocol{
+//    associatedtype T : EntityProtocol,NSFetchRequestResult
+//    
+//    init(genericDataAccess: GenericDataAccess<T>)
+//}
 //
-
-import BaseLocalDataAccess
-import CoreData
-
-
-public class BaseDataAccess<T> where T: EntityProtocol, T: AnyObject, T: NSFetchRequestResult {
-    var genericDataAccess: GenericDataAccess<T>
-    
-    public required init(genericDataAccess: GenericDataAccess<T>){
-        self.genericDataAccess = genericDataAccess
-    }
-}
+//
+//public class BaseDataAccess<T>: BaseDataAccessProtocol where T: EntityProtocol, T: AnyObject, T: NSFetchRequestResult {
+//    var genericDataAccess: GenericDataAccess<T>
+//    
+//    public required init(genericDataAccess: GenericDataAccess<T>){
+//        self.genericDataAccess = genericDataAccess
+//    }
+//}

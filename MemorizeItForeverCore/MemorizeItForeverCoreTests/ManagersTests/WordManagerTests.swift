@@ -1,74 +1,99 @@
-////
-////  WordManagerTests.swift
-////  MemorizeItForeverCore
-////
-////  Created by Hadi Zamani on 10/23/16.
-////  Copyright © 2016 SomeSimpleSolutions. All rights reserved.
-////
 //
-//import XCTest
-//import BaseLocalDataAccess
-//@testable import MemorizeItForeverCore
+//  WordManagerTests.swift
+//  MemorizeItForeverCore
 //
-//class WordManagerTests: XCTestCase {
-//    
-//    var wordManager: WordManager!
-//    var wordDataAccess: WordDataAccess!
-//    var context: ManagedObjectContextProtocol!
-//    
-//    override func setUp() {
-//        super.setUp()
-//        context = InMemoryManagedObjectContext()
-//        wordDataAccess = FakeWordDataAccess(context: context)
-//        wordManager = WordManager(dataAccess: wordDataAccess, wordInProgressDataAccess: nil, wodHistoryDataAccess: nil)
-//    }
-//    
-//    override func tearDown() {
-//        wordDataAccess = nil
-//        wordManager = nil
-//        context = nil
-//        super.tearDown()
-//    }
-//    
-//    func testSaveNewWord() {
-//        do{
-//            wordManager.saveWord("Livre",meaninig: "Book",setId: newSetEntity(context)!.setId!)
-//            let words = try wordDataAccess.fetchAll()
-//            XCTAssertEqual(words.count, 1, "Should save a new word")
-//        }
-//        catch{
-//            XCTFail("Should save a new word")
-//        }
-//    }
-//    func testEditWord() {
-//        do{
-//            wordManager.saveWord("Livre",meaninig: "Book",setId: newSetEntity(context)!.setId!)
-//            let word = try wordDataAccess.fetchAll()[0]
-//            wordManager.editWord(word, phrase: "LivreEdited", meaninig: "BookEdited")
-//            let words = try wordDataAccess.fetchAll()
-//            XCTAssertEqual(words[0].phrase, "LivreEdited", "Should be able to edit phrase field of a word")
-//            XCTAssertEqual(words[0].meaning, "BookEdited", "Should be able to edit meaning field of a word")
-//        }
-//        catch{
-//            XCTFail("Should be able to edit a word")
-//        }
-//    }
-//    
-//    func testDeleteWord() {
-//        do{
-//            wordManager.saveWord("Livre",meaninig: "Book",setId: newSetEntity(context)!.setId!)
-//            let word = try wordDataAccess.fetchAll()[0]
-//            wordManager.deleteWord(word)
-//            let newWords = try wordDataAccess.fetchAll()
-//            XCTAssertEqual(newWords.count, 0, "Should be able to delete a word")
-//        }
-//        catch{
-//            XCTFail("Should be able to delete a word")
-//        }
-//    }
-//    
-//    private func newSetEntity(_ initialContext: ManagedObjectContextProtocol) -> SetModel?{
-//        return TestFlowHelper().NewSetModel(initialContext)
-//    }
-//    
-//}
+//  Created by Hadi Zamani on 10/23/16.
+//  Copyright © 2016 SomeSimpleSolutions. All rights reserved.
+//
+
+import XCTest
+import BaseLocalDataAccess
+@testable import MemorizeItForeverCore
+
+class WordManagerTests: XCTestCase {
+    
+    var wordManager: WordManagerProtocol!
+    var wordDataAccess: WordDataAccessProtocol!
+
+    override func setUp() {
+        super.setUp()
+        wordDataAccess = FakeWordDataAccess()
+        wordManager = WordManager(wordDataAccess: wordDataAccess)
+    }
+    
+    override func tearDown() {
+        wordDataAccess = nil
+        wordManager = nil
+        super.tearDown()
+    }
+    
+    func testSaveNewWord() {
+        wordManager.saveWord("Livre", meaninig: "Book", setId: UUID())
+        if let enumResult = objc_getAssociatedObject(wordDataAccess, &resultKey) as? FakeSetDataAccessEnum{
+            XCTAssertEqual(enumResult, .save ,"should save word")
+        }
+        else{
+            XCTFail("should save word")
+        }
+    }
+    func testEditWord() {
+        let wordModel = WordModel(wordId: UUID(), phrase: "Livre", meaning: "Book", order: 1, setId: UUID(), status:  WordStatus.notStarted.rawValue)
+        
+        wordManager.editWord(wordModel, phrase: "Merci", meaninig: "Thanks")
+        
+        if let wordPhrase = objc_getAssociatedObject(wordDataAccess, &phraseKey) as? String{
+            XCTAssertEqual(wordPhrase, "Merci" ,"should edit with new phrase")
+        }
+        else{
+            XCTFail("should edit word")
+        }
+        
+        if let wordMeaninig = objc_getAssociatedObject(wordDataAccess, &meaningKey) as? String{
+            XCTAssertEqual(wordMeaninig, "Thanks" ,"should edit with new meaninig")
+        }
+        else{
+            XCTFail("should edit word")
+        }
+        
+        if let wordOrder = objc_getAssociatedObject(wordDataAccess, &orderKey) as? Int32{
+            XCTAssertEqual(wordOrder, wordModel.order! ,"should edit with initial order")
+        }
+        else{
+            XCTFail("should edit word")
+        }
+        
+        if let wordStatus = objc_getAssociatedObject(wordDataAccess, &statusKey) as? Int16{
+            XCTAssertEqual(wordStatus, wordModel.status! ,"should edit with initial status")
+        }
+        else{
+            XCTFail("should edit word")
+        }
+        
+        if let wordSetId = objc_getAssociatedObject(wordDataAccess, &setIdKey) as? UUID{
+            XCTAssertEqual(wordSetId, wordModel.setId! ,"should edit with initial setId")
+        }
+        else{
+            XCTFail("should edit word")
+        }
+        
+        if let wordWordId = objc_getAssociatedObject(wordDataAccess, &wordIdKey) as? UUID{
+            XCTAssertEqual(wordWordId, wordModel.wordId! ,"should edit with initial wordId")
+        }
+        else{
+            XCTFail("should edit word")
+        }
+    }
+    
+    func testDeleteWord() {
+         let wordModel = WordModel(wordId: UUID(), phrase: "Livre", meaning: "Book", order: 1, setId: UUID(), status:  WordStatus.notStarted.rawValue)
+        wordManager.deleteWord(wordModel)
+        if let enumResult = objc_getAssociatedObject(wordDataAccess, &resultKey) as? FakeSetDataAccessEnum{
+            XCTAssertEqual(enumResult, .delete ,"should delete word")
+        }
+        else{
+            XCTFail("should delete word")
+        }
+
+    }
+
+}
