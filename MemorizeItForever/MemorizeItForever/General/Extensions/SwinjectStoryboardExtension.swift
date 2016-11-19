@@ -32,8 +32,16 @@ extension SwinjectStoryboard {
             SetDataAccess(genericDataAccess: r.resolve(GenericDataAccess<SetEntity>.self)!)
         }
         
+        defaultContainer.register(WordDataAccessProtocol.self){ r in
+            WordDataAccess(genericDataAccess: r.resolve(GenericDataAccess<WordEntity>.self)!,setDataAccess: r.resolve(GenericDataAccess<SetEntity>.self)!)
+        }
+        
         defaultContainer.register(SetManagerProtocol.self){ r in
             SetManager(dataAccess: r.resolve(SetDataAccessProtocol.self)!)
+        }
+        
+        defaultContainer.register(WordManagerProtocol.self){ r in
+            WordManager(wordDataAccess: r.resolve(WordDataAccessProtocol.self)!)
         }
         
         defaultContainer.registerForStoryboard(TabBarController.self) { r, c in
@@ -68,6 +76,7 @@ extension SwinjectStoryboard {
         defaultContainer.register(AddPhraseViewController.self) { r in
             let controller = AddPhraseViewController()
             controller.validator = r.resolve(ValidatorProtocol.self)
+            controller.wordManager = r.resolve(WordManagerProtocol.self)
             return controller
             }.inObjectScope(.none)
         
@@ -90,6 +99,10 @@ extension SwinjectStoryboard {
         
         defaultContainer.register(GenericDataAccess<SetEntity>.self){ r in
             GenericDataAccess<SetEntity>(context: r.resolve(ManagedObjectContextProtocol.self)!)
+        }
+        
+        defaultContainer.register(GenericDataAccess<WordEntity>.self){ r in
+            GenericDataAccess<WordEntity>(context: r.resolve(ManagedObjectContextProtocol.self)!)
         }
     }
 }

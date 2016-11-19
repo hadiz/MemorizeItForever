@@ -100,7 +100,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
         NSLayoutConstraint.activate(constraintList)
     }
     
-     // MARK: Internal methods
+    // MARK: Internal methods
     
     func doneBarButtonTapHandler(){
         guard let validator = validator else {
@@ -121,8 +121,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
         }
         
         if result{
-            
-            updateDesctext(showPhrase: false)
+            updateDescText(showPhrase: false)
             
             self.navigationItem.rightBarButtonItem = saveBarButtonItem
             self.navigationItem.leftBarButtonItem = previousBarButtonItem
@@ -135,16 +134,12 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
         guard let validator = validator else {
             fatalError("validator is not initialized ")
         }
-        guard let wordManager = wordManager else {
-            fatalError("wordManager is not initialized ")
-        }
-        
         let result = validator.validate(meaning, errorMessage: "Meaning should not be empty") {
             !($0 as! MITextView).text.trim().isEmpty
         }
         
         if result{
-            
+            savePhrase()
         }
     }
     
@@ -154,13 +149,8 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
         }
         
         validator.clear(validatable: meaning)
+        goPrevious()
         
-        updateDesctext(showPhrase: true)
-        
-        self.navigationItem.rightBarButtonItem = nextBarButtonItem
-        self.navigationItem.leftBarButtonItem = doneBarButtonItem
-        
-        UIView.transition(from: meaning, to: phrase , duration: 1, options: [.transitionFlipFromLeft ,.showHideTransitionViews], completion: nil)
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -169,7 +159,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     
     // MARK: Private methods
     
-    private func updateDesctext(showPhrase: Bool){
+    private func updateDescText(showPhrase: Bool){
         if showPhrase{
             desc.text = "Write the Phrase here"
         }
@@ -177,5 +167,42 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
             desc.text = "Write the Meaning here"
         }
     }
+    
+    private func savePhrase(){
+        guard let wordManager = wordManager else {
+            fatalError("wordManager is not initialized ")
+        }
+        guard let setModel = UserDefaults.standard.getDefaultSetModel(), let setId = setModel.setId else{
+            saveWasFailed(message: "Choos a default 'Set'")
+            return
+        }
+        do{
+            try wordManager.saveWord(phrase.text.trim(), meaninig: meaning.text.trim(), setId: setId)
+            saveWasSuccessful()
+        }
+        catch{
+            saveWasFailed(message: error.localizedDescription)
+        }
+        
+    }
+    
+    private func goPrevious(){
+        updateDescText(showPhrase: true)
+        
+        self.navigationItem.rightBarButtonItem = nextBarButtonItem
+        self.navigationItem.leftBarButtonItem = doneBarButtonItem
+        
+        UIView.transition(from: meaning, to: phrase , duration: 1, options: [.transitionFlipFromLeft ,.showHideTransitionViews], completion: nil)
+    }
+    private func saveWasSuccessful(){
+        goPrevious()
+        phrase.text = ""
+        meaning.text = ""
+        self.view.makeASuccessToast(message: "Save was successful")
+    }
+    private func saveWasFailed(message: String){
+        self.view.makeAFailureToast(message: message)
+    }
+    
 }
 

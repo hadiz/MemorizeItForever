@@ -8,8 +8,7 @@
 
 import BaseLocalDataAccess
 
-protocol WordDataAccessProtocol {
-//    init(genericDataAccess: GenericDataAccess<WordEntity>, setDataAccess: GenericDataAccess<SetEntity>)
+public protocol WordDataAccessProtocol {
     func save(_ wordModel: WordModel) throws
     func edit(_ wordModel: WordModel) throws
     func delete(_ wordModel: WordModel) throws

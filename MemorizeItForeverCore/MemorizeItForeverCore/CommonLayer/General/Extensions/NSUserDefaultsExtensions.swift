@@ -25,4 +25,13 @@ extension UserDefaults{
         }
         set(colorData, forKey: key)
     }
+    
+    public func getDefaultSetModel() -> SetModel?{
+        if let setDic = UserDefaults.standard.object(forKey: Settings.defaultSet.rawValue) as? Dictionary<String, Any>,
+            let setModel = SetModel(dictionary: setDic) {
+            return setModel
+        }
+        return nil
+    }
+    
 }

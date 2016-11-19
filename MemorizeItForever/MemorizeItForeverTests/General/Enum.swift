@@ -18,4 +18,10 @@ enum AddPhraseViewControllerEnum {
     case nextBarButtonTap
     case saveBarButtonTap
     case previousBarButtonTap
+    case saveWord
+}
+
+enum UIViewEnum{
+    case successToast
+    case failureToast
 }

@@ -9,7 +9,6 @@
 import BaseLocalDataAccess
 
 protocol WordInProgressDataAccessProtocol {
-//     init(genericDataAccess: GenericDataAccess<WordInProgressEntity>, wordDataAccess: GenericDataAccess<WordEntity>)
     func save(_ wordInProgressModel: WordInProgressModel) throws
     func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]
     func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]

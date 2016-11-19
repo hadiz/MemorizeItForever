@@ -6,17 +6,255 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForever/MemorizeItForever/General/Extensions/UIViewExtension.swift"
+            timestampString = "501250962.173428"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "makeAToast(color:message:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/AddPhraseViewControllerTests.swift"
+            timestampString = "501256160.496536"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "testGoNextLevelWhenNextBarButtonTappedIfPhraseIsNotEmpty()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/Phrase/AddPhraseViewController.swift"
-            timestampString = "500971766.305345"
+            timestampString = "501254431.047779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "AddPhraseViewController"
-            landmarkType = "3">
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "nextBarButtonTapHandler()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/AddPhraseViewControllerTests.swift"
+            timestampString = "501256160.496536"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "testGoNextLevelWhenNextBarButtonTappedIfPhraseIsNotEmpty()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverTests.AddPhraseViewControllerTests.testGoNextLevelWhenNextBarButtonTappedIfPhraseIsNotEmpty () -&gt; ()"
+                  moduleName = "MemorizeItForeverTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/AddPhraseViewControllerTests.swift"
+                  timestampString = "501255334.662097"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "4354">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverTests.AddPhraseViewControllerTests.(testGoNextLevelWhenNextBarButtonTappedIfPhraseIsNotEmpty () -&gt; ()).(implicit closure #4)"
+                  moduleName = "MemorizeItForeverTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/AddPhraseViewControllerTests.swift"
+                  timestampString = "501255334.663673"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverTests.AddPhraseViewControllerTests.(testGoNextLevelWhenNextBarButtonTappedIfPhraseIsNotEmpty () -&gt; ()).(implicit closure #5)"
+                  moduleName = "MemorizeItForeverTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/AddPhraseViewControllerTests.swift"
+                  timestampString = "501255334.665053"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/Phrase/AddPhraseViewController.swift"
+            timestampString = "501256608.406646"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "nextBarButtonTapHandler()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForever/MemorizeItForever/PresentationLayer/ViewControllers/Phrase/AddPhraseViewController.swift"
+            timestampString = "501256608.406646"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "nextBarButtonTapHandler()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/AddPhraseViewControllerTests.swift"
+            timestampString = "501256608.406646"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "testSaveWhenSaveBarButtonTappedIfMeaningIsNotEmpty()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverTests.AddPhraseViewControllerTests.testSaveWhenSaveBarButtonTappedIfMeaningIsNotEmpty () -&gt; ()"
+                  moduleName = "MemorizeItForeverTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/AddPhraseViewControllerTests.swift"
+                  timestampString = "501255697.052621"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "2998">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverTests.AddPhraseViewControllerTests.(testSaveWhenSaveBarButtonTappedIfMeaningIsNotEmpty () -&gt; ()).(implicit closure #2)"
+                  moduleName = "MemorizeItForeverTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/AddPhraseViewControllerTests.swift"
+                  timestampString = "501255697.054355"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemorizeItForeverTests.AddPhraseViewControllerTests.(testSaveWhenSaveBarButtonTappedIfMeaningIsNotEmpty () -&gt; ()).(implicit closure #3)"
+                  moduleName = "MemorizeItForeverTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h.zamani/Documents/Hadi/Projects-Xcode8/MemorizeItForever/MemorizeItForever/MemorizeItForeverTests/ViewControllersTests/AddPhraseViewControllerTests.swift"
+                  timestampString = "501255697.055588"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BaseLocalDataAccess/BaseLocalDataAccess/Base/GenericDataAccess.swift"
+            timestampString = "501256765.76926"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "saveEntity(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCore/DataAccessLayer/DataAccess/WordDataAccess.swift"
+            timestampString = "501256805.707272"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "save(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemorizeItForeverCore/MemorizeItForeverCore/DataAccessLayer/DataAccess/WordDataAccess.swift"
+            timestampString = "501256849.594312"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "save(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

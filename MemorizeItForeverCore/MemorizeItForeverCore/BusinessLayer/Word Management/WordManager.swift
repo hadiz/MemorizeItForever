@@ -8,15 +8,15 @@
 
 import Foundation
 
-final class WordManager: WordManagerProtocol {
+final public class WordManager: WordManagerProtocol {
     
     private var wordDataAccess: WordDataAccessProtocol
     
-    init(wordDataAccess: WordDataAccessProtocol){
+    public init(wordDataAccess: WordDataAccessProtocol){
         self.wordDataAccess = wordDataAccess
     }
     
-    func saveWord(_ phrase: String, meaninig: String, setId: UUID){
+    public func saveWord(_ phrase: String, meaninig: String, setId: UUID) throws{
         do{
             var word = WordModel()
             word.phrase = phrase
@@ -25,10 +25,10 @@ final class WordManager: WordManagerProtocol {
             try wordDataAccess.save(word)
         }
         catch{
-            
+            throw error
         }
     }
-    func editWord(_ wordModel: WordModel, phrase: String, meaninig: String){
+    public func editWord(_ wordModel: WordModel, phrase: String, meaninig: String){
         do{
             var word = WordModel()
             word.phrase = phrase
@@ -44,7 +44,7 @@ final class WordManager: WordManagerProtocol {
         }
     }
     
-    func deleteWord(_ wordModel: WordModel){
+    public func deleteWord(_ wordModel: WordModel){
         do{
             try wordDataAccess.delete(wordModel)
         }

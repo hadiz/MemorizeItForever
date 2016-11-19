@@ -9,17 +9,17 @@
 import Foundation
 import BaseLocalDataAccess
 
-class WordDataAccess: WordDataAccessProtocol {
+public class WordDataAccess: WordDataAccessProtocol {
     
     private var genericDataAccess: GenericDataAccess<WordEntity>!
     private var setDataAccess: GenericDataAccess<SetEntity>!
     
-    init(genericDataAccess: GenericDataAccess<WordEntity>, setDataAccess: GenericDataAccess<SetEntity>) {
+    public init(genericDataAccess: GenericDataAccess<WordEntity>, setDataAccess: GenericDataAccess<SetEntity>) {
         self.setDataAccess = setDataAccess
         self.genericDataAccess = genericDataAccess
     }
     
-    func save(_ wordModel: WordModel) throws{
+    public func save(_ wordModel: WordModel) throws{
         guard let setId = wordModel.setId else{
             throw EntityCRUDError.failSaveEntity(genericDataAccess.getEntityName())
         }
@@ -40,7 +40,7 @@ class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    func fetchAll(fetchLimit: Int? = nil) throws -> [WordModel] {
+    public func fetchAll(fetchLimit: Int? = nil) throws -> [WordModel] {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue,direction: SortDirectionEnum.ascending )
             return try genericDataAccess.fetchModels(predicate: nil, sort: sort, fetchLimit: fetchLimit)
@@ -50,7 +50,7 @@ class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    func fetchWithNotStartedStatus(fetchLimit: Int) throws -> [WordModel] {
+    public func fetchWithNotStartedStatus(fetchLimit: Int) throws -> [WordModel] {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue,direction: SortDirectionEnum.ascending )
             let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(WordStatus.notStarted.rawValue))
@@ -61,7 +61,7 @@ class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    func fetchLast(_ wordStatus: WordStatus) throws -> WordModel? {
+    public func fetchLast(_ wordStatus: WordStatus) throws -> WordModel? {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue, direction: SortDirectionEnum.descending)
             let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(wordStatus.rawValue))
@@ -76,7 +76,7 @@ class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    func edit(_ wordModel: WordModel) throws{
+    public func edit(_ wordModel: WordModel) throws{
         do{
             guard let id = wordModel.wordId else{
                 throw EntityCRUDError.failEditEntity(genericDataAccess.getEntityName())
@@ -99,7 +99,7 @@ class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    func delete(_ wordModel: WordModel) throws{
+    public func delete(_ wordModel: WordModel) throws{
         do{
             guard let id = wordModel.wordId else{
                 throw EntityCRUDError.failDeleteEntity(genericDataAccess.getEntityName())

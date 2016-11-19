@@ -9,7 +9,6 @@
 import BaseLocalDataAccess
 
 public protocol SetDataAccessProtocol {
-//    init(genericDataAccess: GenericDataAccess<SetEntity>)
     func fetchSetNumber() throws -> Int
     func save(_ setModel: SetModel) throws
     func edit(_ setModel: SetModel) throws

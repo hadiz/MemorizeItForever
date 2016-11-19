@@ -15,8 +15,7 @@ final class ChangeSetTableDataSource: NSObject, SetTableDataSourceProtocol {
     var setId: UUID?
     
     required init(setManager: SetManagerProtocol? = nil) {
-        if let setDic = UserDefaults.standard.object(forKey: Settings.defaultSet.rawValue) as? Dictionary<String, Any>,
-            let setModel = SetModel(dictionary: setDic) {
+        if let setModel = UserDefaults.standard.getDefaultSetModel() {
             setId = setModel.setId
         }
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430320B51DE0748100BD0F0D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430320B41DE0748100BD0F0D /* UIViewExtension.swift */; };
 		431196D91DB3958100F7BE7F /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; };
 		431196DA1DB3958100F7BE7F /* MemorizeItForeverCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43262A411DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */; };
@@ -54,6 +55,7 @@
 		438651C91DC7426B007BC89D /* MICardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C81DC7426B007BC89D /* MICardView.swift */; };
 		438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */; };
 		4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */; };
+		438B61F01DE08482008260D6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438B61EF1DE08482008260D6 /* UIViewExtension.swift */; };
 		43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D871DD8A812000296DB /* MockSetManager.swift */; };
 		43BF3D931DD9B4E5000296DB /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D921DD9B4E5000296DB /* ValidatorTests.swift */; };
 		43BF3D971DD9B4FC000296DB /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D951DD9B4FC000296DB /* Validator.swift */; };
@@ -109,6 +111,7 @@
 
 /* Begin PBXFileReference section */
 		0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		430320B41DE0748100BD0F0D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = General/Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
 		431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSourceTests.swift; path = DataSourcesTests/ChangeSetTableDataSourceTests.swift; sourceTree = "<group>"; };
 		43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewControllerTests.swift; path = ViewControllersTests/ChangeSetViewControllerTests.swift; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 		438651C81DC7426B007BC89D /* MICardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardView.swift; path = PresentationLayer/VisualElements/MICardView.swift; sourceTree = "<group>"; };
 		438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceDelegateProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceDelegateProtocol.swift; sourceTree = "<group>"; };
 		438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceProtocol.swift; sourceTree = "<group>"; };
+		438B61EF1DE08482008260D6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = General/UIViewExtension.swift; sourceTree = "<group>"; };
 		43BF3D871DD8A812000296DB /* MockSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockSetManager.swift; path = General/MockSetManager.swift; sourceTree = "<group>"; };
 		43BF3D921DD9B4E5000296DB /* ValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidatorTests.swift; path = Validation/ValidatorTests.swift; sourceTree = "<group>"; };
 		43BF3D951DD9B4FC000296DB /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = General/Validation/Validator.swift; sourceTree = "<group>"; };
@@ -342,6 +346,7 @@
 				432B73401DB51C4B00A76FC7 /* NotificationCenterExtension.swift */,
 				438651C61DC61607007BC89D /* UIViewControllerExtension.swift */,
 				43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */,
+				430320B41DE0748100BD0F0D /* UIViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 				43F0D3031DD9DBEB0074856F /* MockValidatable.swift */,
 				43395CA61DDAF48D00540573 /* MockValidator.swift */,
 				4381502D1DDC72180040F2F9 /* MockWordManager.swift */,
+				438B61EF1DE08482008260D6 /* UIViewExtension.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -780,6 +786,7 @@
 				432B75511DB37B64003C6574 /* TabBarController.swift in Sources */,
 				43262A4D1DD2071E0029C27E /* MITextView.swift in Sources */,
 				43690E6B1DD73062009918A3 /* SwinjectStoryboardExtension.swift in Sources */,
+				430320B51DE0748100BD0F0D /* UIViewExtension.swift in Sources */,
 				4344DE6A1DC0EAE600FBA130 /* MICardViewLabel.swift in Sources */,
 				43687B701DD0AB2200E1EDB5 /* ChangeSetViewController.swift in Sources */,
 				4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */,
@@ -824,6 +831,7 @@
 				43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */,
 				43395CA71DDAF48D00540573 /* MockValidator.swift in Sources */,
 				43BF3D931DD9B4E5000296DB /* ValidatorTests.swift in Sources */,
+				438B61F01DE08482008260D6 /* UIViewExtension.swift in Sources */,
 				43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */,
 				43262A431DD1CAC30029C27E /* ChangeSetViewControllerTests.swift in Sources */,
 				43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */,

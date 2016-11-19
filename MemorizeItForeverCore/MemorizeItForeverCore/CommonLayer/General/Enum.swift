@@ -36,7 +36,7 @@ enum MemorizeColumns: Int16 {
     case fourth = 4
     case fifth = 5
 }
-enum WordStatus: Int16{
+public enum WordStatus: Int16{
     case notStarted = 0
     case inProgress = 1
     case done = 2

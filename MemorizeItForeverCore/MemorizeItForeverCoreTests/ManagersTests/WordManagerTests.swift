@@ -28,7 +28,11 @@ class WordManagerTests: XCTestCase {
     }
     
     func testSaveNewWord() {
-        wordManager.saveWord("Livre", meaninig: "Book", setId: UUID())
+        do{
+            try wordManager.saveWord("Livre", meaninig: "Book", setId: UUID())
+        }
+        catch{
+        }
         if let enumResult = objc_getAssociatedObject(wordDataAccess, &resultKey) as? FakeSetDataAccessEnum{
             XCTAssertEqual(enumResult, .save ,"should save word")
         }
