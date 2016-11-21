@@ -55,7 +55,7 @@
 		438651C91DC7426B007BC89D /* MICardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C81DC7426B007BC89D /* MICardView.swift */; };
 		438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */; };
 		4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */; };
-		438B61F01DE08482008260D6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438B61EF1DE08482008260D6 /* UIViewExtension.swift */; };
+		438B61F01DE08482008260D6 /* FakeUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438B61EF1DE08482008260D6 /* FakeUIViewExtension.swift */; };
 		43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D871DD8A812000296DB /* MockSetManager.swift */; };
 		43BF3D931DD9B4E5000296DB /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D921DD9B4E5000296DB /* ValidatorTests.swift */; };
 		43BF3D971DD9B4FC000296DB /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D951DD9B4FC000296DB /* Validator.swift */; };
@@ -164,7 +164,7 @@
 		438651C81DC7426B007BC89D /* MICardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardView.swift; path = PresentationLayer/VisualElements/MICardView.swift; sourceTree = "<group>"; };
 		438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceDelegateProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceDelegateProtocol.swift; sourceTree = "<group>"; };
 		438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceProtocol.swift; sourceTree = "<group>"; };
-		438B61EF1DE08482008260D6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = General/UIViewExtension.swift; sourceTree = "<group>"; };
+		438B61EF1DE08482008260D6 /* FakeUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeUIViewExtension.swift; path = General/FakeUIViewExtension.swift; sourceTree = "<group>"; };
 		43BF3D871DD8A812000296DB /* MockSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockSetManager.swift; path = General/MockSetManager.swift; sourceTree = "<group>"; };
 		43BF3D921DD9B4E5000296DB /* ValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidatorTests.swift; path = Validation/ValidatorTests.swift; sourceTree = "<group>"; };
 		43BF3D951DD9B4FC000296DB /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = General/Validation/Validator.swift; sourceTree = "<group>"; };
@@ -457,7 +457,7 @@
 				43F0D3031DD9DBEB0074856F /* MockValidatable.swift */,
 				43395CA61DDAF48D00540573 /* MockValidator.swift */,
 				4381502D1DDC72180040F2F9 /* MockWordManager.swift */,
-				438B61EF1DE08482008260D6 /* UIViewExtension.swift */,
+				438B61EF1DE08482008260D6 /* FakeUIViewExtension.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -831,7 +831,7 @@
 				43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */,
 				43395CA71DDAF48D00540573 /* MockValidator.swift in Sources */,
 				43BF3D931DD9B4E5000296DB /* ValidatorTests.swift in Sources */,
-				438B61F01DE08482008260D6 /* UIViewExtension.swift in Sources */,
+				438B61F01DE08482008260D6 /* FakeUIViewExtension.swift in Sources */,
 				43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */,
 				43262A431DD1CAC30029C27E /* ChangeSetViewControllerTests.swift in Sources */,
 				43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */,
