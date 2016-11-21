@@ -15,6 +15,7 @@ final class ChangeSetTableDataSource: NSObject, SetTableDataSourceProtocol {
     var setId: UUID?
     
     required init(setManager: SetManagerProtocol? = nil) {
+        // TODO: Should initilialize every time that view is opened, otherwise set userdefaults in another way
         if let setModel = UserDefaults.standard.getDefaultSetModel() {
             setId = setModel.setId
         }

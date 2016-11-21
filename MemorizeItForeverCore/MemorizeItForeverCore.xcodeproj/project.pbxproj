@@ -59,6 +59,7 @@
 		438874551DB7A7C60030C016 /* WordInProgressModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874541DB7A7C60030C016 /* WordInProgressModelTests.swift */; };
 		4388745D1DB7AE310030C016 /* SetEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388745C1DB7AE310030C016 /* SetEntityTests.swift */; };
 		438874601DB7AF6F0030C016 /* InMemoryManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388745F1DB7AF6F0030C016 /* InMemoryManagedObjectContext.swift */; };
+		43B35F221DE2DAE1006717F5 /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B35F211DE2DAE1006717F5 /* NotificationCenterExtension.swift */; };
 		43C092D11DB7B12A00C4A15F /* EntityCreationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C092D01DB7B12A00C4A15F /* EntityCreationHelper.swift */; };
 		43DBA2201DBB5DA00017E733 /* WordEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBA21F1DBB5DA00017E733 /* WordEntityTests.swift */; };
 		43DBA2221DBB63C70017E733 /* WordHistoryEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBA2211DBB63C70017E733 /* WordHistoryEntityTests.swift */; };
@@ -140,6 +141,7 @@
 		438874541DB7A7C60030C016 /* WordInProgressModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordInProgressModelTests.swift; path = ModelsTests/WordInProgressModelTests.swift; sourceTree = "<group>"; };
 		4388745C1DB7AE310030C016 /* SetEntityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetEntityTests.swift; path = EntitiesTests/SetEntityTests.swift; sourceTree = "<group>"; };
 		4388745F1DB7AF6F0030C016 /* InMemoryManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InMemoryManagedObjectContext.swift; path = Helper/InMemoryManagedObjectContext.swift; sourceTree = "<group>"; };
+		43B35F211DE2DAE1006717F5 /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationCenterExtension.swift; path = CommonLayer/General/Extensions/NotificationCenterExtension.swift; sourceTree = "<group>"; };
 		43C092D01DB7B12A00C4A15F /* EntityCreationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntityCreationHelper.swift; path = Helper/EntityCreationHelper.swift; sourceTree = "<group>"; };
 		43DBA21F1DBB5DA00017E733 /* WordEntityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordEntityTests.swift; path = EntitiesTests/WordEntityTests.swift; sourceTree = "<group>"; };
 		43DBA2211DBB63C70017E733 /* WordHistoryEntityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordHistoryEntityTests.swift; path = EntitiesTests/WordHistoryEntityTests.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				43434AC21DB3620C0005B59F /* NSDateExtensions.swift */,
 				43434AC41DB3620C0005B59F /* NSUserDefaultsExtensions.swift */,
 				911897E71DDF134E001FC74B /* StringExtension.swift */,
+				43B35F211DE2DAE1006717F5 /* NotificationCenterExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91A64D581DD50077003D45B8 /* WordManagerProtocol.swift in Sources */,
+				43B35F221DE2DAE1006717F5 /* NotificationCenterExtension.swift in Sources */,
 				43434ADC1DB3622F0005B59F /* WordHistoryModel.swift in Sources */,
 				43434AEA1DB366860005B59F /* SetEntity+CoreDataClass.swift in Sources */,
 				43434AF11DB366860005B59F /* WordEntity+CoreDataProperties.swift in Sources */,

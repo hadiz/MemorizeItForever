@@ -7,8 +7,8 @@
 //
 
 final public class Wrapper<T>{
-    let wrappedValue: T?
-    public init(wrappedValue: T?){
-        self.wrappedValue = wrappedValue
+    let value: T?
+    public init(value: T?){
+        self.value = value
     }
 }

@@ -41,9 +41,8 @@ public enum WordStatus: Int16{
     case inProgress = 1
     case done = 2
 }
-//enum NotificationEnumCore: String{
-//}
-//
-//public protocol NotificationEnumProtocol: RawRepresentable {
-//    
-//}
+public enum NotificationEnum: String{
+    case setViewControllerReload
+    case setChanged
+    case setDeleted
+}

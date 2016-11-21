@@ -25,11 +25,18 @@ class MockSetManager: SetManagerProtocol {
         
     }
     
+    func setUserDefaultSet(force: Bool){
+        
+    }
+    
     func save(_ setName: String) {
         
     }
     
     func edit(_ setModel: SetModel, setName: String) {
+        
+    }
+    func changeSet(_ setModel: SetModel){
         
     }
 }

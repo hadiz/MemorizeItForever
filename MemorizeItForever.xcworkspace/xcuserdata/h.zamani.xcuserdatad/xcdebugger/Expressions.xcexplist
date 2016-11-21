@@ -127,10 +127,10 @@
          contextName = "ChangeSetViewControllerTests.testChangeSetViewControllerHasATableView() -&gt; ():ChangeSetViewControllerTests.swift">
          <PersistentStrings>
             <PersistentString
-               value = "changeSetViewController.tableView">
+               value = "tableView">
             </PersistentString>
             <PersistentString
-               value = "tableView">
+               value = "changeSetViewController.tableView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -168,17 +168,6 @@
          contextName = "ReviewPhraseViewController.gestureRecognizer(UIGestureRecognizer, shouldReceive : UITouch) -&gt; Bool:ReviewPhraseViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "BaseManagedObjectContext.initializeContext() -&gt; ():BaseManagedObjectContext.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "persistentContainer.viewContext">
-            </PersistentString>
-            <PersistentString
-               value = "persistentContainer.viewContext&#10;persistentContainer.viewContext&#10;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "AddPhraseViewController.nextBarButtonTapHandler() -&gt; ():AddPhraseViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -187,10 +176,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SetManager.ifSetIsdeletable() throws -&gt; Bool:SetManager.swift">
+         contextName = "BaseManagedObjectContext.initializeContext() -&gt; ():BaseManagedObjectContext.swift">
          <PersistentStrings>
             <PersistentString
-               value = "setDataAccess.fetchSetNumber()">
+               value = "persistentContainer.viewContext&#10;persistentContainer.viewContext&#10;">
+            </PersistentString>
+            <PersistentString
+               value = "persistentContainer.viewContext">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -203,13 +195,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SetManager.ifSetIsdeletable() throws -&gt; Bool:SetManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "setDataAccess.fetchSetNumber()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChangeSetTableDataSource.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:ChangeSetTableDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "setId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ReviewPhraseViewController.swapCards(direction : SwipeDirection) -&gt; ():ReviewPhraseViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "index - 1 &lt; 1">
             </PersistentString>
             <PersistentString
-               value = "index">
+               value = "nextIndex">
             </PersistentString>
             <PersistentString
                value = "index - 1">
@@ -218,7 +226,7 @@
                value = "list[nextIndex]![0]">
             </PersistentString>
             <PersistentString
-               value = "nextIndex">
+               value = "index">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -19,7 +19,6 @@
 		43262A4D1DD2071E0029C27E /* MITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A4C1DD2071E0029C27E /* MITextView.swift */; };
 		432B733E1DB5149B00A76FC7 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */; };
 		432B733F1DB5149B00A76FC7 /* BaseLocalDataAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		432B73411DB51C4B00A76FC7 /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B73401DB51C4B00A76FC7 /* NotificationCenterExtension.swift */; };
 		432B73431DB51E2200A76FC7 /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B73421DB51E2200A76FC7 /* CustomBackgroundView.swift */; };
 		432B75451DB37ABF003C6574 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B75441DB37ABF003C6574 /* RoundedButton.swift */; };
 		432B754A1DB37B41003C6574 /* SetItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B75471DB37B41003C6574 /* SetItemViewController.swift */; };
@@ -121,7 +120,6 @@
 		43262A4A1DD2000D0029C27E /* VFLBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VFLBasedViewController.swift; path = PresentationLayer/ViewControllers/Main/VFLBasedViewController.swift; sourceTree = "<group>"; };
 		43262A4C1DD2071E0029C27E /* MITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITextView.swift; path = PresentationLayer/VisualElements/MITextView.swift; sourceTree = "<group>"; };
 		432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = MemorizeItForever/Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
-		432B73401DB51C4B00A76FC7 /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationCenterExtension.swift; path = General/Extensions/NotificationCenterExtension.swift; sourceTree = "<group>"; };
 		432B73421DB51E2200A76FC7 /* CustomBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBackgroundView.swift; path = PresentationLayer/VisualElements/CustomBackgroundView.swift; sourceTree = "<group>"; };
 		432B75441DB37ABF003C6574 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = PresentationLayer/VisualElements/RoundedButton.swift; sourceTree = "<group>"; };
 		432B75471DB37B41003C6574 /* SetItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetItemViewController.swift; path = PresentationLayer/ViewControllers/Set/SetItemViewController.swift; sourceTree = "<group>"; };
@@ -343,7 +341,6 @@
 			children = (
 				432B75631DB38DF9003C6574 /* UIColorExtension.swift */,
 				432B75611DB382B5003C6574 /* UITableViewCellExtension.swift */,
-				432B73401DB51C4B00A76FC7 /* NotificationCenterExtension.swift */,
 				438651C61DC61607007BC89D /* UIViewControllerExtension.swift */,
 				43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */,
 				430320B41DE0748100BD0F0D /* UIViewExtension.swift */,
@@ -796,7 +793,6 @@
 				43687B741DD0AE0800E1EDB5 /* MITableView.swift in Sources */,
 				432B73431DB51E2200A76FC7 /* CustomBackgroundView.swift in Sources */,
 				432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */,
-				432B73411DB51C4B00A76FC7 /* NotificationCenterExtension.swift in Sources */,
 				435824D81DCE0D9500842C73 /* MISwitch.swift in Sources */,
 				432B754C1DB37B41003C6574 /* SetViewController.swift in Sources */,
 				43FFEF001DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift in Sources */,

@@ -82,6 +82,10 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
         NSLayoutConstraint.activate(constraintList)
     }
     private func didSelectSet(_ model: MemorizeItModelProtocol?){
+        guard let setManager = setManager else {
+            fatalError("setManager is not initialiazed")
+        }
+
         var setId: UUID?
         if let setDic = UserDefaults.standard.object(forKey: Settings.defaultSet.rawValue) as? Dictionary<String, Any>,
             let setModel = SetModel(dictionary: setDic) {
@@ -89,8 +93,7 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
         }
         let setModel = model as! SetModel
         if setId != setModel.setId{
-            UserDefaults.standard.set(setModel.toDic(), forKey: Settings.defaultSet.rawValue)
-            NotificationCenter.default.post(.setChanged, object: nil)
+           setManager.changeSet(setModel)
         }
     }
     
@@ -98,9 +101,12 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
         guard let setManager = setManager else {
             fatalError("setManager is not initialiazed")
         }
+        guard let dataSource = dataSource else {
+            fatalError("dataSource is not initialiazed")
+        }
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
             let sets = setManager.get().flatMap{$0 as MemorizeItModelProtocol}
-            self.dataSource?.setModels(sets)
+            dataSource.setModels(sets)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

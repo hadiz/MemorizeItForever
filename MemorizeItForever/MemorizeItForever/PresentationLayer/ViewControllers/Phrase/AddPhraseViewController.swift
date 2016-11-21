@@ -16,6 +16,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     var desc: UILabel!
     var phrase: MITextView!
     var meaning: MITextView!
+    var setText: MISetView!
     
     // MARK: Field injection
     
@@ -52,6 +53,9 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     }
     
     override func defineControls(){
+        setText = MISetView()
+        setText.setFontSize(12)
+        
         desc = MILabel()
         desc.text = "Write the Phrase here"
         
@@ -66,6 +70,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     }
     
     override func addControls(){
+        self.view.addSubview(setText)
         self.view.addSubview(desc)
         self.view.addSubview(phrase)
         self.view.addSubview(meaning)
@@ -77,6 +82,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
         viewDic["desc"] = desc
         viewDic["phrase"] = phrase
         viewDic["meaning"] = meaning
+        viewDic["setText"] = setText
         
         let hDescCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[desc]", options: [], metrics: nil, views: viewDic)
         let vDescCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[desc(21.5)]-[phrase]-30-[bottomLayoutGuide]", options: [], metrics: nil, views: viewDic)
@@ -85,11 +91,15 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
         
         let hMeaningCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[meaning]-|", options: [], metrics: nil, views: viewDic)
         
+        let hSetTextCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:[setText]-|", options: [], metrics: nil, views: viewDic)
+        let vSetTextCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[setText(21.5)]", options: [], metrics: nil, views: viewDic)
         
         constraintList += hDescCnst
         constraintList += vDescCnst
         constraintList += hPhraseCnst
         constraintList += hMeaningCnst
+        constraintList += hSetTextCnst
+        constraintList += vSetTextCnst
         
         let meaningTopCnst = NSLayoutConstraint(item: meaning, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: phrase, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
         let meaningBottomCnst = NSLayoutConstraint(item: meaning, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: phrase, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)

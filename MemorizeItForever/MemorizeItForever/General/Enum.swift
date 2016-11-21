@@ -9,10 +9,6 @@
 enum CellReuseIdentifier: String{
     case setTableCellIdentifier = "SetTableCellIdentifier"
 }
-enum NotificationEnum: String{
-    case setViewControllerReload
-    case setChanged
-}
 enum EntityMode: String{
     case save
     case edit

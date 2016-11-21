@@ -87,11 +87,11 @@ extension SwinjectStoryboard {
         
         defaultContainer.register(SetTableDataSourceProtocol.self, name: "SetTableDataSource") { r in
             SetTableDataSource(setManager: r.resolve(SetManagerProtocol.self))
-        }
+        }.inObjectScope(.none)
         
         defaultContainer.register(SetTableDataSourceProtocol.self, name: "ChangeSetTableDataSource") { r in
             ChangeSetTableDataSource(setManager: r.resolve(SetManagerProtocol.self))
-        }
+        }.inObjectScope(.none)
         
         defaultContainer.register(ValidatorProtocol.self){ r in
             Validator()
