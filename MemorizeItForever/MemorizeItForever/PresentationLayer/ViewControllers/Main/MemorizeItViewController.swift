@@ -13,6 +13,7 @@ final class MemorizeItViewController: UIViewController {
     var changeSetViewController: ChangeSetViewController?
     var addPhraseViewController: AddPhraseViewController?
     var reviewPhraseViewController: ReviewPhraseViewController?
+    var takeTestViewController: TakeTestViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,14 @@ final class MemorizeItViewController: UIViewController {
         self.presentingPopover(addPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }
     
+    private func takeATestTapped(_ sender: AnyObject){
+        guard let takeTestViewController = takeTestViewController else {
+            fatalError("takeTestViewController is not initialized")
+        }
+        let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
+        self.presentingPopover(takeTestViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
+    }
+    
     @IBAction func setAction(_ sender: AnyObject) {
         setTapped(sender)
     }
@@ -66,6 +75,9 @@ final class MemorizeItViewController: UIViewController {
     
     @IBAction func addPhraseAction(_ sender: AnyObject) {
         addPhraseTapped(sender)
+    }
+    @IBAction func takeATestAction(_ sender: AnyObject) {
+        takeATestTapped(sender)
     }
     
 }

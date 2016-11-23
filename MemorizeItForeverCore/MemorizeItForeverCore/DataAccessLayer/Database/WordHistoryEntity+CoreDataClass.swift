@@ -10,16 +10,16 @@ import Foundation
 import CoreData
 import BaseLocalDataAccess
 
-class WordHistoryEntity: NSManagedObject, EntityProtocol{
+public class WordHistoryEntity: NSManagedObject, EntityProtocol{
     
-    static var entityName: String{
+    public static var entityName: String{
         return Entities.wordHistoryEntity.rawValue
     }
-    static var idField: String{
+    public static var idField: String{
         return Fields.Id.rawValue
     }
     
-    func toModel() throws -> ModelProtocol {
+    public func toModel() throws -> ModelProtocol {
         do{
             var wordHistoryModel = WordHistoryModel()
             wordHistoryModel.word = try self.word?.toModel() as? WordModel
@@ -35,7 +35,7 @@ class WordHistoryEntity: NSManagedObject, EntityProtocol{
         }
     }
     
-    enum Fields: String {
+    public enum Fields: String {
         case Id = "id"
         case ColumnNo = "columnNo"
         case FailureCount = "failureCount"

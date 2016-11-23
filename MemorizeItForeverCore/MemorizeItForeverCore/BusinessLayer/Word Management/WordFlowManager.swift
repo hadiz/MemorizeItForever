@@ -7,18 +7,18 @@
 //
 
 import Foundation
-class WordFlowManager: WordFlowManagerProtocol {
+public class WordFlowManager: WordFlowManagerProtocol {
     
     private var wordDataAccess: WordDataAccessProtocol!
     private var wordInProgressDataAccess: WordInProgressDataAccessProtocol!
     private var wordHistoryDataAccess: WordHistoryDataAccessProtocol!
-    init(wordDataAccess: WordDataAccessProtocol, wordInProgressDataAccess: WordInProgressDataAccessProtocol, wordHistoryDataAccess: WordHistoryDataAccessProtocol) {
+    public init(wordDataAccess: WordDataAccessProtocol, wordInProgressDataAccess: WordInProgressDataAccessProtocol, wordHistoryDataAccess: WordHistoryDataAccessProtocol) {
         self.wordDataAccess = wordDataAccess
         self.wordInProgressDataAccess = wordInProgressDataAccess
         self.wordHistoryDataAccess = wordHistoryDataAccess
     }
     
-    func putWordInPreColumn(_ wordModel: WordModel) {
+    public func putWordInPreColumn(_ wordModel: WordModel) {
         var inProgressModel = WordInProgressModel()
         inProgressModel.column = MemorizeColumns.pre.rawValue
         inProgressModel.date = Date().addDay(MemorizeColumns.pre.days)
@@ -31,7 +31,7 @@ class WordFlowManager: WordFlowManagerProtocol {
         }
     }
     
-    func answerCorrectly(_ wordInProgressModel: WordInProgressModel){
+    public func answerCorrectly(_ wordInProgressModel: WordInProgressModel){
         if wordInProgressModel.column == MemorizeColumns.fifth.rawValue{
             do{
                 try endOfProgress(wordInProgressModel)
@@ -50,7 +50,7 @@ class WordFlowManager: WordFlowManagerProtocol {
         }
     }
     
-    func answerWrongly(_ wordInProgressModel: WordInProgressModel){
+    public func answerWrongly(_ wordInProgressModel: WordInProgressModel){
         do{
             try registerInWordHistory(wordInProgressModel)
             try rePutWordInPreColumn(wordInProgressModel)
@@ -60,7 +60,7 @@ class WordFlowManager: WordFlowManagerProtocol {
         }
     }
     
-    func fetchNewWordsToPutInPreColumn() throws{
+    public func fetchNewWordsToPutInPreColumn() throws{
         guard let count = UserDefaults.standard.object(forKey: Settings.newWordsCount.rawValue) as? Int else{
             throw WordManagementFlowError.newWordsCount("Can not specify new words count")
         }
@@ -78,7 +78,7 @@ class WordFlowManager: WordFlowManagerProtocol {
         }
     }
     
-    func fetchWordsForReview() throws -> [WordModel]{
+    public func fetchWordsForReview() throws -> [WordModel]{
         do{
             var wordInProgress = WordInProgressModel()
             wordInProgress.date = Date().addDay(1)
@@ -97,7 +97,7 @@ class WordFlowManager: WordFlowManagerProtocol {
         }
     }
     
-    func fetchWordsToExamin() throws -> [WordInProgressModel]{
+    public func fetchWordsToExamin() throws -> [WordInProgressModel]{
         // it should fetch words for today and all words that belongs to past
         do{
             var wordInProgress = WordInProgressModel()
@@ -250,5 +250,5 @@ class WordFlowManager: WordFlowManagerProtocol {
             return MemorizeColumns.pre
         }
     }
-
+    
 }

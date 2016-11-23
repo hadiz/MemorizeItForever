@@ -36,6 +36,14 @@ extension SwinjectStoryboard {
             WordDataAccess(genericDataAccess: r.resolve(GenericDataAccess<WordEntity>.self)!,setDataAccess: r.resolve(GenericDataAccess<SetEntity>.self)!)
         }
         
+        defaultContainer.register(WordInProgressDataAccessProtocol.self){ r in
+            WordInProgressDataAccess(genericDataAccess: r.resolve(GenericDataAccess<WordInProgressEntity>.self)!, wordDataAccess: r.resolve(GenericDataAccess<WordEntity>.self)!)
+        }
+        
+        defaultContainer.register(WordHistoryDataAccessProtocol.self){ r in
+            WordHistoryDataAccess(genericDataAccess: r.resolve(GenericDataAccess<WordHistoryEntity>.self)!, wordDataAccess: r.resolve(GenericDataAccess<WordEntity>.self)!)
+        }
+        
         defaultContainer.register(SetManagerProtocol.self){ r in
             SetManager(dataAccess: r.resolve(SetDataAccessProtocol.self)!)
         }
@@ -52,6 +60,7 @@ extension SwinjectStoryboard {
             c.changeSetViewController = r.resolve(ChangeSetViewController.self)
             c.addPhraseViewController = r.resolve(AddPhraseViewController.self)
             c.reviewPhraseViewController = r.resolve(ReviewPhraseViewController.self)
+            c.takeTestViewController = r.resolve(TakeTestViewController.self)
         }
         
         defaultContainer.registerForStoryboard(SetViewController.self) { r, c in
@@ -82,6 +91,7 @@ extension SwinjectStoryboard {
         
         defaultContainer.register(ReviewPhraseViewController.self) { r in
             let controller = ReviewPhraseViewController()
+            controller.wordFlowManager = r.resolve(WordFlowManagerProtocol.self)
             return controller
             }.inObjectScope(.none)
         
@@ -103,6 +113,24 @@ extension SwinjectStoryboard {
         
         defaultContainer.register(GenericDataAccess<WordEntity>.self){ r in
             GenericDataAccess<WordEntity>(context: r.resolve(ManagedObjectContextProtocol.self)!)
+        }
+        
+        defaultContainer.register(GenericDataAccess<WordInProgressEntity>.self){ r in
+            GenericDataAccess<WordInProgressEntity>(context: r.resolve(ManagedObjectContextProtocol.self)!)
+        }
+        
+        defaultContainer.register(GenericDataAccess<WordHistoryEntity>.self){ r in
+            GenericDataAccess<WordHistoryEntity>(context: r.resolve(ManagedObjectContextProtocol.self)!)
+        }
+        
+        defaultContainer.register(TakeTestViewController.self) { r in
+            let controller = TakeTestViewController()
+            controller.wordFlowManager = r.resolve(WordFlowManagerProtocol.self)
+            return controller
+        }.inObjectScope(.none)
+        
+        defaultContainer.register(WordFlowManagerProtocol.self){ r in
+            WordFlowManager(wordDataAccess: r.resolve(WordDataAccessProtocol.self)!, wordInProgressDataAccess: r.resolve(WordInProgressDataAccessProtocol.self)!, wordHistoryDataAccess: r.resolve(WordHistoryDataAccessProtocol.self)!)
         }
     }
 }

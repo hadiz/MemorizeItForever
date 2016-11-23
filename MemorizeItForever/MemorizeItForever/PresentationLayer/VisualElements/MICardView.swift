@@ -9,15 +9,15 @@
 import UIKit
 
 class MICardView: MIView {
-     private var phrase: UILabel!
-     private var meaning: UILabel!
-     private var showingPhrase = true
+    private var phrase: UILabel!
+    private var meaning: UILabel!
+    private var showingPhrase = true
     
     // TODO
-//    var colorPicker: ColorPickerProtocol?
-
-    func initialize(phrase: String, meaning: String) -> MICardView{
-        initSelf()
+    //    var colorPicker: ColorPickerProtocol?
+    
+    func initialize(phrase: String, meaning: String, addGesture: Bool = true) -> MICardView{
+        initSelf(addGesture: addGesture)
         defineControls(phraseText: phrase, meaningText: meaning)
         addControls()
         applyAutoLayout()
@@ -36,7 +36,7 @@ class MICardView: MIView {
         }
     }
     
-    func updateText(phrase: String, meaning: String, index: Int){
+    func updateText(phrase: String, meaning: String){
         self.phrase.text = phrase
         self.meaning.text = meaning
     }
@@ -61,13 +61,12 @@ class MICardView: MIView {
         }
     }
     
-    private func initSelf(){
-//        guard let colorPicker = colorPicker else {
-//            fatalError("colorPicker is not initialized")
-//        }
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(MICardView.flip))
-        doubleTap.numberOfTapsRequired = 2
-        self.addGestureRecognizer(doubleTap)
+    private func initSelf(addGesture: Bool){
+        if addGesture{
+            let doubleTap = UITapGestureRecognizer(target: self, action: #selector(MICardView.flip))
+            doubleTap.numberOfTapsRequired = 2
+            self.addGestureRecognizer(doubleTap)
+        }
         
         self.isUserInteractionEnabled = true
         self.backgroundColor = ColorPicker.shared.backgroundView.withAlphaComponent(0.7)

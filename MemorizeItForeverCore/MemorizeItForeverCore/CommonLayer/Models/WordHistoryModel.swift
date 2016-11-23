@@ -8,11 +8,11 @@
 
 import UIKit
 
-struct WordHistoryModel: MemorizeItModelProtocol {
-    var word: WordModel?
-    var columnNo: Int16?
-    var failureCount: Int32?
-    var wordHistoryId: UUID?
+public struct WordHistoryModel: MemorizeItModelProtocol {
+    public var word: WordModel?
+    public var columnNo: Int16?
+    public var failureCount: Int32?
+    public var wordHistoryId: UUID?
 }
 
 func ==(lhs: WordHistoryModel, rhs: WordHistoryModel) -> Bool {

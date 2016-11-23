@@ -19,6 +19,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "TakeTestViewController.swipeCardLeft() -&gt; ():TakeTestViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "list[index]![0]">
+            </PersistentString>
+            <PersistentString
+               value = "cardViewsDic[.current]?.phrase.text">
+            </PersistentString>
+            <PersistentString
+               value = "tempCardView.phrase.text">
+            </PersistentString>
+            <PersistentString
+               value = "next.phrase.text">
+            </PersistentString>
+            <PersistentString
+               value = "cardViewsDic[.next].phrase.text">
+            </PersistentString>
+            <PersistentString
+               value = "index">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AppDelegate.(managedObjectModel.getter).(closure #1):AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
@@ -127,10 +150,10 @@
          contextName = "ChangeSetViewControllerTests.testChangeSetViewControllerHasATableView() -&gt; ():ChangeSetViewControllerTests.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tableView">
+               value = "changeSetViewController.tableView">
             </PersistentString>
             <PersistentString
-               value = "changeSetViewController.tableView">
+               value = "tableView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -179,10 +202,10 @@
          contextName = "BaseManagedObjectContext.initializeContext() -&gt; ():BaseManagedObjectContext.swift">
          <PersistentStrings>
             <PersistentString
-               value = "persistentContainer.viewContext&#10;persistentContainer.viewContext&#10;">
+               value = "persistentContainer.viewContext">
             </PersistentString>
             <PersistentString
-               value = "persistentContainer.viewContext">
+               value = "persistentContainer.viewContext&#10;persistentContainer.viewContext&#10;">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -217,7 +240,7 @@
                value = "index - 1 &lt; 1">
             </PersistentString>
             <PersistentString
-               value = "nextIndex">
+               value = "index">
             </PersistentString>
             <PersistentString
                value = "index - 1">
@@ -226,7 +249,7 @@
                value = "list[nextIndex]![0]">
             </PersistentString>
             <PersistentString
-               value = "index">
+               value = "nextIndex">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -243,6 +266,17 @@
          <PersistentStrings>
             <PersistentString
                value = "current.center.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TakeTestViewController.updateConstraint() -&gt; ():TakeTestViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "current.phrase.text">
+            </PersistentString>
+            <PersistentString
+               value = "next.phrase.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -310,6 +344,14 @@
          <PersistentStrings>
             <PersistentString
                value = "sets![0].setId!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TakeTestViewController.fetchData() -&gt; ():TakeTestViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "columnDic">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

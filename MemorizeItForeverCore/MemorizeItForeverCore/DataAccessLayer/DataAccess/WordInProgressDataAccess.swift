@@ -8,17 +8,17 @@
 import Foundation
 import BaseLocalDataAccess
 
-class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
+public class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
     
     var genericDataAccess: GenericDataAccess<WordInProgressEntity>!
     var wordDataAccess: GenericDataAccess<WordEntity>!
     
-    init(genericDataAccess: GenericDataAccess<WordInProgressEntity>, wordDataAccess: GenericDataAccess<WordEntity>) {
+    public init(genericDataAccess: GenericDataAccess<WordInProgressEntity>, wordDataAccess: GenericDataAccess<WordEntity>) {
         self.wordDataAccess = wordDataAccess
         self.genericDataAccess = genericDataAccess
     }
     
-    func fetchAll() throws -> [WordInProgressModel]{
+    public func fetchAll() throws -> [WordInProgressModel]{
         do{
             return try genericDataAccess.fetchModels(predicate: nil, sort: nil)
         }
@@ -27,7 +27,7 @@ class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
         }
     }
 
-    func save(_ wordInProgressModel: WordInProgressModel) throws{
+    public func save(_ wordInProgressModel: WordInProgressModel) throws{
         guard let wordId = wordInProgressModel.word?.wordId else{
             throw EntityCRUDError.failSaveEntity(genericDataAccess.getEntityName())
         }
@@ -49,7 +49,7 @@ class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
         }
     }
     
-    func edit(_ wordInProgressModel: WordInProgressModel) throws{
+    public func edit(_ wordInProgressModel: WordInProgressModel) throws{
         do{
             guard let id = wordInProgressModel.wordInProgressId else{
                 throw EntityCRUDError.failSaveEntity(genericDataAccess.getEntityName())
@@ -71,7 +71,7 @@ class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
         }
     }
     
-    func delete(_ wordInProgressModel: WordInProgressModel) throws{
+    public func delete(_ wordInProgressModel: WordInProgressModel) throws{
         do{
             guard let id = wordInProgressModel.wordInProgressId else{
                 throw EntityCRUDError.failDeleteEntity(genericDataAccess.getEntityName())
@@ -89,7 +89,7 @@ class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
         }
     }
 
-    func fetchByWordId(_ wordInProgressModel: WordInProgressModel) throws -> WordInProgressModel?{
+    public func fetchByWordId(_ wordInProgressModel: WordInProgressModel) throws -> WordInProgressModel?{
         guard let wordId = wordInProgressModel.word?.wordId, let word = fetchWordEntity(wordId as UUID) else{
             throw EntityCRUDError.failFetchEntity(genericDataAccess.getEntityName())
         }
@@ -110,7 +110,7 @@ class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
         }
     }
     
-    func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]{
+    public func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]{
         guard let date = wordInProgressModel.date?.getDate(), let column = wordInProgressModel.column else{
             throw EntityCRUDError.failFetchEntity(genericDataAccess.getEntityName())
         }
@@ -131,7 +131,7 @@ class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
         }
     }
     
-    func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]{
+    public func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]{
         guard let date = wordInProgressModel.date?.getDate() else{
             throw EntityCRUDError.failFetchEntity(genericDataAccess.getEntityName())
         }

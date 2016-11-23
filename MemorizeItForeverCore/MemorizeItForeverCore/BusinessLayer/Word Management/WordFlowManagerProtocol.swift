@@ -6,7 +6,7 @@
 //  Copyright © 2016 SomeSimpleSolutions. All rights reserved.
 //
 
-protocol WordFlowManagerProtocol {
+public protocol WordFlowManagerProtocol {
     func putWordInPreColumn(_ wordModel: WordModel) throws
     func answerCorrectly(_ wordInProgressModel: WordInProgressModel)
     func answerWrongly(_ wordInProgressModel: WordInProgressModel)

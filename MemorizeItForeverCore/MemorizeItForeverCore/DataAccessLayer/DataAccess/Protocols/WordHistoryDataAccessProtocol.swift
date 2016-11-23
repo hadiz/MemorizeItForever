@@ -8,7 +8,7 @@
 
 import BaseLocalDataAccess
 
-protocol WordHistoryDataAccessProtocol {
+public protocol WordHistoryDataAccessProtocol {
     func fetchByWordId(_ wordHistoryModel: WordHistoryModel) throws ->  [WordHistoryModel]
     func countByWordId(_ wordHistoryModel: WordHistoryModel) throws -> Int
     func saveOrUpdate(_ wordHistoryModel: WordHistoryModel) throws

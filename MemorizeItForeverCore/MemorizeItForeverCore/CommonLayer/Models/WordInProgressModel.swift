@@ -9,10 +9,14 @@
 import UIKit
 
 public struct WordInProgressModel: MemorizeItModelProtocol {
-    var word: WordModel?
-    var date: Date?
-    var column: Int16?
-    var wordInProgressId: UUID?
+   public var word: WordModel?
+   public var date: Date?
+   public var column: Int16?
+   public var wordInProgressId: UUID?
+    
+    public init(){
+        // TODO: Delete
+    }
 }
 
 public func ==(lhs: WordInProgressModel, rhs: WordInProgressModel) -> Bool {

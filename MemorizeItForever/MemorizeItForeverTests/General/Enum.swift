@@ -25,3 +25,10 @@ enum UIViewEnum{
     case successToast
     case failureToast
 }
+
+enum TakeTestViewControllerEnum {
+    case doneBarButtonTap
+    case showAnswerButtonTap
+    case correctButtonTap
+    case wrongButtonTap
+}

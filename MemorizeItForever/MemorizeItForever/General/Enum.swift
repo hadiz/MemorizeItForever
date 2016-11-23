@@ -16,9 +16,15 @@ enum EntityMode: String{
 enum SwipeDirection{
     case left
     case right
+    case up
+    case down
 }
 enum CardViewPosition{
     case current
     case previous
     case next
+}
+
+enum SubViewsEnum: Int{
+    case taskDoneView = 100001
 }

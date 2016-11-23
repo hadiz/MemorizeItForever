@@ -66,6 +66,9 @@
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         </variation>
+                                                        <connections>
+                                                            <action selector="takeATestAction:" destination="FwN-R0-hcu" eventType="touchUpInside" id="8Le-pf-dDE"/>
+                                                        </connections>
                                                     </button>
                                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="oLn-zR-W4J" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
                                                         <constraints>

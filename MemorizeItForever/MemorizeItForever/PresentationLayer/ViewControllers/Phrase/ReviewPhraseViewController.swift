@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import MemorizeItForeverCore
 
 final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate {
     
+    // MARK: Constant
+    
     private let changeTextTransition = "ChangeTextTransition"
-    private let cardViewsDicFatalError = "CardViewsDic does not have all card sitation"
+    private let cardViewsDicFatalError = "CardViewsDic does not have all card situation"
+    
+    // MARK: Controls
     
     var setText: MISetView!
     var counter: UILabel!
@@ -23,22 +28,25 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
     var flip: UIButton!
     var done: UIButton!
     
+    // MARK: Private Variables
+    
     private var nextCardLeadingCnst: NSLayoutConstraint!
     private var previousCardTrailingCnst: NSLayoutConstraint!
     private var currentCardLeadingCnst: NSLayoutConstraint!
     private var currentCardTrailingCnst: NSLayoutConstraint!
-    
-    private var swipeRight: UISwipeGestureRecognizer!
-    private var swipeLeft: UISwipeGestureRecognizer!
     private var panningGesture: UIPanGestureRecognizer!
-    
-    private var list = [1:["phrase1","meaning1"],2:["phrase2","meaning2"],3:["phrase3","meaning3"],4:["phrase4","meaning4"],5:["phrase5","meaning5"]]
-    private var index = 1
+    private var list: [WordModel] = []
+    private var index = 0
     private var showFront = true
-    
-    
     private var cardViewsDic: Dictionary<CardViewPosition, MICardView> = [:]
     private var cardViewCenter: CGFloat?
+    private var isTaskDone = false
+    
+    // MARK: Field injection
+    
+    var wordFlowManager: WordFlowManagerProtocol?
+    
+    // MARK: Override Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,108 +62,17 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
         cardViewCenter = current.center.x
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.removeTaskDoneView()
+        isTaskDone = false
+        fetchData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    
-    func previousbarButtonTapHandler(){
-        swapCards(direction: .right)
-    }
-    
-    func nextbarButtonTapHandler(){
-        swapCards(direction: .left)
-    }
-    
-    func flipTapHandler(){
-        guard let current = cardViewsDic[.current] else {
-            fatalError(cardViewsDicFatalError)
-        }
-        current.flip()
-    }
-    
-    func doneTapHandler(){
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func panning(recognizer: UIPanGestureRecognizer){
-        guard let current = cardViewsDic[.current], let previous = cardViewsDic[.previous], let next = cardViewsDic[.next] else {
-            fatalError(cardViewsDicFatalError)
-        }
-        
-        if recognizer.state == .changed{
-            let translation = recognizer.translation(in: recognizer.view?.superview)
-            current.center.x += translation.x
-            previous.center.x += translation.x
-            next.center.x += translation.x
-            recognizer.setTranslation(CGPoint.zero, in: recognizer.view?.superview)
-        }
-        else if recognizer.state == .ended{
-            let speed = recognizer.velocity(in: recognizer.view?.superview).x
-            if speed > 50 || speed < -50{
-                swipe(speed: speed)
-            }
-            else{
-                pan()
-            }
-        }
-    }
-    
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
-    }
-    
-    func frontBackswitchAction(_ sender: UISwitch){
-        guard let current = cardViewsDic[.current] else {
-            fatalError(cardViewsDicFatalError)
-        }
-        showFront = sender.isOn
-        updateAnimation()
-        updateSwitchText()
-        current.flipIfNeeded(showingPhrase: showFront)
-    }
-    
-    private func initial(){
-        self.title = "Review Phrases"
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Previous", style: .plain, target: self, action: #selector(ReviewPhraseViewController.previousbarButtonTapHandler))
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReviewPhraseViewController.nextbarButtonTapHandler))
-        
-        panningGesture = UIPanGestureRecognizer(target: self, action: #selector(ReviewPhraseViewController.panning))
-        self.view.addGestureRecognizer(panningGesture!)
-        updateCounter()
-        updateSwitchText()
-        self.view.sendSubview(toBack: switchText)
-    }
-    
-    private func swipe(speed: CGFloat){
-        if speed > 0{
-            swapCards(direction: .right)
-        }
-        else{
-            swapCards(direction: .left)
-        }
-    }
-    
-    private func pan(){
-        guard let current = cardViewsDic[.current], let previous = cardViewsDic[.previous], let next = cardViewsDic[.next] else {
-            fatalError(cardViewsDicFatalError)
-        }
-        if current.center.x > self.view.layer.frame.width{
-            swapCards(direction: .right)
-        }
-        else if current.center.x < 0{
-            self.swapCards(direction: .left)
-        }
-        else{
-            animate(){
-                current.center.x = self.cardViewCenter!
-                next.layer.frame.origin.x = self.view.layer.frame.width
-                previous.layer.frame.origin.x = -1 * current.layer.frame.width
-            }
-        }
-    }
     override func defineControls(){
         
         setText = MISetView()
@@ -169,11 +86,9 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
         frontBackswitch.isOn = true
         frontBackswitch.addTarget(self, action: #selector(ReviewPhraseViewController.frontBackswitchAction), for: UIControlEvents.valueChanged)
         
-        firstCardView = MICardView().initialize(phrase: list[index]![0], meaning: list[index]![1])
-        let nextIndex = getNextIndex()
-        secondCardView = MICardView().initialize(phrase: list[nextIndex]![0], meaning: list[nextIndex]![1])
-        let previousIndex = getPreviousIndex()
-        thidCardView = MICardView().initialize(phrase: list[previousIndex]![0], meaning: list[previousIndex]![1])
+        firstCardView = MICardView().initialize(phrase: "", meaning: "")
+        secondCardView = MICardView().initialize(phrase: "", meaning: "")
+        thidCardView = MICardView().initialize(phrase: "", meaning: "")
         
         cardViewsDic[.current] = firstCardView
         cardViewsDic[.next] = secondCardView
@@ -285,13 +200,104 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
         NSLayoutConstraint.activate(constraintList)
     }
     
+    // MARK: Internal Methods
+    
+    func previousbarButtonTapHandler(){
+        if !isTaskDone{
+            swapCards(direction: .right)
+        }
+    }
+    
+    func nextbarButtonTapHandler(){
+        if !isTaskDone{
+            swapCards(direction: .left)
+        }
+    }
+    
+    func flipTapHandler(){
+        guard let current = cardViewsDic[.current] else {
+            fatalError(cardViewsDicFatalError)
+        }
+        current.flip()
+    }
+    
+    func doneTapHandler(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func panningHandler(recognizer: UIPanGestureRecognizer){
+        if !isTaskDone{
+            panning(recognizer: recognizer)
+        }
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+    
+    func frontBackswitchAction(_ sender: UISwitch){
+        guard let current = cardViewsDic[.current] else {
+            fatalError(cardViewsDicFatalError)
+        }
+        showFront = sender.isOn
+        updateAnimation()
+        updateSwitchText()
+        current.flipIfNeeded(showingPhrase: showFront)
+    }
+    
+    // MARK: Private Methods
+    
+    private func initial(){
+        self.title = "Review Phrases"
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Previous", style: .plain, target: self, action: #selector(ReviewPhraseViewController.previousbarButtonTapHandler))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReviewPhraseViewController.nextbarButtonTapHandler))
+        
+        panningGesture = UIPanGestureRecognizer(target: self, action: #selector(ReviewPhraseViewController.panningHandler))
+        self.view.addGestureRecognizer(panningGesture!)
+        updateSwitchText()
+        self.view.sendSubview(toBack: switchText)
+    }
+    
+    private func swipe(speed: CGFloat){
+        if speed > 0{
+            swapCards(direction: .right)
+        }
+        else{
+            swapCards(direction: .left)
+        }
+    }
+    
+    private func pan(){
+        guard let current = cardViewsDic[.current], let previous = cardViewsDic[.previous], let next = cardViewsDic[.next] else {
+            fatalError(cardViewsDicFatalError)
+        }
+        if current.center.x > self.view.layer.frame.width{
+            swapCards(direction: .right)
+        }
+        else if current.center.x < 0{
+            self.swapCards(direction: .left)
+        }
+        else{
+            animate(){
+                current.center.x = self.cardViewCenter!
+                next.layer.frame.origin.x = self.view.layer.frame.width
+                previous.layer.frame.origin.x = -1 * current.layer.frame.width
+            }
+        }
+    }
+    
     private func swapCards(direction: SwipeDirection){
         switch direction {
         case .left:
             swipeCardLeft()
         case .right:
             swipeCardRight()
+        default:
+            break
         }
+        
         guard let current = cardViewsDic[.current] else {
             fatalError(cardViewsDicFatalError)
         }
@@ -313,7 +319,7 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
         }
         
         let nextIndex = getNextIndex()
-        next.updateText(phrase: list[nextIndex]![0], meaning: list[nextIndex]![1], index: nextIndex)
+        next.updateText(phrase: list[nextIndex].phrase!, meaning: list[nextIndex].meaning!)
         
         animate(){
             current.center.x = self.cardViewCenter!
@@ -334,7 +340,7 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
         }
         
         let nextIndex = getPreviousIndex()
-        previous.updateText(phrase: list[nextIndex]![0], meaning: list[nextIndex]![1], index: nextIndex)
+        previous.updateText(phrase: list[nextIndex].phrase!, meaning: list[nextIndex].meaning!)
         
         animate(){
             current.center.x = self.cardViewCenter!
@@ -378,20 +384,20 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
     private func updateIndex(incremental: Bool){
         if incremental{
             index += 1
-            if index > list.count{
-                index = 1
+            if index > list.count - 1{
+                index = 0
             }
         }
         else{
             index -= 1
-            if index < 1{
-                index = list.count
+            if index < 0{
+                index = list.count - 1
             }
         }
     }
     
     private func updateCounter(){
-        counter.text = "\(index) / \(list.count)"
+        counter.text = "\(index + 1) / \(list.count)"
     }
     
     private func updateSwitchText(){
@@ -414,10 +420,90 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
     }
     
     private func getNextIndex() -> Int{
-        return index + 1 > list.count ?  1 : index + 1
+        return index + 1 > list.count - 1 ?  0 : index + 1
     }
     
     private func getPreviousIndex() -> Int{
-        return index - 1 < 1 ?  list.count : index - 1
+        return index - 1 < 0 ?  list.count - 1 : index - 1
+    }
+    
+    private func fetchData(){
+        guard let wordFlowManager = wordFlowManager else{
+            fatalError("wordFlowManager is not initialized")
+        }
+        do{
+            list = try wordFlowManager.fetchWordsForReview()
+//                        for i in 1...10{
+//                            var word = WordModel()
+//                            word.meaning = "Meaning \(i)"
+//                            word.phrase = "Phrase \(i)"
+//                            list.append(word)
+//                        }
+            if list.count > 0{
+                assignWordToCard()
+                updateCounter()
+            }
+            else{
+                taskDoneView()
+            }
+        }
+        catch{
+            
+        }
+    }
+    
+    private func assignWordToCard(){
+        guard let current = cardViewsDic[.current], let previous = cardViewsDic[.previous], let next = cardViewsDic[.next] else {
+            fatalError(cardViewsDicFatalError)
+        }
+        
+        current.updateText(phrase: list[index].phrase!, meaning: list[index].meaning!)
+        let nextIndex = getNextIndex()
+        next.updateText(phrase: list[nextIndex].phrase!, meaning: list[nextIndex].meaning!)
+        let previousIndex = getPreviousIndex()
+        previous.updateText(phrase: list[previousIndex].phrase!, meaning: list[previousIndex].meaning!)
+    }
+    
+    private func panning(recognizer: UIPanGestureRecognizer){
+        guard let current = cardViewsDic[.current], let previous = cardViewsDic[.previous], let next = cardViewsDic[.next] else {
+            fatalError(cardViewsDicFatalError)
+        }
+        
+        if recognizer.state == .changed{
+            let translation = recognizer.translation(in: recognizer.view?.superview)
+            current.center.x += translation.x
+            previous.center.x += translation.x
+            next.center.x += translation.x
+            recognizer.setTranslation(CGPoint.zero, in: recognizer.view?.superview)
+        }
+        else if recognizer.state == .ended{
+            let speed = recognizer.velocity(in: recognizer.view?.superview).x
+            if speed > 50 || speed < -50{
+                swipe(speed: speed)
+            }
+            else{
+                pan()
+            }
+        }
+    }
+    
+    private func taskDoneView(){
+        isTaskDone = true
+        let taskDoneView = self.addTaskDoneView()
+        
+        viewDic["taskDoneView"] = taskDoneView
+        
+        
+        let hTaskDoneViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|[taskDoneView]|", options: [], metrics: nil, views: viewDic)
+        
+        let vTaskDoneViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide][taskDoneView]-[done]", options: [], metrics: nil, views: viewDic)
+        
+        
+        var constraintList: [NSLayoutConstraint] = []
+        
+        constraintList += hTaskDoneViewCnst
+        constraintList += vTaskDoneViewCnst
+        
+        NSLayoutConstraint.activate(constraintList)
     }
 }

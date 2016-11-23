@@ -55,6 +55,9 @@
 		438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */; };
 		4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */; };
 		438B61F01DE08482008260D6 /* FakeUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438B61EF1DE08482008260D6 /* FakeUIViewExtension.swift */; };
+		43B35F241DE308E3006717F5 /* TakeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B35F231DE308E3006717F5 /* TakeTestViewController.swift */; };
+		43B35F261DE309E8006717F5 /* TakeTestViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B35F251DE309E8006717F5 /* TakeTestViewControllerTests.swift */; };
+		43B35F281DE32F58006717F5 /* MockWordFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B35F271DE32F58006717F5 /* MockWordFlowManager.swift */; };
 		43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D871DD8A812000296DB /* MockSetManager.swift */; };
 		43BF3D931DD9B4E5000296DB /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D921DD9B4E5000296DB /* ValidatorTests.swift */; };
 		43BF3D971DD9B4FC000296DB /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D951DD9B4FC000296DB /* Validator.swift */; };
@@ -163,6 +166,9 @@
 		438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceDelegateProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceDelegateProtocol.swift; sourceTree = "<group>"; };
 		438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		438B61EF1DE08482008260D6 /* FakeUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeUIViewExtension.swift; path = General/FakeUIViewExtension.swift; sourceTree = "<group>"; };
+		43B35F231DE308E3006717F5 /* TakeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeTestViewController.swift; path = PresentationLayer/ViewControllers/Phrase/TakeTestViewController.swift; sourceTree = "<group>"; };
+		43B35F251DE309E8006717F5 /* TakeTestViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeTestViewControllerTests.swift; path = ViewControllersTests/TakeTestViewControllerTests.swift; sourceTree = "<group>"; };
+		43B35F271DE32F58006717F5 /* MockWordFlowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockWordFlowManager.swift; path = General/MockWordFlowManager.swift; sourceTree = "<group>"; };
 		43BF3D871DD8A812000296DB /* MockSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockSetManager.swift; path = General/MockSetManager.swift; sourceTree = "<group>"; };
 		43BF3D921DD9B4E5000296DB /* ValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidatorTests.swift; path = Validation/ValidatorTests.swift; sourceTree = "<group>"; };
 		43BF3D951DD9B4FC000296DB /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = General/Validation/Validator.swift; sourceTree = "<group>"; };
@@ -455,6 +461,7 @@
 				43395CA61DDAF48D00540573 /* MockValidator.swift */,
 				4381502D1DDC72180040F2F9 /* MockWordManager.swift */,
 				438B61EF1DE08482008260D6 /* FakeUIViewExtension.swift */,
+				43B35F271DE32F58006717F5 /* MockWordFlowManager.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -474,6 +481,7 @@
 				43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */,
 				43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */,
 				43262A441DD1EF380029C27E /* AddPhraseViewControllerTests.swift */,
+				43B35F251DE309E8006717F5 /* TakeTestViewControllerTests.swift */,
 			);
 			name = ViewControllersTests;
 			sourceTree = "<group>";
@@ -483,6 +491,7 @@
 			children = (
 				43262A461DD1F1BE0029C27E /* ReviewPhraseViewController.swift */,
 				43262A481DD1F1D60029C27E /* AddPhraseViewController.swift */,
+				43B35F231DE308E3006717F5 /* TakeTestViewController.swift */,
 			);
 			name = Phrase;
 			sourceTree = "<group>";
@@ -807,6 +816,7 @@
 				432B75501DB37B64003C6574 /* MemorizeItViewController.swift in Sources */,
 				43EE6CE01DC4E17A00873D18 /* MIView.swift in Sources */,
 				432B75641DB38DF9003C6574 /* UIColorExtension.swift in Sources */,
+				43B35F241DE308E3006717F5 /* TakeTestViewController.swift in Sources */,
 				43434AFF1DB3676A0005B59F /* AppDelegate.swift in Sources */,
 				438651C91DC7426B007BC89D /* MICardView.swift in Sources */,
 				43BF3D971DD9B4FC000296DB /* Validator.swift in Sources */,
@@ -821,11 +831,13 @@
 			files = (
 				43D217B61DBE4564007819A7 /* MockAppDelegate.swift in Sources */,
 				4381502E1DDC72180040F2F9 /* MockWordManager.swift in Sources */,
+				43B35F281DE32F58006717F5 /* MockWordFlowManager.swift in Sources */,
 				43262A411DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift in Sources */,
 				43262A451DD1EF380029C27E /* AddPhraseViewControllerTests.swift in Sources */,
 				43F0D3041DD9DBEB0074856F /* MockValidatable.swift in Sources */,
 				43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */,
 				43395CA71DDAF48D00540573 /* MockValidator.swift in Sources */,
+				43B35F261DE309E8006717F5 /* TakeTestViewControllerTests.swift in Sources */,
 				43BF3D931DD9B4E5000296DB /* ValidatorTests.swift in Sources */,
 				438B61F01DE08482008260D6 /* FakeUIViewExtension.swift in Sources */,
 				43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */,

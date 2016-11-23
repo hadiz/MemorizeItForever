@@ -9,12 +9,16 @@
 import UIKit
 
 public struct WordModel: Equatable, MemorizeItModelProtocol {
-    var wordId: UUID?
-    var phrase: String?
-    var meaning: String?
-    var order: Int32?
-    var setId: UUID?
-    var status: Int16? = WordStatus.notStarted.rawValue
+    public var wordId: UUID?
+    public var phrase: String?
+    public var meaning: String?
+    public var order: Int32?
+    public var setId: UUID?
+    public var status: Int16? = WordStatus.notStarted.rawValue
+    
+    public init(){
+        // TODO: Delete
+    }
 }
 
 public func ==(lhs: WordModel, rhs: WordModel) -> Bool {
