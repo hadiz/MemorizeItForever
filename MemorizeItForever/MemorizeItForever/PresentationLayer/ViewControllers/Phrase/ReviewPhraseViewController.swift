@@ -432,6 +432,7 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
             fatalError("wordFlowManager is not initialized")
         }
         do{
+            try wordFlowManager.fetchNewWordsToPutInPreColumn()
             list = try wordFlowManager.fetchWordsForReview()
 //                        for i in 1...10{
 //                            var word = WordModel()

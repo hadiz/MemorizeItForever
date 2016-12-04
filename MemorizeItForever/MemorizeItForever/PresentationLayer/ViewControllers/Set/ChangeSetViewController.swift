@@ -13,7 +13,6 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
     
     var tableView: UITableView!
     var dataSource: SetTableDataSourceProtocol?
-    
     var setManager: SetManagerProtocol?
     
     override func viewDidLoad() {

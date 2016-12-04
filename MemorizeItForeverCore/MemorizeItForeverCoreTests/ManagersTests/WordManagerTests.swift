@@ -97,7 +97,5 @@ class WordManagerTests: XCTestCase {
         else{
             XCTFail("should delete word")
         }
-
     }
-
 }

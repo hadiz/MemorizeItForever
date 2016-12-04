@@ -15,4 +15,6 @@ public protocol WordDataAccessProtocol {
     func fetchWithNotStartedStatus(fetchLimit: Int) throws -> [WordModel]
     func fetchLast(_ wordStatus: WordStatus) throws -> WordModel?
     func fetchAll(fetchLimit: Int?) throws -> [WordModel]
+    func fetchWords(status: WordStatus, fetchLimit: Int) throws -> [WordModel]
+    func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int) throws -> [WordModel]
 }

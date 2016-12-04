@@ -48,17 +48,17 @@ class ChangeSetViewControllerTests: XCTestCase {
     
     func testChangeSetViewControllerHasATableView(){
         changeSetViewController.viewDidLoad()
-        XCTAssertNotNil(changeSetViewController.dataSource,"ChangeSetViewController should have tableView")
+        XCTAssertNotNil(changeSetViewController.tableView,"ChangeSetViewController should have tableView")
     }
     
     func testTableViewInChangeSetViewControllerHasDataSource(){
         changeSetViewController.viewDidLoad()
-        XCTAssertTrue((changeSetViewController.dataSource! as Any) is MemorizeItTableDataSourceProtocol , "Datasource property of tableView in ChangeSetViewController should be a MemorizeItTableDataSourceProtocol")
+        XCTAssertTrue((changeSetViewController.tableView.dataSource! as Any) is MemorizeItTableDataSourceProtocol , "Datasource property of tableView in ChangeSetViewController should be a MemorizeItTableDataSourceProtocol")
     }
     
     func testTableViewInChangeSetViewControllerHasDelegate(){
         changeSetViewController.viewDidLoad()
-        XCTAssertTrue((changeSetViewController.dataSource! as Any) is MemorizeItTableDataSourceProtocol, "Delegate property of tableView in ChangeSetViewController be a MemorizeItTableDataSourceProtocol")
+        XCTAssertTrue((changeSetViewController.tableView.dataSource! as Any) is MemorizeItTableDataSourceProtocol, "Delegate property of tableView in ChangeSetViewController be a MemorizeItTableDataSourceProtocol")
     }
     
     func testChangeSetViewControllerConformsToUIPopoverPresentationControllerDelegate(){

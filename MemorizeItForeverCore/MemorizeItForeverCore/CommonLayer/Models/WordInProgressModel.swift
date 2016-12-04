@@ -14,9 +14,9 @@ public struct WordInProgressModel: MemorizeItModelProtocol {
    public var column: Int16?
    public var wordInProgressId: UUID?
     
-    public init(){
-        // TODO: Delete
-    }
+//    public init(){
+//        // TODO: Delete
+//    }
 }
 
 public func ==(lhs: WordInProgressModel, rhs: WordInProgressModel) -> Bool {

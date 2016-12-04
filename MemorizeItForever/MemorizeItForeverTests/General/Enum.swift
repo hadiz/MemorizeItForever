@@ -32,3 +32,7 @@ enum TakeTestViewControllerEnum {
     case correctButtonTap
     case wrongButtonTap
 }
+
+enum PhraseViewControllerEnum {
+    case doneBarButtonTap
+}

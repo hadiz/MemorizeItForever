@@ -11,6 +11,15 @@ import BaseLocalDataAccess
 @testable import MemorizeItForeverCore
 
 class FakeWordDataAccess: WordDataAccessProtocol{
+    
+    public func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int) throws -> [WordModel] {
+        return [WordModel(wordId: UUID(), phrase: phrase, meaning: "Book", order: 1, setId: UUID(), status:  status.rawValue)]
+    }
+
+    public func fetchWords(status: WordStatus, fetchLimit: Int) throws -> [WordModel] {
+        return [WordModel(wordId: UUID(), phrase: "Livre", meaning: "Book", order: 1, setId: UUID(), status:  status.rawValue)]
+    }
+
     func save(_ wordModel: WordModel) throws {
         guard let phrase = wordModel.phrase,
               let meaning = wordModel.meaning,

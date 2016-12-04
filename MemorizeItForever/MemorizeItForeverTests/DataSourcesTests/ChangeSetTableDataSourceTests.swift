@@ -64,7 +64,7 @@ class ChangeSetTableDataSourceTests: XCTestCase {
     
     func testHandleTapClosureIsCalledWhenTapped(){
         var tapped = false
-         dataSource = SetTableDataSource(setManager: nil)
+         dataSource = ChangeSetTableDataSource(setManager: nil)
         dataSource.handleTap = { (model) in
             tapped = true
         }

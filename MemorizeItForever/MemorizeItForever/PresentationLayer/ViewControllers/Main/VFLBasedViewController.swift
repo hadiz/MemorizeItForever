@@ -9,7 +9,7 @@
 import UIKit
 
 class VFLBasedViewController: UIViewController {
-
+    
     var viewDic: Dictionary<String,Any> = [:]
     
     override func viewDidLoad() {
@@ -17,11 +17,10 @@ class VFLBasedViewController: UIViewController {
         
         viewDic["topLayoutGuide"] = topLayoutGuide
         viewDic["bottomLayoutGuide"] = bottomLayoutGuide
-        defineControls()
-        addControls()
-        applyAutoLayout()
+        
+        loadViews()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -34,5 +33,11 @@ class VFLBasedViewController: UIViewController {
     
     func applyAutoLayout(){
         
+    }
+    
+    private func loadViews() {
+        defineControls()
+        addControls()
+        applyAutoLayout()
     }
 }

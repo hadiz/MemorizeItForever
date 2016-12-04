@@ -61,6 +61,7 @@ extension SwinjectStoryboard {
             c.addPhraseViewController = r.resolve(AddPhraseViewController.self)
             c.reviewPhraseViewController = r.resolve(ReviewPhraseViewController.self)
             c.takeTestViewController = r.resolve(TakeTestViewController.self)
+            c.phraseViewController = r.resolve(PhraseViewController.self)
         }
         
         defaultContainer.registerForStoryboard(SetViewController.self) { r, c in
@@ -97,11 +98,11 @@ extension SwinjectStoryboard {
         
         defaultContainer.register(SetTableDataSourceProtocol.self, name: "SetTableDataSource") { r in
             SetTableDataSource(setManager: r.resolve(SetManagerProtocol.self))
-        }.inObjectScope(.none)
+            }.inObjectScope(.none)
         
         defaultContainer.register(SetTableDataSourceProtocol.self, name: "ChangeSetTableDataSource") { r in
             ChangeSetTableDataSource(setManager: r.resolve(SetManagerProtocol.self))
-        }.inObjectScope(.none)
+            }.inObjectScope(.none)
         
         defaultContainer.register(ValidatorProtocol.self){ r in
             Validator()
@@ -127,10 +128,21 @@ extension SwinjectStoryboard {
             let controller = TakeTestViewController()
             controller.wordFlowManager = r.resolve(WordFlowManagerProtocol.self)
             return controller
-        }.inObjectScope(.none)
+            }.inObjectScope(.none)
         
         defaultContainer.register(WordFlowManagerProtocol.self){ r in
             WordFlowManager(wordDataAccess: r.resolve(WordDataAccessProtocol.self)!, wordInProgressDataAccess: r.resolve(WordInProgressDataAccessProtocol.self)!, wordHistoryDataAccess: r.resolve(WordHistoryDataAccessProtocol.self)!)
         }
+        
+        defaultContainer.register(PhraseViewController.self) { r in
+            let controller = PhraseViewController()
+            controller.dataSource = r.resolve(PhraseTableDataSourceProtocol.self)
+            controller.wordManager = r.resolve(WordManagerProtocol.self)
+            return controller
+            }.inObjectScope(.none)
+        
+        defaultContainer.register(PhraseTableDataSourceProtocol.self){ r in
+            PhraseTableDataSource(wordManager: r.resolve(WordManagerProtocol.self))
+            }.inObjectScope(.none)
     }
 }

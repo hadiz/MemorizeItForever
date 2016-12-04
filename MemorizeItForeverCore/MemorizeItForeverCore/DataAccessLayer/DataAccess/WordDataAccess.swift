@@ -117,6 +117,22 @@ public class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
+    public func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int) throws -> [WordModel] {
+        let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue, direction: SortDirectionEnum.ascending)
+        let predicateObject1 = PredicateObject(fieldName: WordEntity.Fields.Phrase.rawValue, operatorName: .contains, value: phrase)
+        let predicateObject2 = PredicateObject(fieldName:  WordEntity.Fields.Status.rawValue, operatorName: .equal, value: Int(status.rawValue))
+        var predicateCompoundObject = PredicateCompoundObject(compoundOperator: .and)
+        predicateCompoundObject.appendPredicate(predicateObject1)
+        predicateCompoundObject.appendPredicate(predicateObject2)
+        return try genericDataAccess.fetchModels(predicate: predicateCompoundObject, sort: sort, fetchLimit: fetchLimit)
+    }
+    
+    public func fetchWords(status: WordStatus, fetchLimit: Int) throws -> [WordModel] {
+        let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue, direction: SortDirectionEnum.ascending)
+        let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(status.rawValue))
+        return try genericDataAccess.fetchModels(predicate: predicaet, sort: sort, fetchLimit: fetchLimit)
+    }
+    
     private func fetchSetEntity(_ setId: UUID) -> SetEntity?{
         guard let setDataAccess = setDataAccess else {
             fatalError("setDataAccess is not initialized")

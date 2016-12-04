@@ -52,4 +52,18 @@ final public class WordManager: WordManagerProtocol {
             
         }
     }
+    
+    public func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int) -> [WordModel] {
+        do{
+            if phrase.trim().isEmpty{
+                return try wordDataAccess.fetchWords(status: status, fetchLimit: fetchLimit)
+            }
+            else{
+                return try wordDataAccess.fetchWords(phrase: phrase, status: status, fetchLimit: fetchLimit)
+            }
+        }
+        catch{
+            return []
+        }
+    }
 }
