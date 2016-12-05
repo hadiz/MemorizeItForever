@@ -9,15 +9,19 @@
 import MemorizeItForeverCore
 
 class MockWordManager: WordManagerProtocol {
-    func saveWord(_ phrase: String, meaninig: String, setId: UUID) throws {
+    public func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int, fetchOffset: Int) -> [WordModel] {
+        return []
+    }
+
+    func save(_ phrase: String, meaninig: String, setId: UUID) throws {
          objc_setAssociatedObject(self, &key, AddPhraseViewControllerEnum.saveWord, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
     
-    func editWord(_ wordModel: WordModel, phrase: String, meaninig: String) {
+    func edit(_ wordModel: WordModel, phrase: String, meaninig: String) {
         
     }
     
-    func deleteWord(_ wordModel: WordModel) {
-        
+    func delete(_ wordModel: WordModel) -> Bool {
+        return false
     }
 }

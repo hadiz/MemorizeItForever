@@ -32,7 +32,7 @@ final class SetTableDataSource: NSObject, SetTableDataSourceProtocol {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifierEnum: .setTableCellIdentifier)
+        let cell = tableView.dequeueReusableCellWithIdentifier(.setTableCellIdentifier, forIndexPath: indexPath)
         
         let set = setModels?[(indexPath as NSIndexPath).row]
         
@@ -63,6 +63,9 @@ final class SetTableDataSource: NSObject, SetTableDataSourceProtocol {
             if setManager.delete(set){
                 setModels?.remove(at: (indexPath as NSIndexPath).row)
                 tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            }
+            else{
+                tableView.setEditing(false, animated: true)
             }
         }
     }

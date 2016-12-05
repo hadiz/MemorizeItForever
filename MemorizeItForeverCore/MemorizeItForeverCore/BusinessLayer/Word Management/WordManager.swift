@@ -16,7 +16,7 @@ final public class WordManager: WordManagerProtocol {
         self.wordDataAccess = wordDataAccess
     }
     
-    public func saveWord(_ phrase: String, meaninig: String, setId: UUID) throws{
+    public func save(_ phrase: String, meaninig: String, setId: UUID) throws{
         do{
             var word = WordModel()
             word.phrase = phrase
@@ -28,7 +28,7 @@ final public class WordManager: WordManagerProtocol {
             throw error
         }
     }
-    public func editWord(_ wordModel: WordModel, phrase: String, meaninig: String){
+    public func edit(_ wordModel: WordModel, phrase: String, meaninig: String){
         do{
             var word = WordModel()
             word.phrase = phrase
@@ -44,22 +44,23 @@ final public class WordManager: WordManagerProtocol {
         }
     }
     
-    public func deleteWord(_ wordModel: WordModel){
+    public func delete(_ wordModel: WordModel) -> Bool{
         do{
             try wordDataAccess.delete(wordModel)
         }
         catch{
-            
+            return false
         }
+        return true
     }
     
-    public func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int) -> [WordModel] {
+    public func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int, fetchOffset: Int) -> [WordModel] {
         do{
             if phrase.trim().isEmpty{
-                return try wordDataAccess.fetchWords(status: status, fetchLimit: fetchLimit)
+                return try wordDataAccess.fetchWords(status: status, fetchLimit: fetchLimit, fetchOffset: fetchOffset)
             }
             else{
-                return try wordDataAccess.fetchWords(phrase: phrase, status: status, fetchLimit: fetchLimit)
+                return try wordDataAccess.fetchWords(phrase: phrase, status: status, fetchLimit: fetchLimit, fetchOffset: fetchOffset)
             }
         }
         catch{

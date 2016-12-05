@@ -416,6 +416,13 @@ class WordFlowsTests: XCTestCase {
     }
     
     private func newWordModel() -> WordModel{
-        return WordModel(wordId: UUID(), phrase: "Livre", meaning: "Book", order: 1, setId: UUID(), status:  WordStatus.notStarted.rawValue)
+        var wordModel = WordModel()
+        wordModel.wordId = UUID()
+        wordModel.phrase = "Livre"
+        wordModel.meaning = "Book"
+        wordModel.order = 1
+        wordModel.setId = UUID()
+        wordModel.status =  WordStatus.notStarted.rawValue
+        return wordModel
     }
 }

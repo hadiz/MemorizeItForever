@@ -12,11 +12,12 @@ import MemorizeItForeverCore
 final class PhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol {
     
     private var models: [WordModel] = []
+    private var wordManager: WordManagerProtocol?
     
     var handleTap: TypealiasHelper.handleTapClosure?
     
     required init(wordManager: WordManagerProtocol?) {
-        
+        self.wordManager = wordManager
     }
     
     func setModels(_ models: [MemorizeItModelProtocol]) {
@@ -31,11 +32,12 @@ final class PhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifierEnum: .setTableCellIdentifier)
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier(.phraseTableCellIdentifier, forIndexPath: indexPath)
         let word = models[(indexPath as NSIndexPath).row]
         
         cell.textLabel?.text = word.phrase
+        cell.detailTextLabel?.text = word.meaning
+        
         setColor(cell: cell, word: word)
         return cell
     }
@@ -47,6 +49,23 @@ final class PhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol {
         
         let word = models[(indexPath as NSIndexPath).row]
         handleTap(word)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard let wordManager = wordManager else {
+            fatalError("wordManager is not initialiazed")
+        }
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            let word = models[(indexPath as NSIndexPath).row]
+            if wordManager.delete(word){
+                models.remove(at: (indexPath as NSIndexPath).row)
+                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            }
+        }
     }
     
     private func setColor(cell: UITableViewCell, word: WordModel){

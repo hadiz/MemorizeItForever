@@ -34,7 +34,13 @@ class FakeWordInProgressDataAccess: WordInProgressDataAccessProtocol {
     }
     func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel] {
         objc_setAssociatedObject(self, &dateKey, wordInProgressModel.date, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        let word = WordModel(wordId: UUID(), phrase: "Livre", meaning: "Book", order: 1, setId: UUID(), status:  WordStatus.notStarted.rawValue)
+        var word = WordModel()
+        word.wordId = UUID()
+        word.phrase = "Livre"
+        word.meaning = "Book"
+        word.order = 1
+        word.setId = UUID()
+        word.status =  WordStatus.notStarted.rawValue
         let wordInProgress = WordInProgressModel(word: word, date: Date(), column: 3, wordInProgressId: UUID())
         let wordInProgress1 = WordInProgressModel(word: word, date: Date(), column: 1, wordInProgressId: UUID())
         return [wordInProgress1,wordInProgress]
@@ -42,7 +48,13 @@ class FakeWordInProgressDataAccess: WordInProgressDataAccessProtocol {
     func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel] {
         objc_setAssociatedObject(self, &columnKey, wordInProgressModel.column, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         objc_setAssociatedObject(self, &dateKey, wordInProgressModel.date, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        let word = WordModel(wordId: UUID(), phrase: "Livre", meaning: "Book", order: 1, setId: UUID(), status:  WordStatus.notStarted.rawValue)
+        var word = WordModel()
+        word.wordId = UUID()
+        word.phrase = "Livre"
+        word.meaning = "Book"
+        word.order = 1
+        word.setId = UUID()
+        word.status =  WordStatus.notStarted.rawValue
         let wordInProgress = WordInProgressModel(word: word, date: Date(), column: 0, wordInProgressId: UUID())
         return [wordInProgress]
     }

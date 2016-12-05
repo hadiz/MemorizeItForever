@@ -25,10 +25,14 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Phrase Management"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(PhraseViewController.doneBarButtonTapHandler))
-        fetchData()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(PhraseViewController.doneBarButtonTapHandler))
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -42,6 +46,7 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
         tableView = MITableView()
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifierEnum: .phraseTableCellIdentifier)
         self.automaticallyAdjustsScrollViewInsets = false
         
         searchController = UISearchController(searchResultsController: nil)
@@ -101,7 +106,7 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
             fatalError("dataSource is not initialized")
         }
         
-        let wordList = wordManager.fetchWords(phrase: searchText, status: status, fetchLimit: 50)
+        let wordList = wordManager.fetchWords(phrase: searchText, status: status, fetchLimit: 50, fetchOffset: 0)
         
         dataSource.setModels(wordList)
         
@@ -120,7 +125,7 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     }
     
     private func fetchData(){
-        let wordStatus = wordStatusList[0]
+        let wordStatus = wordStatusList[searchController.searchBar.selectedScopeButtonIndex]
         filterContentForSearchText(searchText: "", status: wordStatus)
     }
 }

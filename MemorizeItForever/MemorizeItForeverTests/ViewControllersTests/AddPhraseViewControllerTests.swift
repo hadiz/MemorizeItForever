@@ -42,7 +42,7 @@ class AddPhraseViewControllerTests: XCTestCase {
     func testHasDoneBarButton() {
         addPhraseViewController.viewDidLoad()
         let doneBarButton = addPhraseViewController.navigationItem.leftBarButtonItem
-        XCTAssertEqual(doneBarButton?.title, "Done","View controller should have a left bar button titled 'Done'")
+        XCTAssertEqual(doneBarButton?.title, "Close","View controller should have a left bar button titled 'Done'")
     }
     
     func testDoneBarButtonTapHandled() {
@@ -161,7 +161,7 @@ class AddPhraseViewControllerTests: XCTestCase {
         XCTAssertEqual(nextBarButton?.title, "Next", "should rightBarButtonItem change to next when tapped previous button")
         
         let doneBarButton = addPhraseViewController.navigationItem.leftBarButtonItem
-        XCTAssertEqual(doneBarButton?.title, "Done", "should leftBarButtonItem change to done when tapped previous button")
+        XCTAssertEqual(doneBarButton?.title, "Close", "should leftBarButtonItem change to done when tapped previous button")
     }
     
     func testApplyErrorWhenSaveBarButtonTappedIfMeaningIsEmpty() {
@@ -197,7 +197,7 @@ class AddPhraseViewControllerTests: XCTestCase {
         XCTAssertEqual(nextBarButton?.title, "Next", "should rightBarButtonItem change to next when tapped previous button")
         
         let doneBarButton = addPhraseViewController.navigationItem.leftBarButtonItem
-        XCTAssertEqual(doneBarButton?.title, "Done", "should leftBarButtonItem change to done when tapped previous button")
+        XCTAssertEqual(doneBarButton?.title, "Close", "should leftBarButtonItem change to done when tapped previous button")
         
         XCTAssertTrue(addPhraseViewController.phrase.text.isEmpty,"Should clear the phrase")
         

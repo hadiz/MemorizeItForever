@@ -125,7 +125,6 @@ public class WordFlowManager: WordFlowManagerProtocol {
             else{
                 var wordHistoryModel = WordHistoryModel()
                 wordHistoryModel.word = word
-                
                 if try wordHistoryDataAccess.countByWordId(wordHistoryModel) > 0{
                     return true
                 }

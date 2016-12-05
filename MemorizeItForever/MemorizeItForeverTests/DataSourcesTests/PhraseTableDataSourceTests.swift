@@ -15,6 +15,7 @@ class PhraseTableDataSourceTests: XCTestCase {
     var word: WordModel!
     var dataSource: PhraseTableDataSourceProtocol!
     var firstItemIndex: IndexPath!
+    var tableView: UITableView!
     
     override func setUp() {
         super.setUp()
@@ -28,17 +29,21 @@ class PhraseTableDataSourceTests: XCTestCase {
         dataSource = PhraseTableDataSource(wordManager: nil)
         dataSource.setModels([word])
         firstItemIndex = IndexPath(item: 0, section: 0)
+        tableView = UITableView()
+        tableView.dataSource = dataSource
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifierEnum: .phraseTableCellIdentifier)
     }
     
     override func tearDown() {
         dataSource = nil
         firstItemIndex = nil
         word = nil
+        tableView = nil
         super.tearDown()
     }
     
     func testReturnOneRowForOneWord(){
-        let numberOfRows = dataSource.tableView(UITableView(), numberOfRowsInSection: 0)
+        let numberOfRows = dataSource.tableView(tableView, numberOfRowsInSection: 0)
         XCTAssertEqual(numberOfRows, 1, "It should Just 1 row in tableView because we have just 1 word")
     }
     
@@ -51,12 +56,12 @@ class PhraseTableDataSourceTests: XCTestCase {
         word2.status = 0
         word2.wordId = UUID()
         dataSource.setModels([word, word2])
-        let numberOfRows = dataSource.tableView(UITableView(), numberOfRowsInSection: 0)
+        let numberOfRows = dataSource.tableView(tableView, numberOfRowsInSection: 0)
         XCTAssertEqual(numberOfRows, 2, "It should Just 2 row in tableView because we have just 2 words")
     }
     
     func testEachCellHasTitleCorrespondsToPhrase(){
-        let cell = dataSource.tableView(UITableView(), cellForRowAt: firstItemIndex)
+        let cell = dataSource.tableView(tableView, cellForRowAt: firstItemIndex)
         XCTAssertEqual(cell.textLabel?.text, "Livre", "The cell should have phrase as a title")
     }
     
@@ -69,7 +74,7 @@ class PhraseTableDataSourceTests: XCTestCase {
         word2.status = WordStatus.notStarted.rawValue
         word2.wordId = UUID()
         dataSource.setModels([word2])
-        let cell = dataSource.tableView(UITableView(), cellForRowAt: firstItemIndex)
+        let cell = dataSource.tableView(tableView, cellForRowAt: firstItemIndex)
         XCTAssertEqual(cell.backgroundColor, #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), "The cell should have white background if the status of word is notStarted")
     }
     
@@ -82,7 +87,7 @@ class PhraseTableDataSourceTests: XCTestCase {
         word2.status = WordStatus.inProgress.rawValue
         word2.wordId = UUID()
         dataSource.setModels([word2])
-        let cell = dataSource.tableView(UITableView(), cellForRowAt: firstItemIndex)
+        let cell = dataSource.tableView(tableView, cellForRowAt: firstItemIndex)
         XCTAssertEqual(cell.backgroundColor, #colorLiteral(red: 0.9993608594, green: 0.1497559547, blue: 0, alpha: 1).withAlphaComponent(0.5), "The cell should have white background if the status of word is notStarted")
     }
     
@@ -95,7 +100,7 @@ class PhraseTableDataSourceTests: XCTestCase {
         word2.status = WordStatus.done.rawValue
         word2.wordId = UUID()
         dataSource.setModels([word2])
-        let cell = dataSource.tableView(UITableView(), cellForRowAt: firstItemIndex)
+        let cell = dataSource.tableView(tableView, cellForRowAt: firstItemIndex)
         XCTAssertEqual(cell.backgroundColor, #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1).withAlphaComponent(0.5), "The cell should have white background if the status of word is notStarted")
     }
     
@@ -110,7 +115,7 @@ class PhraseTableDataSourceTests: XCTestCase {
         dataSource.handleTap = { (model) in
             tapped = true
         }
-        dataSource.tableView!(UITableView(), didSelectRowAt: firstItemIndex)
+        dataSource.tableView!(tableView, didSelectRowAt: firstItemIndex)
         XCTAssertTrue(tapped,"HandleTap clouser should be called in didSelectRowAtIndexPath action")
     }
 
@@ -119,7 +124,7 @@ class PhraseTableDataSourceTests: XCTestCase {
         dataSource.handleTap = { (model) in
             wordModel = model as? WordModel
         }
-        dataSource.tableView!(UITableView(), didSelectRowAt: firstItemIndex)
+        dataSource.tableView!(tableView, didSelectRowAt: firstItemIndex)
         XCTAssertEqual(wordModel?.phrase, "Livre","HandleTap clouser should hold  a setModel instance")
     }
 }

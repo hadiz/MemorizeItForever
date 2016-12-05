@@ -37,7 +37,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
         
         self.title = "Add Phrase"
         
-        doneBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(AddPhraseViewController.doneBarButtonTapHandler))
+        doneBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(AddPhraseViewController.doneBarButtonTapHandler))
         nextBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(AddPhraseViewController.nextBarButtonTapHandler))
         saveBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(AddPhraseViewController.saveBarButtonTapHandler))
         previousBarButtonItem = UIBarButtonItem(title: "Previous", style: .plain, target: self, action: #selector(AddPhraseViewController.previousBarButtonTapHandler))
@@ -137,6 +137,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
             self.navigationItem.leftBarButtonItem = previousBarButtonItem
             
             UIView.transition(from: phrase, to: meaning, duration: 1, options: [.transitionFlipFromRight ,.showHideTransitionViews], completion: nil)
+            meaning.becomeFirstResponder()
         }
     }
     
@@ -187,7 +188,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
             return
         }
         do{
-            try wordManager.saveWord(phrase.text.trim(), meaninig: meaning.text.trim(), setId: setId)
+            try wordManager.save(phrase.text.trim(), meaninig: meaning.text.trim(), setId: setId)
             saveWasSuccessful()
         }
         catch{
@@ -203,6 +204,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
         self.navigationItem.leftBarButtonItem = doneBarButtonItem
         
         UIView.transition(from: meaning, to: phrase , duration: 1, options: [.transitionFlipFromLeft ,.showHideTransitionViews], completion: nil)
+        phrase.becomeFirstResponder()
     }
     private func saveWasSuccessful(){
         goPrevious()

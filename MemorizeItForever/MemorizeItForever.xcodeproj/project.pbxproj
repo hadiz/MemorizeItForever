@@ -45,6 +45,7 @@
 		4349EAB41DBE4BAE0097DABD /* SetTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */; };
 		435824D61DCE083B00842C73 /* MILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435824D51DCE083B00842C73 /* MILabel.swift */; };
 		435824D81DCE0D9500842C73 /* MISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435824D71DCE0D9500842C73 /* MISwitch.swift */; };
+		435CBC781DF541A3003ACFD1 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435CBC771DF541A3003ACFD1 /* UITableViewExtension.swift */; };
 		43687B701DD0AB2200E1EDB5 /* ChangeSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */; };
 		43687B721DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */; };
 		43687B741DD0AE0800E1EDB5 /* MITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B731DD0AE0800E1EDB5 /* MITableView.swift */; };
@@ -163,6 +164,7 @@
 		4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSourceTests.swift; path = DataSourcesTests/SetTableDataSourceTests.swift; sourceTree = "<group>"; };
 		435824D51DCE083B00842C73 /* MILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MILabel.swift; path = PresentationLayer/VisualElements/MILabel.swift; sourceTree = "<group>"; };
 		435824D71DCE0D9500842C73 /* MISwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MISwitch.swift; path = PresentationLayer/VisualElements/MISwitch.swift; sourceTree = "<group>"; };
+		435CBC771DF541A3003ACFD1 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewExtension.swift; path = General/Extensions/UITableViewExtension.swift; sourceTree = "<group>"; };
 		43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewController.swift; path = PresentationLayer/ViewControllers/Set/ChangeSetViewController.swift; sourceTree = "<group>"; };
 		43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSource.swift; path = PresentationLayer/ViewControllers/Set/ChangeSetTableDataSource.swift; sourceTree = "<group>"; };
 		43687B731DD0AE0800E1EDB5 /* MITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITableView.swift; path = PresentationLayer/VisualElements/MITableView.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		432B75411DB37A94003C6574 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				435CBC791DF54252003ACFD1 /* DataSource */,
 				432B75521DB37B88003C6574 /* Storyboard */,
 				432B75431DB37AA8003C6574 /* ViewControllers */,
 				432B75421DB37A9B003C6574 /* VisualElements */,
@@ -303,11 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				432B75471DB37B41003C6574 /* SetItemViewController.swift */,
-				43FFEEFF1DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift */,
-				432B75481DB37B41003C6574 /* SetTableDataSource.swift */,
 				432B75491DB37B41003C6574 /* SetViewController.swift */,
 				43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */,
-				43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */,
 			);
 			name = Set;
 			sourceTree = "<group>";
@@ -365,6 +365,7 @@
 				43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */,
 				430320B41DE0748100BD0F0D /* UIViewExtension.swift */,
 				43EEE1621DF431690072D125 /* WordStatusExtension.swift */,
+				435CBC771DF541A3003ACFD1 /* UITableViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -436,6 +437,34 @@
 				438EFD221DF2FEA900B83C88 /* PhraseTableDataSourceTests.swift */,
 			);
 			name = DataSourcesTests;
+			sourceTree = "<group>";
+		};
+		435CBC791DF54252003ACFD1 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				435CBC7B1DF5428F003ACFD1 /* Phrase */,
+				435CBC7A1DF54283003ACFD1 /* Set */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		435CBC7A1DF54283003ACFD1 /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				43FFEEFF1DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift */,
+				432B75481DB37B41003C6574 /* SetTableDataSource.swift */,
+				43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */,
+			);
+			name = Set;
+			sourceTree = "<group>";
+		};
+		435CBC7B1DF5428F003ACFD1 /* Phrase */ = {
+			isa = PBXGroup;
+			children = (
+				438EFD1C1DF2EEA600B83C88 /* PhraseTableDataSourceProtocol.swift */,
+				438EFD1E1DF2EF7A00B83C88 /* PhraseTableDataSource.swift */,
+			);
+			name = Phrase;
 			sourceTree = "<group>";
 		};
 		438874561DB7ABD10030C016 /* MemorizeItTableDataSource */ = {
@@ -511,8 +540,6 @@
 				43262A481DD1F1D60029C27E /* AddPhraseViewController.swift */,
 				43B35F231DE308E3006717F5 /* TakeTestViewController.swift */,
 				438EFD1A1DF2D8B600B83C88 /* PhraseViewController.swift */,
-				438EFD1C1DF2EEA600B83C88 /* PhraseTableDataSourceProtocol.swift */,
-				438EFD1E1DF2EF7A00B83C88 /* PhraseTableDataSource.swift */,
 			);
 			name = Phrase;
 			sourceTree = "<group>";
@@ -831,6 +858,7 @@
 				438EFD1F1DF2EF7A00B83C88 /* PhraseTableDataSource.swift in Sources */,
 				43F0D3061DD9E05E0074856F /* TypealiasHelper.swift in Sources */,
 				4344DE681DC0E53800FBA130 /* ColorPicker.swift in Sources */,
+				435CBC781DF541A3003ACFD1 /* UITableViewExtension.swift in Sources */,
 				4344DE6C1DC0EB3700FBA130 /* MIButton.swift in Sources */,
 				432B754A1DB37B41003C6574 /* SetItemViewController.swift in Sources */,
 				438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */,

@@ -42,7 +42,7 @@ class TakeTestViewControllerTests: XCTestCase {
     func testHasDoneBarButton() {
         takeTestViewController.viewDidLoad()
         let doneBarButton = takeTestViewController.navigationItem.leftBarButtonItem
-        XCTAssertEqual(doneBarButton?.title, "Done","View controller should have a left bar button titled 'Done'")
+        XCTAssertEqual(doneBarButton?.title, "Close","View controller should have a left bar button titled 'Done'")
     }
     
     func testDoneBarButtonTapHandled() {

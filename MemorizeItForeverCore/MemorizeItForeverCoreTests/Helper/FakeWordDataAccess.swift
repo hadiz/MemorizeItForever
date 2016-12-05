@@ -12,12 +12,26 @@ import BaseLocalDataAccess
 
 class FakeWordDataAccess: WordDataAccessProtocol{
     
-    public func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int) throws -> [WordModel] {
-        return [WordModel(wordId: UUID(), phrase: phrase, meaning: "Book", order: 1, setId: UUID(), status:  status.rawValue)]
+    public func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int, fetchOffset: Int) throws -> [WordModel] {
+        var word = WordModel()
+        word.wordId = UUID()
+        word.phrase = phrase
+        word.meaning = "Book"
+        word.order = 1
+        word.setId = UUID()
+        word.status =  status.rawValue
+        return [word]
     }
 
-    public func fetchWords(status: WordStatus, fetchLimit: Int) throws -> [WordModel] {
-        return [WordModel(wordId: UUID(), phrase: "Livre", meaning: "Book", order: 1, setId: UUID(), status:  status.rawValue)]
+    public func fetchWords(status: WordStatus, fetchLimit: Int, fetchOffset: Int) throws -> [WordModel] {
+        var word = WordModel()
+        word.wordId = UUID()
+        word.phrase = "Livre"
+        word.meaning = "Book"
+        word.order = 1
+        word.setId = UUID()
+        word.status =  status.rawValue
+        return [word]
     }
 
     func save(_ wordModel: WordModel) throws {
@@ -54,6 +68,13 @@ class FakeWordDataAccess: WordDataAccessProtocol{
         return nil
     }
     func fetchWithNotStartedStatus(fetchLimit: Int) throws -> [WordModel] {
-        return [WordModel(wordId: UUID(), phrase: "Livre", meaning: "Book", order: 1, setId: UUID(), status:  WordStatus.notStarted.rawValue)]
+        var word = WordModel()
+        word.wordId = UUID()
+        word.phrase = "Livre"
+        word.meaning = "Book"
+        word.order = 1
+        word.setId = UUID()
+        word.status =  WordStatus.notStarted.rawValue
+        return [word]
     }
 }

@@ -40,6 +40,7 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     private var dicIndex: Int16 = 5
     private var columnDic: Dictionary<Int16,[WordInProgressModel]> = [:]
     private var isTaskDone = false
+    private var currentWordInProgressModel: WordInProgressModel!
     
     // MARK: Constants
     
@@ -53,7 +54,7 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Take a Test"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(TakeTestViewController.doneBarButtonTapHandler))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(TakeTestViewController.doneBarButtonTapHandler))
         panningGesture = UIPanGestureRecognizer(target: self, action: #selector(TakeTestViewController.panningHandler))
         self.view.addGestureRecognizer(panningGesture!)
         
@@ -213,10 +214,18 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     }
     
     func correctTapHandler(){
-        swipeCard(direction: .up)
+        guard let wordFlowManager = wordFlowManager else{
+            fatalError("wordFlowManager is not initialized")
+        }
+            wordFlowManager.answerCorrectly(currentWordInProgressModel)
+            swipeCard(direction: .up)
     }
     func wrongTapHandler(){
-        swipeCard(direction: .down)
+        guard let wordFlowManager = wordFlowManager else{
+            fatalError("wordFlowManager is not initialized")
+        }
+            wordFlowManager.answerWrongly(currentWordInProgressModel)
+            swipeCard(direction: .down)
     }
     
     func panningHandler(recognizer: UIPanGestureRecognizer){
@@ -389,18 +398,18 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
             fatalError("wordFlowManager is not initialized")
         }
         do{
-             let wordInProgressList = try wordFlowManager.fetchWordsToExamin()
-//            var wordInProgressList: [WordInProgressModel] = []
-//            for i in 0..<10{
-//                var word = WordModel()
-//                word.meaning = "Meaning \(i)"
-//                word.phrase = "Phrase \(i)"
-//                var win = WordInProgressModel()
-//                win.column = Int16(i / 2)
-//                win.date = Date()
-//                win.word = word
-//                wordInProgressList.append(win)
-//            }
+            let wordInProgressList = try wordFlowManager.fetchWordsToExamin()
+            //            var wordInProgressList: [WordInProgressModel] = []
+            //            for i in 0..<10{
+            //                var word = WordModel()
+            //                word.meaning = "Meaning \(i)"
+            //                word.phrase = "Phrase \(i)"
+            //                var win = WordInProgressModel()
+            //                win.column = Int16(i / 2)
+            //                win.date = Date()
+            //                win.word = word
+            //                wordInProgressList.append(win)
+            //            }
             
             for i: Int16 in 0...5{
                 columnDic[i] = wordInProgressList.filter(){$0.column == i}
@@ -426,6 +435,7 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
             let list = columnDic[dicIndex]
             if listIndex < list!.count{
                 let wordInProgress = list![listIndex]
+                currentWordInProgressModel = wordInProgress
                 current.updateText(phrase: wordInProgress.word!.phrase!, meaning: wordInProgress.word!.meaning!)
                 updateColumnCounter()
                 changeCardViewFront(cardView: current)
@@ -503,5 +513,4 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
         
         NSLayoutConstraint.activate(constraintList)
     }
-    
 }

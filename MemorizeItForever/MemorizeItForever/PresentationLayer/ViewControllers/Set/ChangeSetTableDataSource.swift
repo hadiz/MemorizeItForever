@@ -32,7 +32,7 @@ final class ChangeSetTableDataSource: NSObject, SetTableDataSourceProtocol {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifierEnum: .setTableCellIdentifier)
+        let cell = tableView.dequeueReusableCellWithIdentifier(.changeSetTableCellIdentifier, forIndexPath: indexPath)
         
         let set = setModels[(indexPath as NSIndexPath).row]
         

@@ -7,8 +7,8 @@
 //
 
 public protocol WordManagerProtocol {
-    func saveWord(_ phrase: String, meaninig: String, setId: UUID) throws
-    func editWord(_ wordModel: WordModel, phrase: String, meaninig: String)
-    func deleteWord(_ wordModel: WordModel)
-    func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int) -> [WordModel]
+    func save(_ phrase: String, meaninig: String, setId: UUID) throws
+    func edit(_ wordModel: WordModel, phrase: String, meaninig: String)
+    func delete(_ wordModel: WordModel) -> Bool
+    func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int, fetchOffset: Int) -> [WordModel]
 }

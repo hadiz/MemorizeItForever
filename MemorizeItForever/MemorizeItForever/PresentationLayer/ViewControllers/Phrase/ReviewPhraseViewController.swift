@@ -99,7 +99,7 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
         flip.addTarget(self, action: #selector(ReviewPhraseViewController.flipTapHandler), for: .touchUpInside)
         
         done = MIButton()
-        done.setTitle("Done", for: .normal)
+        done.setTitle("Close", for: .normal)
         done.addTarget(self, action: #selector(ReviewPhraseViewController.doneTapHandler), for: .touchUpInside)
     }
     

@@ -101,7 +101,7 @@ class ReviewPhraseViewControllerTests: XCTestCase {
     
     func testHasDoneButton() {
         reviewPhraseViewController.viewDidLoad()
-        XCTAssertEqual(reviewPhraseViewController.done?.titleLabel?.text, "Done","View controller should have a done button")
+        XCTAssertEqual(reviewPhraseViewController.done?.titleLabel?.text, "Close","View controller should have a done button")
     }
     
     func testDoneButtonTapHandled() {

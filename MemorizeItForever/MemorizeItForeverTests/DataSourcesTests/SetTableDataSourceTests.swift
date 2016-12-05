@@ -15,6 +15,7 @@ class SetTableDataSourceTests: XCTestCase {
     var set: SetModel!
     var dataSource: SetTableDataSourceProtocol!
     var firstItemIndex: IndexPath!
+    var tableView: UITableView!
     
     override func setUp() {
         super.setUp()
@@ -24,12 +25,16 @@ class SetTableDataSourceTests: XCTestCase {
         dataSource = SetTableDataSource(setManager: nil)
         dataSource.setModels([set])
         firstItemIndex = IndexPath(item: 0, section: 0)
+        tableView = UITableView()
+        tableView.dataSource = dataSource
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifierEnum: .setTableCellIdentifier)
     }
     
     override func tearDown() {
         dataSource = nil
         firstItemIndex = nil
         set = nil
+        tableView = nil
         super.tearDown()
     }
     
@@ -51,7 +56,7 @@ class SetTableDataSourceTests: XCTestCase {
     }
     
     func testEachCellHasTitleCorrespondsToSetName(){
-        let cell = dataSource.tableView(UITableView(), cellForRowAt: firstItemIndex)
+        let cell = dataSource.tableView(tableView, cellForRowAt: firstItemIndex)
         XCTAssertEqual(cell.textLabel?.text, "Default", "The cell should have set name as a title")
     }
     

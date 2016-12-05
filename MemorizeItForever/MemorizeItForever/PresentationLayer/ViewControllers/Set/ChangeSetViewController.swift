@@ -60,6 +60,7 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
             }
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifierEnum: .changeSetTableCellIdentifier)
     }
     
     override func addControls(){
