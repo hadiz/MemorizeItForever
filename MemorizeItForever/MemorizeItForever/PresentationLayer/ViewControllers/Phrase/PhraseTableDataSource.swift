@@ -39,6 +39,7 @@ final class PhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol {
         cell.detailTextLabel?.text = word.meaning
         
         setColor(cell: cell, word: word)
+                
         return cell
     }
     

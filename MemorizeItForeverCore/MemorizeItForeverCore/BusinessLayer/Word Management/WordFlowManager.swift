@@ -249,5 +249,4 @@ public class WordFlowManager: WordFlowManagerProtocol {
             return MemorizeColumns.pre
         }
     }
-    
 }

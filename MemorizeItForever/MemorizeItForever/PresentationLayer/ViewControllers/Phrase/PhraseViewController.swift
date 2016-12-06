@@ -14,6 +14,7 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     // MARK: Constants
     
     private let wordStatusList = [WordStatus.notStarted, WordStatus.inProgress, WordStatus.done]
+    private let offsetCount = 50
     
     // MARK: Controls
     var tableView: UITableView!
@@ -21,6 +22,11 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     var dataSource: PhraseTableDataSourceProtocol?
     var wordManager: WordManagerProtocol?
 
+    // MARK: Local Variables
+    var skip = 0
+    var take = 0
+    
+    
     // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +115,6 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
         let wordList = wordManager.fetchWords(phrase: searchText, status: status, fetchLimit: 50, fetchOffset: 0)
         
         dataSource.setModels(wordList)
-        
         tableView.reloadData()
     }
     
@@ -128,4 +133,10 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
         let wordStatus = wordStatusList[searchController.searchBar.selectedScopeButtonIndex]
         filterContentForSearchText(searchText: "", status: wordStatus)
     }
+    
+    func loadMoreTableContent(){
+        let wordStatus = wordStatusList[searchController.searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchText: searchController.searchBar.text!, status: wordStatus)
+    }
+    
 }

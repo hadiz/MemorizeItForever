@@ -50,6 +50,7 @@
 		43687B721DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */; };
 		43687B741DD0AE0800E1EDB5 /* MITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B731DD0AE0800E1EDB5 /* MITableView.swift */; };
 		43690E6B1DD73062009918A3 /* SwinjectStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */; };
+		436BCB1F1DF6E3660042C175 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436BCB1E1DF6E3660042C175 /* SettingsViewController.swift */; };
 		4381502E1DDC72180040F2F9 /* MockWordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381502D1DDC72180040F2F9 /* MockWordManager.swift */; };
 		438651C71DC61607007BC89D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C61DC61607007BC89D /* UIViewControllerExtension.swift */; };
 		438651C91DC7426B007BC89D /* MICardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C81DC7426B007BC89D /* MICardView.swift */; };
@@ -169,6 +170,7 @@
 		43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSource.swift; path = PresentationLayer/ViewControllers/Set/ChangeSetTableDataSource.swift; sourceTree = "<group>"; };
 		43687B731DD0AE0800E1EDB5 /* MITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITableView.swift; path = PresentationLayer/VisualElements/MITableView.swift; sourceTree = "<group>"; };
 		43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwinjectStoryboardExtension.swift; path = General/Extensions/SwinjectStoryboardExtension.swift; sourceTree = "<group>"; };
+		436BCB1E1DF6E3660042C175 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = PresentationLayer/ViewControllers/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
 		4381502D1DDC72180040F2F9 /* MockWordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockWordManager.swift; path = General/MockWordManager.swift; sourceTree = "<group>"; };
 		438651C61DC61607007BC89D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = General/Extensions/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		438651C81DC7426B007BC89D /* MICardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardView.swift; path = PresentationLayer/VisualElements/MICardView.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 		432B75431DB37AA8003C6574 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				436BCB1D1DF6E33B0042C175 /* Settings */,
 				43F217D71DBF5A8E0005BF26 /* Phrase */,
 				432B754D1DB37B4B003C6574 /* Main */,
 				432B75461DB37AE3003C6574 /* Set */,
@@ -465,6 +468,14 @@
 				438EFD1E1DF2EF7A00B83C88 /* PhraseTableDataSource.swift */,
 			);
 			name = Phrase;
+			sourceTree = "<group>";
+		};
+		436BCB1D1DF6E33B0042C175 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				436BCB1E1DF6E3660042C175 /* SettingsViewController.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		438874561DB7ABD10030C016 /* MemorizeItTableDataSource */ = {
@@ -839,6 +850,7 @@
 				43262A4B1DD2000D0029C27E /* VFLBasedViewController.swift in Sources */,
 				432B75511DB37B64003C6574 /* TabBarController.swift in Sources */,
 				43262A4D1DD2071E0029C27E /* MITextView.swift in Sources */,
+				436BCB1F1DF6E3660042C175 /* SettingsViewController.swift in Sources */,
 				43690E6B1DD73062009918A3 /* SwinjectStoryboardExtension.swift in Sources */,
 				430320B51DE0748100BD0F0D /* UIViewExtension.swift in Sources */,
 				4344DE6A1DC0EAE600FBA130 /* MICardViewLabel.swift in Sources */,

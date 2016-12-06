@@ -214,18 +214,12 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     }
     
     func correctTapHandler(){
-        guard let wordFlowManager = wordFlowManager else{
-            fatalError("wordFlowManager is not initialized")
-        }
-            wordFlowManager.answerCorrectly(currentWordInProgressModel)
-            swipeCard(direction: .up)
+        answerCorrect()
+        swipeCard(direction: .up)
     }
     func wrongTapHandler(){
-        guard let wordFlowManager = wordFlowManager else{
-            fatalError("wordFlowManager is not initialized")
-        }
-            wordFlowManager.answerWrongly(currentWordInProgressModel)
-            swipeCard(direction: .down)
+        answerWrong()
+        swipeCard(direction: .down)
     }
     
     func panningHandler(recognizer: UIPanGestureRecognizer){
@@ -306,7 +300,7 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
         guard let current = cardViewsDic[.current] else {
             fatalError(cardViewsDicFatalError)
         }
-        
+        answerCorrect()
         animate(animations: {
             current.layer.frame.origin.y = -current.layer.frame.height
             self.view.backgroundColor = self.green
@@ -321,6 +315,7 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
         guard let current = cardViewsDic[.current] else {
             fatalError(cardViewsDicFatalError)
         }
+        answerWrong()
         animate(animations: {
             current.layer.frame.origin.y = self.view.layer.frame.height
             self.view.backgroundColor = self.red
@@ -512,5 +507,19 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
         constraintList += vTaskDoneViewCnst
         
         NSLayoutConstraint.activate(constraintList)
+    }
+    
+    private func answerCorrect(){
+        guard let wordFlowManager = wordFlowManager else{
+            fatalError("wordFlowManager is not initialized")
+        }
+        wordFlowManager.answerCorrectly(currentWordInProgressModel)
+
+    }
+    private func answerWrong(){
+        guard let wordFlowManager = wordFlowManager else{
+            fatalError("wordFlowManager is not initialized")
+        }
+        wordFlowManager.answerWrongly(currentWordInProgressModel)
     }
 }
