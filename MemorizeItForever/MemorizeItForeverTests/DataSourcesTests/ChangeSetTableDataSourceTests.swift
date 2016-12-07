@@ -80,7 +80,7 @@ class ChangeSetTableDataSourceTests: XCTestCase {
     
     func testHandleTapClosureHasSetModelInstanceWhenTapped(){
         var setModel: SetModel? = nil
-        dataSource = SetTableDataSource(setManager: nil)
+        dataSource = ChangeSetTableDataSource(setManager: nil)
         dataSource.handleTap = { (model) in
             setModel = model as? SetModel
         }

@@ -48,8 +48,12 @@ extension SwinjectStoryboard {
             SetManager(dataAccess: r.resolve(SetDataAccessProtocol.self)!)
         }
         
-        defaultContainer.register(WordManagerProtocol.self){ r in
+        defaultContainer.register(WordManagerProtocol.self, name: "WithoutHistoryDataAccess"){ r in
             WordManager(wordDataAccess: r.resolve(WordDataAccessProtocol.self)!)
+        }
+        
+        defaultContainer.register(WordManagerProtocol.self, name: "WithHistoryDataAccess"){ r in
+            WordManager(wordDataAccess: r.resolve(WordDataAccessProtocol.self)!, wordHistoryDataAccess: r.resolve(WordHistoryDataAccessProtocol.self))
         }
         
         defaultContainer.registerForStoryboard(TabBarController.self) { r, c in
@@ -86,7 +90,7 @@ extension SwinjectStoryboard {
         defaultContainer.register(AddPhraseViewController.self) { r in
             let controller = AddPhraseViewController()
             controller.validator = r.resolve(ValidatorProtocol.self)
-            controller.wordManager = r.resolve(WordManagerProtocol.self)
+            controller.wordManager = r.resolve(WordManagerProtocol.self, name: "WithoutHistoryDataAccess")
             return controller
             }.inObjectScope(.none)
         
@@ -136,13 +140,25 @@ extension SwinjectStoryboard {
         
         defaultContainer.register(PhraseViewController.self) { r in
             let controller = PhraseViewController()
-            controller.dataSource = r.resolve(PhraseTableDataSourceProtocol.self)
-            controller.wordManager = r.resolve(WordManagerProtocol.self)
+            controller.dataSource = r.resolve(PhraseTableDataSourceProtocol.self, name: "PhraseTableDataSource")
+            controller.wordManager = r.resolve(WordManagerProtocol.self, name: "WithoutHistoryDataAccess")
+            controller.phraseHistoryViewController = r.resolve(PhraseHistoryViewController.self)
             return controller
             }.inObjectScope(.none)
         
-        defaultContainer.register(PhraseTableDataSourceProtocol.self){ r in
-            PhraseTableDataSource(wordManager: r.resolve(WordManagerProtocol.self))
+        defaultContainer.register(PhraseTableDataSourceProtocol.self, name: "PhraseTableDataSource"){ r in
+            PhraseTableDataSource(wordManager: r.resolve(WordManagerProtocol.self, name: "WithoutHistoryDataAccess"))
+            }.inObjectScope(.none)
+        
+        defaultContainer.register(PhraseHistoryViewController.self){ r in
+            let controller = PhraseHistoryViewController()
+            controller.dataSource = r.resolve(PhraseTableDataSourceProtocol.self, name: "PhraseHistoryTableDataSource")
+            controller.wordManager = r.resolve(WordManagerProtocol.self, name: "WithHistoryDataAccess")
+            return controller
+            }.inObjectScope(.none)
+        
+        defaultContainer.register(PhraseTableDataSourceProtocol.self, name: "PhraseHistoryTableDataSource"){ r in
+            PhraseHistoryTableDataSource(wordManager: nil)
             }.inObjectScope(.none)
     }
 }

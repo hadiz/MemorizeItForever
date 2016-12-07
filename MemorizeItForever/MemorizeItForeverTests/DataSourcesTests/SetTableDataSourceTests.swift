@@ -67,25 +67,4 @@ class SetTableDataSourceTests: XCTestCase {
         XCTAssertNotNil((dataSource as? SetTableDataSource)!.handleTap, "SetTableDataSource can handle an clouser for handling tap event")
     }
     
-    func testHandleTapClosureIsCalledWhenTapped(){
-        var tapped = false
-        dataSource = SetTableDataSource(setManager: nil)
-        dataSource.handleTap = { (model) in
-            tapped = true
-        }
-        dataSource.setModels([set])
-        dataSource.tableView!(UITableView(), didSelectRowAt: firstItemIndex)
-        XCTAssertTrue(tapped,"HandleTap clouser should be called in didSelectRowAtIndexPath action")
-    }
-    
-    func testHandleTapClosureHasSetModelInstanceWhenTapped(){
-        var setModel: SetModel? = nil
-        dataSource = SetTableDataSource(setManager: nil)
-        dataSource.handleTap = { (model) in
-            setModel = model as? SetModel
-        }
-        dataSource.setModels([set])
-        dataSource.tableView!(UITableView(), didSelectRowAt: firstItemIndex)
-        XCTAssertEqual(setModel?.name, "Default","HandleTap clouser should hold  a setModel instance")
-    }
 }
