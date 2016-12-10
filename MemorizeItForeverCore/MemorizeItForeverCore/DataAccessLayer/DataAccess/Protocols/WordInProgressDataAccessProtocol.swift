@@ -10,8 +10,8 @@ import BaseLocalDataAccess
 
 public protocol WordInProgressDataAccessProtocol {
     func save(_ wordInProgressModel: WordInProgressModel) throws
-    func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]
-    func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]
+    func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel, set: SetModel) throws -> [WordInProgressModel]
+    func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel, set: SetModel) throws -> [WordInProgressModel]
     func edit(_ wordInProgressModel: WordInProgressModel) throws
     func delete(_ wordInProgressModel: WordInProgressModel) throws
     func fetchByWordId(_ wordInProgressModel: WordInProgressModel) throws -> WordInProgressModel?

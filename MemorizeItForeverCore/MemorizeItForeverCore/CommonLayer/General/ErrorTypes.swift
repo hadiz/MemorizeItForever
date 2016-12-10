@@ -12,6 +12,7 @@ enum WordManagementFlowError: Error{
     case progressWord(String)
     case newWordsCount(String)
     case wordInProgressIsNull(String)
+    case setModelWasNotSet
 }
 
 enum ContextErrors: Error{

@@ -64,9 +64,12 @@ public class WordFlowManager: WordFlowManagerProtocol {
         guard let count = UserDefaults.standard.object(forKey: Settings.newWordsCount.rawValue) as? Int else{
             throw WordManagementFlowError.newWordsCount("Can not specify new words count")
         }
+        guard let setModel = UserDefaults.standard.getDefaultSetModel()else{
+            throw WordManagementFlowError.setModelWasNotSet
+        }
         do{
             if try allowPutWordsInPreColumn(){
-                let words = try wordDataAccess.fetchWithNotStartedStatus(fetchLimit: count)
+                let words = try wordDataAccess.fetchWithNotStartedStatus(set: setModel, fetchLimit: count)
                 for word in words{
                     putWordInPreColumn(word)
                     try changeWordStatus(word, wordStatus: .inProgress)
@@ -79,11 +82,14 @@ public class WordFlowManager: WordFlowManagerProtocol {
     }
     
     public func fetchWordsForReview() throws -> [WordModel]{
+        guard let setModel = UserDefaults.standard.getDefaultSetModel()else{
+            throw WordManagementFlowError.setModelWasNotSet
+        }
         do{
             var wordInProgress = WordInProgressModel()
             wordInProgress.date = Date().addDay(1)
             wordInProgress.column = MemorizeColumns.pre.rawValue
-            let wordInProgressList = try wordInProgressDataAccess.fetchByDateAndColumn(wordInProgress)
+            let wordInProgressList = try wordInProgressDataAccess.fetchByDateAndColumn(wordInProgress, set: setModel)
             var words: [WordModel] = []
             for inProgress in wordInProgressList{
                 if let word = inProgress.word{
@@ -99,10 +105,13 @@ public class WordFlowManager: WordFlowManagerProtocol {
     
     public func fetchWordsToExamin() throws -> [WordInProgressModel]{
         // it should fetch words for today and all words that belongs to past
+        guard let setModel = UserDefaults.standard.getDefaultSetModel()else{
+            throw WordManagementFlowError.setModelWasNotSet
+        }
         do{
             var wordInProgress = WordInProgressModel()
             wordInProgress.date = Date()
-            var wordInProgressList = try wordInProgressDataAccess.fetchByDateAndOlder(wordInProgress)
+            var wordInProgressList = try wordInProgressDataAccess.fetchByDateAndOlder(wordInProgress, set: setModel)
             wordInProgressList.sort{
                 if let column0 = $0.column, let column1 = $1.column{
                     return  column0 > column1
@@ -117,8 +126,11 @@ public class WordFlowManager: WordFlowManagerProtocol {
     }
     
     private func allowPutWordsInPreColumn() throws -> Bool{
+        guard let setModel = UserDefaults.standard.getDefaultSetModel()else{
+            throw WordManagementFlowError.setModelWasNotSet
+        }
         do{
-            let word = try wordDataAccess.fetchLast(.inProgress)
+            let word = try wordDataAccess.fetchLast(set: setModel, wordStatus: .inProgress)
             if word == nil {
                 return true
             }

@@ -110,17 +110,19 @@ public class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
         }
     }
     
-    public func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]{
+    public func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel, set: SetModel) throws -> [WordInProgressModel]{
         guard let date = wordInProgressModel.date?.getDate(), let column = wordInProgressModel.column else{
             throw EntityCRUDError.failFetchEntity(genericDataAccess.getEntityName())
         }
         
         let predicateObject1 = PredicateObject(fieldName: WordInProgressEntity.Fields.Column.rawValue, operatorName: .equal, value: Int(column))
         let predicateObject2 = PredicateObject(fieldName: WordInProgressEntity.Fields.Date.rawValue, operatorName: .equal, value: date)
+        let predicateObject3 = PredicateObject(fieldName: "word.set.id", operatorName: .equal, value: set.setId!.uuidString)
         
         var predicateCompound = PredicateCompoundObject(compoundOperator: CompoundOperatorEnum.and)
         predicateCompound.appendPredicate(predicateObject1)
         predicateCompound.appendPredicate(predicateObject2)
+        predicateCompound.appendPredicate(predicateObject3)
         
         do{
             let wordInProgress: [WordInProgressModel] = try genericDataAccess.fetchModels(predicate: predicateCompound, sort: nil)
@@ -131,15 +133,21 @@ public class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
         }
     }
     
-    public func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel]{
+    public func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel, set: SetModel) throws -> [WordInProgressModel]{
         guard let date = wordInProgressModel.date?.getDate() else{
             throw EntityCRUDError.failFetchEntity(genericDataAccess.getEntityName())
         }
         
-        let predicateObject = PredicateObject(fieldName: WordInProgressEntity.Fields.Date.rawValue, operatorName: .lessEqualThan, value: date as NSObject)
+        let predicateObject1 = PredicateObject(fieldName: WordInProgressEntity.Fields.Date.rawValue, operatorName: .lessEqualThan, value: date as NSObject)
+        
+        let predicateObject2 = PredicateObject(fieldName: "word.set.id", operatorName: .equal, value: set.setId!.uuidString)
+        
+        var predicateCompound = PredicateCompoundObject(compoundOperator: CompoundOperatorEnum.and)
+        predicateCompound.appendPredicate(predicateObject1)
+        predicateCompound.appendPredicate(predicateObject2)
         
         do{
-            let wordInProgress: [WordInProgressModel] = try genericDataAccess.fetchModels(predicate: predicateObject, sort: nil)
+            let wordInProgress: [WordInProgressModel] = try genericDataAccess.fetchModels(predicate: predicateCompound, sort: nil)
             return wordInProgress
         }
         catch{
