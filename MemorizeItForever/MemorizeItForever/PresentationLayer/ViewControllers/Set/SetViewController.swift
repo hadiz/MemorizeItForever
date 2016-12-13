@@ -42,12 +42,12 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(SetViewController.addAction))
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(SetViewController.closeBarButtonTapHandler))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(SetViewController.editAction))
         
         guard let dataSource = dataSource else {
             fatalError("dataSource is not initialiazed")
         }
-        
+
         let weakSelf = self
         dataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
             if let weakSelf = weakSelf{
@@ -69,8 +69,14 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
         return .none
     }
     
-    func closeBarButtonTapHandler(){
-        self.dismiss(animated: true, completion: nil)
+    func editAction(){
+        tableView.setEditing(true, animated: true)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(SetViewController.doneAction))
+    }
+    
+    func doneAction(){
+        tableView.setEditing(false, animated: true)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(SetViewController.editAction))
     }
     
     func addAction(_ sender: AnyObject){

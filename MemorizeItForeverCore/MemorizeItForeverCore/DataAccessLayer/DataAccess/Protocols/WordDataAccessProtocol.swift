@@ -12,8 +12,8 @@ public protocol WordDataAccessProtocol {
     func save(_ wordModel: WordModel) throws
     func edit(_ wordModel: WordModel) throws
     func delete(_ wordModel: WordModel) throws
-    func fetchWithNotStartedStatus(set: SetModel,fetchLimit: Int) throws -> [WordModel]
-    func fetchLast(set: SetModel, wordStatus: WordStatus) throws -> WordModel?
+    func fetchWithNotStartedStatus(fetchLimit: Int) throws -> [WordModel]
+    func fetchLast(_ wordStatus: WordStatus) throws -> WordModel?
     func fetchAll(fetchLimit: Int?) throws -> [WordModel]
     func fetchWords(status: WordStatus, fetchLimit: Int, fetchOffset: Int) throws -> [WordModel]
     func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int, fetchOffset: Int) throws -> [WordModel]

@@ -21,7 +21,7 @@ public class WordEntity: NSManagedObject, EntityProtocol {
     }
     
     public func toModel() throws -> ModelProtocol {
-        guard let id = self.id, let setId = self.set?.id , let setName = self.set?.name else{
+        guard let id = self.id, let setId = self.set?.id else{
             throw ModelError.failCreateModel(Models.wordModel.rawValue)
         }
         
@@ -32,7 +32,6 @@ public class WordEntity: NSManagedObject, EntityProtocol {
         word.setId = UUID(uuidString: setId)
         word.meaning = self.meaning
         word.phrase = self.phrase
-        word.setName = setName
         return word
     }
     

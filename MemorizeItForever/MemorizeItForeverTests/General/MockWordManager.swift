@@ -9,10 +9,6 @@
 import MemorizeItForeverCore
 
 class MockWordManager: WordManagerProtocol {
-    public func fetchWordHistoryByWord(wordModel: WordModel) -> [WordHistoryModel] {
-        return []
-    }
-
     public func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int, fetchOffset: Int) -> [WordModel] {
         return []
     }

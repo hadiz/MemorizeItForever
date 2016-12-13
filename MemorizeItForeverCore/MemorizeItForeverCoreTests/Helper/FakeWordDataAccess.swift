@@ -61,13 +61,13 @@ class FakeWordDataAccess: WordDataAccessProtocol{
         return []
     }
     
-    func fetchLast(set: SetModel, wordStatus: WordStatus) throws -> WordModel? {
+    func fetchLast(_ wordStatus: WordStatus) throws -> WordModel? {
         if let result = objc_getAssociatedObject(self, &wordKey) as? WordModel{
             return result
         }
         return nil
     }
-    func fetchWithNotStartedStatus(set: SetModel, fetchLimit: Int) throws -> [WordModel] {
+    func fetchWithNotStartedStatus(fetchLimit: Int) throws -> [WordModel] {
         var word = WordModel()
         word.wordId = UUID()
         word.phrase = "Livre"

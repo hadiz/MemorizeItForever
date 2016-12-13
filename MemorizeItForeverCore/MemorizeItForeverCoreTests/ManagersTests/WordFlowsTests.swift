@@ -15,7 +15,6 @@ class WordFlowsTests: XCTestCase {
     var wordDataAccess: WordDataAccessProtocol!
     var wordInProgressDataAccess: WordInProgressDataAccessProtocol!
     var wordHistoryDataAccess: WordHistoryDataAccessProtocol!
-    var setModel: SetModel!
     
     override func setUp() {
         super.setUp()
@@ -23,9 +22,6 @@ class WordFlowsTests: XCTestCase {
         wordInProgressDataAccess = FakeWordInProgressDataAccess()
         wordHistoryDataAccess = FakeWordHistoryDataAccess()
         wordFlowManager = WordFlowManager(wordDataAccess: wordDataAccess, wordInProgressDataAccess: wordInProgressDataAccess, wordHistoryDataAccess: wordHistoryDataAccess)
-        setModel = SetModel()
-        setModel.setId = UUID()
-        setModel.name = "Default"
     }
     
     override func tearDown() {
@@ -33,7 +29,6 @@ class WordFlowsTests: XCTestCase {
         wordFlowManager = nil
         wordInProgressDataAccess = nil
         wordHistoryDataAccess = nil
-        setModel = nil
         super.tearDown()
     }
     
@@ -306,7 +301,6 @@ class WordFlowsTests: XCTestCase {
     
     func testFetchWordsForPuttingInPreColumn(){
         UserDefaults.standard.setValue(10, forKey: Settings.newWordsCount.rawValue)
-        UserDefaults.standard.setValue(setModel.toDic(), forKey: Settings.defaultSet.rawValue)
         do{
             try wordFlowManager.fetchNewWordsToPutInPreColumn()
         }
@@ -344,7 +338,6 @@ class WordFlowsTests: XCTestCase {
     }
     
     func testDoNotFetchWordsForPuttingInPreColumnIfAlreadyFetched(){
-        UserDefaults.standard.setValue(setModel.toDic(), forKey: Settings.defaultSet.rawValue)
         let word = newWordModel()
         objc_setAssociatedObject(wordDataAccess, &wordKey, word, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         do{
@@ -358,7 +351,7 @@ class WordFlowsTests: XCTestCase {
     }
     
     func testShouldWordsForPuttingInPreColumnIfAnsweredAlreadyWrongly(){
-        UserDefaults.standard.setValue(setModel.toDic(), forKey: Settings.defaultSet.rawValue)
+        
         let word = newWordModel()
         objc_setAssociatedObject(wordDataAccess, &wordKey, word, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         objc_setAssociatedObject(wordHistoryDataAccess, &wordHistoryCountKey, 1, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -377,7 +370,6 @@ class WordFlowsTests: XCTestCase {
     }
     
     func testFetchWordsForReview(){
-        UserDefaults.standard.setValue(setModel.toDic(), forKey: Settings.defaultSet.rawValue)
         do{
             let words = try wordFlowManager.fetchWordsForReview()
             XCTAssertGreaterThanOrEqual(words.count, 0, "should return words for review")
@@ -405,7 +397,7 @@ class WordFlowsTests: XCTestCase {
     func testFetchWordsToExamine(){
         
         // it should fetch words for today and all words that belongs to past
-        UserDefaults.standard.setValue(setModel.toDic(), forKey: Settings.defaultSet.rawValue)
+        
         do{
             let wordInProgressLists = try wordFlowManager.fetchWordsToExamin()
             XCTAssertEqual(wordInProgressLists[0].column, 3,"should sort wordInprogress list")

@@ -32,7 +32,7 @@ class FakeWordInProgressDataAccess: WordInProgressDataAccessProtocol {
         let wordInProgress = WordInProgressModel(word: nil, date: Date(), column: 0, wordInProgressId: UUID())
         return wordInProgress
     }
-    func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel, set: SetModel) throws -> [WordInProgressModel] {
+    func fetchByDateAndOlder(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel] {
         objc_setAssociatedObject(self, &dateKey, wordInProgressModel.date, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         var word = WordModel()
         word.wordId = UUID()
@@ -45,7 +45,7 @@ class FakeWordInProgressDataAccess: WordInProgressDataAccessProtocol {
         let wordInProgress1 = WordInProgressModel(word: word, date: Date(), column: 1, wordInProgressId: UUID())
         return [wordInProgress1,wordInProgress]
     }
-    func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel, set: SetModel) throws -> [WordInProgressModel] {
+    func fetchByDateAndColumn(_ wordInProgressModel: WordInProgressModel) throws -> [WordInProgressModel] {
         objc_setAssociatedObject(self, &columnKey, wordInProgressModel.column, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         objc_setAssociatedObject(self, &dateKey, wordInProgressModel.date, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         var word = WordModel()

@@ -17,9 +17,9 @@ final class SetTableDataSource: NSObject, SetTableDataSourceProtocol {
     
     required init(setManager: SetManagerProtocol?) {
         self.setManager = setManager
-        print("init SetTableDataSource")
+         print("init SetTableDataSource")
     }
-    
+  
     deinit {
         print("DEINIT SetTableDataSource")
     }
@@ -37,70 +37,11 @@ final class SetTableDataSource: NSObject, SetTableDataSourceProtocol {
         let set = setModels?[(indexPath as NSIndexPath).row]
         
         cell.textLabel?.text = set?.name
-        
-        cell.selectionStyle = .none
         return cell
     }
     
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //
-    //        if let set = setModels?[(indexPath as NSIndexPath).row]{
-    //            handleTap?(set)
-    //        }
-    //        else{
-    //            // TODO Notify an error
-    //        }
-    //    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-    }
-    
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        let weakSelf = self
-        
-        let edit = UITableViewRowAction(style: .default, title: "Edit") {[weak weakSelf] (action, index) in
-            if let weakSelf = weakSelf{
-                weakSelf.editSet(indexPath: index)
-            }
-        }
-        edit.backgroundColor = #colorLiteral(red: 1, green: 0.5774730687, blue: 0.1422811775, alpha: 1)
-        
-        let delete = UITableViewRowAction(style: .default, title: "Delete") {[weak weakSelf] (action, index) in
-            if let weakSelf = weakSelf{
-                weakSelf.deleteSet(indexPath: index, tableView: tableView)
-            }
-        }
-        delete.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-        
-        return [delete, edit]
-    }
-    
-    func setModels(_ models: [MemorizeItModelProtocol]) {
-        setModels = models.flatMap{$0 as? SetModel}
-    }
-    
-    private func deleteSet(indexPath: IndexPath, tableView: UITableView){
-        guard let setManager = setManager else {
-            fatalError("setManager is not initialiazed")
-        }
-        let set = setModels![(indexPath as NSIndexPath).row]
-        if setManager.delete(set){
-            setModels?.remove(at: (indexPath as NSIndexPath).row)
-            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-        }
-        else{
-            tableView.setEditing(false, animated: true)
-        }
-        
-    }
-    
-    private func editSet(indexPath: IndexPath){
         if let set = setModels?[(indexPath as NSIndexPath).row]{
             handleTap?(set)
         }
@@ -108,4 +49,29 @@ final class SetTableDataSource: NSObject, SetTableDataSourceProtocol {
             // TODO Notify an error
         }
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard let setManager = setManager else {
+            fatalError("setManager is not initialiazed")
+        }
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            let set = setModels![(indexPath as NSIndexPath).row]
+            if setManager.delete(set){
+                setModels?.remove(at: (indexPath as NSIndexPath).row)
+                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            }
+            else{
+                tableView.setEditing(false, animated: true)
+            }
+        }
+    }
+  
+    func setModels(_ models: [MemorizeItModelProtocol]) {
+        setModels = models.flatMap{$0 as? SetModel}
+    }
+    
 }

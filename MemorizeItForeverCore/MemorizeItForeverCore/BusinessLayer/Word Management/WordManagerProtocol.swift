@@ -11,5 +11,4 @@ public protocol WordManagerProtocol {
     func edit(_ wordModel: WordModel, phrase: String, meaninig: String)
     func delete(_ wordModel: WordModel) -> Bool
     func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int, fetchOffset: Int) -> [WordModel]
-    func fetchWordHistoryByWord(wordModel: WordModel) -> [WordHistoryModel]
 }

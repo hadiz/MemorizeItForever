@@ -51,10 +51,6 @@
 		43687B741DD0AE0800E1EDB5 /* MITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B731DD0AE0800E1EDB5 /* MITableView.swift */; };
 		43690E6B1DD73062009918A3 /* SwinjectStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */; };
 		436BCB1F1DF6E3660042C175 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436BCB1E1DF6E3660042C175 /* SettingsViewController.swift */; };
-		436BCB211DF8011C0042C175 /* PhraseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436BCB201DF8011C0042C175 /* PhraseHistoryViewController.swift */; };
-		436BCB231DF821B70042C175 /* PhraseHistoryTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436BCB221DF821B70042C175 /* PhraseHistoryTableDataSource.swift */; };
-		436BCB251DF84D940042C175 /* Value2UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436BCB241DF84D940042C175 /* Value2UITableViewCell.swift */; };
-		436BCB271DF85CCB0042C175 /* SubtitleUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436BCB261DF85CCB0042C175 /* SubtitleUITableViewCell.swift */; };
 		4381502E1DDC72180040F2F9 /* MockWordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381502D1DDC72180040F2F9 /* MockWordManager.swift */; };
 		438651C71DC61607007BC89D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C61DC61607007BC89D /* UIViewControllerExtension.swift */; };
 		438651C91DC7426B007BC89D /* MICardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C81DC7426B007BC89D /* MICardView.swift */; };
@@ -175,10 +171,6 @@
 		43687B731DD0AE0800E1EDB5 /* MITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITableView.swift; path = PresentationLayer/VisualElements/MITableView.swift; sourceTree = "<group>"; };
 		43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwinjectStoryboardExtension.swift; path = General/Extensions/SwinjectStoryboardExtension.swift; sourceTree = "<group>"; };
 		436BCB1E1DF6E3660042C175 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = PresentationLayer/ViewControllers/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
-		436BCB201DF8011C0042C175 /* PhraseHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseHistoryViewController.swift; path = PresentationLayer/ViewControllers/Phrase/PhraseHistoryViewController.swift; sourceTree = "<group>"; };
-		436BCB221DF821B70042C175 /* PhraseHistoryTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseHistoryTableDataSource.swift; path = PresentationLayer/DataSource/Phrase/PhraseHistoryTableDataSource.swift; sourceTree = "<group>"; };
-		436BCB241DF84D940042C175 /* Value2UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Value2UITableViewCell.swift; path = PresentationLayer/VisualElements/Value2UITableViewCell.swift; sourceTree = "<group>"; };
-		436BCB261DF85CCB0042C175 /* SubtitleUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubtitleUITableViewCell.swift; path = PresentationLayer/VisualElements/SubtitleUITableViewCell.swift; sourceTree = "<group>"; };
 		4381502D1DDC72180040F2F9 /* MockWordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockWordManager.swift; path = General/MockWordManager.swift; sourceTree = "<group>"; };
 		438651C61DC61607007BC89D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = General/Extensions/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		438651C81DC7426B007BC89D /* MICardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardView.swift; path = PresentationLayer/VisualElements/MICardView.swift; sourceTree = "<group>"; };
@@ -298,8 +290,6 @@
 				4345C7AC1DCF4B45003808AD /* MISetView.swift */,
 				43687B731DD0AE0800E1EDB5 /* MITableView.swift */,
 				43262A4C1DD2071E0029C27E /* MITextView.swift */,
-				436BCB241DF84D940042C175 /* Value2UITableViewCell.swift */,
-				436BCB261DF85CCB0042C175 /* SubtitleUITableViewCell.swift */,
 			);
 			name = VisualElements;
 			sourceTree = "<group>";
@@ -476,7 +466,6 @@
 			children = (
 				438EFD1C1DF2EEA600B83C88 /* PhraseTableDataSourceProtocol.swift */,
 				438EFD1E1DF2EF7A00B83C88 /* PhraseTableDataSource.swift */,
-				436BCB221DF821B70042C175 /* PhraseHistoryTableDataSource.swift */,
 			);
 			name = Phrase;
 			sourceTree = "<group>";
@@ -562,7 +551,6 @@
 				43262A481DD1F1D60029C27E /* AddPhraseViewController.swift */,
 				43B35F231DE308E3006717F5 /* TakeTestViewController.swift */,
 				438EFD1A1DF2D8B600B83C88 /* PhraseViewController.swift */,
-				436BCB201DF8011C0042C175 /* PhraseHistoryViewController.swift */,
 			);
 			name = Phrase;
 			sourceTree = "<group>";
@@ -866,7 +854,6 @@
 				43690E6B1DD73062009918A3 /* SwinjectStoryboardExtension.swift in Sources */,
 				430320B51DE0748100BD0F0D /* UIViewExtension.swift in Sources */,
 				4344DE6A1DC0EAE600FBA130 /* MICardViewLabel.swift in Sources */,
-				436BCB271DF85CCB0042C175 /* SubtitleUITableViewCell.swift in Sources */,
 				43687B701DD0AB2200E1EDB5 /* ChangeSetViewController.swift in Sources */,
 				4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */,
 				432B755F1DB37E82003C6574 /* Enum.swift in Sources */,
@@ -877,9 +864,7 @@
 				432B73431DB51E2200A76FC7 /* CustomBackgroundView.swift in Sources */,
 				432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */,
 				435824D81DCE0D9500842C73 /* MISwitch.swift in Sources */,
-				436BCB211DF8011C0042C175 /* PhraseHistoryViewController.swift in Sources */,
 				432B754C1DB37B41003C6574 /* SetViewController.swift in Sources */,
-				436BCB231DF821B70042C175 /* PhraseHistoryTableDataSource.swift in Sources */,
 				43FFEF001DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift in Sources */,
 				43BF3D9A1DD9D79B000296DB /* ValidatableProtocol.swift in Sources */,
 				438EFD1F1DF2EF7A00B83C88 /* PhraseTableDataSource.swift in Sources */,
@@ -893,7 +878,6 @@
 				4344DE661DC0DAB200FBA130 /* MITextField.swift in Sources */,
 				432B75501DB37B64003C6574 /* MemorizeItViewController.swift in Sources */,
 				43EE6CE01DC4E17A00873D18 /* MIView.swift in Sources */,
-				436BCB251DF84D940042C175 /* Value2UITableViewCell.swift in Sources */,
 				432B75641DB38DF9003C6574 /* UIColorExtension.swift in Sources */,
 				43B35F241DE308E3006717F5 /* TakeTestViewController.swift in Sources */,
 				43434AFF1DB3676A0005B59F /* AppDelegate.swift in Sources */,

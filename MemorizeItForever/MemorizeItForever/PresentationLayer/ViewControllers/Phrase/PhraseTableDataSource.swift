@@ -36,10 +36,7 @@ final class PhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol {
         let word = models[(indexPath as NSIndexPath).row]
         
         cell.textLabel?.text = word.phrase
-        cell.textLabel?.backgroundColor = UIColor.clear
-        
-        cell.detailTextLabel?.text = word.setName
-        cell.detailTextLabel?.backgroundColor = UIColor.clear
+        cell.detailTextLabel?.text = word.meaning
         
         setColor(cell: cell, word: word)
                 

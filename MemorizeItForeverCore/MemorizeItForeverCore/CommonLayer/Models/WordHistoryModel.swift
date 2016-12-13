@@ -13,10 +13,6 @@ public struct WordHistoryModel: MemorizeItModelProtocol {
     public var columnNo: Int16?
     public var failureCount: Int32?
     public var wordHistoryId: UUID?
-    
-    public init(){
-        
-    }
 }
 
 func ==(lhs: WordHistoryModel, rhs: WordHistoryModel) -> Bool {
