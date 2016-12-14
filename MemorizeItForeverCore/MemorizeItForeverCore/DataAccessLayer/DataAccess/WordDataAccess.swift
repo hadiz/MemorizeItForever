@@ -50,22 +50,32 @@ public class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    public func fetchWithNotStartedStatus(fetchLimit: Int) throws -> [WordModel] {
+    public func fetchWithNotStartedStatus(set: SetModel, fetchLimit: Int) throws -> [WordModel] {
+        let setEntity = fetchSetEntity(set.setId!)!
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue,direction: SortDirectionEnum.ascending )
-            let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(WordStatus.notStarted.rawValue))
-            return try genericDataAccess.fetchModels(predicate: predicaet, sort: sort, fetchLimit: fetchLimit)
+            let predicateObject1 = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(WordStatus.notStarted.rawValue))
+             let predicateObject2 = PredicateObject(fieldName: WordEntity.Fields.Set.rawValue, operatorName: .equal, value: setEntity)
+            var predicateCompound = PredicateCompoundObject(compoundOperator: CompoundOperatorEnum.and)
+            predicateCompound.appendPredicate(predicateObject1)
+            predicateCompound.appendPredicate(predicateObject2)
+            return try genericDataAccess.fetchModels(predicate: predicateCompound, sort: sort, fetchLimit: fetchLimit)
         }
         catch let error as NSError{
             throw  DataAccessError.failFetchData(error.localizedDescription)
         }
     }
     
-    public func fetchLast(_ wordStatus: WordStatus) throws -> WordModel? {
+    public func fetchLast(set: SetModel, wordStatus: WordStatus) throws -> WordModel? {
+        let setEntity = fetchSetEntity(set.setId!)!
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue, direction: SortDirectionEnum.descending)
-            let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(wordStatus.rawValue))
-            let words: [WordModel] = try genericDataAccess.fetchModels(predicate: predicaet, sort: sort, fetchLimit: 1)
+            let predicateObject1 = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(wordStatus.rawValue))
+            let predicateObject2 = PredicateObject(fieldName: WordEntity.Fields.Set.rawValue, operatorName: .equal, value: setEntity)
+            var predicateCompound = PredicateCompoundObject(compoundOperator: CompoundOperatorEnum.and)
+            predicateCompound.appendPredicate(predicateObject1)
+            predicateCompound.appendPredicate(predicateObject2)
+            let words: [WordModel] = try genericDataAccess.fetchModels(predicate: predicateCompound, sort: sort, fetchLimit: 1)
             if words.count == 1{
                 return words[0]
             }

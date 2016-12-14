@@ -9,11 +9,12 @@
 import Foundation
 
 final public class WordManager: WordManagerProtocol {
-    
     private var wordDataAccess: WordDataAccessProtocol
+    private var wordHistoryDataAccess: WordHistoryDataAccessProtocol?
     
-    public init(wordDataAccess: WordDataAccessProtocol){
+    public init(wordDataAccess: WordDataAccessProtocol, wordHistoryDataAccess: WordHistoryDataAccessProtocol? = nil){
         self.wordDataAccess = wordDataAccess
+        self.wordHistoryDataAccess = wordHistoryDataAccess
     }
     
     public func save(_ phrase: String, meaninig: String, setId: UUID) throws{
@@ -66,5 +67,20 @@ final public class WordManager: WordManagerProtocol {
         catch{
             return []
         }
+    }
+    
+    public func fetchWordHistoryByWord(wordModel: WordModel) -> [WordHistoryModel] {
+        guard let wordHistoryDataAccess = wordHistoryDataAccess else {
+            fatalError("wordHistoryDataAccess is not initialized")
+        }
+        var wordHistoryModel = WordHistoryModel()
+        wordHistoryModel.word = wordModel
+        do{
+            return try wordHistoryDataAccess.fetchByWordId(wordHistoryModel)
+        }
+        catch{
+            
+        }
+        return []
     }
 }

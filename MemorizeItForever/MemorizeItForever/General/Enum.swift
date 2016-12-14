@@ -10,6 +10,7 @@ enum CellReuseIdentifier: String{
     case setTableCellIdentifier = "SetTableCellIdentifier"
     case changeSetTableCellIdentifier = "ChangeSetTableCellIdentifier"
     case phraseTableCellIdentifier = "PhraseTableCellIdentifier"
+    case phraseHistoryTableCellIdentifier = "PhraseHistoryTableCellIdentifier"
 }
 enum EntityMode: String{
     case save

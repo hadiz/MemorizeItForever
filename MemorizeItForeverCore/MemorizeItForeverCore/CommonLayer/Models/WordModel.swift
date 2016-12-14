@@ -14,6 +14,7 @@ public struct WordModel: Equatable, MemorizeItModelProtocol {
     public var meaning: String?
     public var order: Int32?
     public var setId: UUID?
+    public var setName: String?
     public var status: Int16? = WordStatus.notStarted.rawValue
     
     public init(){
