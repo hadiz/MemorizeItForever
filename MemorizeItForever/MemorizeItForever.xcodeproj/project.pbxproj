@@ -13,19 +13,8 @@
 		43262A411DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */; };
 		43262A431DD1CAC30029C27E /* ChangeSetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */; };
 		43262A451DD1EF380029C27E /* AddPhraseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A441DD1EF380029C27E /* AddPhraseViewControllerTests.swift */; };
-		43262A471DD1F1BE0029C27E /* ReviewPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A461DD1F1BE0029C27E /* ReviewPhraseViewController.swift */; };
-		43262A491DD1F1D60029C27E /* AddPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A481DD1F1D60029C27E /* AddPhraseViewController.swift */; };
-		43262A4B1DD2000D0029C27E /* VFLBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A4A1DD2000D0029C27E /* VFLBasedViewController.swift */; };
-		43262A4D1DD2071E0029C27E /* MITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A4C1DD2071E0029C27E /* MITextView.swift */; };
 		432B733E1DB5149B00A76FC7 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */; };
 		432B733F1DB5149B00A76FC7 /* BaseLocalDataAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		432B73431DB51E2200A76FC7 /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B73421DB51E2200A76FC7 /* CustomBackgroundView.swift */; };
-		432B75451DB37ABF003C6574 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B75441DB37ABF003C6574 /* RoundedButton.swift */; };
-		432B754A1DB37B41003C6574 /* SetItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B75471DB37B41003C6574 /* SetItemViewController.swift */; };
-		432B754B1DB37B41003C6574 /* SetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B75481DB37B41003C6574 /* SetTableDataSource.swift */; };
-		432B754C1DB37B41003C6574 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B75491DB37B41003C6574 /* SetViewController.swift */; };
-		432B75501DB37B64003C6574 /* MemorizeItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B754E1DB37B64003C6574 /* MemorizeItViewController.swift */; };
-		432B75511DB37B64003C6574 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B754F1DB37B64003C6574 /* TabBarController.swift */; };
 		432B75551DB37C85003C6574 /* SetManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 432B75531DB37C85003C6574 /* SetManagement.storyboard */; };
 		432B755F1DB37E82003C6574 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B755E1DB37E82003C6574 /* Enum.swift */; };
 		432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B75611DB382B5003C6574 /* UITableViewCellExtension.swift */; };
@@ -36,38 +25,19 @@
 		43434B091DB3676A0005B59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43434B081DB3676A0005B59F /* Assets.xcassets */; };
 		43434B0C1DB3676A0005B59F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43434B0A1DB3676A0005B59F /* LaunchScreen.storyboard */; };
 		43434B221DB3676A0005B59F /* MemorizeItForeverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43434B211DB3676A0005B59F /* MemorizeItForeverUITests.swift */; };
-		4344DE661DC0DAB200FBA130 /* MITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344DE651DC0DAB200FBA130 /* MITextField.swift */; };
 		4344DE681DC0E53800FBA130 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344DE671DC0E53800FBA130 /* ColorPicker.swift */; };
-		4344DE6A1DC0EAE600FBA130 /* MICardViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344DE691DC0EAE600FBA130 /* MICardViewLabel.swift */; };
-		4344DE6C1DC0EB3700FBA130 /* MIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344DE6B1DC0EB3700FBA130 /* MIButton.swift */; };
-		4345C7AD1DCF4B45003808AD /* MISetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345C7AC1DCF4B45003808AD /* MISetView.swift */; };
 		4349EAB01DBE4B260097DABD /* ApplySettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349EAAF1DBE4B260097DABD /* ApplySettingsTests.swift */; };
 		4349EAB41DBE4BAE0097DABD /* SetTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */; };
-		435824D61DCE083B00842C73 /* MILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435824D51DCE083B00842C73 /* MILabel.swift */; };
-		435824D81DCE0D9500842C73 /* MISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435824D71DCE0D9500842C73 /* MISwitch.swift */; };
 		435CBC781DF541A3003ACFD1 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435CBC771DF541A3003ACFD1 /* UITableViewExtension.swift */; };
-		43687B701DD0AB2200E1EDB5 /* ChangeSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */; };
-		43687B721DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */; };
-		43687B741DD0AE0800E1EDB5 /* MITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43687B731DD0AE0800E1EDB5 /* MITableView.swift */; };
 		43690E6B1DD73062009918A3 /* SwinjectStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */; };
-		436BCB1F1DF6E3660042C175 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436BCB1E1DF6E3660042C175 /* SettingsViewController.swift */; };
-		436BCB211DF8011C0042C175 /* PhraseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436BCB201DF8011C0042C175 /* PhraseHistoryViewController.swift */; };
-		436BCB231DF821B70042C175 /* PhraseHistoryTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436BCB221DF821B70042C175 /* PhraseHistoryTableDataSource.swift */; };
-		436BCB251DF84D940042C175 /* Value2UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436BCB241DF84D940042C175 /* Value2UITableViewCell.swift */; };
-		436BCB271DF85CCB0042C175 /* SubtitleUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436BCB261DF85CCB0042C175 /* SubtitleUITableViewCell.swift */; };
 		4381502E1DDC72180040F2F9 /* MockWordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381502D1DDC72180040F2F9 /* MockWordManager.swift */; };
 		438651C71DC61607007BC89D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C61DC61607007BC89D /* UIViewControllerExtension.swift */; };
-		438651C91DC7426B007BC89D /* MICardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438651C81DC7426B007BC89D /* MICardView.swift */; };
 		438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */; };
 		4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */; };
 		438B61F01DE08482008260D6 /* FakeUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438B61EF1DE08482008260D6 /* FakeUIViewExtension.swift */; };
 		438EFD191DF2D80D00B83C88 /* PhraseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EFD181DF2D80D00B83C88 /* PhraseViewControllerTests.swift */; };
-		438EFD1B1DF2D8B600B83C88 /* PhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EFD1A1DF2D8B600B83C88 /* PhraseViewController.swift */; };
-		438EFD1D1DF2EEA600B83C88 /* PhraseTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EFD1C1DF2EEA600B83C88 /* PhraseTableDataSourceProtocol.swift */; };
-		438EFD1F1DF2EF7A00B83C88 /* PhraseTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EFD1E1DF2EF7A00B83C88 /* PhraseTableDataSource.swift */; };
 		438EFD211DF2F05E00B83C88 /* FakePhraseTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EFD201DF2F05E00B83C88 /* FakePhraseTableDataSource.swift */; };
 		438EFD231DF2FEA900B83C88 /* PhraseTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EFD221DF2FEA900B83C88 /* PhraseTableDataSourceTests.swift */; };
-		43B35F241DE308E3006717F5 /* TakeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B35F231DE308E3006717F5 /* TakeTestViewController.swift */; };
 		43B35F261DE309E8006717F5 /* TakeTestViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B35F251DE309E8006717F5 /* TakeTestViewControllerTests.swift */; };
 		43B35F281DE32F58006717F5 /* MockWordFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B35F271DE32F58006717F5 /* MockWordFlowManager.swift */; };
 		43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D871DD8A812000296DB /* MockSetManager.swift */; };
@@ -76,8 +46,39 @@
 		43BF3D981DD9B4FC000296DB /* ValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D961DD9B4FC000296DB /* ValidatorProtocol.swift */; };
 		43BF3D9A1DD9D79B000296DB /* ValidatableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D991DD9D79B000296DB /* ValidatableProtocol.swift */; };
 		43D217B61DBE4564007819A7 /* MockAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D217B51DBE4564007819A7 /* MockAppDelegate.swift */; };
-		43EE6CE01DC4E17A00873D18 /* MIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EE6CDF1DC4E17A00873D18 /* MIView.swift */; };
 		43EEE1631DF4316A0072D125 /* WordStatusExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EEE1621DF431690072D125 /* WordStatusExtension.swift */; };
+		43EFD74A1E0AD4F800F79CBE /* PhraseHistoryTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7491E0AD4F800F79CBE /* PhraseHistoryTableDataSource.swift */; };
+		43EFD74C1E0AD54300F79CBE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD74B1E0AD54300F79CBE /* SettingsViewController.swift */; };
+		43EFD7541E0AD55D00F79CBE /* AddPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD74D1E0AD55D00F79CBE /* AddPhraseViewController.swift */; };
+		43EFD7551E0AD55D00F79CBE /* PhraseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD74E1E0AD55D00F79CBE /* PhraseHistoryViewController.swift */; };
+		43EFD7581E0AD55D00F79CBE /* PhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7511E0AD55D00F79CBE /* PhraseViewController.swift */; };
+		43EFD7591E0AD55D00F79CBE /* ReviewPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7521E0AD55D00F79CBE /* ReviewPhraseViewController.swift */; };
+		43EFD75A1E0AD55D00F79CBE /* TakeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7531E0AD55D00F79CBE /* TakeTestViewController.swift */; };
+		43EFD75E1E0AD57100F79CBE /* MemorizeItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD75B1E0AD57100F79CBE /* MemorizeItViewController.swift */; };
+		43EFD75F1E0AD57100F79CBE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD75C1E0AD57100F79CBE /* TabBarController.swift */; };
+		43EFD7601E0AD57100F79CBE /* VFLBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD75D1E0AD57100F79CBE /* VFLBasedViewController.swift */; };
+		43EFD7681E0AD57D00F79CBE /* ChangeSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7621E0AD57D00F79CBE /* ChangeSetViewController.swift */; };
+		43EFD7691E0AD57E00F79CBE /* SetItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7631E0AD57D00F79CBE /* SetItemViewController.swift */; };
+		43EFD76C1E0AD57E00F79CBE /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7661E0AD57D00F79CBE /* SetViewController.swift */; };
+		43EFD77B1E0AD59000F79CBE /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD76D1E0AD59000F79CBE /* CustomBackgroundView.swift */; };
+		43EFD77C1E0AD59000F79CBE /* MICardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD76E1E0AD59000F79CBE /* MICardView.swift */; };
+		43EFD77D1E0AD59000F79CBE /* MISetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD76F1E0AD59000F79CBE /* MISetView.swift */; };
+		43EFD77E1E0AD59000F79CBE /* MITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7701E0AD59000F79CBE /* MITextField.swift */; };
+		43EFD77F1E0AD59000F79CBE /* MITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7711E0AD59000F79CBE /* MITextView.swift */; };
+		43EFD7801E0AD59000F79CBE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7721E0AD59000F79CBE /* RoundedButton.swift */; };
+		43EFD7811E0AD59000F79CBE /* SubtitleUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7731E0AD59000F79CBE /* SubtitleUITableViewCell.swift */; };
+		43EFD7821E0AD59000F79CBE /* Value2UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7741E0AD59000F79CBE /* Value2UITableViewCell.swift */; };
+		43EFD7831E0AD59000F79CBE /* MICardViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7751E0AD59000F79CBE /* MICardViewLabel.swift */; };
+		43EFD7841E0AD59000F79CBE /* MILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7761E0AD59000F79CBE /* MILabel.swift */; };
+		43EFD7851E0AD59000F79CBE /* MISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7771E0AD59000F79CBE /* MISwitch.swift */; };
+		43EFD7861E0AD59000F79CBE /* MITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7781E0AD59000F79CBE /* MITableView.swift */; };
+		43EFD7871E0AD59000F79CBE /* MIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7791E0AD59000F79CBE /* MIButton.swift */; };
+		43EFD7881E0AD59000F79CBE /* MIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD77A1E0AD59000F79CBE /* MIView.swift */; };
+		43EFD78B1E0AD69200F79CBE /* PhraseTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7891E0AD69200F79CBE /* PhraseTableDataSource.swift */; };
+		43EFD78C1E0AD69200F79CBE /* PhraseTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD78A1E0AD69200F79CBE /* PhraseTableDataSourceProtocol.swift */; };
+		43EFD7901E0AD69C00F79CBE /* ChangeSetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD78D1E0AD69C00F79CBE /* ChangeSetTableDataSource.swift */; };
+		43EFD7911E0AD69C00F79CBE /* SetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD78E1E0AD69C00F79CBE /* SetTableDataSource.swift */; };
+		43EFD7921E0AD69C00F79CBE /* SetTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD78F1E0AD69C00F79CBE /* SetTableDataSourceProtocol.swift */; };
 		43F0D3041DD9DBEB0074856F /* MockValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0D3031DD9DBEB0074856F /* MockValidatable.swift */; };
 		43F0D3061DD9E05E0074856F /* TypealiasHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0D3051DD9E05E0074856F /* TypealiasHelper.swift */; };
 		43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */; };
@@ -85,7 +86,6 @@
 		43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */; };
 		43F217DB1DBF8A770005BF26 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DA1DBF8A770005BF26 /* Enum.swift */; };
 		43F217DD1DBF9EAA0005BF26 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DC1DBF9EAA0005BF26 /* Helper.swift */; };
-		43FFEF001DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FFEEFF1DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift */; };
 		5D90CEEFA0AFA79BE6A8B249 /* Pods_MemorizeItForeverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D95E4CC91AF68432451792 /* Pods_MemorizeItForeverUITests.framework */; };
 		6D356D1EBD3CFDEB6FE1AAC7 /* Pods_MemorizeItForeverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */; };
 		91A64D5A1DD5019B003D45B8 /* ColorPickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */; };
@@ -131,18 +131,7 @@
 		43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSourceTests.swift; path = DataSourcesTests/ChangeSetTableDataSourceTests.swift; sourceTree = "<group>"; };
 		43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewControllerTests.swift; path = ViewControllersTests/ChangeSetViewControllerTests.swift; sourceTree = "<group>"; };
 		43262A441DD1EF380029C27E /* AddPhraseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPhraseViewControllerTests.swift; path = ViewControllersTests/AddPhraseViewControllerTests.swift; sourceTree = "<group>"; };
-		43262A461DD1F1BE0029C27E /* ReviewPhraseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewController.swift; path = PresentationLayer/ViewControllers/Phrase/ReviewPhraseViewController.swift; sourceTree = "<group>"; };
-		43262A481DD1F1D60029C27E /* AddPhraseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPhraseViewController.swift; path = PresentationLayer/ViewControllers/Phrase/AddPhraseViewController.swift; sourceTree = "<group>"; };
-		43262A4A1DD2000D0029C27E /* VFLBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VFLBasedViewController.swift; path = PresentationLayer/ViewControllers/Main/VFLBasedViewController.swift; sourceTree = "<group>"; };
-		43262A4C1DD2071E0029C27E /* MITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITextView.swift; path = PresentationLayer/VisualElements/MITextView.swift; sourceTree = "<group>"; };
 		432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = MemorizeItForever/Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
-		432B73421DB51E2200A76FC7 /* CustomBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBackgroundView.swift; path = PresentationLayer/VisualElements/CustomBackgroundView.swift; sourceTree = "<group>"; };
-		432B75441DB37ABF003C6574 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = PresentationLayer/VisualElements/RoundedButton.swift; sourceTree = "<group>"; };
-		432B75471DB37B41003C6574 /* SetItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetItemViewController.swift; path = PresentationLayer/ViewControllers/Set/SetItemViewController.swift; sourceTree = "<group>"; };
-		432B75481DB37B41003C6574 /* SetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSource.swift; path = PresentationLayer/ViewControllers/Set/SetTableDataSource.swift; sourceTree = "<group>"; };
-		432B75491DB37B41003C6574 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetViewController.swift; path = PresentationLayer/ViewControllers/Set/SetViewController.swift; sourceTree = "<group>"; };
-		432B754E1DB37B64003C6574 /* MemorizeItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItViewController.swift; path = PresentationLayer/ViewControllers/Main/MemorizeItViewController.swift; sourceTree = "<group>"; };
-		432B754F1DB37B64003C6574 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = PresentationLayer/ViewControllers/Main/TabBarController.swift; sourceTree = "<group>"; };
 		432B75541DB37C85003C6574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SetManagement.storyboard; sourceTree = "<group>"; };
 		432B75571DB37D6E003C6574 /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MemorizeItForeverCore.framework; path = "../MemorizeItForeverCore/build/Debug-iphoneos/MemorizeItForeverCore.framework"; sourceTree = "<group>"; };
 		432B755E1DB37E82003C6574 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = General/Enum.swift; sourceTree = "<group>"; };
@@ -160,38 +149,19 @@
 		43434B1D1DB3676A0005B59F /* MemorizeItForeverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeItForeverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43434B211DB3676A0005B59F /* MemorizeItForeverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeItForeverUITests.swift; sourceTree = "<group>"; };
 		43434B231DB3676A0005B59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4344DE651DC0DAB200FBA130 /* MITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITextField.swift; path = PresentationLayer/VisualElements/MITextField.swift; sourceTree = "<group>"; };
 		4344DE671DC0E53800FBA130 /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPicker.swift; path = General/ColorPicker.swift; sourceTree = "<group>"; };
-		4344DE691DC0EAE600FBA130 /* MICardViewLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardViewLabel.swift; path = PresentationLayer/VisualElements/MICardViewLabel.swift; sourceTree = "<group>"; };
-		4344DE6B1DC0EB3700FBA130 /* MIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIButton.swift; path = PresentationLayer/VisualElements/MIButton.swift; sourceTree = "<group>"; };
-		4345C7AC1DCF4B45003808AD /* MISetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MISetView.swift; path = PresentationLayer/VisualElements/MISetView.swift; sourceTree = "<group>"; };
 		4349EAAF1DBE4B260097DABD /* ApplySettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplySettingsTests.swift; path = AppDelegateTests/ApplySettingsTests.swift; sourceTree = "<group>"; };
 		4349EAB31DBE4BAE0097DABD /* SetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSourceTests.swift; path = DataSourcesTests/SetTableDataSourceTests.swift; sourceTree = "<group>"; };
-		435824D51DCE083B00842C73 /* MILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MILabel.swift; path = PresentationLayer/VisualElements/MILabel.swift; sourceTree = "<group>"; };
-		435824D71DCE0D9500842C73 /* MISwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MISwitch.swift; path = PresentationLayer/VisualElements/MISwitch.swift; sourceTree = "<group>"; };
 		435CBC771DF541A3003ACFD1 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewExtension.swift; path = General/Extensions/UITableViewExtension.swift; sourceTree = "<group>"; };
-		43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewController.swift; path = PresentationLayer/ViewControllers/Set/ChangeSetViewController.swift; sourceTree = "<group>"; };
-		43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSource.swift; path = PresentationLayer/ViewControllers/Set/ChangeSetTableDataSource.swift; sourceTree = "<group>"; };
-		43687B731DD0AE0800E1EDB5 /* MITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITableView.swift; path = PresentationLayer/VisualElements/MITableView.swift; sourceTree = "<group>"; };
 		43690E6A1DD73062009918A3 /* SwinjectStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwinjectStoryboardExtension.swift; path = General/Extensions/SwinjectStoryboardExtension.swift; sourceTree = "<group>"; };
-		436BCB1E1DF6E3660042C175 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = PresentationLayer/ViewControllers/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
-		436BCB201DF8011C0042C175 /* PhraseHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseHistoryViewController.swift; path = PresentationLayer/ViewControllers/Phrase/PhraseHistoryViewController.swift; sourceTree = "<group>"; };
-		436BCB221DF821B70042C175 /* PhraseHistoryTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseHistoryTableDataSource.swift; path = PresentationLayer/DataSource/Phrase/PhraseHistoryTableDataSource.swift; sourceTree = "<group>"; };
-		436BCB241DF84D940042C175 /* Value2UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Value2UITableViewCell.swift; path = PresentationLayer/VisualElements/Value2UITableViewCell.swift; sourceTree = "<group>"; };
-		436BCB261DF85CCB0042C175 /* SubtitleUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubtitleUITableViewCell.swift; path = PresentationLayer/VisualElements/SubtitleUITableViewCell.swift; sourceTree = "<group>"; };
 		4381502D1DDC72180040F2F9 /* MockWordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockWordManager.swift; path = General/MockWordManager.swift; sourceTree = "<group>"; };
 		438651C61DC61607007BC89D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = General/Extensions/UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		438651C81DC7426B007BC89D /* MICardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardView.swift; path = PresentationLayer/VisualElements/MICardView.swift; sourceTree = "<group>"; };
 		438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceDelegateProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceDelegateProtocol.swift; sourceTree = "<group>"; };
 		438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		438B61EF1DE08482008260D6 /* FakeUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeUIViewExtension.swift; path = General/FakeUIViewExtension.swift; sourceTree = "<group>"; };
 		438EFD181DF2D80D00B83C88 /* PhraseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseViewControllerTests.swift; path = ViewControllersTests/PhraseViewControllerTests.swift; sourceTree = "<group>"; };
-		438EFD1A1DF2D8B600B83C88 /* PhraseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseViewController.swift; path = PresentationLayer/ViewControllers/Phrase/PhraseViewController.swift; sourceTree = "<group>"; };
-		438EFD1C1DF2EEA600B83C88 /* PhraseTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseTableDataSourceProtocol.swift; path = PresentationLayer/ViewControllers/Phrase/PhraseTableDataSourceProtocol.swift; sourceTree = "<group>"; };
-		438EFD1E1DF2EF7A00B83C88 /* PhraseTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseTableDataSource.swift; path = PresentationLayer/ViewControllers/Phrase/PhraseTableDataSource.swift; sourceTree = "<group>"; };
 		438EFD201DF2F05E00B83C88 /* FakePhraseTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakePhraseTableDataSource.swift; path = General/FakePhraseTableDataSource.swift; sourceTree = "<group>"; };
 		438EFD221DF2FEA900B83C88 /* PhraseTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseTableDataSourceTests.swift; path = DataSourcesTests/PhraseTableDataSourceTests.swift; sourceTree = "<group>"; };
-		43B35F231DE308E3006717F5 /* TakeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeTestViewController.swift; path = PresentationLayer/ViewControllers/Phrase/TakeTestViewController.swift; sourceTree = "<group>"; };
 		43B35F251DE309E8006717F5 /* TakeTestViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeTestViewControllerTests.swift; path = ViewControllersTests/TakeTestViewControllerTests.swift; sourceTree = "<group>"; };
 		43B35F271DE32F58006717F5 /* MockWordFlowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockWordFlowManager.swift; path = General/MockWordFlowManager.swift; sourceTree = "<group>"; };
 		43BF3D871DD8A812000296DB /* MockSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockSetManager.swift; path = General/MockSetManager.swift; sourceTree = "<group>"; };
@@ -200,8 +170,39 @@
 		43BF3D961DD9B4FC000296DB /* ValidatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidatorProtocol.swift; path = General/Validation/ValidatorProtocol.swift; sourceTree = "<group>"; };
 		43BF3D991DD9D79B000296DB /* ValidatableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidatableProtocol.swift; path = General/Validation/ValidatableProtocol.swift; sourceTree = "<group>"; };
 		43D217B51DBE4564007819A7 /* MockAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockAppDelegate.swift; path = General/MockAppDelegate.swift; sourceTree = "<group>"; };
-		43EE6CDF1DC4E17A00873D18 /* MIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIView.swift; path = PresentationLayer/VisualElements/MIView.swift; sourceTree = "<group>"; };
 		43EEE1621DF431690072D125 /* WordStatusExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordStatusExtension.swift; path = General/Extensions/WordStatusExtension.swift; sourceTree = "<group>"; };
+		43EFD7491E0AD4F800F79CBE /* PhraseHistoryTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseHistoryTableDataSource.swift; path = DataSource/Phrase/PhraseHistoryTableDataSource.swift; sourceTree = "<group>"; };
+		43EFD74B1E0AD54300F79CBE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewControllers/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
+		43EFD74D1E0AD55D00F79CBE /* AddPhraseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPhraseViewController.swift; path = ViewControllers/Phrase/AddPhraseViewController.swift; sourceTree = "<group>"; };
+		43EFD74E1E0AD55D00F79CBE /* PhraseHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseHistoryViewController.swift; path = ViewControllers/Phrase/PhraseHistoryViewController.swift; sourceTree = "<group>"; };
+		43EFD7511E0AD55D00F79CBE /* PhraseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseViewController.swift; path = ViewControllers/Phrase/PhraseViewController.swift; sourceTree = "<group>"; };
+		43EFD7521E0AD55D00F79CBE /* ReviewPhraseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewController.swift; path = ViewControllers/Phrase/ReviewPhraseViewController.swift; sourceTree = "<group>"; };
+		43EFD7531E0AD55D00F79CBE /* TakeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeTestViewController.swift; path = ViewControllers/Phrase/TakeTestViewController.swift; sourceTree = "<group>"; };
+		43EFD75B1E0AD57100F79CBE /* MemorizeItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItViewController.swift; path = ViewControllers/Main/MemorizeItViewController.swift; sourceTree = "<group>"; };
+		43EFD75C1E0AD57100F79CBE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ViewControllers/Main/TabBarController.swift; sourceTree = "<group>"; };
+		43EFD75D1E0AD57100F79CBE /* VFLBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VFLBasedViewController.swift; path = ViewControllers/Main/VFLBasedViewController.swift; sourceTree = "<group>"; };
+		43EFD7621E0AD57D00F79CBE /* ChangeSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewController.swift; path = ViewControllers/Set/ChangeSetViewController.swift; sourceTree = "<group>"; };
+		43EFD7631E0AD57D00F79CBE /* SetItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetItemViewController.swift; path = ViewControllers/Set/SetItemViewController.swift; sourceTree = "<group>"; };
+		43EFD7661E0AD57D00F79CBE /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetViewController.swift; path = ViewControllers/Set/SetViewController.swift; sourceTree = "<group>"; };
+		43EFD76D1E0AD59000F79CBE /* CustomBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBackgroundView.swift; path = VisualElements/CustomBackgroundView.swift; sourceTree = "<group>"; };
+		43EFD76E1E0AD59000F79CBE /* MICardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardView.swift; path = VisualElements/MICardView.swift; sourceTree = "<group>"; };
+		43EFD76F1E0AD59000F79CBE /* MISetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MISetView.swift; path = VisualElements/MISetView.swift; sourceTree = "<group>"; };
+		43EFD7701E0AD59000F79CBE /* MITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITextField.swift; path = VisualElements/MITextField.swift; sourceTree = "<group>"; };
+		43EFD7711E0AD59000F79CBE /* MITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITextView.swift; path = VisualElements/MITextView.swift; sourceTree = "<group>"; };
+		43EFD7721E0AD59000F79CBE /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = VisualElements/RoundedButton.swift; sourceTree = "<group>"; };
+		43EFD7731E0AD59000F79CBE /* SubtitleUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubtitleUITableViewCell.swift; path = VisualElements/SubtitleUITableViewCell.swift; sourceTree = "<group>"; };
+		43EFD7741E0AD59000F79CBE /* Value2UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Value2UITableViewCell.swift; path = VisualElements/Value2UITableViewCell.swift; sourceTree = "<group>"; };
+		43EFD7751E0AD59000F79CBE /* MICardViewLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardViewLabel.swift; path = VisualElements/MICardViewLabel.swift; sourceTree = "<group>"; };
+		43EFD7761E0AD59000F79CBE /* MILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MILabel.swift; path = VisualElements/MILabel.swift; sourceTree = "<group>"; };
+		43EFD7771E0AD59000F79CBE /* MISwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MISwitch.swift; path = VisualElements/MISwitch.swift; sourceTree = "<group>"; };
+		43EFD7781E0AD59000F79CBE /* MITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITableView.swift; path = VisualElements/MITableView.swift; sourceTree = "<group>"; };
+		43EFD7791E0AD59000F79CBE /* MIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIButton.swift; path = VisualElements/MIButton.swift; sourceTree = "<group>"; };
+		43EFD77A1E0AD59000F79CBE /* MIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIView.swift; path = VisualElements/MIView.swift; sourceTree = "<group>"; };
+		43EFD7891E0AD69200F79CBE /* PhraseTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseTableDataSource.swift; path = DataSource/Phrase/PhraseTableDataSource.swift; sourceTree = "<group>"; };
+		43EFD78A1E0AD69200F79CBE /* PhraseTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseTableDataSourceProtocol.swift; path = DataSource/Phrase/PhraseTableDataSourceProtocol.swift; sourceTree = "<group>"; };
+		43EFD78D1E0AD69C00F79CBE /* ChangeSetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSource.swift; path = DataSource/Set/ChangeSetTableDataSource.swift; sourceTree = "<group>"; };
+		43EFD78E1E0AD69C00F79CBE /* SetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSource.swift; path = DataSource/Set/SetTableDataSource.swift; sourceTree = "<group>"; };
+		43EFD78F1E0AD69C00F79CBE /* SetTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSourceProtocol.swift; path = DataSource/Set/SetTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		43F0D3031DD9DBEB0074856F /* MockValidatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockValidatable.swift; path = General/MockValidatable.swift; sourceTree = "<group>"; };
 		43F0D3051DD9E05E0074856F /* TypealiasHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypealiasHelper.swift; path = General/TypealiasHelper.swift; sourceTree = "<group>"; };
 		43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetViewControllerTests.swift; path = ViewControllersTests/SetViewControllerTests.swift; sourceTree = "<group>"; };
@@ -209,7 +210,6 @@
 		43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewControllerTests.swift; path = ViewControllersTests/ReviewPhraseViewControllerTests.swift; sourceTree = "<group>"; };
 		43F217DA1DBF8A770005BF26 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = General/Enum.swift; sourceTree = "<group>"; };
 		43F217DC1DBF9EAA0005BF26 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = General/Helper.swift; sourceTree = "<group>"; };
-		43FFEEFF1DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSourceProtocol.swift; path = PresentationLayer/ViewControllers/Set/SetTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		4B81EED2D509757874FBDBF8 /* Pods-MemorizeItForeverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverUITests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverUITests/Pods-MemorizeItForeverUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6679E0A0F5D471CD444280C5 /* Pods-MemorizeItForever.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForever.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever.release.xcconfig"; sourceTree = "<group>"; };
 		74D95E4CC91AF68432451792 /* Pods_MemorizeItForeverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,36 +270,26 @@
 				432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */,
 			);
 			name = Libs;
-			sourceTree = "<group>";
-		};
-		432B75411DB37A94003C6574 /* PresentationLayer */ = {
-			isa = PBXGroup;
-			children = (
-				435CBC791DF54252003ACFD1 /* DataSource */,
-				432B75521DB37B88003C6574 /* Storyboard */,
-				432B75431DB37AA8003C6574 /* ViewControllers */,
-				432B75421DB37A9B003C6574 /* VisualElements */,
-			);
-			name = PresentationLayer;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		432B75421DB37A9B003C6574 /* VisualElements */ = {
 			isa = PBXGroup;
 			children = (
-				432B75441DB37ABF003C6574 /* RoundedButton.swift */,
-				432B73421DB51E2200A76FC7 /* CustomBackgroundView.swift */,
-				4344DE651DC0DAB200FBA130 /* MITextField.swift */,
-				4344DE691DC0EAE600FBA130 /* MICardViewLabel.swift */,
-				4344DE6B1DC0EB3700FBA130 /* MIButton.swift */,
-				43EE6CDF1DC4E17A00873D18 /* MIView.swift */,
-				438651C81DC7426B007BC89D /* MICardView.swift */,
-				435824D51DCE083B00842C73 /* MILabel.swift */,
-				435824D71DCE0D9500842C73 /* MISwitch.swift */,
-				4345C7AC1DCF4B45003808AD /* MISetView.swift */,
-				43687B731DD0AE0800E1EDB5 /* MITableView.swift */,
-				43262A4C1DD2071E0029C27E /* MITextView.swift */,
-				436BCB241DF84D940042C175 /* Value2UITableViewCell.swift */,
-				436BCB261DF85CCB0042C175 /* SubtitleUITableViewCell.swift */,
+				43EFD76D1E0AD59000F79CBE /* CustomBackgroundView.swift */,
+				43EFD76E1E0AD59000F79CBE /* MICardView.swift */,
+				43EFD76F1E0AD59000F79CBE /* MISetView.swift */,
+				43EFD7701E0AD59000F79CBE /* MITextField.swift */,
+				43EFD7711E0AD59000F79CBE /* MITextView.swift */,
+				43EFD7721E0AD59000F79CBE /* RoundedButton.swift */,
+				43EFD7731E0AD59000F79CBE /* SubtitleUITableViewCell.swift */,
+				43EFD7741E0AD59000F79CBE /* Value2UITableViewCell.swift */,
+				43EFD7751E0AD59000F79CBE /* MICardViewLabel.swift */,
+				43EFD7761E0AD59000F79CBE /* MILabel.swift */,
+				43EFD7771E0AD59000F79CBE /* MISwitch.swift */,
+				43EFD7781E0AD59000F79CBE /* MITableView.swift */,
+				43EFD7791E0AD59000F79CBE /* MIButton.swift */,
+				43EFD77A1E0AD59000F79CBE /* MIView.swift */,
 			);
 			name = VisualElements;
 			sourceTree = "<group>";
@@ -318,9 +308,9 @@
 		432B75461DB37AE3003C6574 /* Set */ = {
 			isa = PBXGroup;
 			children = (
-				432B75471DB37B41003C6574 /* SetItemViewController.swift */,
-				432B75491DB37B41003C6574 /* SetViewController.swift */,
-				43687B6F1DD0AB2200E1EDB5 /* ChangeSetViewController.swift */,
+				43EFD7621E0AD57D00F79CBE /* ChangeSetViewController.swift */,
+				43EFD7631E0AD57D00F79CBE /* SetItemViewController.swift */,
+				43EFD7661E0AD57D00F79CBE /* SetViewController.swift */,
 			);
 			name = Set;
 			sourceTree = "<group>";
@@ -328,9 +318,9 @@
 		432B754D1DB37B4B003C6574 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				432B754E1DB37B64003C6574 /* MemorizeItViewController.swift */,
-				432B754F1DB37B64003C6574 /* TabBarController.swift */,
-				43262A4A1DD2000D0029C27E /* VFLBasedViewController.swift */,
+				43EFD75B1E0AD57100F79CBE /* MemorizeItViewController.swift */,
+				43EFD75C1E0AD57100F79CBE /* TabBarController.swift */,
+				43EFD75D1E0AD57100F79CBE /* VFLBasedViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -358,13 +348,10 @@
 		432B755D1DB37E66003C6574 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				4360FC7A1E0ADAAF000578E7 /* Helper */,
 				43BF3D941DD9B4ED000296DB /* Validation */,
 				438874561DB7ABD10030C016 /* MemorizeItTableDataSource */,
 				432B75601DB38262003C6574 /* Extensions */,
-				432B755E1DB37E82003C6574 /* Enum.swift */,
-				4344DE671DC0E53800FBA130 /* ColorPicker.swift */,
-				91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */,
-				43F0D3051DD9E05E0074856F /* TypealiasHelper.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -387,7 +374,6 @@
 			isa = PBXGroup;
 			children = (
 				431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */,
-				431AD8CC1DB39148004EBEA7 /* Libs */,
 				43434AFD1DB3676A0005B59F /* MemorizeItForever */,
 				43434B151DB3676A0005B59F /* MemorizeItForeverTests */,
 				43434B201DB3676A0005B59F /* MemorizeItForeverUITests */,
@@ -410,8 +396,12 @@
 		43434AFD1DB3676A0005B59F /* MemorizeItForever */ = {
 			isa = PBXGroup;
 			children = (
+				431AD8CC1DB39148004EBEA7 /* Libs */,
 				432B755D1DB37E66003C6574 /* General */,
-				432B75411DB37A94003C6574 /* PresentationLayer */,
+				435CBC791DF54252003ACFD1 /* DataSource */,
+				432B75521DB37B88003C6574 /* Storyboard */,
+				432B75431DB37AA8003C6574 /* ViewControllers */,
+				432B75421DB37A9B003C6574 /* VisualElements */,
 				43434AFE1DB3676A0005B59F /* AppDelegate.swift */,
 				43434B081DB3676A0005B59F /* Assets.xcassets */,
 				43434B0A1DB3676A0005B59F /* LaunchScreen.storyboard */,
@@ -464,9 +454,9 @@
 		435CBC7A1DF54283003ACFD1 /* Set */ = {
 			isa = PBXGroup;
 			children = (
-				43FFEEFF1DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift */,
-				432B75481DB37B41003C6574 /* SetTableDataSource.swift */,
-				43687B711DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift */,
+				43EFD78D1E0AD69C00F79CBE /* ChangeSetTableDataSource.swift */,
+				43EFD78E1E0AD69C00F79CBE /* SetTableDataSource.swift */,
+				43EFD78F1E0AD69C00F79CBE /* SetTableDataSourceProtocol.swift */,
 			);
 			name = Set;
 			sourceTree = "<group>";
@@ -474,17 +464,28 @@
 		435CBC7B1DF5428F003ACFD1 /* Phrase */ = {
 			isa = PBXGroup;
 			children = (
-				438EFD1C1DF2EEA600B83C88 /* PhraseTableDataSourceProtocol.swift */,
-				438EFD1E1DF2EF7A00B83C88 /* PhraseTableDataSource.swift */,
-				436BCB221DF821B70042C175 /* PhraseHistoryTableDataSource.swift */,
+				43EFD7891E0AD69200F79CBE /* PhraseTableDataSource.swift */,
+				43EFD78A1E0AD69200F79CBE /* PhraseTableDataSourceProtocol.swift */,
+				43EFD7491E0AD4F800F79CBE /* PhraseHistoryTableDataSource.swift */,
 			);
 			name = Phrase;
+			sourceTree = "<group>";
+		};
+		4360FC7A1E0ADAAF000578E7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				432B755E1DB37E82003C6574 /* Enum.swift */,
+				4344DE671DC0E53800FBA130 /* ColorPicker.swift */,
+				91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */,
+				43F0D3051DD9E05E0074856F /* TypealiasHelper.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		436BCB1D1DF6E33B0042C175 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				436BCB1E1DF6E3660042C175 /* SettingsViewController.swift */,
+				43EFD74B1E0AD54300F79CBE /* SettingsViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -558,11 +559,11 @@
 		43F217D71DBF5A8E0005BF26 /* Phrase */ = {
 			isa = PBXGroup;
 			children = (
-				43262A461DD1F1BE0029C27E /* ReviewPhraseViewController.swift */,
-				43262A481DD1F1D60029C27E /* AddPhraseViewController.swift */,
-				43B35F231DE308E3006717F5 /* TakeTestViewController.swift */,
-				438EFD1A1DF2D8B600B83C88 /* PhraseViewController.swift */,
-				436BCB201DF8011C0042C175 /* PhraseHistoryViewController.swift */,
+				43EFD74D1E0AD55D00F79CBE /* AddPhraseViewController.swift */,
+				43EFD74E1E0AD55D00F79CBE /* PhraseHistoryViewController.swift */,
+				43EFD7511E0AD55D00F79CBE /* PhraseViewController.swift */,
+				43EFD7521E0AD55D00F79CBE /* ReviewPhraseViewController.swift */,
+				43EFD7531E0AD55D00F79CBE /* TakeTestViewController.swift */,
 			);
 			name = Phrase;
 			sourceTree = "<group>";
@@ -854,55 +855,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43687B721DD0AC0600E1EDB5 /* ChangeSetTableDataSource.swift in Sources */,
-				43262A491DD1F1D60029C27E /* AddPhraseViewController.swift in Sources */,
 				43BF3D981DD9B4FC000296DB /* ValidatorProtocol.swift in Sources */,
-				432B754B1DB37B41003C6574 /* SetTableDataSource.swift in Sources */,
 				91A64D5A1DD5019B003D45B8 /* ColorPickerProtocol.swift in Sources */,
-				43262A4B1DD2000D0029C27E /* VFLBasedViewController.swift in Sources */,
-				432B75511DB37B64003C6574 /* TabBarController.swift in Sources */,
-				43262A4D1DD2071E0029C27E /* MITextView.swift in Sources */,
-				436BCB1F1DF6E3660042C175 /* SettingsViewController.swift in Sources */,
+				43EFD75F1E0AD57100F79CBE /* TabBarController.swift in Sources */,
+				43EFD76C1E0AD57E00F79CBE /* SetViewController.swift in Sources */,
 				43690E6B1DD73062009918A3 /* SwinjectStoryboardExtension.swift in Sources */,
+				43EFD77D1E0AD59000F79CBE /* MISetView.swift in Sources */,
 				430320B51DE0748100BD0F0D /* UIViewExtension.swift in Sources */,
-				4344DE6A1DC0EAE600FBA130 /* MICardViewLabel.swift in Sources */,
-				436BCB271DF85CCB0042C175 /* SubtitleUITableViewCell.swift in Sources */,
-				43687B701DD0AB2200E1EDB5 /* ChangeSetViewController.swift in Sources */,
+				43EFD7551E0AD55D00F79CBE /* PhraseHistoryViewController.swift in Sources */,
 				4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */,
+				43EFD7541E0AD55D00F79CBE /* AddPhraseViewController.swift in Sources */,
+				43EFD7871E0AD59000F79CBE /* MIButton.swift in Sources */,
+				43EFD7851E0AD59000F79CBE /* MISwitch.swift in Sources */,
+				43EFD7831E0AD59000F79CBE /* MICardViewLabel.swift in Sources */,
 				432B755F1DB37E82003C6574 /* Enum.swift in Sources */,
-				438EFD1D1DF2EEA600B83C88 /* PhraseTableDataSourceProtocol.swift in Sources */,
-				4345C7AD1DCF4B45003808AD /* MISetView.swift in Sources */,
 				438651C71DC61607007BC89D /* UIViewControllerExtension.swift in Sources */,
-				43687B741DD0AE0800E1EDB5 /* MITableView.swift in Sources */,
-				432B73431DB51E2200A76FC7 /* CustomBackgroundView.swift in Sources */,
+				43EFD7911E0AD69C00F79CBE /* SetTableDataSource.swift in Sources */,
+				43EFD78C1E0AD69200F79CBE /* PhraseTableDataSourceProtocol.swift in Sources */,
+				43EFD7821E0AD59000F79CBE /* Value2UITableViewCell.swift in Sources */,
+				43EFD77E1E0AD59000F79CBE /* MITextField.swift in Sources */,
+				43EFD78B1E0AD69200F79CBE /* PhraseTableDataSource.swift in Sources */,
 				432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */,
-				435824D81DCE0D9500842C73 /* MISwitch.swift in Sources */,
-				436BCB211DF8011C0042C175 /* PhraseHistoryViewController.swift in Sources */,
-				432B754C1DB37B41003C6574 /* SetViewController.swift in Sources */,
-				436BCB231DF821B70042C175 /* PhraseHistoryTableDataSource.swift in Sources */,
-				43FFEF001DD8850B005A0FB9 /* SetTableDataSourceProtocol.swift in Sources */,
+				43EFD74A1E0AD4F800F79CBE /* PhraseHistoryTableDataSource.swift in Sources */,
+				43EFD7901E0AD69C00F79CBE /* ChangeSetTableDataSource.swift in Sources */,
+				43EFD7691E0AD57E00F79CBE /* SetItemViewController.swift in Sources */,
+				43EFD77B1E0AD59000F79CBE /* CustomBackgroundView.swift in Sources */,
 				43BF3D9A1DD9D79B000296DB /* ValidatableProtocol.swift in Sources */,
-				438EFD1F1DF2EF7A00B83C88 /* PhraseTableDataSource.swift in Sources */,
+				43EFD7811E0AD59000F79CBE /* SubtitleUITableViewCell.swift in Sources */,
 				43F0D3061DD9E05E0074856F /* TypealiasHelper.swift in Sources */,
+				43EFD77C1E0AD59000F79CBE /* MICardView.swift in Sources */,
 				4344DE681DC0E53800FBA130 /* ColorPicker.swift in Sources */,
+				43EFD7681E0AD57D00F79CBE /* ChangeSetViewController.swift in Sources */,
+				43EFD7801E0AD59000F79CBE /* RoundedButton.swift in Sources */,
+				43EFD7841E0AD59000F79CBE /* MILabel.swift in Sources */,
+				43EFD7921E0AD69C00F79CBE /* SetTableDataSourceProtocol.swift in Sources */,
+				43EFD7581E0AD55D00F79CBE /* PhraseViewController.swift in Sources */,
 				435CBC781DF541A3003ACFD1 /* UITableViewExtension.swift in Sources */,
-				4344DE6C1DC0EB3700FBA130 /* MIButton.swift in Sources */,
-				432B754A1DB37B41003C6574 /* SetItemViewController.swift in Sources */,
+				43EFD75A1E0AD55D00F79CBE /* TakeTestViewController.swift in Sources */,
 				438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */,
-				435824D61DCE083B00842C73 /* MILabel.swift in Sources */,
-				4344DE661DC0DAB200FBA130 /* MITextField.swift in Sources */,
-				432B75501DB37B64003C6574 /* MemorizeItViewController.swift in Sources */,
-				43EE6CE01DC4E17A00873D18 /* MIView.swift in Sources */,
-				436BCB251DF84D940042C175 /* Value2UITableViewCell.swift in Sources */,
+				43EFD7881E0AD59000F79CBE /* MIView.swift in Sources */,
 				432B75641DB38DF9003C6574 /* UIColorExtension.swift in Sources */,
-				43B35F241DE308E3006717F5 /* TakeTestViewController.swift in Sources */,
+				43EFD74C1E0AD54300F79CBE /* SettingsViewController.swift in Sources */,
+				43EFD75E1E0AD57100F79CBE /* MemorizeItViewController.swift in Sources */,
+				43EFD77F1E0AD59000F79CBE /* MITextView.swift in Sources */,
 				43434AFF1DB3676A0005B59F /* AppDelegate.swift in Sources */,
+				43EFD7591E0AD55D00F79CBE /* ReviewPhraseViewController.swift in Sources */,
+				43EFD7861E0AD59000F79CBE /* MITableView.swift in Sources */,
 				43EEE1631DF4316A0072D125 /* WordStatusExtension.swift in Sources */,
-				438651C91DC7426B007BC89D /* MICardView.swift in Sources */,
+				43EFD7601E0AD57100F79CBE /* VFLBasedViewController.swift in Sources */,
 				43BF3D971DD9B4FC000296DB /* Validator.swift in Sources */,
-				43262A471DD1F1BE0029C27E /* ReviewPhraseViewController.swift in Sources */,
-				432B75451DB37ABF003C6574 /* RoundedButton.swift in Sources */,
-				438EFD1B1DF2D8B600B83C88 /* PhraseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
