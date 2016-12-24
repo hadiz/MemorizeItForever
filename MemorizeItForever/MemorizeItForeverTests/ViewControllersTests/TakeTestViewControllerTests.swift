@@ -12,7 +12,7 @@ import MemorizeItForeverCore
 
 class TakeTestViewControllerTests: XCTestCase {
     
-    var wordFlowManager: WordFlowManagerProtocol!
+    var wordFlowService: WordFlowServiceProtocol!
     var takeTestViewController: TakeTestViewController!
     
     override func setUp() {
@@ -21,14 +21,14 @@ class TakeTestViewControllerTests: XCTestCase {
         setModel.setId = UUID()
         setModel.name = "Default"
         UserDefaults.standard.set(setModel.toDic(), forKey:  Settings.defaultSet.rawValue)
-        wordFlowManager = MockWordFlowManager()
+        wordFlowService = MockWordFlowService()
         takeTestViewController = TakeTestViewController()
-        takeTestViewController.wordFlowManager = wordFlowManager
+        takeTestViewController.wordFlowService = wordFlowService
         _ = takeTestViewController.view
     }
     
     override func tearDown() {
-        wordFlowManager = nil
+        wordFlowService = nil
         objc_removeAssociatedObjects(takeTestViewController)
         takeTestViewController = nil
         super.tearDown()

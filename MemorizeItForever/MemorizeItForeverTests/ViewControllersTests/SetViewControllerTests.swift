@@ -19,7 +19,7 @@ class SetViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        dataSource = FakeSetTableDataSource(setManager: nil)
+        dataSource = FakeSetTableDataSource(setService: nil)
         dataSource.handleTap = { (model) in
             self.tappedSetModel = model as? SetModel
         }
@@ -27,7 +27,7 @@ class SetViewControllerTests: XCTestCase {
         setViewController = SetViewController()
         setViewController.dataSource = dataSource
         setViewController.tableView = tableView
-        setViewController.setManager = MockSetManager()
+        setViewController.setService = MockSetService()
     }
     
     override func tearDown() {

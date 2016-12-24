@@ -13,7 +13,7 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
     
     var tableView: UITableView!
     var dataSource: SetTableDataSourceProtocol?
-    var setManager: SetManagerProtocol?
+    var setService: SetServiceProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,8 +82,8 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
         NSLayoutConstraint.activate(constraintList)
     }
     private func didSelectSet(_ model: MemorizeItModelProtocol?){
-        guard let setManager = setManager else {
-            fatalError("setManager is not initialiazed")
+        guard let setService = setService else {
+            fatalError("setService is not initialiazed")
         }
 
         var setId: UUID?
@@ -93,19 +93,19 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
         }
         let setModel = model as! SetModel
         if setId != setModel.setId{
-           setManager.changeSet(setModel)
+           setService.changeSet(setModel)
         }
     }
     
     private func fetchData(){
-        guard let setManager = setManager else {
-            fatalError("setManager is not initialiazed")
+        guard let setService = setService else {
+            fatalError("setService is not initialiazed")
         }
         guard let dataSource = dataSource else {
             fatalError("dataSource is not initialiazed")
         }
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
-            let sets = setManager.get().flatMap{$0 as MemorizeItModelProtocol}
+            let sets = setService.get().flatMap{$0 as MemorizeItModelProtocol}
             dataSource.setModels(sets)
             DispatchQueue.main.async {
                 self.tableView.reloadData()

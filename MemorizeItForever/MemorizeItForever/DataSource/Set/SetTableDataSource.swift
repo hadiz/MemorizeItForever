@@ -13,10 +13,10 @@ import MemorizeItForeverCore
 final class SetTableDataSource: NSObject, SetTableDataSourceProtocol {
     var setModels: [SetModel]?
     var handleTap: TypealiasHelper.handleTapClosure?
-    var setManager: SetManagerProtocol?
+    var setService: SetServiceProtocol?
     
-    required init(setManager: SetManagerProtocol?) {
-        self.setManager = setManager
+    required init(setService: SetServiceProtocol?) {
+        self.setService = setService
         print("init SetTableDataSource")
     }
     
@@ -86,11 +86,11 @@ final class SetTableDataSource: NSObject, SetTableDataSourceProtocol {
     }
     
     private func deleteSet(indexPath: IndexPath, tableView: UITableView){
-        guard let setManager = setManager else {
-            fatalError("setManager is not initialiazed")
+        guard let setService = setService else {
+            fatalError("setService is not initialiazed")
         }
         let set = setModels![(indexPath as NSIndexPath).row]
-        if setManager.delete(set){
+        if setService.delete(set){
             setModels?.remove(at: (indexPath as NSIndexPath).row)
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }

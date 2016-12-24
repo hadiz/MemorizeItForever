@@ -9,17 +9,17 @@
 import Foundation
 import BaseLocalDataAccess
 
-public class WordHistoryDataAccess: WordHistoryDataAccessProtocol {
+class WordHistoryDataAccess: WordHistoryDataAccessProtocol {
     
     var genericDataAccess: GenericDataAccess<WordHistoryEntity>!
     var wordDataAccess: GenericDataAccess<WordEntity>!
     
-   public init(genericDataAccess: GenericDataAccess<WordHistoryEntity>, wordDataAccess: GenericDataAccess<WordEntity>) {
+   init(genericDataAccess: GenericDataAccess<WordHistoryEntity>, wordDataAccess: GenericDataAccess<WordEntity>) {
         self.wordDataAccess = wordDataAccess
         self.genericDataAccess = genericDataAccess
     }
     
-   public func saveOrUpdate(_ wordHistoryModel: WordHistoryModel) throws{
+   func saveOrUpdate(_ wordHistoryModel: WordHistoryModel) throws{
         guard let wordId = wordHistoryModel.word?.wordId else{
             throw EntityCRUDError.failSaveEntity(genericDataAccess.getEntityName())
         }
@@ -47,7 +47,7 @@ public class WordHistoryDataAccess: WordHistoryDataAccessProtocol {
         }
     }
     
-   public func fetchByWordId(_ wordHistoryModel: WordHistoryModel) throws ->  [WordHistoryModel]{
+   func fetchByWordId(_ wordHistoryModel: WordHistoryModel) throws ->  [WordHistoryModel]{
         guard let wordId = wordHistoryModel.word?.wordId, let word = fetchWordEntity(wordId as UUID) else{
             throw EntityCRUDError.failFetchEntity(genericDataAccess.getEntityName())
         }
@@ -64,7 +64,7 @@ public class WordHistoryDataAccess: WordHistoryDataAccessProtocol {
         }
     }
     
-    public func countByWordId(_ wordHistoryModel: WordHistoryModel) throws -> Int{
+    func countByWordId(_ wordHistoryModel: WordHistoryModel) throws -> Int{
         guard let wordId = wordHistoryModel.word?.wordId, let word = fetchWordEntity(wordId as UUID) else{
             throw EntityCRUDError.failFetchEntity(genericDataAccess.getEntityName())
         }

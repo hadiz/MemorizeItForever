@@ -8,11 +8,11 @@
 
 import Foundation
 
-final public class WordManager: WordManagerProtocol {
+final public class WordService: WordServiceProtocol {
     private var wordDataAccess: WordDataAccessProtocol
     private var wordHistoryDataAccess: WordHistoryDataAccessProtocol?
     
-    public init(wordDataAccess: WordDataAccessProtocol, wordHistoryDataAccess: WordHistoryDataAccessProtocol? = nil){
+    init(wordDataAccess: WordDataAccessProtocol, wordHistoryDataAccess: WordHistoryDataAccessProtocol? = nil){
         self.wordDataAccess = wordDataAccess
         self.wordHistoryDataAccess = wordHistoryDataAccess
     }

@@ -10,14 +10,12 @@ import UIKit
 import CoreData
 import BaseLocalDataAccess
 
-final public class BaseManagedObjectContext: ManagedObjectContextProtocol {
-    var context: NSManagedObjectContext!
+final class BaseManagedObjectContext: ManagedObjectContextProtocol {
     
-    public init(context: NSManagedObjectContext){
-        self.context = context
+    public init(){
     }
 
     public func get() -> NSManagedObjectContext{
-        return context
+        return ContextHelper.shared.getContext()
     }
 }

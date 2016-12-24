@@ -22,7 +22,7 @@ class SetTableDataSourceTests: XCTestCase {
         set = SetModel()
         set.setId = UUID()
         set.name = "Default"
-        dataSource = SetTableDataSource(setManager: nil)
+        dataSource = SetTableDataSource(setService: nil)
         dataSource.setModels([set])
         firstItemIndex = IndexPath(item: 0, section: 0)
         tableView = UITableView()
@@ -61,7 +61,7 @@ class SetTableDataSourceTests: XCTestCase {
     }
     
     func testSetTableDataSourceCanHoldAClouserForHandleTap(){
-        dataSource = SetTableDataSource(setManager: nil)
+        dataSource = SetTableDataSource(setService: nil)
         dataSource.handleTap = { (model) in
         }
         XCTAssertNotNil((dataSource as? SetTableDataSource)!.handleTap, "SetTableDataSource can handle an clouser for handling tap event")

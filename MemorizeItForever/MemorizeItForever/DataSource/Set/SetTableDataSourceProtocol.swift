@@ -11,5 +11,5 @@ import MemorizeItForeverCore
 
 protocol SetTableDataSourceProtocol: MemorizeItTableDataSourceProtocol {
     var handleTap: TypealiasHelper.handleTapClosure? { get set}
-    init(setManager: SetManagerProtocol?)
+    init(setService: SetServiceProtocol?)
 }

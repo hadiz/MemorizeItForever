@@ -14,7 +14,7 @@ final class PhraseHistoryTableDataSource: NSObject, PhraseTableDataSourceProtoco
     
     var handleTap: TypealiasHelper.handleTapClosure?
     
-    required init(wordManager: WordManagerProtocol?) {
+    required init(wordService: WordServiceProtocol?) {
     }
     
     func setModels(_ models: [MemorizeItModelProtocol]) {

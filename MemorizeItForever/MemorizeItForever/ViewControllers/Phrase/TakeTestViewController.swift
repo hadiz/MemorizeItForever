@@ -23,7 +23,7 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     
     // MARK: Field injection
     
-    var wordFlowManager: WordFlowManagerProtocol?
+    var wordFlowService: WordFlowServiceProtocol?
     
     // MARK: Local Variables
     
@@ -389,11 +389,11 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     }
     
     private func fetchData(){
-        guard let wordFlowManager = wordFlowManager else{
-            fatalError("wordFlowManager is not initialized")
+        guard let wordFlowService = wordFlowService else{
+            fatalError("wordFlowService is not initialized")
         }
         do{
-            let wordInProgressList = try wordFlowManager.fetchWordsToExamin()
+            let wordInProgressList = try wordFlowService.fetchWordsToExamin()
             //            var wordInProgressList: [WordInProgressModel] = []
             //            for i in 0..<10{
             //                var word = WordModel()
@@ -510,16 +510,16 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     }
     
     private func answerCorrect(){
-        guard let wordFlowManager = wordFlowManager else{
-            fatalError("wordFlowManager is not initialized")
+        guard let wordFlowService = wordFlowService else{
+            fatalError("wordFlowService is not initialized")
         }
-        wordFlowManager.answerCorrectly(currentWordInProgressModel)
+        wordFlowService.answerCorrectly(currentWordInProgressModel)
 
     }
     private func answerWrong(){
-        guard let wordFlowManager = wordFlowManager else{
-            fatalError("wordFlowManager is not initialized")
+        guard let wordFlowService = wordFlowService else{
+            fatalError("wordFlowService is not initialized")
         }
-        wordFlowManager.answerWrongly(currentWordInProgressModel)
+        wordFlowService.answerWrongly(currentWordInProgressModel)
     }
 }

@@ -10,8 +10,7 @@ import Foundation
 import CoreData
 import BaseLocalDataAccess
 
-
-public class SetEntity: NSManagedObject, EntityProtocol {
+class SetEntity: NSManagedObject, EntityProtocol {
     
     public static var entityName: String{
         return Entities.setEntity.rawValue

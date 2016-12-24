@@ -7,12 +7,12 @@
 //
 
 import Foundation
-public class WordFlowManager: WordFlowManagerProtocol {
+public class WordFlowService: WordFlowServiceProtocol {
     
     private var wordDataAccess: WordDataAccessProtocol!
     private var wordInProgressDataAccess: WordInProgressDataAccessProtocol!
     private var wordHistoryDataAccess: WordHistoryDataAccessProtocol!
-    public init(wordDataAccess: WordDataAccessProtocol, wordInProgressDataAccess: WordInProgressDataAccessProtocol, wordHistoryDataAccess: WordHistoryDataAccessProtocol) {
+    init(wordDataAccess: WordDataAccessProtocol, wordInProgressDataAccess: WordInProgressDataAccessProtocol, wordHistoryDataAccess: WordHistoryDataAccessProtocol) {
         self.wordDataAccess = wordDataAccess
         self.wordInProgressDataAccess = wordInProgressDataAccess
         self.wordHistoryDataAccess = wordHistoryDataAccess

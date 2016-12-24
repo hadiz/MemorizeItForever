@@ -11,15 +11,15 @@ import MemorizeItForeverCore
 
 final class TabBarController: UITabBarController {
     
-    var setManager: SetManagerProtocol?
+    var setService: SetServiceProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let setManager = setManager else {
-            fatalError("setManager is not initialiazed")
+        guard let setService = setService else {
+            fatalError("setService is not initialiazed")
         }
-        setManager.createDefaultSet()
-        setManager.setUserDefaultSet()
+        setService.createDefaultSet()
+        setService.setUserDefaultSet()
     }
     
     override func didReceiveMemoryWarning() {

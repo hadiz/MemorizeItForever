@@ -8,10 +8,10 @@
 
 import Foundation
 
-final public class SetManager: SetManagerProtocol {
+final public class SetService: SetServiceProtocol {
     private var setDataAccess: SetDataAccessProtocol
 
-    public init(dataAccess: SetDataAccessProtocol){
+    init(dataAccess: SetDataAccessProtocol){
         setDataAccess = dataAccess
     }
     

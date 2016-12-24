@@ -1,5 +1,5 @@
 //
-//  MockSetManager.swift
+//  MockSetService.swift
 //  MemorizeItForever
 //
 //  Created by Hadi Zamani on 11/13/16.
@@ -8,7 +8,7 @@
 
 import MemorizeItForeverCore
 
-class MockSetManager: SetManagerProtocol {
+class MockSetService: SetServiceProtocol {
     func delete(_ setModel: SetModel) -> Bool {
         return false
     }

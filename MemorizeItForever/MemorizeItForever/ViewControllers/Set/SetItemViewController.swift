@@ -15,7 +15,7 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
     
     var entityMode: EntityMode?
     var setModel: SetModel?
-    var setManager: SetManagerProtocol?
+    var setService: SetServiceProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,16 +105,16 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
     }
     
     func save(){
-        guard let setManager = setManager else {
-            fatalError("setManager is not initialiazed")
+        guard let setService = setService else {
+            fatalError("setService is not initialiazed")
         }
-        setManager.save(setName.text!)
+        setService.save(setName.text!)
     }
     
     func edit(){
-        guard let setManager = setManager else {
-            fatalError("setManager is not initialiazed")
+        guard let setService = setService else {
+            fatalError("setService is not initialiazed")
         }
-        setManager.edit(setModel!, setName: setName.text!)
+        setService.edit(setModel!, setName: setName.text!)
     }
 }

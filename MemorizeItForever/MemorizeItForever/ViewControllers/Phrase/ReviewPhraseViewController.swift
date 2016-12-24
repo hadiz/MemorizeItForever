@@ -44,7 +44,7 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
     
     // MARK: Field injection
     
-    var wordFlowManager: WordFlowManagerProtocol?
+    var wordFlowService: WordFlowServiceProtocol?
     
     // MARK: Override Methods
     
@@ -428,12 +428,12 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
     }
     
     private func fetchData(){
-        guard let wordFlowManager = wordFlowManager else{
-            fatalError("wordFlowManager is not initialized")
+        guard let wordFlowService = wordFlowService else{
+            fatalError("wordFlowService is not initialized")
         }
         do{
-            try wordFlowManager.fetchNewWordsToPutInPreColumn()
-            list = try wordFlowManager.fetchWordsForReview()
+            try wordFlowService.fetchNewWordsToPutInPreColumn()
+            list = try wordFlowService.fetchWordsForReview()
 //                        for i in 1...10{
 //                            var word = WordModel()
 //                            word.meaning = "Meaning \(i)"

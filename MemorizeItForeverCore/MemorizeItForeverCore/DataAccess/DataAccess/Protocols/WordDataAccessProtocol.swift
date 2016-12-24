@@ -8,7 +8,7 @@
 
 import BaseLocalDataAccess
 
-public protocol WordDataAccessProtocol {
+protocol WordDataAccessProtocol {
     func save(_ wordModel: WordModel) throws
     func edit(_ wordModel: WordModel) throws
     func delete(_ wordModel: WordModel) throws

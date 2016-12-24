@@ -17,7 +17,7 @@ class PhraseViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        dataSource = FakePhraseTableDataSource(wordManager: nil)
+        dataSource = FakePhraseTableDataSource(wordService: nil)
         dataSource.handleTap = { (model) in
         }
 

@@ -1,5 +1,5 @@
 //
-//  MockWordManager.swift
+//  MockWordService.swift
 //  MemorizeItForever
 //
 //  Created by Hadi Zamani on 11/16/16.
@@ -8,7 +8,7 @@
 
 import MemorizeItForeverCore
 
-class MockWordManager: WordManagerProtocol {
+class MockWordService: WordServiceProtocol {
     public func fetchWordHistoryByWord(wordModel: WordModel) -> [WordHistoryModel] {
         return []
     }

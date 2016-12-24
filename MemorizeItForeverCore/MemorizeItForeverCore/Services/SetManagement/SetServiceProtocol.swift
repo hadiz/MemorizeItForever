@@ -6,7 +6,7 @@
 //  Copyright © 2016 SomeSimpleSolutions. All rights reserved.
 //
 
-public protocol SetManagerProtocol {
+public protocol SetServiceProtocol: ServiceProtocol {
     func delete(_ setModel: SetModel) -> Bool
     func get() -> [SetModel]
     func createDefaultSet()

@@ -12,12 +12,12 @@ import MemorizeItForeverCore
 final class PhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol {
     
     private var models: [WordModel] = []
-    private var wordManager: WordManagerProtocol?
+    private var wordService: WordServiceProtocol?
     
     var handleTap: TypealiasHelper.handleTapClosure?
     
-    required init(wordManager: WordManagerProtocol?) {
-        self.wordManager = wordManager
+    required init(wordService: WordServiceProtocol?) {
+        self.wordService = wordService
     }
     
     func setModels(_ models: [MemorizeItModelProtocol]) {
@@ -60,12 +60,12 @@ final class PhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        guard let wordManager = wordManager else {
-            fatalError("wordManager is not initialiazed")
+        guard let wordService = wordService else {
+            fatalError("wordService is not initialiazed")
         }
         if editingStyle == UITableViewCellEditingStyle.delete {
             let word = models[(indexPath as NSIndexPath).row]
-            if wordManager.delete(word){
+            if wordService.delete(word){
                 models.remove(at: (indexPath as NSIndexPath).row)
                 tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
             }

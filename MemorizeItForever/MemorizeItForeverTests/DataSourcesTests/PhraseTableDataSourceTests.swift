@@ -26,7 +26,7 @@ class PhraseTableDataSourceTests: XCTestCase {
         word.phrase = "Livre"
         word.status = 0
         word.wordId = UUID()
-        dataSource = PhraseTableDataSource(wordManager: nil)
+        dataSource = PhraseTableDataSource(wordService: nil)
         dataSource.setModels([word])
         firstItemIndex = IndexPath(item: 0, section: 0)
         tableView = UITableView()

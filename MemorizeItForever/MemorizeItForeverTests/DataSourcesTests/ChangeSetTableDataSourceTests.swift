@@ -61,7 +61,7 @@ class ChangeSetTableDataSourceTests: XCTestCase {
     }
     
     func testSetTableDataSourceCanHoldAClouserForHandleTap(){
-        dataSource = SetTableDataSource(setManager: nil)
+        dataSource = SetTableDataSource(setService: nil)
         dataSource.handleTap = { (model) in
         }
         XCTAssertNotNil((dataSource as? SetTableDataSource)!.handleTap, "SetTableDataSource can handle an clouser for handling tap event")
@@ -69,7 +69,7 @@ class ChangeSetTableDataSourceTests: XCTestCase {
     
     func testHandleTapClosureIsCalledWhenTapped(){
         var tapped = false
-         dataSource = ChangeSetTableDataSource(setManager: nil)
+         dataSource = ChangeSetTableDataSource(setService: nil)
         dataSource.handleTap = { (model) in
             tapped = true
         }
@@ -80,7 +80,7 @@ class ChangeSetTableDataSourceTests: XCTestCase {
     
     func testHandleTapClosureHasSetModelInstanceWhenTapped(){
         var setModel: SetModel? = nil
-        dataSource = ChangeSetTableDataSource(setManager: nil)
+        dataSource = ChangeSetTableDataSource(setService: nil)
         dataSource.handleTap = { (model) in
             setModel = model as? SetModel
         }

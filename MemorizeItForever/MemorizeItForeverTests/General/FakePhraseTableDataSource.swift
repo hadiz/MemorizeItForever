@@ -16,7 +16,7 @@ class FakePhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol{
     func setModels(_ models: [MemorizeItModelProtocol]) {
     }
     
-    required init(wordManager: WordManagerProtocol?) {
+    required init(wordService: WordServiceProtocol?) {
         
     }
     

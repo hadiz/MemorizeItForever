@@ -11,7 +11,7 @@ import BaseLocalDataAccess
 @testable import MemorizeItForeverCore
 
 class WordFlowsTests: XCTestCase {
-    var wordFlowManager: WordFlowManagerProtocol!
+    var wordFlowService: WordFlowServiceProtocol!
     var wordDataAccess: WordDataAccessProtocol!
     var wordInProgressDataAccess: WordInProgressDataAccessProtocol!
     var wordHistoryDataAccess: WordHistoryDataAccessProtocol!
@@ -22,7 +22,7 @@ class WordFlowsTests: XCTestCase {
         wordDataAccess = FakeWordDataAccess()
         wordInProgressDataAccess = FakeWordInProgressDataAccess()
         wordHistoryDataAccess = FakeWordHistoryDataAccess()
-        wordFlowManager = WordFlowManager(wordDataAccess: wordDataAccess, wordInProgressDataAccess: wordInProgressDataAccess, wordHistoryDataAccess: wordHistoryDataAccess)
+        wordFlowService = WordFlowService(wordDataAccess: wordDataAccess, wordInProgressDataAccess: wordInProgressDataAccess, wordHistoryDataAccess: wordHistoryDataAccess)
         setModel = SetModel()
         setModel.setId = UUID()
         setModel.name = "Default"
@@ -30,7 +30,7 @@ class WordFlowsTests: XCTestCase {
     
     override func tearDown() {
         wordDataAccess = nil
-        wordFlowManager = nil
+        wordFlowService = nil
         wordInProgressDataAccess = nil
         wordHistoryDataAccess = nil
         setModel = nil
@@ -40,7 +40,7 @@ class WordFlowsTests: XCTestCase {
     func testPutWordInPreColumn(){
         let word  = newWordModel()
         do{
-            try wordFlowManager.putWordInPreColumn(word)
+            try wordFlowService.putWordInPreColumn(word)
         }
         catch{
             XCTFail("should save wordInProgress")
@@ -71,7 +71,7 @@ class WordFlowsTests: XCTestCase {
         let word = newWordModel()
         let wordInprogress = WordInProgressModel(word: word, date: Date().addingTimeInterval(1 * 24 * 60 * 60), column: 0, wordInProgressId: UUID())
         
-        wordFlowManager.answerCorrectly(wordInprogress)
+        wordFlowService.answerCorrectly(wordInprogress)
         
         if let column = objc_getAssociatedObject(wordInProgressDataAccess, &columnKey) as? Int16{
             XCTAssertEqual(column, 1 ,"shoud put word in 1 column")
@@ -106,7 +106,7 @@ class WordFlowsTests: XCTestCase {
         let word = newWordModel()
         let wordInprogress = WordInProgressModel(word: word, date: Date().addingTimeInterval(2 * 24 * 60 * 60), column: 1, wordInProgressId: UUID())
         
-        wordFlowManager.answerCorrectly(wordInprogress)
+        wordFlowService.answerCorrectly(wordInprogress)
         
         if let column = objc_getAssociatedObject(wordInProgressDataAccess, &columnKey) as? Int16{
             XCTAssertEqual(column, 2 ,"shoud put word in 2 column")
@@ -141,7 +141,7 @@ class WordFlowsTests: XCTestCase {
         let word = newWordModel()
         let wordInprogress = WordInProgressModel(word: word, date: Date().addingTimeInterval(4 * 24 * 60 * 60), column: 2, wordInProgressId: UUID())
         
-        wordFlowManager.answerCorrectly(wordInprogress)
+        wordFlowService.answerCorrectly(wordInprogress)
         
         if let column = objc_getAssociatedObject(wordInProgressDataAccess, &columnKey) as? Int16{
             XCTAssertEqual(column, 3 ,"shoud put word in 3 column")
@@ -176,7 +176,7 @@ class WordFlowsTests: XCTestCase {
         let word = newWordModel()
         let wordInprogress = WordInProgressModel(word: word, date: Date().addingTimeInterval(8 * 24 * 60 * 60), column: 3, wordInProgressId: UUID())
         
-        wordFlowManager.answerCorrectly(wordInprogress)
+        wordFlowService.answerCorrectly(wordInprogress)
         
         if let column = objc_getAssociatedObject(wordInProgressDataAccess, &columnKey) as? Int16{
             XCTAssertEqual(column, 4 ,"shoud put word in 4 column")
@@ -211,7 +211,7 @@ class WordFlowsTests: XCTestCase {
         let word = newWordModel()
         let wordInprogress = WordInProgressModel(word: word, date: Date().addingTimeInterval(16 * 24 * 60 * 60), column: 4, wordInProgressId: UUID())
         
-        wordFlowManager.answerCorrectly(wordInprogress)
+        wordFlowService.answerCorrectly(wordInprogress)
         
         if let column = objc_getAssociatedObject(wordInProgressDataAccess, &columnKey) as? Int16{
             XCTAssertEqual(column, 5 ,"shoud put word in 5 column")
@@ -246,7 +246,7 @@ class WordFlowsTests: XCTestCase {
         let word = newWordModel()
         let wordInprogress = WordInProgressModel(word: word, date: Date().addingTimeInterval(32 * 24 * 60 * 60), column: 5, wordInProgressId: UUID())
         
-        wordFlowManager.answerCorrectly(wordInprogress)
+        wordFlowService.answerCorrectly(wordInprogress)
         
         if let status = objc_getAssociatedObject(wordDataAccess, &statusKey) as? Int16{
             XCTAssertEqual(status, WordStatus.done.rawValue ,"shoud set word status as Done")
@@ -267,7 +267,7 @@ class WordFlowsTests: XCTestCase {
         let word = newWordModel()
         let wordInprogress = WordInProgressModel(word: word, date: Date().addingTimeInterval(8 * 24 * 60 * 60), column: 3, wordInProgressId: UUID())
         
-        wordFlowManager.answerWrongly(wordInprogress)
+        wordFlowService.answerWrongly(wordInprogress)
         
         if let columnNO = objc_getAssociatedObject(wordHistoryDataAccess, &columnNoKey) as? Int16{
             XCTAssertEqual(columnNO, 3 ,"shoud set correct column No")
@@ -308,7 +308,7 @@ class WordFlowsTests: XCTestCase {
         UserDefaults.standard.setValue(10, forKey: Settings.newWordsCount.rawValue)
         UserDefaults.standard.setValue(setModel.toDic(), forKey: Settings.defaultSet.rawValue)
         do{
-            try wordFlowManager.fetchNewWordsToPutInPreColumn()
+            try wordFlowService.fetchNewWordsToPutInPreColumn()
         }
         catch{
             XCTFail("should be able to fetch words in pre column")
@@ -348,7 +348,7 @@ class WordFlowsTests: XCTestCase {
         let word = newWordModel()
         objc_setAssociatedObject(wordDataAccess, &wordKey, word, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         do{
-            try wordFlowManager.fetchNewWordsToPutInPreColumn()
+            try wordFlowService.fetchNewWordsToPutInPreColumn()
         }
         catch{
             XCTFail("should be able to fetch words in pre column")
@@ -363,7 +363,7 @@ class WordFlowsTests: XCTestCase {
         objc_setAssociatedObject(wordDataAccess, &wordKey, word, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         objc_setAssociatedObject(wordHistoryDataAccess, &wordHistoryCountKey, 1, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         do{
-            try wordFlowManager.fetchNewWordsToPutInPreColumn()
+            try wordFlowService.fetchNewWordsToPutInPreColumn()
         }
         catch{
             XCTFail("should be able to fetch words in pre column")
@@ -379,7 +379,7 @@ class WordFlowsTests: XCTestCase {
     func testFetchWordsForReview(){
         UserDefaults.standard.setValue(setModel.toDic(), forKey: Settings.defaultSet.rawValue)
         do{
-            let words = try wordFlowManager.fetchWordsForReview()
+            let words = try wordFlowService.fetchWordsForReview()
             XCTAssertGreaterThanOrEqual(words.count, 0, "should return words for review")
         }
         catch{
@@ -407,7 +407,7 @@ class WordFlowsTests: XCTestCase {
         // it should fetch words for today and all words that belongs to past
         UserDefaults.standard.setValue(setModel.toDic(), forKey: Settings.defaultSet.rawValue)
         do{
-            let wordInProgressLists = try wordFlowManager.fetchWordsToExamin()
+            let wordInProgressLists = try wordFlowService.fetchWordsToExamin()
             XCTAssertEqual(wordInProgressLists[0].column, 3,"should sort wordInprogress list")
         }
         catch{

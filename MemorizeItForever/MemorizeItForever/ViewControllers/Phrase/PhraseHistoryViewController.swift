@@ -19,7 +19,7 @@ class PhraseHistoryViewController: VFLBasedViewController, UIPopoverPresentation
     var wordModel: WordModel?
     
     // MARK: Field Injection
-    var wordManager: WordManagerProtocol?
+    var wordService: WordServiceProtocol?
     
     // MARK: Override Methods
     
@@ -92,13 +92,13 @@ class PhraseHistoryViewController: VFLBasedViewController, UIPopoverPresentation
     }
     
     private func fetchData(){
-        guard let wordManager = wordManager else {
-            fatalError("wordManager is not initialized")
+        guard let wordService = wordService else {
+            fatalError("wordService is not initialized")
         }
         guard let wordModel = wordModel else {
             return // TODO Notify Error
         }
-        let list = wordManager.fetchWordHistoryByWord(wordModel: wordModel)
+        let list = wordService.fetchWordHistoryByWord(wordModel: wordModel)
         if list.count > 0{
             setModel(wordHistoryModelList: list)
         }

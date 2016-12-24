@@ -12,14 +12,14 @@ import MemorizeItForeverCore
 class FakeSetTableDataSource: NSObject, SetTableDataSourceProtocol{
     
     var handleTap: TypealiasHelper.handleTapClosure?
-    var setManager: SetManagerProtocol?
+    var setService: SetServiceProtocol?
     
     func setModels(_ models: [MemorizeItModelProtocol]) {
         
     }
     
-    required init(setManager: SetManagerProtocol?) {
-        self.setManager = setManager
+    required init(setService: SetServiceProtocol?) {
+        self.setService = setService
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -6,7 +6,7 @@
 //  Copyright © 2016 SomeSimpleSolutions. All rights reserved.
 //
 
-public protocol WordManagerProtocol {
+public protocol WordServiceProtocol: ServiceProtocol {
     func save(_ phrase: String, meaninig: String, setId: UUID) throws
     func edit(_ wordModel: WordModel, phrase: String, meaninig: String)
     func delete(_ wordModel: WordModel) -> Bool

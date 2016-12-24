@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 extension NotificationCenter{
     
    public  func post(_ notificationNameEnum: NotificationEnum, object: Any?){

@@ -12,7 +12,7 @@ import MemorizeItForeverCore
 
 class AddPhraseViewControllerTests: XCTestCase {
     
-    var wordManager: WordManagerProtocol!
+    var wordService: WordServiceProtocol!
     var addPhraseViewController: AddPhraseViewController!
     
     override func setUp() {
@@ -21,14 +21,14 @@ class AddPhraseViewControllerTests: XCTestCase {
         setModel.setId = UUID()
         setModel.name = "Default"
         UserDefaults.standard.set(setModel.toDic(), forKey:  Settings.defaultSet.rawValue)
-        wordManager = MockWordManager()
+        wordService = MockWordService()
         addPhraseViewController = AddPhraseViewController()
-        addPhraseViewController.wordManager = wordManager
+        addPhraseViewController.wordService = wordService
         _ = addPhraseViewController.view
     }
     
     override func tearDown() {
-        wordManager = nil
+        wordService = nil
         objc_removeAssociatedObjects(addPhraseViewController)
         addPhraseViewController = nil
         super.tearDown()
@@ -174,8 +174,8 @@ class AddPhraseViewControllerTests: XCTestCase {
         addPhraseViewController.meaning.text = "Book"
         addPhraseViewController.validator = MockValidator()
         addPhraseViewController.saveBarButtonTapHandler()
-        let result = objc_getAssociatedObject(wordManager, &key) as? AddPhraseViewControllerEnum
-        XCTAssertEqual(result, .saveWord,"should call save method on wordManager")
+        let result = objc_getAssociatedObject(wordService, &key) as? AddPhraseViewControllerEnum
+        XCTAssertEqual(result, .saveWord,"should call save method on wordService")
     }
     
     func testIfSaveWasSuccessfulMakeASuccessToastAndClearTheForm() {

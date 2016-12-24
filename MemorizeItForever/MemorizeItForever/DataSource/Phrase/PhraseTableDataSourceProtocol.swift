@@ -11,5 +11,5 @@ import MemorizeItForeverCore
 
 protocol PhraseTableDataSourceProtocol: MemorizeItTableDataSourceProtocol {
     var handleTap: TypealiasHelper.handleTapClosure? { get set}
-    init(wordManager: WordManagerProtocol?)
+    init(wordService: WordServiceProtocol?)
 }

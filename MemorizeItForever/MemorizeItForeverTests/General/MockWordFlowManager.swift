@@ -1,5 +1,5 @@
 //
-//  MockWordFlowManager.swift
+//  MockWordFlowService.swift
 //  MemorizeItForever
 //
 //  Created by Hadi Zamani on 11/21/16.
@@ -8,7 +8,7 @@
 
 import MemorizeItForeverCore
 
-class MockWordFlowManager: WordFlowManagerProtocol {
+class MockWordFlowService: WordFlowServiceProtocol {
     func putWordInPreColumn(_ wordModel: WordModel) throws {
         
     }

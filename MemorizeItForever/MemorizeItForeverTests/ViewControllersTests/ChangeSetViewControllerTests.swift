@@ -18,13 +18,13 @@ class ChangeSetViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        dataSource = FakeSetTableDataSource(setManager: nil)
+        dataSource = FakeSetTableDataSource(setService: nil)
         dataSource.handleTap = { (model) in
             self.tappedSetModel = model as? SetModel
         }
         changeSetViewController = ChangeSetViewController()
         changeSetViewController.dataSource = dataSource
-        changeSetViewController.setManager = MockSetManager()
+        changeSetViewController.setService = MockSetService()
         _ = changeSetViewController.view
     }
     

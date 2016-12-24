@@ -8,15 +8,15 @@
 import Foundation
 import BaseLocalDataAccess
 
-public class SetDataAccess: SetDataAccessProtocol  {
+class SetDataAccess: SetDataAccessProtocol  {
     
     private var genericDataAccess: GenericDataAccess<SetEntity>!
     
-    public init(genericDataAccess: GenericDataAccess<SetEntity>) {
+    init(genericDataAccess: GenericDataAccess<SetEntity>) {
         self.genericDataAccess = genericDataAccess
     }
     
-     public func fetchSetNumber() throws -> Int {
+     func fetchSetNumber() throws -> Int {
         
         do{
             return try genericDataAccess.fetchEntityCount()
@@ -26,7 +26,7 @@ public class SetDataAccess: SetDataAccessProtocol  {
         }
     }
     
-    public func save(_ setModel: SetModel) throws{
+    func save(_ setModel: SetModel) throws{
         do{
             let setEntity = try genericDataAccess.createNewInstance()
             setEntity.id = genericDataAccess.generateId()
@@ -42,7 +42,7 @@ public class SetDataAccess: SetDataAccessProtocol  {
         }
     }
     
-    public func edit(_ setModel: SetModel) throws{
+    func edit(_ setModel: SetModel) throws{
         do{
             guard let id = setModel.setId else{
                 throw EntityCRUDError.failEditEntity(genericDataAccess.getEntityName())
@@ -61,7 +61,7 @@ public class SetDataAccess: SetDataAccessProtocol  {
         }
     }
     
-    public func delete(_ setModel: SetModel) throws{
+    func delete(_ setModel: SetModel) throws{
         do{
             guard let id = setModel.setId else{
                 throw EntityCRUDError.failDeleteEntity(genericDataAccess.getEntityName())
@@ -79,7 +79,7 @@ public class SetDataAccess: SetDataAccessProtocol  {
         }
     }
     
-    public func fetchAll() throws -> [SetModel] {
+    func fetchAll() throws -> [SetModel] {
         do{
             return try genericDataAccess.fetchModels(predicate: nil, sort: nil)
         }

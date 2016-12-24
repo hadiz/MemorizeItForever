@@ -9,17 +9,17 @@
 import Foundation
 import BaseLocalDataAccess
 
-public class WordDataAccess: WordDataAccessProtocol {
+class WordDataAccess: WordDataAccessProtocol {
     
     private var genericDataAccess: GenericDataAccess<WordEntity>!
     private var setDataAccess: GenericDataAccess<SetEntity>!
     
-    public init(genericDataAccess: GenericDataAccess<WordEntity>, setDataAccess: GenericDataAccess<SetEntity>) {
+    init(genericDataAccess: GenericDataAccess<WordEntity>, setDataAccess: GenericDataAccess<SetEntity>) {
         self.setDataAccess = setDataAccess
         self.genericDataAccess = genericDataAccess
     }
     
-    public func save(_ wordModel: WordModel) throws{
+    func save(_ wordModel: WordModel) throws{
         guard let setId = wordModel.setId else{
             throw EntityCRUDError.failSaveEntity(genericDataAccess.getEntityName())
         }
@@ -40,7 +40,7 @@ public class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    public func fetchAll(fetchLimit: Int? = nil) throws -> [WordModel] {
+    func fetchAll(fetchLimit: Int? = nil) throws -> [WordModel] {
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue,direction: SortDirectionEnum.ascending )
             return try genericDataAccess.fetchModels(predicate: nil, sort: sort, fetchLimit: fetchLimit)
@@ -50,7 +50,7 @@ public class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    public func fetchWithNotStartedStatus(set: SetModel, fetchLimit: Int) throws -> [WordModel] {
+    func fetchWithNotStartedStatus(set: SetModel, fetchLimit: Int) throws -> [WordModel] {
         let setEntity = fetchSetEntity(set.setId!)!
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue,direction: SortDirectionEnum.ascending )
@@ -66,7 +66,7 @@ public class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    public func fetchLast(set: SetModel, wordStatus: WordStatus) throws -> WordModel? {
+    func fetchLast(set: SetModel, wordStatus: WordStatus) throws -> WordModel? {
         let setEntity = fetchSetEntity(set.setId!)!
         do{
             let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue, direction: SortDirectionEnum.descending)
@@ -86,7 +86,7 @@ public class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    public func edit(_ wordModel: WordModel) throws{
+    func edit(_ wordModel: WordModel) throws{
         do{
             guard let id = wordModel.wordId else{
                 throw EntityCRUDError.failEditEntity(genericDataAccess.getEntityName())
@@ -109,7 +109,7 @@ public class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    public func delete(_ wordModel: WordModel) throws{
+    func delete(_ wordModel: WordModel) throws{
         do{
             guard let id = wordModel.wordId else{
                 throw EntityCRUDError.failDeleteEntity(genericDataAccess.getEntityName())
@@ -127,7 +127,7 @@ public class WordDataAccess: WordDataAccessProtocol {
         }
     }
     
-    public func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int, fetchOffset: Int) throws -> [WordModel] {
+    func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int, fetchOffset: Int) throws -> [WordModel] {
         let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue, direction: SortDirectionEnum.ascending)
         let predicateObject1 = PredicateObject(fieldName: WordEntity.Fields.Phrase.rawValue, operatorName: .contains, value: phrase)
         let predicateObject2 = PredicateObject(fieldName:  WordEntity.Fields.Status.rawValue, operatorName: .equal, value: Int(status.rawValue))
@@ -137,7 +137,7 @@ public class WordDataAccess: WordDataAccessProtocol {
         return try genericDataAccess.fetchModels(predicate: predicateCompoundObject, sort: sort, fetchLimit: fetchLimit, fetchOffset: fetchOffset)
     }
     
-    public func fetchWords(status: WordStatus, fetchLimit: Int, fetchOffset: Int) throws -> [WordModel] {
+    func fetchWords(status: WordStatus, fetchLimit: Int, fetchOffset: Int) throws -> [WordModel] {
         let sort = SortObject(fieldName: WordEntity.Fields.Order.rawValue, direction: SortDirectionEnum.ascending)
         let predicaet = PredicateObject(fieldName: WordEntity.Fields.Status.rawValue, operatorName: OperatorEnum.equal, value: Int(status.rawValue))
         return try genericDataAccess.fetchModels(predicate: predicaet, sort: sort, fetchLimit: fetchLimit, fetchOffset: fetchOffset)

@@ -1,5 +1,5 @@
 //
-//  WordManagerTests.swift
+//  WordServiceTests.swift
 //  MemorizeItForeverCore
 //
 //  Created by Hadi Zamani on 10/23/16.
@@ -10,16 +10,16 @@ import XCTest
 import BaseLocalDataAccess
 @testable import MemorizeItForeverCore
 
-class WordManagerTests: XCTestCase {
+class WordServiceTests: XCTestCase {
     
-    var wordManager: WordManagerProtocol!
+    var wordService: WordServiceProtocol!
     var wordDataAccess: WordDataAccessProtocol!
     var wordModel: WordModel!
 
     override func setUp() {
         super.setUp()
         wordDataAccess = FakeWordDataAccess()
-        wordManager = WordManager(wordDataAccess: wordDataAccess)
+        wordService = WordService(wordDataAccess: wordDataAccess)
         wordModel = WordModel()
         wordModel.wordId = UUID()
         wordModel.phrase = "Livre"
@@ -31,14 +31,14 @@ class WordManagerTests: XCTestCase {
     
     override func tearDown() {
         wordDataAccess = nil
-        wordManager = nil
+        wordService = nil
         wordModel = nil
         super.tearDown()
     }
     
     func testSaveNewWord() {
         do{
-            try wordManager.save("Livre", meaninig: "Book", setId: UUID())
+            try wordService.save("Livre", meaninig: "Book", setId: UUID())
         }
         catch{
         }
@@ -51,7 +51,7 @@ class WordManagerTests: XCTestCase {
     }
     func testEditWord() {
         
-        wordManager.edit(wordModel, phrase: "Merci", meaninig: "Thanks")
+        wordService.edit(wordModel, phrase: "Merci", meaninig: "Thanks")
         
         if let wordPhrase = objc_getAssociatedObject(wordDataAccess, &phraseKey) as? String{
             XCTAssertEqual(wordPhrase, "Merci" ,"should edit with new phrase")
@@ -97,7 +97,7 @@ class WordManagerTests: XCTestCase {
     }
     
     func testDeleteWord() {
-        _ = wordManager.delete(wordModel)
+        _ = wordService.delete(wordModel)
         if let enumResult = objc_getAssociatedObject(wordDataAccess, &resultKey) as? FakeSetDataAccessEnum{
             XCTAssertEqual(enumResult, .delete ,"should delete word")
         }

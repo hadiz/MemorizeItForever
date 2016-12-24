@@ -22,7 +22,7 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     
     // MARK: Field Injection
     var dataSource: PhraseTableDataSourceProtocol?
-    var wordManager: WordManagerProtocol?
+    var wordService: WordServiceProtocol?
     var phraseHistoryViewController: PhraseHistoryViewController?
 
     // MARK: Local Variables
@@ -117,14 +117,14 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     }
     
     func filterContentForSearchText(searchText: String, status: WordStatus) {
-        guard let wordManager = wordManager else {
-            fatalError("wordManager is not initialized")
+        guard let wordService = wordService else {
+            fatalError("wordService is not initialized")
         }
         guard let dataSource = dataSource else {
             fatalError("dataSource is not initialized")
         }
         
-        let wordList = wordManager.fetchWords(phrase: searchText, status: status, fetchLimit: 50, fetchOffset: 0)
+        let wordList = wordService.fetchWords(phrase: searchText, status: status, fetchLimit: 50, fetchOffset: 0)
         
         dataSource.setModels(wordList)
         tableView.reloadData()

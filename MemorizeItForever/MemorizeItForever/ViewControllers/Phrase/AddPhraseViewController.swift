@@ -21,7 +21,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     // MARK: Field injection
     
     var validator: ValidatorProtocol?
-    var wordManager: WordManagerProtocol?
+    var wordService: WordServiceProtocol?
     
     // MARK: Local variables
     
@@ -180,15 +180,15 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     }
     
     private func savePhrase(){
-        guard let wordManager = wordManager else {
-            fatalError("wordManager is not initialized ")
+        guard let wordService = wordService else {
+            fatalError("wordService is not initialized ")
         }
         guard let setModel = UserDefaults.standard.getDefaultSetModel(), let setId = setModel.setId else{
             saveWasFailed(message: "Choos a default 'Set'")
             return
         }
         do{
-            try wordManager.save(phrase.text.trim(), meaninig: meaning.text.trim(), setId: setId)
+            try wordService.save(phrase.text.trim(), meaninig: meaning.text.trim(), setId: setId)
             saveWasSuccessful()
         }
         catch{

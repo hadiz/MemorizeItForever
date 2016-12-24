@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import BaseLocalDataAccess
 
-public class WordEntity: NSManagedObject, EntityProtocol {
+class WordEntity: NSManagedObject, EntityProtocol {
     
     public static var entityName: String{
         return Entities.wordEntity.rawValue

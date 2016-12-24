@@ -1,26 +1,51 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 workspace 'MemorizeItForever.xcworkspace'
-project 'MemorizeItForever/MemorizeItForever.xcodeproj'
 
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+def shared_pods
+    pod 'Swinject', '2.0.0-beta.3'
+end
 
 target 'MemorizeItForever' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for MemorizeItForever
-
-    pod 'Swinject', '2.0.0-beta.3'
+    project 'MemorizeItForever/MemorizeItForever.xcodeproj'
+    # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+    
+    use_frameworks!
+    
+    # Pods for MemorizeItForever
+    
+    shared_pods
     pod 'SwinjectStoryboard', '1.0.0-beta.3'
+    
+    target 'MemorizeItForeverTests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+    
+    target 'MemorizeItForeverUITests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+    
+end
 
-  target 'MemorizeItForeverTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'MemorizeItForeverUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+target 'MemorizeItForeverCore' do
+    project 'MemorizeItForeverCore/MemorizeItForeverCore.xcodeproj'
+    
+    # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+    
+    use_frameworks!
+    
+    # Pods for MemorizeItForeverCore
+    
+    shared_pods
+    
+    target 'MemorizeItForeverCoreTests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+    
 end
