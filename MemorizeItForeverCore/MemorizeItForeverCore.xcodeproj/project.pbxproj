@@ -15,7 +15,7 @@
 		430DF6A31E0E67C300BDBF9B /* WordServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF6A21E0E67C300BDBF9B /* WordServiceFactory.swift */; };
 		430DF6A51E0E680700BDBF9B /* WordFlowServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF6A41E0E680700BDBF9B /* WordFlowServiceFactory.swift */; };
 		430DF6AF1E0E821000BDBF9B /* ContextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF6AE1E0E821000BDBF9B /* ContextHelper.swift */; };
-		431AD8DC1DB3945F004EBEA7 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */; };
+		430DF6B11E0E982600BDBF9B /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430DF6B01E0E982600BDBF9B /* BaseLocalDataAccess.framework */; };
 		43434A8F1DB262800005B59F /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43434A851DB262800005B59F /* MemorizeItForeverCore.framework */; };
 		43434A961DB262800005B59F /* MemorizeItForeverCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 43434A881DB262800005B59F /* MemorizeItForeverCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		434419691DBBA745006F77C9 /* SetDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434419671DBBA745006F77C9 /* SetDataAccessTests.swift */; };
@@ -31,8 +31,6 @@
 		436DCAA51DBCF73E00992708 /* WordFlowsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCAA21DBCF73E00992708 /* WordFlowsServiceTests.swift */; };
 		436DCAA61DBCF73E00992708 /* WordServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCAA31DBCF73E00992708 /* WordServiceTests.swift */; };
 		438150451DDCB10F0040F2F9 /* MockGenericDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438150441DDCB10F0040F2F9 /* MockGenericDataAccess.swift */; };
-		4388744B1DB7A2740030C016 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		4388744C1DB7A5660030C016 /* BaseLocalDataAccess.framework in Resources */ = {isa = PBXBuildFile; fileRef = 431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */; };
 		4388744F1DB7A6510030C016 /* SetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388744E1DB7A6510030C016 /* SetModelTests.swift */; };
 		438874511DB7A6C70030C016 /* WordModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874501DB7A6C70030C016 /* WordModelTests.swift */; };
 		438874531DB7A7320030C016 /* WordHistoryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874521DB7A7320030C016 /* WordHistoryModelTests.swift */; };
@@ -106,7 +104,7 @@
 		430DF6A21E0E67C300BDBF9B /* WordServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordServiceFactory.swift; path = Factories/WordServiceFactory.swift; sourceTree = "<group>"; };
 		430DF6A41E0E680700BDBF9B /* WordFlowServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordFlowServiceFactory.swift; path = Factories/WordFlowServiceFactory.swift; sourceTree = "<group>"; };
 		430DF6AE1E0E821000BDBF9B /* ContextHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContextHelper.swift; path = General/Helper/ContextHelper.swift; sourceTree = "<group>"; };
-		431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
+		430DF6B01E0E982600BDBF9B /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaseLocalDataAccess.framework; sourceTree = "<group>"; };
 		43434A851DB262800005B59F /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43434A881DB262800005B59F /* MemorizeItForeverCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemorizeItForeverCore.h; sourceTree = "<group>"; };
 		43434A891DB262800005B59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,8 +184,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				431AD8DC1DB3945F004EBEA7 /* BaseLocalDataAccess.framework in Frameworks */,
 				1B278C58AEB3313EC7A003C7 /* Pods_MemorizeItForeverCore.framework in Frameworks */,
+				430DF6B11E0E982600BDBF9B /* BaseLocalDataAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				43434A8F1DB262800005B59F /* MemorizeItForeverCore.framework in Frameworks */,
-				4388744B1DB7A2740030C016 /* BaseLocalDataAccess.framework in Frameworks */,
 				DF67218D40C12C96C92B0847 /* Pods_MemorizeItForeverCoreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,7 +383,7 @@
 		43434B311DB36CFD0005B59F /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				431AD8DB1DB3945F004EBEA7 /* BaseLocalDataAccess.framework */,
+				430DF6B01E0E982600BDBF9B /* BaseLocalDataAccess.framework */,
 			);
 			name = Libs;
 			sourceTree = "<group>";
@@ -600,7 +597,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4388744C1DB7A5660030C016 /* BaseLocalDataAccess.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

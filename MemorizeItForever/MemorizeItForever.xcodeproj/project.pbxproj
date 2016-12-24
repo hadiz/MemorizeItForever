@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		430320B51DE0748100BD0F0D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430320B41DE0748100BD0F0D /* UIViewExtension.swift */; };
+		430DF6B31E0E983400BDBF9B /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430DF6B21E0E983400BDBF9B /* BaseLocalDataAccess.framework */; };
 		431196D91DB3958100F7BE7F /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; };
 		431196DA1DB3958100F7BE7F /* MemorizeItForeverCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43262A411DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */; };
 		43262A431DD1CAC30029C27E /* ChangeSetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */; };
 		43262A451DD1EF380029C27E /* AddPhraseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A441DD1EF380029C27E /* AddPhraseViewControllerTests.swift */; };
-		432B733E1DB5149B00A76FC7 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */; };
-		432B733F1DB5149B00A76FC7 /* BaseLocalDataAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		432B75551DB37C85003C6574 /* SetManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 432B75531DB37C85003C6574 /* SetManagement.storyboard */; };
 		432B755F1DB37E82003C6574 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B755E1DB37E82003C6574 /* Enum.swift */; };
 		432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B75611DB382B5003C6574 /* UITableViewCellExtension.swift */; };
@@ -117,7 +116,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				431196DA1DB3958100F7BE7F /* MemorizeItForeverCore.framework in Embed Frameworks */,
-				432B733F1DB5149B00A76FC7 /* BaseLocalDataAccess.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,11 +125,11 @@
 /* Begin PBXFileReference section */
 		0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		430320B41DE0748100BD0F0D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = General/Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
+		430DF6B21E0E983400BDBF9B /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaseLocalDataAccess.framework; sourceTree = "<group>"; };
 		431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSourceTests.swift; path = DataSourcesTests/ChangeSetTableDataSourceTests.swift; sourceTree = "<group>"; };
 		43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewControllerTests.swift; path = ViewControllersTests/ChangeSetViewControllerTests.swift; sourceTree = "<group>"; };
 		43262A441DD1EF380029C27E /* AddPhraseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPhraseViewControllerTests.swift; path = ViewControllersTests/AddPhraseViewControllerTests.swift; sourceTree = "<group>"; };
-		432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = MemorizeItForever/Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
 		432B75541DB37C85003C6574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SetManagement.storyboard; sourceTree = "<group>"; };
 		432B75571DB37D6E003C6574 /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MemorizeItForeverCore.framework; path = "../MemorizeItForeverCore/build/Debug-iphoneos/MemorizeItForeverCore.framework"; sourceTree = "<group>"; };
 		432B755E1DB37E82003C6574 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = General/Enum.swift; sourceTree = "<group>"; };
@@ -226,7 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				432B733E1DB5149B00A76FC7 /* BaseLocalDataAccess.framework in Frameworks */,
+				430DF6B31E0E983400BDBF9B /* BaseLocalDataAccess.framework in Frameworks */,
 				431196D91DB3958100F7BE7F /* MemorizeItForeverCore.framework in Frameworks */,
 				99676274E6B4EC39B12973A7 /* Pods_MemorizeItForever.framework in Frameworks */,
 			);
@@ -267,7 +265,7 @@
 		431AD8CC1DB39148004EBEA7 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				432B733C1DB5146F00A76FC7 /* BaseLocalDataAccess.framework */,
+				430DF6B21E0E983400BDBF9B /* BaseLocalDataAccess.framework */,
 			);
 			name = Libs;
 			path = ..;
