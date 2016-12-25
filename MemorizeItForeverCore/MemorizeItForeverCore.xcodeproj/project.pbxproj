@@ -15,7 +15,6 @@
 		430DF6A31E0E67C300BDBF9B /* WordServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF6A21E0E67C300BDBF9B /* WordServiceFactory.swift */; };
 		430DF6A51E0E680700BDBF9B /* WordFlowServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF6A41E0E680700BDBF9B /* WordFlowServiceFactory.swift */; };
 		430DF6AF1E0E821000BDBF9B /* ContextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF6AE1E0E821000BDBF9B /* ContextHelper.swift */; };
-		430DF6B11E0E982600BDBF9B /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430DF6B01E0E982600BDBF9B /* BaseLocalDataAccess.framework */; };
 		43434A8F1DB262800005B59F /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43434A851DB262800005B59F /* MemorizeItForeverCore.framework */; };
 		43434A961DB262800005B59F /* MemorizeItForeverCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 43434A881DB262800005B59F /* MemorizeItForeverCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		434419691DBBA745006F77C9 /* SetDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434419671DBBA745006F77C9 /* SetDataAccessTests.swift */; };
@@ -30,7 +29,6 @@
 		436DCAA41DBCF73E00992708 /* SetServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCAA11DBCF73E00992708 /* SetServiceTests.swift */; };
 		436DCAA51DBCF73E00992708 /* WordFlowsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCAA21DBCF73E00992708 /* WordFlowsServiceTests.swift */; };
 		436DCAA61DBCF73E00992708 /* WordServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DCAA31DBCF73E00992708 /* WordServiceTests.swift */; };
-		438150451DDCB10F0040F2F9 /* MockGenericDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438150441DDCB10F0040F2F9 /* MockGenericDataAccess.swift */; };
 		4388744F1DB7A6510030C016 /* SetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388744E1DB7A6510030C016 /* SetModelTests.swift */; };
 		438874511DB7A6C70030C016 /* WordModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874501DB7A6C70030C016 /* WordModelTests.swift */; };
 		438874531DB7A7320030C016 /* WordHistoryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874521DB7A7320030C016 /* WordHistoryModelTests.swift */; };
@@ -81,6 +79,9 @@
 		43EFD7481E0AD49900F79CBE /* TypealiasHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7441E0AD49900F79CBE /* TypealiasHelper.swift */; };
 		911897E41DDF00BE001FC74B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911897E31DDF00BE001FC74B /* Helper.swift */; };
 		911897E61DDF0156001FC74B /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911897E51DDF0156001FC74B /* Enum.swift */; };
+		91A38C3F1E1053BC00CBA60C /* MockGenericDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438150441DDCB10F0040F2F9 /* MockGenericDataAccess.swift */; };
+		91CEA1F51E10584100C58225 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CEA1F41E10584100C58225 /* BaseLocalDataAccess.framework */; };
+		91CEA1F61E1058A500C58225 /* BaseLocalDataAccess.framework in Resources */ = {isa = PBXBuildFile; fileRef = 91CEA1F41E10584100C58225 /* BaseLocalDataAccess.framework */; };
 		DF67218D40C12C96C92B0847 /* Pods_MemorizeItForeverCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C7448ADD96F8A50C8934BC /* Pods_MemorizeItForeverCoreTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +105,6 @@
 		430DF6A21E0E67C300BDBF9B /* WordServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordServiceFactory.swift; path = Factories/WordServiceFactory.swift; sourceTree = "<group>"; };
 		430DF6A41E0E680700BDBF9B /* WordFlowServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordFlowServiceFactory.swift; path = Factories/WordFlowServiceFactory.swift; sourceTree = "<group>"; };
 		430DF6AE1E0E821000BDBF9B /* ContextHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContextHelper.swift; path = General/Helper/ContextHelper.swift; sourceTree = "<group>"; };
-		430DF6B01E0E982600BDBF9B /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaseLocalDataAccess.framework; sourceTree = "<group>"; };
 		43434A851DB262800005B59F /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43434A881DB262800005B59F /* MemorizeItForeverCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemorizeItForeverCore.h; sourceTree = "<group>"; };
 		43434A891DB262800005B59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,6 +174,8 @@
 		7396ADC01D43771C3310F95A /* Pods-MemorizeItForeverCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCoreTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		911897E31DDF00BE001FC74B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Helper/Helper.swift; sourceTree = "<group>"; };
 		911897E51DDF0156001FC74B /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Helper/Enum.swift; sourceTree = "<group>"; };
+		91A38C411E1053F900CBA60C /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = MemorizeItForeverCore/Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
+		91CEA1F41E10584100C58225 /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
 		AD31FDD7E11235B57A067D9E /* Pods-MemorizeItForeverCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCore.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverCore/Pods-MemorizeItForeverCore.release.xcconfig"; sourceTree = "<group>"; };
 		BCCFBF4E4338E7784D2E9B02 /* Pods-MemorizeItForeverCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCoreTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C516BB4822F99A24DACA2FAE /* Pods_MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,7 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B278C58AEB3313EC7A003C7 /* Pods_MemorizeItForeverCore.framework in Frameworks */,
-				430DF6B11E0E982600BDBF9B /* BaseLocalDataAccess.framework in Frameworks */,
+				91CEA1F51E10584100C58225 /* BaseLocalDataAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +385,7 @@
 		43434B311DB36CFD0005B59F /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				430DF6B01E0E982600BDBF9B /* BaseLocalDataAccess.framework */,
+				91CEA1F41E10584100C58225 /* BaseLocalDataAccess.framework */,
 			);
 			name = Libs;
 			sourceTree = "<group>";
@@ -461,6 +463,7 @@
 		7498F7F06323CF2594F258F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91A38C411E1053F900CBA60C /* BaseLocalDataAccess.framework */,
 				C516BB4822F99A24DACA2FAE /* Pods_MemorizeItForeverCore.framework */,
 				30C7448ADD96F8A50C8934BC /* Pods_MemorizeItForeverCoreTests.framework */,
 			);
@@ -562,7 +565,7 @@
 					};
 					43434A8D1DB262800005B59F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 2X8HVN46BZ;
+						DevelopmentTeam = 37CR54MNJQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -597,6 +600,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91CEA1F61E1058A500C58225 /* BaseLocalDataAccess.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,6 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A38C3F1E1053BC00CBA60C /* MockGenericDataAccess.swift in Sources */,
 				43DBA2241DBB64B80017E733 /* WordInProgressEntityTests.swift in Sources */,
 				438874601DB7AF6F0030C016 /* InMemoryManagedObjectContext.swift in Sources */,
 				4388744F1DB7A6510030C016 /* SetModelTests.swift in Sources */,
@@ -756,7 +761,6 @@
 				436DCA461DBC9B0B00992708 /* FakeWordHistoryDataAccess.swift in Sources */,
 				4388745D1DB7AE310030C016 /* SetEntityTests.swift in Sources */,
 				911897E61DDF0156001FC74B /* Enum.swift in Sources */,
-				438150451DDCB10F0040F2F9 /* MockGenericDataAccess.swift in Sources */,
 				436DCA441DBC9ACE00992708 /* WordHistoryDataAccessTests.swift in Sources */,
 				436DCA401DBC99B200992708 /* WordInProgressDataAccessTests.swift in Sources */,
 				4344196C1DBBA7A2006F77C9 /* FakeWordDataAccess.swift in Sources */,
@@ -935,14 +939,20 @@
 			baseConfigurationReference = BCCFBF4E4338E7784D2E9B02 /* Pods-MemorizeItForeverCoreTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 2X8HVN46BZ;
+				DEVELOPMENT_TEAM = 37CR54MNJQ;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MemorizeItForeverCore/Libs",
+					"$(PROJECT_DIR)/MemorizeItForeverCore",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MemorizeItForeverCore/Libs",
 				);
 				INFOPLIST_FILE = MemorizeItForeverCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "$(inherited) @executable_path/Frameworks @loader_path";
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "$(inherited) @executable_path/Frameworks @loader_path/";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -954,10 +964,11 @@
 			baseConfigurationReference = 7396ADC01D43771C3310F95A /* Pods-MemorizeItForeverCoreTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 2X8HVN46BZ;
+				DEVELOPMENT_TEAM = 37CR54MNJQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MemorizeItForeverCore/Libs",
+					"$(PROJECT_DIR)/MemorizeItForeverCore",
 				);
 				INFOPLIST_FILE = MemorizeItForeverCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

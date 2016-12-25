@@ -87,8 +87,8 @@
 		5D90CEEFA0AFA79BE6A8B249 /* Pods_MemorizeItForeverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D95E4CC91AF68432451792 /* Pods_MemorizeItForeverUITests.framework */; };
 		6D356D1EBD3CFDEB6FE1AAC7 /* Pods_MemorizeItForeverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */; };
 		91A64D5A1DD5019B003D45B8 /* ColorPickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */; };
-		91E19B971E104E3200F6F4D1 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430DF6B21E0E983400BDBF9B /* BaseLocalDataAccess.framework */; };
-		91E19B981E104E3200F6F4D1 /* BaseLocalDataAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 430DF6B21E0E983400BDBF9B /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		91CEA1F91E10592500C58225 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */; };
+		91CEA1FA1E10592500C58225 /* BaseLocalDataAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99676274E6B4EC39B12973A7 /* Pods_MemorizeItForever.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D367F8F551F0C992CD66FF5B /* Pods_MemorizeItForever.framework */; };
 /* End PBXBuildFile section */
 
@@ -117,7 +117,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				431196DA1DB3958100F7BE7F /* MemorizeItForeverCore.framework in Embed Frameworks */,
-				91E19B981E104E3200F6F4D1 /* BaseLocalDataAccess.framework in Embed Frameworks */,
+				91CEA1FA1E10592500C58225 /* BaseLocalDataAccess.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,7 +127,6 @@
 /* Begin PBXFileReference section */
 		0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		430320B41DE0748100BD0F0D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = General/Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
-		430DF6B21E0E983400BDBF9B /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaseLocalDataAccess.framework; sourceTree = "<group>"; };
 		431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSourceTests.swift; path = DataSourcesTests/ChangeSetTableDataSourceTests.swift; sourceTree = "<group>"; };
 		43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewControllerTests.swift; path = ViewControllersTests/ChangeSetViewControllerTests.swift; sourceTree = "<group>"; };
@@ -216,6 +215,7 @@
 		788E35C8B548D4C13533ED0E /* Pods-MemorizeItForeverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverUITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverUITests/Pods-MemorizeItForeverUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E62AF06CBBFF1F21EF001EC /* Pods-MemorizeItForeverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverTests/Pods-MemorizeItForeverTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerProtocol.swift; path = General/ColorPickerProtocol.swift; sourceTree = "<group>"; };
+		91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = MemorizeItForever/Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
 		9B59621F049206CEEAF3FB71 /* Pods-MemorizeItForeverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverTests/Pods-MemorizeItForeverTests.release.xcconfig"; sourceTree = "<group>"; };
 		D367F8F551F0C992CD66FF5B /* Pods_MemorizeItForever.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForever.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DEDC3A393830EE0841B5D6 /* Pods-MemorizeItForever.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForever.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever.debug.xcconfig"; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 			files = (
 				431196D91DB3958100F7BE7F /* MemorizeItForeverCore.framework in Frameworks */,
 				99676274E6B4EC39B12973A7 /* Pods_MemorizeItForever.framework in Frameworks */,
-				91E19B971E104E3200F6F4D1 /* BaseLocalDataAccess.framework in Frameworks */,
+				91CEA1F91E10592500C58225 /* BaseLocalDataAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +267,7 @@
 		431AD8CC1DB39148004EBEA7 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				430DF6B21E0E983400BDBF9B /* BaseLocalDataAccess.framework */,
+				91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */,
 			);
 			name = Libs;
 			path = ..;
