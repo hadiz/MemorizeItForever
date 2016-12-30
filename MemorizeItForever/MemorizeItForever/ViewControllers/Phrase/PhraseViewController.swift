@@ -21,10 +21,10 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     var searchController: UISearchController!
     
     // MARK: Field Injection
-    var dataSource: PhraseTableDataSourceProtocol?
-    var wordService: WordServiceProtocol?
-    var phraseHistoryViewController: PhraseHistoryViewController?
-
+    var dataSource: PhraseTableDataSourceProtocol!
+    var wordService: WordServiceProtocol!
+    var viewControllerFactory: ViewControllerFactoryProtocol!
+    
     // MARK: Local Variables
     var skip = 0
     var take = 0
@@ -35,9 +35,9 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
         super.viewDidLoad()
         self.title = "Phrase Management"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(PhraseViewController.doneBarButtonTapHandler))
-//        self.view.backgroundColor = ColorPicker.shared.backgroundView
+        //        self.view.backgroundColor = ColorPicker.shared.backgroundView
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData()
@@ -48,10 +48,6 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     }
     
     override func defineControls() {
-        
-        guard let dataSource = dataSource else {
-            fatalError("dataSource is not initialized")
-        }
         
         tableView = MITableView()
         tableView.dataSource = dataSource
@@ -117,17 +113,15 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     }
     
     func filterContentForSearchText(searchText: String, status: WordStatus) {
-        guard let wordService = wordService else {
-            fatalError("wordService is not initialized")
-        }
-        guard let dataSource = dataSource else {
-            fatalError("dataSource is not initialized")
-        }
-        
-        let wordList = wordService.fetchWords(phrase: searchText, status: status, fetchLimit: 50, fetchOffset: 0)
-        
-        dataSource.setModels(wordList)
-        tableView.reloadData()
+       
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
+            let wordList = self.wordService.fetchWords(phrase: searchText, status: status, fetchLimit: 50, fetchOffset: 0)
+            
+            self.dataSource.setModels(wordList)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        })
     }
     
     // MARK: Private Methods
@@ -156,9 +150,7 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     }
     
     private func presentPhraseHistoryViewController(wordModel: WordModel? = nil){
-        guard let phraseHistoryViewController = phraseHistoryViewController else {
-            fatalError("phraseHistoryViewController is not initialized")
-        }
+        let phraseHistoryViewController = viewControllerFactory.phraseHistoryViewControllerFactory()
         phraseHistoryViewController.wordModel  = wordModel
         
         let size = CGSize(width: self.view.frame.width  , height: self.view.frame.height * 2 / 3)

@@ -144,9 +144,6 @@ class WordDataAccess: WordDataAccessProtocol {
     }
     
     private func fetchSetEntity(_ setId: UUID) -> SetEntity?{
-        guard let setDataAccess = setDataAccess else {
-            fatalError("setDataAccess is not initialized")
-        }
         do{
             return try setDataAccess.fetchEntity(withId: setId)
         }

@@ -156,9 +156,6 @@ public class WordFlowService: WordFlowServiceProtocol {
     }
     
     private func rePutWordInPreColumn(_ wordInProgressModel: WordInProgressModel) throws{
-        guard let wordInProgressDataAccess = wordInProgressDataAccess else {
-            fatalError("wordInProgressDataAccess not initialiazed")
-        }
         var inProgressModel = WordInProgressModel()
         inProgressModel.column = MemorizeColumns.pre.rawValue
         inProgressModel.date = Date().addDay(MemorizeColumns.pre.days)
@@ -198,9 +195,7 @@ public class WordFlowService: WordFlowServiceProtocol {
     }
     
     private func deleteWordInProgress(_ wordInProgressModel: WordInProgressModel) throws{
-        guard let wordInProgressDataAccess = wordInProgressDataAccess else {
-            fatalError("wordInProgressDataAccess not initialiazed")
-        }
+        
         do{
             try wordInProgressDataAccess.delete(wordInProgressModel)
         }

@@ -23,7 +23,7 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     
     // MARK: Field injection
     
-    var wordFlowService: WordFlowServiceProtocol?
+    var wordFlowService: WordFlowServiceProtocol!
     
     // MARK: Local Variables
     
@@ -389,36 +389,40 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     }
     
     private func fetchData(){
-        guard let wordFlowService = wordFlowService else{
-            fatalError("wordFlowService is not initialized")
-        }
-        do{
-            let wordInProgressList = try wordFlowService.fetchWordsToExamin()
-            //            var wordInProgressList: [WordInProgressModel] = []
-            //            for i in 0..<10{
-            //                var word = WordModel()
-            //                word.meaning = "Meaning \(i)"
-            //                word.phrase = "Phrase \(i)"
-            //                var win = WordInProgressModel()
-            //                win.column = Int16(i / 2)
-            //                win.date = Date()
-            //                win.word = word
-            //                wordInProgressList.append(win)
-            //            }
-            
-            for i: Int16 in 0...5{
-                columnDic[i] = wordInProgressList.filter(){$0.column == i}
+        
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
+            do{
+                let wordInProgressList = try self.wordFlowService.fetchWordsToExamin()
+                //            var wordInProgressList: [WordInProgressModel] = []
+                //            for i in 0..<10{
+                //                var word = WordModel()
+                //                word.meaning = "Meaning \(i)"
+                //                word.phrase = "Phrase \(i)"
+                //                var win = WordInProgressModel()
+                //                win.column = Int16(i / 2)
+                //                win.date = Date()
+                //                win.word = word
+                //                wordInProgressList.append(win)
+                //            }
+                
+                for i: Int16 in 0...5{
+                    self.columnDic[i] = wordInProgressList.filter(){$0.column == i}
+                }
+                if wordInProgressList.count > 0{
+                    DispatchQueue.main.async {
+                        self.assignWordToCard()
+                    }
+                }
+                else{
+                    DispatchQueue.main.async {
+                        self.taskDoneView()
+                    }
+                }
             }
-            if wordInProgressList.count > 0{
-                assignWordToCard()
+            catch{
+                
             }
-            else{
-                taskDoneView()
-            }
-        }
-        catch{
-            
-        }
+        })
     }
     
     private func assignWordToCard(){
@@ -510,16 +514,10 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     }
     
     private func answerCorrect(){
-        guard let wordFlowService = wordFlowService else{
-            fatalError("wordFlowService is not initialized")
-        }
         wordFlowService.answerCorrectly(currentWordInProgressModel)
-
+        
     }
     private func answerWrong(){
-        guard let wordFlowService = wordFlowService else{
-            fatalError("wordFlowService is not initialized")
-        }
         wordFlowService.answerWrongly(currentWordInProgressModel)
     }
 }

@@ -22,16 +22,12 @@ extension SwinjectStoryboard {
         }
         
         defaultContainer.storyboardInitCompleted(MemorizeItViewController.self) { r, c in
-            c.changeSetViewController = r.resolve(ChangeSetViewController.self)
-            c.addPhraseViewController = r.resolve(AddPhraseViewController.self)
-            c.reviewPhraseViewController = r.resolve(ReviewPhraseViewController.self)
-            c.takeTestViewController = r.resolve(TakeTestViewController.self)
-            c.phraseViewController = r.resolve(PhraseViewController.self)
+            c.viewControllerFactory = r.resolve(ViewControllerFactoryProtocol.self)
         }
         
         defaultContainer.storyboardInitCompleted(SetViewController.self) { r, c in
             c.setService = r.resolve(SetServiceProtocol.self)
-            c.setItemViewController = r.resolve(SetItemViewController.self)
+            c.viewControllerFactory = r.resolve(ViewControllerFactoryProtocol.self)
             c.dataSource = r.resolve(SetTableDataSourceProtocol.self, name: "SetTableDataSource")
         }
         
@@ -53,21 +49,21 @@ extension SwinjectStoryboard {
             controller.validator = r.resolve(ValidatorProtocol.self)
             controller.wordService = r.resolve(WordServiceProtocol.self)
             return controller
-            }.inObjectScope(.transient)
+            }.inObjectScope(.weak)
         
         defaultContainer.register(ReviewPhraseViewController.self) { r in
             let controller = ReviewPhraseViewController()
             controller.wordFlowService = r.resolve(WordFlowServiceProtocol.self)
             return controller
-            }.inObjectScope(.transient)
+            }.inObjectScope(.weak)
         
         defaultContainer.register(SetTableDataSourceProtocol.self, name: "SetTableDataSource") { r in
             SetTableDataSource(setService: r.resolve(SetServiceProtocol.self))
-            }.inObjectScope(.transient)
+            }.inObjectScope(.weak)
         
         defaultContainer.register(SetTableDataSourceProtocol.self, name: "ChangeSetTableDataSource") { r in
             ChangeSetTableDataSource(setService: r.resolve(SetServiceProtocol.self))
-            }.inObjectScope(.transient)
+            }.inObjectScope(.weak)
         
         defaultContainer.register(ValidatorProtocol.self){ r in
             Validator()
@@ -77,31 +73,31 @@ extension SwinjectStoryboard {
             let controller = TakeTestViewController()
             controller.wordFlowService = r.resolve(WordFlowServiceProtocol.self)
             return controller
-            }.inObjectScope(.transient)
+            }.inObjectScope(.weak)
 
         
         defaultContainer.register(PhraseViewController.self) { r in
             let controller = PhraseViewController()
             controller.dataSource = r.resolve(PhraseTableDataSourceProtocol.self, name: "PhraseTableDataSource")
             controller.wordService = r.resolve(WordServiceProtocol.self)
-            controller.phraseHistoryViewController = r.resolve(PhraseHistoryViewController.self)
+            controller.viewControllerFactory = r.resolve(ViewControllerFactoryProtocol.self)
             return controller
-            }.inObjectScope(.transient)
+            }.inObjectScope(.weak)
         
         defaultContainer.register(PhraseTableDataSourceProtocol.self, name: "PhraseTableDataSource"){ r in
             PhraseTableDataSource(wordService: r.resolve(WordServiceProtocol.self))
-            }.inObjectScope(.transient)
+            }.inObjectScope(.weak)
         
         defaultContainer.register(PhraseHistoryViewController.self){ r in
             let controller = PhraseHistoryViewController()
             controller.dataSource = r.resolve(PhraseTableDataSourceProtocol.self, name: "PhraseHistoryTableDataSource")
             controller.wordService = r.resolve(WordServiceProtocol.self)
             return controller
-            }.inObjectScope(.transient)
+            }.inObjectScope(.weak)
         
         defaultContainer.register(PhraseTableDataSourceProtocol.self, name: "PhraseHistoryTableDataSource"){ r in
             PhraseHistoryTableDataSource(wordService: nil)
-            }.inObjectScope(.transient)
+            }.inObjectScope(.weak)
         
         defaultContainer.register(ServiceFactoryProtocol.self, name: "SetServiceFactory"){ r in
             SetServiceFactory()
@@ -131,6 +127,10 @@ extension SwinjectStoryboard {
             let wordFlowServiceFactory = r.resolve(ServiceFactoryProtocol.self, name: "WordFlowServiceFactory")!
             let wordFlowService: WordFlowService = wordFlowServiceFactory.create()
             return wordFlowService
+        }
+        
+        defaultContainer.register(ViewControllerFactoryProtocol.self){ r in
+            ViewControllerFactory()
         }
     }
     

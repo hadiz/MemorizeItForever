@@ -12,9 +12,9 @@ import MemorizeItForeverCore
 final class SetViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet var tableView: UITableView!
-    var dataSource: SetTableDataSourceProtocol?
-    var setService: SetServiceProtocol?
-    var setItemViewController: SetItemViewController?
+    var dataSource: SetTableDataSourceProtocol!
+    var setService: SetServiceProtocol!
+    var viewControllerFactory: ViewControllerFactoryProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +43,6 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(SetViewController.addAction))
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(SetViewController.closeBarButtonTapHandler))
-        
-        guard let dataSource = dataSource else {
-            fatalError("dataSource is not initialiazed")
-        }
         
         let weakSelf = self
         dataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
@@ -78,11 +74,9 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
     }
     
     func fetchData(){
-        guard let setService = setService else {
-            fatalError("setService is not initialiazed")
-        }
+    
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
-            let sets = setService.get().flatMap{$0 as MemorizeItModelProtocol}
+            let sets = self.setService.get().flatMap{$0 as MemorizeItModelProtocol}
             self.dataSource?.setModels(sets)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -91,9 +85,7 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
     }
     
     private func presentSetItemViewController(_ entityMode: EntityMode, setModel: SetModel? = nil){
-        guard let setItemViewController = setItemViewController else {
-            fatalError("setItemViewController is not initialized")
-        }
+        let setItemViewController = viewControllerFactory.setItemViewControllerFactory()
         setItemViewController.entityMode = entityMode
         setItemViewController.setModel  = setModel
         

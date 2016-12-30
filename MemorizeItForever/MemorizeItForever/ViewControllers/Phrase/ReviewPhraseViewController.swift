@@ -44,7 +44,7 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
     
     // MARK: Field injection
     
-    var wordFlowService: WordFlowServiceProtocol?
+    var wordFlowService: WordFlowServiceProtocol!
     
     // MARK: Override Methods
     
@@ -428,36 +428,38 @@ final class ReviewPhraseViewController: VFLBasedViewController, UIPopoverPresent
     }
     
     private func fetchData(){
-        guard let wordFlowService = wordFlowService else{
-            fatalError("wordFlowService is not initialized")
-        }
-        do{
-            try wordFlowService.fetchNewWordsToPutInPreColumn()
-            list = try wordFlowService.fetchWordsForReview()
-//                        for i in 1...10{
-//                            var word = WordModel()
-//                            word.meaning = "Meaning \(i)"
-//                            word.phrase = "Phrase \(i)"
-//                            list.append(word)
-//                        }
-            if list.count > 0{
-                assignWordToCard()
-                updateCounter()
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
+            do{
+                try self.wordFlowService.fetchNewWordsToPutInPreColumn()
+                self.list = try self.wordFlowService.fetchWordsForReview()
+                //                        for i in 1...10{
+                //                            var word = WordModel()
+                //                            word.meaning = "Meaning \(i)"
+                //                            word.phrase = "Phrase \(i)"
+                //                            list.append(word)
+                //                        }
+                if self.list.count > 0{
+                    DispatchQueue.main.async {
+                        self.assignWordToCard()
+                        self.updateCounter()
+                    }
+                }
+                else{
+                    DispatchQueue.main.async {
+                        self.taskDoneView()
+                    }
+                }
             }
-            else{
-                taskDoneView()
+            catch{
+                
             }
-        }
-        catch{
-            
-        }
+        })
     }
     
     private func assignWordToCard(){
         guard let current = cardViewsDic[.current], let previous = cardViewsDic[.previous], let next = cardViewsDic[.next] else {
             fatalError(cardViewsDicFatalError)
         }
-        
         current.updateText(phrase: list[index].phrase!, meaning: list[index].meaning!)
         let nextIndex = getNextIndex()
         next.updateText(phrase: list[nextIndex].phrase!, meaning: list[nextIndex].meaning!)

@@ -89,6 +89,8 @@
 		91A64D5A1DD5019B003D45B8 /* ColorPickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */; };
 		91CEA1F91E10592500C58225 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */; };
 		91CEA1FA1E10592500C58225 /* BaseLocalDataAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		91CEA2251E1693C600C58225 /* ViewControllerFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CEA2241E1693C600C58225 /* ViewControllerFactoryProtocol.swift */; };
+		91CEA2271E16944400C58225 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CEA2261E16944400C58225 /* ViewControllerFactory.swift */; };
 		99676274E6B4EC39B12973A7 /* Pods_MemorizeItForever.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D367F8F551F0C992CD66FF5B /* Pods_MemorizeItForever.framework */; };
 /* End PBXBuildFile section */
 
@@ -216,6 +218,8 @@
 		8E62AF06CBBFF1F21EF001EC /* Pods-MemorizeItForeverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverTests/Pods-MemorizeItForeverTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerProtocol.swift; path = General/ColorPickerProtocol.swift; sourceTree = "<group>"; };
 		91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = MemorizeItForever/Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
+		91CEA2241E1693C600C58225 /* ViewControllerFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerFactoryProtocol.swift; path = ViewControllers/Factory/ViewControllerFactoryProtocol.swift; sourceTree = "<group>"; };
+		91CEA2261E16944400C58225 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerFactory.swift; path = ViewControllers/Factory/ViewControllerFactory.swift; sourceTree = "<group>"; };
 		9B59621F049206CEEAF3FB71 /* Pods-MemorizeItForeverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverTests/Pods-MemorizeItForeverTests.release.xcconfig"; sourceTree = "<group>"; };
 		D367F8F551F0C992CD66FF5B /* Pods_MemorizeItForever.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForever.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DEDC3A393830EE0841B5D6 /* Pods-MemorizeItForever.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForever.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever.debug.xcconfig"; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 		432B75431DB37AA8003C6574 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				91CEA2231E16939D00C58225 /* Factory */,
 				436BCB1D1DF6E33B0042C175 /* Settings */,
 				43F217D71DBF5A8E0005BF26 /* Phrase */,
 				432B754D1DB37B4B003C6574 /* Main */,
@@ -566,6 +571,15 @@
 				43EFD7531E0AD55D00F79CBE /* TakeTestViewController.swift */,
 			);
 			name = Phrase;
+			sourceTree = "<group>";
+		};
+		91CEA2231E16939D00C58225 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				91CEA2241E1693C600C58225 /* ViewControllerFactoryProtocol.swift */,
+				91CEA2261E16944400C58225 /* ViewControllerFactory.swift */,
+			);
+			name = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -879,6 +893,7 @@
 				43EFD74A1E0AD4F800F79CBE /* PhraseHistoryTableDataSource.swift in Sources */,
 				43EFD7901E0AD69C00F79CBE /* ChangeSetTableDataSource.swift in Sources */,
 				43EFD7691E0AD57E00F79CBE /* SetItemViewController.swift in Sources */,
+				91CEA2271E16944400C58225 /* ViewControllerFactory.swift in Sources */,
 				43EFD77B1E0AD59000F79CBE /* CustomBackgroundView.swift in Sources */,
 				43BF3D9A1DD9D79B000296DB /* ValidatableProtocol.swift in Sources */,
 				43EFD7811E0AD59000F79CBE /* SubtitleUITableViewCell.swift in Sources */,
@@ -890,6 +905,7 @@
 				43EFD7841E0AD59000F79CBE /* MILabel.swift in Sources */,
 				43EFD7921E0AD69C00F79CBE /* SetTableDataSourceProtocol.swift in Sources */,
 				43EFD7581E0AD55D00F79CBE /* PhraseViewController.swift in Sources */,
+				91CEA2251E1693C600C58225 /* ViewControllerFactoryProtocol.swift in Sources */,
 				435CBC781DF541A3003ACFD1 /* UITableViewExtension.swift in Sources */,
 				43EFD75A1E0AD55D00F79CBE /* TakeTestViewController.swift in Sources */,
 				438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */,

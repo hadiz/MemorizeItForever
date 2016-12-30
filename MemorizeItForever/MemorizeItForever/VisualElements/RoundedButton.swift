@@ -10,14 +10,11 @@ import UIKit
 
 class RoundedButton: UIButton {
     //TODO
-//    var colorPicker: ColorPickerProtocol?
+//    var colorPicker: ColorPickerProtocol!
     
     var buttonColor: UIColor?
     
     override func draw(_ rect: CGRect) {
-//        guard let colorPicker = colorPicker else {
-//            fatalError("colorPicker is not initialized")
-//        }
         
         let width = bounds.width < bounds.height ? bounds.width : bounds.height
         

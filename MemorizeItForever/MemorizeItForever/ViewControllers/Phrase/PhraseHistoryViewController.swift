@@ -13,13 +13,13 @@ class PhraseHistoryViewController: VFLBasedViewController, UIPopoverPresentation
     
     // MARK: Controls
     var tableView: UITableView!
-    var dataSource: PhraseTableDataSourceProtocol?
     
     // MARK: Variables
     var wordModel: WordModel?
     
     // MARK: Field Injection
-    var wordService: WordServiceProtocol?
+    var wordService: WordServiceProtocol!
+    var dataSource: PhraseTableDataSourceProtocol!
     
     // MARK: Override Methods
     
@@ -42,10 +42,6 @@ class PhraseHistoryViewController: VFLBasedViewController, UIPopoverPresentation
     }
     
     override func defineControls() {
-        guard let dataSource = dataSource else {
-            fatalError("dataSource is not initialized")
-        }
-
         tableView = MITableView()
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
@@ -85,28 +81,28 @@ class PhraseHistoryViewController: VFLBasedViewController, UIPopoverPresentation
     // MARK: Private Methods
     
     private func setModel(wordHistoryModelList: [WordHistoryModel]){
-        guard let dataSource = dataSource else {
-            fatalError("dataSource is not initialized")
-        }
+        
         dataSource.setModels(wordHistoryModelList)
     }
     
     private func fetchData(){
-        guard let wordService = wordService else {
-            fatalError("wordService is not initialized")
-        }
+        
         guard let wordModel = wordModel else {
             return // TODO Notify Error
         }
-        let list = wordService.fetchWordHistoryByWord(wordModel: wordModel)
-        if list.count > 0{
-            setModel(wordHistoryModelList: list)
-        }
-        else{
-            var wordHistoryModel = WordHistoryModel()
-            wordHistoryModel.word = wordModel
-            setModel(wordHistoryModelList: [wordHistoryModel])
-        }
-        tableView.reloadData()
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
+            let list = self.wordService.fetchWordHistoryByWord(wordModel: wordModel)
+            if list.count > 0{
+                self.setModel(wordHistoryModelList: list)
+            }
+            else{
+                var wordHistoryModel = WordHistoryModel()
+                wordHistoryModel.word = wordModel
+                self.setModel(wordHistoryModelList: [wordHistoryModel])
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        })
     }
 }

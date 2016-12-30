@@ -20,8 +20,8 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     
     // MARK: Field injection
     
-    var validator: ValidatorProtocol?
-    var wordService: WordServiceProtocol?
+    var validator: ValidatorProtocol!
+    var wordService: WordServiceProtocol!
     
     // MARK: Local variables
     
@@ -113,19 +113,11 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     // MARK: Internal methods
     
     func doneBarButtonTapHandler(){
-        guard let validator = validator else {
-            fatalError("validator is not initialized ")
-        }
-        
         validator.clear(validatable: phrase)
         self.dismiss(animated: true, completion: nil)
     }
     
     func nextBarButtonTapHandler(){
-        guard let validator = validator else {
-            fatalError("validator is not initialized ")
-        }
-        
         let result = validator.validate(phrase, errorMessage: "Phrase should not be empty") {
             !($0 as! MITextView).text.trim().isEmpty
         }
@@ -142,9 +134,6 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     }
     
     func saveBarButtonTapHandler(){
-        guard let validator = validator else {
-            fatalError("validator is not initialized ")
-        }
         let result = validator.validate(meaning, errorMessage: "Meaning should not be empty") {
             !($0 as! MITextView).text.trim().isEmpty
         }
@@ -155,10 +144,6 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     }
     
     func previousBarButtonTapHandler(){
-        guard let validator = validator else {
-            fatalError("validator is not initialized ")
-        }
-        
         validator.clear(validatable: meaning)
         goPrevious()
         
@@ -180,9 +165,6 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     }
     
     private func savePhrase(){
-        guard let wordService = wordService else {
-            fatalError("wordService is not initialized ")
-        }
         guard let setModel = UserDefaults.standard.getDefaultSetModel(), let setId = setModel.setId else{
             saveWasFailed(message: "Choos a default 'Set'")
             return

@@ -10,11 +10,7 @@ import UIKit
 
 final class MemorizeItViewController: UIViewController {
     
-    var changeSetViewController: ChangeSetViewController?
-    var addPhraseViewController: AddPhraseViewController?
-    var reviewPhraseViewController: ReviewPhraseViewController?
-    var takeTestViewController: TakeTestViewController?
-    var phraseViewController: PhraseViewController?
+    var viewControllerFactory: ViewControllerFactoryProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,41 +29,31 @@ final class MemorizeItViewController: UIViewController {
     }
     
     private func reviewPhraseTapped(_ sender: AnyObject){
-        guard let reviewPhraseViewController = reviewPhraseViewController else {
-            fatalError("reviewPhraseViewController is not initialized")
-        }
+        let reviewPhraseViewController = viewControllerFactory.reviewPhraseViewControllerFactory()
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(reviewPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }
     
     private func changeSetTapped(_ sender: AnyObject){
-        guard let changeSetViewController = changeSetViewController else {
-            fatalError("changeSetViewController is not initialized")
-        }
+        let changeSetViewController = viewControllerFactory.changeSetViewControllerFactory()
         let contentSize = CGSize(width: self.view.frame.width  / 2, height: 250)
         self.presentingPopover(changeSetViewController, sourceView: sender as! UIView, popoverArrowDirection: .any, contentSize: contentSize)
     }
     
     private func addPhraseTapped(_ sender: AnyObject){
-        guard let addPhraseViewController = addPhraseViewController else {
-            fatalError("addPhraseViewController is not initialized")
-        }
+        let addPhraseViewController = viewControllerFactory.addPhraseViewControllerFactory()
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(addPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }
     
     private func takeATestTapped(_ sender: AnyObject){
-        guard let takeTestViewController = takeTestViewController else {
-            fatalError("takeTestViewController is not initialized")
-        }
+       let takeTestViewController = viewControllerFactory.takeTestViewControllerFactory()
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(takeTestViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }
     
     private func phraseManagementTapped(_ sender: AnyObject){
-        guard let phraseViewController = phraseViewController else {
-            fatalError("phraseViewController is not initialized")
-        }
+        let phraseViewController = viewControllerFactory.phraseViewControllerFactory()
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(phraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }

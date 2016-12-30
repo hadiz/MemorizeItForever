@@ -156,9 +156,7 @@ class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
     }
     
     private func fetchWordEntity(_ wordId: UUID) -> WordEntity?{
-        guard let wordDataAccess = wordDataAccess else {
-            fatalError("wordDataAccess is not initialized")
-        }
+        
         do{
             return try wordDataAccess.fetchEntity(withId: wordId)
         }

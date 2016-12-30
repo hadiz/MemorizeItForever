@@ -12,8 +12,8 @@ import MemorizeItForeverCore
 final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentationControllerDelegate {
     
     var tableView: UITableView!
-    var dataSource: SetTableDataSourceProtocol?
-    var setService: SetServiceProtocol?
+    var dataSource: SetTableDataSourceProtocol!
+    var setService: SetServiceProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +48,6 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
     override func defineControls(){
         tableView = MITableView()
        
-        guard let dataSource = dataSource else {
-            fatalError("dataSource is not initialiazed")
-        }
-        
         let weakSelf = self
         dataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
             if let weakSelf = weakSelf{
@@ -82,10 +78,7 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
         NSLayoutConstraint.activate(constraintList)
     }
     private func didSelectSet(_ model: MemorizeItModelProtocol?){
-        guard let setService = setService else {
-            fatalError("setService is not initialiazed")
-        }
-
+       
         var setId: UUID?
         if let setDic = UserDefaults.standard.object(forKey: Settings.defaultSet.rawValue) as? Dictionary<String, Any>,
             let setModel = SetModel(dictionary: setDic) {
@@ -98,15 +91,10 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
     }
     
     private func fetchData(){
-        guard let setService = setService else {
-            fatalError("setService is not initialiazed")
-        }
-        guard let dataSource = dataSource else {
-            fatalError("dataSource is not initialiazed")
-        }
+        
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
-            let sets = setService.get().flatMap{$0 as MemorizeItModelProtocol}
-            dataSource.setModels(sets)
+            let sets = self.setService.get().flatMap{$0 as MemorizeItModelProtocol}
+            self.dataSource.setModels(sets)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
