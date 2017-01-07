@@ -49,7 +49,9 @@ extension SwinjectStoryboard {
             controller.validator = r.resolve(ValidatorProtocol.self)
             controller.wordService = r.resolve(WordServiceProtocol.self)
             return controller
-            }.inObjectScope(.weak)
+            }.initCompleted({ (r, controller) in
+                controller.coordinatorDelegate = r.resolve(UIViewCoordinatorDelegate.self, name: "AddPhrase")
+            }).inObjectScope(.weak)
         
         defaultContainer.register(ReviewPhraseViewController.self) { r in
             let controller = ReviewPhraseViewController()
@@ -93,7 +95,9 @@ extension SwinjectStoryboard {
             controller.dataSource = r.resolve(PhraseTableDataSourceProtocol.self, name: "PhraseHistoryTableDataSource")
             controller.wordService = r.resolve(WordServiceProtocol.self)
             return controller
-            }.inObjectScope(.weak)
+            }.initCompleted({ (r, controller) in
+                controller.coordinatorDelegate = r.resolve(UIViewCoordinatorDelegate.self, name: "PhraseHistory")
+            }).inObjectScope(.weak)
         
         defaultContainer.register(PhraseTableDataSourceProtocol.self, name: "PhraseHistoryTableDataSource"){ r in
             PhraseHistoryTableDataSource(wordService: nil)
@@ -131,6 +135,15 @@ extension SwinjectStoryboard {
         
         defaultContainer.register(ViewControllerFactoryProtocol.self){ r in
             ViewControllerFactory()
+        }
+        
+        
+        defaultContainer.register(UIViewCoordinatorDelegate.self,name: "AddPhrase"){ r in
+            AddPhraseViewCoordinator(viewController: r.resolve(AddPhraseViewController.self)!)
+        }
+        
+        defaultContainer.register(UIViewCoordinatorDelegate.self,name: "PhraseHistory"){ r in
+            PhraseHistoryViewCoordinator(viewController: r.resolve(PhraseHistoryViewController.self)!)
         }
     }
     

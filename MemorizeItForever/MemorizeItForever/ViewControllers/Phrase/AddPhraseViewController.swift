@@ -9,7 +9,7 @@
 import UIKit
 import MemorizeItForeverCore
 
-final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentationControllerDelegate {
+final class AddPhraseViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     // MARK: Controls
     
@@ -22,6 +22,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     
     var validator: ValidatorProtocol!
     var wordService: WordServiceProtocol!
+    var coordinatorDelegate: UIViewCoordinatorDelegate!
     
     // MARK: Local variables
     
@@ -36,6 +37,7 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
         super.viewDidLoad()
         
         self.title = "Add Phrase"
+        coordinatorDelegate.applyViews()
         
         doneBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(AddPhraseViewController.doneBarButtonTapHandler))
         nextBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(AddPhraseViewController.nextBarButtonTapHandler))
@@ -50,64 +52,6 @@ final class AddPhraseViewController: VFLBasedViewController, UIPopoverPresentati
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-    }
-    
-    override func defineControls(){
-        setText = MISetView()
-        setText.setFontSize(12)
-        
-        desc = MILabel()
-        desc.text = "Write the Phrase here"
-        
-        phrase = MITextView()
-        phrase.font = phrase.font?.withSize(20)
-        phrase.alpha = 0.7
-        
-        meaning = MITextView()
-        meaning.isHidden = true
-        meaning.font = meaning.font?.withSize(20)
-        meaning.alpha = 0.7
-    }
-    
-    override func addControls(){
-        self.view.addSubview(setText)
-        self.view.addSubview(desc)
-        self.view.addSubview(phrase)
-        self.view.addSubview(meaning)
-    }
-    
-    override func applyAutoLayout(){
-        var constraintList: [NSLayoutConstraint] = []
-        
-        viewDic["desc"] = desc
-        viewDic["phrase"] = phrase
-        viewDic["meaning"] = meaning
-        viewDic["setText"] = setText
-        
-        let hDescCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[desc]", options: [], metrics: nil, views: viewDic)
-        let vDescCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[desc(21.5)]-[phrase]-30-[bottomLayoutGuide]", options: [], metrics: nil, views: viewDic)
-        
-        let hPhraseCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[phrase]-|", options: [], metrics: nil, views: viewDic)
-        
-        let hMeaningCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[meaning]-|", options: [], metrics: nil, views: viewDic)
-        
-        let hSetTextCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:[setText]-|", options: [], metrics: nil, views: viewDic)
-        let vSetTextCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[setText(21.5)]", options: [], metrics: nil, views: viewDic)
-        
-        constraintList += hDescCnst
-        constraintList += vDescCnst
-        constraintList += hPhraseCnst
-        constraintList += hMeaningCnst
-        constraintList += hSetTextCnst
-        constraintList += vSetTextCnst
-        
-        let meaningTopCnst = NSLayoutConstraint(item: meaning, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: phrase, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
-        let meaningBottomCnst = NSLayoutConstraint(item: meaning, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: phrase, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
-        
-        constraintList.append(meaningTopCnst)
-        constraintList.append(meaningBottomCnst)
-        
-        NSLayoutConstraint.activate(constraintList)
     }
     
     // MARK: Internal methods

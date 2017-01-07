@@ -18,16 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setUserDefaults()
-//        switch UIDevice.current.userInterfaceIdiom {
-//        case .phone:
-//            print("iPhone")
-//        case .pad:
-//            print("iPad")
-//        case .unspecified:
-//            print("Unspecified")
-//        default:
-//            break
-//        }
         return true
     }
     

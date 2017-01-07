@@ -84,4 +84,11 @@ extension UIViewController {
             }
         }
     }
+    
+    func getViewDict() -> Dictionary<String, Any> {
+        var viewDict: Dictionary<String, Any> = [:]
+        viewDict["topLayoutGuide"] = topLayoutGuide
+        viewDict["bottomLayoutGuide"] = bottomLayoutGuide
+        return viewDict
+    }
 }

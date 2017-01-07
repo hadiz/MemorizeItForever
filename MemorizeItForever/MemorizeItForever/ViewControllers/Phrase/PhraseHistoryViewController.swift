@@ -9,7 +9,7 @@
 import UIKit
 import MemorizeItForeverCore
 
-class PhraseHistoryViewController: VFLBasedViewController, UIPopoverPresentationControllerDelegate {
+class PhraseHistoryViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     // MARK: Controls
     var tableView: UITableView!
@@ -20,6 +20,7 @@ class PhraseHistoryViewController: VFLBasedViewController, UIPopoverPresentation
     // MARK: Field Injection
     var wordService: WordServiceProtocol!
     var dataSource: PhraseTableDataSourceProtocol!
+    var coordinatorDelegate: UIViewCoordinatorDelegate!
     
     // MARK: Override Methods
     
@@ -27,6 +28,9 @@ class PhraseHistoryViewController: VFLBasedViewController, UIPopoverPresentation
         super.viewDidLoad()
         
         self.title = "Phrase Failure History"
+        
+        coordinatorDelegate.applyViews()
+        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(PhraseHistoryViewController.closeBarButtonTapHandler))
         self.view.backgroundColor = ColorPicker.shared.backgroundView
     }
@@ -39,33 +43,6 @@ class PhraseHistoryViewController: VFLBasedViewController, UIPopoverPresentation
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func defineControls() {
-        tableView = MITableView()
-        tableView.dataSource = dataSource
-        tableView.delegate = dataSource
-        tableView.registerClass(Value1UITableViewCell.self, forCellReuseIdentifierEnum: .phraseHistoryTableCellIdentifier)
-        self.automaticallyAdjustsScrollViewInsets = false
-    }
-    
-    override func addControls() {
-        self.view.addSubview(tableView)
-    }
-    
-    override func applyAutoLayout() {
-        var constraintList: [NSLayoutConstraint] = []
-        
-        viewDic["tableView"] = tableView
-        
-        let hTableViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[tableView]-|", options: [], metrics: nil, views: viewDic)
-        
-        let vTableViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[tableView]-[bottomLayoutGuide]", options: [], metrics: nil, views: viewDic)
-        
-        constraintList += hTableViewCnst
-        constraintList += vTableViewCnst
-        
-        NSLayoutConstraint.activate(constraintList)
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
