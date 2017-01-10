@@ -16,42 +16,16 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
     var entityMode: EntityMode?
     var setModel: SetModel?
     var setService: SetServiceProtocol!
+    var coordinatorDelegate: UIViewCoordinatorDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        coordinatorDelegate.applyViews()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(SetItemViewController.saveAction))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(SetItemViewController.cancelAction))
         
         self.view.backgroundColor = UIColor.white
         
-        setName = MITextField()
-        setName.placeholder = "Name"
-        
-        self.view.addSubview(setName)
-        
-        let views: Dictionary<String, AnyObject> = ["setName": setName,
-                                                    "topLayoutGuide": topLayoutGuide]
-        
-        var allConstraints: [NSLayoutConstraint] = []
-        
-        let hSetNameCnst = NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-[setName]-|",
-            options: [],
-            metrics: nil,
-            views: views)
-        
-        let vSetNameCnst = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[topLayoutGuide]-50-[setName]",
-            options: [],
-            metrics: nil,
-            views: views)
-        
-        
-        allConstraints += hSetNameCnst
-        allConstraints += vSetNameCnst
-        
-        NSLayoutConstraint.activate(allConstraints)
         print("init SetItemViewController")
     }
     

@@ -9,11 +9,11 @@
 import UIKit
 import MemorizeItForeverCore
 
-final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdating, UISearchBarDelegate, UIPopoverPresentationControllerDelegate {
+final class PhraseViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate, UIPopoverPresentationControllerDelegate {
     
     // MARK: Constants
     
-    private let wordStatusList = [WordStatus.notStarted, WordStatus.inProgress, WordStatus.done]
+    let wordStatusList = [WordStatus.notStarted, WordStatus.inProgress, WordStatus.done]
     private let offsetCount = 50
     
     // MARK: Controls
@@ -24,6 +24,7 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     var dataSource: PhraseTableDataSourceProtocol!
     var wordService: WordServiceProtocol!
     var viewControllerFactory: ViewControllerFactoryProtocol!
+    var coordinatorDelegate: UIViewCoordinatorDelegate!
     
     // MARK: Local Variables
     var skip = 0
@@ -34,35 +35,13 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Phrase Management"
+        
+        coordinatorDelegate.applyViews()
+        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(PhraseViewController.doneBarButtonTapHandler))
-        //        self.view.backgroundColor = ColorPicker.shared.backgroundView
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        fetchData()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func defineControls() {
         
-        tableView = MITableView()
-        tableView.dataSource = dataSource
-        tableView.delegate = dataSource
-        tableView.registerClass(SubtitleUITableViewCell.self, forCellReuseIdentifierEnum: .phraseTableCellIdentifier)
         self.automaticallyAdjustsScrollViewInsets = false
-        
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.scopeButtonTitles = getScopeTitles()
-        searchController.searchBar.delegate = self
         self.definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
-        
         let weakSelf = self
         
         dataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
@@ -72,23 +51,13 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
         }
     }
     
-    override func addControls() {
-        self.view.addSubview(tableView)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchData()
     }
     
-    override func applyAutoLayout() {
-        var constraintList: [NSLayoutConstraint] = []
-        
-        viewDic["tableView"] = tableView
-        
-        let hTableViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[tableView]-|", options: [], metrics: nil, views: viewDic)
-        
-        let vTableViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[tableView]-[bottomLayoutGuide]", options: [], metrics: nil, views: viewDic)
-        
-        constraintList += hTableViewCnst
-        constraintList += vTableViewCnst
-        
-        NSLayoutConstraint.activate(constraintList)
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -125,15 +94,6 @@ final class PhraseViewController: VFLBasedViewController, UISearchResultsUpdatin
     }
     
     // MARK: Private Methods
-    
-    private func getScopeTitles() -> [String]{
-        var list: [String] = []
-        
-        for item in wordStatusList{
-            list.append(item.getString())
-        }
-        return list
-    }
     
     private func fetchData(){
         let wordStatus = wordStatusList[searchController.searchBar.selectedScopeButtonIndex]

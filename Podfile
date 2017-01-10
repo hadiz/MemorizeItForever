@@ -6,7 +6,7 @@ workspace 'MemorizeItForever.xcworkspace'
 inhibit_all_warnings!
 
 def shared_pods
-    pod 'Swinject', '2.0.0-beta.3'
+    pod 'Swinject', '2.0.0'
 end
 
 target 'MemorizeItForever' do
@@ -18,7 +18,7 @@ target 'MemorizeItForever' do
     # Pods for MemorizeItForever
     
     shared_pods
-    pod 'SwinjectStoryboard', '1.0.0-beta.3'
+    pod 'SwinjectStoryboard', '1.0.0'
     
     target 'MemorizeItForeverTests' do
         inherit! :search_paths

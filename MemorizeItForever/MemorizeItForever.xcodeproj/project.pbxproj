@@ -86,6 +86,11 @@
 		43F217DD1DBF9EAA0005BF26 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DC1DBF9EAA0005BF26 /* Helper.swift */; };
 		5D90CEEFA0AFA79BE6A8B249 /* Pods_MemorizeItForeverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D95E4CC91AF68432451792 /* Pods_MemorizeItForeverUITests.framework */; };
 		6D356D1EBD3CFDEB6FE1AAC7 /* Pods_MemorizeItForeverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */; };
+		9127DAEF1E255FFE0053F14E /* PhraseViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127DAEE1E255FFE0053F14E /* PhraseViewCoordinator.swift */; };
+		9127DAF11E2562760053F14E /* ReviewPhraseViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127DAF01E2562760053F14E /* ReviewPhraseViewCoordinator.swift */; };
+		9127DAF31E25650E0053F14E /* TakeTestViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127DAF21E25650E0053F14E /* TakeTestViewCoordinator.swift */; };
+		9127DAF51E2570C50053F14E /* ChangeSetViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127DAF41E2570C50053F14E /* ChangeSetViewCoordinator.swift */; };
+		9127DAF71E2572360053F14E /* SetItemViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127DAF61E2572360053F14E /* SetItemViewCoordinator.swift */; };
 		91A64D5A1DD5019B003D45B8 /* ColorPickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */; };
 		91CEA1F91E10592500C58225 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */; };
 		91CEA1FA1E10592500C58225 /* BaseLocalDataAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -220,6 +225,11 @@
 		74D95E4CC91AF68432451792 /* Pods_MemorizeItForeverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		788E35C8B548D4C13533ED0E /* Pods-MemorizeItForeverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverUITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverUITests/Pods-MemorizeItForeverUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E62AF06CBBFF1F21EF001EC /* Pods-MemorizeItForeverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverTests/Pods-MemorizeItForeverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9127DAEE1E255FFE0053F14E /* PhraseViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/PhraseViewCoordinator.swift; sourceTree = "<group>"; };
+		9127DAF01E2562760053F14E /* ReviewPhraseViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/ReviewPhraseViewCoordinator.swift; sourceTree = "<group>"; };
+		9127DAF21E25650E0053F14E /* TakeTestViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeTestViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/TakeTestViewCoordinator.swift; sourceTree = "<group>"; };
+		9127DAF41E2570C50053F14E /* ChangeSetViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/ChangeSetViewCoordinator.swift; sourceTree = "<group>"; };
+		9127DAF61E2572360053F14E /* SetItemViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetItemViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/SetItemViewCoordinator.swift; sourceTree = "<group>"; };
 		91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerProtocol.swift; path = General/ColorPickerProtocol.swift; sourceTree = "<group>"; };
 		91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = MemorizeItForever/Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
 		91CEA2241E1693C600C58225 /* ViewControllerFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerFactoryProtocol.swift; path = ViewControllers/Factory/ViewControllerFactoryProtocol.swift; sourceTree = "<group>"; };
@@ -598,6 +608,11 @@
 			children = (
 				91D6FECD1E217793008C5587 /* AddPhraseViewCoordinator.swift */,
 				91D6FED61E218757008C5587 /* PhraseHistoryViewCoordinator.swift */,
+				9127DAEE1E255FFE0053F14E /* PhraseViewCoordinator.swift */,
+				9127DAF01E2562760053F14E /* ReviewPhraseViewCoordinator.swift */,
+				9127DAF21E25650E0053F14E /* TakeTestViewCoordinator.swift */,
+				9127DAF41E2570C50053F14E /* ChangeSetViewCoordinator.swift */,
+				9127DAF61E2572360053F14E /* SetItemViewCoordinator.swift */,
 			);
 			name = UIViewCoordinators;
 			sourceTree = "<group>";
@@ -923,12 +938,15 @@
 				43EFD74A1E0AD4F800F79CBE /* PhraseHistoryTableDataSource.swift in Sources */,
 				91D6FECB1E217687008C5587 /* UIViewCoordinatorDelegate.swift in Sources */,
 				43EFD7901E0AD69C00F79CBE /* ChangeSetTableDataSource.swift in Sources */,
+				9127DAF11E2562760053F14E /* ReviewPhraseViewCoordinator.swift in Sources */,
 				43EFD7691E0AD57E00F79CBE /* SetItemViewController.swift in Sources */,
 				91CEA2271E16944400C58225 /* ViewControllerFactory.swift in Sources */,
 				43EFD77B1E0AD59000F79CBE /* CustomBackgroundView.swift in Sources */,
 				91D6FECE1E217793008C5587 /* AddPhraseViewCoordinator.swift in Sources */,
+				9127DAF51E2570C50053F14E /* ChangeSetViewCoordinator.swift in Sources */,
 				43BF3D9A1DD9D79B000296DB /* ValidatableProtocol.swift in Sources */,
 				43EFD7811E0AD59000F79CBE /* SubtitleUITableViewCell.swift in Sources */,
+				9127DAEF1E255FFE0053F14E /* PhraseViewCoordinator.swift in Sources */,
 				43F0D3061DD9E05E0074856F /* TypealiasHelper.swift in Sources */,
 				43EFD77C1E0AD59000F79CBE /* MICardView.swift in Sources */,
 				4344DE681DC0E53800FBA130 /* ColorPicker.swift in Sources */,
@@ -941,7 +959,9 @@
 				435CBC781DF541A3003ACFD1 /* UITableViewExtension.swift in Sources */,
 				43EFD75A1E0AD55D00F79CBE /* TakeTestViewController.swift in Sources */,
 				438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */,
+				9127DAF31E25650E0053F14E /* TakeTestViewCoordinator.swift in Sources */,
 				43EFD7881E0AD59000F79CBE /* MIView.swift in Sources */,
+				9127DAF71E2572360053F14E /* SetItemViewCoordinator.swift in Sources */,
 				432B75641DB38DF9003C6574 /* UIColorExtension.swift in Sources */,
 				43EFD74C1E0AD54300F79CBE /* SettingsViewController.swift in Sources */,
 				43EFD75E1E0AD57100F79CBE /* MemorizeItViewController.swift in Sources */,

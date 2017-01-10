@@ -9,7 +9,7 @@
 import UIKit
 import MemorizeItForeverCore
 
-class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationControllerDelegate {
+final class TakeTestViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     // MARK: Controls
     
@@ -24,6 +24,7 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     // MARK: Field injection
     
     var wordFlowService: WordFlowServiceProtocol!
+    var coordinatorDelegate: UIViewCoordinatorDelegate!
     
     // MARK: Local Variables
     
@@ -32,7 +33,6 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     private var currentCardBottomCnst: NSLayoutConstraint!
     private var currentCardLeadingCnst: NSLayoutConstraint!
     private var currentCardTrailingCnst: NSLayoutConstraint!
-    private var cardViewsDic: Dictionary<CardViewPosition, MICardView> = [:]
     private var cardViewCenter: CGPoint?
     private var showAnswerFlag = true
     private var panningGesture: UIPanGestureRecognizer!
@@ -42,18 +42,25 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     private var isTaskDone = false
     private var currentWordInProgressModel: WordInProgressModel!
     
+    // MARK: Variables
+    
+    var cardViewsDic: Dictionary<CardViewPosition, MICardView> = [:]
+    
     // MARK: Constants
     
     private let cardViewsDicFatalError = "CardViewsDic does not have all card situation"
     private let changeTextTransition = "ChangeTextTransition"
-    private let green = #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1)
-    private let red = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+    let green = #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1)
+    let red = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
     
     // MARK: Override Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Take a Test"
+        
+        coordinatorDelegate.applyViews()
+        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(TakeTestViewController.doneBarButtonTapHandler))
         panningGesture = UIPanGestureRecognizer(target: self, action: #selector(TakeTestViewController.panningHandler))
         self.view.addGestureRecognizer(panningGesture!)
@@ -80,108 +87,6 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    override func defineControls() {
-        setText = MISetView()
-        setText.setFontSize(12)
-        
-        columnCounter = MILabel()
-        
-        showAnswer = MIButton()
-        showAnswer.setTitle("Show Answer", for: .normal)
-        showAnswer.addTarget(self, action: #selector(TakeTestViewController.showAnswerTapHandler), for: .touchUpInside)
-        
-        firstCardView = MICardView().initialize(phrase: "", meaning: "")
-        
-        secondCardView = MICardView().initialize(phrase: "", meaning: "")
-        
-        cardViewsDic[.current] = firstCardView
-        cardViewsDic[.next] = secondCardView
-        
-        correct = MIButton()
-        correct.setTitle("Correct", for: .normal)
-        correct.addTarget(self, action: #selector(TakeTestViewController.correctTapHandler), for: .touchUpInside)
-        correct.buttonColor = green
-        
-        wrong = MIButton()
-        wrong.setTitle("Wrong", for: .normal)
-        wrong.addTarget(self, action: #selector(TakeTestViewController.wrongTapHandler), for: .touchUpInside)
-        wrong.buttonColor = red
-        
-    }
-    
-    override func addControls() {
-        self.view.addSubview(setText)
-        self.view.addSubview(columnCounter)
-        self.view.addSubview(showAnswer)
-        self.view.addSubview(firstCardView)
-        self.view.addSubview(secondCardView)
-        self.view.addSubview(correct)
-        self.view.addSubview(wrong)
-    }
-    
-    override func applyAutoLayout() {
-        var constraintList: [NSLayoutConstraint] = []
-        
-        viewDic["setText"] = setText
-        viewDic["columnCounter"] = columnCounter
-        viewDic["showAnswer"] = showAnswer
-        viewDic["correct"] = correct
-        viewDic["wrong"] = wrong
-        
-        let buttonSize: CGFloat = 84.0
-        let metrics = ["buttonSize":buttonSize]
-        
-        let hSetTextCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[setText]", options: [], metrics: nil, views: viewDic)
-        
-        let vSetTextCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[setText(21.5)]-1-[showAnswer(buttonSize)]", options: [], metrics: metrics, views: viewDic)
-        
-        let vSetTextCnst1 = NSLayoutConstraint.constraints(withVisualFormat: "V:[correct(buttonSize)]-1-[bottomLayoutGuide]", options: [], metrics: metrics, views: viewDic)
-        
-        let hColumnCounterCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:[columnCounter]-|", options: [], metrics: nil, views: viewDic)
-        let vColumnCounterCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[columnCounter(21.5)]", options: [], metrics: nil, views: viewDic)
-        
-        let vWrongCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[wrong(buttonSize)]-1-[bottomLayoutGuide]", options: [], metrics: metrics, views: viewDic)
-        
-        constraintList += hSetTextCnst
-        constraintList += vSetTextCnst
-        constraintList += hColumnCounterCnst
-        constraintList += vColumnCounterCnst
-        constraintList += vWrongCnst
-        constraintList += vSetTextCnst1
-        
-        let hShowAnswerCnst = NSLayoutConstraint(item: showAnswer, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
-        
-        let hShowAnswerWidthCnst = NSLayoutConstraint(item: showAnswer, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.width, multiplier: 1, constant: buttonSize)
-        
-        let vSecondCardViewTopCnst = NSLayoutConstraint(item: secondCardView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
-        
-        let hSecondCardViewWidthCnst = NSLayoutConstraint(item: secondCardView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
-        
-        let vSecondCardViewHeightCnst = NSLayoutConstraint(item: secondCardView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: firstCardView, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0)
-        
-        let hCorrectCnst = NSLayoutConstraint(item: correct, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerX, multiplier: 3/2, constant: 0)
-        
-        let hCorrectWidthCnst = NSLayoutConstraint(item: correct, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.width, multiplier: 1, constant: buttonSize)
-        
-        let hWrongCnst = NSLayoutConstraint(item: wrong, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerX, multiplier: 1/2, constant: 0)
-        
-        let hWrongWidthCnst = NSLayoutConstraint(item: wrong, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.width, multiplier: 1, constant: buttonSize)
-        
-        constraintList.append(hShowAnswerCnst)
-        constraintList.append(hShowAnswerWidthCnst)
-        constraintList.append(vSecondCardViewTopCnst)
-        constraintList.append(hSecondCardViewWidthCnst)
-        constraintList.append(vSecondCardViewHeightCnst)
-        constraintList.append(hCorrectCnst)
-        constraintList.append(hCorrectWidthCnst)
-        constraintList.append(hWrongCnst)
-        constraintList.append(hWrongWidthCnst)
-        
-        NSLayoutConstraint.activate(constraintList)
-        
-        updateConstraint()
     }
     
     // MARK: Internal Methods
@@ -226,6 +131,11 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
         if !isTaskDone{
             panning(recognizer: recognizer)
         }
+    }
+    
+    func updateConstraint(){
+        clearConstraint()
+        appendConstraint()
     }
     
     // MARK: Private Methods
@@ -344,11 +254,6 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
             self.view.backgroundColor = UIColor.clear
         }
         updateConstraint()
-    }
-    
-    private func updateConstraint(){
-        clearConstraint()
-        appendConstraint()
     }
     
     private func clearConstraint(){
@@ -497,12 +402,14 @@ class TakeTestViewController: VFLBasedViewController, UIPopoverPresentationContr
         isTaskDone = true
         let taskDoneView = self.addTaskDoneView()
         
-        viewDic["taskDoneView"] = taskDoneView
+        var viewDict = self.getViewDict()
+        
+        viewDict["taskDoneView"] = taskDoneView
         
         
-        let hTaskDoneViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|[taskDoneView]|", options: [], metrics: nil, views: viewDic)
+        let hTaskDoneViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|[taskDoneView]|", options: [], metrics: nil, views: viewDict)
         
-        let vTaskDoneViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide][taskDoneView]|", options: [], metrics: nil, views: viewDic)
+        let vTaskDoneViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide][taskDoneView]|", options: [], metrics: nil, views: viewDict)
         
         
         var constraintList: [NSLayoutConstraint] = []

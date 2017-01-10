@@ -14,6 +14,7 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
     var tableView: UITableView!
     var dataSource: SetTableDataSourceProtocol!
     var setService: SetServiceProtocol!
+    var coordinatorDelegate: UIViewCoordinatorDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,40 +44,15 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
     
     private func initializeViewController(){
         title = "Change Set"
-    }
-    
-    override func defineControls(){
-        tableView = MITableView()
-       
+        coordinatorDelegate.applyViews()
         let weakSelf = self
         dataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
             if let weakSelf = weakSelf{
                 weakSelf.didSelectSet(memorizeItModel)
             }
-            }
-        tableView.dataSource = dataSource
-        tableView.delegate = dataSource
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifierEnum: .changeSetTableCellIdentifier)
+        }
     }
-    
-    override func addControls(){
-        self.view.addSubview(tableView)
-    }
-    
-    override func applyAutoLayout(){
-        var constraintList: [NSLayoutConstraint] = []
-
-        viewDic["tableView"] = tableView
-        
-        let hTableViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[tableView]-|", options: [], metrics: nil, views: viewDic)
-        
-        let vTableViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-[tableView]-[bottomLayoutGuide]", options: [], metrics: nil, views: viewDic)
-        
-        constraintList += hTableViewCnst
-        constraintList += vTableViewCnst
-        
-        NSLayoutConstraint.activate(constraintList)
-    }
+   
     private func didSelectSet(_ model: MemorizeItModelProtocol?){
        
         var setId: UUID?

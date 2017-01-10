@@ -9,7 +9,7 @@
 import UIKit
 import MemorizeItForeverCore
 
-class PhraseHistoryViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+final class PhraseHistoryViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     // MARK: Controls
     var tableView: UITableView!
