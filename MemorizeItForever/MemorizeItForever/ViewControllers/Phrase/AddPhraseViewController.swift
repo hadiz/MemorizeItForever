@@ -44,8 +44,13 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         saveBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(AddPhraseViewController.saveBarButtonTapHandler))
         previousBarButtonItem = UIBarButtonItem(title: "Previous", style: .plain, target: self, action: #selector(AddPhraseViewController.previousBarButtonTapHandler))
         
-        self.navigationItem.leftBarButtonItem = doneBarButtonItem
+        let copyBarButton = UIBarButtonItem(image: UIImage(named: "Copy"), style: .plain, target: self, action: #selector(AddPhraseViewController.copyBarButtonTapHandler))
+        let pasteBarButton = UIBarButtonItem(image: UIImage(named: "Paste"), style: .plain, target: self, action: #selector(AddPhraseViewController.pasteBarButtonTapHandler))
+        
+        //        self.navigationItem.leftBarButtonItem = doneBarButtonItem
         self.navigationItem.rightBarButtonItem = nextBarButtonItem
+        
+        self.navigationItem.leftBarButtonItems = [doneBarButtonItem, copyBarButton, pasteBarButton]
         
     }
     
@@ -91,6 +96,23 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         validator.clear(validatable: meaning)
         goPrevious()
         
+    }
+    
+    func copyBarButtonTapHandler(){
+        var text = meaning.text
+        if meaning.isHidden{
+            text = phrase.text
+        }
+        UIPasteboard.general.string = text
+    }
+    
+    func pasteBarButtonTapHandler(){
+        if phrase.isHidden{
+           meaning.text = UIPasteboard.general.string
+        }
+        else{
+            phrase.text = UIPasteboard.general.string
+        }
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
