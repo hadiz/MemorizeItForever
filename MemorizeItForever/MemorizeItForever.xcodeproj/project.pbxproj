@@ -12,8 +12,6 @@
 		431196D91DB3958100F7BE7F /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; };
 		431196DA1DB3958100F7BE7F /* MemorizeItForeverCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43262A411DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */; };
-		43262A431DD1CAC30029C27E /* ChangeSetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */; };
-		43262A451DD1EF380029C27E /* AddPhraseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43262A441DD1EF380029C27E /* AddPhraseViewControllerTests.swift */; };
 		432B75551DB37C85003C6574 /* SetManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 432B75531DB37C85003C6574 /* SetManagement.storyboard */; };
 		432B755F1DB37E82003C6574 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B755E1DB37E82003C6574 /* Enum.swift */; };
 		432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432B75611DB382B5003C6574 /* UITableViewCellExtension.swift */; };
@@ -34,10 +32,8 @@
 		438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */; };
 		4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */; };
 		438B61F01DE08482008260D6 /* FakeUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438B61EF1DE08482008260D6 /* FakeUIViewExtension.swift */; };
-		438EFD191DF2D80D00B83C88 /* PhraseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EFD181DF2D80D00B83C88 /* PhraseViewControllerTests.swift */; };
 		438EFD211DF2F05E00B83C88 /* FakePhraseTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EFD201DF2F05E00B83C88 /* FakePhraseTableDataSource.swift */; };
 		438EFD231DF2FEA900B83C88 /* PhraseTableDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EFD221DF2FEA900B83C88 /* PhraseTableDataSourceTests.swift */; };
-		43B35F261DE309E8006717F5 /* TakeTestViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B35F251DE309E8006717F5 /* TakeTestViewControllerTests.swift */; };
 		43B35F281DE32F58006717F5 /* MockWordFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B35F271DE32F58006717F5 /* MockWordFlowManager.swift */; };
 		43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D871DD8A812000296DB /* MockSetManager.swift */; };
 		43BF3D931DD9B4E5000296DB /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF3D921DD9B4E5000296DB /* ValidatorTests.swift */; };
@@ -75,9 +71,7 @@
 		43EFD7921E0AD69C00F79CBE /* SetTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD78F1E0AD69C00F79CBE /* SetTableDataSourceProtocol.swift */; };
 		43F0D3041DD9DBEB0074856F /* MockValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0D3031DD9DBEB0074856F /* MockValidatable.swift */; };
 		43F0D3061DD9E05E0074856F /* TypealiasHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0D3051DD9E05E0074856F /* TypealiasHelper.swift */; };
-		43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */; };
 		43F2179A1DBE509C0005BF26 /* FakeSetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217991DBE509C0005BF26 /* FakeSetTableDataSource.swift */; };
-		43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */; };
 		43F217DB1DBF8A770005BF26 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DA1DBF8A770005BF26 /* Enum.swift */; };
 		43F217DD1DBF9EAA0005BF26 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DC1DBF9EAA0005BF26 /* Helper.swift */; };
 		5D90CEEFA0AFA79BE6A8B249 /* Pods_MemorizeItForeverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D95E4CC91AF68432451792 /* Pods_MemorizeItForeverUITests.framework */; };
@@ -126,8 +120,6 @@
 		430320B41DE0748100BD0F0D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = General/Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
 		431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSourceTests.swift; path = DataSourcesTests/ChangeSetTableDataSourceTests.swift; sourceTree = "<group>"; };
-		43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewControllerTests.swift; path = ViewControllersTests/ChangeSetViewControllerTests.swift; sourceTree = "<group>"; };
-		43262A441DD1EF380029C27E /* AddPhraseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPhraseViewControllerTests.swift; path = ViewControllersTests/AddPhraseViewControllerTests.swift; sourceTree = "<group>"; };
 		432B75541DB37C85003C6574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SetManagement.storyboard; sourceTree = "<group>"; };
 		432B75571DB37D6E003C6574 /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MemorizeItForeverCore.framework; path = "../MemorizeItForeverCore/build/Debug-iphoneos/MemorizeItForeverCore.framework"; sourceTree = "<group>"; };
 		432B755E1DB37E82003C6574 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = General/Enum.swift; sourceTree = "<group>"; };
@@ -155,10 +147,8 @@
 		438874571DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceDelegateProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceDelegateProtocol.swift; sourceTree = "<group>"; };
 		438874581DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableDataSourceProtocol.swift; path = General/MemorizeItTableDataSource/MemorizeItTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		438B61EF1DE08482008260D6 /* FakeUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeUIViewExtension.swift; path = General/FakeUIViewExtension.swift; sourceTree = "<group>"; };
-		438EFD181DF2D80D00B83C88 /* PhraseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseViewControllerTests.swift; path = ViewControllersTests/PhraseViewControllerTests.swift; sourceTree = "<group>"; };
 		438EFD201DF2F05E00B83C88 /* FakePhraseTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakePhraseTableDataSource.swift; path = General/FakePhraseTableDataSource.swift; sourceTree = "<group>"; };
 		438EFD221DF2FEA900B83C88 /* PhraseTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseTableDataSourceTests.swift; path = DataSourcesTests/PhraseTableDataSourceTests.swift; sourceTree = "<group>"; };
-		43B35F251DE309E8006717F5 /* TakeTestViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeTestViewControllerTests.swift; path = ViewControllersTests/TakeTestViewControllerTests.swift; sourceTree = "<group>"; };
 		43B35F271DE32F58006717F5 /* MockWordFlowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockWordFlowManager.swift; path = General/MockWordFlowManager.swift; sourceTree = "<group>"; };
 		43BF3D871DD8A812000296DB /* MockSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockSetManager.swift; path = General/MockSetManager.swift; sourceTree = "<group>"; };
 		43BF3D921DD9B4E5000296DB /* ValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidatorTests.swift; path = Validation/ValidatorTests.swift; sourceTree = "<group>"; };
@@ -196,9 +186,7 @@
 		43EFD78F1E0AD69C00F79CBE /* SetTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSourceProtocol.swift; path = DataSource/Set/SetTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		43F0D3031DD9DBEB0074856F /* MockValidatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockValidatable.swift; path = General/MockValidatable.swift; sourceTree = "<group>"; };
 		43F0D3051DD9E05E0074856F /* TypealiasHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypealiasHelper.swift; path = General/TypealiasHelper.swift; sourceTree = "<group>"; };
-		43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetViewControllerTests.swift; path = ViewControllersTests/SetViewControllerTests.swift; sourceTree = "<group>"; };
 		43F217991DBE509C0005BF26 /* FakeSetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeSetTableDataSource.swift; path = General/FakeSetTableDataSource.swift; sourceTree = "<group>"; };
-		43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewControllerTests.swift; path = ViewControllersTests/ReviewPhraseViewControllerTests.swift; sourceTree = "<group>"; };
 		43F217DA1DBF8A770005BF26 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = General/Enum.swift; sourceTree = "<group>"; };
 		43F217DC1DBF9EAA0005BF26 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = General/Helper.swift; sourceTree = "<group>"; };
 		4B81EED2D509757874FBDBF8 /* Pods-MemorizeItForeverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverUITests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverUITests/Pods-MemorizeItForeverUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -402,7 +390,6 @@
 			isa = PBXGroup;
 			children = (
 				43BF3D911DD9B4CE000296DB /* ValidationTests */,
-				43F217961DBE50080005BF26 /* ViewControllersTests */,
 				4349EAAE1DBE4AF60097DABD /* DataSourcesTests */,
 				43D217B71DBE45E4007819A7 /* AppDelegateTests */,
 				43D217B41DBE4533007819A7 /* Helper */,
@@ -529,19 +516,6 @@
 				4349EAAF1DBE4B260097DABD /* ApplySettingsTests.swift */,
 			);
 			name = AppDelegateTests;
-			sourceTree = "<group>";
-		};
-		43F217961DBE50080005BF26 /* ViewControllersTests */ = {
-			isa = PBXGroup;
-			children = (
-				43F217971DBE503D0005BF26 /* SetViewControllerTests.swift */,
-				43F217D51DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift */,
-				43262A421DD1CAC30029C27E /* ChangeSetViewControllerTests.swift */,
-				43262A441DD1EF380029C27E /* AddPhraseViewControllerTests.swift */,
-				43B35F251DE309E8006717F5 /* TakeTestViewControllerTests.swift */,
-				438EFD181DF2D80D00B83C88 /* PhraseViewControllerTests.swift */,
-			);
-			name = ViewControllersTests;
 			sourceTree = "<group>";
 		};
 		43F217D71DBF5A8E0005BF26 /* Phrase */ = {
@@ -899,24 +873,18 @@
 				4381502E1DDC72180040F2F9 /* MockWordManager.swift in Sources */,
 				43B35F281DE32F58006717F5 /* MockWordFlowManager.swift in Sources */,
 				43262A411DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift in Sources */,
-				43262A451DD1EF380029C27E /* AddPhraseViewControllerTests.swift in Sources */,
 				43F0D3041DD9DBEB0074856F /* MockValidatable.swift in Sources */,
-				43F217D61DBF5A220005BF26 /* ReviewPhraseViewControllerTests.swift in Sources */,
 				43395CA71DDAF48D00540573 /* MockValidator.swift in Sources */,
 				438EFD231DF2FEA900B83C88 /* PhraseTableDataSourceTests.swift in Sources */,
-				43B35F261DE309E8006717F5 /* TakeTestViewControllerTests.swift in Sources */,
 				43BF3D931DD9B4E5000296DB /* ValidatorTests.swift in Sources */,
 				438B61F01DE08482008260D6 /* FakeUIViewExtension.swift in Sources */,
 				43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */,
-				43262A431DD1CAC30029C27E /* ChangeSetViewControllerTests.swift in Sources */,
-				43F217981DBE503D0005BF26 /* SetViewControllerTests.swift in Sources */,
 				438EFD211DF2F05E00B83C88 /* FakePhraseTableDataSource.swift in Sources */,
 				4349EAB01DBE4B260097DABD /* ApplySettingsTests.swift in Sources */,
 				43F217DB1DBF8A770005BF26 /* Enum.swift in Sources */,
 				4349EAB41DBE4BAE0097DABD /* SetTableDataSourceTests.swift in Sources */,
 				43F2179A1DBE509C0005BF26 /* FakeSetTableDataSource.swift in Sources */,
 				43F217DD1DBF9EAA0005BF26 /* Helper.swift in Sources */,
-				438EFD191DF2D80D00B83C88 /* PhraseViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

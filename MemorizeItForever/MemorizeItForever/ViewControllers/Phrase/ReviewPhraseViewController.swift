@@ -33,7 +33,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initial()
+        initialize()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -101,7 +101,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     
     // MARK: Private Methods
     
-    private func initial(){
+    private func initialize(){
         self.title = NSLocalizedString("Review Phrases", comment: "Review phrases title")
         
         setText.setFontSize(12)
