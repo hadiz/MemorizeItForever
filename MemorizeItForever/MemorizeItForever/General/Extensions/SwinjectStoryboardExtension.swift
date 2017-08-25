@@ -20,50 +20,29 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(TabBarController.self) { r, c in
             c.setService = r.resolve(SetServiceProtocol.self)
         }
-        
-        defaultContainer.storyboardInitCompleted(MemorizeItViewController.self) { r, c in
-            c.viewControllerFactory = r.resolve(ViewControllerFactoryProtocol.self)
-        }
-        
+     
         defaultContainer.storyboardInitCompleted(SetViewController.self) { r, c in
             c.setService = r.resolve(SetServiceProtocol.self)
-            c.viewControllerFactory = r.resolve(ViewControllerFactoryProtocol.self)
             c.dataSource = r.resolve(SetTableDataSourceProtocol.self, name: "SetTableDataSource")
         }
         
-        defaultContainer.register(SetItemViewController.self) { r in
-            let controller = SetItemViewController()
-            controller.setService = r.resolve(SetServiceProtocol.self)
-            return controller
-            }.initCompleted({ (r, controller) in
-                controller.coordinatorDelegate = r.resolve(UIViewCoordinatorDelegate.self, name: "SetItem")
-            }).inObjectScope(.weak)
+        defaultContainer.storyboardInitCompleted(SetItemViewController.self) { r, c in
+            c.setService = r.resolve(SetServiceProtocol.self)
+        }
         
-        defaultContainer.register(ChangeSetViewController.self) { r in
-            let controller = ChangeSetViewController()
-            controller.setService = r.resolve(SetServiceProtocol.self)
-            controller.dataSource = r.resolve(SetTableDataSourceProtocol.self, name: "ChangeSetTableDataSource")
-            return controller
-            }.initCompleted({ (r, controller) in
-                controller.coordinatorDelegate = r.resolve(UIViewCoordinatorDelegate.self, name: "ChangeSet")
-            }).inObjectScope(.weak)
+        defaultContainer.storyboardInitCompleted(ChangeSetViewController.self) { r, c in
+            c.setService = r.resolve(SetServiceProtocol.self)
+            c.dataSource = r.resolve(SetTableDataSourceProtocol.self, name: "ChangeSetTableDataSource")
+        }
         
-        defaultContainer.register(AddPhraseViewController.self) { r in
-            let controller = AddPhraseViewController()
-            controller.validator = r.resolve(ValidatorProtocol.self)
-            controller.wordService = r.resolve(WordServiceProtocol.self)
-            return controller
-            }.initCompleted({ (r, controller) in
-                controller.coordinatorDelegate = r.resolve(UIViewCoordinatorDelegate.self, name: "AddPhrase")
-            }).inObjectScope(.weak)
+        defaultContainer.storyboardInitCompleted(AddPhraseViewController.self) { r, c in
+            c.wordService = r.resolve(WordServiceProtocol.self)
+            c.validator = r.resolve(ValidatorProtocol.self)
+        }
         
-        defaultContainer.register(ReviewPhraseViewController.self) { r in
-            let controller = ReviewPhraseViewController()
-            controller.wordFlowService = r.resolve(WordFlowServiceProtocol.self)
-            return controller
-            }.initCompleted({ (r, controller) in
-                controller.coordinatorDelegate = r.resolve(UIViewCoordinatorDelegate.self, name: "ReviewPhrase")
-            }).inObjectScope(.weak)
+        defaultContainer.storyboardInitCompleted(ReviewPhraseViewController.self) { r, c in
+            c.wordFlowService = r.resolve(WordFlowServiceProtocol.self)
+        }
         
         defaultContainer.register(SetTableDataSourceProtocol.self, name: "SetTableDataSource") { r in
             SetTableDataSource(setService: r.resolve(SetServiceProtocol.self))
@@ -77,37 +56,23 @@ extension SwinjectStoryboard {
             Validator()
         }
         
-        defaultContainer.register(TakeTestViewController.self) { r in
-            let controller = TakeTestViewController()
-            controller.wordFlowService = r.resolve(WordFlowServiceProtocol.self)
-            return controller
-            }.initCompleted({ (r, controller) in
-                controller.coordinatorDelegate = r.resolve(UIViewCoordinatorDelegate.self, name: "TakeTest")
-            }).inObjectScope(.weak)
+        defaultContainer.storyboardInitCompleted(TakeTestViewController.self) { r, c in
+            c.wordFlowService = r.resolve(WordFlowServiceProtocol.self)
+        }
         
-        
-        defaultContainer.register(PhraseViewController.self) { r in
-            let controller = PhraseViewController()
-            controller.dataSource = r.resolve(PhraseTableDataSourceProtocol.self, name: "PhraseTableDataSource")
-            controller.wordService = r.resolve(WordServiceProtocol.self)
-            controller.viewControllerFactory = r.resolve(ViewControllerFactoryProtocol.self)
-            return controller
-            }.initCompleted({ (r, controller) in
-                controller.coordinatorDelegate = r.resolve(UIViewCoordinatorDelegate.self, name: "Phrase")
-            }).inObjectScope(.weak)
-        
+        defaultContainer.storyboardInitCompleted(PhraseViewController.self) { r, c in
+            c.dataSource = r.resolve(PhraseTableDataSourceProtocol.self, name: "PhraseTableDataSource")
+            c.wordService = r.resolve(WordServiceProtocol.self)
+        }
+
         defaultContainer.register(PhraseTableDataSourceProtocol.self, name: "PhraseTableDataSource"){ r in
             PhraseTableDataSource(wordService: r.resolve(WordServiceProtocol.self))
             }.inObjectScope(.weak)
         
-        defaultContainer.register(PhraseHistoryViewController.self){ r in
-            let controller = PhraseHistoryViewController()
-            controller.dataSource = r.resolve(PhraseTableDataSourceProtocol.self, name: "PhraseHistoryTableDataSource")
-            controller.wordService = r.resolve(WordServiceProtocol.self)
-            return controller
-            }.initCompleted({ (r, controller) in
-                controller.coordinatorDelegate = r.resolve(UIViewCoordinatorDelegate.self, name: "PhraseHistory")
-            }).inObjectScope(.weak)
+        defaultContainer.storyboardInitCompleted(PhraseHistoryViewController.self) { r, c in
+            c.dataSource = r.resolve(PhraseTableDataSourceProtocol.self, name: "PhraseHistoryTableDataSource")
+            c.wordService = r.resolve(WordServiceProtocol.self)
+        }
         
         defaultContainer.register(PhraseTableDataSourceProtocol.self, name: "PhraseHistoryTableDataSource"){ r in
             PhraseHistoryTableDataSource(wordService: nil)
@@ -143,38 +108,6 @@ extension SwinjectStoryboard {
             return wordFlowService
         }
         
-        defaultContainer.register(ViewControllerFactoryProtocol.self){ r in
-            ViewControllerFactory()
-        }
-        
-        
-        defaultContainer.register(UIViewCoordinatorDelegate.self,name: "AddPhrase"){ r in
-            AddPhraseViewCoordinator(viewController: r.resolve(AddPhraseViewController.self)!)
-        }
-        
-        defaultContainer.register(UIViewCoordinatorDelegate.self,name: "PhraseHistory"){ r in
-            PhraseHistoryViewCoordinator(viewController: r.resolve(PhraseHistoryViewController.self)!)
-        }
-        
-        defaultContainer.register(UIViewCoordinatorDelegate.self,name: "Phrase"){ r in
-            PhraseViewCoordinator(viewController: r.resolve(PhraseViewController.self)!)
-        }
-        
-        defaultContainer.register(UIViewCoordinatorDelegate.self,name: "ReviewPhrase"){ r in
-            ReviewPhraseViewCoordinator(viewController: r.resolve(ReviewPhraseViewController.self)!)
-        }
-        
-        defaultContainer.register(UIViewCoordinatorDelegate.self,name: "TakeTest"){ r in
-            TakeTestViewCoordinator(viewController: r.resolve(TakeTestViewController.self)!)
-        }
-        
-        defaultContainer.register(UIViewCoordinatorDelegate.self,name: "ChangeSet"){ r in
-            ChangeSetViewCoordinator(viewController: r.resolve(ChangeSetViewController.self)!)
-        }
-        
-        defaultContainer.register(UIViewCoordinatorDelegate.self,name: "SetItem"){ r in
-            SetItemViewCoordinator(viewController: r.resolve(SetItemViewController.self)!)
-        }
     }
     
     private class func registerContext(){

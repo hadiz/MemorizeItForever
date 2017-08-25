@@ -139,7 +139,6 @@ public final class Container {
         return SynchronizedResolver(container: self)
     }
 }
-
 // MARK: - _Resolver
 extension Container: _Resolver {
     public func _resolve<Service, Factory>(name: String?, option: ServiceKeyOption? = nil, invoker: (Factory) -> Service) -> Service? {

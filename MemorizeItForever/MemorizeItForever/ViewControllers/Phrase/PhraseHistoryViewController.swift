@@ -11,28 +11,23 @@ import MemorizeItForeverCore
 
 final class PhraseHistoryViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
-    // MARK: Controls
-    var tableView: UITableView!
-    
     // MARK: Variables
     var wordModel: WordModel?
     
     // MARK: Field Injection
     var wordService: WordServiceProtocol!
     var dataSource: PhraseTableDataSourceProtocol!
-    var coordinatorDelegate: UIViewCoordinatorDelegate!
+
     
     // MARK: Override Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Phrase Failure History"
-        
-        coordinatorDelegate.applyViews()
+        initialize()
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(PhraseHistoryViewController.closeBarButtonTapHandler))
-        self.view.backgroundColor = ColorPicker.shared.backgroundView
+        self.view.backgroundColor = ColorPicker.backgroundView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +51,14 @@ final class PhraseHistoryViewController: UIViewController, UIPopoverPresentation
     }
     
     // MARK: Private Methods
+    
+    private func initialize(){
+        self.title = "Phrase Failure History"
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        tableView.registerClass(Value1UITableViewCell.self, forCellReuseIdentifierEnum: .phraseHistoryTableCellIdentifier)
+        automaticallyAdjustsScrollViewInsets = false
+    }
     
     private func setModel(wordHistoryModelList: [WordHistoryModel]){
         
@@ -82,4 +85,7 @@ final class PhraseHistoryViewController: UIViewController, UIPopoverPresentation
             }
         })
     }
+    
+    // MARK: Controls and Actions
+    @IBOutlet weak var tableView: UITableView!
 }

@@ -21,7 +21,7 @@ class RoundedButton: UIButton {
         let newRect = CGRect(x: bounds.midX - width / 2, y: bounds.midY - width / 2, width: width, height: width)
         
         let path = UIBezierPath(ovalIn: newRect)
-        buttonColor = buttonColor ?? ColorPicker.shared.backgroundButton
+        buttonColor = buttonColor ?? ColorPicker.backgroundButton
         
         buttonColor!.setFill()
         

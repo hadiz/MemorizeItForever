@@ -80,6 +80,6 @@ class Validator: ValidatorProtocol {
     }
     
     private func toRadian(_ value: Int) -> CGFloat {
-        return CGFloat(Double(value) / 180.0 * M_PI)
+        return CGFloat(Double(value) / 180.0 * .pi)
     }
 }

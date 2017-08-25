@@ -28,7 +28,8 @@ extension UIViewController {
     }
     
     func addTaskDoneView() -> UIView{
-        let taskDoneView = MIView()
+        let taskDoneView = UIView()
+        taskDoneView.translatesAutoresizingMaskIntoConstraints = false
         taskDoneView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.9)
         taskDoneView.layer.cornerRadius = 10.0
         taskDoneView.clipsToBounds = true
@@ -51,25 +52,17 @@ extension UIViewController {
         taskDoneView.addSubview(hooray)
         taskDoneView.addSubview(taskDone)
         self.view.addSubview(taskDoneView)
-        var viewDic: Dictionary<String, Any> = [:]
-        viewDic["hooray"] = hooray
-        viewDic["taskDone"] = taskDone
-        
-        let hHoorayCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[hooray]-|", options: [], metrics: nil, views: viewDic)
-        
-        let hTaskDoneCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[taskDone]-|", options: [], metrics: nil, views: viewDic)
-        
-        let vHoorayCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[hooray]-24-[taskDone]", options: [], metrics: nil, views: viewDic)
-        
-        let vTaskDoneCnst = NSLayoutConstraint(item: taskDone, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: taskDoneView, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
         
         var constraintList: [NSLayoutConstraint] = []
         
-        constraintList += hHoorayCnst
-        constraintList += hTaskDoneCnst
-        constraintList += vHoorayCnst
+        constraintList.append(hooray.leadingAnchor.constraint(equalTo: taskDoneView.leadingAnchor, constant: 8))
+        constraintList.append(hooray.trailingAnchor.constraint(equalTo: taskDoneView.trailingAnchor, constant: -8))
+        constraintList.append(hooray.bottomAnchor.constraint(equalTo: taskDone.topAnchor, constant: -24))
         
-        constraintList.append(vTaskDoneCnst)
+        constraintList.append(taskDone.leadingAnchor.constraint(equalTo: taskDoneView.leadingAnchor, constant: 8))
+        constraintList.append(taskDone.trailingAnchor.constraint(equalTo: taskDoneView.trailingAnchor, constant: -8))
+        constraintList.append(taskDone.centerYAnchor.constraint(equalTo: taskDoneView.centerYAnchor))
+
         
         NSLayoutConstraint.activate(constraintList)
         
@@ -83,12 +76,5 @@ extension UIViewController {
                 break
             }
         }
-    }
-    
-    func getViewDict() -> Dictionary<String, Any> {
-        var viewDict: Dictionary<String, Any> = [:]
-        viewDict["topLayoutGuide"] = topLayoutGuide
-        viewDict["bottomLayoutGuide"] = bottomLayoutGuide
-        return viewDict
     }
 }

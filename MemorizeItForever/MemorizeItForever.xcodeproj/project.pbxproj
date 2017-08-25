@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1ADBCA1EFC03E400CF9B20 /* Phrase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1ADBC81EFC03E400CF9B20 /* Phrase.storyboard */; };
 		430320B51DE0748100BD0F0D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430320B41DE0748100BD0F0D /* UIViewExtension.swift */; };
 		431196D91DB3958100F7BE7F /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; };
 		431196DA1DB3958100F7BE7F /* MemorizeItForeverCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -54,7 +55,6 @@
 		43EFD75A1E0AD55D00F79CBE /* TakeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7531E0AD55D00F79CBE /* TakeTestViewController.swift */; };
 		43EFD75E1E0AD57100F79CBE /* MemorizeItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD75B1E0AD57100F79CBE /* MemorizeItViewController.swift */; };
 		43EFD75F1E0AD57100F79CBE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD75C1E0AD57100F79CBE /* TabBarController.swift */; };
-		43EFD7601E0AD57100F79CBE /* VFLBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD75D1E0AD57100F79CBE /* VFLBasedViewController.swift */; };
 		43EFD7681E0AD57D00F79CBE /* ChangeSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7621E0AD57D00F79CBE /* ChangeSetViewController.swift */; };
 		43EFD7691E0AD57E00F79CBE /* SetItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7631E0AD57D00F79CBE /* SetItemViewController.swift */; };
 		43EFD76C1E0AD57E00F79CBE /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7661E0AD57D00F79CBE /* SetViewController.swift */; };
@@ -68,10 +68,6 @@
 		43EFD7821E0AD59000F79CBE /* Value2UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7741E0AD59000F79CBE /* Value2UITableViewCell.swift */; };
 		43EFD7831E0AD59000F79CBE /* MICardViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7751E0AD59000F79CBE /* MICardViewLabel.swift */; };
 		43EFD7841E0AD59000F79CBE /* MILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7761E0AD59000F79CBE /* MILabel.swift */; };
-		43EFD7851E0AD59000F79CBE /* MISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7771E0AD59000F79CBE /* MISwitch.swift */; };
-		43EFD7861E0AD59000F79CBE /* MITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7781E0AD59000F79CBE /* MITableView.swift */; };
-		43EFD7871E0AD59000F79CBE /* MIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7791E0AD59000F79CBE /* MIButton.swift */; };
-		43EFD7881E0AD59000F79CBE /* MIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD77A1E0AD59000F79CBE /* MIView.swift */; };
 		43EFD78B1E0AD69200F79CBE /* PhraseTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD7891E0AD69200F79CBE /* PhraseTableDataSource.swift */; };
 		43EFD78C1E0AD69200F79CBE /* PhraseTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD78A1E0AD69200F79CBE /* PhraseTableDataSourceProtocol.swift */; };
 		43EFD7901E0AD69C00F79CBE /* ChangeSetTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFD78D1E0AD69C00F79CBE /* ChangeSetTableDataSource.swift */; };
@@ -86,20 +82,9 @@
 		43F217DD1DBF9EAA0005BF26 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DC1DBF9EAA0005BF26 /* Helper.swift */; };
 		5D90CEEFA0AFA79BE6A8B249 /* Pods_MemorizeItForeverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D95E4CC91AF68432451792 /* Pods_MemorizeItForeverUITests.framework */; };
 		6D356D1EBD3CFDEB6FE1AAC7 /* Pods_MemorizeItForeverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */; };
-		9127DAEF1E255FFE0053F14E /* PhraseViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127DAEE1E255FFE0053F14E /* PhraseViewCoordinator.swift */; };
-		9127DAF11E2562760053F14E /* ReviewPhraseViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127DAF01E2562760053F14E /* ReviewPhraseViewCoordinator.swift */; };
-		9127DAF31E25650E0053F14E /* TakeTestViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127DAF21E25650E0053F14E /* TakeTestViewCoordinator.swift */; };
-		9127DAF51E2570C50053F14E /* ChangeSetViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127DAF41E2570C50053F14E /* ChangeSetViewCoordinator.swift */; };
-		9127DAF71E2572360053F14E /* SetItemViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127DAF61E2572360053F14E /* SetItemViewCoordinator.swift */; };
 		91A64D5A1DD5019B003D45B8 /* ColorPickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */; };
 		91CEA1F91E10592500C58225 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */; };
 		91CEA1FA1E10592500C58225 /* BaseLocalDataAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		91CEA2251E1693C600C58225 /* ViewControllerFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CEA2241E1693C600C58225 /* ViewControllerFactoryProtocol.swift */; };
-		91CEA2271E16944400C58225 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CEA2261E16944400C58225 /* ViewControllerFactory.swift */; };
-		91D6FECB1E217687008C5587 /* UIViewCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6FECA1E217687008C5587 /* UIViewCoordinatorDelegate.swift */; };
-		91D6FECE1E217793008C5587 /* AddPhraseViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6FECD1E217793008C5587 /* AddPhraseViewCoordinator.swift */; };
-		91D6FED51E21852E008C5587 /* UIViewCoordinatorDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6FED41E21852E008C5587 /* UIViewCoordinatorDelegateExtensions.swift */; };
-		91D6FED71E218757008C5587 /* PhraseHistoryViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6FED61E218757008C5587 /* PhraseHistoryViewCoordinator.swift */; };
 		99676274E6B4EC39B12973A7 /* Pods_MemorizeItForever.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D367F8F551F0C992CD66FF5B /* Pods_MemorizeItForever.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +122,7 @@
 
 /* Begin PBXFileReference section */
 		0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F1ADBC91EFC03E400CF9B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Phrase.storyboard; sourceTree = "<group>"; };
 		430320B41DE0748100BD0F0D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = General/Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
 		431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSourceTests.swift; path = DataSourcesTests/ChangeSetTableDataSourceTests.swift; sourceTree = "<group>"; };
@@ -190,7 +176,6 @@
 		43EFD7531E0AD55D00F79CBE /* TakeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeTestViewController.swift; path = ViewControllers/Phrase/TakeTestViewController.swift; sourceTree = "<group>"; };
 		43EFD75B1E0AD57100F79CBE /* MemorizeItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItViewController.swift; path = ViewControllers/Main/MemorizeItViewController.swift; sourceTree = "<group>"; };
 		43EFD75C1E0AD57100F79CBE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ViewControllers/Main/TabBarController.swift; sourceTree = "<group>"; };
-		43EFD75D1E0AD57100F79CBE /* VFLBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VFLBasedViewController.swift; path = ViewControllers/Main/VFLBasedViewController.swift; sourceTree = "<group>"; };
 		43EFD7621E0AD57D00F79CBE /* ChangeSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewController.swift; path = ViewControllers/Set/ChangeSetViewController.swift; sourceTree = "<group>"; };
 		43EFD7631E0AD57D00F79CBE /* SetItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetItemViewController.swift; path = ViewControllers/Set/SetItemViewController.swift; sourceTree = "<group>"; };
 		43EFD7661E0AD57D00F79CBE /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetViewController.swift; path = ViewControllers/Set/SetViewController.swift; sourceTree = "<group>"; };
@@ -204,10 +189,6 @@
 		43EFD7741E0AD59000F79CBE /* Value2UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Value2UITableViewCell.swift; path = VisualElements/Value2UITableViewCell.swift; sourceTree = "<group>"; };
 		43EFD7751E0AD59000F79CBE /* MICardViewLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MICardViewLabel.swift; path = VisualElements/MICardViewLabel.swift; sourceTree = "<group>"; };
 		43EFD7761E0AD59000F79CBE /* MILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MILabel.swift; path = VisualElements/MILabel.swift; sourceTree = "<group>"; };
-		43EFD7771E0AD59000F79CBE /* MISwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MISwitch.swift; path = VisualElements/MISwitch.swift; sourceTree = "<group>"; };
-		43EFD7781E0AD59000F79CBE /* MITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MITableView.swift; path = VisualElements/MITableView.swift; sourceTree = "<group>"; };
-		43EFD7791E0AD59000F79CBE /* MIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIButton.swift; path = VisualElements/MIButton.swift; sourceTree = "<group>"; };
-		43EFD77A1E0AD59000F79CBE /* MIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIView.swift; path = VisualElements/MIView.swift; sourceTree = "<group>"; };
 		43EFD7891E0AD69200F79CBE /* PhraseTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseTableDataSource.swift; path = DataSource/Phrase/PhraseTableDataSource.swift; sourceTree = "<group>"; };
 		43EFD78A1E0AD69200F79CBE /* PhraseTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseTableDataSourceProtocol.swift; path = DataSource/Phrase/PhraseTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		43EFD78D1E0AD69C00F79CBE /* ChangeSetTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetTableDataSource.swift; path = DataSource/Set/ChangeSetTableDataSource.swift; sourceTree = "<group>"; };
@@ -225,19 +206,8 @@
 		74D95E4CC91AF68432451792 /* Pods_MemorizeItForeverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		788E35C8B548D4C13533ED0E /* Pods-MemorizeItForeverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverUITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverUITests/Pods-MemorizeItForeverUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E62AF06CBBFF1F21EF001EC /* Pods-MemorizeItForeverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverTests/Pods-MemorizeItForeverTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9127DAEE1E255FFE0053F14E /* PhraseViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/PhraseViewCoordinator.swift; sourceTree = "<group>"; };
-		9127DAF01E2562760053F14E /* ReviewPhraseViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewPhraseViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/ReviewPhraseViewCoordinator.swift; sourceTree = "<group>"; };
-		9127DAF21E25650E0053F14E /* TakeTestViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeTestViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/TakeTestViewCoordinator.swift; sourceTree = "<group>"; };
-		9127DAF41E2570C50053F14E /* ChangeSetViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSetViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/ChangeSetViewCoordinator.swift; sourceTree = "<group>"; };
-		9127DAF61E2572360053F14E /* SetItemViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetItemViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/SetItemViewCoordinator.swift; sourceTree = "<group>"; };
 		91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerProtocol.swift; path = General/ColorPickerProtocol.swift; sourceTree = "<group>"; };
 		91CEA1F71E1058F900C58225 /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = MemorizeItForever/Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
-		91CEA2241E1693C600C58225 /* ViewControllerFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerFactoryProtocol.swift; path = ViewControllers/Factory/ViewControllerFactoryProtocol.swift; sourceTree = "<group>"; };
-		91CEA2261E16944400C58225 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerFactory.swift; path = ViewControllers/Factory/ViewControllerFactory.swift; sourceTree = "<group>"; };
-		91D6FECA1E217687008C5587 /* UIViewCoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewCoordinatorDelegate.swift; path = General/UIViewCoordinatorDelegate.swift; sourceTree = "<group>"; };
-		91D6FECD1E217793008C5587 /* AddPhraseViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPhraseViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/AddPhraseViewCoordinator.swift; sourceTree = "<group>"; };
-		91D6FED41E21852E008C5587 /* UIViewCoordinatorDelegateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewCoordinatorDelegateExtensions.swift; path = General/Extensions/UIViewCoordinatorDelegateExtensions.swift; sourceTree = "<group>"; };
-		91D6FED61E218757008C5587 /* PhraseHistoryViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseHistoryViewCoordinator.swift; path = ViewControllers/UIViewCoordinators/PhraseHistoryViewCoordinator.swift; sourceTree = "<group>"; };
 		9B59621F049206CEEAF3FB71 /* Pods-MemorizeItForeverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverTests/Pods-MemorizeItForeverTests.release.xcconfig"; sourceTree = "<group>"; };
 		D367F8F551F0C992CD66FF5B /* Pods_MemorizeItForever.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForever.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DEDC3A393830EE0841B5D6 /* Pods-MemorizeItForever.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForever.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever.debug.xcconfig"; sourceTree = "<group>"; };
@@ -308,10 +278,6 @@
 				43EFD7741E0AD59000F79CBE /* Value2UITableViewCell.swift */,
 				43EFD7751E0AD59000F79CBE /* MICardViewLabel.swift */,
 				43EFD7761E0AD59000F79CBE /* MILabel.swift */,
-				43EFD7771E0AD59000F79CBE /* MISwitch.swift */,
-				43EFD7781E0AD59000F79CBE /* MITableView.swift */,
-				43EFD7791E0AD59000F79CBE /* MIButton.swift */,
-				43EFD77A1E0AD59000F79CBE /* MIView.swift */,
 			);
 			name = VisualElements;
 			sourceTree = "<group>";
@@ -319,9 +285,6 @@
 		432B75431DB37AA8003C6574 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				91D6FED31E217F5F008C5587 /* Protocols */,
-				91D6FECC1E217756008C5587 /* UIViewCoordinators */,
-				91CEA2231E16939D00C58225 /* Factory */,
 				436BCB1D1DF6E33B0042C175 /* Settings */,
 				43F217D71DBF5A8E0005BF26 /* Phrase */,
 				432B754D1DB37B4B003C6574 /* Main */,
@@ -345,7 +308,6 @@
 			children = (
 				43EFD75B1E0AD57100F79CBE /* MemorizeItViewController.swift */,
 				43EFD75C1E0AD57100F79CBE /* TabBarController.swift */,
-				43EFD75D1E0AD57100F79CBE /* VFLBasedViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -355,6 +317,7 @@
 			children = (
 				432B75531DB37C85003C6574 /* SetManagement.storyboard */,
 				43434B021DB3676A0005B59F /* Main.storyboard */,
+				0F1ADBC81EFC03E400CF9B20 /* Phrase.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -391,7 +354,6 @@
 				430320B41DE0748100BD0F0D /* UIViewExtension.swift */,
 				43EEE1621DF431690072D125 /* WordStatusExtension.swift */,
 				435CBC771DF541A3003ACFD1 /* UITableViewExtension.swift */,
-				91D6FED41E21852E008C5587 /* UIViewCoordinatorDelegateExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -594,37 +556,6 @@
 			name = Phrase;
 			sourceTree = "<group>";
 		};
-		91CEA2231E16939D00C58225 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				91CEA2241E1693C600C58225 /* ViewControllerFactoryProtocol.swift */,
-				91CEA2261E16944400C58225 /* ViewControllerFactory.swift */,
-			);
-			name = Factory;
-			sourceTree = "<group>";
-		};
-		91D6FECC1E217756008C5587 /* UIViewCoordinators */ = {
-			isa = PBXGroup;
-			children = (
-				91D6FECD1E217793008C5587 /* AddPhraseViewCoordinator.swift */,
-				91D6FED61E218757008C5587 /* PhraseHistoryViewCoordinator.swift */,
-				9127DAEE1E255FFE0053F14E /* PhraseViewCoordinator.swift */,
-				9127DAF01E2562760053F14E /* ReviewPhraseViewCoordinator.swift */,
-				9127DAF21E25650E0053F14E /* TakeTestViewCoordinator.swift */,
-				9127DAF41E2570C50053F14E /* ChangeSetViewCoordinator.swift */,
-				9127DAF61E2572360053F14E /* SetItemViewCoordinator.swift */,
-			);
-			name = UIViewCoordinators;
-			sourceTree = "<group>";
-		};
-		91D6FED31E217F5F008C5587 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				91D6FECA1E217687008C5587 /* UIViewCoordinatorDelegate.swift */,
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -703,7 +634,7 @@
 				TargetAttributes = {
 					43434AFA1DB3676A0005B59F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = JCMPWFYFGR;
+						DevelopmentTeam = 37CR54MNJQ;
 						ProvisioningStyle = Automatic;
 					};
 					43434B111DB3676A0005B59F = {
@@ -750,6 +681,7 @@
 				43434B0C1DB3676A0005B59F /* LaunchScreen.storyboard in Resources */,
 				43434B091DB3676A0005B59F /* Assets.xcassets in Resources */,
 				43434B041DB3676A0005B59F /* Main.storyboard in Resources */,
+				0F1ADBCA1EFC03E400CF9B20 /* Phrase.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,13 +851,9 @@
 				43690E6B1DD73062009918A3 /* SwinjectStoryboardExtension.swift in Sources */,
 				43EFD77D1E0AD59000F79CBE /* MISetView.swift in Sources */,
 				430320B51DE0748100BD0F0D /* UIViewExtension.swift in Sources */,
-				91D6FED71E218757008C5587 /* PhraseHistoryViewCoordinator.swift in Sources */,
 				43EFD7551E0AD55D00F79CBE /* PhraseHistoryViewController.swift in Sources */,
-				91D6FED51E21852E008C5587 /* UIViewCoordinatorDelegateExtensions.swift in Sources */,
 				4388745A1DB7ABF70030C016 /* MemorizeItTableDataSourceProtocol.swift in Sources */,
 				43EFD7541E0AD55D00F79CBE /* AddPhraseViewController.swift in Sources */,
-				43EFD7871E0AD59000F79CBE /* MIButton.swift in Sources */,
-				43EFD7851E0AD59000F79CBE /* MISwitch.swift in Sources */,
 				43EFD7831E0AD59000F79CBE /* MICardViewLabel.swift in Sources */,
 				432B755F1DB37E82003C6574 /* Enum.swift in Sources */,
 				438651C71DC61607007BC89D /* UIViewControllerExtension.swift in Sources */,
@@ -936,17 +864,11 @@
 				43EFD78B1E0AD69200F79CBE /* PhraseTableDataSource.swift in Sources */,
 				432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */,
 				43EFD74A1E0AD4F800F79CBE /* PhraseHistoryTableDataSource.swift in Sources */,
-				91D6FECB1E217687008C5587 /* UIViewCoordinatorDelegate.swift in Sources */,
 				43EFD7901E0AD69C00F79CBE /* ChangeSetTableDataSource.swift in Sources */,
-				9127DAF11E2562760053F14E /* ReviewPhraseViewCoordinator.swift in Sources */,
 				43EFD7691E0AD57E00F79CBE /* SetItemViewController.swift in Sources */,
-				91CEA2271E16944400C58225 /* ViewControllerFactory.swift in Sources */,
 				43EFD77B1E0AD59000F79CBE /* CustomBackgroundView.swift in Sources */,
-				91D6FECE1E217793008C5587 /* AddPhraseViewCoordinator.swift in Sources */,
-				9127DAF51E2570C50053F14E /* ChangeSetViewCoordinator.swift in Sources */,
 				43BF3D9A1DD9D79B000296DB /* ValidatableProtocol.swift in Sources */,
 				43EFD7811E0AD59000F79CBE /* SubtitleUITableViewCell.swift in Sources */,
-				9127DAEF1E255FFE0053F14E /* PhraseViewCoordinator.swift in Sources */,
 				43F0D3061DD9E05E0074856F /* TypealiasHelper.swift in Sources */,
 				43EFD77C1E0AD59000F79CBE /* MICardView.swift in Sources */,
 				4344DE681DC0E53800FBA130 /* ColorPicker.swift in Sources */,
@@ -955,22 +877,16 @@
 				43EFD7841E0AD59000F79CBE /* MILabel.swift in Sources */,
 				43EFD7921E0AD69C00F79CBE /* SetTableDataSourceProtocol.swift in Sources */,
 				43EFD7581E0AD55D00F79CBE /* PhraseViewController.swift in Sources */,
-				91CEA2251E1693C600C58225 /* ViewControllerFactoryProtocol.swift in Sources */,
 				435CBC781DF541A3003ACFD1 /* UITableViewExtension.swift in Sources */,
 				43EFD75A1E0AD55D00F79CBE /* TakeTestViewController.swift in Sources */,
 				438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */,
-				9127DAF31E25650E0053F14E /* TakeTestViewCoordinator.swift in Sources */,
-				43EFD7881E0AD59000F79CBE /* MIView.swift in Sources */,
-				9127DAF71E2572360053F14E /* SetItemViewCoordinator.swift in Sources */,
 				432B75641DB38DF9003C6574 /* UIColorExtension.swift in Sources */,
 				43EFD74C1E0AD54300F79CBE /* SettingsViewController.swift in Sources */,
 				43EFD75E1E0AD57100F79CBE /* MemorizeItViewController.swift in Sources */,
 				43EFD77F1E0AD59000F79CBE /* MITextView.swift in Sources */,
 				43434AFF1DB3676A0005B59F /* AppDelegate.swift in Sources */,
 				43EFD7591E0AD55D00F79CBE /* ReviewPhraseViewController.swift in Sources */,
-				43EFD7861E0AD59000F79CBE /* MITableView.swift in Sources */,
 				43EEE1631DF4316A0072D125 /* WordStatusExtension.swift in Sources */,
-				43EFD7601E0AD57100F79CBE /* VFLBasedViewController.swift in Sources */,
 				43BF3D971DD9B4FC000296DB /* Validator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1028,6 +944,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0F1ADBC81EFC03E400CF9B20 /* Phrase.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F1ADBC91EFC03E400CF9B20 /* Base */,
+			);
+			name = Phrase.storyboard;
+			sourceTree = "<group>";
+		};
 		432B75531DB37C85003C6574 /* SetManagement.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1156,7 +1080,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JCMPWFYFGR;
+				DEVELOPMENT_TEAM = 37CR54MNJQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/MemorizeItForever/Libs",
@@ -1176,7 +1100,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JCMPWFYFGR;
+				DEVELOPMENT_TEAM = 37CR54MNJQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/MemorizeItForever/Libs",

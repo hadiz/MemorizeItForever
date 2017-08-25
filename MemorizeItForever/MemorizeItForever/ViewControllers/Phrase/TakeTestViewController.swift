@@ -11,28 +11,13 @@ import MemorizeItForeverCore
 
 final class TakeTestViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
-    // MARK: Controls
-    
-    var setText: MISetView!
-    var columnCounter: UILabel!
-    var showAnswer: UIButton!
-    var firstCardView: MICardView!
-    var secondCardView: MICardView!
-    var correct: MIButton!
-    var wrong: MIButton!
     
     // MARK: Field injection
     
     var wordFlowService: WordFlowServiceProtocol!
-    var coordinatorDelegate: UIViewCoordinatorDelegate!
     
     // MARK: Local Variables
     
-    private var nextCardLeadingCnst: NSLayoutConstraint!
-    private var currentCardTopCnst: NSLayoutConstraint!
-    private var currentCardBottomCnst: NSLayoutConstraint!
-    private var currentCardLeadingCnst: NSLayoutConstraint!
-    private var currentCardTrailingCnst: NSLayoutConstraint!
     private var cardViewCenter: CGPoint?
     private var showAnswerFlag = true
     private var panningGesture: UIPanGestureRecognizer!
@@ -59,7 +44,7 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         super.viewDidLoad()
         self.title = "Take a Test"
         
-        coordinatorDelegate.applyViews()
+        initialize()
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(TakeTestViewController.doneBarButtonTapHandler))
         panningGesture = UIPanGestureRecognizer(target: self, action: #selector(TakeTestViewController.panningHandler))
@@ -139,6 +124,25 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
     }
     
     // MARK: Private Methods
+    
+    private func initialize(){
+        
+        setText.setFontSize(12)
+        
+        showAnswer.setTitle("Show Answer", for: .normal)
+        
+        firstCardView.initialize(phrase: "", meaning: "")
+        cardViewsDic[.current] = firstCardView
+        
+        secondCardView.initialize(phrase: "", meaning: "")
+        cardViewsDic[.next] = secondCardView
+        
+        correct.setTitle("Correct", for: .normal)
+        correct.buttonColor = green
+        
+        wrong.setTitle("Wrong", for: .normal)
+        wrong.buttonColor = red
+    }
     
     private func pan(){
         guard let current = cardViewsDic[.current] else {
@@ -246,7 +250,6 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
             fatalError(cardViewsDicFatalError)
         }
         
-        //        next.updateText(phrase: list[index + 1]![0], meaning: list[index + 1]![1])
         assignWordToCard()
         
         animate(){
@@ -298,17 +301,17 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
             do{
                 let wordInProgressList = try self.wordFlowService.fetchWordsToExamin()
-                //            var wordInProgressList: [WordInProgressModel] = []
-                //            for i in 0..<10{
-                //                var word = WordModel()
-                //                word.meaning = "Meaning \(i)"
-                //                word.phrase = "Phrase \(i)"
-                //                var win = WordInProgressModel()
-                //                win.column = Int16(i / 2)
-                //                win.date = Date()
-                //                win.word = word
-                //                wordInProgressList.append(win)
-                //            }
+//                            var wordInProgressList: [WordInProgressModel] = []
+//                            for i in 0..<10{
+//                                var word = WordModel()
+//                                word.meaning = "developer"
+//                                word.phrase = "Entwickler"
+//                                var win = WordInProgressModel()
+//                                win.column = Int16(i / 2)
+//                                win.date = Date()
+//                                win.word = word
+//                                wordInProgressList.append(win)
+//                            }
                 
                 for i: Int16 in 0...5{
                     self.columnDic[i] = wordInProgressList.filter(){$0.column == i}
@@ -331,7 +334,7 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
     }
     
     private func assignWordToCard(){
-        guard let current = cardViewsDic[.current]else {
+        guard let current = cardViewsDic[.current] else {
             fatalError(cardViewsDicFatalError)
         }
         
@@ -402,20 +405,12 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         isTaskDone = true
         let taskDoneView = self.addTaskDoneView()
         
-        var viewDict = self.getViewDict()
-        
-        viewDict["taskDoneView"] = taskDoneView
-        
-        
-        let hTaskDoneViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|[taskDoneView]|", options: [], metrics: nil, views: viewDict)
-        
-        let vTaskDoneViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide][taskDoneView]|", options: [], metrics: nil, views: viewDict)
-        
-        
         var constraintList: [NSLayoutConstraint] = []
         
-        constraintList += hTaskDoneViewCnst
-        constraintList += vTaskDoneViewCnst
+       constraintList.append(taskDoneView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor))
+        constraintList.append(taskDoneView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor))
+        constraintList.append(taskDoneView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor))
+        constraintList.append(taskDoneView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor))
         
         NSLayoutConstraint.activate(constraintList)
     }
@@ -427,4 +422,28 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
     private func answerWrong(){
         wordFlowService.answerWrongly(currentWordInProgressModel)
     }
+    
+    // MARK: Controls and Actions
+    @IBOutlet weak var setText: MISetView!
+    @IBOutlet weak var columnCounter: UILabel!
+    @IBOutlet weak var showAnswer: UIButton!
+    @IBOutlet weak var firstCardView: MICardView!
+    @IBOutlet weak var secondCardView: MICardView!
+    @IBOutlet weak var correct: RoundedButton!
+    @IBOutlet weak var wrong: RoundedButton!
+    @IBOutlet weak var nextCardLeadingCnst: NSLayoutConstraint!
+    @IBOutlet weak var currentCardTopCnst: NSLayoutConstraint!
+    @IBOutlet weak var currentCardBottomCnst: NSLayoutConstraint!
+    @IBOutlet weak var currentCardLeadingCnst: NSLayoutConstraint!
+    @IBOutlet weak var currentCardTrailingCnst: NSLayoutConstraint!
+    @IBAction func showAnswerTapped(_ sender: UIButton) {
+        showAnswerTapHandler()
+    }
+    @IBAction func correctTapped(_ sender: UIButton) {
+        correctTapHandler()
+    }
+    @IBAction func wrongTapped(_ sender: UIButton) {
+        wrongTapHandler()
+    }
+    
 }

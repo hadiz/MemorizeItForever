@@ -44,6 +44,7 @@ class SettingsViewController: UITableViewController {
         UserDefaults.standard.setValue(value, forKey: Settings.newWordsCount.rawValue)
     }
 
+    // MARK: Controls and Actions
     @IBOutlet var tableView1: UITableView!
     @IBOutlet weak var wordSwitching: UISwitch!
     @IBOutlet weak var newWordsCount: UILabel!

@@ -8,22 +8,9 @@
 
 import UIKit
 
-final class ColorPicker: ColorPickerProtocol {
+ struct ColorPicker {
     
-    // TODO, Until Swinject support UIView injection, I decided to make it singleton
+    static let backgroundView: UIColor = UIColor(red: 245, green: 149, blue: 71)
     
-    static let shared = ColorPicker()
-    
-    private init(){
-        
-    }
-    
-    lazy var backgroundView: UIColor = {
-       return UIColor(red: 245, green: 149, blue: 71)
-    }()
-    
-    lazy var backgroundButton: UIColor = {
-        return UIColor(red: 10, green: 106, blue: 184)
-    }()
-    
+    static let backgroundButton: UIColor = UIColor(red: 10, green: 106, blue: 184)
 }

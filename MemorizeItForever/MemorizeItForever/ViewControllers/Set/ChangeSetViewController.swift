@@ -9,23 +9,15 @@
 import UIKit
 import MemorizeItForeverCore
 
-final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentationControllerDelegate {
+final class ChangeSetViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
-    var tableView: UITableView!
     var dataSource: SetTableDataSourceProtocol!
     var setService: SetServiceProtocol!
-    var coordinatorDelegate: UIViewCoordinatorDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeViewController()
-        
-        print("init ChangeSetViewController")
-    }
-    
-    deinit {
-        print("DEINIT ChangeSetViewController")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +36,12 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
     
     private func initializeViewController(){
         title = "Change Set"
-        coordinatorDelegate.applyViews()
+        
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifierEnum: .changeSetTableCellIdentifier)
+        
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        
         let weakSelf = self
         dataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
             if let weakSelf = weakSelf{
@@ -76,4 +73,5 @@ final class ChangeSetViewController: VFLBasedViewController, UIPopoverPresentati
             }
         })
     }
+    @IBOutlet weak var tableView: UITableView!
 }

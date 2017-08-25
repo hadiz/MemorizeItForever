@@ -87,7 +87,7 @@ final class PhraseHistoryTableDataSource: NSObject, PhraseTableDataSourceProtoco
     
     private func setColor(cell: UITableViewCell, index: IndexPath){
         if index.row % 2 != 0 {
-            //            cell.backgroundColor = UIColor.lightGray
+            cell.backgroundColor = UIColor.lightGray
         }
     }
 }

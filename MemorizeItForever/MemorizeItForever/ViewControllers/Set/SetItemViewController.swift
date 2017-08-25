@@ -11,36 +11,30 @@ import MemorizeItForeverCore
 
 final class SetItemViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
-    var setName: UITextField!
-    
     var entityMode: EntityMode?
     var setModel: SetModel?
     var setService: SetServiceProtocol!
-    var coordinatorDelegate: UIViewCoordinatorDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        coordinatorDelegate.applyViews()
+        
+        setName.placeholder = NSLocalizedString("Name", comment: "Name title")
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(SetItemViewController.saveAction))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(SetItemViewController.cancelAction))
         
         self.view.backgroundColor = UIColor.white
         
-        print("init SetItemViewController")
-    }
-    
-    deinit {
-        print("DEINIT SetItemViewController")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if entityMode == .save{
-            self.title = "New Set"
+            self.title = NSLocalizedString("New Set", comment: "New set title")
         }
         else{
-            self.title = "Edit Set"
+            self.title = NSLocalizedString("Edit Set", comment: "Edit set title")
         }
         
         DispatchQueue.main.async(execute: {
@@ -86,4 +80,5 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
         
         setService.edit(setModel!, setName: setName.text!)
     }
+    @IBOutlet weak var setName: MITextField!
 }

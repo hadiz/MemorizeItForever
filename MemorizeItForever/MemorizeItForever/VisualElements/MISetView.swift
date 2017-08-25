@@ -9,7 +9,7 @@
 import UIKit
 import MemorizeItForeverCore
 
-final class MISetView: MIView {
+final class MISetView: UIView {
     private var setFixed: UILabel!
     private var set: UILabel!
     

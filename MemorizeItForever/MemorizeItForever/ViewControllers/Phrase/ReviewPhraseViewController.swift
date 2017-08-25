@@ -12,24 +12,10 @@ import MemorizeItForeverCore
 final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate {
     
     // MARK: Constant
-    
     private let changeTextTransition = "ChangeTextTransition"
     private let cardViewsDicFatalError = "CardViewsDic does not have all card situation"
     
-    // MARK: Controls
-    
-    var setText: MISetView!
-    var counter: UILabel!
-    var switchText: UILabel!
-    var frontBackswitch: UISwitch!
-    var firstCardView: MICardView!
-    var secondCardView: MICardView!
-    var thidCardView: MICardView!
-    var flip: UIButton!
-    var done: UIButton!
-    
     // MARK: Private Variables
-    
     private var panningGesture: UIPanGestureRecognizer!
     private var list: [WordModel] = []
     private var index = 0
@@ -38,20 +24,12 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     private var isTaskDone = false
     
     // MARK: Field injection
-    
     var wordFlowService: WordFlowServiceProtocol!
-    var coordinatorDelegate: UIViewCoordinatorDelegate!
     
     // MARK: Variables
-    
     var cardViewsDic: Dictionary<CardViewPosition, MICardView> = [:]
-    var nextCardLeadingCnst: NSLayoutConstraint!
-    var previousCardTrailingCnst: NSLayoutConstraint!
-    var currentCardLeadingCnst: NSLayoutConstraint!
-    var currentCardTrailingCnst: NSLayoutConstraint!
     
     // MARK: Override Methods
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,7 +46,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.removeTaskDoneView()
+        removeTaskDoneView()
         isTaskDone = false
         fetchData()
     }
@@ -78,7 +56,6 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     }
     
     // MARK: Internal Methods
-    
     func previousbarButtonTapHandler(){
         if !isTaskDone{
             swapCards(direction: .right)
@@ -125,8 +102,28 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     // MARK: Private Methods
     
     private func initial(){
-        self.title = "Review Phrases"
-        coordinatorDelegate.applyViews()
+        self.title = NSLocalizedString("Review Phrases", comment: "Review phrases title")
+        
+        setText.setFontSize(12)
+        
+        frontBackswitch.isOn = true
+        
+        firstCardView.initialize(phrase: "", meaning: "")
+        secondCardView.initialize(phrase: "", meaning: "")
+        thidCardView.initialize(phrase: "", meaning: "")
+        
+        cardViewsDic[.current] = firstCardView
+        cardViewsDic[.next] = secondCardView
+        cardViewsDic[.previous] = thidCardView
+        
+        self.view.removeConstraint(nextCardLeadingCnst)
+        self.view.removeConstraint(previousCardTrailingCnst)
+        
+        nextCardLeadingCnst = secondCardView.leadingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        previousCardTrailingCnst = thidCardView.trailingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        
+        nextCardLeadingCnst.isActive = true
+        previousCardTrailingCnst.isActive = true
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Previous", style: .plain, target: self, action: #selector(ReviewPhraseViewController.previousbarButtonTapHandler))
         
@@ -158,7 +155,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
             self.swapCards(direction: .left)
         }
         else{
-            animate(){
+            animate(){ [unowned self] in
                 current.center.x = self.cardViewCenter!
                 next.layer.frame.origin.x = self.view.layer.frame.width
                 previous.layer.frame.origin.x = -1 * current.layer.frame.width
@@ -199,7 +196,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         let nextIndex = getNextIndex()
         next.updateText(phrase: list[nextIndex].phrase!, meaning: list[nextIndex].meaning!)
         
-        animate(){
+        animate(){ [unowned self] in
             current.center.x = self.cardViewCenter!
             previous.layer.frame.origin.x = -1 * current.layer.frame.width
         }
@@ -220,7 +217,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         let nextIndex = getPreviousIndex()
         previous.updateText(phrase: list[nextIndex].phrase!, meaning: list[nextIndex].meaning!)
         
-        animate(){
+        animate(){ [unowned self] in
             current.center.x = self.cardViewCenter!
             next.layer.frame.origin.x = self.view.layer.frame.width
         }
@@ -237,13 +234,18 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         self.view.removeConstraint(currentCardLeadingCnst)
         self.view.removeConstraint(currentCardTrailingCnst)
         
-        nextCardLeadingCnst = NSLayoutConstraint(item: next, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        nextCardLeadingCnst = next.leadingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        previousCardTrailingCnst = previous.trailingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        currentCardLeadingCnst = current.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 8)
+        currentCardTrailingCnst = current.trailingAnchor.constraint(equalTo: flip.leadingAnchor, constant: -8)
         
-        previousCardTrailingCnst = NSLayoutConstraint(item: previous, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+//        nextCardLeadingCnst = NSLayoutConstraint(item: next, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
         
-        currentCardLeadingCnst = NSLayoutConstraint(item: current, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 8)
+//        previousCardTrailingCnst = NSLayoutConstraint(item: previous, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
         
-        currentCardTrailingCnst = NSLayoutConstraint(item: current, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: flip, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: -8)
+        //currentCardLeadingCnst = NSLayoutConstraint(item: current, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 8)
+        
+//        currentCardTrailingCnst = NSLayoutConstraint(item: current, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: flip, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: -8)
         
         constraintList.append(nextCardLeadingCnst)
         constraintList.append(previousCardTrailingCnst)
@@ -280,10 +282,10 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     
     private func updateSwitchText(){
         if showFront{
-            switchText.text = "Show back"
+            switchText.text = NSLocalizedString("Show back", comment: "Show back label")
         }
         else{
-            switchText.text = "Show front"
+            switchText.text = NSLocalizedString("Show front", comment: "Show front label")
         }
     }
     
@@ -306,24 +308,24 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     }
     
     private func fetchData(){
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: { [unowned self] in
             do{
                 try self.wordFlowService.fetchNewWordsToPutInPreColumn()
                 self.list = try self.wordFlowService.fetchWordsForReview()
-                //                        for i in 1...10{
-                //                            var word = WordModel()
-                //                            word.meaning = "Meaning \(i)"
-                //                            word.phrase = "Phrase \(i)"
-                //                            list.append(word)
-                //                        }
+//                                        for i in 1...10{
+//                                            var word = WordModel()
+//                                            word.meaning = "Meaning \(i)"
+//                                            word.phrase = "Phrase \(i)"
+//                                            self.list.append(word)
+//                                        }
                 if self.list.count > 0{
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [unowned self] in
                         self.assignWordToCard()
                         self.updateCounter()
                     }
                 }
                 else{
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [unowned self] in
                         self.taskDoneView()
                     }
                 }
@@ -371,23 +373,38 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     private func taskDoneView(){
         isTaskDone = true
         let taskDoneView = self.addTaskDoneView()
-        
-        var viewDict = self.getViewDict()
-        
-        viewDict["taskDoneView"] = taskDoneView
-        viewDict["done"] = done
-        
-        
-        let hTaskDoneViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|[taskDoneView]|", options: [], metrics: nil, views: viewDict)
-        
-        let vTaskDoneViewCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide][taskDoneView]-[done]", options: [], metrics: nil, views: viewDict)
-        
-        
+
         var constraintList: [NSLayoutConstraint] = []
-        
-        constraintList += hTaskDoneViewCnst
-        constraintList += vTaskDoneViewCnst
+        constraintList.append(taskDoneView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor))
+        constraintList.append(taskDoneView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor))
+        constraintList.append(taskDoneView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor))
+        constraintList.append(taskDoneView.bottomAnchor.constraint(equalTo: done.topAnchor, constant: -8))
         
         NSLayoutConstraint.activate(constraintList)
+    }
+    
+    // MARK: Controls and Actions
+    @IBOutlet weak var setText: MISetView!
+    @IBOutlet weak var counter: UILabel!
+    @IBOutlet weak var switchText: UILabel!
+    @IBOutlet weak var frontBackswitch: UISwitch!
+    @IBOutlet weak var firstCardView: MICardView!
+    @IBOutlet weak var secondCardView: MICardView!
+    @IBOutlet weak var thidCardView: MICardView!
+    @IBOutlet weak var flip: UIButton!
+    @IBOutlet weak var done: UIButton!
+    @IBOutlet weak var nextCardLeadingCnst: NSLayoutConstraint!
+    
+    @IBOutlet weak var previousCardTrailingCnst: NSLayoutConstraint!
+    @IBOutlet weak var currentCardLeadingCnst: NSLayoutConstraint!
+    @IBOutlet weak var currentCardTrailingCnst: NSLayoutConstraint!
+    @IBAction func frontBackChanged(_ sender: UISwitch) {
+        frontBackswitchAction(sender)
+    }
+    @IBAction func flipTapped(_ sender: Any) {
+        flipTapHandler()
+    }
+    @IBAction func doneTapped(_ sender: Any) {
+        doneTapHandler()
     }
 }

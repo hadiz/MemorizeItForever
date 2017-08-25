@@ -15,16 +15,9 @@ final class ChangeSetTableDataSource: NSObject, SetTableDataSourceProtocol {
     var setId: UUID?
     
     required init(setService: SetServiceProtocol? = nil) {
-        // TODO: Should initilialize every time that view is opened, otherwise set userdefaults in another way
         if let setModel = UserDefaults.standard.getDefaultSetModel() {
             setId = setModel.setId
         }
-        
-        print("init ChangeSetTableDataSource")
-    }
-    
-    deinit {
-        print("DEINIT ChangeSetTableDataSource")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

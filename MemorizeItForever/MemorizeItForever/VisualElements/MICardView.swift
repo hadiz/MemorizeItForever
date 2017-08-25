@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MICardView: MIView {
+class MICardView: UIView {
     private var phrase: UILabel!
     private var meaning: UILabel!
     private var showingPhrase = true
@@ -16,6 +16,7 @@ class MICardView: MIView {
     // TODO
     //    var colorPicker: ColorPickerProtocol?
     
+    @discardableResult
     func initialize(phrase: String, meaning: String, addGesture: Bool = true) -> MICardView{
         initSelf(addGesture: addGesture)
         defineControls(phraseText: phrase, meaningText: meaning)
@@ -69,16 +70,18 @@ class MICardView: MIView {
         }
         
         self.isUserInteractionEnabled = true
-        self.backgroundColor = ColorPicker.shared.backgroundView.withAlphaComponent(0.7)
+        self.backgroundColor = ColorPicker.backgroundView.withAlphaComponent(0.7)
         self.layer.cornerRadius = 20.0
         self.clipsToBounds = true
     }
     
     private func defineControls(phraseText: String, meaningText: String){
         phrase = MICardViewLabel()
+        phrase.translatesAutoresizingMaskIntoConstraints = false
         phrase.text = phraseText
         
         meaning = MICardViewLabel()
+        meaning.translatesAutoresizingMaskIntoConstraints = false
         meaning.text = meaningText
         meaning.isHidden = true
     }

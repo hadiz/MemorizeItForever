@@ -17,11 +17,6 @@ final class SetTableDataSource: NSObject, SetTableDataSourceProtocol {
     
     required init(setService: SetServiceProtocol?) {
         self.setService = setService
-        print("init SetTableDataSource")
-    }
-    
-    deinit {
-        print("DEINIT SetTableDataSource")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

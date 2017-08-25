@@ -14,17 +14,11 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
     @IBOutlet var tableView: UITableView!
     var dataSource: SetTableDataSourceProtocol!
     var setService: SetServiceProtocol!
-    var viewControllerFactory: ViewControllerFactoryProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeViewController()
-        print("init SetViewController")
-    }
-    
-    deinit {
-        print("DEINIT SetViewController")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,11 +32,12 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
     }
     
     private func initializeViewController(){
-        title = "Set List"
+        title = NSLocalizedString("Set List", comment: "Set list title")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(SetViewController.addAction))
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(SetViewController.closeBarButtonTapHandler))
+        let close = NSLocalizedString("Close", comment: "Close bar button title")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: close, style: .plain, target: self, action: #selector(SetViewController.closeBarButtonTapHandler))
         
         let weakSelf = self
         dataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
@@ -85,7 +80,8 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
     }
     
     private func presentSetItemViewController(_ entityMode: EntityMode, setModel: SetModel? = nil){
-        let setItemViewController = viewControllerFactory.setItemViewControllerFactory()
+        let storyboard : UIStoryboard = UIStoryboard(name: "SetManagement",bundle: nil)
+        let setItemViewController = storyboard.instantiateViewController(withIdentifier: "SetItemViewController") as! SetItemViewController
         setItemViewController.entityMode = entityMode
         setItemViewController.setModel  = setModel
         

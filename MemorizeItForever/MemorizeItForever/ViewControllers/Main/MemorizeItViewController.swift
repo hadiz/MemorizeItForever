@@ -10,7 +10,6 @@ import UIKit
 
 final class MemorizeItViewController: UIViewController {
     
-    var viewControllerFactory: ViewControllerFactoryProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,31 +28,36 @@ final class MemorizeItViewController: UIViewController {
     }
     
     private func reviewPhraseTapped(_ sender: AnyObject){
-        let reviewPhraseViewController = viewControllerFactory.reviewPhraseViewControllerFactory()
+        let storyboard : UIStoryboard = UIStoryboard(name: "Phrase",bundle: nil)
+        let reviewPhraseViewController = storyboard.instantiateViewController(withIdentifier: "ReviewPhraseViewController") 
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(reviewPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }
     
     private func changeSetTapped(_ sender: AnyObject){
-        let changeSetViewController = viewControllerFactory.changeSetViewControllerFactory()
+        let storyboard : UIStoryboard = UIStoryboard(name: "SetManagement",bundle: nil)
+        let changeSetViewController = storyboard.instantiateViewController(withIdentifier: "ChangeSetViewController")
         let contentSize = CGSize(width: self.view.frame.width  / 2, height: 250)
         self.presentingPopover(changeSetViewController, sourceView: sender as! UIView, popoverArrowDirection: .any, contentSize: contentSize)
     }
     
     private func addPhraseTapped(_ sender: AnyObject){
-        let addPhraseViewController = viewControllerFactory.addPhraseViewControllerFactory()
+        let storyboard : UIStoryboard = UIStoryboard(name: "Phrase",bundle: nil)
+        let addPhraseViewController = storyboard.instantiateViewController(withIdentifier: "AddPhraseViewController")
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(addPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }
     
     private func takeATestTapped(_ sender: AnyObject){
-       let takeTestViewController = viewControllerFactory.takeTestViewControllerFactory()
+        let storyboard : UIStoryboard = UIStoryboard(name: "Phrase",bundle: nil)
+        let takeTestViewController = storyboard.instantiateViewController(withIdentifier: "TakeTestViewController")
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(takeTestViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }
     
     private func phraseManagementTapped(_ sender: AnyObject){
-        let phraseViewController = viewControllerFactory.phraseViewControllerFactory()
+        let storyboard : UIStoryboard = UIStoryboard(name: "Phrase",bundle: nil)
+        let phraseViewController = storyboard.instantiateViewController(withIdentifier: "PhraseViewController")
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(phraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
     }

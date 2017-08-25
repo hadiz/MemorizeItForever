@@ -23,6 +23,6 @@ final class CustomBackgroundView: UIView {
     }
     
     private func initialize(){
-        self.backgroundColor = ColorPicker.shared.backgroundView
+        self.backgroundColor = ColorPicker.backgroundView
     }
 }

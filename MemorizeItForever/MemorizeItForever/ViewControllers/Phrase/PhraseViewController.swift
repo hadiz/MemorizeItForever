@@ -17,14 +17,13 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
     private let offsetCount = 50
     
     // MARK: Controls
-    var tableView: UITableView!
+    
     var searchController: UISearchController!
     
     // MARK: Field Injection
     var dataSource: PhraseTableDataSourceProtocol!
     var wordService: WordServiceProtocol!
-    var viewControllerFactory: ViewControllerFactoryProtocol!
-    var coordinatorDelegate: UIViewCoordinatorDelegate!
+    
     
     // MARK: Local Variables
     var skip = 0
@@ -34,14 +33,9 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
     // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Phrase Management"
         
-        coordinatorDelegate.applyViews()
+        initialize()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(PhraseViewController.doneBarButtonTapHandler))
-        
-        self.automaticallyAdjustsScrollViewInsets = false
-        self.definesPresentationContext = true
         let weakSelf = self
         
         dataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
@@ -82,7 +76,7 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
     }
     
     func filterContentForSearchText(searchText: String, status: WordStatus) {
-       
+        
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
             let wordList = self.wordService.fetchWords(phrase: searchText, status: status, fetchLimit: 50, fetchOffset: 0)
             
@@ -94,6 +88,41 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
     }
     
     // MARK: Private Methods
+    
+    private func initialize(){
+        self.title = "Phrase Management"
+        
+        
+        
+        tableView.registerClass(SubtitleUITableViewCell.self, forCellReuseIdentifierEnum: .phraseTableCellIdentifier)
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.scopeButtonTitles = getScopeTitles()
+        searchController.searchBar.delegate = self
+        tableView.tableHeaderView = searchController.searchBar
+        
+        
+        
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(PhraseViewController.doneBarButtonTapHandler))
+        
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.definesPresentationContext = true
+    }
+    
+    private func getScopeTitles() -> [String]{
+        
+        var list: [String] = []
+        
+        for item in wordStatusList{
+            list.append(item.getString())
+        }
+        return list
+    }
     
     private func fetchData(){
         let wordStatus = wordStatusList[searchController.searchBar.selectedScopeButtonIndex]
@@ -110,11 +139,16 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
     }
     
     private func presentPhraseHistoryViewController(wordModel: WordModel? = nil){
-        let phraseHistoryViewController = viewControllerFactory.phraseHistoryViewControllerFactory()
+        let storyboard : UIStoryboard = UIStoryboard(name: "Phrase",bundle: nil)
+        let phraseHistoryViewController = storyboard.instantiateViewController(withIdentifier: "PhraseHistoryViewController") as! PhraseHistoryViewController
+        
         phraseHistoryViewController.wordModel  = wordModel
         
         let size = CGSize(width: self.view.frame.width  , height: self.view.frame.height * 2 / 3)
         self.presentingPopover(phraseHistoryViewController, sourceView: self.tableView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: size)
         
     }
+    
+    // MARK: Controls and Actions
+    @IBOutlet weak var tableView: UITableView!
 }
