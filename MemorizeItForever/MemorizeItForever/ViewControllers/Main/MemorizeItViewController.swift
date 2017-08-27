@@ -10,9 +10,14 @@ import UIKit
 
 final class MemorizeItViewController: UIViewController {
     
+    var selectionFeedback: SelectionFeedbackProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let selectionFeedback = selectionFeedback{
+            selectionFeedback.prepare()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,13 +30,15 @@ final class MemorizeItViewController: UIViewController {
         let setViewController: SetViewController = storyboard.instantiateViewController(withIdentifier: "SetViewController") as! SetViewController
         let contentSize = CGSize(width: self.view.frame.width  / 2, height: 250)
         self.presentingPopover(setViewController, sourceView: sender as! UIView, popoverArrowDirection: .any, contentSize: contentSize)
+        makeHapticFeedback()
     }
     
     private func reviewPhraseTapped(_ sender: AnyObject){
         let storyboard : UIStoryboard = UIStoryboard(name: "Phrase",bundle: nil)
-        let reviewPhraseViewController = storyboard.instantiateViewController(withIdentifier: "ReviewPhraseViewController") 
+        let reviewPhraseViewController = storyboard.instantiateViewController(withIdentifier: "ReviewPhraseViewController")
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(reviewPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
+        makeHapticFeedback()
     }
     
     private func changeSetTapped(_ sender: AnyObject){
@@ -39,6 +46,7 @@ final class MemorizeItViewController: UIViewController {
         let changeSetViewController = storyboard.instantiateViewController(withIdentifier: "ChangeSetViewController")
         let contentSize = CGSize(width: self.view.frame.width  / 2, height: 250)
         self.presentingPopover(changeSetViewController, sourceView: sender as! UIView, popoverArrowDirection: .any, contentSize: contentSize)
+        makeHapticFeedback()
     }
     
     private func addPhraseTapped(_ sender: AnyObject){
@@ -46,6 +54,7 @@ final class MemorizeItViewController: UIViewController {
         let addPhraseViewController = storyboard.instantiateViewController(withIdentifier: "AddPhraseViewController")
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(addPhraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
+        makeHapticFeedback()
     }
     
     private func takeATestTapped(_ sender: AnyObject){
@@ -53,6 +62,7 @@ final class MemorizeItViewController: UIViewController {
         let takeTestViewController = storyboard.instantiateViewController(withIdentifier: "TakeTestViewController")
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(takeTestViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
+        makeHapticFeedback()
     }
     
     private func phraseManagementTapped(_ sender: AnyObject){
@@ -60,6 +70,12 @@ final class MemorizeItViewController: UIViewController {
         let phraseViewController = storyboard.instantiateViewController(withIdentifier: "PhraseViewController")
         let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
         self.presentingPopover(phraseViewController, sourceView: sender as! UIView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
+        makeHapticFeedback()
+    }
+    
+    private func makeHapticFeedback(){
+        guard let selectionFeedback = selectionFeedback else { return }
+        selectionFeedback.selectionChanged()
     }
     
     @IBAction func setAction(_ sender: AnyObject) {

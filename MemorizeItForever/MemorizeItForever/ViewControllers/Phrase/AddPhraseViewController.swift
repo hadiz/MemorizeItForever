@@ -15,6 +15,7 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
     // MARK: Field injection
     var validator: ValidatorProtocol!
     var wordService: WordServiceProtocol!
+    var notificationFeedback: NotificationFeedbackProtocol?
     
     // MARK: Local variables
     
@@ -39,6 +40,9 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         meaning.isHidden = true
         meaning.font = meaning.font?.withSize(20)
         meaning.alpha = 0.7
+        if let notificationFeedback = notificationFeedback{
+            notificationFeedback.prepare()
+        }
         
         let close = NSLocalizedString("Close", comment: "Close bar button item")
         let next = NSLocalizedString("Next", comment: "Next bar button item")
@@ -83,7 +87,7 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
             self.navigationItem.rightBarButtonItem = saveBarButtonItem
             self.navigationItem.leftBarButtonItem = previousBarButtonItem
             
-            UIView.transition(from: phrase, to: meaning, duration: 1, options: [.transitionFlipFromRight ,.showHideTransitionViews], completion: nil)
+            UIView.transition(from: phrase, to: meaning, duration: 0.5, options: [.transitionFlipFromRight ,.showHideTransitionViews], completion: nil)
             meaning.becomeFirstResponder()
         }
     }
@@ -159,7 +163,7 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         self.navigationItem.rightBarButtonItem = nextBarButtonItem
         self.navigationItem.leftBarButtonItem = doneBarButtonItem
         
-        UIView.transition(from: meaning, to: phrase , duration: 1, options: [.transitionFlipFromLeft ,.showHideTransitionViews], completion: nil)
+        UIView.transition(from: meaning, to: phrase , duration: 0.5, options: [.transitionFlipFromLeft ,.showHideTransitionViews], completion: nil)
         phrase.becomeFirstResponder()
     }
     private func saveWasSuccessful(){
@@ -168,8 +172,14 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         meaning.text = ""
         let message = NSLocalizedString("Save was successful", comment: "Save was successful message")
         self.view.makeASuccessToast(message: message)
+        if let notificationFeedback = notificationFeedback{
+            notificationFeedback.notificationOccurred(.success)
+        }
     }
     private func saveWasFailed(message: String){
+        if let notificationFeedback = notificationFeedback{
+            notificationFeedback.notificationOccurred(.error)
+        }
         self.view.makeAFailureToast(message: message)
     }
     

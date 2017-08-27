@@ -15,6 +15,7 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
     // MARK: Field injection
     
     var wordFlowService: WordFlowServiceProtocol!
+    var notificationFeedback: NotificationFeedbackProtocol?
     
     // MARK: Local Variables
     
@@ -142,6 +143,10 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         
         wrong.setTitle("Wrong", for: .normal)
         wrong.buttonColor = red
+        
+        if let notificationFeedback = notificationFeedback{
+            notificationFeedback.prepare()
+        }
     }
     
     private func pan(){
@@ -417,10 +422,16 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
     
     private func answerCorrect(){
         wordFlowService.answerCorrectly(currentWordInProgressModel)
+        if let notificationFeedback = notificationFeedback{
+            notificationFeedback.notificationOccurred(.success)
+        }
         
     }
     private func answerWrong(){
         wordFlowService.answerWrongly(currentWordInProgressModel)
+        if let notificationFeedback = notificationFeedback{
+            notificationFeedback.notificationOccurred(.error)
+        }
     }
     
     // MARK: Controls and Actions

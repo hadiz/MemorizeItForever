@@ -16,9 +16,6 @@ public struct WordModel: Equatable, MemorizeItModelProtocol {
     public var setId: UUID?
     public var setName: String?
     public var status: Int16? = WordStatus.notStarted.rawValue
-    
-    public init(){
-    }
 }
 
 public func ==(lhs: WordModel, rhs: WordModel) -> Bool {

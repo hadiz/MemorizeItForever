@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F10018F1F53177000F63FC0 /* HapticFeedbackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10018E1F53177000F63FC0 /* HapticFeedbackProtocol.swift */; };
+		0F1001911F5317CC00F63FC0 /* SelectionFeedbackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1001901F5317CC00F63FC0 /* SelectionFeedbackProtocol.swift */; };
+		0F1001931F53197900F63FC0 /* UISelectionFeedbackGenerator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1001921F53197900F63FC0 /* UISelectionFeedbackGenerator+Extensions.swift */; };
+		0F1001951F531A3700F63FC0 /* NotificationFeedbackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1001941F531A3700F63FC0 /* NotificationFeedbackProtocol.swift */; };
+		0F1001971F531A9F00F63FC0 /* UINotificationFeedbackGenerator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1001961F531A9F00F63FC0 /* UINotificationFeedbackGenerator+Extensions.swift */; };
 		0F1ADBCA1EFC03E400CF9B20 /* Phrase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1ADBC81EFC03E400CF9B20 /* Phrase.storyboard */; };
 		430320B51DE0748100BD0F0D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430320B41DE0748100BD0F0D /* UIViewExtension.swift */; };
 		431196D91DB3958100F7BE7F /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; };
@@ -116,6 +121,11 @@
 
 /* Begin PBXFileReference section */
 		0EDDD110B159045C5F3D98E6 /* Pods_MemorizeItForeverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F10018E1F53177000F63FC0 /* HapticFeedbackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HapticFeedbackProtocol.swift; path = General/Helper/HapticFeedback/HapticFeedbackProtocol.swift; sourceTree = "<group>"; };
+		0F1001901F5317CC00F63FC0 /* SelectionFeedbackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectionFeedbackProtocol.swift; path = General/Helper/HapticFeedback/SelectionFeedbackProtocol.swift; sourceTree = "<group>"; };
+		0F1001921F53197900F63FC0 /* UISelectionFeedbackGenerator+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UISelectionFeedbackGenerator+Extensions.swift"; path = "General/Extensions/UISelectionFeedbackGenerator+Extensions.swift"; sourceTree = "<group>"; };
+		0F1001941F531A3700F63FC0 /* NotificationFeedbackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationFeedbackProtocol.swift; path = General/Helper/HapticFeedback/NotificationFeedbackProtocol.swift; sourceTree = "<group>"; };
+		0F1001961F531A9F00F63FC0 /* UINotificationFeedbackGenerator+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINotificationFeedbackGenerator+Extensions.swift"; path = "General/Extensions/UINotificationFeedbackGenerator+Extensions.swift"; sourceTree = "<group>"; };
 		0F1ADBC91EFC03E400CF9B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Phrase.storyboard; sourceTree = "<group>"; };
 		430320B41DE0748100BD0F0D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = General/Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
 		431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +241,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F10018D1F53173400F63FC0 /* HapticFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				0F10018E1F53177000F63FC0 /* HapticFeedbackProtocol.swift */,
+				0F1001901F5317CC00F63FC0 /* SelectionFeedbackProtocol.swift */,
+				0F1001941F531A3700F63FC0 /* NotificationFeedbackProtocol.swift */,
+			);
+			name = HapticFeedback;
+			sourceTree = "<group>";
+		};
 		215F7727A385111B0F252E7B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +362,8 @@
 				430320B41DE0748100BD0F0D /* UIViewExtension.swift */,
 				43EEE1621DF431690072D125 /* WordStatusExtension.swift */,
 				435CBC771DF541A3003ACFD1 /* UITableViewExtension.swift */,
+				0F1001921F53197900F63FC0 /* UISelectionFeedbackGenerator+Extensions.swift */,
+				0F1001961F531A9F00F63FC0 /* UINotificationFeedbackGenerator+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -449,6 +471,7 @@
 		4360FC7A1E0ADAAF000578E7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				0F10018D1F53173400F63FC0 /* HapticFeedback */,
 				432B755E1DB37E82003C6574 /* Enum.swift */,
 				4344DE671DC0E53800FBA130 /* ColorPicker.swift */,
 				91A64D591DD5019B003D45B8 /* ColorPickerProtocol.swift */,
@@ -834,6 +857,7 @@
 				43EFD7911E0AD69C00F79CBE /* SetTableDataSource.swift in Sources */,
 				43EFD78C1E0AD69200F79CBE /* PhraseTableDataSourceProtocol.swift in Sources */,
 				43EFD7821E0AD59000F79CBE /* Value2UITableViewCell.swift in Sources */,
+				0F1001971F531A9F00F63FC0 /* UINotificationFeedbackGenerator+Extensions.swift in Sources */,
 				43EFD77E1E0AD59000F79CBE /* MITextField.swift in Sources */,
 				43EFD78B1E0AD69200F79CBE /* PhraseTableDataSource.swift in Sources */,
 				432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */,
@@ -841,6 +865,7 @@
 				43EFD7901E0AD69C00F79CBE /* ChangeSetTableDataSource.swift in Sources */,
 				43EFD7691E0AD57E00F79CBE /* SetItemViewController.swift in Sources */,
 				43EFD77B1E0AD59000F79CBE /* CustomBackgroundView.swift in Sources */,
+				0F1001951F531A3700F63FC0 /* NotificationFeedbackProtocol.swift in Sources */,
 				43BF3D9A1DD9D79B000296DB /* ValidatableProtocol.swift in Sources */,
 				43EFD7811E0AD59000F79CBE /* SubtitleUITableViewCell.swift in Sources */,
 				43F0D3061DD9E05E0074856F /* TypealiasHelper.swift in Sources */,
@@ -851,10 +876,13 @@
 				43EFD7841E0AD59000F79CBE /* MILabel.swift in Sources */,
 				43EFD7921E0AD69C00F79CBE /* SetTableDataSourceProtocol.swift in Sources */,
 				43EFD7581E0AD55D00F79CBE /* PhraseViewController.swift in Sources */,
+				0F1001911F5317CC00F63FC0 /* SelectionFeedbackProtocol.swift in Sources */,
+				0F1001931F53197900F63FC0 /* UISelectionFeedbackGenerator+Extensions.swift in Sources */,
 				435CBC781DF541A3003ACFD1 /* UITableViewExtension.swift in Sources */,
 				43EFD75A1E0AD55D00F79CBE /* TakeTestViewController.swift in Sources */,
 				438874591DB7ABF70030C016 /* MemorizeItTableDataSourceDelegateProtocol.swift in Sources */,
 				432B75641DB38DF9003C6574 /* UIColorExtension.swift in Sources */,
+				0F10018F1F53177000F63FC0 /* HapticFeedbackProtocol.swift in Sources */,
 				43EFD74C1E0AD54300F79CBE /* SettingsViewController.swift in Sources */,
 				43EFD75E1E0AD57100F79CBE /* MemorizeItViewController.swift in Sources */,
 				43EFD77F1E0AD59000F79CBE /* MITextView.swift in Sources */,
