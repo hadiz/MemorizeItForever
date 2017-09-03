@@ -15,11 +15,11 @@ final public class SetService: SetServiceProtocol {
         setDataAccess = dataAccess
     }
     
-    public func createDefaultSet() {
+    public func createDefaultSet(name: String) {
         do{
             if try setDataAccess.fetchSetNumber() == 0{
                 var set = SetModel()
-                set.name = "Default"
+                set.name = name
                 try setDataAccess.save(set)
             }
         }

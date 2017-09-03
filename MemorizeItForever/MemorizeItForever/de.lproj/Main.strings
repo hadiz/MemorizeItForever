@@ -1,0 +1,36 @@
+
+/* Class = "UIButton"; normalTitle = "Set Management"; ObjectID = "6dT-sG-0DS"; */
+"6dT-sG-0DS.normalTitle" = "Set Management";
+
+/* Class = "UITabBarItem"; title = "MemorizeIt!"; ObjectID = "LFR-sb-oHv"; */
+"LFR-sb-oHv.title" = "Merke es dir!";
+
+/* Class = "UIButton"; normalTitle = "Pharse Management"; ObjectID = "Q8u-BP-BJB"; */
+"Q8u-BP-BJB.normalTitle" = "Pharse Management";
+
+/* Class = "UIButton"; normalTitle = "Take a Test"; ObjectID = "SHp-bt-Moh"; */
+"SHp-bt-Moh.normalTitle" = "Einen Test machen";
+
+/* Class = "UIButton"; normalTitle = "Add  Pharse"; ObjectID = "ZGz-7V-ukg"; */
+"ZGz-7V-ukg.normalTitle" = "Phrase hinzufügen";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cuH-yd-J3d"; */
+"cuH-yd-J3d.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Change"; ObjectID = "gvy-vc-sba"; */
+"gvy-vc-sba.normalTitle" = "Veränderung";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "jww-Xt-9yX"; */
+"jww-Xt-9yX.title" = "Einstellungen";
+
+/* Class = "UIButton"; normalTitle = "Review Pharse"; ObjectID = "oLn-zR-W4J"; */
+"oLn-zR-W4J.normalTitle" = "Review Phrase";
+
+/* Class = "UITabBarItem"; title = "Setting"; ObjectID = "ttd-DE-KHO"; */
+"ttd-DE-KHO.title" = "Einstellungen";
+
+/* Class = "UILabel"; text = "Word Switching"; ObjectID = "uf8-bs-0EN"; */
+"uf8-bs-0EN.text" = "Phrasenschaltung";
+
+/* Class = "UILabel"; text = "New Words Count:"; ObjectID = "xhZ-gv-YAX"; */
+"xhZ-gv-YAX.text" = "Neue Phrase Count:";

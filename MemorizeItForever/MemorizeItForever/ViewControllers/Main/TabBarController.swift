@@ -16,7 +16,8 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setService.createDefaultSet()
+        let defaultName = NSLocalizedString("Default", comment: "Default")
+        setService.createDefaultSet(name: defaultName)
         setService.setUserDefaultSet()
     }
     

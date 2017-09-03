@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  MemorizeItForever
+
+  Created by Hadi Zamani on 8/28/17.
+  Copyright © 2017 SomeSimpleSolutions. All rights reserved.
+*/
+
+"Add Phrase" = "Phrase hinzufügen";
+"Write the Phrase here" = "Schreiben Sie hier die Phrase";
+"Close" = "Schließen";
+"Next" = "Nächster";
+"Save" = "sparen";
+"Previous" = "Bisherige";
+"Phrase should not be empty" = "Phrase sollte nicht leer sein";
+"Meaning should not be empty" = "Bedeutung sollte nicht leer sein";
+"Write the Meaning here" = "Schreiben Sie die Bedeutung hier";
+"Choos a default 'Set'" = "Wählen Sie eine Voreinstellung 'Set'";
+"Save was successful" = "Sparen war erfolgreich";
+"Review Phrases" = "Überprüfungsphrasen";
+"Show back" = "Zurück anzeigen";
+"Show front" = "Vorderseite zeigen";
+"Name" = "Name";
+"New Set" = "Neues Set";
+"Edit Set" = "Bearbeiten Set";
+"Set List" = "Liste setzen";
+"Change Set" = "Set ändern";
+"Default" = "Default";
+"Not Started" = "Nicht angefangen";
+"In Progress" = "In Bearbeitung";
+"Done" = "Erledigt";
+"Phrase Failure History" = "Phrase Failure History";
+"Phrase Specifications" = "Phrase Spezifikationen";
+"Set:" = "Set:";
+"Phrase:" = "Phrase:";
+"Status:" = "Status:";
+"Column" = "Säule";
+"Hooray!" = "Hurra!";
+"The task is done" = "Die Aufgabe ist erledigt";
+"Flip" = "Flip";
+"Show Answer" = "Zeige die Antwort";
+"Show Question" = "Frage zeigen";
+"in Column" = "In der säule";
+"Correct" = "Richtig";
+"Wrong" = "Falsch";
+"Not Specified" = "Keine Angabe";

@@ -102,9 +102,15 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     // MARK: Private Methods
     
     private func initialize(){
-        self.title = NSLocalizedString("Review Phrases", comment: "Review phrases title")
+        
+        let doneTitle = NSLocalizedString("Close", comment: "Close")
+        done.setTitle(doneTitle, for: .normal)
+        
+        let flipTitle = NSLocalizedString("Flip", comment: "Flip")
+        flip.setTitle(flipTitle, for: .normal)
         
         setText.setFontSize(12)
+        setText.textDirextion = .leading
         
         frontBackswitch.isOn = true
         
@@ -125,9 +131,11 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         nextCardLeadingCnst.isActive = true
         previousCardTrailingCnst.isActive = true
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Previous", style: .plain, target: self, action: #selector(ReviewPhraseViewController.previousbarButtonTapHandler))
+        let previousTitle = NSLocalizedString("Previous", comment: "Previous")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: previousTitle, style: .plain, target: self, action: #selector(ReviewPhraseViewController.previousbarButtonTapHandler))
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReviewPhraseViewController.nextbarButtonTapHandler))
+        let nextTitle = NSLocalizedString("Next", comment: "Next")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: nextTitle, style: .plain, target: self, action: #selector(ReviewPhraseViewController.nextbarButtonTapHandler))
         
         panningGesture = UIPanGestureRecognizer(target: self, action: #selector(ReviewPhraseViewController.panningHandler))
         self.view.addGestureRecognizer(panningGesture!)
@@ -239,14 +247,6 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         currentCardLeadingCnst = current.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 8)
         currentCardTrailingCnst = current.trailingAnchor.constraint(equalTo: flip.leadingAnchor, constant: -8)
         
-//        nextCardLeadingCnst = NSLayoutConstraint(item: next, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
-        
-//        previousCardTrailingCnst = NSLayoutConstraint(item: previous, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
-        
-        //currentCardLeadingCnst = NSLayoutConstraint(item: current, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 8)
-        
-//        currentCardTrailingCnst = NSLayoutConstraint(item: current, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: flip, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: -8)
-        
         constraintList.append(nextCardLeadingCnst)
         constraintList.append(previousCardTrailingCnst)
         constraintList.append(currentCardLeadingCnst)
@@ -311,13 +311,13 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: { [unowned self] in
             do{
                 try self.wordFlowService.fetchNewWordsToPutInPreColumn()
-                self.list = try self.wordFlowService.fetchWordsForReview()
-//                                        for i in 1...10{
-//                                            var word = WordModel()
-//                                            word.meaning = "Meaning \(i)"
-//                                            word.phrase = "Phrase \(i)"
-//                                            self.list.append(word)
-//                                        }
+//                self.list = try self.wordFlowService.fetchWordsForReview()
+                                        for i in 1...10{
+                                            var word = WordModel()
+                                            word.meaning = "Meaning \(i)"
+                                            word.phrase = "Phrase \(i)"
+                                            self.list.append(word)
+                                        }
                 if self.list.count > 0{
                     DispatchQueue.main.async { [unowned self] in
                         self.assignWordToCard()

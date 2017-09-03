@@ -10,8 +10,18 @@ import UIKit
 import MemorizeItForeverCore
 
 final class MISetView: UIView {
+    
+    enum Direction{
+        case leading
+        case center
+    }
+    
+    var textDirextion: Direction = .center
+    
+    private var containerView: UIView!
     private var setFixed: UILabel!
     private var set: UILabel!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,6 +32,10 @@ final class MISetView: UIView {
         super.init(coder: aDecoder)
         initialize()
     }
+    
+    override func layoutSubviews() {
+        applyAutoLayout()
+    }
 
     
     deinit {
@@ -30,7 +44,6 @@ final class MISetView: UIView {
     
     func setFontSize(_ size: CGFloat){
         setFixed.font = setFixed.font.withSize(size)
-        set.font = set.font.withSize(size)
     }
     
     func changeSet(){
@@ -39,7 +52,7 @@ final class MISetView: UIView {
             set.text = setModel.name
         }
         else{
-            set.text = "Not Specified"
+            set.text = NSLocalizedString("Not Specified", comment: "Not Specified") 
             set.textColor = UIColor.red
         }
     }
@@ -47,41 +60,59 @@ final class MISetView: UIView {
     private func initialize(){
         defineControls()
         addControls()
-        applyAutoLayout()
         NotificationCenter.default.addObserver(self, selector: #selector(MISetView.changeSet), notificationNameEnum: .setChanged, object: nil)
     }
     
     private func defineControls(){
+        self.clipsToBounds = true
+        
+        containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
         setFixed = MILabel()
-        setFixed.text = "set:"
+        setFixed.text = NSLocalizedString("Set:", comment: "Set:")
         setFixed.textColor = UIColor.gray
+        setFixed.baselineAdjustment = .alignCenters
         
         set = MILabel()
+        set.adjustsFontSizeToFitWidth = true
         set.textColor = UIColor.darkGray
+        set.baselineAdjustment = .alignCenters
         changeSet()
 
     }
     
     private func addControls(){
-        self.addSubview(setFixed)
-        self.addSubview(set)
+        self.addSubview(containerView)
+        containerView.addSubview(setFixed)
+        containerView.addSubview(set)
     }
     
     private func applyAutoLayout(){
-        var viewDic: Dictionary<String,Any> = [:]
+        let setWidth = self.frame.width - 8 - 30
+
         var constraintList: [NSLayoutConstraint] = []
         
-        viewDic["setFixed"] = setFixed
-        viewDic["set"] = set
+        switch textDirextion {
+        case .center:
+            constraintList.append(containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor))
+        case .leading:
+             constraintList.append(containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor))
+        }
         
-        let hSetFixedCnst = NSLayoutConstraint.constraints(withVisualFormat: "H:|[setFixed]-[set]|", options: [], metrics: nil, views: viewDic)
-        let vSetFixedCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:|[setFixed]|", options: [], metrics: nil, views: viewDic)
+        constraintList.append(containerView.heightAnchor.constraint(equalTo: self.heightAnchor))
+        constraintList.append(containerView.topAnchor.constraint(equalTo: self.topAnchor))
         
-        let vSetCnst = NSLayoutConstraint.constraints(withVisualFormat: "V:|[set]|", options: [], metrics: nil, views: viewDic)
+        constraintList.append(setFixed.leadingAnchor.constraint(equalTo: containerView.leadingAnchor))
+        constraintList.append(setFixed.heightAnchor.constraint(equalTo: containerView.heightAnchor))
+        constraintList.append(setFixed.topAnchor.constraint(equalTo: containerView.topAnchor))
         
-        constraintList += hSetFixedCnst
-        constraintList += vSetFixedCnst
-        constraintList += vSetCnst
+        constraintList.append(set.leadingAnchor.constraint(equalTo: setFixed.trailingAnchor, constant: 8))
+        constraintList.append(set.trailingAnchor.constraint(equalTo: containerView.trailingAnchor))
+        constraintList.append(set.widthAnchor.constraint(equalToConstant: setWidth))
+        constraintList.append(set.heightAnchor.constraint(equalTo: containerView.heightAnchor))
+        constraintList.append(set.topAnchor.constraint(equalTo: containerView.topAnchor))
+        
         
         NSLayoutConstraint.activate(constraintList)
     }

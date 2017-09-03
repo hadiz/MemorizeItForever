@@ -30,10 +30,10 @@ final class PhraseHistoryTableDataSource: NSObject, PhraseTableDataSourceProtoco
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
-            return "Phrase Specifications"
+            return NSLocalizedString("Phrase Specifications", comment: "Phrase Specifications")
         }
         else if section == 1{
-            return "Phrase Failure Count"
+            return NSLocalizedString("Phrase Failure History", comment: "Phrase Failure History")
         }
         return ""
     }
@@ -57,22 +57,23 @@ final class PhraseHistoryTableDataSource: NSObject, PhraseTableDataSourceProtoco
         if indexPath.section == 0{
             if let word = modelList[0].word{
                 if indexPath.row == 0{
-                    cell.textLabel?.text = "Set:"
+                    cell.textLabel?.text = NSLocalizedString("Set:", comment: "Set:")
                     cell.detailTextLabel?.text = word.setName
                 }
                     
                 else if indexPath.row == 1{
-                    cell.textLabel?.text = "Phrase:"
+                    cell.textLabel?.text = NSLocalizedString("Phrase:", comment: "Phrase:")
                     cell.detailTextLabel?.text = word.phrase
                 }
                 else if indexPath.row == 2{
-                    cell.textLabel?.text = "Status:"
+                    cell.textLabel?.text = NSLocalizedString("Status:", comment: "Status:")
                     cell.detailTextLabel?.text = WordStatus(rawValue: word.status!)?.getString()
                 }
             }
         }
         else if indexPath.section == 1{
-            cell.textLabel?.text = "Column \(indexPath.row):"
+            let columnLocalized = NSLocalizedString("Column", comment: "Column")
+            cell.textLabel?.text = "\(columnLocalized) \(indexPath.row):"
             let historyList = modelList.filter {$0.columnNo == Int16(indexPath.row)}
             var count: Int32 = 0
             if historyList.count > 0{

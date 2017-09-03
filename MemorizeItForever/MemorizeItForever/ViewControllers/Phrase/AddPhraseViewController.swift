@@ -11,6 +11,9 @@ import MemorizeItForeverCore
 
 final class AddPhraseViewController: UIViewController, UIPopoverPresentationControllerDelegate {
 
+    // MARK: Constants
+    
+    private let writePhrase = NSLocalizedString("Write the Phrase here", comment: "Write the phrase here label")
     
     // MARK: Field injection
     var validator: ValidatorProtocol!
@@ -29,10 +32,8 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = NSLocalizedString("Add Phrase", comment: "Add phrase title")
-        
         setText.setFontSize(12)
-        desc.text = NSLocalizedString("Write the Phrase here", comment: "Write the phrase here label")
+        desc.text = writePhrase
         
         phrase.font = phrase.font?.withSize(20)
         phrase.alpha = 0.7
@@ -134,7 +135,7 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
     
     private func updateDescText(showPhrase: Bool){
         if showPhrase{
-            desc.text = NSLocalizedString("Write the Phrase here", comment: "Write the phrase here label")
+            desc.text = writePhrase
         }
         else{
             desc.text = NSLocalizedString("Write the Meaning here", comment: "Write the Meaning here label")

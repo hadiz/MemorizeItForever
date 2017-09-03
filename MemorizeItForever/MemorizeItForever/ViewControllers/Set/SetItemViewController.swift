@@ -30,12 +30,12 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if entityMode == .save{
-            self.title = NSLocalizedString("New Set", comment: "New set title")
-        }
-        else{
-            self.title = NSLocalizedString("Edit Set", comment: "Edit set title")
-        }
+//        if entityMode == .save{
+//            self.title = NSLocalizedString("New Set", comment: "New set title")
+//        }
+//        else{
+//            self.title = NSLocalizedString("Edit Set", comment: "Edit set title")
+//        }
         
         DispatchQueue.main.async(execute: {
             if let setModel = self.setModel, self.entityMode == .edit{

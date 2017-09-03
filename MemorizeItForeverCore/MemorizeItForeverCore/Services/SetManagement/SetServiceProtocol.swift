@@ -9,7 +9,7 @@
 public protocol SetServiceProtocol: ServiceProtocol {
     func delete(_ setModel: SetModel) -> Bool
     func get() -> [SetModel]
-    func createDefaultSet()
+    func createDefaultSet(name: String)
     func setUserDefaultSet()
     func setUserDefaultSet(force: Bool)
     func save(_ setName: String)

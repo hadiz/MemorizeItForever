@@ -32,7 +32,7 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
     }
     
     private func initializeViewController(){
-        title = NSLocalizedString("Set List", comment: "Set list title")
+//        title = NSLocalizedString("Set List", comment: "Set list title")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(SetViewController.addAction))
         

@@ -12,6 +12,7 @@
 		0F1001931F53197900F63FC0 /* UISelectionFeedbackGenerator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1001921F53197900F63FC0 /* UISelectionFeedbackGenerator+Extensions.swift */; };
 		0F1001951F531A3700F63FC0 /* NotificationFeedbackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1001941F531A3700F63FC0 /* NotificationFeedbackProtocol.swift */; };
 		0F1001971F531A9F00F63FC0 /* UINotificationFeedbackGenerator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1001961F531A9F00F63FC0 /* UINotificationFeedbackGenerator+Extensions.swift */; };
+		0F10019E1F545AA200F63FC0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F10019C1F545AA200F63FC0 /* Localizable.strings */; };
 		0F1ADBCA1EFC03E400CF9B20 /* Phrase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1ADBC81EFC03E400CF9B20 /* Phrase.storyboard */; };
 		430320B51DE0748100BD0F0D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430320B41DE0748100BD0F0D /* UIViewExtension.swift */; };
 		431196D91DB3958100F7BE7F /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */; };
@@ -126,6 +127,12 @@
 		0F1001921F53197900F63FC0 /* UISelectionFeedbackGenerator+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UISelectionFeedbackGenerator+Extensions.swift"; path = "General/Extensions/UISelectionFeedbackGenerator+Extensions.swift"; sourceTree = "<group>"; };
 		0F1001941F531A3700F63FC0 /* NotificationFeedbackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationFeedbackProtocol.swift; path = General/Helper/HapticFeedback/NotificationFeedbackProtocol.swift; sourceTree = "<group>"; };
 		0F1001961F531A9F00F63FC0 /* UINotificationFeedbackGenerator+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINotificationFeedbackGenerator+Extensions.swift"; path = "General/Extensions/UINotificationFeedbackGenerator+Extensions.swift"; sourceTree = "<group>"; };
+		0F1001981F5457E800F63FC0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SetManagement.strings; sourceTree = "<group>"; };
+		0F1001991F5457E800F63FC0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		0F10019A1F5457E800F63FC0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Phrase.strings; sourceTree = "<group>"; };
+		0F10019B1F5457E800F63FC0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0F10019D1F545AA200F63FC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0F10019F1F545ABA00F63FC0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0F1ADBC91EFC03E400CF9B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Phrase.storyboard; sourceTree = "<group>"; };
 		430320B41DE0748100BD0F0D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = General/Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
 		431196D81DB3958100F7BE7F /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -404,6 +411,7 @@
 				43434B081DB3676A0005B59F /* Assets.xcassets */,
 				43434B0A1DB3676A0005B59F /* LaunchScreen.storyboard */,
 				43434B0D1DB3676A0005B59F /* Info.plist */,
+				0F10019C1F545AA200F63FC0 /* Localizable.strings */,
 			);
 			path = MemorizeItForever;
 			sourceTree = "<group>";
@@ -656,6 +664,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 43434AF21DB3676A0005B59F;
 			productRefGroup = 43434AFC1DB3676A0005B59F /* Products */;
@@ -675,6 +684,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				432B75551DB37C85003C6574 /* SetManagement.storyboard in Resources */,
+				0F10019E1F545AA200F63FC0 /* Localizable.strings in Resources */,
 				43434B0C1DB3676A0005B59F /* LaunchScreen.storyboard in Resources */,
 				43434B091DB3676A0005B59F /* Assets.xcassets in Resources */,
 				43434B041DB3676A0005B59F /* Main.storyboard in Resources */,
@@ -940,10 +950,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0F10019C1F545AA200F63FC0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F10019D1F545AA200F63FC0 /* Base */,
+				0F10019F1F545ABA00F63FC0 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		0F1ADBC81EFC03E400CF9B20 /* Phrase.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0F1ADBC91EFC03E400CF9B20 /* Base */,
+				0F10019A1F5457E800F63FC0 /* de */,
 			);
 			name = Phrase.storyboard;
 			sourceTree = "<group>";
@@ -952,6 +972,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				432B75541DB37C85003C6574 /* Base */,
+				0F1001981F5457E800F63FC0 /* de */,
 			);
 			name = SetManagement.storyboard;
 			sourceTree = "<group>";
@@ -960,6 +981,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				43434B031DB3676A0005B59F /* Base */,
+				0F1001991F5457E800F63FC0 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -968,6 +990,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				43434B0B1DB3676A0005B59F /* Base */,
+				0F10019B1F5457E800F63FC0 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -979,6 +1002,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1030,6 +1054,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

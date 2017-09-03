@@ -15,6 +15,8 @@ final class MemorizeItViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setView.textDirextion = .leading
+        
         if let selectionFeedback = selectionFeedback{
             selectionFeedback.prepare()
         }
@@ -77,6 +79,9 @@ final class MemorizeItViewController: UIViewController {
         guard let selectionFeedback = selectionFeedback else { return }
         selectionFeedback.selectionChanged()
     }
+    
+    
+    @IBOutlet weak var setView: MISetView!
     
     @IBAction func setAction(_ sender: AnyObject) {
         setTapped(sender)

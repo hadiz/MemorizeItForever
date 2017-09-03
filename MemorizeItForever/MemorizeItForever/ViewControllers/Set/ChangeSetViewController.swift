@@ -35,7 +35,7 @@ final class ChangeSetViewController: UIViewController, UIPopoverPresentationCont
     }
     
     private func initializeViewController(){
-        title = "Change Set"
+        title = NSLocalizedString("Change Set", comment: "Change Set")
         
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifierEnum: .changeSetTableCellIdentifier)
         

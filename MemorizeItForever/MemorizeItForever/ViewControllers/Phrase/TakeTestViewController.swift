@@ -33,7 +33,7 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
     var cardViewsDic: Dictionary<CardViewPosition, MICardView> = [:]
     
     // MARK: Constants
-    
+    private let showAnswerLocalized = NSLocalizedString("Show Answer", comment: "Show Answer")
     private let cardViewsDicFatalError = "CardViewsDic does not have all card situation"
     private let changeTextTransition = "ChangeTextTransition"
     let green = #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1)
@@ -43,11 +43,11 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Take a Test"
         
         initialize()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(TakeTestViewController.doneBarButtonTapHandler))
+        let closeTitle = NSLocalizedString("Close", comment: "Close")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: closeTitle, style: .plain, target: self, action: #selector(TakeTestViewController.doneBarButtonTapHandler))
         panningGesture = UIPanGestureRecognizer(target: self, action: #selector(TakeTestViewController.panningHandler))
         self.view.addGestureRecognizer(panningGesture!)
         
@@ -90,9 +90,9 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
             fatalError(cardViewsDicFatalError)
         }
         current.flip()
-        var title = "Show Answer"
+        var title = showAnswerLocalized
         if showAnswerFlag{
-            title = "Show Question"
+            title = NSLocalizedString("Show Question", comment: "Show Question")
         }
         
         animate(animations: {
@@ -129,8 +129,9 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
     private func initialize(){
         
         setText.setFontSize(12)
+        setText.textDirextion = .leading
         
-        showAnswer.setTitle("Show Answer", for: .normal)
+        showAnswer.setTitle(showAnswerLocalized, for: .normal)
         
         firstCardView.initialize(phrase: "", meaning: "")
         cardViewsDic[.current] = firstCardView
@@ -138,10 +139,12 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         secondCardView.initialize(phrase: "", meaning: "")
         cardViewsDic[.next] = secondCardView
         
-        correct.setTitle("Correct", for: .normal)
+        let correctTitle = NSLocalizedString("Correct", comment: "Correct")
+        correct.setTitle(correctTitle, for: .normal)
         correct.buttonColor = green
         
-        wrong.setTitle("Wrong", for: .normal)
+        let wrongTitle = NSLocalizedString("Wrong", comment: "Wrong")
+        wrong.setTitle(wrongTitle, for: .normal)
         wrong.buttonColor = red
         
         if let notificationFeedback = notificationFeedback{
@@ -368,7 +371,9 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         guard let list = columnDic[dicIndex] else {
             return
         }
-        columnCounter.text = "\(listIndex + 1) / \(list.count) in Column \(dicIndex)"
+        
+        let inColumnLocalized = NSLocalizedString("in Column", comment: "in Column")
+        columnCounter.text = "\(listIndex + 1) / \(list.count) \(inColumnLocalized) \(dicIndex)"
     }
     
     private func changeCardViewFront(cardView: MICardView){

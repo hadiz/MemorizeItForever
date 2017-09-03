@@ -90,9 +90,7 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
     // MARK: Private Methods
     
     private func initialize(){
-        self.title = "Phrase Management"
-        
-        
+        self.title =  NSLocalizedString("Phrase Management", comment: "Phrase Management")
         
         tableView.registerClass(SubtitleUITableViewCell.self, forCellReuseIdentifierEnum: .phraseTableCellIdentifier)
         tableView.dataSource = dataSource
@@ -105,10 +103,10 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
         searchController.searchBar.delegate = self
         tableView.tableHeaderView = searchController.searchBar
         
+        let closeTitle = NSLocalizedString("Close", comment: "Close")
         
         
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(PhraseViewController.doneBarButtonTapHandler))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: closeTitle, style: .plain, target: self, action: #selector(PhraseViewController.doneBarButtonTapHandler))
         
         self.automaticallyAdjustsScrollViewInsets = false
         self.definesPresentationContext = true

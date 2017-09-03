@@ -26,7 +26,8 @@ final class PhraseHistoryViewController: UIViewController, UIPopoverPresentation
         
         initialize()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(PhraseHistoryViewController.closeBarButtonTapHandler))
+        let closeTitle = NSLocalizedString("Close", comment: "Close")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: closeTitle, style: .plain, target: self, action: #selector(PhraseHistoryViewController.closeBarButtonTapHandler))
         self.view.backgroundColor = ColorPicker.backgroundView
     }
     
@@ -53,7 +54,7 @@ final class PhraseHistoryViewController: UIViewController, UIPopoverPresentation
     // MARK: Private Methods
     
     private func initialize(){
-        self.title = "Phrase Failure History"
+        self.title = NSLocalizedString("Phrase Failure History", comment: "Phrase Failure History")
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         tableView.registerClass(Value1UITableViewCell.self, forCellReuseIdentifierEnum: .phraseHistoryTableCellIdentifier)

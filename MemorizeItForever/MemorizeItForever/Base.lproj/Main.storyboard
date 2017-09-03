@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZVL-0m-DUa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZVL-0m-DUa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,8 +29,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word Switching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf8-bs-0EN">
-                                                    <rect key="frame" x="8" y="11.5" width="120" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phrase Switching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf8-bs-0EN">
+                                                    <rect key="frame" x="8" y="11.5" width="132.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -62,13 +62,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuH-yd-J3d">
-                                                    <rect key="frame" x="159.5" y="11.5" width="42" height="20.5"/>
+                                                    <rect key="frame" x="163.5" y="11.5" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Words Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhZ-gv-YAX">
-                                                    <rect key="frame" x="8" y="11.5" width="143.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Phrase Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhZ-gv-YAX">
+                                                    <rect key="frame" x="8" y="11.5" width="147.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
             </objects>
             <point key="canvasLocation" x="1096" y="-374"/>
         </scene>
-        <!--MemorizeIt!-->
+        <!--Memorize It!-->
         <scene sceneID="88h-UX-Bs9">
             <objects>
                 <viewController storyboardIdentifier="MemorizeItViewController" id="FwN-R0-hcu" customClass="MemorizeItViewController" customModule="MemorizeItForever" customModuleProvider="target" sceneMemberID="viewController">
@@ -163,7 +163,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="height" multiplier="1:1" id="LZT-cj-bnY"/>
                                                         </constraints>
-                                                        <state key="normal" title="Review Pharse"/>
+                                                        <state key="normal" title="Review Phrase"/>
                                                         <variation key="heightClass=compact-widthClass=compact">
                                                             <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                         </variation>
@@ -248,7 +248,7 @@
                                                             <constraint firstAttribute="width" secondItem="Q8u-BP-BJB" secondAttribute="height" multiplier="1:1" id="2aS-lQ-Lup"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <state key="normal" title="Pharse Management"/>
+                                                        <state key="normal" title="Phrase Management"/>
                                                         <variation key="default">
                                                             <mask key="constraints">
                                                                 <exclude reference="2aS-lQ-Lup"/>
@@ -335,12 +335,12 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="9qg-B3-EEA"/>
+                                                <exclude reference="O5U-BP-78Y"/>
                                                 <exclude reference="1xm-kV-kut"/>
                                                 <exclude reference="iwx-0J-PMA"/>
                                                 <exclude reference="cJw-0p-2VR"/>
                                                 <exclude reference="ky9-UM-zaj"/>
-                                                <exclude reference="9qg-B3-EEA"/>
-                                                <exclude reference="O5U-BP-78Y"/>
                                             </mask>
                                         </variation>
                                     </stackView>
@@ -364,14 +364,14 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnI-7f-5WW" customClass="MISetView" customModule="MemorizeItForever" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="153" height="14"/>
+                                        <rect key="frame" x="8" y="8" width="148" height="14"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.30177119006849318" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="RnI-7f-5WW" firstAttribute="top" secondItem="rZp-KG-jpm" secondAttribute="topMargin" id="EWh-Hp-bVD"/>
                                     <constraint firstItem="RnI-7f-5WW" firstAttribute="bottom" secondItem="rZp-KG-jpm" secondAttribute="bottomMargin" id="ZUi-ey-naD"/>
-                                    <constraint firstItem="gvy-vc-sba" firstAttribute="leading" secondItem="RnI-7f-5WW" secondAttribute="trailing" id="bRX-SZ-3El"/>
+                                    <constraint firstItem="gvy-vc-sba" firstAttribute="leading" secondItem="RnI-7f-5WW" secondAttribute="trailing" constant="5" id="bRX-SZ-3El"/>
                                     <constraint firstItem="gvy-vc-sba" firstAttribute="centerX" secondItem="rZp-KG-jpm" secondAttribute="centerX" id="jvd-NI-z4h"/>
                                     <constraint firstItem="RnI-7f-5WW" firstAttribute="leading" secondItem="rZp-KG-jpm" secondAttribute="leadingMargin" id="oeY-T1-uOj"/>
                                     <constraint firstAttribute="height" constant="30" id="ryG-Io-cNm"/>
@@ -389,7 +389,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9dR-GG-PLP" secondAttribute="trailing" id="t3g-yn-aEJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MemorizeIt!" id="LFR-sb-oHv" userLabel="MemorizeIt!"/>
+                    <tabBarItem key="tabBarItem" title="Memorize It!" id="LFR-sb-oHv" userLabel="MemorizeIt!"/>
+                    <connections>
+                        <outlet property="setView" destination="RnI-7f-5WW" id="F9Z-xm-wsr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T98-OF-bo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -413,11 +416,11 @@
             </objects>
             <point key="canvasLocation" x="-1157" y="-237"/>
         </scene>
-        <!--Setting-->
+        <!--Settings-->
         <scene sceneID="d6G-d7-FeG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JKc-ng-V6j" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Setting" id="ttd-DE-KHO"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="ttd-DE-KHO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n0V-f4-GDX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

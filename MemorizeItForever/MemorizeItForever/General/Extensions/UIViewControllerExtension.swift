@@ -36,16 +36,16 @@ extension UIViewController {
         taskDoneView.tag = SubViewsEnum.taskDoneView.rawValue
         
         let hooray = MILabel()
-        hooray.text = "Hooray!"
+        hooray.text = NSLocalizedString("Hooray!", comment: "Hooray!") 
         hooray.font =  hooray.font.withSize(35)
         hooray.textColor = UIColor.darkGray
         hooray.textAlignment = .center
         
         let taskDone = MILabel()
-        taskDone.text = "The task is done"
+        taskDone.text = NSLocalizedString("The task is done", comment: "The task is done")
         taskDone.font =  hooray.font.withSize(35)
         taskDone.numberOfLines = 0
-        taskDone.lineBreakMode = .byCharWrapping
+        taskDone.lineBreakMode = .byWordWrapping
         taskDone.textColor = UIColor.darkGray
         taskDone.textAlignment = .center
         

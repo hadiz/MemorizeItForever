@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  MemorizeItForever
+
+  Created by Hadi Zamani on 8/28/17.
+  Copyright © 2017 SomeSimpleSolutions. All rights reserved.
+*/
+
+"Add Phrase" = "Add Phrase";
+"Write the Phrase here" = "Write the Phrase here";
+"Close" = "Close";
+"Next" = "Next";
+"Save" = "Save";
+"Previous" = "Previous";
+"Phrase should not be empty" = "Phrase should not be empty";
+"Meaning should not be empty" = "Meaning should not be empty";
+"Write the Meaning here" = "Write the Meaning here";
+"Choos a default 'Set'" = "Choos a default 'Set'";
+"Save was successful" = "Save was successful";
+"Review Phrases" = "Review Phrases";
+"Show back" = "Show back";
+"Show front" = "Show front";
+"Name" = "Name";
+"New Set" = "New Set";
+"Edit Set" = "Edit Set";
+"Set List" = "Set List";
+"Change Set" = "Change Set";
+"Default" = "Default";
+"Not Started" = "Not Started";
+"In Progress" = "In Progress";
+"Done" = "Done";
+"Phrase Failure History" = "Phrase Failure History";
+"Phrase Specifications" = "Phrase Specifications";
+"Set:" = "Set:";
+"Phrase:" = "Phrase:";
+"Status:" = "Status:";
+"Column" = "Column";
+"Hooray!" = "Hooray!";
+"The task is done" = "The task is done";
+"Flip" = "Flip";
+"Show Answer" = "Show Answer";
+"Show Question" = "Show Question";
+"in Column" = "in Column";
+"Correct" = "Correct";
+"Wrong" = "Wrong";
+"Not Specified" = "Not Specified";

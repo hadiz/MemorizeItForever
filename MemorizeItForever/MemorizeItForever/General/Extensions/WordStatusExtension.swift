@@ -12,11 +12,11 @@ extension WordStatus{
     func getString() -> String{
         switch self {
         case .notStarted:
-            return "Not Started"
+            return NSLocalizedString("Not Started", comment: "Not Started")
         case .inProgress:
-            return "In Progress"
+            return NSLocalizedString("In Progress", comment: "In Progress")
         case .done:
-            return "Done"
+            return NSLocalizedString("Done", comment: "Done")
         }
     }
 }
