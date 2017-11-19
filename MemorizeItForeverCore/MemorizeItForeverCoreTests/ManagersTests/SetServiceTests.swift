@@ -29,7 +29,7 @@ class SetServiceTests: XCTestCase {
     
     func testCreateDefaultSetIfDoesNotExists() {
         objc_setAssociatedObject(setDataAccess, &setNumberKey, 0, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        setService.createDefaultSet()
+        setService.createDefaultSet(name: "name")
         if let enumResult = objc_getAssociatedObject(setDataAccess, &resultKey) as? FakeSetDataAccessEnum{
             XCTAssertEqual(enumResult, .save ,"should create Default Set")
         }
@@ -42,7 +42,7 @@ class SetServiceTests: XCTestCase {
         
         objc_setAssociatedObject(setDataAccess, &setNumberKey, 1, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         
-        setService.createDefaultSet()
+        setService.createDefaultSet(name: "name")
         let enumResult = objc_getAssociatedObject(setDataAccess, &resultKey) as? FakeSetDataAccessEnum
         XCTAssertNil(enumResult, "Should not create Default set if it is exists")
     }

@@ -29,6 +29,6 @@ class Helper {
         let originalMethod = class_getInstanceMethod(cls, origin)
         let swizzledMethod = class_getInstanceMethod(cls, swizzled)
         
-        method_exchangeImplementations(originalMethod, swizzledMethod)
+        method_exchangeImplementations(originalMethod!, swizzledMethod!)
     }
 }
