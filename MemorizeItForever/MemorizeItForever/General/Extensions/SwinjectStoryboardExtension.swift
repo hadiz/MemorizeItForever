@@ -13,6 +13,7 @@ import BaseLocalDataAccess
 import CoreData
 
 extension SwinjectStoryboard {
+    @objc
     class func setup() {
         
         registerContext()
