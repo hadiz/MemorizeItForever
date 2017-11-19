@@ -56,13 +56,13 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     }
     
     // MARK: Internal Methods
-    func previousbarButtonTapHandler(){
+    @objc func previousbarButtonTapHandler(){
         if !isTaskDone{
             swapCards(direction: .right)
         }
     }
     
-    func nextbarButtonTapHandler(){
+    @objc func nextbarButtonTapHandler(){
         if !isTaskDone{
             swapCards(direction: .left)
         }
@@ -79,7 +79,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         self.dismiss(animated: true, completion: nil)
     }
     
-    func panningHandler(recognizer: UIPanGestureRecognizer){
+    @objc func panningHandler(recognizer: UIPanGestureRecognizer){
         if !isTaskDone{
             panning(recognizer: recognizer)
         }

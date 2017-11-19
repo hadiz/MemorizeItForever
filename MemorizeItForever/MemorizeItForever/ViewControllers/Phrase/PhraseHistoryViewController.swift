@@ -47,7 +47,7 @@ final class PhraseHistoryViewController: UIViewController, UIPopoverPresentation
     
     // MARK: Internal Methods
     
-    func closeBarButtonTapHandler() {
+    @objc func closeBarButtonTapHandler() {
         self.dismiss(animated: true, completion: nil)
     }
     

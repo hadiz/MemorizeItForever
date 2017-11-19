@@ -71,7 +71,7 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
     
     // MARK: Internal Methods
     
-    func doneBarButtonTapHandler() {
+    @objc func doneBarButtonTapHandler() {
         self.dismiss(animated: true, completion: nil)
     }
     

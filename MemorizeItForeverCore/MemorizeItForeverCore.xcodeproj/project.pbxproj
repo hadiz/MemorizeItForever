@@ -560,7 +560,7 @@
 					43434A841DB262800005B59F = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 37CR54MNJQ;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					43434A8D1DB262800005B59F = {
@@ -917,7 +917,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -943,7 +944,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

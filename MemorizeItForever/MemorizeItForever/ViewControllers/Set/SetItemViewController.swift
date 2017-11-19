@@ -57,7 +57,7 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
         return .none
     }
     
-    func saveAction(){
+    @objc func saveAction(){
         if entityMode == .save{
             save()
         }
@@ -68,7 +68,7 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
         NotificationCenter.default.post(.setViewControllerReload, object: nil)
     }
     
-    func cancelAction(){
+    @objc func cancelAction(){
         self.dismiss(animated: true, completion: nil)
     }
     

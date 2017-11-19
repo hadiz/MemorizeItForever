@@ -81,7 +81,7 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         return .none
     }
     
-    func doneBarButtonTapHandler(){
+    @objc func doneBarButtonTapHandler(){
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -113,7 +113,7 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         swipeCard(direction: .down)
     }
     
-    func panningHandler(recognizer: UIPanGestureRecognizer){
+    @objc func panningHandler(recognizer: UIPanGestureRecognizer){
         if !isTaskDone{
             panning(recognizer: recognizer)
         }

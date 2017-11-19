@@ -9,6 +9,10 @@
 import MemorizeItForeverCore
 
 class MockSetService: SetServiceProtocol {
+    func createDefaultSet(name: String) {
+        
+    }
+    
     func delete(_ setModel: SetModel) -> Bool {
         return false
     }

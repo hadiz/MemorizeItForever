@@ -50,7 +50,7 @@ extension UIView{
         makeAToast(color: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 0.75), message: message)
     }
     
-    func hideToast(timer: Timer){
+    @objc func hideToast(timer: Timer){
         if let toatsView = timer.userInfo as? UIView{
             hideToastAction(toatsView: toatsView)
         }

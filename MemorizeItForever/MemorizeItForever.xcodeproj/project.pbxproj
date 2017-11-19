@@ -640,18 +640,20 @@
 					43434AFA1DB3676A0005B59F = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 37CR54MNJQ;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					43434B111DB3676A0005B59F = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2X8HVN46BZ;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 43434AFA1DB3676A0005B59F;
 					};
 					43434B1C1DB3676A0005B59F = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2X8HVN46BZ;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 43434AFA1DB3676A0005B59F;
 					};
@@ -1123,7 +1125,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForever;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1143,7 +1146,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForever;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1160,7 +1164,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemorizeItForever.app/MemorizeItForever";
 			};
 			name = Debug;
@@ -1177,7 +1182,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemorizeItForever.app/MemorizeItForever";
 			};
 			name = Release;
@@ -1192,7 +1198,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = MemorizeItForever;
 			};
 			name = Debug;
@@ -1207,7 +1214,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = MemorizeItForever;
 			};
 			name = Release;

@@ -26,7 +26,7 @@ class MICardView: UIView {
         return self
     }
     
-    func flip(){
+    @objc func flip(){
         if(showingPhrase){
             UIView.transition(from: phrase, to: meaning, duration: 1, options: [.transitionFlipFromRight ,.showHideTransitionViews], completion: nil)
             showingPhrase = false

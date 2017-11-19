@@ -71,12 +71,12 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
     
     // MARK: Internal methods
     
-    func doneBarButtonTapHandler(){
+    @objc func doneBarButtonTapHandler(){
         validator.clear(validatable: phrase)
         self.dismiss(animated: true, completion: nil)
     }
     
-    func nextBarButtonTapHandler(){
+    @objc func nextBarButtonTapHandler(){
         let errorMessage = NSLocalizedString("Phrase should not be empty", comment: "Phrase should not be empty message")
         let result = validator.validate(phrase, errorMessage: errorMessage) {
             !($0 as! MITextView).text.trim().isEmpty
@@ -93,7 +93,7 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         }
     }
     
-    func saveBarButtonTapHandler(){
+    @objc func saveBarButtonTapHandler(){
         let errorMessage = NSLocalizedString("Meaning should not be empty", comment: "Meaning should not be empty message")
         let result = validator.validate(meaning, errorMessage: errorMessage) {
             !($0 as! MITextView).text.trim().isEmpty
@@ -104,13 +104,13 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         }
     }
     
-    func previousBarButtonTapHandler(){
+    @objc func previousBarButtonTapHandler(){
         validator.clear(validatable: meaning)
         goPrevious()
         
     }
     
-    func copyBarButtonTapHandler(){
+    @objc func copyBarButtonTapHandler(){
         var text = meaning.text
         if meaning.isHidden{
             text = phrase.text
@@ -118,7 +118,7 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         UIPasteboard.general.string = text
     }
     
-    func pasteBarButtonTapHandler(){
+    @objc func pasteBarButtonTapHandler(){
         if phrase.isHidden{
            meaning.text = UIPasteboard.general.string
         }

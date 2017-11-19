@@ -46,7 +46,7 @@ final class MISetView: UIView {
         setFixed.font = setFixed.font.withSize(size)
     }
     
-    func changeSet(){
+    @objc func changeSet(){
         if let setDic = UserDefaults.standard.object(forKey: Settings.defaultSet.rawValue) as? Dictionary<String, Any>,
             let setModel = SetModel(dictionary: setDic) {
             set.text = setModel.name

@@ -60,15 +60,15 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
         return .none
     }
     
-    func closeBarButtonTapHandler(){
+    @objc func closeBarButtonTapHandler(){
         self.dismiss(animated: true, completion: nil)
     }
     
-    func addAction(_ sender: AnyObject){
+    @objc func addAction(_ sender: AnyObject){
         presentSetItemViewController(EntityMode.save)
     }
     
-    func fetchData(){
+    @objc func fetchData(){
     
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
             let sets = self.setService.get().flatMap{$0 as MemorizeItModelProtocol}
