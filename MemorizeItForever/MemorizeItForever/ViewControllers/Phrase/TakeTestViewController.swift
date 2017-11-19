@@ -308,18 +308,18 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
             do{
-                let wordInProgressList = try self.wordFlowService.fetchWordsToExamin()
-//                            var wordInProgressList: [WordInProgressModel] = []
-//                            for i in 0..<10{
-//                                var word = WordModel()
-//                                word.meaning = "developer"
-//                                word.phrase = "Entwickler"
-//                                var win = WordInProgressModel()
-//                                win.column = Int16(i / 2)
-//                                win.date = Date()
-//                                win.word = word
-//                                wordInProgressList.append(win)
-//                            }
+//                let wordInProgressList = try self.wordFlowService.fetchWordsToExamin()
+                            var wordInProgressList: [WordInProgressModel] = []
+                            for i in 0..<10{
+                                var word = WordModel()
+                                word.meaning = "developer"
+                                word.phrase = "Entwickler"
+                                var win = WordInProgressModel()
+                                win.column = Int16(i / 2)
+                                win.date = Date()
+                                win.word = word
+                                wordInProgressList.append(win)
+                            }
                 
                 for i: Int16 in 0...5{
                     self.columnDic[i] = wordInProgressList.filter(){$0.column == i}
