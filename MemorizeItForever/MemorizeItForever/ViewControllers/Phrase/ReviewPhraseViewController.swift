@@ -110,7 +110,6 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         flip.setTitle(flipTitle, for: .normal)
         
         setText.setFontSize(12)
-        setText.textDirextion = .leading
         
         frontBackswitch.isOn = true
         

@@ -9,18 +9,32 @@
 import UIKit
 import MemorizeItForeverCore
 
+@IBDesignable
 final class MISetView: UIView {
+    
+    @IBInspectable
+    var isCentered: Bool = false{
+        didSet {
+            if isCentered {
+                textDirection = .center
+            }
+            else {
+                textDirection = .leading
+            }
+        }
+    }
     
     enum Direction{
         case leading
         case center
     }
     
-    var textDirextion: Direction = .center
+    var textDirection: Direction = .leading
+    private var didConstraintsSet = false
     
-    private var containerView: UIView!
     private var setFixed: UILabel!
     private var set: UILabel!
+    private var stackView: UIStackView!
     
     
     override init(frame: CGRect) {
@@ -33,13 +47,15 @@ final class MISetView: UIView {
         initialize()
     }
     
-    override func layoutSubviews() {
-        applyAutoLayout()
-    }
-
-    
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func updateConstraints() {
+        super.updateConstraints()
+        guard !didConstraintsSet else {return}
+        didConstraintsSet = true
+        applyAutoLayout()
     }
     
     func setFontSize(_ size: CGFloat){
@@ -66,8 +82,12 @@ final class MISetView: UIView {
     private func defineControls(){
         self.clipsToBounds = true
         
-        containerView = UIView()
-        containerView.translatesAutoresizingMaskIntoConstraints = false
+        stackView = UIStackView()
+        stackView.distribution = .fill
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.spacing = 8
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         
         setFixed = MILabel()
         setFixed.text = NSLocalizedString("Set:", comment: "Set:")
@@ -78,41 +98,33 @@ final class MISetView: UIView {
         set.adjustsFontSizeToFitWidth = true
         set.textColor = UIColor.darkGray
         set.baselineAdjustment = .alignCenters
+        set.minimumScaleFactor = 0.5
+        set.numberOfLines = 1
+        set.setContentCompressionResistancePriority(.init(749), for: .horizontal)
         changeSet()
-
+        
     }
     
     private func addControls(){
-        self.addSubview(containerView)
-        containerView.addSubview(setFixed)
-        containerView.addSubview(set)
+        self.addSubview(stackView)
+        stackView.addArrangedSubview(setFixed)
+        stackView.addArrangedSubview(set)
     }
     
     private func applyAutoLayout(){
-        let setWidth = self.frame.width - 8 - 30
-
+        
         var constraintList: [NSLayoutConstraint] = []
         
-        switch textDirextion {
+        switch textDirection {
         case .center:
-            constraintList.append(containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor))
+            constraintList.append(stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor))
         case .leading:
-             constraintList.append(containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor))
+            constraintList.append(stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor))
+            constraintList.append(stackView.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor))
         }
         
-        constraintList.append(containerView.heightAnchor.constraint(equalTo: self.heightAnchor))
-        constraintList.append(containerView.topAnchor.constraint(equalTo: self.topAnchor))
-        
-        constraintList.append(setFixed.leadingAnchor.constraint(equalTo: containerView.leadingAnchor))
-        constraintList.append(setFixed.heightAnchor.constraint(equalTo: containerView.heightAnchor))
-        constraintList.append(setFixed.topAnchor.constraint(equalTo: containerView.topAnchor))
-        
-        constraintList.append(set.leadingAnchor.constraint(equalTo: setFixed.trailingAnchor, constant: 8))
-        constraintList.append(set.trailingAnchor.constraint(equalTo: containerView.trailingAnchor))
-        constraintList.append(set.widthAnchor.constraint(equalToConstant: setWidth))
-        constraintList.append(set.heightAnchor.constraint(equalTo: containerView.heightAnchor))
-        constraintList.append(set.topAnchor.constraint(equalTo: containerView.topAnchor))
-        
+        constraintList.append(stackView.topAnchor.constraint(equalTo: self.topAnchor))
+        constraintList.append(stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor))
         
         NSLayoutConstraint.activate(constraintList)
     }

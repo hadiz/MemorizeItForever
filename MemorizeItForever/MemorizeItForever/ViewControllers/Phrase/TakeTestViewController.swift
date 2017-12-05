@@ -129,7 +129,6 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
     private func initialize(){
         
         setText.setFontSize(12)
-        setText.textDirextion = .leading
         
         showAnswer.setTitle(showAnswerLocalized, for: .normal)
         

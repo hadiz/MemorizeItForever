@@ -101,7 +101,12 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.scopeButtonTitles = getScopeTitles()
         searchController.searchBar.delegate = self
-        tableView.tableHeaderView = searchController.searchBar
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = searchController
+            self.navigationItem.hidesSearchBarWhenScrolling = false
+        } else {
+            tableView.tableHeaderView = searchController.searchBar
+        }
         
         let closeTitle = NSLocalizedString("Close", comment: "Close")
         

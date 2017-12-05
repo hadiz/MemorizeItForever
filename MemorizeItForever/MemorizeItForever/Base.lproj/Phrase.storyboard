@@ -24,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mco-KS-Epj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mco-KS-Epj">
                                 <rect key="frame" x="187" y="28" width="0.0" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="z4D-NO-N0C"/>
@@ -33,7 +33,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4t-Si-55z" customClass="MISetView" customModule="MemorizeItForever" customModuleProvider="target">
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4t-Si-55z" customClass="MISetView" customModule="MemorizeItForever" customModuleProvider="target">
                                 <rect key="frame" x="16" y="28" width="166" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -165,13 +165,17 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ch-1F-KBc" customClass="MISetView" customModule="MemorizeItForever" customModuleProvider="target">
-                                <rect key="frame" x="94" y="639" width="187.5" height="26"/>
+                                <rect key="frame" x="0.5" y="639" width="375" height="26"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isLeadingDirextion" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCentered" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7ch-1F-KBc" firstAttribute="centerX" secondItem="5Uv-2J-8Pn" secondAttribute="centerX" id="7eO-kK-y3G"/>
-                            <constraint firstItem="7ch-1F-KBc" firstAttribute="width" secondItem="5Uv-2J-8Pn" secondAttribute="width" multiplier="1/2" id="8lj-xT-tDA"/>
+                            <constraint firstItem="7ch-1F-KBc" firstAttribute="width" secondItem="5Uv-2J-8Pn" secondAttribute="width" id="8lj-xT-tDA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MT0-wb-x6h" secondAttribute="trailing" id="FvH-KA-t0P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dgb-z9-QYd" secondAttribute="trailing" constant="8" id="UFt-QB-MBb"/>
                             <constraint firstItem="dgb-z9-QYd" firstAttribute="leading" secondItem="5Uv-2J-8Pn" secondAttribute="leadingMargin" constant="8" id="Uyr-Fs-1ER"/>
@@ -216,7 +220,7 @@
                                     <constraint firstAttribute="height" constant="21.5" id="l3m-9f-lG8"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNj-oB-EyI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNj-oB-EyI">
                                 <rect key="frame" x="359" y="20" width="0.0" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="8Zu-au-dj4"/>
@@ -378,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgw-lx-IAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6212" y="-440"/>
+            <point key="canvasLocation" x="5814" y="-358"/>
         </scene>
     </scenes>
 </document>
