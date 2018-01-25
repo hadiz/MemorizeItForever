@@ -19,6 +19,9 @@ final class TabBarController: UITabBarController {
         let defaultName = NSLocalizedString("Default", comment: "Default")
         setService.createDefaultSet(name: defaultName)
         setService.setUserDefaultSet()
+        self.viewControllers?[0].tabBarItem.image = UIImage(named: "brain-deactive")
+        self.viewControllers?[1].tabBarItem.image = UIImage(named: "settings-deactive")
+        self.tabBar.tintColor = ColorPicker.backgroundView
     }
     
     override func didReceiveMemoryWarning() {

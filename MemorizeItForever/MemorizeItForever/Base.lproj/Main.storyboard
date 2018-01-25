@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZVL-0m-DUa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZVL-0m-DUa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -392,7 +392,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9dR-GG-PLP" secondAttribute="trailing" id="t3g-yn-aEJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Memorize It!" id="LFR-sb-oHv" userLabel="MemorizeIt!"/>
+                    <tabBarItem key="tabBarItem" title="Memorize It!" selectedImage="brain-deactive" id="LFR-sb-oHv" userLabel="MemorizeIt!"/>
                     <connections>
                         <outlet property="setView" destination="RnI-7f-5WW" id="F9Z-xm-wsr"/>
                     </connections>
@@ -439,4 +439,7 @@
             <point key="canvasLocation" x="-194.40000000000001" y="120.98950524737631"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="brain-deactive" width="29" height="29"/>
+    </resources>
 </document>
