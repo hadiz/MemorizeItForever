@@ -8,15 +8,26 @@
 
 import UIKit
 
+@IBDesignable
 class RoundedButton: UIButton {
     //TODO
-//    var colorPicker: ColorPickerProtocol!
+    //    var colorPicker: ColorPickerProtocol!
+    
+    @IBInspectable
+    var shadow: Bool = false {
+        didSet {
+            if shadow {
+                applyShadow()
+            }
+        }
+    }
     
     var buttonColor: UIColor?
     
     override func draw(_ rect: CGRect) {
         
-        let width = bounds.width < bounds.height ? bounds.width : bounds.height
+        var width = bounds.width < bounds.height ? bounds.width : bounds.height
+        width -= 4
         
         let newRect = CGRect(x: bounds.midX - width / 2, y: bounds.midY - width / 2, width: width, height: width)
         
@@ -49,5 +60,13 @@ class RoundedButton: UIButton {
     
     private func initialize(){
         self.backgroundColor = UIColor.clear
+    }
+    
+    private func applyShadow(){
+        self.clipsToBounds = false
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowRadius = 4
+        self.layer.shadowOffset = CGSize(width: 0, height: 5)
     }
 }
