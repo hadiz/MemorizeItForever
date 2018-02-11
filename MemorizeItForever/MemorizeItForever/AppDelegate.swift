@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setContext()
         setUserDefaults()
         return true
     }
@@ -160,6 +161,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    private func setContext(){
+        var context: NSManagedObjectContext
+        if #available(iOS 10.0, *) {
+            context =  self.persistentContainer.viewContext
+        } else {
+            context = self.managedObjectContext
+        }
+        ContextHelper.shared.setContext(context: context)
     }
     
 }

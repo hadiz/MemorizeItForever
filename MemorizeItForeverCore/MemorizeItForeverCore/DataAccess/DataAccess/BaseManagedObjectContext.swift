@@ -11,11 +11,11 @@ import CoreData
 import BaseLocalDataAccess
 
 final class BaseManagedObjectContext: ManagedObjectContextProtocol {
+   
+    lazy var managedObjectContext: NSManagedObjectContext = {
+        return ContextHelper.shared.getContext()
+    }()
     
     public init(){
-    }
-
-    public func get() -> NSManagedObjectContext{
-        return ContextHelper.shared.getContext()
     }
 }

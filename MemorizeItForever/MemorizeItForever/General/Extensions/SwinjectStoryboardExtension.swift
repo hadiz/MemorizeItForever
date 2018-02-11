@@ -16,8 +16,6 @@ extension SwinjectStoryboard {
     @objc
     class func setup() {
         
-        registerContext()
-        
         defaultContainer.storyboardInitCompleted(TabBarController.self) { r, c in
             c.setService = r.resolve(SetServiceProtocol.self)
         }
@@ -122,17 +120,4 @@ extension SwinjectStoryboard {
         }
         
     }
-    
-    private class func registerContext(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        var context: NSManagedObjectContext
-        if #available(iOS 10.0, *) {
-            context =  appDelegate.persistentContainer.viewContext
-        } else {
-            context = appDelegate.managedObjectContext
-        }
-        ContextHelper.shared.setContext(context: context)
-        
-    }
-    
 }
