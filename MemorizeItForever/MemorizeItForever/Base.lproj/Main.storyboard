@@ -31,13 +31,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phrase Switching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf8-bs-0EN">
-                                                    <rect key="frame" x="16" y="11.5" width="294" height="20.5"/>
+                                                    <rect key="frame" x="20" y="11.5" width="515" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4al-i5-9Bw">
-                                                    <rect key="frame" x="318" y="6.5" width="51" height="31"/>
+                                                    <rect key="frame" x="543" y="6.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="wordSwitchingAction:" destination="PaV-ep-yuV" eventType="valueChanged" id="i6w-ap-gsK"/>
                                                     </connections>
@@ -64,19 +64,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuH-yd-J3d">
-                                                    <rect key="frame" x="171.5" y="11.5" width="96.5" height="20.5"/>
+                                                    <rect key="frame" x="175.5" y="11.5" width="317.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Phrase Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhZ-gv-YAX">
-                                                    <rect key="frame" x="16" y="11.5" width="147.5" height="20.5"/>
+                                                    <rect key="frame" x="20" y="11.5" width="147.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="1ql-tm-w3l">
-                                                    <rect key="frame" x="273" y="7.5" width="94" height="29"/>
+                                                    <rect key="frame" x="498" y="7.5" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="stepAction:" destination="PaV-ep-yuV" eventType="valueChanged" id="gq9-Ux-8vX"/>
                                                     </connections>
@@ -95,6 +95,38 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="Vdl-8d-pns">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dgV-WM-aXn">
+                                        <rect key="frame" x="0.0" y="195" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dgV-WM-aXn" id="7OF-wl-hj0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Capitalization" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UF-EJ-mua">
+                                                    <rect key="frame" x="20" y="11.5" width="104" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNQ-2O-VDE">
+                                                    <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="capitalizationAction:" destination="PaV-ep-yuV" eventType="valueChanged" id="IN1-QK-iLR"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oNQ-2O-VDE" firstAttribute="centerY" secondItem="7OF-wl-hj0" secondAttribute="centerY" id="3nU-YB-kR4"/>
+                                                <constraint firstAttribute="trailing" secondItem="oNQ-2O-VDE" secondAttribute="trailing" constant="8" id="8Tq-z4-M6h"/>
+                                                <constraint firstItem="1UF-EJ-mua" firstAttribute="centerY" secondItem="7OF-wl-hj0" secondAttribute="centerY" id="lFI-CM-Oua"/>
+                                                <constraint firstItem="1UF-EJ-mua" firstAttribute="leading" secondItem="7OF-wl-hj0" secondAttribute="leadingMargin" id="uAb-0o-kcs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="PaV-ep-yuV" id="tjg-d4-mUs"/>
@@ -103,6 +135,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="jww-Xt-9yX"/>
                     <connections>
+                        <outlet property="capitalization" destination="oNQ-2O-VDE" id="Ua4-Bz-fcd"/>
                         <outlet property="newWordsCount" destination="cuH-yd-J3d" id="v7V-iF-a9u"/>
                         <outlet property="stepper" destination="1ql-tm-w3l" id="IIO-Vy-K6H"/>
                         <outlet property="tableView1" destination="uee-KD-Nng" id="tiA-ZP-DjO"/>
@@ -135,7 +168,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="189.5"/>
                                                 <subviews>
                                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="SHp-bt-Moh" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
-                                                        <rect key="frame" x="175.5" y="9" width="171.5" height="171.5"/>
+                                                        <rect key="frame" x="175.5" y="9" width="171.5" height="171"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="SHp-bt-Moh" secondAttribute="height" multiplier="1:1" id="3LX-Uk-6lY"/>
                                                         </constraints>
@@ -166,7 +199,7 @@
                                                         </connections>
                                                     </button>
                                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="oLn-zR-W4J" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
-                                                        <rect key="frame" x="-4" y="9" width="171.5" height="171.5"/>
+                                                        <rect key="frame" x="-4" y="9" width="171.5" height="171"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="oLn-zR-W4J" secondAttribute="height" multiplier="1:1" id="LZT-cj-bnY"/>
                                                         </constraints>
@@ -218,7 +251,7 @@
                                                 <rect key="frame" x="0.0" y="189.5" width="343" height="189"/>
                                                 <subviews>
                                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ZGz-7V-ukg" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
-                                                        <rect key="frame" x="86.5" y="9" width="171.5" height="172"/>
+                                                        <rect key="frame" x="86" y="9" width="172" height="171.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Add  Pharse"/>
                                                         <userDefinedRuntimeAttributes>
@@ -260,7 +293,7 @@
                                                 <rect key="frame" x="0.0" y="378.5" width="343" height="189.5"/>
                                                 <subviews>
                                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Q8u-BP-BJB" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
-                                                        <rect key="frame" x="175.5" y="9" width="171.5" height="171.5"/>
+                                                        <rect key="frame" x="175.5" y="10" width="171.5" height="171"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Q8u-BP-BJB" secondAttribute="height" multiplier="1:1" id="2aS-lQ-Lup"/>
                                                         </constraints>
@@ -292,7 +325,7 @@
                                                         </connections>
                                                     </button>
                                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="6dT-sG-0DS" customClass="RoundedButton" customModule="MemorizeItForever" customModuleProvider="target">
-                                                        <rect key="frame" x="-4" y="9" width="171.5" height="171.5"/>
+                                                        <rect key="frame" x="-4" y="10" width="171.5" height="171"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="6dT-sG-0DS" secondAttribute="height" multiplier="1:1" id="Eax-3V-syO"/>
                                                         </constraints>

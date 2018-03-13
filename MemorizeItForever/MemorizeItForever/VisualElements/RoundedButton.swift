@@ -27,7 +27,9 @@ class RoundedButton: UIButton {
     override func draw(_ rect: CGRect) {
         
         var width = bounds.width < bounds.height ? bounds.width : bounds.height
-        width -= 4
+        if shadow {
+            width -= 4
+        }
         
         let newRect = CGRect(x: bounds.midX - width / 2, y: bounds.midY - width / 2, width: width, height: width)
         

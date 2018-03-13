@@ -34,3 +34,7 @@
 
 /* Class = "UILabel"; text = "New Words Count:"; ObjectID = "xhZ-gv-YAX"; */
 "xhZ-gv-YAX.text" = "Neue Phrase Count:";
+
+/* Class = "UILabel"; text = "Capitalization"; ObjectID = "1UF-EJ-mua"; */
+"1UF-EJ-mua.text" = "Kapitalisierung";
+

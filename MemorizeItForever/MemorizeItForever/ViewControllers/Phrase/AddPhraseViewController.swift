@@ -37,6 +37,10 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         
         phrase.font = phrase.font?.withSize(20)
         phrase.alpha = 0.7
+        if let isTrue = UserDefaults.standard.object(forKey: Settings.capitalization.rawValue) as? Bool {
+            phrase.autocapitalizationType =  isTrue ? .sentences : .none
+            meaning.autocapitalizationType =  isTrue ? .sentences : .none
+        }
         
         meaning.isHidden = true
         meaning.font = meaning.font?.withSize(20)

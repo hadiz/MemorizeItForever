@@ -27,6 +27,7 @@ public enum Settings: String{
     case phraseColor
     case meaningColor
     case defaultSet
+    case capitalization
 }
 enum MemorizeColumns: Int16 {
     case pre = 0

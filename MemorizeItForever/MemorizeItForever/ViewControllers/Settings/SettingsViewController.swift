@@ -24,6 +24,10 @@ class SettingsViewController: UITableViewController {
             stepper.value = Double(wordsCount)
             newWordsCount.text = "\(wordsCount)"
         }
+        
+        if let switching =  defaults.object(forKey: Settings.capitalization.rawValue) as? Bool{
+            capitalization.isOn = switching
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,11 +35,11 @@ class SettingsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func wordSwitchingTapped(_ sender: UISwitch){
+    private func wordSwitchingDidTap(_ sender: UISwitch){
          UserDefaults.standard.setValue(sender.isOn, forKey: Settings.wordSwitching.rawValue)
     }
     
-    private func stepActionTapped(_ sender: UIStepper){
+    private func stepActionDidTap(_ sender: UIStepper){
         if sender.value < 1{
             sender.value = 1
         }
@@ -43,16 +47,24 @@ class SettingsViewController: UITableViewController {
         newWordsCount.text = "\(value)"
         UserDefaults.standard.setValue(value, forKey: Settings.newWordsCount.rawValue)
     }
+    
+    private func capitalizationDidTap(_ sender: UISwitch) {
+        UserDefaults.standard.setValue(sender.isOn, forKey: Settings.capitalization.rawValue)
+    }
 
     // MARK: Controls and Actions
     @IBOutlet var tableView1: UITableView!
     @IBOutlet weak var wordSwitching: UISwitch!
     @IBOutlet weak var newWordsCount: UILabel!
     @IBAction func stepAction(_ sender: UIStepper) {
-        stepActionTapped(sender)
+        stepActionDidTap(sender)
     }
     @IBAction func wordSwitchingAction(_ sender: UISwitch) {
-        wordSwitchingTapped(sender)
+        wordSwitchingDidTap(sender)
     }
     @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var capitalization: UISwitch!
+    @IBAction func capitalizationAction(_ sender: UISwitch) {
+        capitalizationDidTap(sender)
+    }
 }

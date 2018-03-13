@@ -63,6 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if defaults.colorForKey(Settings.meaningColor.rawValue) == nil {
             defaults.setColor(UIColor.red, forKey: Settings.meaningColor.rawValue)
         }
+        if defaults.object(forKey: Settings.capitalization.rawValue) == nil{
+            defaults.setValue(true, forKey: Settings.capitalization.rawValue)
+        }
     }
     
     // MARK: - Core Data stack
