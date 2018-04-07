@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView{
-    func makeAToast(color: UIColor, message: String){
+    func makeAToast(color: UIColor, message: String, fastHiding: Bool = false){
         let toatsView = UIView(frame: CGRect(x: 0, y: self.layer.frame.height, width: self.frame.width, height: 70))
         toatsView.layer.cornerRadius = 10.0
         toatsView.clipsToBounds = true
@@ -27,7 +27,7 @@ extension UIView{
         }) { (finished) -> Void in
             
             let weakSelf = self
-            let timerInterval: TimeInterval = 1
+            let timerInterval: TimeInterval = fastHiding ? 0.1 : 1
             
             if #available(iOS 10.0, *) {
                 let timer = Timer(timeInterval: timerInterval, repeats: false, block: {[weak weakSelf] (timer) in
@@ -48,6 +48,10 @@ extension UIView{
     
     func makeAFailureToast(message: String){
         makeAToast(color: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 0.75), message: message)
+    }
+    
+    func makeAMessageToast(message: String){
+        makeAToast(color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), message: message, fastHiding: true)
     }
     
     @objc func hideToast(timer: Timer){

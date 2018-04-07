@@ -120,14 +120,15 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
             text = phrase.text
         }
         UIPasteboard.general.string = text
+        didCopyToastMessage()
     }
     
     @objc func pasteBarButtonTapHandler(){
         if phrase.isHidden{
-           meaning.text = UIPasteboard.general.string
+            meaning.text = "\(meaning.text ?? "") \(UIPasteboard.general.string ?? "")".trim()
         }
         else{
-            phrase.text = UIPasteboard.general.string
+            phrase.text = "\(phrase.text ?? "") \(UIPasteboard.general.string ?? "")".trim()
         }
     }
     
@@ -186,6 +187,11 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
             notificationFeedback.notificationOccurred(.error)
         }
         self.view.makeAFailureToast(message: message)
+    }
+    
+    private func didCopyToastMessage(){
+        let message = NSLocalizedString("Copy to Clipboard", comment: "Copy to Clipboard")
+        self.view.makeAMessageToast(message: message)
     }
     
     // MARK: Controls and Actions
