@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  MemorizeItForever
+
+  Created by Hadi Zamani on 8/28/17.
+  Copyright © 2017 SomeSimpleSolutions. All rights reserved.
+*/
+
+"Add Phrase" = "Ajouter une phrase";
+"Write the Phrase here" = "Écrivez la phrase ici";
+"Close" = "Fermer";
+"Next" = "Suivant";
+"Save" = "Enregistrer";
+"Previous" = "Précédent";
+"Phrase should not be empty" = "La phrase ne doit pas être vide";
+"Meaning should not be empty" = "Le sens ne devrait pas être vide";
+"Write the Meaning here" = "Écrivez le sens ici";
+"Choos a default 'Set'" = "Choisissez un 'Set' par défaut";
+"Save was successful" = "Enregistrer a été réussi";
+"Review Phrases" = "Examiner les phrases";
+"Show back" = "Afficher en arrière";
+"Show front" = "Montrer le devant";
+"Name" = "Nom";
+"New Set" = "Nouvel Set";
+"Edit Set" = "Modifier le Set";
+"Set List" = "La liste de set";
+"Change Set" = "Changer Set";
+"Default" = "Défaut";
+"Not Started" = "Pas commencé";
+"In Progress" = "En cours";
+"Done" = "Terminé";
+"Phrase Failure History" = "Historique des échecs de la phrase";
+"Phrase Specifications" = "Expression des phrases";
+"Set:" = "Set:";
+"Phrase:" = "Phrase:";
+"Status:" = "Statut:";
+"Column" = "Colonne";
+"Hooray!" = "Hourra!";
+"The task is done" = "La tâche est terminée";
+"Flip" = "Retourner";
+"Show Answer" = "Montrer la réponse";
+"Show Question" = "Afficher la question";
+"in Column" = "Dans la colonne";
+"Correct" = "Correct";
+"Wrong" = "Faux";
+"Not Specified" = "Non précisé";
+"Copy to Clipboard" = "Copier dans le presse-papier";
