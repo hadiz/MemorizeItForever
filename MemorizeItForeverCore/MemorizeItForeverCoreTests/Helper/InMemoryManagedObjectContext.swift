@@ -11,12 +11,11 @@ import BaseLocalDataAccess
 
 class InMemoryManagedObjectContext: ManagedObjectContextProtocol  {
     
-    private var context: NSManagedObjectContext?
-    public func get() -> NSManagedObjectContext{
-        if context == nil {
-            context = setUpInMemoryManagedObjectContext()
-        }
-        return context!
+    lazy var managedObjectContext: NSManagedObjectContext = {
+        return setUpInMemoryManagedObjectContext()
+    }()
+    
+    public init(){
     }
     
     func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext{

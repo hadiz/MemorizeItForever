@@ -138,7 +138,7 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
     }
     
     private func didSelectSet(_ model: MemorizeItModelProtocol?){
-        presentPhraseHistoryViewController(wordModel: model as? WordModel)
+      //  presentPhraseHistoryViewController(wordModel: model as? WordModel)
     }
     
     private func presentPhraseHistoryViewController(wordModel: WordModel? = nil){
