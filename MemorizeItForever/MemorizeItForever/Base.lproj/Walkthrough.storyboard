@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9bz-Wv-ZlX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Walkthrough Page View Controller-->
+        <scene sceneID="p6n-Dt-lQm">
+            <objects>
+                <pageViewController storyboardIdentifier="MainWalkthroughPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9bz-Wv-ZlX" customClass="MainWalkthroughPageViewController" customModule="MemorizeItForever" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6K3-0H-DRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-652" y="24"/>
+        </scene>
+        <!--Main Walkthrough View Controller-->
+        <scene sceneID="lLn-dT-xJO">
+            <objects>
+                <viewController storyboardIdentifier="MainWalkthroughViewController" id="Bkf-Uh-GoF" customClass="MainWalkthroughViewController" customModule="MemorizeItForever" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QX7-Ld-B7z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jn-4v-B9f" customClass="testLabel" customModule="MemorizeItForever" customModuleProvider="target">
+                                <rect key="frame" x="188" y="334" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="1Jn-4v-B9f" firstAttribute="centerY" secondItem="QX7-Ld-B7z" secondAttribute="centerY" id="4We-PD-OeY"/>
+                            <constraint firstItem="1Jn-4v-B9f" firstAttribute="centerX" secondItem="QX7-Ld-B7z" secondAttribute="centerX" id="ggP-RW-Eye"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nbo-aA-HZ1"/>
+                    </view>
+                    <connections>
+                        <outlet property="tesmp" destination="1Jn-4v-B9f" id="vWh-6f-YAp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MdZ-UK-LrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119" y="43"/>
+        </scene>
+    </scenes>
+</document>

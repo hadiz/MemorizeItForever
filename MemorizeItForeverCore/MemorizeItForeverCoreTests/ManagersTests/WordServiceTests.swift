@@ -51,7 +51,7 @@ class WordServiceTests: XCTestCase {
     }
     func testEditWord() {
         
-        wordService.edit(wordModel, phrase: "Merci", meaninig: "Thanks")
+        wordService.edit(wordModel, phrase: "Merci", meaninig: "Thanks", setId: nil)
         
         if let wordPhrase = objc_getAssociatedObject(wordDataAccess, &phraseKey) as? String{
             XCTAssertEqual(wordPhrase, "Merci" ,"should edit with new phrase")

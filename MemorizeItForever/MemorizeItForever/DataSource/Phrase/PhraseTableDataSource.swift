@@ -42,7 +42,7 @@ final class PhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol {
         cell.detailTextLabel?.backgroundColor = UIColor.clear
         
         setColor(cell: cell, word: word)
-                
+        
         return cell
     }
     
@@ -60,16 +60,46 @@ final class PhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let weakSelf = self
+        
+        let edit = UITableViewRowAction(style: .default, title: "Edit") {[weak weakSelf] (action, index) in
+            if let weakSelf = weakSelf{
+                weakSelf.editPhrase(indexPath: index)
+            }
+        }
+        edit.backgroundColor = #colorLiteral(red: 1, green: 0.5774730687, blue: 0.1422811775, alpha: 1)
+        
+        let delete = UITableViewRowAction(style: .default, title: "Delete") {[weak weakSelf] (action, index) in
+            if let weakSelf = weakSelf{
+                weakSelf.deletePhrase(indexPath: index, tableView: tableView)
+            }
+        }
+        delete.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        
+        return [delete, edit]
+        
+    }
+    
+    private func deletePhrase(indexPath: IndexPath, tableView: UITableView){
         guard let wordService = wordService else {
             fatalError("wordService is not initialiazed")
         }
-        if editingStyle == UITableViewCellEditingStyle.delete {
-            let word = models[(indexPath as NSIndexPath).row]
-            if wordService.delete(word){
-                models.remove(at: (indexPath as NSIndexPath).row)
-                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-            }
+        
+        let word = models[(indexPath as NSIndexPath).row]
+        if wordService.delete(word){
+            models.remove(at: (indexPath as NSIndexPath).row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
+    }
+    
+    private func editPhrase(indexPath: IndexPath){
+        let phrase = models[(indexPath as NSIndexPath).row]
+        handleTap?(phrase)
     }
     
     private func setColor(cell: UITableViewCell, word: WordModel){

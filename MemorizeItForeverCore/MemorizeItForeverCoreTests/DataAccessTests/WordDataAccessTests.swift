@@ -108,30 +108,6 @@ class WordDataAccessTests: XCTestCase {
         }
     }
     
-    func testPreventEdititingSet(){
-        do{
-            var wordModel = WordModel()
-            wordModel.meaning = "Book"
-            wordModel.order = 1
-            wordModel.phrase = "Livre"
-            let setId1 =  NewSetEntity(context)?.setId
-            wordModel.setId = setId1
-            try wordDataAccess.save(wordModel)
-            
-            var words = try wordDataAccess.fetchAll(fetchLimit: nil)
-            let setId2 = NewSetEntity(context)?.setId
-            words[0].setId = setId2
-            
-            try wordDataAccess.edit(words[0])
-            let newWords = try wordDataAccess.fetchAll(fetchLimit: nil)
-            
-            XCTAssertEqual(newWords[0].setId, setId1, "Should prevent set field to be edited")
-        }
-        catch{
-            XCTFail("Should prevent set field to be edited")
-        }
-    }
-    
     func testDeleteWord(){
         do{
             var wordModel = WordModel()

@@ -119,5 +119,14 @@ extension SwinjectStoryboard {
             return wordFlowService
         }
         
+        defaultContainer.register(EditPhrasePickerViewDataSourceProtocol.self){ r in
+            EditPhrasePickerViewDataSource()
+            }.inObjectScope(.weak)
+        
+        defaultContainer.storyboardInitCompleted(EditPhraseViewController.self) { r, c in
+            c.wordService = r.resolve(WordServiceProtocol.self)
+            c.setService = r.resolve(SetServiceProtocol.self)
+            c.pickerDataSource = r.resolve(EditPhrasePickerViewDataSourceProtocol.self)
+        }
     }
 }

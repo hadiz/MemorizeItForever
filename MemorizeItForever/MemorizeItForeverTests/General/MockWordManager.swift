@@ -21,7 +21,7 @@ class MockWordService: WordServiceProtocol {
          objc_setAssociatedObject(self, &key, AddPhraseViewControllerEnum.saveWord, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
     
-    func edit(_ wordModel: WordModel, phrase: String, meaninig: String) {
+    func edit(_ wordModel: WordModel, phrase: String, meaninig: String, setId: UUID?) {
         
     }
     

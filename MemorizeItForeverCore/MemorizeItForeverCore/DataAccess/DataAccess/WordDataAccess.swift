@@ -95,6 +95,7 @@ class WordDataAccess: WordDataAccessProtocol {
             if let wordEntity = try genericDataAccess.fetchEntity(withId: id){
                 wordEntity.meaning = wordModel.meaning
                 wordEntity.phrase = wordModel.phrase
+                wordEntity.set = fetchSetEntity(wordModel.setId ?? UUID())
                 if let status = wordModel.status{
                     wordEntity.status = status
                 }

@@ -29,14 +29,14 @@ final public class WordService: WordServiceProtocol {
             throw error
         }
     }
-    public func edit(_ wordModel: WordModel, phrase: String, meaninig: String){
+    public func edit(_ wordModel: WordModel, phrase: String, meaninig: String, setId: UUID?){
         do{
             var word = WordModel()
             word.phrase = phrase
             word.meaning = meaninig
             word.status = wordModel.status
             word.order = wordModel.order
-            word.setId = wordModel.setId
+            word.setId = setId ?? wordModel.setId
             word.wordId = wordModel.wordId
             try wordDataAccess.edit(word)
         }

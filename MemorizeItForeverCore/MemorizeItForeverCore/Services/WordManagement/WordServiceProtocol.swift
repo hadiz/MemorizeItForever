@@ -8,7 +8,7 @@
 
 public protocol WordServiceProtocol: ServiceProtocol {
     func save(_ phrase: String, meaninig: String, setId: UUID) throws
-    func edit(_ wordModel: WordModel, phrase: String, meaninig: String)
+    func edit(_ wordModel: WordModel, phrase: String, meaninig: String, setId: UUID?)
     func delete(_ wordModel: WordModel) -> Bool
     func fetchWords(phrase: String, status: WordStatus, fetchLimit: Int, fetchOffset: Int) -> [WordModel]
     func fetchWordHistoryByWord(wordModel: WordModel) -> [WordHistoryModel]
