@@ -68,10 +68,13 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
         presentSetItemViewController(EntityMode.save)
     }
     
-    @objc func fetchData(){
+    @objc
+    func fetchData(){
     
+        let rawSets = self.setService.get()
+        
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
-            let sets = self.setService.get().flatMap{$0 as MemorizeItModelProtocol}
+            let sets = rawSets.compactMap{$0 as MemorizeItModelProtocol}
             self.dataSource?.setModels(sets)
             DispatchQueue.main.async {
                 self.tableView.reloadData()

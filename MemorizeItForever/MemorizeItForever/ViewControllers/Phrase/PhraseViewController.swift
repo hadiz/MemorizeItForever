@@ -77,9 +77,10 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
     
     func filterContentForSearchText(searchText: String, status: WordStatus) {
         
+        
+        let wordList = self.wordService.fetchWords(phrase: searchText, status: status, fetchLimit: 50, fetchOffset: 0)
+        
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
-            let wordList = self.wordService.fetchWords(phrase: searchText, status: status, fetchLimit: 50, fetchOffset: 0)
-            
             self.dataSource.setModels(wordList)
             DispatchQueue.main.async {
                 self.tableView.reloadData()

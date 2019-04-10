@@ -154,6 +154,9 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
             return
         }
         do{
+            for _ in 0...100 {
+                try wordService.save(phrase.text.trim(), meaninig: meaning.text.trim(), setId: setId)
+            }
             try wordService.save(phrase.text.trim(), meaninig: meaning.text.trim(), setId: setId)
             saveWasSuccessful()
         }

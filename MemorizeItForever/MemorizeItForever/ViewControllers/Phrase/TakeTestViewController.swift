@@ -305,39 +305,39 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
     
     private func fetchData(){
         
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
-            do{
-                let wordInProgressList = try self.wordFlowService.fetchWordsToExamin()
-//                            var wordInProgressList: [WordInProgressModel] = []
-//                            for i in 0..<10{
-//                                var word = WordModel()
-//                                word.meaning = "developer"
-//                                word.phrase = "Entwickler"
-//                                var win = WordInProgressModel()
-//                                win.column = Int16(i / 2)
-//                                win.date = Date()
-//                                win.word = word
-//                                wordInProgressList.append(win)
-//                            }
-                
-                for i: Int16 in 0...5{
-                    self.columnDic[i] = wordInProgressList.filter(){$0.column == i}
-                }
-                if wordInProgressList.count > 0{
-                    DispatchQueue.main.async {
-                        self.assignWordToCard()
-                    }
-                }
-                else{
-                    DispatchQueue.main.async {
-                        self.taskDoneView()
-                    }
+        //        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {
+        do{
+            let wordInProgressList = try self.wordFlowService.fetchWordsToExamin()
+            //                            var wordInProgressList: [WordInProgressModel] = []
+            //                            for i in 0..<10{
+            //                                var word = WordModel()
+            //                                word.meaning = "developer"
+            //                                word.phrase = "Entwickler"
+            //                                var win = WordInProgressModel()
+            //                                win.column = Int16(i / 2)
+            //                                win.date = Date()
+            //                                win.word = word
+            //                                wordInProgressList.append(win)
+            //                            }
+            
+            for i: Int16 in 0...5{
+                self.columnDic[i] = wordInProgressList.filter(){$0.column == i}
+            }
+            if wordInProgressList.count > 0{
+                DispatchQueue.main.async {
+                    self.assignWordToCard()
                 }
             }
-            catch{
-                
+            else{
+                DispatchQueue.main.async {
+                    self.taskDoneView()
+                }
             }
-        })
+        }
+        catch{
+            
+        }
+        //        })
     }
     
     private func assignWordToCard(){
@@ -416,7 +416,7 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         
         var constraintList: [NSLayoutConstraint] = []
         
-       constraintList.append(taskDoneView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor))
+        constraintList.append(taskDoneView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor))
         constraintList.append(taskDoneView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor))
         constraintList.append(taskDoneView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor))
         constraintList.append(taskDoneView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor))
