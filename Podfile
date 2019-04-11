@@ -19,7 +19,7 @@ target 'MemorizeItForever' do
     
     shared_pods
     pod 'SwinjectStoryboard', '1.1.2'
-    
+
     target 'MemorizeItForeverTests' do
         inherit! :search_paths
         # Pods for testing
