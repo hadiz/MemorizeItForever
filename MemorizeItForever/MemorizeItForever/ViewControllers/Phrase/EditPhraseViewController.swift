@@ -39,6 +39,8 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
             }
         }
         
+        initialize()
+        
         fillForm()
     }
     
@@ -113,6 +115,12 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
     @objc
     private func cancel(){
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func initialize(){
+        setText.text = NSLocalizedString("Set:", comment: "Set:")
+        phraseText.text = NSLocalizedString("Phrase:", comment: "Phrase:")
+        meaningText.text = NSLocalizedString("Meaning:", comment: "Meaning:")
     }
     
     // MARK: Controls
