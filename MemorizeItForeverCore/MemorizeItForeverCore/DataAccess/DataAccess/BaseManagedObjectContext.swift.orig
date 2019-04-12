@@ -1,0 +1,35 @@
+//
+//  BaseManagedObjectContext.swift
+//  MemorizeItForever
+//
+//  Created by Hadi Zamani on 4/30/16.
+//  Copyright © 2016 SomeSimpleSolution. All rights reserved.
+//
+
+import UIKit
+import CoreData
+import BaseLocalDataAccess
+
+final class BaseManagedObjectContext: ManagedObjectContextProtocol {
+<<<<<<< HEAD
+    lazy var managedObjectContext: NSManagedObjectContext = {
+        return ContextHelper.shared.getContext()
+    }()
+    
+    
+    public init(){
+    }
+
+//    public func get() -> NSManagedObjectContext{
+//        return ContextHelper.shared.getContext()
+//    }
+=======
+   
+    lazy var managedObjectContext: NSManagedObjectContext = {
+        return ContextHelper.shared.getContext()
+    }()
+    
+    public init(){
+    }
+>>>>>>> Development
+}
