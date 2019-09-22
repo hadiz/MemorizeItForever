@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F66B9212337F7FE007CA4C1 /* BaseLocalDataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9202337F7FE007CA4C1 /* BaseLocalDataAccess */; };
 		1B278C58AEB3313EC7A003C7 /* Pods_MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C516BB4822F99A24DACA2FAE /* Pods_MemorizeItForeverCore.framework */; };
 		430DF6971E0E606F00BDBF9B /* IOCContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF6961E0E606F00BDBF9B /* IOCContainer.swift */; };
 		430DF69D1E0E665900BDBF9B /* ServiceFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF69C1E0E665900BDBF9B /* ServiceFactoryProtocol.swift */; };
@@ -80,8 +81,6 @@
 		911897E41DDF00BE001FC74B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911897E31DDF00BE001FC74B /* Helper.swift */; };
 		911897E61DDF0156001FC74B /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911897E51DDF0156001FC74B /* Enum.swift */; };
 		91A38C3F1E1053BC00CBA60C /* MockGenericDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438150441DDCB10F0040F2F9 /* MockGenericDataAccess.swift */; };
-		91CEA1F51E10584100C58225 /* BaseLocalDataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CEA1F41E10584100C58225 /* BaseLocalDataAccess.framework */; };
-		91CEA1F61E1058A500C58225 /* BaseLocalDataAccess.framework in Resources */ = {isa = PBXBuildFile; fileRef = 91CEA1F41E10584100C58225 /* BaseLocalDataAccess.framework */; };
 		DF67218D40C12C96C92B0847 /* Pods_MemorizeItForeverCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C7448ADD96F8A50C8934BC /* Pods_MemorizeItForeverCoreTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -175,7 +174,6 @@
 		911897E31DDF00BE001FC74B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Helper/Helper.swift; sourceTree = "<group>"; };
 		911897E51DDF0156001FC74B /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Helper/Enum.swift; sourceTree = "<group>"; };
 		91A38C411E1053F900CBA60C /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = MemorizeItForeverCore/Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
-		91CEA1F41E10584100C58225 /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
 		AD31FDD7E11235B57A067D9E /* Pods-MemorizeItForeverCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCore.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverCore/Pods-MemorizeItForeverCore.release.xcconfig"; sourceTree = "<group>"; };
 		BCCFBF4E4338E7784D2E9B02 /* Pods-MemorizeItForeverCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCoreTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C516BB4822F99A24DACA2FAE /* Pods_MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,7 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B278C58AEB3313EC7A003C7 /* Pods_MemorizeItForeverCore.framework in Frameworks */,
-				91CEA1F51E10584100C58225 /* BaseLocalDataAccess.framework in Frameworks */,
+				0F66B9212337F7FE007CA4C1 /* BaseLocalDataAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +251,6 @@
 		43434A871DB262800005B59F /* MemorizeItForeverCore */ = {
 			isa = PBXGroup;
 			children = (
-				43434B311DB36CFD0005B59F /* Libs */,
 				430DF69A1E0E661E00BDBF9B /* Factories */,
 				43434A9F1DB35FBC0005B59F /* DataAccess */,
 				43EFD6FD1E0AD3A900F79CBE /* Services */,
@@ -382,14 +379,6 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		43434B311DB36CFD0005B59F /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-				91CEA1F41E10584100C58225 /* BaseLocalDataAccess.framework */,
-			);
-			name = Libs;
-			sourceTree = "<group>";
-		};
 		436DCA9A1DBCED2900992708 /* ServicesTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,13 +504,15 @@
 				43434A811DB262800005B59F /* Frameworks */,
 				43434A821DB262800005B59F /* Headers */,
 				43434A831DB262800005B59F /* Resources */,
-				FC827DDC173CEE54AA49B473 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MemorizeItForeverCore;
+			packageProductDependencies = (
+				0F66B9202337F7FE007CA4C1 /* BaseLocalDataAccess */,
+			);
 			productName = MemorizeItForeverCore;
 			productReference = 43434A851DB262800005B59F /* MemorizeItForeverCore.framework */;
 			productType = "com.apple.product-type.framework";
@@ -534,8 +525,6 @@
 				43434A8A1DB262800005B59F /* Sources */,
 				43434A8B1DB262800005B59F /* Frameworks */,
 				43434A8C1DB262800005B59F /* Resources */,
-				DFDDC0B377688B032917A4E1 /* [CP] Embed Pods Frameworks */,
-				CA79F5CB0DC3E8E950471270 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -576,9 +565,13 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 43434A7B1DB262800005B59F;
+			packageReferences = (
+				0F66B91F2337F7FE007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */,
+			);
 			productRefGroup = 43434A861DB262800005B59F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -601,7 +594,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91CEA1F61E1058A500C58225 /* BaseLocalDataAccess.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,39 +618,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CA79F5CB0DC3E8E950471270 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCoreTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DFDDC0B377688B032917A4E1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCoreTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCoreTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EE1A1735ED4449665179F946 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -675,21 +634,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC827DDC173CEE54AA49B473 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MemorizeItForeverCore/Pods-MemorizeItForeverCore-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -895,7 +839,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -922,7 +867,11 @@
 				);
 				INFOPLIST_FILE = MemorizeItForeverCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -950,7 +899,11 @@
 				);
 				INFOPLIST_FILE = MemorizeItForeverCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -970,10 +923,21 @@
 					"$(PROJECT_DIR)/MemorizeItForeverCore/Libs",
 					"$(PROJECT_DIR)/MemorizeItForeverCore",
 				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited) $(PROJECT_DIR)/MemorizeItForeverCore/Libs";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MemorizeItForeverCore/Libs",
+				);
 				INFOPLIST_FILE = MemorizeItForeverCoreTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "$(inherited) @executable_path/Frameworks @loader_path/";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -994,8 +958,16 @@
 					"$(PROJECT_DIR)/MemorizeItForeverCore",
 				);
 				INFOPLIST_FILE = MemorizeItForeverCoreTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "$(inherited) @executable_path/Frameworks @loader_path";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1034,6 +1006,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0F66B91F2337F7FE007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SomeSimpleSolutions/BaseLocalDataAccessPackage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F66B9202337F7FE007CA4C1 /* BaseLocalDataAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F66B91F2337F7FE007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */;
+			productName = BaseLocalDataAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4348C1F61E0AD9560076E297 /* MemorizeItForever.xcdatamodeld */ = {
