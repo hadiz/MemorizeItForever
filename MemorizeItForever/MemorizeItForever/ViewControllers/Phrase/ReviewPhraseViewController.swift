@@ -311,12 +311,12 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
             do{
                 try self.wordFlowService.fetchNewWordsToPutInPreColumn()
                 self.list = try self.wordFlowService.fetchWordsForReview()
-//                                        for i in 1...10{
-//                                            var word = WordModel()
-//                                            word.meaning = "Meaning \(i)"
-//                                            word.phrase = "Phrase \(i)"
-//                                            self.list.append(word)
-//                                        }
+                                        for i in 1...14{
+                                            var word = WordModel()
+                                            word.meaning = "Hello"
+                                            word.phrase = "Hello"
+                                            self.list.append(word)
+                                        }
                 if self.list.count > 0{
                     DispatchQueue.main.async { [unowned self] in
                         self.assignWordToCard()

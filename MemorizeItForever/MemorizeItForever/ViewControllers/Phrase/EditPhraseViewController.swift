@@ -39,6 +39,10 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
             }
         }
         
+        meaning.delegate = self
+        
+        self.addDoneButtonOnKeyboard()
+
         initialize()
         
         fillForm()
@@ -123,6 +127,27 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
         meaningText.text = NSLocalizedString("Meaning:", comment: "Meaning:")
     }
     
+    private func addDoneButtonOnKeyboard(){
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+
+        meaning.inputAccessoryView = doneToolbar
+        phrase.inputAccessoryView = doneToolbar
+    }
+
+    @objc
+    func doneButtonAction(){
+        meaning.resignFirstResponder()
+        phrase.resignFirstResponder()
+    }
+    
     // MARK: Controls
     @IBOutlet weak var phrase: MITextView!
     @IBOutlet weak var meaning: MITextView!
@@ -138,3 +163,23 @@ extension EditPhraseViewController: UITextFieldDelegate{
         return false
     }
 }
+
+extension EditPhraseViewController: UITextViewDelegate{
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            UIView.animate(withDuration: 0.3) {[unowned self] in
+                self.view.frame.origin.y -= self.view.frame.height / 2 - 50
+            }
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            UIView.animate(withDuration: 0.3) {[unowned self] in
+                self.view.frame.origin.y += self.view.frame.height / 2 - 50
+            }
+        }
+    }
+}
+
+
