@@ -127,6 +127,10 @@ extension SwinjectStoryboard {
             c.wordService = r.resolve(WordServiceProtocol.self)
             c.setService = r.resolve(SetServiceProtocol.self)
             c.pickerDataSource = r.resolve(EditPhrasePickerViewDataSourceProtocol.self)
+            
+            if #available(iOS 10.0, *) {
+                c.notificationFeedback = UINotificationFeedbackGenerator()
+            }
         }
     }
 }

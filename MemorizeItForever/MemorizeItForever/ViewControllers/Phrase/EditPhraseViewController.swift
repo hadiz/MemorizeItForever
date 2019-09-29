@@ -18,6 +18,7 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
     var wordService: WordServiceProtocol!
     var setService: SetServiceProtocol!
     var pickerDataSource: EditPhrasePickerViewDataSourceProtocol!
+    var notificationFeedback: NotificationFeedbackProtocol?
     
     // MARK: UIViewController Methods
     override func viewDidLoad() {
@@ -34,7 +35,8 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
         
         pickerDataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
             if let weakSelf = weakSelf, let setModel = memorizeItModel as? SetModel {
-                weakSelf.setList.text = setModel.name
+//                weakSelf.setList.text = setModel.name
+                weakSelf.setName.text = setModel.name
                 weakSelf.setId = setModel.setId
             }
         }
@@ -46,6 +48,10 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
         initialize()
         
         fillForm()
+        
+        if let notificationFeedback = notificationFeedback{
+            notificationFeedback.prepare()
+        }
     }
     
     // MARK: UIPopoverPresentationControllerDelegate
@@ -83,7 +89,7 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
         meaning.text = wordModel.meaning
         setId = wordModel.setId
         
-        setList.text = setModelList.filter{$0.setId == wordModel.setId}.first?.name
+        setName.text = setModelList.filter{$0.setId == wordModel.setId}.first?.name
         
        let row =  setModelList.firstIndex{$0.setId == wordModel.setId} ?? 0
         
@@ -113,6 +119,10 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
         
         wordService.edit(wordModel, phrase: phrase.text, meaninig: meaning.text, setId: setId)
         
+        if let notificationFeedback = notificationFeedback{
+            notificationFeedback.notificationOccurred(.success)
+        }
+        
         cancel()
     }
     
@@ -125,6 +135,8 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
         setText.text = NSLocalizedString("Set:", comment: "Set:")
         phraseText.text = NSLocalizedString("Phrase:", comment: "Phrase:")
         meaningText.text = NSLocalizedString("Meaning:", comment: "Meaning:")
+        let buttonText = NSLocalizedString("Change", comment: "Change")
+        change.setTitle(buttonText, for: .normal)
     }
     
     private func addDoneButtonOnKeyboard(){
@@ -155,6 +167,11 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
     @IBOutlet weak var phraseText: UILabel!
     @IBOutlet weak var meaningText: UILabel!
     @IBOutlet weak var setList: UITextField!
+    @IBOutlet weak var setName: UILabel!
+    @IBOutlet weak var change: UIButton!
+    @IBAction func changeAction(_ sender: Any) {
+        setList.becomeFirstResponder()
+    }
     
 }
 
