@@ -307,16 +307,16 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
     }
     
     private func fetchData(){
-//        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: { [unowned self] in
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: { [unowned self] in
             do{
                 try self.wordFlowService.fetchNewWordsToPutInPreColumn()
                 self.list = try self.wordFlowService.fetchWordsForReview()
-                                        for i in 1...14{
-                                            var word = WordModel()
-                                            word.meaning = "Hello"
-                                            word.phrase = "Hello"
-                                            self.list.append(word)
-                                        }
+//                                        for i in 1...14{
+//                                            var word = WordModel()
+//                                            word.meaning = "Hello"
+//                                            word.phrase = "Hello"
+//                                            self.list.append(word)
+//                                        }
                 if self.list.count > 0{
                     DispatchQueue.main.async { [unowned self] in
                         self.assignWordToCard()
@@ -332,7 +332,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
             catch{
                 
             }
-//        })
+        })
     }
     
     private func assignWordToCard(){

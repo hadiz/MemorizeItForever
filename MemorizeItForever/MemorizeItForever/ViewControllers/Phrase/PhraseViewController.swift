@@ -143,17 +143,6 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
         //EditPhraseViewController
     }
     
-//    private func presentPhraseHistoryViewController(wordModel: WordModel? = nil){
-//        let storyboard : UIStoryboard = UIStoryboard(name: "Phrase",bundle: nil)
-//        let phraseHistoryViewController = storyboard.instantiateViewController(withIdentifier: "PhraseHistoryViewController") as! PhraseHistoryViewController
-//
-//        phraseHistoryViewController.wordModel  = wordModel
-//
-//        let size = CGSize(width: self.view.frame.width  , height: self.view.frame.height * 2 / 3)
-//        self.presentingPopover(phraseHistoryViewController, sourceView: self.tableView, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: size)
-//
-//    }
-    
     private func presentEditPhraseViewController(wordModel: WordModel? = nil){
         let storyboard : UIStoryboard = UIStoryboard(name: "Phrase",bundle: nil)
         let editPhraseViewController = storyboard.instantiateViewController(withIdentifier: "EditPhraseViewController") as! EditPhraseViewController
