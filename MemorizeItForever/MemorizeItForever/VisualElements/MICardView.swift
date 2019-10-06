@@ -9,8 +9,8 @@
 import UIKit
 
 class MICardView: UIView {
-    private var phrase: UILabel!
-    private var meaning: UILabel!
+    private var phrase: MICardViewLabel!
+    private var meaning: MICardViewLabel!
     private var showingPhrase = true
     
     // TODO
@@ -26,7 +26,8 @@ class MICardView: UIView {
         return self
     }
     
-    @objc func flip(){
+    @objc
+    func flip(){
         if(showingPhrase){
             UIView.transition(from: phrase, to: meaning, duration: 1, options: [.transitionFlipFromRight ,.showHideTransitionViews], completion: nil)
             showingPhrase = false
@@ -79,11 +80,13 @@ class MICardView: UIView {
         phrase = MICardViewLabel()
         phrase.translatesAutoresizingMaskIntoConstraints = false
         phrase.text = phraseText
+        phrase.addDoubleTapGestureRecognizer(target: self, action: #selector(MICardView.flip))
         
         meaning = MICardViewLabel()
         meaning.translatesAutoresizingMaskIntoConstraints = false
         meaning.text = meaningText
         meaning.isHidden = true
+        meaning.addDoubleTapGestureRecognizer(target: self, action: #selector(MICardView.flip))
     }
     
     private func addControls(){
