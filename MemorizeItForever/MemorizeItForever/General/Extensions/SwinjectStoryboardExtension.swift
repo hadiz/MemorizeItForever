@@ -25,7 +25,7 @@ extension SwinjectStoryboard {
                 c.selectionFeedback = UISelectionFeedbackGenerator()
             }
         }
-     
+        
         defaultContainer.storyboardInitCompleted(SetViewController.self) { r, c in
             c.setService = r.resolve(SetServiceProtocol.self)
             c.dataSource = r.resolve(SetTableDataSourceProtocol.self, name: "SetTableDataSource")
@@ -54,11 +54,11 @@ extension SwinjectStoryboard {
         
         defaultContainer.register(SetTableDataSourceProtocol.self, name: "SetTableDataSource") { r in
             SetTableDataSource(setService: r.resolve(SetServiceProtocol.self))
-            }.inObjectScope(.weak)
+        }.inObjectScope(.weak)
         
         defaultContainer.register(SetTableDataSourceProtocol.self, name: "ChangeSetTableDataSource") { r in
             ChangeSetTableDataSource(setService: r.resolve(SetServiceProtocol.self))
-            }.inObjectScope(.weak)
+        }.inObjectScope(.weak)
         
         defaultContainer.register(ValidatorProtocol.self){ r in
             Validator()
@@ -75,10 +75,10 @@ extension SwinjectStoryboard {
             c.dataSource = r.resolve(PhraseTableDataSourceProtocol.self, name: "PhraseTableDataSource")
             c.wordService = r.resolve(WordServiceProtocol.self)
         }
-
+        
         defaultContainer.register(PhraseTableDataSourceProtocol.self, name: "PhraseTableDataSource"){ r in
             PhraseTableDataSource(wordService: r.resolve(WordServiceProtocol.self))
-            }.inObjectScope(.weak)
+        }.inObjectScope(.weak)
         
         defaultContainer.storyboardInitCompleted(PhraseHistoryViewController.self) { r, c in
             c.dataSource = r.resolve(PhraseTableDataSourceProtocol.self, name: "PhraseHistoryTableDataSource")
@@ -87,7 +87,7 @@ extension SwinjectStoryboard {
         
         defaultContainer.register(PhraseTableDataSourceProtocol.self, name: "PhraseHistoryTableDataSource"){ r in
             PhraseHistoryTableDataSource(wordService: nil)
-            }.inObjectScope(.weak)
+        }.inObjectScope(.weak)
         
         defaultContainer.register(ServiceFactoryProtocol.self, name: "SetServiceFactory"){ r in
             SetServiceFactory()
@@ -119,10 +119,16 @@ extension SwinjectStoryboard {
             return wordFlowService
         }
         
+        defaultContainer.storyboardInitCompleted(TemporaryPhraseListViewController.self) { r, c in
+            c.dataSource = r.resolve(MemorizeItTableDataSourceProtocol.self, name: "TemporaryPhraseListDataSource")
+        }
+        
+        defaultContainer.register(MemorizeItTableDataSourceProtocol.self, name: "TemporaryPhraseListDataSource"){ r in
+                  TemporaryPhraseListDataSource()
+               }.inObjectScope(.weak)
         defaultContainer.register(EditPhrasePickerViewDataSourceProtocol.self){ r in
             EditPhrasePickerViewDataSource()
-            }.inObjectScope(.weak)
-        
+        }.inObjectScope(.weak)
         defaultContainer.storyboardInitCompleted(EditPhraseViewController.self) { r, c in
             c.wordService = r.resolve(WordServiceProtocol.self)
             c.setService = r.resolve(SetServiceProtocol.self)

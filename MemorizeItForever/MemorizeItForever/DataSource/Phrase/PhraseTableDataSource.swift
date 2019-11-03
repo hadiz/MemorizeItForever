@@ -72,14 +72,22 @@ final class PhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol {
                 weakSelf.editPhrase(indexPath: index)
             }
         }
-        edit.backgroundColor = #colorLiteral(red: 1, green: 0.5774730687, blue: 0.1422811775, alpha: 1)
+        if #available(iOS 11.0, *) {
+            edit.backgroundColor = UIColor(named: "editTableRow")
+        } else {
+            edit.backgroundColor = #colorLiteral(red: 1, green: 0.5774730687, blue: 0.1422811775, alpha: 1)
+        }
         
         let delete = UITableViewRowAction(style: .default, title: "Delete") {[weak weakSelf] (action, index) in
             if let weakSelf = weakSelf{
                 weakSelf.deletePhrase(indexPath: index, tableView: tableView)
             }
         }
-        delete.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        if #available(iOS 11.0, *) {
+            delete.backgroundColor = UIColor(named: "deleteTableRow")
+        } else {
+            delete.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        }
         
         return [delete, edit]
         
@@ -106,15 +114,30 @@ final class PhraseTableDataSource: NSObject, PhraseTableDataSourceProtocol {
         guard let status = word.status else {
             return
         }
-        switch status {
-        case WordStatus.notStarted.rawValue:
-            cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        case WordStatus.inProgress.rawValue:
-            cell.backgroundColor = #colorLiteral(red: 0.9993608594, green: 0.1497559547, blue: 0, alpha: 1).withAlphaComponent(0.5)
-        case WordStatus.done.rawValue:
-            cell.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1).withAlphaComponent(0.5)
-        default:
-            cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        if #available(iOS 11.0, *) {
+            switch status {
+            case WordStatus.notStarted.rawValue:
+                cell.backgroundColor = UIColor(named: "wordStatusNotStarted")
+            case WordStatus.inProgress.rawValue:
+                    cell.backgroundColor = UIColor(named: "wordStatusInProgress")
+            case WordStatus.done.rawValue:
+                cell.backgroundColor = UIColor(named: "wordStatusDone")
+            default:
+                cell.backgroundColor = UIColor(named: "wordStatusNotStarted")
+            }
+        }
+        else
+        {
+            switch status {
+            case WordStatus.notStarted.rawValue:
+                cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            case WordStatus.inProgress.rawValue:
+                cell.backgroundColor = #colorLiteral(red: 0.9993608594, green: 0.1497559547, blue: 0, alpha: 1).withAlphaComponent(0.5)
+            case WordStatus.done.rawValue:
+                cell.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1).withAlphaComponent(0.5)
+            default:
+                cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            }
         }
     }
 }

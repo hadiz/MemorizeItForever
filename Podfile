@@ -19,6 +19,7 @@ target 'MemorizeItForever' do
     
     shared_pods
     pod 'SwinjectStoryboard'
+    pod 'Firebase/MLVisionTextModel'
 
     target 'MemorizeItForeverTests' do
         inherit! :search_paths

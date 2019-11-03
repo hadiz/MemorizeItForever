@@ -37,16 +37,6 @@ final class SetTableDataSource: NSObject, SetTableDataSourceProtocol {
         return cell
     }
     
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //
-    //        if let set = setModels?[(indexPath as NSIndexPath).row]{
-    //            handleTap?(set)
-    //        }
-    //        else{
-    //            // TODO Notify an error
-    //        }
-    //    }
-    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }

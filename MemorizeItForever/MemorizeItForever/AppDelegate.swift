@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import MemorizeItForeverCore
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         setContext()
         setUserDefaults()
+        
+        FirebaseApp.configure()
+        
         return true
     }
     

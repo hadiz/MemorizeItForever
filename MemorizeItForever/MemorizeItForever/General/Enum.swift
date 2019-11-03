@@ -11,6 +11,7 @@ enum CellReuseIdentifier: String{
     case changeSetTableCellIdentifier = "ChangeSetTableCellIdentifier"
     case phraseTableCellIdentifier = "PhraseTableCellIdentifier"
     case phraseHistoryTableCellIdentifier = "PhraseHistoryTableCellIdentifier"
+    case temporaryListTableIdentifier = "TemporaryListTableCellIdentifier"
 }
 enum EntityMode: String{
     case save
