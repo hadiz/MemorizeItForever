@@ -1,6 +1,0 @@
-framework module Pods_MemorizeItForeverCoreTests {
-  umbrella header "Pods-MemorizeItForeverCoreTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,6 +1,0 @@
-framework module Pods_MemorizeItForever {
-  umbrella header "Pods-MemorizeItForever-umbrella.h"
-
-  export *
-  module * { export * }
-}
