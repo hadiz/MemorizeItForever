@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setContext()
         setUserDefaults()
         
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
         
         return true
     }
