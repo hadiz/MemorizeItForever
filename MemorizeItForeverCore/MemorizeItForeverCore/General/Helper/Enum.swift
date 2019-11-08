@@ -46,4 +46,5 @@ public enum NotificationEnum: String{
     case setViewControllerReload
     case setChanged
     case setDeleted
+    case temporaryPhraseList
 }

@@ -50,7 +50,7 @@ final class TemporaryPhraseListDataSource: NSObject, DepotTableDataSourceProtoco
         let editTitle = NSLocalizedString("Edit", comment: "Edit")
         let edit = UITableViewRowAction(style: .default, title: editTitle) {[weak self] (action, index) in
             if let strongSelf = self{
-                //                strongSelf.deletePhrase(indexPath: index, tableView: tableView)
+                strongSelf.editTempPhrase(indexPath: index)
             }
         }
         if #available(iOS 11.0, *) {
@@ -80,7 +80,7 @@ final class TemporaryPhraseListDataSource: NSObject, DepotTableDataSourceProtoco
         let addTitle = NSLocalizedString("Add", comment: "Add")
         let add = UITableViewRowAction(style: .default, title: addTitle) {[weak self] (action, index) in
             if let strongSelf = self{
-                //                strongSelf.deletePhrase(indexPath: index, tableView: tableView)
+                //                strongSelf.addPhrase(indexPath: index, tableView: tableView)
             }
         }
         if #available(iOS 11.0, *) {
@@ -95,5 +95,10 @@ final class TemporaryPhraseListDataSource: NSObject, DepotTableDataSourceProtoco
         let model = temporaryPhraseModelList.remove(at: (indexPath as NSIndexPath).row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         rowActionHandler?(model, .delete)
+    }
+    
+    private func editTempPhrase(indexPath: IndexPath){
+        let model = temporaryPhraseModelList.remove(at: (indexPath as NSIndexPath).row)
+        rowActionHandler?(model, .edit)
     }
 }

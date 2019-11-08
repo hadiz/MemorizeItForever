@@ -26,6 +26,7 @@
 		0F5136BF236F9E240020B4DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F5136BE236F9E240020B4DA /* GoogleService-Info.plist */; };
 		0F5136C1237562E70020B4DA /* PhraseTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5136C0237562E70020B4DA /* PhraseTableDataSourceProtocol.swift */; };
 		0F5136C32375687D0020B4DA /* DepotTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5136C22375687D0020B4DA /* DepotTableDataSourceProtocol.swift */; };
+		0F5136C5237588250020B4DA /* EditTemporaryPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5136C4237588250020B4DA /* EditTemporaryPhraseViewController.swift */; };
 		0F66B9242337F842007CA4C1 /* BaseLocalDataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9232337F842007CA4C1 /* BaseLocalDataAccess */; };
 		0F83BCF0234FD5B100224D0E /* DepotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F83BCEF234FD5B100224D0E /* DepotViewController.swift */; };
 		0FAB71072250F592004378BB /* EditPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB71062250F592004378BB /* EditPhraseViewController.swift */; };
@@ -155,6 +156,7 @@
 		0F5136BE236F9E240020B4DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F5136C0237562E70020B4DA /* PhraseTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseTableDataSourceProtocol.swift; path = General/MemorizeItDataSource/PhraseTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		0F5136C22375687D0020B4DA /* DepotTableDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotTableDataSourceProtocol.swift; path = General/MemorizeItDataSource/DepotTableDataSourceProtocol.swift; sourceTree = "<group>"; };
+		0F5136C4237588250020B4DA /* EditTemporaryPhraseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditTemporaryPhraseViewController.swift; path = ViewControllers/Depot/EditTemporaryPhraseViewController.swift; sourceTree = "<group>"; };
 		0F6FBA1920792417003DEE05 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SetManagement.strings; sourceTree = "<group>"; };
 		0F6FBA1A20792418003DEE05 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		0F6FBA1B20792418003DEE05 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Phrase.strings; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			children = (
 				0F83BCEF234FD5B100224D0E /* DepotViewController.swift */,
 				0F03651C236CA29600051E74 /* TemporaryPhraseListViewController.swift */,
+				0F5136C4237588250020B4DA /* EditTemporaryPhraseViewController.swift */,
 			);
 			name = Depot;
 			sourceTree = "<group>";
@@ -875,6 +878,7 @@
 				43EFD7911E0AD69C00F79CBE /* SetTableDataSource.swift in Sources */,
 				43EFD7821E0AD59000F79CBE /* Value2UITableViewCell.swift in Sources */,
 				0F1001971F531A9F00F63FC0 /* UINotificationFeedbackGenerator+Extensions.swift in Sources */,
+				0F5136C5237588250020B4DA /* EditTemporaryPhraseViewController.swift in Sources */,
 				43EFD77E1E0AD59000F79CBE /* MITextField.swift in Sources */,
 				43EFD78B1E0AD69200F79CBE /* PhraseTableDataSource.swift in Sources */,
 				432B75621DB382B5003C6574 /* UITableViewCellExtension.swift in Sources */,

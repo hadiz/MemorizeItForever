@@ -10,7 +10,7 @@
         <!--Depot View Controller-->
         <scene sceneID="0JB-Ai-gjd">
             <objects>
-                <viewController id="2gf-YJ-a1Q" customClass="DepotViewController" customModule="DMemorizeItForever" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2gf-YJ-a1Q" customClass="DepotViewController" customModule="MemorizeItForever" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QIw-KG-5r3"/>
                         <viewControllerLayoutGuide type="bottom" id="7r6-gU-Nbk"/>
@@ -73,6 +73,7 @@
                     <navigationItem key="navigationItem" id="bN0-pN-e6K"/>
                     <connections>
                         <outlet property="tableView" destination="FhK-Sf-TVG" id="Tyg-sN-IEU"/>
+                        <segue destination="gYR-nA-DYN" kind="presentation" identifier="ShowEditTemporaryPhrase" id="ceK-vE-ahO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlp-on-zVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -115,6 +116,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrZ-zX-jMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2823.1884057971015" y="25.446428571428569"/>
+        </scene>
+        <!--Edit Temporary Phrase View Controller-->
+        <scene sceneID="IfZ-BR-sbt">
+            <objects>
+                <viewController id="Ofa-3V-yoo" customClass="EditTemporaryPhraseViewController" customModule="MemorizeItForever" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="59t-cq-zh1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rxq-1A-ZhA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="46O-fz-7Wv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="16s-GD-DXr" customClass="MITextView" customModule="MemorizeItForever" customModuleProvider="target">
+                                <rect key="frame" x="28" y="72" width="358" height="720"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="16s-GD-DXr" secondAttribute="trailing" constant="8" id="pgW-QN-bze"/>
+                            <constraint firstItem="Rxq-1A-ZhA" firstAttribute="top" secondItem="16s-GD-DXr" secondAttribute="bottom" constant="16" id="tKa-Dv-aCU"/>
+                            <constraint firstItem="16s-GD-DXr" firstAttribute="leading" secondItem="46O-fz-7Wv" secondAttribute="leadingMargin" constant="8" id="vo0-ph-44q"/>
+                            <constraint firstItem="16s-GD-DXr" firstAttribute="top" secondItem="59t-cq-zh1" secondAttribute="bottom" constant="16" id="vxh-0h-A76"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qIr-v7-XbA"/>
+                    <connections>
+                        <outlet property="textView" destination="16s-GD-DXr" id="vPQ-tw-cBu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJ6-QK-vtn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5479.7101449275369" y="24.776785714285712"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0xr-OK-XfU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gYR-nA-DYN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cdg-sB-au1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ofa-3V-yoo" kind="relationship" relationship="rootViewController" id="JRc-nT-xlr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJs-bG-c0Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4569.5652173913049" y="24.776785714285712"/>
         </scene>
     </scenes>
 </document>

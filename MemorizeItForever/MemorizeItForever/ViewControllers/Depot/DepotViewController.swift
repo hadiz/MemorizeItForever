@@ -17,7 +17,7 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
     var imagePicker: UIImagePickerController!
     var textRecognizer: VisionTextRecognizer!
     
-    // MARK: ViewController Lifecycle
+    // MARK: ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         

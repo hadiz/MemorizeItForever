@@ -38,3 +38,8 @@ enum TableRowAction: String {
     case edit
     case delete
 }
+
+enum TempPhrase: String {
+    case original
+    case edited
+}

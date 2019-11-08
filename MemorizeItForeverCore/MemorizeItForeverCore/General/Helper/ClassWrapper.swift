@@ -11,4 +11,8 @@ final public class Wrapper<T>{
     public init(value: T?){
         self.value = value
     }
+    
+    public func getValue() -> T? {
+        return value
+    }
 }
