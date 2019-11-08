@@ -9,12 +9,14 @@
 import UIKit
 import  MemorizeItForeverCore
 
-final class TemporaryPhraseListDataSource: NSObject,  MemorizeItTableDataSourceProtocol{
+final class TemporaryPhraseListDataSource: NSObject, DepotTableDataSourceProtocol{
     
     // MARK: Private variables
     private var temporaryPhraseModelList = [TemporaryPhraseModel]()
     
     // MARK: MemorizeItTableDataSourceProtocol
+    var rowActionHandler: MITypealiasHelper.RowActionClosure?
+    
     func setModels(_ models: [MemorizeItModelProtocol]) {
         guard let models = models as? [TemporaryPhraseModel] else {
             return
@@ -40,7 +42,7 @@ final class TemporaryPhraseListDataSource: NSObject,  MemorizeItTableDataSourceP
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        return [deleteAction(), editAction(), addAction()]
+        return [deleteAction(tableView), editAction(), addAction()]
         
     }
     
@@ -59,11 +61,11 @@ final class TemporaryPhraseListDataSource: NSObject,  MemorizeItTableDataSourceP
         return edit
     }
     
-    private func deleteAction() -> UITableViewRowAction {
+    private func deleteAction(_ tableView: UITableView) -> UITableViewRowAction {
         let deleteTitle = NSLocalizedString("Delete", comment: "Delete")
         let delete = UITableViewRowAction(style: .default, title: deleteTitle) {[weak self] (action, index) in
             if let strongSelf = self{
-                //                strongSelf.deletePhrase(indexPath: index, tableView: tableView)
+                strongSelf.deleteTempPhrase(indexPath: index, tableView: tableView)
             }
         }
         if #available(iOS 11.0, *) {
@@ -87,5 +89,11 @@ final class TemporaryPhraseListDataSource: NSObject,  MemorizeItTableDataSourceP
             add.backgroundColor = UIColor.green
         }
         return add
+    }
+    
+    private func deleteTempPhrase(indexPath: IndexPath, tableView: UITableView){
+        let model = temporaryPhraseModelList.remove(at: (indexPath as NSIndexPath).row)
+        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        rowActionHandler?(model, .delete)
     }
 }

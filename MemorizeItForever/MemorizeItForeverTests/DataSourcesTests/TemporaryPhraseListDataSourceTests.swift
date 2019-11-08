@@ -66,14 +66,10 @@ class TemporaryPhraseListDataSourceTests: XCTestCase {
         XCTAssertTrue(actions?.contains { $0.title == "Add" } ?? false)
     }
     
-//    func testShoudBeAbleTODeleteAPhrase(){
-//        let phrase2 = TemporaryPhraseModel(phrase: "Test 2")
-//        dataSource.setModels([phrase, phrase2])
-//        
-//        
-//        
-//        let numberOfRows = dataSource.tableView(UITableView(), numberOfRowsInSection: 0)
-//        XCTAssertEqual(numberOfRows, 1, "Should have just one row after deletion of the other row")
-//    }
+    func testDeleteAPhrase(){
+       let actions = dataSource.tableView?(UITableView(), editActionsForRowAt: firstItemIndex)
+        let deleteAction = actions?.first(where: { $0.title == "Delete" })
+//        deleteAction.
+    }
     
 }

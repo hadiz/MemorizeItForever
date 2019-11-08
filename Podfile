@@ -6,7 +6,7 @@ workspace 'MemorizeItForever.xcworkspace'
 inhibit_all_warnings!
 
 def shared_pods
-#    pod 'Swinject'
+    pod 'Swinject'
 end
 
 target 'MemorizeItForever' do
@@ -18,8 +18,8 @@ target 'MemorizeItForever' do
     # Pods for MemorizeItForever
     
     shared_pods
-#    pod 'SwinjectStoryboard', ' ~> 2.0.2'
-#    pod 'Firebase/MLVisionTextModel'
+    pod 'SwinjectStoryboard'
+    pod 'Firebase/MLVisionTextModel'
 
     target 'MemorizeItForeverTests' do
         inherit! :search_paths

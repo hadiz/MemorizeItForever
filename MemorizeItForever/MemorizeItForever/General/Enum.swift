@@ -32,3 +32,9 @@ enum CardViewPosition{
 enum SubViewsEnum: Int{
     case taskDoneView = 100001
 }
+
+enum TableRowAction: String {
+    case add
+    case edit
+    case delete
+}

@@ -120,10 +120,10 @@ extension SwinjectStoryboard {
         }
         
         defaultContainer.storyboardInitCompleted(TemporaryPhraseListViewController.self) { r, c in
-            c.dataSource = r.resolve(MemorizeItTableDataSourceProtocol.self, name: "TemporaryPhraseListDataSource")
+            c.dataSource = r.resolve(DepotTableDataSourceProtocol.self, name: "TemporaryPhraseListDataSource")
         }
         
-        defaultContainer.register(MemorizeItTableDataSourceProtocol.self, name: "TemporaryPhraseListDataSource"){ r in
+        defaultContainer.register(DepotTableDataSourceProtocol.self, name: "TemporaryPhraseListDataSource"){ r in
                   TemporaryPhraseListDataSource()
                }.inObjectScope(.weak)
         defaultContainer.register(EditPhrasePickerViewDataSourceProtocol.self){ r in

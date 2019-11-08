@@ -82,7 +82,6 @@ final class SetTableDataSource: NSObject, SetTableDataSourceProtocol {
         else{
             tableView.setEditing(false, animated: true)
         }
-        
     }
     
     private func editSet(indexPath: IndexPath){
