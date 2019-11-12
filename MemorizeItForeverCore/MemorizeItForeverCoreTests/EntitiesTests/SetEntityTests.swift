@@ -80,7 +80,7 @@ class SetEntityTests: XCTestCase {
     func testCanFetchSetEntity() {
         var result = false
         
-        if SaveSetEntity().succcessful{
+        if saveSetEntity().succcessful{
             let fetchRequest = NSFetchRequest<SetEntity>(entityName: Entities.setEntity.rawValue)
             
             do{
@@ -101,7 +101,7 @@ class SetEntityTests: XCTestCase {
     func testCanEditSetEntity() {
         var result = false
         
-        if SaveSetEntity().succcessful{
+        if saveSetEntity().succcessful{
             let fetchRequest = NSFetchRequest<SetEntity>(entityName: Entities.setEntity.rawValue)
             
             do{
@@ -142,7 +142,7 @@ class SetEntityTests: XCTestCase {
     func testCanDeleteSetEntity() {
         var result = false
         
-        if SaveSetEntity().succcessful{
+        if saveSetEntity().succcessful{
             let fetchRequest = NSFetchRequest<SetEntity>(entityName: Entities.setEntity.rawValue)
             
             do{
@@ -178,7 +178,7 @@ class SetEntityTests: XCTestCase {
     }
     
     func testToModelWorksFine(){
-        let setEntity = SaveSetEntity().entity
+        let setEntity = saveSetEntity().entity
         do{
             let setModel: SetModel? = try setEntity?.toModel() as? SetModel
             XCTAssertEqual(setEntity?.name, setModel?.name, "Name should provide in toModel")
@@ -189,7 +189,7 @@ class SetEntityTests: XCTestCase {
         }
     }
     
-    fileprivate func SaveSetEntity() -> (succcessful: Bool, entity: SetEntity?){
+    fileprivate func saveSetEntity() -> (succcessful: Bool, entity: SetEntity?){
         let entityCreationHelper = EntityCreationHelper()
         return entityCreationHelper.SaveSetEntity(managedObjectContext)
     }

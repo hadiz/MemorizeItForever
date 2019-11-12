@@ -242,11 +242,11 @@ class WordHistoryEntityTests: XCTestCase {
     
     fileprivate func SaveWordEntity() -> (succcessful: Bool, entity: WordEntity?){
         let entityCreationHelper = EntityCreationHelper()
-        return entityCreationHelper.SaveWordEntity(managedObjectContext)
+        return entityCreationHelper.saveWordEntity(managedObjectContext)
     }
     fileprivate func SaveWordHistoryEntity() -> (succcessful: Bool, entity: WordHistoryEntity?){
         let entityCreationHelper = EntityCreationHelper()
-        return entityCreationHelper.SaveWordHistoryEntity(managedObjectContext)
+        return entityCreationHelper.saveWordHistoryEntity(managedObjectContext)
     }
     
 }

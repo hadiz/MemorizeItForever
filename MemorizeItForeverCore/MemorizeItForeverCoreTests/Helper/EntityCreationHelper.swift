@@ -28,7 +28,7 @@ class EntityCreationHelper{
         return (result, nil)
     }
     
-    func SaveWordEntity(_ managedObjectContextShared: NSManagedObjectContext) -> (succcessful: Bool, entity: WordEntity?){
+    func saveWordEntity(_ managedObjectContextShared: NSManagedObjectContext) -> (succcessful: Bool, entity: WordEntity?){
         var result = false
         if let setEntity = SaveSetEntity(managedObjectContextShared).entity{
             if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordEntity", into: managedObjectContextShared) as? WordEntity{
@@ -51,9 +51,9 @@ class EntityCreationHelper{
         return (result, nil)
     }
     
-    func SaveWordInProgressEntity(_ managedObjectContextShared: NSManagedObjectContext) -> (succcessful: Bool, entity: WordInProgressEntity?){
+    func saveWordInProgressEntity(_ managedObjectContextShared: NSManagedObjectContext) -> (succcessful: Bool, entity: WordInProgressEntity?){
         var result = false
-        if let wordEntity = SaveWordEntity(managedObjectContextShared).entity{
+        if let wordEntity = saveWordEntity(managedObjectContextShared).entity{
             if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordInProgressEntity", into: managedObjectContextShared) as? WordInProgressEntity{
                 entity.column = 1
                 entity.date = Date()
@@ -73,9 +73,9 @@ class EntityCreationHelper{
         return (result, nil)
     }
     
-    func SaveWordHistoryEntity(_ managedObjectContextShared: NSManagedObjectContext) -> (succcessful: Bool, entity: WordHistoryEntity?){
+    func saveWordHistoryEntity(_ managedObjectContextShared: NSManagedObjectContext) -> (succcessful: Bool, entity: WordHistoryEntity?){
         var result = false
-        if let wordEntity = SaveWordEntity(managedObjectContextShared).entity{
+        if let wordEntity = saveWordEntity(managedObjectContextShared).entity{
             if let entity = NSEntityDescription.insertNewObject(forEntityName: "WordHistoryEntity", into: managedObjectContextShared) as? WordHistoryEntity{
                 entity.columnNo = 1
                 entity.failureCount = 4
@@ -90,6 +90,24 @@ class EntityCreationHelper{
                     result = false
                     return (result, nil)
                 }
+            }
+        }
+        return (result, nil)
+    }
+    
+    func saveDepotPhraseEntity(_ managedObjectContextShared: NSManagedObjectContext) -> (succcessful: Bool, entity: DepotPhraseEntity?){
+        var result = false
+        if let entity = NSEntityDescription.insertNewObject(forEntityName: Entities.depotPhraseEntity.rawValue, into: managedObjectContextShared) as? DepotPhraseEntity{
+            entity.id = UUID().uuidString
+            entity.phrase = "book"
+            do{
+                try managedObjectContextShared.save()
+                result = true
+                return (result, entity)
+            }
+            catch{
+                result = false
+                return (result, entity)
             }
         }
         return (result, nil)

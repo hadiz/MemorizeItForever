@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19B77a" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DepotPhraseEntity" representedClassName="DepotPhraseEntity" syncable="YES">
+        <attribute name="id" attributeType="String"/>
+        <attribute name="phrase" attributeType="String"/>
+    </entity>
     <entity name="SetEntity" representedClassName=".SetEntity" syncable="YES">
         <attribute name="id" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
@@ -28,6 +32,7 @@
         <relationship name="word" maxCount="1" deletionRule="Nullify" destinationEntity="WordEntity" inverseName="wordInProgresses" inverseEntity="WordEntity"/>
     </entity>
     <elements>
+        <element name="DepotPhraseEntity" positionX="-45" positionY="63" width="128" height="73"/>
         <element name="SetEntity" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="WordEntity" positionX="-54" positionY="9" width="128" height="165"/>
         <element name="WordHistoryEntity" positionX="-36" positionY="54" width="128" height="105"/>

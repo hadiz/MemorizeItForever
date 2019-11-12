@@ -341,7 +341,7 @@ class WordEntityTests: XCTestCase {
     
     fileprivate func SaveWordEntity() -> (succcessful: Bool, entity: WordEntity?){
         let entityCreationHelper = EntityCreationHelper()
-        return entityCreationHelper.SaveWordEntity(managedObjectContext)
+        return entityCreationHelper.saveWordEntity(managedObjectContext)
     }
     
 }

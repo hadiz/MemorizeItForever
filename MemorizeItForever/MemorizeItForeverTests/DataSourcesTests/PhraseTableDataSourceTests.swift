@@ -75,7 +75,14 @@ class PhraseTableDataSourceTests: XCTestCase {
         word2.wordId = UUID()
         dataSource.setModels([word2])
         let cell = dataSource.tableView(tableView, cellForRowAt: firstItemIndex)
-        XCTAssertEqual(cell.backgroundColor, #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), "The cell should have white background if the status of word is notStarted")
+        var color: UIColor?
+        
+        if #available(iOS 11.0, *) {
+            color = UIColor(named: "wordStatusNotStarted")
+        } else {
+            color =  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }
+        XCTAssertEqual(cell.backgroundColor, color, "The cell should have white background if the status of word is notStarted")
     }
     
     func testCellBackgroundShouldBeRedWhenInProgress(){
@@ -88,7 +95,14 @@ class PhraseTableDataSourceTests: XCTestCase {
         word2.wordId = UUID()
         dataSource.setModels([word2])
         let cell = dataSource.tableView(tableView, cellForRowAt: firstItemIndex)
-        XCTAssertEqual(cell.backgroundColor, #colorLiteral(red: 0.9993608594, green: 0.1497559547, blue: 0, alpha: 1).withAlphaComponent(0.5), "The cell should have white background if the status of word is notStarted")
+        var color: UIColor?
+        
+        if #available(iOS 11.0, *) {
+            color = UIColor(named: "wordStatusInProgress")
+        } else {
+            color = #colorLiteral(red: 0.9993608594, green: 0.1497559547, blue: 0, alpha: 1).withAlphaComponent(0.5)
+        }
+        XCTAssertEqual(cell.backgroundColor, color, "The cell should have white background if the status of word is notStarted")
     }
     
     func testCellBackgroundShouldBeGreenWhenDone(){
@@ -101,7 +115,14 @@ class PhraseTableDataSourceTests: XCTestCase {
         word2.wordId = UUID()
         dataSource.setModels([word2])
         let cell = dataSource.tableView(tableView, cellForRowAt: firstItemIndex)
-        XCTAssertEqual(cell.backgroundColor, #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1).withAlphaComponent(0.5), "The cell should have white background if the status of word is notStarted")
+        var color: UIColor?
+        
+        if #available(iOS 11.0, *) {
+            color = UIColor(named: "wordStatusDone")
+        } else {
+            color = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1).withAlphaComponent(0.5)
+        }
+        XCTAssertEqual(cell.backgroundColor, color, "The cell should have white background if the status of word is notStarted")
     }
     
     func testPhraseTableDataSourceCanHoldAClouserForHandleTap(){
@@ -118,7 +139,7 @@ class PhraseTableDataSourceTests: XCTestCase {
         dataSource.tableView!(tableView, didSelectRowAt: firstItemIndex)
         XCTAssertTrue(tapped,"HandleTap clouser should be called in didSelectRowAtIndexPath action")
     }
-
+    
     func testHandleTapClosureHasWordModelInstanceWhenTapped(){
         var wordModel: WordModel? = nil
         dataSource.handleTap = { (model) in

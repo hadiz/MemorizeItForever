@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0F66B9212337F7FE007CA4C1 /* BaseLocalDataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9202337F7FE007CA4C1 /* BaseLocalDataAccess */; };
-		1B278C58AEB3313EC7A003C7 /* Pods_MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C516BB4822F99A24DACA2FAE /* Pods_MemorizeItForeverCore.framework */; };
+		0F9FCFE62378A8970033C2F3 /* DepotPhraseEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9FCFE52378A8970033C2F3 /* DepotPhraseEntityTests.swift */; };
+		0FEB9710237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB970E237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift */; };
+		0FEB9711237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB970F237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift */; };
+		0FEB9713237B64E2000F719D /* DepotPhraseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB9712237B64E2000F719D /* DepotPhraseModel.swift */; };
+		186D4FE44166F05937610856 /* Pods_MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA45F06008765E31A30E18F3 /* Pods_MemorizeItForeverCore.framework */; };
 		430DF6971E0E606F00BDBF9B /* IOCContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF6961E0E606F00BDBF9B /* IOCContainer.swift */; };
 		430DF69D1E0E665900BDBF9B /* ServiceFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF69C1E0E665900BDBF9B /* ServiceFactoryProtocol.swift */; };
 		430DF69F1E0E668E00BDBF9B /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF69E1E0E668E00BDBF9B /* ServiceProtocol.swift */; };
@@ -16,7 +20,6 @@
 		430DF6A31E0E67C300BDBF9B /* WordServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF6A21E0E67C300BDBF9B /* WordServiceFactory.swift */; };
 		430DF6A51E0E680700BDBF9B /* WordFlowServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF6A41E0E680700BDBF9B /* WordFlowServiceFactory.swift */; };
 		430DF6AF1E0E821000BDBF9B /* ContextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430DF6AE1E0E821000BDBF9B /* ContextHelper.swift */; };
-		43434A8F1DB262800005B59F /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43434A851DB262800005B59F /* MemorizeItForeverCore.framework */; };
 		43434A961DB262800005B59F /* MemorizeItForeverCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 43434A881DB262800005B59F /* MemorizeItForeverCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		434419691DBBA745006F77C9 /* SetDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434419671DBBA745006F77C9 /* SetDataAccessTests.swift */; };
 		4344196A1DBBA745006F77C9 /* WordDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434419681DBBA745006F77C9 /* WordDataAccessTests.swift */; };
@@ -81,7 +84,7 @@
 		911897E41DDF00BE001FC74B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911897E31DDF00BE001FC74B /* Helper.swift */; };
 		911897E61DDF0156001FC74B /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911897E51DDF0156001FC74B /* Enum.swift */; };
 		91A38C3F1E1053BC00CBA60C /* MockGenericDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438150441DDCB10F0040F2F9 /* MockGenericDataAccess.swift */; };
-		DF67218D40C12C96C92B0847 /* Pods_MemorizeItForeverCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C7448ADD96F8A50C8934BC /* Pods_MemorizeItForeverCoreTests.framework */; };
+		9F5691A93E793E1AACDBCD1F /* Pods_MemorizeItForeverCore_MemorizeItForeverCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1222ECB6989ED9DE31DE6E0 /* Pods_MemorizeItForeverCore_MemorizeItForeverCoreTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +98,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		188E167745E59604D2E4FF2E /* Pods-MemorizeItForeverCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCore.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverCore/Pods-MemorizeItForeverCore.debug.xcconfig"; sourceTree = "<group>"; };
-		30C7448ADD96F8A50C8934BC /* Pods_MemorizeItForeverCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F9FCFE52378A8970033C2F3 /* DepotPhraseEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotPhraseEntityTests.swift; path = EntitiesTests/DepotPhraseEntityTests.swift; sourceTree = "<group>"; };
+		0FB6AA2923789809006860F2 /* MemorizeItForever 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MemorizeItForever 2.xcdatamodel"; sourceTree = "<group>"; };
+		0FEB970E237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DepotPhraseEntity+CoreDataClass.swift"; path = "DataAccess/Database/DepotPhraseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0FEB970F237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DepotPhraseEntity+CoreDataProperties.swift"; path = "DataAccess/Database/DepotPhraseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0FEB9712237B64E2000F719D /* DepotPhraseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseModel.swift; path = Models/DepotPhraseModel.swift; sourceTree = "<group>"; };
+		42C3E9E8582B3523886B55C9 /* Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests.release.xcconfig"; path = "Target Support Files/Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		430DF6961E0E606F00BDBF9B /* IOCContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IOCContainer.swift; path = General/Container/IOCContainer.swift; sourceTree = "<group>"; };
 		430DF69C1E0E665900BDBF9B /* ServiceFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceFactoryProtocol.swift; path = Factories/Protocol/ServiceFactoryProtocol.swift; sourceTree = "<group>"; };
 		430DF69E1E0E668E00BDBF9B /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceProtocol.swift; path = Services/ServiceProtocol.swift; sourceTree = "<group>"; };
@@ -170,13 +177,14 @@
 		43EFD7421E0AD49900F79CBE /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = General/Helper/Enum.swift; sourceTree = "<group>"; };
 		43EFD7431E0AD49900F79CBE /* ErrorTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorTypes.swift; path = General/Helper/ErrorTypes.swift; sourceTree = "<group>"; };
 		43EFD7441E0AD49900F79CBE /* TypealiasHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypealiasHelper.swift; path = General/Helper/TypealiasHelper.swift; sourceTree = "<group>"; };
-		7396ADC01D43771C3310F95A /* Pods-MemorizeItForeverCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCoreTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		786040938BFCCF92323847FE /* Pods-MemorizeItForeverCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCore.debug.xcconfig"; path = "Target Support Files/Pods-MemorizeItForeverCore/Pods-MemorizeItForeverCore.debug.xcconfig"; sourceTree = "<group>"; };
 		911897E31DDF00BE001FC74B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Helper/Helper.swift; sourceTree = "<group>"; };
 		911897E51DDF0156001FC74B /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Helper/Enum.swift; sourceTree = "<group>"; };
 		91A38C411E1053F900CBA60C /* BaseLocalDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseLocalDataAccess.framework; path = MemorizeItForeverCore/Libs/BaseLocalDataAccess.framework; sourceTree = "<group>"; };
-		AD31FDD7E11235B57A067D9E /* Pods-MemorizeItForeverCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCore.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverCore/Pods-MemorizeItForeverCore.release.xcconfig"; sourceTree = "<group>"; };
-		BCCFBF4E4338E7784D2E9B02 /* Pods-MemorizeItForeverCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCoreTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C516BB4822F99A24DACA2FAE /* Pods_MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCD203C8249EE61927A7DD14 /* Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1222ECB6989ED9DE31DE6E0 /* Pods_MemorizeItForeverCore_MemorizeItForeverCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverCore_MemorizeItForeverCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA45F06008765E31A30E18F3 /* Pods_MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC007B63ADA3C853EA9569D0 /* Pods-MemorizeItForeverCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemorizeItForeverCore.release.xcconfig"; path = "Target Support Files/Pods-MemorizeItForeverCore/Pods-MemorizeItForeverCore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,8 +192,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B278C58AEB3313EC7A003C7 /* Pods_MemorizeItForeverCore.framework in Frameworks */,
 				0F66B9212337F7FE007CA4C1 /* BaseLocalDataAccess in Frameworks */,
+				186D4FE44166F05937610856 /* Pods_MemorizeItForeverCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,14 +201,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43434A8F1DB262800005B59F /* MemorizeItForeverCore.framework in Frameworks */,
-				DF67218D40C12C96C92B0847 /* Pods_MemorizeItForeverCoreTests.framework in Frameworks */,
+				9F5691A93E793E1AACDBCD1F /* Pods_MemorizeItForeverCore_MemorizeItForeverCoreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		156350F53537E51AD379A72E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				786040938BFCCF92323847FE /* Pods-MemorizeItForeverCore.debug.xcconfig */,
+				DC007B63ADA3C853EA9569D0 /* Pods-MemorizeItForeverCore.release.xcconfig */,
+				BCD203C8249EE61927A7DD14 /* Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests.debug.xcconfig */,
+				42C3E9E8582B3523886B55C9 /* Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		430DF6951E0E604600BDBF9B /* Container */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,8 +253,8 @@
 				43434A871DB262800005B59F /* MemorizeItForeverCore */,
 				43434A921DB262800005B59F /* MemorizeItForeverCoreTests */,
 				43434A861DB262800005B59F /* Products */,
-				99419BFC3FC4A3EB4A44F46B /* Pods */,
 				7498F7F06323CF2594F258F4 /* Frameworks */,
+				156350F53537E51AD379A72E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,6 +319,8 @@
 		43434AA11DB3601F0005B59F /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				0FEB970E237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift */,
+				0FEB970F237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift */,
 				43EFD6FE1E0AD3F900F79CBE /* WordEntity+CoreDataClass.swift */,
 				43EFD6FF1E0AD3F900F79CBE /* WordHistoryEntity+CoreDataClass.swift */,
 				43EFD7001E0AD3F900F79CBE /* WordInProgressEntity+CoreDataClass.swift */,
@@ -370,6 +391,7 @@
 		43434ABC1DB3619F0005B59F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0FEB9712237B64E2000F719D /* DepotPhraseModel.swift */,
 				43EFD7301E0AD44C00F79CBE /* MemorizeItModelProtocol.swift */,
 				43EFD72C1E0AD44C00F79CBE /* SetModel.swift */,
 				43EFD72D1E0AD44C00F79CBE /* WordHistoryModel.swift */,
@@ -407,6 +429,7 @@
 				43DBA21F1DBB5DA00017E733 /* WordEntityTests.swift */,
 				43DBA2211DBB63C70017E733 /* WordHistoryEntityTests.swift */,
 				43DBA2231DBB64B80017E733 /* WordInProgressEntityTests.swift */,
+				0F9FCFE52378A8970033C2F3 /* DepotPhraseEntityTests.swift */,
 			);
 			name = EntitiesTests;
 			sourceTree = "<group>";
@@ -453,8 +476,8 @@
 			isa = PBXGroup;
 			children = (
 				91A38C411E1053F900CBA60C /* BaseLocalDataAccess.framework */,
-				C516BB4822F99A24DACA2FAE /* Pods_MemorizeItForeverCore.framework */,
-				30C7448ADD96F8A50C8934BC /* Pods_MemorizeItForeverCoreTests.framework */,
+				DA45F06008765E31A30E18F3 /* Pods_MemorizeItForeverCore.framework */,
+				D1222ECB6989ED9DE31DE6E0 /* Pods_MemorizeItForeverCore_MemorizeItForeverCoreTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -468,17 +491,6 @@
 				43EFD7111E0AD41000F79CBE /* WordInProgressDataAccessProtocol.swift */,
 			);
 			name = Protocols;
-			sourceTree = "<group>";
-		};
-		99419BFC3FC4A3EB4A44F46B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				188E167745E59604D2E4FF2E /* Pods-MemorizeItForeverCore.debug.xcconfig */,
-				AD31FDD7E11235B57A067D9E /* Pods-MemorizeItForeverCore.release.xcconfig */,
-				BCCFBF4E4338E7784D2E9B02 /* Pods-MemorizeItForeverCoreTests.debug.xcconfig */,
-				7396ADC01D43771C3310F95A /* Pods-MemorizeItForeverCoreTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,7 +511,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43434A991DB262800005B59F /* Build configuration list for PBXNativeTarget "MemorizeItForeverCore" */;
 			buildPhases = (
-				691F2D0A3B0662F66AF78CB8 /* [CP] Check Pods Manifest.lock */,
+				E8805B26786081477F7BD42F /* [CP] Check Pods Manifest.lock */,
 				43434A801DB262800005B59F /* Sources */,
 				43434A811DB262800005B59F /* Frameworks */,
 				43434A821DB262800005B59F /* Headers */,
@@ -521,10 +533,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43434A9C1DB262800005B59F /* Build configuration list for PBXNativeTarget "MemorizeItForeverCoreTests" */;
 			buildPhases = (
-				EE1A1735ED4449665179F946 /* [CP] Check Pods Manifest.lock */,
+				A609EFDD61C38A85FCEC975D /* [CP] Check Pods Manifest.lock */,
 				43434A8A1DB262800005B59F /* Sources */,
 				43434A8B1DB262800005B59F /* Frameworks */,
 				43434A8C1DB262800005B59F /* Resources */,
+				3B609094159C4ECD94F9FD13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -600,36 +613,61 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		691F2D0A3B0662F66AF78CB8 /* [CP] Check Pods Manifest.lock */ = {
+		3B609094159C4ECD94F9FD13 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests/Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A609EFDD61C38A85FCEC975D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MemorizeItForeverCore-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EE1A1735ED4449665179F946 /* [CP] Check Pods Manifest.lock */ = {
+		E8805B26786081477F7BD42F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MemorizeItForeverCoreTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MemorizeItForeverCore-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -644,6 +682,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				430DF6A51E0E680700BDBF9B /* WordFlowServiceFactory.swift in Sources */,
+				0FEB9713237B64E2000F719D /* DepotPhraseModel.swift in Sources */,
 				4348C1F81E0AD9560076E297 /* MemorizeItForever.xcdatamodeld in Sources */,
 				43EFD73D1E0AD48C00F79CBE /* NSDateExtensions.swift in Sources */,
 				430DF69D1E0E665900BDBF9B /* ServiceFactoryProtocol.swift in Sources */,
@@ -655,6 +694,7 @@
 				43EFD7081E0AD3F900F79CBE /* WordInProgressEntity+CoreDataClass.swift in Sources */,
 				43EFD73F1E0AD48C00F79CBE /* StringExtension.swift in Sources */,
 				43EFD70C1E0AD3F900F79CBE /* WordHistoryEntity+CoreDataProperties.swift in Sources */,
+				0FEB9710237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift in Sources */,
 				43EFD7071E0AD3F900F79CBE /* WordHistoryEntity+CoreDataClass.swift in Sources */,
 				43EFD70B1E0AD3F900F79CBE /* WordEntity+CoreDataProperties.swift in Sources */,
 				43EFD70A1E0AD3F900F79CBE /* SetEntity+CoreDataProperties.swift in Sources */,
@@ -682,6 +722,7 @@
 				43EFD7311E0AD44C00F79CBE /* SetModel.swift in Sources */,
 				430DF6A31E0E67C300BDBF9B /* WordServiceFactory.swift in Sources */,
 				430DF6A11E0E676700BDBF9B /* SetServiceFactory.swift in Sources */,
+				0FEB9711237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift in Sources */,
 				43EFD7151E0AD41000F79CBE /* WordInProgressDataAccessProtocol.swift in Sources */,
 				430DF6971E0E606F00BDBF9B /* IOCContainer.swift in Sources */,
 				43EFD7291E0AD43F00F79CBE /* WordFlowServiceProtocol.swift in Sources */,
@@ -705,6 +746,7 @@
 				436DCAA41DBCF73E00992708 /* SetServiceTests.swift in Sources */,
 				43DBA2291DBB857C0017E733 /* FakeSetDataAccess.swift in Sources */,
 				434419691DBBA745006F77C9 /* SetDataAccessTests.swift in Sources */,
+				0F9FCFE62378A8970033C2F3 /* DepotPhraseEntityTests.swift in Sources */,
 				438874511DB7A6C70030C016 /* WordModelTests.swift in Sources */,
 				43DBA2201DBB5DA00017E733 /* WordEntityTests.swift in Sources */,
 				436DCAA51DBCF73E00992708 /* WordFlowsServiceTests.swift in Sources */,
@@ -850,7 +892,7 @@
 		};
 		43434A9A1DB262800005B59F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 188E167745E59604D2E4FF2E /* Pods-MemorizeItForeverCore.debug.xcconfig */;
+			baseConfigurationReference = 786040938BFCCF92323847FE /* Pods-MemorizeItForeverCore.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -883,7 +925,7 @@
 		};
 		43434A9B1DB262800005B59F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD31FDD7E11235B57A067D9E /* Pods-MemorizeItForeverCore.release.xcconfig */;
+			baseConfigurationReference = DC007B63ADA3C853EA9569D0 /* Pods-MemorizeItForeverCore.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -914,7 +956,7 @@
 		};
 		43434A9D1DB262800005B59F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCCFBF4E4338E7784D2E9B02 /* Pods-MemorizeItForeverCoreTests.debug.xcconfig */;
+			baseConfigurationReference = BCD203C8249EE61927A7DD14 /* Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 37CR54MNJQ;
@@ -948,7 +990,7 @@
 		};
 		43434A9E1DB262800005B59F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7396ADC01D43771C3310F95A /* Pods-MemorizeItForeverCoreTests.release.xcconfig */;
+			baseConfigurationReference = 42C3E9E8582B3523886B55C9 /* Pods-MemorizeItForeverCore-MemorizeItForeverCoreTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 37CR54MNJQ;
@@ -1030,9 +1072,10 @@
 		4348C1F61E0AD9560076E297 /* MemorizeItForever.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				0FB6AA2923789809006860F2 /* MemorizeItForever 2.xcdatamodel */,
 				4348C1F71E0AD9560076E297 /* MemorizeItForever.xcdatamodel */,
 			);
-			currentVersion = 4348C1F71E0AD9560076E297 /* MemorizeItForever.xcdatamodel */;
+			currentVersion = 0FB6AA2923789809006860F2 /* MemorizeItForever 2.xcdatamodel */;
 			name = MemorizeItForever.xcdatamodeld;
 			path = DataAccess/Database/MemorizeItForever.xcdatamodeld;
 			sourceTree = "<group>";

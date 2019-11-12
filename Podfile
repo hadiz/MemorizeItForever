@@ -45,7 +45,7 @@ target 'MemorizeItForeverCore' do
     shared_pods
     
     target 'MemorizeItForeverCoreTests' do
-        inherit! :search_paths
+#        inherit! :search_paths
         # Pods for testing
     end
     

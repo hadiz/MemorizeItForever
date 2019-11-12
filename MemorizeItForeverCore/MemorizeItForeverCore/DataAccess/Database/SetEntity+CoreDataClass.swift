@@ -34,5 +34,4 @@ class SetEntity: NSManagedObject, EntityProtocol {
         case Id = "id"
         case Name = "name"
     }
-
 }

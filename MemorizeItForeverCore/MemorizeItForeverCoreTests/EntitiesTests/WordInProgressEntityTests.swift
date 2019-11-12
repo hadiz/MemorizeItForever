@@ -243,10 +243,10 @@ class WordInProgressEntityTests: XCTestCase {
     
     fileprivate func SaveWordEntity() -> (succcessful: Bool, entity: WordEntity?){
         let entityCreationHelper = EntityCreationHelper()
-        return entityCreationHelper.SaveWordEntity(managedObjectContext)
+        return entityCreationHelper.saveWordEntity(managedObjectContext)
     }
     fileprivate func SaveWordInProgressEntity() -> (succcessful: Bool, entity: WordInProgressEntity?){
         let entityCreationHelper = EntityCreationHelper()
-        return entityCreationHelper.SaveWordInProgressEntity(managedObjectContext)
+        return entityCreationHelper.saveWordInProgressEntity(managedObjectContext)
     }
 }

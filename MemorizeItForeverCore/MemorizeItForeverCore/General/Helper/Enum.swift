@@ -12,12 +12,14 @@ enum Entities: String{
     case wordEntity = "WordEntity"
     case wordInProgressEntity = "WordInProgressEntity"
     case wordHistoryEntity = "WordHistoryEntity"
+    case depotPhraseEntity = "DepotPhraseEntity"
 }
 enum Models: String{
     case setModel
     case wordModel
     case wordHistoryModel
     case wordInProgressModel
+    case depotPhraseModel
 }
 
 public enum Settings: String{
