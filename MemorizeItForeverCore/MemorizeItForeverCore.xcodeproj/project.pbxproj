@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F66B9212337F7FE007CA4C1 /* BaseLocalDataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9202337F7FE007CA4C1 /* BaseLocalDataAccess */; };
 		0F9FCFE62378A8970033C2F3 /* DepotPhraseEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9FCFE52378A8970033C2F3 /* DepotPhraseEntityTests.swift */; };
+		0FCDEF6D237B6B4800DFA9F4 /* DepotPhraseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF6C237B6B4800DFA9F4 /* DepotPhraseModelTests.swift */; };
 		0FEB9710237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB970E237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift */; };
 		0FEB9711237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB970F237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift */; };
 		0FEB9713237B64E2000F719D /* DepotPhraseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB9712237B64E2000F719D /* DepotPhraseModel.swift */; };
@@ -100,6 +101,7 @@
 /* Begin PBXFileReference section */
 		0F9FCFE52378A8970033C2F3 /* DepotPhraseEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotPhraseEntityTests.swift; path = EntitiesTests/DepotPhraseEntityTests.swift; sourceTree = "<group>"; };
 		0FB6AA2923789809006860F2 /* MemorizeItForever 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MemorizeItForever 2.xcdatamodel"; sourceTree = "<group>"; };
+		0FCDEF6C237B6B4800DFA9F4 /* DepotPhraseModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseModelTests.swift; path = ModelsTests/DepotPhraseModelTests.swift; sourceTree = "<group>"; };
 		0FEB970E237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DepotPhraseEntity+CoreDataClass.swift"; path = "DataAccess/Database/DepotPhraseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0FEB970F237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DepotPhraseEntity+CoreDataProperties.swift"; path = "DataAccess/Database/DepotPhraseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0FEB9712237B64E2000F719D /* DepotPhraseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseModel.swift; path = Models/DepotPhraseModel.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 		4388744D1DB7A62C0030C016 /* ModelsTests */ = {
 			isa = PBXGroup;
 			children = (
+				0FCDEF6C237B6B4800DFA9F4 /* DepotPhraseModelTests.swift */,
 				4388744E1DB7A6510030C016 /* SetModelTests.swift */,
 				438874501DB7A6C70030C016 /* WordModelTests.swift */,
 				438874521DB7A7320030C016 /* WordHistoryModelTests.swift */,
@@ -743,6 +746,7 @@
 				43DBA2221DBB63C70017E733 /* WordHistoryEntityTests.swift in Sources */,
 				438874551DB7A7C60030C016 /* WordInProgressModelTests.swift in Sources */,
 				4344196A1DBBA745006F77C9 /* WordDataAccessTests.swift in Sources */,
+				0FCDEF6D237B6B4800DFA9F4 /* DepotPhraseModelTests.swift in Sources */,
 				436DCAA41DBCF73E00992708 /* SetServiceTests.swift in Sources */,
 				43DBA2291DBB857C0017E733 /* FakeSetDataAccess.swift in Sources */,
 				434419691DBBA745006F77C9 /* SetDataAccessTests.swift in Sources */,
