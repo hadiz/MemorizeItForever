@@ -10,6 +10,9 @@
 		0F66B9212337F7FE007CA4C1 /* BaseLocalDataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9202337F7FE007CA4C1 /* BaseLocalDataAccess */; };
 		0F9FCFE62378A8970033C2F3 /* DepotPhraseEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9FCFE52378A8970033C2F3 /* DepotPhraseEntityTests.swift */; };
 		0FCDEF6D237B6B4800DFA9F4 /* DepotPhraseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF6C237B6B4800DFA9F4 /* DepotPhraseModelTests.swift */; };
+		0FCDEF6F237CB20000DFA9F4 /* DepotPhraseDataAccessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF6E237CB20000DFA9F4 /* DepotPhraseDataAccessProtocol.swift */; };
+		0FCDEF73237CB26F00DFA9F4 /* DepotPhraseDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF72237CB26F00DFA9F4 /* DepotPhraseDataAccess.swift */; };
+		0FCDEF75237CB2E100DFA9F4 /* DepotPhraseDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF74237CB2E100DFA9F4 /* DepotPhraseDataAccessTests.swift */; };
 		0FEB9710237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB970E237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift */; };
 		0FEB9711237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB970F237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift */; };
 		0FEB9713237B64E2000F719D /* DepotPhraseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB9712237B64E2000F719D /* DepotPhraseModel.swift */; };
@@ -102,6 +105,9 @@
 		0F9FCFE52378A8970033C2F3 /* DepotPhraseEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotPhraseEntityTests.swift; path = EntitiesTests/DepotPhraseEntityTests.swift; sourceTree = "<group>"; };
 		0FB6AA2923789809006860F2 /* MemorizeItForever 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MemorizeItForever 2.xcdatamodel"; sourceTree = "<group>"; };
 		0FCDEF6C237B6B4800DFA9F4 /* DepotPhraseModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseModelTests.swift; path = ModelsTests/DepotPhraseModelTests.swift; sourceTree = "<group>"; };
+		0FCDEF6E237CB20000DFA9F4 /* DepotPhraseDataAccessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseDataAccessProtocol.swift; path = DataAccess/DataAccess/Protocols/DepotPhraseDataAccessProtocol.swift; sourceTree = "<group>"; };
+		0FCDEF72237CB26F00DFA9F4 /* DepotPhraseDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseDataAccess.swift; path = DataAccess/DataAccess/DepotPhraseDataAccess.swift; sourceTree = "<group>"; };
+		0FCDEF74237CB2E100DFA9F4 /* DepotPhraseDataAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseDataAccessTests.swift; path = DataAccessTests/DepotPhraseDataAccessTests.swift; sourceTree = "<group>"; };
 		0FEB970E237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DepotPhraseEntity+CoreDataClass.swift"; path = "DataAccess/Database/DepotPhraseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0FEB970F237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DepotPhraseEntity+CoreDataProperties.swift"; path = "DataAccess/Database/DepotPhraseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0FEB9712237B64E2000F719D /* DepotPhraseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseModel.swift; path = Models/DepotPhraseModel.swift; sourceTree = "<group>"; };
@@ -310,6 +316,7 @@
 			children = (
 				91A64D4C1DD49C43003D45B8 /* Protocols */,
 				43EFD7161E0AD42100F79CBE /* BaseManagedObjectContext.swift */,
+				0FCDEF72237CB26F00DFA9F4 /* DepotPhraseDataAccess.swift */,
 				43EFD7171E0AD42100F79CBE /* SetDataAccess.swift */,
 				43EFD7181E0AD42100F79CBE /* WordDataAccess.swift */,
 				43EFD7191E0AD42100F79CBE /* WordHistoryDataAccess.swift */,
@@ -457,6 +464,7 @@
 		43DBA2251DBB84E00017E733 /* DataAccessTests */ = {
 			isa = PBXGroup;
 			children = (
+				0FCDEF74237CB2E100DFA9F4 /* DepotPhraseDataAccessTests.swift */,
 				434419671DBBA745006F77C9 /* SetDataAccessTests.swift */,
 				434419681DBBA745006F77C9 /* WordDataAccessTests.swift */,
 				436DCA3F1DBC99B200992708 /* WordInProgressDataAccessTests.swift */,
@@ -488,6 +496,7 @@
 		91A64D4C1DD49C43003D45B8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				0FCDEF6E237CB20000DFA9F4 /* DepotPhraseDataAccessProtocol.swift */,
 				43EFD70E1E0AD41000F79CBE /* SetDataAccessProtocol.swift */,
 				43EFD70F1E0AD41000F79CBE /* WordDataAccessProtocol.swift */,
 				43EFD7101E0AD41000F79CBE /* WordHistoryDataAccessProtocol.swift */,
@@ -691,6 +700,7 @@
 				430DF69D1E0E665900BDBF9B /* ServiceFactoryProtocol.swift in Sources */,
 				43EFD7221E0AD43300F79CBE /* SetService.swift in Sources */,
 				43EFD72B1E0AD43F00F79CBE /* WordServiceProtocol.swift in Sources */,
+				0FCDEF73237CB26F00DFA9F4 /* DepotPhraseDataAccess.swift in Sources */,
 				43EFD7121E0AD41000F79CBE /* SetDataAccessProtocol.swift in Sources */,
 				43EFD72A1E0AD43F00F79CBE /* WordService.swift in Sources */,
 				43EFD71B1E0AD42100F79CBE /* BaseManagedObjectContext.swift in Sources */,
@@ -713,6 +723,7 @@
 				43EFD73C1E0AD48C00F79CBE /* NotificationCenterExtension.swift in Sources */,
 				43EFD71E1E0AD42100F79CBE /* WordHistoryDataAccess.swift in Sources */,
 				43EFD7351E0AD44C00F79CBE /* MemorizeItModelProtocol.swift in Sources */,
+				0FCDEF6F237CB20000DFA9F4 /* DepotPhraseDataAccessProtocol.swift in Sources */,
 				43EFD7141E0AD41000F79CBE /* WordHistoryDataAccessProtocol.swift in Sources */,
 				43EFD7331E0AD44C00F79CBE /* WordInProgressModel.swift in Sources */,
 				43EFD7321E0AD44C00F79CBE /* WordHistoryModel.swift in Sources */,
@@ -765,6 +776,7 @@
 				436DCA401DBC99B200992708 /* WordInProgressDataAccessTests.swift in Sources */,
 				4344196C1DBBA7A2006F77C9 /* FakeWordDataAccess.swift in Sources */,
 				438874531DB7A7320030C016 /* WordHistoryModelTests.swift in Sources */,
+				0FCDEF75237CB2E100DFA9F4 /* DepotPhraseDataAccessTests.swift in Sources */,
 				911897E41DDF00BE001FC74B /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

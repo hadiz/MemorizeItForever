@@ -12,7 +12,7 @@ import CoreData
 import BaseLocalDataAccess
 
 @objc(DepotPhraseEntity)
-public class DepotPhraseEntity: NSManagedObject {
+public class DepotPhraseEntity: NSManagedObject, EntityProtocol {
     public static var entityName: String{
         return Entities.depotPhraseEntity.rawValue
     }

@@ -9,4 +9,5 @@
 public protocol DepotPhraseDataAccessProtocol {
     func fetchAll() throws -> [DepotPhraseModel]
     func save(depotPhraseModel: DepotPhraseModel) throws
+    func delete(_ setModel: DepotPhraseModel) throws
 }

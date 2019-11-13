@@ -94,7 +94,7 @@ class SetDataAccessTests: XCTestCase {
             var setModel = SetModel()
             setModel.name = "Default"
             try setDataAccess.save(setModel)
-            var sets = try setDataAccess.fetchAll()
+            let sets = try setDataAccess.fetchAll()
             try setDataAccess.delete(sets[0])
             let newSets = try setDataAccess.fetchAll()
             

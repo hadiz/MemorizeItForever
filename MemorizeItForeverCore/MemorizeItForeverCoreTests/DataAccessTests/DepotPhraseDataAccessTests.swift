@@ -10,13 +10,15 @@ import XCTest
 @testable import MemorizeItForeverCore
 
 class DepotPhraseDataAccessTests: XCTestCase {
-
+    
     var depotDataAccess: DepotPhraseDataAccessProtocol!
     
     override func setUp() {
-        depotDataAccess = DepotPhraseDataAccess()
+        let managedObjectContext = InMemoryManagedObjectContext()
+        let dataAccess = MockGenericDataAccess<DepotPhraseEntity>(context: managedObjectContext)
+        depotDataAccess = DepotPhraseDataAccess(genericDataAccess: dataAccess)
     }
-
+    
     override func tearDown() {
         depotDataAccess = nil
     }
@@ -32,16 +34,35 @@ class DepotPhraseDataAccessTests: XCTestCase {
             XCTFail("should be able to save a depot phrase")
         }
     }
-
-//    func testFetchDepotPhrasesWhenHasData() {
-//        do {
-//            let result = try depotDataAccess.fetchAll()
-//            
-//            XCTAssertGreaterThan(result.count, 0)
-//        }
-//        catch {
-//            
-//        }
-//        
-//    }
+    
+    func testFetch(){
+        do{
+            var depotModel = DepotPhraseModel()
+            depotModel.phrase = "book"
+            
+            try depotDataAccess.save(depotPhraseModel: depotModel)
+            let depotPhrases = try depotDataAccess.fetchAll()
+            XCTAssertEqual(depotPhrases.count, 1, "should be able to fetch depotPhrases")
+        }
+        catch{
+            XCTFail("should be able to fetch depotPhrases")
+        }
+    }
+    
+    func testDelete(){
+        do{
+            var depotModel = DepotPhraseModel()
+            depotModel.phrase = "book"
+            
+            try depotDataAccess.save(depotPhraseModel: depotModel)
+            let depotPhrases = try depotDataAccess.fetchAll()
+            try depotDataAccess.delete(depotPhrases[0])
+            let newdepotPhrases = try depotDataAccess.fetchAll()
+            
+            XCTAssertEqual(newdepotPhrases.count, 0, "Should be able to delete a depotPhrases")
+        }
+        catch{
+            XCTFail("Should be able to delete a set")
+        }
+    }
 }
