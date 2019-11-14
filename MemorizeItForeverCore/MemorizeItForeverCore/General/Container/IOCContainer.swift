@@ -57,5 +57,16 @@ let iocContainer = Container() { c in
     c.register(ManagedObjectContextProtocol.self){ r in
          BaseManagedObjectContext()
         }.inObjectScope(ObjectScope.container)
+    
+    c.register(DepotPhraseDataAccessProtocol.self){ r in
+        DepotPhraseDataAccess(genericDataAccess: r.resolve(GenericDataAccess<DepotPhraseEntity>.self)!)
+    }
+    
+    c.register(GenericDataAccess<DepotPhraseEntity>.self){ r in
+        GenericDataAccess<DepotPhraseEntity>(context: r.resolve(ManagedObjectContextProtocol.self)!)
+    }
 
+    c.register(DepotPhraseServiceProtocol.self){ r in
+        DepotPhraseService(dataAccess: r.resolve(DepotPhraseDataAccessProtocol.self)!)
+    }
 }

@@ -15,6 +15,7 @@ class TemporaryPhraseListViewController: UIViewController {
     private let segueIdentifier = "ShowEditTemporaryPhrase"
     var recognizedTexts = [String]()
     var dataSource: DepotTableDataSourceProtocol!
+    var service: DepotPhraseServiceProtocol!
     
     // MARK: ViewController
     override func viewDidLoad() {

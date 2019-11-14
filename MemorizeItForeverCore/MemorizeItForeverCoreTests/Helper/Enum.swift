@@ -19,3 +19,8 @@ enum FakeWordSetDataAccessEnum {
 enum FakeWordInProgressDataAccessEnum {
     case delete
 }
+
+enum FakeDepotPhraseDataAccessEnum {
+    case save
+    case delete
+}

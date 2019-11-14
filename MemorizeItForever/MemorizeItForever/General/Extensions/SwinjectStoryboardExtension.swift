@@ -101,6 +101,10 @@ extension SwinjectStoryboard {
             WordFlowServiceFactory()
         }
         
+        defaultContainer.register(ServiceFactoryProtocol.self, name: "DepotPhraseServiceFactory"){ r in
+            DepotPhraseServiceFactory()
+        }
+        
         defaultContainer.register(SetServiceProtocol.self){ r in
             let setServiceFactory = r.resolve(ServiceFactoryProtocol.self, name: "SetServiceFactory")!
             let setService: SetService = setServiceFactory.create()
@@ -121,6 +125,13 @@ extension SwinjectStoryboard {
         
         defaultContainer.storyboardInitCompleted(TemporaryPhraseListViewController.self) { r, c in
             c.dataSource = r.resolve(DepotTableDataSourceProtocol.self, name: "TemporaryPhraseListDataSource")
+            c.service = r.resolve(DepotPhraseServiceProtocol.self)
+        }
+        
+        defaultContainer.register(DepotPhraseServiceProtocol.self){ r in
+            let depotPhraseServiceFactory = r.resolve(ServiceFactoryProtocol.self, name: "DepotPhraseServiceFactory")!
+            let depotPhraseService: DepotPhraseService = depotPhraseServiceFactory.create()
+            return depotPhraseService
         }
         
         defaultContainer.register(DepotTableDataSourceProtocol.self, name: "TemporaryPhraseListDataSource"){ r in

@@ -13,6 +13,11 @@
 		0FCDEF6F237CB20000DFA9F4 /* DepotPhraseDataAccessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF6E237CB20000DFA9F4 /* DepotPhraseDataAccessProtocol.swift */; };
 		0FCDEF73237CB26F00DFA9F4 /* DepotPhraseDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF72237CB26F00DFA9F4 /* DepotPhraseDataAccess.swift */; };
 		0FCDEF75237CB2E100DFA9F4 /* DepotPhraseDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF74237CB2E100DFA9F4 /* DepotPhraseDataAccessTests.swift */; };
+		0FCDEF78237E015600DFA9F4 /* DepotPhraseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF77237E015600DFA9F4 /* DepotPhraseService.swift */; };
+		0FCDEF7A237E04FF00DFA9F4 /* DepotPhraseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF79237E04FF00DFA9F4 /* DepotPhraseServiceTests.swift */; };
+		0FCDEF7C237E056E00DFA9F4 /* FakeDepotPhraseDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF7B237E056E00DFA9F4 /* FakeDepotPhraseDataAccess.swift */; };
+		0FCDEF7E237E062F00DFA9F4 /* DepotPhraseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF7D237E062F00DFA9F4 /* DepotPhraseServiceProtocol.swift */; };
+		0FCDEF80237E09BA00DFA9F4 /* DepotPhraseServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF7F237E09BA00DFA9F4 /* DepotPhraseServiceFactory.swift */; };
 		0FEB9710237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB970E237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift */; };
 		0FEB9711237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB970F237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift */; };
 		0FEB9713237B64E2000F719D /* DepotPhraseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB9712237B64E2000F719D /* DepotPhraseModel.swift */; };
@@ -108,6 +113,11 @@
 		0FCDEF6E237CB20000DFA9F4 /* DepotPhraseDataAccessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseDataAccessProtocol.swift; path = DataAccess/DataAccess/Protocols/DepotPhraseDataAccessProtocol.swift; sourceTree = "<group>"; };
 		0FCDEF72237CB26F00DFA9F4 /* DepotPhraseDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseDataAccess.swift; path = DataAccess/DataAccess/DepotPhraseDataAccess.swift; sourceTree = "<group>"; };
 		0FCDEF74237CB2E100DFA9F4 /* DepotPhraseDataAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseDataAccessTests.swift; path = DataAccessTests/DepotPhraseDataAccessTests.swift; sourceTree = "<group>"; };
+		0FCDEF77237E015600DFA9F4 /* DepotPhraseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotPhraseService.swift; path = Services/Depot/DepotPhraseService.swift; sourceTree = "<group>"; };
+		0FCDEF79237E04FF00DFA9F4 /* DepotPhraseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotPhraseServiceTests.swift; path = ManagersTests/DepotPhraseServiceTests.swift; sourceTree = "<group>"; };
+		0FCDEF7B237E056E00DFA9F4 /* FakeDepotPhraseDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FakeDepotPhraseDataAccess.swift; path = Helper/FakeDepotPhraseDataAccess.swift; sourceTree = "<group>"; };
+		0FCDEF7D237E062F00DFA9F4 /* DepotPhraseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotPhraseServiceProtocol.swift; path = Services/Depot/DepotPhraseServiceProtocol.swift; sourceTree = "<group>"; };
+		0FCDEF7F237E09BA00DFA9F4 /* DepotPhraseServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotPhraseServiceFactory.swift; path = Factories/DepotPhraseServiceFactory.swift; sourceTree = "<group>"; };
 		0FEB970E237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DepotPhraseEntity+CoreDataClass.swift"; path = "DataAccess/Database/DepotPhraseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0FEB970F237B5907000F719D /* DepotPhraseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DepotPhraseEntity+CoreDataProperties.swift"; path = "DataAccess/Database/DepotPhraseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0FEB9712237B64E2000F719D /* DepotPhraseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepotPhraseModel.swift; path = Models/DepotPhraseModel.swift; sourceTree = "<group>"; };
@@ -216,6 +226,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FCDEF76237E00E400DFA9F4 /* Depot */ = {
+			isa = PBXGroup;
+			children = (
+				0FCDEF77237E015600DFA9F4 /* DepotPhraseService.swift */,
+				0FCDEF7D237E062F00DFA9F4 /* DepotPhraseServiceProtocol.swift */,
+			);
+			name = Depot;
+			sourceTree = "<group>";
+		};
 		156350F53537E51AD379A72E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +262,7 @@
 				430DF6A01E0E676700BDBF9B /* SetServiceFactory.swift */,
 				430DF6A21E0E67C300BDBF9B /* WordServiceFactory.swift */,
 				430DF6A41E0E680700BDBF9B /* WordFlowServiceFactory.swift */,
+				0FCDEF7F237E09BA00DFA9F4 /* DepotPhraseServiceFactory.swift */,
 			);
 			name = Factories;
 			sourceTree = "<group>";
@@ -416,6 +436,7 @@
 				436DCAA11DBCF73E00992708 /* SetServiceTests.swift */,
 				436DCAA31DBCF73E00992708 /* WordServiceTests.swift */,
 				436DCAA21DBCF73E00992708 /* WordFlowsServiceTests.swift */,
+				0FCDEF79237E04FF00DFA9F4 /* DepotPhraseServiceTests.swift */,
 			);
 			name = ServicesTests;
 			sourceTree = "<group>";
@@ -457,6 +478,7 @@
 				4344196D1DBBA895006F77C9 /* TestFlowHelper.swift */,
 				911897E31DDF00BE001FC74B /* Helper.swift */,
 				911897E51DDF0156001FC74B /* Enum.swift */,
+				0FCDEF7B237E056E00DFA9F4 /* FakeDepotPhraseDataAccess.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -477,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				430DF69E1E0E668E00BDBF9B /* ServiceProtocol.swift */,
+				0FCDEF76237E00E400DFA9F4 /* Depot */,
 				43434AB01DB3609F0005B59F /* Set */,
 				43434AAF1DB3608F0005B59F /* Word */,
 			);
@@ -707,6 +730,7 @@
 				43EFD7081E0AD3F900F79CBE /* WordInProgressEntity+CoreDataClass.swift in Sources */,
 				43EFD73F1E0AD48C00F79CBE /* StringExtension.swift in Sources */,
 				43EFD70C1E0AD3F900F79CBE /* WordHistoryEntity+CoreDataProperties.swift in Sources */,
+				0FCDEF7E237E062F00DFA9F4 /* DepotPhraseServiceProtocol.swift in Sources */,
 				0FEB9710237B5907000F719D /* DepotPhraseEntity+CoreDataClass.swift in Sources */,
 				43EFD7071E0AD3F900F79CBE /* WordHistoryEntity+CoreDataClass.swift in Sources */,
 				43EFD70B1E0AD3F900F79CBE /* WordEntity+CoreDataProperties.swift in Sources */,
@@ -727,6 +751,7 @@
 				43EFD7141E0AD41000F79CBE /* WordHistoryDataAccessProtocol.swift in Sources */,
 				43EFD7331E0AD44C00F79CBE /* WordInProgressModel.swift in Sources */,
 				43EFD7321E0AD44C00F79CBE /* WordHistoryModel.swift in Sources */,
+				0FCDEF78237E015600DFA9F4 /* DepotPhraseService.swift in Sources */,
 				43EFD7131E0AD41000F79CBE /* WordDataAccessProtocol.swift in Sources */,
 				430DF6AF1E0E821000BDBF9B /* ContextHelper.swift in Sources */,
 				43EFD7341E0AD44C00F79CBE /* WordModel.swift in Sources */,
@@ -742,6 +767,7 @@
 				43EFD7291E0AD43F00F79CBE /* WordFlowServiceProtocol.swift in Sources */,
 				430DF69F1E0E668E00BDBF9B /* ServiceProtocol.swift in Sources */,
 				43EFD7091E0AD3F900F79CBE /* SetEntity+CoreDataClass.swift in Sources */,
+				0FCDEF80237E09BA00DFA9F4 /* DepotPhraseServiceFactory.swift in Sources */,
 				43EFD71F1E0AD42100F79CBE /* WordInProgressDataAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -760,11 +786,13 @@
 				0FCDEF6D237B6B4800DFA9F4 /* DepotPhraseModelTests.swift in Sources */,
 				436DCAA41DBCF73E00992708 /* SetServiceTests.swift in Sources */,
 				43DBA2291DBB857C0017E733 /* FakeSetDataAccess.swift in Sources */,
+				0FCDEF7A237E04FF00DFA9F4 /* DepotPhraseServiceTests.swift in Sources */,
 				434419691DBBA745006F77C9 /* SetDataAccessTests.swift in Sources */,
 				0F9FCFE62378A8970033C2F3 /* DepotPhraseEntityTests.swift in Sources */,
 				438874511DB7A6C70030C016 /* WordModelTests.swift in Sources */,
 				43DBA2201DBB5DA00017E733 /* WordEntityTests.swift in Sources */,
 				436DCAA51DBCF73E00992708 /* WordFlowsServiceTests.swift in Sources */,
+				0FCDEF7C237E056E00DFA9F4 /* FakeDepotPhraseDataAccess.swift in Sources */,
 				436DCA421DBC99EE00992708 /* FakeWordInProgressDataAccess.swift in Sources */,
 				43C092D11DB7B12A00C4A15F /* EntityCreationHelper.swift in Sources */,
 				4344196E1DBBA895006F77C9 /* TestFlowHelper.swift in Sources */,
