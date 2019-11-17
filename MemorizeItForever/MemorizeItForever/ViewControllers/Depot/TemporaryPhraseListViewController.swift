@@ -48,6 +48,9 @@ class TemporaryPhraseListViewController: UIViewController {
         tableView.delegate = dataSource
         
         setDataSourceProperties()
+        
+        addAll.title = NSLocalizedString("AddAll", comment: "Add all phrases")
+        cancel.title = NSLocalizedString("Cancel", comment: "Dismiss view controller")
     }
     
     private func setDataSourceProperties(){
@@ -67,6 +70,7 @@ class TemporaryPhraseListViewController: UIViewController {
     private func rowActionHandler(model: MemorizeItModelProtocol, action: TableRowAction) {
         switch action {
         case .add:
+            addModel(model)
             break
         case .edit:
             presentEditTemporaryPhraseViewController(model: model)
@@ -90,6 +94,23 @@ class TemporaryPhraseListViewController: UIViewController {
         performSegue(withIdentifier: "ShowEditTemporaryPhrase", sender: tmpPhrase.phrase)
     }
     
+    private func addModel(_ model: MemorizeItModelProtocol) {
+        guard let tmpPhrase = model as? TemporaryPhraseModel else { return }
+        service.save(tmpPhrase.phrase)
+        if let index = recognizedTexts.index(of: tmpPhrase.phrase) {
+            recognizedTexts.remove(at: index)
+        }
+    }
+    
+    private func addAllPhrases() {
+        service.save(recognizedTexts)
+        dismissViewController()
+    }
+    
+    private func dismissViewController() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @objc
     private func reloadData(notification: NSNotification) {
         guard let wrapper = notification.object as? Wrapper<Any>, let dict = wrapper.getValue() as? Dictionary<TempPhrase, String?> else { return }
@@ -106,6 +127,14 @@ class TemporaryPhraseListViewController: UIViewController {
     
     // MARK: Controls
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addAll: UIBarButtonItem!
+    @IBAction func addAllTexts(_ sender: Any) {
+        addAllPhrases()
+    }
+    @IBOutlet weak var cancel: UIBarButtonItem!
+    @IBAction func cancelAction(_ sender: Any) {
+        dismissViewController()
+    }
     
 }
 

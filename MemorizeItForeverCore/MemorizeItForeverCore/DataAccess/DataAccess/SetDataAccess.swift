@@ -32,7 +32,7 @@ class SetDataAccess: SetDataAccessProtocol  {
             setEntity.id = genericDataAccess.generateId()
             setEntity.name = setModel.name
             
-            try genericDataAccess.saveEntity(setEntity)
+            try genericDataAccess.saveEntity()
         }
         catch EntityCRUDError.failNewEntity(let entityName){
             throw EntityCRUDError.failNewEntity(entityName)
@@ -50,7 +50,7 @@ class SetDataAccess: SetDataAccessProtocol  {
             
             if let setEntity = try genericDataAccess.fetchEntity(withId: id){
                 setEntity.name = setModel.name
-                try genericDataAccess.saveEntity(setEntity)
+                try genericDataAccess.saveEntity()
             }
             else{
                 throw DataAccessError.failFetchData("There is no Set entity with id: \(id)")

@@ -39,7 +39,7 @@ class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
             }
             wordInProgressEntity.date = wordInProgressModel.date?.getDate()
             wordInProgressEntity.word = fetchWordEntity(wordId)
-            try genericDataAccess.saveEntity(wordInProgressEntity)
+            try genericDataAccess.saveEntity()
         }
         catch EntityCRUDError.failNewEntity(let entityName){
             throw EntityCRUDError.failNewEntity(entityName)
@@ -60,7 +60,7 @@ class WordInProgressDataAccess: WordInProgressDataAccessProtocol {
                     wordInProgressEntity.column = column
                 }
                 wordInProgressEntity.date = wordInProgressModel.date?.getDate()
-                try genericDataAccess.saveEntity(wordInProgressEntity)
+                try genericDataAccess.saveEntity()
             }
             else{
                 throw DataAccessError.failFetchData("There is no WordInProgressEntity entity with id: \(id)")

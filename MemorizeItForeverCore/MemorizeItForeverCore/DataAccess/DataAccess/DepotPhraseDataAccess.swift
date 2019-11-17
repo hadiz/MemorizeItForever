@@ -22,7 +22,25 @@ class DepotPhraseDataAccess: DepotPhraseDataAccessProtocol {
             depotPhraseEntity.id = genericDataAccess.generateId()
             depotPhraseEntity.phrase = depotPhraseModel.phrase
             
-            try genericDataAccess.saveEntity(depotPhraseEntity)
+            try genericDataAccess.saveEntity()
+        }
+        catch EntityCRUDError.failNewEntity(let entityName){
+            throw EntityCRUDError.failNewEntity(entityName)
+        }
+        catch{
+            throw EntityCRUDError.failSaveEntity(genericDataAccess.getEntityName())
+        }
+    }
+    
+    func save(depotPhraseModels: [DepotPhraseModel]) throws {
+        do{
+            for model in depotPhraseModels {
+                let depotPhraseEntity = try genericDataAccess.createNewInstance()
+                depotPhraseEntity.id = genericDataAccess.generateId()
+                depotPhraseEntity.phrase = model.phrase
+            }
+            
+            try genericDataAccess.saveEntity()
         }
         catch EntityCRUDError.failNewEntity(let entityName){
             throw EntityCRUDError.failNewEntity(entityName)

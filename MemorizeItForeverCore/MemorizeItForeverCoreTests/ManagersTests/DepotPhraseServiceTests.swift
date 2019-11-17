@@ -35,6 +35,16 @@ class DepotPhraseServiceTests: XCTestCase {
         }
     }
     
+    func testSaveBatchDepotPhrase() {
+        service.save(["Book", "apple", "develop"])
+        if let enumResult = objc_getAssociatedObject(dataAccess, &resultKey) as? FakeDepotPhraseDataAccessEnum{
+            XCTAssertEqual(enumResult, .save ,"should save DepotPhrase")
+        }
+        else{
+            XCTFail("should save DepotPhrase")
+        }
+    }
+    
     func testDeleteDepotPhrase() {
         objc_setAssociatedObject(dataAccess, &setNumberKey, 2, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         var model = DepotPhraseModel()

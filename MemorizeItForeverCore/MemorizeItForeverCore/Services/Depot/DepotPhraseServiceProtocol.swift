@@ -9,5 +9,6 @@
 public protocol DepotPhraseServiceProtocol: ServiceProtocol {
     func get() -> [DepotPhraseModel]
     func save(_ phrase: String)
+    func save(_ phrases: [String])
     func delete(_ model: DepotPhraseModel) -> Bool
 }

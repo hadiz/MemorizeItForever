@@ -70,8 +70,21 @@
                             <constraint firstItem="FhK-Sf-TVG" firstAttribute="leading" secondItem="m5p-ea-U0a" secondAttribute="leadingMargin" id="kmu-4u-qht"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bN0-pN-e6K"/>
+                    <navigationItem key="navigationItem" id="bN0-pN-e6K">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="nyf-xA-cYL">
+                            <connections>
+                                <action selector="cancelAction:" destination="zqF-G4-0YS" id="CUd-Wq-p2C"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="ovD-Yl-Am2">
+                            <connections>
+                                <action selector="addAllTexts:" destination="zqF-G4-0YS" id="EWH-rk-sQn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addAll" destination="ovD-Yl-Am2" id="sWe-gk-uKn"/>
+                        <outlet property="cancel" destination="nyf-xA-cYL" id="J5F-nH-R3Q"/>
                         <outlet property="tableView" destination="FhK-Sf-TVG" id="Tyg-sN-IEU"/>
                         <segue destination="gYR-nA-DYN" kind="presentation" identifier="ShowEditTemporaryPhrase" id="ceK-vE-ahO"/>
                     </connections>

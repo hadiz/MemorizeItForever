@@ -24,6 +24,21 @@ final public class DepotPhraseService: DepotPhraseServiceProtocol {
         }
     }
     
+    public func save(_ phrases: [String]){
+        do{
+            var depots = [DepotPhraseModel]()
+            for phrase in phrases {
+                var depot = DepotPhraseModel()
+                depot.phrase = phrase
+                depots.append(depot)
+            }
+            try dataAccess.save(depotPhraseModels: depots)
+        }
+        catch{
+            
+        }
+    }
+    
     public func delete(_ model: DepotPhraseModel) -> Bool{
         do{
             try dataAccess.delete(model)

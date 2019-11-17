@@ -35,6 +35,25 @@ class DepotPhraseDataAccessTests: XCTestCase {
         }
     }
     
+    func testBatchSave() {
+        var DepotPhraseModels = [DepotPhraseModel]()
+        var depotModel = DepotPhraseModel()
+        depotModel.phrase = "book"
+        
+        var depotModel2 = DepotPhraseModel()
+        depotModel2.phrase = "apple"
+        
+        DepotPhraseModels.append(depotModel)
+        DepotPhraseModels.append(depotModel2)
+        
+        do {
+            try depotDataAccess.save(depotPhraseModels: DepotPhraseModels)
+        }
+        catch {
+            XCTFail("should be able to save batch depot phrase")
+        }
+    }
+    
     func testFetch(){
         do{
             var depotModel = DepotPhraseModel()

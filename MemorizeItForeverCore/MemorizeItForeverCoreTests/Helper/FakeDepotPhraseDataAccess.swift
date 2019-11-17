@@ -10,6 +10,15 @@ import BaseLocalDataAccess
 @testable import MemorizeItForeverCore
 
 class FakeDepotPhraseDataAccess: DepotPhraseDataAccessProtocol {
+    func save(depotPhraseModels: [DepotPhraseModel]) throws {
+        for model in depotPhraseModels {
+            guard let name = model.phrase, !name.trim().isEmpty else {
+                return
+            }
+        }
+        objc_setAssociatedObject(self, &resultKey, FakeDepotPhraseDataAccessEnum.save, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+    
     func fetchAll() throws -> [DepotPhraseModel] {
         return []
     }

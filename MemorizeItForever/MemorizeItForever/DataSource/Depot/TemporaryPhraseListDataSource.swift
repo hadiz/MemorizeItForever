@@ -105,6 +105,6 @@ final class TemporaryPhraseListDataSource: NSObject, DepotTableDataSourceProtoco
     private func addTempPhrase(indexPath: IndexPath, tableView: UITableView){
         let model = temporaryPhraseModelList.remove(at: (indexPath as NSIndexPath).row)
         rowActionHandler?(model, .add)
-         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
     }
 }

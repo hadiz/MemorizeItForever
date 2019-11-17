@@ -30,7 +30,7 @@ class WordDataAccess: WordDataAccessProtocol {
             wordEntity.order = try setOrder()
             wordEntity.phrase = wordModel.phrase
             wordEntity.set =  fetchSetEntity(setId)
-            try genericDataAccess.saveEntity(wordEntity)
+            try genericDataAccess.saveEntity()
         }
         catch EntityCRUDError.failNewEntity(let entityName){
             throw EntityCRUDError.failNewEntity(entityName)
@@ -99,7 +99,7 @@ class WordDataAccess: WordDataAccessProtocol {
                 if let status = wordModel.status{
                     wordEntity.status = status
                 }
-                try genericDataAccess.saveEntity(wordEntity)
+                try genericDataAccess.saveEntity()
             }
             else{
                 throw DataAccessError.failFetchData("There is no Word entity with id: \(id)")

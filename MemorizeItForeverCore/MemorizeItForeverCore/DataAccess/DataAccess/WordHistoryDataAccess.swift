@@ -37,7 +37,7 @@ class WordHistoryDataAccess: WordHistoryDataAccessProtocol {
             else{
                 wordHistoryEntity!.failureCount = wordHistoryEntity!.failureCount + 1
             }
-            try genericDataAccess.saveEntity(wordHistoryEntity!)
+            try genericDataAccess.saveEntity()
         }
         catch EntityCRUDError.failNewEntity(let entityName){
             throw EntityCRUDError.failNewEntity(entityName)
