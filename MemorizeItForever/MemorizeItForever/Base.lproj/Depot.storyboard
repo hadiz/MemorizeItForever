@@ -18,7 +18,29 @@
                     <view key="view" contentMode="scaleToFill" id="jRy-AZ-oWV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b4P-IS-Iwa">
+                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DepotTableCellIdentifier" id="inV-uc-9xw">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="inV-uc-9xw" id="I10-zq-FNU">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="b4P-IS-Iwa" firstAttribute="top" secondItem="QIw-KG-5r3" secondAttribute="bottom" id="AVj-El-u8W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b4P-IS-Iwa" secondAttribute="trailing" id="JQF-v3-emV"/>
+                            <constraint firstItem="b4P-IS-Iwa" firstAttribute="leading" secondItem="jRy-AZ-oWV" secondAttribute="leadingMargin" id="eKJ-Os-tXB"/>
+                            <constraint firstItem="7r6-gU-Nbk" firstAttribute="top" secondItem="b4P-IS-Iwa" secondAttribute="bottom" id="fYB-t5-nDZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MzZ-4F-ueE">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="cJh-cS-OA8">
@@ -28,6 +50,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="b4P-IS-Iwa" id="fO6-vH-yBT"/>
                         <segue destination="00O-pe-DiS" kind="presentation" identifier="ShowTemporaryPhraseList" id="ckA-zn-5gE"/>
                     </connections>
                 </viewController>

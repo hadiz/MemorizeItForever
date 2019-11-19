@@ -23,11 +23,13 @@
 		0F33BF00236D95CC008D0FE4 /* MemorizeItTableHandleEventDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33BEFD236D95CC008D0FE4 /* MemorizeItTableHandleEventDelegateProtocol.swift */; };
 		0F33BF02236DA0C3008D0FE4 /* SetTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33BF01236DA0C3008D0FE4 /* SetTableDataSourceProtocol.swift */; };
 		0F366F02236F76B6002ECC9C /* TemporaryPhraseListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F366F01236F76B6002ECC9C /* TemporaryPhraseListDataSourceTests.swift */; };
+		0F36B7062381FB420094674E /* DepotDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F36B7052381FB420094674E /* DepotDataSource.swift */; };
+		0F36B70823848D3F0094674E /* DepotDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F36B70723848D3F0094674E /* DepotDataSourceTests.swift */; };
 		0F5136BF236F9E240020B4DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F5136BE236F9E240020B4DA /* GoogleService-Info.plist */; };
 		0F5136C1237562E70020B4DA /* PhraseTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5136C0237562E70020B4DA /* PhraseTableDataSourceProtocol.swift */; };
 		0F5136C32375687D0020B4DA /* DepotTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5136C22375687D0020B4DA /* DepotTableDataSourceProtocol.swift */; };
 		0F5136C5237588250020B4DA /* EditTemporaryPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5136C4237588250020B4DA /* EditTemporaryPhraseViewController.swift */; };
-		0F66B9242337F842007CA4C1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9232337F842007CA4C1 /* SwiftPackageProductDependency */; };
+		0F66B9242337F842007CA4C1 /* BaseLocalDataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9232337F842007CA4C1 /* BaseLocalDataAccess */; };
 		0F83BCF0234FD5B100224D0E /* DepotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F83BCEF234FD5B100224D0E /* DepotViewController.swift */; };
 		0FAB71072250F592004378BB /* EditPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB71062250F592004378BB /* EditPhraseViewController.swift */; };
 		0FAB710922540690004378BB /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAB710822540690004378BB /* MemorizeItForeverCore.framework */; };
@@ -152,6 +154,8 @@
 		0F33BEFD236D95CC008D0FE4 /* MemorizeItTableHandleEventDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorizeItTableHandleEventDelegateProtocol.swift; path = General/MemorizeItDataSource/MemorizeItTableHandleEventDelegateProtocol.swift; sourceTree = "<group>"; };
 		0F33BF01236DA0C3008D0FE4 /* SetTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTableDataSourceProtocol.swift; path = General/MemorizeItDataSource/SetTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		0F366F01236F76B6002ECC9C /* TemporaryPhraseListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TemporaryPhraseListDataSourceTests.swift; path = DataSourcesTests/TemporaryPhraseListDataSourceTests.swift; sourceTree = "<group>"; };
+		0F36B7052381FB420094674E /* DepotDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotDataSource.swift; path = DataSource/Depot/DepotDataSource.swift; sourceTree = "<group>"; };
+		0F36B70723848D3F0094674E /* DepotDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotDataSourceTests.swift; path = DataSourcesTests/DepotDataSourceTests.swift; sourceTree = "<group>"; };
 		0F5136BE236F9E240020B4DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F5136C0237562E70020B4DA /* PhraseTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseTableDataSourceProtocol.swift; path = General/MemorizeItDataSource/PhraseTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		0F5136C22375687D0020B4DA /* DepotTableDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotTableDataSourceProtocol.swift; path = General/MemorizeItDataSource/DepotTableDataSourceProtocol.swift; sourceTree = "<group>"; };
@@ -251,7 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F66B9242337F842007CA4C1 /* BuildFile in Frameworks */,
+				0F66B9242337F842007CA4C1 /* BaseLocalDataAccess in Frameworks */,
 				0FAB710922540690004378BB /* MemorizeItForeverCore.framework in Frameworks */,
 				4A1226EA665FBFAA0E2E4969 /* Pods_MemorizeItForever.framework in Frameworks */,
 			);
@@ -290,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				0F33BEF9236D8CCE008D0FE4 /* TemporaryPhraseListDataSource.swift */,
+				0F36B7052381FB420094674E /* DepotDataSource.swift */,
 			);
 			name = Depot;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				43262A401DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift */,
 				438EFD221DF2FEA900B83C88 /* PhraseTableDataSourceTests.swift */,
 				0F366F01236F76B6002ECC9C /* TemporaryPhraseListDataSourceTests.swift */,
+				0F36B70723848D3F0094674E /* DepotDataSourceTests.swift */,
 			);
 			name = DataSourcesTests;
 			sourceTree = "<group>";
@@ -630,7 +636,7 @@
 			);
 			name = MemorizeItForever;
 			packageProductDependencies = (
-				0F66B9232337F842007CA4C1 /* SwiftPackageProductDependency */,
+				0F66B9232337F842007CA4C1 /* BaseLocalDataAccess */,
 			);
 			productName = MemorizeItForever;
 			productReference = 43434AFB1DB3676A0005B59F /* MemorizeItForever.app */;
@@ -719,7 +725,7 @@
 			);
 			mainGroup = 43434AF21DB3676A0005B59F;
 			packageReferences = (
-				0F66B9222337F842007CA4C1 /* RemoteSwiftPackageReference */,
+				0F66B9222337F842007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */,
 			);
 			productRefGroup = 43434AFC1DB3676A0005B59F /* Products */;
 			projectDirPath = "";
@@ -876,6 +882,7 @@
 				43BF3D981DD9B4FC000296DB /* ValidatorProtocol.swift in Sources */,
 				91A64D5A1DD5019B003D45B8 /* ColorPickerProtocol.swift in Sources */,
 				0F33BEFA236D8CCE008D0FE4 /* TemporaryPhraseListDataSource.swift in Sources */,
+				0F36B7062381FB420094674E /* DepotDataSource.swift in Sources */,
 				43EFD75F1E0AD57100F79CBE /* TabBarController.swift in Sources */,
 				43EFD76C1E0AD57E00F79CBE /* SetViewController.swift in Sources */,
 				43690E6B1DD73062009918A3 /* SwinjectStoryboardExtension.swift in Sources */,
@@ -950,6 +957,7 @@
 				438B61F01DE08482008260D6 /* FakeUIViewExtension.swift in Sources */,
 				43BF3D881DD8A812000296DB /* MockSetManager.swift in Sources */,
 				438EFD211DF2F05E00B83C88 /* FakePhraseTableDataSource.swift in Sources */,
+				0F36B70823848D3F0094674E /* DepotDataSourceTests.swift in Sources */,
 				4349EAB01DBE4B260097DABD /* ApplySettingsTests.swift in Sources */,
 				43F217DB1DBF8A770005BF26 /* Enum.swift in Sources */,
 				4349EAB41DBE4BAE0097DABD /* SetTableDataSourceTests.swift in Sources */,
@@ -1330,7 +1338,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0F66B9222337F842007CA4C1 /* RemoteSwiftPackageReference */ = {
+		0F66B9222337F842007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SomeSimpleSolutions/BaseLocalDataAccessPackage.git";
 			requirement = {
@@ -1341,9 +1349,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0F66B9232337F842007CA4C1 /* SwiftPackageProductDependency */ = {
+		0F66B9232337F842007CA4C1 /* BaseLocalDataAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0F66B9222337F842007CA4C1 /* RemoteSwiftPackageReference */;
+			package = 0F66B9222337F842007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */;
 			productName = BaseLocalDataAccess;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MemorizeItForeverCore
 import Firebase
 
 final class DepotViewController: UIViewController, UINavigationControllerDelegate {
@@ -16,13 +17,28 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
     fileprivate var recognizedTexts: [String] = []
     var imagePicker: UIImagePickerController!
     var textRecognizer: VisionTextRecognizer!
+    var dataSource: DepotTableDataSourceProtocol!
+    var service: DepotPhraseServiceProtocol!
     
     // MARK: ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let vision = Vision.vision()
-        textRecognizer = vision.onDeviceTextRecognizer()
+        initializeVision()
+        initializeDataSource()
+        fetchDataAndSetDataSource()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(Self.fetchDataAndSetDataSource), notificationNameEnum: NotificationEnum.depotList, object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,7 +53,6 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
     fileprivate func processImage(image: UIImage) {
         
         guard let newImage = image.fixedOrientation() else {
-            print("No!!!!!")
             return
         }
         
@@ -63,6 +78,23 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
         }
     }
     
+    // MARK: Private Methods
+    @objc
+    private func fetchDataAndSetDataSource() {
+        dataSource.setModels(service.get())
+        tableView.reloadData()
+    }
+    
+    private func initializeDataSource() {
+           tableView.dataSource = dataSource
+           tableView.delegate = dataSource
+       }
+       
+       private func initializeVision() {
+           let vision = Vision.vision()
+           textRecognizer = vision.onDeviceTextRecognizer()
+       }
+    
     // MARK: IBAction
     @IBAction func openCamera(_ sender: Any) {
         imagePicker = UIImagePickerController()
@@ -70,6 +102,8 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
     }
+    
+    @IBOutlet weak var tableView: UITableView!
 }
 
 // MARK: extension DepotViewController

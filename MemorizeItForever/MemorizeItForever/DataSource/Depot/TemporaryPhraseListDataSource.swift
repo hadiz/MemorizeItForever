@@ -42,10 +42,10 @@ final class TemporaryPhraseListDataSource: NSObject, DepotTableDataSourceProtoco
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        return [deleteAction(tableView), editAction(), addAction(tableView)]
-        
+        return [deleteAction(tableView), editAction(), addAction(tableView)] 
     }
     
+    // MARK: Private Methods
     private func editAction() -> UITableViewRowAction {
         let editTitle = NSLocalizedString("Edit", comment: "Edit")
         let edit = UITableViewRowAction(style: .default, title: editTitle) {[weak self] (action, index) in

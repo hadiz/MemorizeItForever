@@ -109,6 +109,8 @@ class TemporaryPhraseListViewController: UIViewController {
     
     private func dismissViewController() {
         self.dismiss(animated: true, completion: nil)
+        
+        NotificationCenter.default.post(.depotList, object: nil)
     }
     
     @objc

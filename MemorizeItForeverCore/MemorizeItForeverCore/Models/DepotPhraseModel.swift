@@ -9,4 +9,6 @@
 public struct DepotPhraseModel: Equatable, MemorizeItModelProtocol {
     public var id: UUID?
     public var phrase: String?
+    
+    public init() {}
 }

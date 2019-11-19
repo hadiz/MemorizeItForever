@@ -123,7 +123,7 @@ extension SwinjectStoryboard {
             return wordFlowService
         }
         
-        defaultContainer.storyboardInitCompleted(TemporaryPhraseListViewController.self) { r, c in
+    defaultContainer.storyboardInitCompleted(TemporaryPhraseListViewController.self) { r, c in
             c.dataSource = r.resolve(DepotTableDataSourceProtocol.self, name: "TemporaryPhraseListDataSource")
             c.service = r.resolve(DepotPhraseServiceProtocol.self)
         }
@@ -135,12 +135,12 @@ extension SwinjectStoryboard {
         }
         
         defaultContainer.register(DepotTableDataSourceProtocol.self, name: "TemporaryPhraseListDataSource"){ r in
-                  TemporaryPhraseListDataSource()
-               }.inObjectScope(.weak)
+            TemporaryPhraseListDataSource()
+        }.inObjectScope(.weak)
         defaultContainer.register(EditPhrasePickerViewDataSourceProtocol.self){ r in
             EditPhrasePickerViewDataSource()
         }.inObjectScope(.weak)
-        defaultContainer.storyboardInitCompleted(EditPhraseViewController.self) { r, c in
+    defaultContainer.storyboardInitCompleted(EditPhraseViewController.self) { r, c in
             c.wordService = r.resolve(WordServiceProtocol.self)
             c.setService = r.resolve(SetServiceProtocol.self)
             c.pickerDataSource = r.resolve(EditPhrasePickerViewDataSourceProtocol.self)
@@ -149,5 +149,15 @@ extension SwinjectStoryboard {
                 c.notificationFeedback = UINotificationFeedbackGenerator()
             }
         }
+        
+    defaultContainer.storyboardInitCompleted(DepotViewController.self) { r, c in
+            c.dataSource = r.resolve(DepotTableDataSourceProtocol.self, name: "DepotDataSource")
+            c.service = r.resolve(DepotPhraseServiceProtocol.self)
+        }
+        
+        defaultContainer.register(DepotTableDataSourceProtocol.self, name: "DepotDataSource"){ r in
+                   DepotDataSource()
+               }.inObjectScope(.weak)
+              
     }
 }
