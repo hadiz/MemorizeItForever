@@ -10,9 +10,8 @@ import UIKit
 import MemorizeItForeverCore
 
 final class AddPhraseViewController: UIViewController, UIPopoverPresentationControllerDelegate {
-
-    // MARK: Constants
     
+    // MARK: Constants
     private let writePhrase = NSLocalizedString("Write the Phrase here", comment: "Write the phrase here label")
     
     // MARK: Field injection
@@ -21,14 +20,14 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
     var notificationFeedback: NotificationFeedbackProtocol?
     
     // MARK: Local variables
-    
+    private var index = 0
+    var depotPhraseModelList = [DepotPhraseModel]()
     var doneBarButtonItem: UIBarButtonItem!
     var nextBarButtonItem: UIBarButtonItem!
     var saveBarButtonItem: UIBarButtonItem!
     var previousBarButtonItem: UIBarButtonItem!
     
     // MARK: Override methods
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +40,7 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
             phrase.autocapitalizationType =  isTrue ? .sentences : .none
             meaning.autocapitalizationType =  isTrue ? .sentences : .none
         }
+        fillPhraseFromDepot()
         
         meaning.isHidden = true
         meaning.font = meaning.font?.withSize(20)
@@ -71,6 +71,11 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(.depotList, object: nil)
     }
     
     // MARK: Internal methods
@@ -137,7 +142,6 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
     }
     
     // MARK: Private methods
-    
     private func updateDescText(showPhrase: Bool){
         if showPhrase{
             desc.text = writePhrase
@@ -181,6 +185,7 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         if let notificationFeedback = notificationFeedback{
             notificationFeedback.notificationOccurred(.success)
         }
+        fillPhraseFromDepot()
     }
     private func saveWasFailed(message: String){
         if let notificationFeedback = notificationFeedback{
@@ -192,6 +197,19 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
     private func didCopyToastMessage(){
         let message = NSLocalizedString("Copy to Clipboard", comment: "Copy to Clipboard")
         self.view.makeAMessageToast(message: message)
+    }
+    
+    private func fillPhraseFromDepot() {
+        guard depotPhraseModelList.count > 0 else {
+            return
+        }
+        if index - 1 >= 0 &&  index - 1 < depotPhraseModelList.count{
+            NotificationCenter.default.post(.depotDone, object: depotPhraseModelList[index - 1])
+        }
+        if (index < depotPhraseModelList.count) {
+            phrase.text = depotPhraseModelList[index].phrase
+            index += 1
+        }
     }
     
     // MARK: Controls and Actions

@@ -21,7 +21,7 @@ class DepotDataSourceTests: XCTestCase {
         depotModel = DepotPhraseModel()
         depotModel.id = UUID()
         depotModel.phrase = "Test"
-        dataSource = DepotDataSource()
+        dataSource = DepotDataSource(service: MockDepotPhraseService())
         dataSource.setModels([depotModel])
         firstItemIndex = IndexPath(item: 0, section: 0)
         tableView = UITableView()

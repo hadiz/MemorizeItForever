@@ -12,7 +12,11 @@ final class DepotDataSource: NSObject, DepotTableDataSourceProtocol {
  
     // MARK: Private variables
     private var depotPhraseModelList = [DepotPhraseModel]()
+    private var service: DepotPhraseServiceProtocol!
     
+    public init(service: DepotPhraseServiceProtocol) {
+        self.service = service
+    }
     // MARK: MemorizeItTableDataSourceProtocol
     var rowActionHandler: MITypealiasHelper.RowActionClosure?
     
@@ -76,8 +80,10 @@ final class DepotDataSource: NSObject, DepotTableDataSourceProtocol {
     
     private func deleteDepotPhrase(indexPath: IndexPath, tableView: UITableView){
         let model = depotPhraseModelList.remove(at: (indexPath as NSIndexPath).row)
-        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-        rowActionHandler?(model, .delete)
+        if service.delete(model) {
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            rowActionHandler?(model, .delete)
+        }
     }
     
     private func addDepotPhrase(indexPath: IndexPath, tableView: UITableView){

@@ -50,4 +50,5 @@ public enum NotificationEnum: String{
     case setDeleted
     case temporaryPhraseList
     case depotList
+    case depotDone
 }

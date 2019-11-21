@@ -25,10 +25,11 @@
 		0F366F02236F76B6002ECC9C /* TemporaryPhraseListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F366F01236F76B6002ECC9C /* TemporaryPhraseListDataSourceTests.swift */; };
 		0F36B7062381FB420094674E /* DepotDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F36B7052381FB420094674E /* DepotDataSource.swift */; };
 		0F36B70823848D3F0094674E /* DepotDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F36B70723848D3F0094674E /* DepotDataSourceTests.swift */; };
-		0F5136BF236F9E240020B4DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F5136BE236F9E240020B4DA /* GoogleService-Info.plist */; };
 		0F5136C1237562E70020B4DA /* PhraseTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5136C0237562E70020B4DA /* PhraseTableDataSourceProtocol.swift */; };
 		0F5136C32375687D0020B4DA /* DepotTableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5136C22375687D0020B4DA /* DepotTableDataSourceProtocol.swift */; };
 		0F5136C5237588250020B4DA /* EditTemporaryPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5136C4237588250020B4DA /* EditTemporaryPhraseViewController.swift */; };
+		0F5C95382384A6F000D3024F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F5136BE236F9E240020B4DA /* GoogleService-Info.plist */; };
+		0F5C953A2386F54800D3024F /* MockDepotPhraseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C95392386F54800D3024F /* MockDepotPhraseService.swift */; };
 		0F66B9242337F842007CA4C1 /* BaseLocalDataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9232337F842007CA4C1 /* BaseLocalDataAccess */; };
 		0F83BCF0234FD5B100224D0E /* DepotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F83BCEF234FD5B100224D0E /* DepotViewController.swift */; };
 		0FAB71072250F592004378BB /* EditPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB71062250F592004378BB /* EditPhraseViewController.swift */; };
@@ -160,6 +161,7 @@
 		0F5136C0237562E70020B4DA /* PhraseTableDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseTableDataSourceProtocol.swift; path = General/MemorizeItDataSource/PhraseTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		0F5136C22375687D0020B4DA /* DepotTableDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotTableDataSourceProtocol.swift; path = General/MemorizeItDataSource/DepotTableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		0F5136C4237588250020B4DA /* EditTemporaryPhraseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditTemporaryPhraseViewController.swift; path = ViewControllers/Depot/EditTemporaryPhraseViewController.swift; sourceTree = "<group>"; };
+		0F5C95392386F54800D3024F /* MockDepotPhraseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockDepotPhraseService.swift; path = General/MockDepotPhraseService.swift; sourceTree = "<group>"; };
 		0F6FBA1920792417003DEE05 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SetManagement.strings; sourceTree = "<group>"; };
 		0F6FBA1A20792418003DEE05 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		0F6FBA1B20792418003DEE05 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Phrase.strings; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 				43B35F271DE32F58006717F5 /* MockWordFlowManager.swift */,
 				438EFD201DF2F05E00B83C88 /* FakePhraseTableDataSource.swift */,
 				0FAB710B22540E69004378BB /* WordModel+Extensions.swift */,
+				0F5C95392386F54800D3024F /* MockDepotPhraseService.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -744,7 +747,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				432B75551DB37C85003C6574 /* SetManagement.storyboard in Resources */,
-				0F5136BF236F9E240020B4DA /* GoogleService-Info.plist in Resources */,
+				0F5C95382384A6F000D3024F /* GoogleService-Info.plist in Resources */,
 				0F10019E1F545AA200F63FC0 /* Localizable.strings in Resources */,
 				43434B0C1DB3676A0005B59F /* LaunchScreen.storyboard in Resources */,
 				0F33BEF7236D882C008D0FE4 /* Depot.storyboard in Resources */,
@@ -949,6 +952,7 @@
 				4381502E1DDC72180040F2F9 /* MockWordManager.swift in Sources */,
 				43B35F281DE32F58006717F5 /* MockWordFlowManager.swift in Sources */,
 				43262A411DD1C7850029C27E /* ChangeSetTableDataSourceTests.swift in Sources */,
+				0F5C953A2386F54800D3024F /* MockDepotPhraseService.swift in Sources */,
 				0F366F02236F76B6002ECC9C /* TemporaryPhraseListDataSourceTests.swift in Sources */,
 				43F0D3041DD9DBEB0074856F /* MockValidatable.swift in Sources */,
 				43395CA71DDAF48D00540573 /* MockValidator.swift in Sources */,
@@ -1167,6 +1171,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 37CR54MNJQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
@@ -1192,6 +1197,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 37CR54MNJQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",

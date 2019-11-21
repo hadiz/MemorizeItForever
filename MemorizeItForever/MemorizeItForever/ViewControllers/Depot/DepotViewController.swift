@@ -14,6 +14,7 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
     
     // MARK: Fields
     private let segueIdentifier = "ShowTemporaryPhraseList"
+    private var depotModelList = [DepotPhraseModel]()
     fileprivate var recognizedTexts: [String] = []
     var imagePicker: UIImagePickerController!
     var textRecognizer: VisionTextRecognizer!
@@ -33,6 +34,8 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
         super.viewDidAppear(animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(Self.fetchDataAndSetDataSource), notificationNameEnum: NotificationEnum.depotList, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(Self.depotPharseDone), notificationNameEnum: NotificationEnum.depotDone, object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -81,19 +84,70 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
     // MARK: Private Methods
     @objc
     private func fetchDataAndSetDataSource() {
-        dataSource.setModels(service.get())
+        depotModelList = service.get()
+        dataSource.setModels(depotModelList)
         tableView.reloadData()
     }
     
     private func initializeDataSource() {
-           tableView.dataSource = dataSource
-           tableView.delegate = dataSource
-       }
-       
-       private func initializeVision() {
-           let vision = Vision.vision()
-           textRecognizer = vision.onDeviceTextRecognizer()
-       }
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        
+        dataSource.rowActionHandler = rowActionHandler
+    }
+    
+    private func initializeVision() {
+        let vision = Vision.vision()
+        textRecognizer = vision.onDeviceTextRecognizer()
+    }
+    
+    private func rowActionHandler(model: MemorizeItModelProtocol, action: TableRowAction) {
+        switch action {
+        case .add:
+            addModel(model)
+            break
+        case .edit:
+            break
+        case .delete:
+            deleteModel(model)
+            break
+        }
+    }
+    
+    private func deleteModel(_ model: MemorizeItModelProtocol) {
+        guard let depotPhrase = model as? DepotPhraseModel else { return }
+        if let index = depotModelList.index(of: depotPhrase) {
+            depotModelList.remove(at: index)
+            _ = service.delete(depotPhrase)
+        }
+    }
+    
+    private func addModel(_ model: MemorizeItModelProtocol) {
+        guard let depotPhrase = model as? DepotPhraseModel else { return }
+        if let index = depotModelList.index(of: depotPhrase) {
+            
+            let storyboard : UIStoryboard = UIStoryboard(name: "Phrase",bundle: nil)
+            let addPhraseViewController = storyboard.instantiateViewController(withIdentifier: "AddPhraseViewController")
+            if let vc = addPhraseViewController as? AddPhraseViewController {
+                vc.depotPhraseModelList = Array(depotModelList[index..<depotModelList.count])
+            }
+            
+            let contentSize = CGSize(width: self.view.frame.width - 20, height: self.view.frame.height - 20)
+            self.presentingPopover(addPhraseViewController, sourceView: tableView!, popoverArrowDirection: UIPopoverArrowDirection(rawValue: 0), contentSize: contentSize)
+            
+            
+        }
+    }
+    
+    @objc
+    private func depotPharseDone(notification: NSNotification) {
+        guard let wrapper = notification.object as? Wrapper<Any>, let model = wrapper.getValue() as? DepotPhraseModel else
+        {
+            return
+        }
+        
+        deleteModel(model)
+    }
     
     // MARK: IBAction
     @IBAction func openCamera(_ sender: Any) {

@@ -156,7 +156,7 @@ extension SwinjectStoryboard {
         }
         
         defaultContainer.register(DepotTableDataSourceProtocol.self, name: "DepotDataSource"){ r in
-                   DepotDataSource()
+            DepotDataSource(service: r.resolve(DepotPhraseServiceProtocol.self)!)
                }.inObjectScope(.weak)
               
     }
