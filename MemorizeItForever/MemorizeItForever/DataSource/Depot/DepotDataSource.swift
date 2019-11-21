@@ -33,11 +33,13 @@ final class DepotDataSource: NSObject, DepotTableDataSourceProtocol {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(.depotTableCellIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(.depotTableCellIdentifier, forIndexPath: indexPath) as! DepotTableViewCell
         
         let model = depotPhraseModelList[(indexPath as NSIndexPath).row]
         
-        cell.textLabel?.text = model.phrase
+        cell.phrase.text = model.phrase
+        cell.add.tag = indexPath.row
+        cell.add.addTarget(self, action: #selector(Self.add), for: .touchUpInside)
         
         cell.selectionStyle = .none
         return cell
@@ -88,6 +90,12 @@ final class DepotDataSource: NSObject, DepotTableDataSourceProtocol {
     
     private func addDepotPhrase(indexPath: IndexPath, tableView: UITableView){
         let model = depotPhraseModelList[indexPath.row]
+        rowActionHandler?(model, .add)
+    }
+    
+    @objc
+    private func add(sender: UIButton){
+        let model = depotPhraseModelList[sender.tag]
         rowActionHandler?(model, .add)
     }
 }
