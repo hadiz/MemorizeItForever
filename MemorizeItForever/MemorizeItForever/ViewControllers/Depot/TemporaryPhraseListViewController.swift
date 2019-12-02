@@ -51,6 +51,9 @@ class TemporaryPhraseListViewController: UIViewController {
         
         addAll.title = NSLocalizedString("AddAll", comment: "Add all phrases")
         cancel.title = NSLocalizedString("Cancel", comment: "Dismiss view controller")
+        
+        addAll.tintColor = ColorPicker.backgroundView
+        cancel.tintColor = ColorPicker.backgroundView
     }
     
     private func setDataSourceProperties(){

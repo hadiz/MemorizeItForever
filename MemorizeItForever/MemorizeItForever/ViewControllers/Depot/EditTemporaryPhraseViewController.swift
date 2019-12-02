@@ -26,6 +26,8 @@ final class EditTemporaryPhraseViewController: UIViewController {
     private func CreateToolbarButtons() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(Self.saveAction))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(Self.cancelAction))
+        self.navigationItem.rightBarButtonItem?.tintColor = ColorPicker.backgroundView
+        self.navigationItem.leftBarButtonItem?.tintColor = ColorPicker.backgroundView
     }
     
     @objc

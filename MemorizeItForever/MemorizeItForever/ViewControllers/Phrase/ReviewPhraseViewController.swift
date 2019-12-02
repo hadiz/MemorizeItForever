@@ -105,6 +105,7 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         
         let doneTitle = NSLocalizedString("Close", comment: "Close")
         done.setTitle(doneTitle, for: .normal)
+        done.tintColor = ColorPicker.backgroundView
         
         let flipTitle = NSLocalizedString("Flip", comment: "Flip")
         flip.setTitle(flipTitle, for: .normal)
@@ -135,6 +136,9 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         
         let nextTitle = NSLocalizedString("Next", comment: "Next")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: nextTitle, style: .plain, target: self, action: #selector(ReviewPhraseViewController.nextbarButtonTapHandler))
+        
+        self.navigationItem.leftBarButtonItem?.tintColor = ColorPicker.backgroundView
+        self.navigationItem.rightBarButtonItem?.tintColor = ColorPicker.backgroundView
         
         panningGesture = UIPanGestureRecognizer(target: self, action: #selector(ReviewPhraseViewController.panningHandler))
         self.view.addGestureRecognizer(panningGesture!)

@@ -28,6 +28,8 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
         initializeVision()
         initializeDataSource()
         fetchDataAndSetDataSource()
+        
+        camera.tintColor = ColorPicker.backgroundView
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -150,6 +152,7 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
     }
     
     // MARK: IBAction
+    @IBOutlet weak var camera: UIBarButtonItem!
     @IBAction func openCamera(_ sender: Any) {
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self

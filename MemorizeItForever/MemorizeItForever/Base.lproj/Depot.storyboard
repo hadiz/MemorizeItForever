@@ -74,6 +74,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="camera" destination="cJh-cS-OA8" id="TXa-v1-mZo"/>
                         <outlet property="tableView" destination="b4P-IS-Iwa" id="fO6-vH-yBT"/>
                         <segue destination="00O-pe-DiS" kind="presentation" identifier="ShowTemporaryPhraseList" id="ckA-zn-5gE"/>
                     </connections>

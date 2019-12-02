@@ -32,12 +32,15 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
     }
     
     private func initializeViewController(){
-//        title = NSLocalizedString("Set List", comment: "Set list title")
+        //        title = NSLocalizedString("Set List", comment: "Set list title")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(SetViewController.addAction))
         
         let close = NSLocalizedString("Close", comment: "Close bar button title")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: close, style: .plain, target: self, action: #selector(SetViewController.closeBarButtonTapHandler))
+        
+        self.navigationItem.rightBarButtonItem?.tintColor = ColorPicker.backgroundView
+        self.navigationItem.leftBarButtonItem?.tintColor = ColorPicker.backgroundView
         
         let weakSelf = self
         dataSource.handleTap = {[weak weakSelf] (memorizeItModel) in
@@ -70,7 +73,7 @@ final class SetViewController: UIViewController, UIPopoverPresentationController
     
     @objc
     func fetchData(){
-    
+        
         let rawSets = self.setService.get()
         
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {

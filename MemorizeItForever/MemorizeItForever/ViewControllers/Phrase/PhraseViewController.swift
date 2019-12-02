@@ -114,6 +114,8 @@ final class PhraseViewController: UIViewController, UISearchResultsUpdating, UIS
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: closeTitle, style: .plain, target: self, action: #selector(PhraseViewController.doneBarButtonTapHandler))
         
+        self.navigationItem.leftBarButtonItem?.tintColor = ColorPicker.backgroundView
+        
         self.automaticallyAdjustsScrollViewInsets = false
         self.definesPresentationContext = true
     }

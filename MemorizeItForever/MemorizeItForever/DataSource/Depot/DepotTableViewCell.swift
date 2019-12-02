@@ -12,7 +12,8 @@ final class DepotTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        add.tintColor = ColorPicker.backgroundView
     }
 
     @IBOutlet weak var phrase: UILabel!

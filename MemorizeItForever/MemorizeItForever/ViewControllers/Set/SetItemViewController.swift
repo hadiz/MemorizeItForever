@@ -23,6 +23,9 @@ final class SetItemViewController: UIViewController, UIPopoverPresentationContro
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(SetItemViewController.saveAction))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(SetItemViewController.cancelAction))
         
+        self.navigationItem.rightBarButtonItem?.tintColor = ColorPicker.backgroundView
+        self.navigationItem.leftBarButtonItem?.tintColor = ColorPicker.backgroundView
+        
         self.view.backgroundColor = UIColor.white
         
     }

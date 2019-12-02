@@ -27,6 +27,7 @@ final class PhraseHistoryViewController: UIViewController, UIPopoverPresentation
         
         let closeTitle = NSLocalizedString("Close", comment: "Close")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: closeTitle, style: .plain, target: self, action: #selector(PhraseHistoryViewController.closeBarButtonTapHandler))
+        self.navigationItem.leftBarButtonItem?.tintColor = ColorPicker.backgroundView
         self.view.backgroundColor = ColorPicker.backgroundView
     }
     

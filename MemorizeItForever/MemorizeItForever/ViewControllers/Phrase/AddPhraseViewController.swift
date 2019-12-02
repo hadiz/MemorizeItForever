@@ -54,12 +54,19 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         let save = NSLocalizedString("Save", comment: "Save bar button item")
         let previous = NSLocalizedString("Previous", comment: "Previous bar button item")
         doneBarButtonItem = UIBarButtonItem(title: close, style: .plain, target: self, action: #selector(AddPhraseViewController.doneBarButtonTapHandler))
+        
         nextBarButtonItem = UIBarButtonItem(title: next, style: .plain, target: self, action: #selector(AddPhraseViewController.nextBarButtonTapHandler))
+    
         saveBarButtonItem = UIBarButtonItem(title: save, style: .plain, target: self, action: #selector(AddPhraseViewController.saveBarButtonTapHandler))
         previousBarButtonItem = UIBarButtonItem(title: previous, style: .plain, target: self, action: #selector(AddPhraseViewController.previousBarButtonTapHandler))
         
         let copyBarButton = UIBarButtonItem(image: UIImage(named: "Copy"), style: .plain, target: self, action: #selector(AddPhraseViewController.copyBarButtonTapHandler))
         let pasteBarButton = UIBarButtonItem(image: UIImage(named: "Paste"), style: .plain, target: self, action: #selector(AddPhraseViewController.pasteBarButtonTapHandler))
+        
+        nextBarButtonItem.tintColor = ColorPicker.backgroundView
+        doneBarButtonItem.tintColor = ColorPicker.backgroundView
+        copyBarButton.tintColor = ColorPicker.backgroundView
+        pasteBarButton.tintColor = ColorPicker.backgroundView
         
         //        self.navigationItem.leftBarButtonItem = doneBarButtonItem
         self.navigationItem.rightBarButtonItem = nextBarButtonItem

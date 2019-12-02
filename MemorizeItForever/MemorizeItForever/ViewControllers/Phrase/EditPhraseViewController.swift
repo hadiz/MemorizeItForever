@@ -31,6 +31,9 @@ final class EditPhraseViewController: UIViewController, UIPopoverPresentationCon
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(EditPhraseViewController.updatePhrase))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(EditPhraseViewController.cancel))
         
+        self.navigationItem.leftBarButtonItem?.tintColor = ColorPicker.backgroundView
+        self.navigationItem.rightBarButtonItem?.tintColor = ColorPicker.backgroundView
+        
         let weakSelf = self
         
         pickerDataSource.handleTap = {[weak weakSelf] (memorizeItModel) in

@@ -48,6 +48,8 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         
         let closeTitle = NSLocalizedString("Close", comment: "Close")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: closeTitle, style: .plain, target: self, action: #selector(TakeTestViewController.doneBarButtonTapHandler))
+        self.navigationItem.leftBarButtonItem?.tintColor = ColorPicker.backgroundView
+        
         panningGesture = UIPanGestureRecognizer(target: self, action: #selector(TakeTestViewController.panningHandler))
         self.view.addGestureRecognizer(panningGesture!)
         
