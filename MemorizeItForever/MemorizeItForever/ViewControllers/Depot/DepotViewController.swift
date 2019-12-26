@@ -15,7 +15,7 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
     // MARK: Fields
     private let segueIdentifier = "ShowTemporaryPhraseList"
     private var depotModelList = [DepotPhraseModel]()
-    fileprivate var recognizedTexts: [String] = []
+    fileprivate var recognizedTexts =  [String]()
     var imagePicker: UIImagePickerController!
     var textRecognizer: VisionTextRecognizer!
     var dataSource: DepotTableDataSourceProtocol!
@@ -30,21 +30,10 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
         fetchDataAndSetDataSource()
         
         camera.tintColor = ColorPicker.backgroundView
+        
+        registerNotifications()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(Self.fetchDataAndSetDataSource), notificationNameEnum: NotificationEnum.depotList, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(Self.depotPharseDone), notificationNameEnum: NotificationEnum.depotDone, object: nil)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        NotificationCenter.default.removeObserver(self)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier{
@@ -54,12 +43,14 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
         }
     }
     
-    // MARK: Methods
-    fileprivate func processImage(image: UIImage) {
+    // MARK: Private Methods
+    private func processImage(image: UIImage) {
         
         guard let newImage = image.fixedOrientation() else {
             return
         }
+        
+        recognizedTexts = []
         
         let vImage = VisionImage(image: newImage)
         
@@ -83,7 +74,6 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
         }
     }
     
-    // MARK: Private Methods
     @objc
     private func fetchDataAndSetDataSource() {
         depotModelList = service.get()
@@ -150,6 +140,13 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
         
         deleteModel(model)
     }
+    
+    fileprivate func registerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(Self.fetchDataAndSetDataSource), notificationNameEnum: NotificationEnum.depotList, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(Self.depotPharseDone), notificationNameEnum: NotificationEnum.depotDone, object: nil)
+    }
+    
     
     // MARK: IBAction
     @IBOutlet weak var camera: UIBarButtonItem!

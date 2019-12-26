@@ -98,7 +98,8 @@ final class TemporaryPhraseListDataSource: NSObject, DepotTableDataSourceProtoco
     }
     
     private func editTempPhrase(indexPath: IndexPath){
-        let model = temporaryPhraseModelList.remove(at: (indexPath as NSIndexPath).row)
+        let row = (indexPath as NSIndexPath).row
+        let model = temporaryPhraseModelList[row]
         rowActionHandler?(model, .edit)
     }
     

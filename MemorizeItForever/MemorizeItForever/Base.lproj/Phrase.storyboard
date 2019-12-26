@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -330,19 +330,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="searchDisplayController" destination="4aq-Jp-Ukn" id="QkG-sk-Kgd"/>
                         <outlet property="tableView" destination="8zd-3x-oo4" id="KFe-zB-PtZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtz-rE-su1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="4aq-Jp-Ukn">
-                    <connections>
-                        <outlet property="delegate" destination="IpU-dT-OdZ" id="ZU2-SE-I6d"/>
-                        <outlet property="searchContentsController" destination="IpU-dT-OdZ" id="eCN-J0-U4n"/>
-                        <outlet property="searchResultsDataSource" destination="IpU-dT-OdZ" id="vS3-QM-Omz"/>
-                        <outlet property="searchResultsDelegate" destination="IpU-dT-OdZ" id="4w1-Zc-Rcm"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="4914.3999999999996" y="-357.57121439280365"/>
         </scene>

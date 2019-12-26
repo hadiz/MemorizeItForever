@@ -22,16 +22,8 @@ class TemporaryPhraseListViewController: UIViewController {
         super.viewDidLoad()
         
         initializeViewController()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(Self.reloadData), notificationNameEnum: NotificationEnum.temporaryPhraseList, object: nil)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
+        
+         NotificationCenter.default.addObserver(self, selector: #selector(Self.reloadData), notificationNameEnum: NotificationEnum.temporaryPhraseList, object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
