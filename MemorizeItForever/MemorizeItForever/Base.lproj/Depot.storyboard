@@ -19,6 +19,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="or6-43-m0R">
+                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goToSettings:" destination="2gf-YJ-a1Q" eventType="touchUpInside" id="yMC-c7-VqQ"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b4P-IS-Iwa">
                                 <rect key="frame" x="20" y="88" width="374" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -61,9 +68,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="b4P-IS-Iwa" firstAttribute="top" secondItem="QIw-KG-5r3" secondAttribute="bottom" id="AVj-El-u8W"/>
+                            <constraint firstItem="or6-43-m0R" firstAttribute="centerY" secondItem="jRy-AZ-oWV" secondAttribute="centerY" id="BhT-Xr-4eo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b4P-IS-Iwa" secondAttribute="trailing" id="JQF-v3-emV"/>
+                            <constraint firstItem="or6-43-m0R" firstAttribute="centerX" secondItem="jRy-AZ-oWV" secondAttribute="centerX" id="TiW-uo-ikL"/>
                             <constraint firstItem="b4P-IS-Iwa" firstAttribute="leading" secondItem="jRy-AZ-oWV" secondAttribute="leadingMargin" id="eKJ-Os-tXB"/>
                             <constraint firstItem="7r6-gU-Nbk" firstAttribute="top" secondItem="b4P-IS-Iwa" secondAttribute="bottom" id="fYB-t5-nDZ"/>
+                            <constraint firstItem="b4P-IS-Iwa" firstAttribute="centerX" secondItem="jRy-AZ-oWV" secondAttribute="centerX" id="iWj-a5-C9G"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MzZ-4F-ueE">
@@ -75,6 +85,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="camera" destination="cJh-cS-OA8" id="TXa-v1-mZo"/>
+                        <outlet property="cameraIsDenied" destination="or6-43-m0R" id="i6I-cz-z7U"/>
                         <outlet property="tableView" destination="b4P-IS-Iwa" id="fO6-vH-yBT"/>
                         <segue destination="00O-pe-DiS" kind="presentation" identifier="ShowTemporaryPhraseList" id="ckA-zn-5gE"/>
                     </connections>

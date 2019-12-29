@@ -21,9 +21,7 @@ extension SwinjectStoryboard {
         }
         
         defaultContainer.storyboardInitCompleted(MemorizeItViewController.self) { r, c in
-            if #available(iOS 10.0, *) {
                 c.selectionFeedback = UISelectionFeedbackGenerator()
-            }
         }
         
         defaultContainer.storyboardInitCompleted(SetViewController.self) { r, c in
@@ -43,9 +41,7 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(AddPhraseViewController.self) { r, c in
             c.wordService = r.resolve(WordServiceProtocol.self)
             c.validator = r.resolve(ValidatorProtocol.self)
-            if #available(iOS 10.0, *) {
                 c.notificationFeedback = UINotificationFeedbackGenerator()
-            }
         }
         
         defaultContainer.storyboardInitCompleted(ReviewPhraseViewController.self) { r, c in
@@ -66,9 +62,7 @@ extension SwinjectStoryboard {
         
         defaultContainer.storyboardInitCompleted(TakeTestViewController.self) { r, c in
             c.wordFlowService = r.resolve(WordFlowServiceProtocol.self)
-            if #available(iOS 10.0, *) {
-                c.notificationFeedback = UINotificationFeedbackGenerator()
-            }
+            c.notificationFeedback = UINotificationFeedbackGenerator()
         }
         
         defaultContainer.storyboardInitCompleted(PhraseViewController.self) { r, c in
@@ -144,10 +138,7 @@ extension SwinjectStoryboard {
             c.wordService = r.resolve(WordServiceProtocol.self)
             c.setService = r.resolve(SetServiceProtocol.self)
             c.pickerDataSource = r.resolve(EditPhrasePickerViewDataSourceProtocol.self)
-            
-            if #available(iOS 10.0, *) {
                 c.notificationFeedback = UINotificationFeedbackGenerator()
-            }
         }
         
     defaultContainer.storyboardInitCompleted(DepotViewController.self) { r, c in

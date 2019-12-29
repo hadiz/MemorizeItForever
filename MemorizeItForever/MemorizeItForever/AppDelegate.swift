@@ -153,11 +153,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func saveContext () {
         var context: NSManagedObjectContext
-        if #available(iOS 10.0, *) {
-            context = persistentContainer.viewContext
-        } else {
-            context = managedObjectContext
-        }
+        context = persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
@@ -172,11 +168,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setContext(){
         var context: NSManagedObjectContext
-        if #available(iOS 10.0, *) {
-            context =  self.persistentContainer.viewContext
-        } else {
-            context = self.managedObjectContext
-        }
+        context =  self.persistentContainer.viewContext
         ContextHelper.shared.setContext(context: context)
     }
     

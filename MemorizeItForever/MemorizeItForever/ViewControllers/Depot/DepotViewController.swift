@@ -9,6 +9,7 @@
 import UIKit
 import MemorizeItForeverCore
 import Firebase
+import AVFoundation
 
 final class DepotViewController: UIViewController, UINavigationControllerDelegate {
     
@@ -25,13 +26,17 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        PrepareControls()
         initializeVision()
         initializeDataSource()
         fetchDataAndSetDataSource()
-        
-        camera.tintColor = ColorPicker.backgroundView
-        
         registerNotifications()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        checkAuthorizationStatus()
     }
     
     
@@ -141,12 +146,33 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
         deleteModel(model)
     }
     
-    fileprivate func registerNotifications() {
+    private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(Self.fetchDataAndSetDataSource), notificationNameEnum: NotificationEnum.depotList, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(Self.depotPharseDone), notificationNameEnum: NotificationEnum.depotDone, object: nil)
     }
     
+    private func goToSettings(){
+        UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
+    }
+    
+    private func PrepareControls() {
+        camera.tintColor = ColorPicker.backgroundView
+        let title = NSLocalizedString("AllowAccessToCamera", comment: "Allow Access to Camera")
+        cameraIsDenied.setTitle(title, for: .normal)
+    }
+    
+    private func checkAuthorizationStatus() {
+           switch AVCaptureDevice.authorizationStatus(for: .video) {
+           case .denied, .restricted:
+               tableView.isHidden = true
+               cameraIsDenied.isHidden = false
+           default:
+               tableView.isHidden = false
+               cameraIsDenied.isHidden = true
+               break
+           }
+       }
     
     // MARK: IBAction
     @IBOutlet weak var camera: UIBarButtonItem!
@@ -158,6 +184,10 @@ final class DepotViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cameraIsDenied: UIButton!
+    @IBAction func goToSettings(_ sender: Any) {
+        goToSettings()
+    }
 }
 
 // MARK: extension DepotViewController

@@ -29,16 +29,12 @@ extension UIView{
             let weakSelf = self
             let timerInterval: TimeInterval = fastHiding ? 0.1 : 1
             
-            if #available(iOS 10.0, *) {
-                let timer = Timer(timeInterval: timerInterval, repeats: false, block: {[weak weakSelf] (timer) in
-                    if let weakSelf = weakSelf{
-                        weakSelf.hideToastAction(toatsView: toatsView)
-                    }
-                    })
-                RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
-            } else {
-                Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(UIView.hideToast), userInfo: toatsView, repeats: false)
-            }
+            let timer = Timer(timeInterval: timerInterval, repeats: false, block: {[weak weakSelf] (timer) in
+                if let weakSelf = weakSelf{
+                    weakSelf.hideToastAction(toatsView: toatsView)
+                }
+                })
+            RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
         }
     }
     
