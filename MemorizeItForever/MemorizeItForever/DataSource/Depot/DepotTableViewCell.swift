@@ -17,6 +17,9 @@ final class DepotTableViewCell: UITableViewCell {
     }
 
     @IBOutlet weak var phrase: UILabel!
-    @IBOutlet weak var add: UIButton!
-    
+    @IBOutlet weak var add: CustomButton!
+}
+
+final class CustomButton: UIButton {
+    var uuidTag: UUID?
 }

@@ -31,7 +31,7 @@
 		0F5C95382384A6F000D3024F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F5136BE236F9E240020B4DA /* GoogleService-Info.plist */; };
 		0F5C953A2386F54800D3024F /* MockDepotPhraseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C95392386F54800D3024F /* MockDepotPhraseService.swift */; };
 		0F5C953C2386FDE000D3024F /* DepotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C953B2386FDE000D3024F /* DepotTableViewCell.swift */; };
-		0F66B9242337F842007CA4C1 /* BaseLocalDataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9232337F842007CA4C1 /* BaseLocalDataAccess */; };
+		0F66B9242337F842007CA4C1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9232337F842007CA4C1 /* SwiftPackageProductDependency */; };
 		0F83BCF0234FD5B100224D0E /* DepotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F83BCEF234FD5B100224D0E /* DepotViewController.swift */; };
 		0FAB71072250F592004378BB /* EditPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB71062250F592004378BB /* EditPhraseViewController.swift */; };
 		0FAB710922540690004378BB /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAB710822540690004378BB /* MemorizeItForeverCore.framework */; };
@@ -259,7 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F66B9242337F842007CA4C1 /* BaseLocalDataAccess in Frameworks */,
+				0F66B9242337F842007CA4C1 /* BuildFile in Frameworks */,
 				0FAB710922540690004378BB /* MemorizeItForeverCore.framework in Frameworks */,
 				4A1226EA665FBFAA0E2E4969 /* Pods_MemorizeItForever.framework in Frameworks */,
 			);
@@ -633,8 +633,8 @@
 				43434AF81DB3676A0005B59F /* Frameworks */,
 				43434AF91DB3676A0005B59F /* Resources */,
 				431196D71DB3957100F7BE7F /* Embed Frameworks */,
-				A7CF40FE26EA218D881FEED8 /* [CP] Embed Pods Frameworks */,
-				69C59BBAFA3CA9299454BECA /* [CP] Copy Pods Resources */,
+				13D7307E930443F3D459B7B5 /* [CP] Embed Pods Frameworks */,
+				75802D6C8690B71E54C1E680 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -642,7 +642,7 @@
 			);
 			name = MemorizeItForever;
 			packageProductDependencies = (
-				0F66B9232337F842007CA4C1 /* BaseLocalDataAccess */,
+				0F66B9232337F842007CA4C1 /* SwiftPackageProductDependency */,
 			);
 			productName = MemorizeItForever;
 			productReference = 43434AFB1DB3676A0005B59F /* MemorizeItForever.app */;
@@ -731,7 +731,7 @@
 			);
 			mainGroup = 43434AF21DB3676A0005B59F;
 			packageReferences = (
-				0F66B9222337F842007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */,
+				0F66B9222337F842007CA4C1 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 43434AFC1DB3676A0005B59F /* Products */;
 			projectDirPath = "";
@@ -777,7 +777,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		69C59BBAFA3CA9299454BECA /* [CP] Copy Pods Resources */ = {
+		13D7307E930443F3D459B7B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75802D6C8690B71E54C1E680 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -814,23 +831,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A7CF40FE26EA218D881FEED8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MemorizeItForever/Pods-MemorizeItForever-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D7668200D376AF88E0BE5C84 /* [CP] Check Pods Manifest.lock */ = {
@@ -1350,7 +1350,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0F66B9222337F842007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */ = {
+		0F66B9222337F842007CA4C1 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SomeSimpleSolutions/BaseLocalDataAccessPackage.git";
 			requirement = {
@@ -1361,9 +1361,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0F66B9232337F842007CA4C1 /* BaseLocalDataAccess */ = {
+		0F66B9232337F842007CA4C1 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0F66B9222337F842007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */;
+			package = 0F66B9222337F842007CA4C1 /* RemoteSwiftPackageReference */;
 			productName = BaseLocalDataAccess;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -38,7 +38,7 @@ final class DepotDataSource: NSObject, DepotTableDataSourceProtocol {
         let model = depotPhraseModelList[(indexPath as NSIndexPath).row]
         
         cell.phrase.text = model.phrase
-        cell.add.tag = indexPath.row
+        cell.add.uuidTag =  model.id
         cell.add.addTarget(self, action: #selector(Self.add), for: .touchUpInside)
         
         cell.selectionStyle = .none
@@ -94,8 +94,9 @@ final class DepotDataSource: NSObject, DepotTableDataSourceProtocol {
     }
     
     @objc
-    private func add(sender: UIButton){
-        let model = depotPhraseModelList[sender.tag]
-        rowActionHandler?(model, .add)
+    private func add(sender: CustomButton){
+        if let model = depotPhraseModelList.first(where: { $0.id == sender.uuidTag }) {
+            rowActionHandler?(model, .add)
+        }
     }
 }

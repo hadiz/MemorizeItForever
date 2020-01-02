@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F66B9212337F7FE007CA4C1 /* BaseLocalDataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9202337F7FE007CA4C1 /* BaseLocalDataAccess */; };
+		0F66B9212337F7FE007CA4C1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9202337F7FE007CA4C1 /* SwiftPackageProductDependency */; };
 		0F9FCFE62378A8970033C2F3 /* DepotPhraseEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9FCFE52378A8970033C2F3 /* DepotPhraseEntityTests.swift */; };
 		0FCDEF6D237B6B4800DFA9F4 /* DepotPhraseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF6C237B6B4800DFA9F4 /* DepotPhraseModelTests.swift */; };
 		0FCDEF6F237CB20000DFA9F4 /* DepotPhraseDataAccessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCDEF6E237CB20000DFA9F4 /* DepotPhraseDataAccessProtocol.swift */; };
@@ -210,7 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F66B9212337F7FE007CA4C1 /* BaseLocalDataAccess in Frameworks */,
+				0F66B9212337F7FE007CA4C1 /* BuildFile in Frameworks */,
 				186D4FE44166F05937610856 /* Pods_MemorizeItForeverCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,7 +558,7 @@
 			);
 			name = MemorizeItForeverCore;
 			packageProductDependencies = (
-				0F66B9202337F7FE007CA4C1 /* BaseLocalDataAccess */,
+				0F66B9202337F7FE007CA4C1 /* SwiftPackageProductDependency */,
 			);
 			productName = MemorizeItForeverCore;
 			productReference = 43434A851DB262800005B59F /* MemorizeItForeverCore.framework */;
@@ -572,7 +572,7 @@
 				43434A8A1DB262800005B59F /* Sources */,
 				43434A8B1DB262800005B59F /* Frameworks */,
 				43434A8C1DB262800005B59F /* Resources */,
-				3B609094159C4ECD94F9FD13 /* [CP] Embed Pods Frameworks */,
+				56C785BED0CAD3008CC3854D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -618,7 +618,7 @@
 			);
 			mainGroup = 43434A7B1DB262800005B59F;
 			packageReferences = (
-				0F66B91F2337F7FE007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */,
+				0F66B91F2337F7FE007CA4C1 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 43434A861DB262800005B59F /* Products */;
 			projectDirPath = "";
@@ -648,7 +648,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3B609094159C4ECD94F9FD13 /* [CP] Embed Pods Frameworks */ = {
+		56C785BED0CAD3008CC3854D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1011,21 +1011,14 @@
 					"$(PROJECT_DIR)/MemorizeItForeverCore/Libs",
 					"$(PROJECT_DIR)/MemorizeItForeverCore",
 				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/MemorizeItForeverCore/Libs",
-				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited) $(PROJECT_DIR)/MemorizeItForeverCore/Libs";
 				INFOPLIST_FILE = MemorizeItForeverCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/",
-				);
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "$(inherited) @executable_path/Frameworks @loader_path/";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1051,11 +1044,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path",
-				);
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "$(inherited) @executable_path/Frameworks @loader_path";
 				PRODUCT_BUNDLE_IDENTIFIER = org.somesimplesolutions.MemorizeItForeverCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1096,7 +1085,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0F66B91F2337F7FE007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */ = {
+		0F66B91F2337F7FE007CA4C1 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SomeSimpleSolutions/BaseLocalDataAccessPackage.git";
 			requirement = {
@@ -1107,9 +1096,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0F66B9202337F7FE007CA4C1 /* BaseLocalDataAccess */ = {
+		0F66B9202337F7FE007CA4C1 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0F66B91F2337F7FE007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */;
+			package = 0F66B91F2337F7FE007CA4C1 /* RemoteSwiftPackageReference */;
 			productName = BaseLocalDataAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
