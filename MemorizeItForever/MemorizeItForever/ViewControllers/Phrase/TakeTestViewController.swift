@@ -53,6 +53,8 @@ final class TakeTestViewController: UIViewController, UIPopoverPresentationContr
         panningGesture = UIPanGestureRecognizer(target: self, action: #selector(TakeTestViewController.panningHandler))
         self.view.addGestureRecognizer(panningGesture!)
         
+        TwoFingersGestureViewController.presentMe(sourceViewController: self)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

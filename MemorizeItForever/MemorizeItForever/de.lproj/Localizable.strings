@@ -53,3 +53,5 @@
 "AddAll" = "Alle hinzufügen";
 "Cancel" = "Abbrechen";
 "AllowAccessToCamera" = "Zugriff auf die Kamera erlauben";
+"WalkthroughText" = "Dies ist ein mehrzeiliger Text: 1 bis 100";
+"walkthroughDesc" = "Ziehen Sie mit zwei Fingern nach oben und unten, um den Text zu scrollen";

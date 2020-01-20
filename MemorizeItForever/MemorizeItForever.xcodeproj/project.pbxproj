@@ -31,8 +31,10 @@
 		0F5C95382384A6F000D3024F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F5136BE236F9E240020B4DA /* GoogleService-Info.plist */; };
 		0F5C953A2386F54800D3024F /* MockDepotPhraseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C95392386F54800D3024F /* MockDepotPhraseService.swift */; };
 		0F5C953C2386FDE000D3024F /* DepotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C953B2386FDE000D3024F /* DepotTableViewCell.swift */; };
-		0F66B9242337F842007CA4C1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9232337F842007CA4C1 /* SwiftPackageProductDependency */; };
+		0F66B9242337F842007CA4C1 /* BaseLocalDataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0F66B9232337F842007CA4C1 /* BaseLocalDataAccess */; };
 		0F83BCF0234FD5B100224D0E /* DepotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F83BCEF234FD5B100224D0E /* DepotViewController.swift */; };
+		0F910E4623D48822002D9A99 /* TwoFingersGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F910E4523D48822002D9A99 /* TwoFingersGestureViewController.swift */; };
+		0F910E4923D48B09002D9A99 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F910E4723D48B09002D9A99 /* Walkthrough.storyboard */; };
 		0FAB71072250F592004378BB /* EditPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB71062250F592004378BB /* EditPhraseViewController.swift */; };
 		0FAB710922540690004378BB /* MemorizeItForeverCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAB710822540690004378BB /* MemorizeItForeverCore.framework */; };
 		0FAB710A22540690004378BB /* MemorizeItForeverCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAB710822540690004378BB /* MemorizeItForeverCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -170,6 +172,8 @@
 		0F6FBA1C20792419003DEE05 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		0F6FBA1D20792419003DEE05 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0F83BCEF234FD5B100224D0E /* DepotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DepotViewController.swift; path = ViewControllers/Depot/DepotViewController.swift; sourceTree = "<group>"; };
+		0F910E4523D48822002D9A99 /* TwoFingersGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TwoFingersGestureViewController.swift; path = ViewControllers/Walkthrough/TwoFingersGestureViewController.swift; sourceTree = "<group>"; };
+		0F910E4823D48B09002D9A99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Walkthrough.storyboard; sourceTree = "<group>"; };
 		0FAB71062250F592004378BB /* EditPhraseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditPhraseViewController.swift; path = ViewControllers/Phrase/EditPhraseViewController.swift; sourceTree = "<group>"; };
 		0FAB710822540690004378BB /* MemorizeItForeverCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MemorizeItForeverCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FAB710B22540E69004378BB /* WordModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WordModel+Extensions.swift"; sourceTree = "<group>"; };
@@ -259,7 +263,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F66B9242337F842007CA4C1 /* BuildFile in Frameworks */,
+				0F66B9242337F842007CA4C1 /* BaseLocalDataAccess in Frameworks */,
 				0FAB710922540690004378BB /* MemorizeItForeverCore.framework in Frameworks */,
 				4A1226EA665FBFAA0E2E4969 /* Pods_MemorizeItForever.framework in Frameworks */,
 			);
@@ -314,6 +318,14 @@
 			name = Depot;
 			sourceTree = "<group>";
 		};
+		0F910E4423D48159002D9A99 /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				0F910E4523D48822002D9A99 /* TwoFingersGestureViewController.swift */,
+			);
+			name = Walkthrough;
+			sourceTree = "<group>";
+		};
 		432B75421DB37A9B003C6574 /* VisualElements */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +346,7 @@
 		432B75431DB37AA8003C6574 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F910E4423D48159002D9A99 /* Walkthrough */,
 				0F83BCEE234FD56800224D0E /* Depot */,
 				436BCB1D1DF6E33B0042C175 /* Settings */,
 				43F217D71DBF5A8E0005BF26 /* Phrase */,
@@ -365,6 +378,7 @@
 		432B75521DB37B88003C6574 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				0F910E4723D48B09002D9A99 /* Walkthrough.storyboard */,
 				0F33BEF5236D882C008D0FE4 /* Depot.storyboard */,
 				432B75531DB37C85003C6574 /* SetManagement.storyboard */,
 				43434B021DB3676A0005B59F /* Main.storyboard */,
@@ -642,7 +656,7 @@
 			);
 			name = MemorizeItForever;
 			packageProductDependencies = (
-				0F66B9232337F842007CA4C1 /* SwiftPackageProductDependency */,
+				0F66B9232337F842007CA4C1 /* BaseLocalDataAccess */,
 			);
 			productName = MemorizeItForever;
 			productReference = 43434AFB1DB3676A0005B59F /* MemorizeItForever.app */;
@@ -731,7 +745,7 @@
 			);
 			mainGroup = 43434AF21DB3676A0005B59F;
 			packageReferences = (
-				0F66B9222337F842007CA4C1 /* RemoteSwiftPackageReference */,
+				0F66B9222337F842007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */,
 			);
 			productRefGroup = 43434AFC1DB3676A0005B59F /* Products */;
 			projectDirPath = "";
@@ -752,6 +766,7 @@
 				432B75551DB37C85003C6574 /* SetManagement.storyboard in Resources */,
 				0F5C95382384A6F000D3024F /* GoogleService-Info.plist in Resources */,
 				0F10019E1F545AA200F63FC0 /* Localizable.strings in Resources */,
+				0F910E4923D48B09002D9A99 /* Walkthrough.storyboard in Resources */,
 				43434B0C1DB3676A0005B59F /* LaunchScreen.storyboard in Resources */,
 				0F33BEF7236D882C008D0FE4 /* Depot.storyboard in Resources */,
 				43434B091DB3676A0005B59F /* Assets.xcassets in Resources */,
@@ -941,6 +956,7 @@
 				43EFD77F1E0AD59000F79CBE /* MITextView.swift in Sources */,
 				43434AFF1DB3676A0005B59F /* AppDelegate.swift in Sources */,
 				43EFD7591E0AD55D00F79CBE /* ReviewPhraseViewController.swift in Sources */,
+				0F910E4623D48822002D9A99 /* TwoFingersGestureViewController.swift in Sources */,
 				0F036515236A3AFD00051E74 /* UIImage+Extensions.swift in Sources */,
 				43EEE1631DF4316A0072D125 /* WordStatusExtension.swift in Sources */,
 				43BF3D971DD9B4FC000296DB /* Validator.swift in Sources */,
@@ -1024,6 +1040,14 @@
 				0F33BEF6236D882C008D0FE4 /* Base */,
 			);
 			name = Depot.storyboard;
+			sourceTree = "<group>";
+		};
+		0F910E4723D48B09002D9A99 /* Walkthrough.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F910E4823D48B09002D9A99 /* Base */,
+			);
+			name = Walkthrough.storyboard;
 			sourceTree = "<group>";
 		};
 		432B75531DB37C85003C6574 /* SetManagement.storyboard */ = {
@@ -1350,7 +1374,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0F66B9222337F842007CA4C1 /* RemoteSwiftPackageReference */ = {
+		0F66B9222337F842007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SomeSimpleSolutions/BaseLocalDataAccessPackage.git";
 			requirement = {
@@ -1361,9 +1385,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0F66B9232337F842007CA4C1 /* SwiftPackageProductDependency */ = {
+		0F66B9232337F842007CA4C1 /* BaseLocalDataAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0F66B9222337F842007CA4C1 /* RemoteSwiftPackageReference */;
+			package = 0F66B9222337F842007CA4C1 /* XCRemoteSwiftPackageReference "BaseLocalDataAccessPackage" */;
 			productName = BaseLocalDataAccess;
 		};
 /* End XCSwiftPackageProductDependency section */

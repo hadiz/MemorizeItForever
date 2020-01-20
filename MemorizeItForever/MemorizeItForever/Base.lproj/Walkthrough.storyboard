@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9bz-Wv-ZlX">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9bz-Wv-ZlX">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jn-4v-B9f" customClass="testLabel" customModule="MemorizeItForever" customModuleProvider="target">
-                                <rect key="frame" x="188" y="334" width="0.0" height="0.0"/>
+                                <rect key="frame" x="187.5" y="333.5" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,5 +45,72 @@
             </objects>
             <point key="canvasLocation" x="119" y="43"/>
         </scene>
+        <!--Two Fingers Gesture View Controller-->
+        <scene sceneID="7Ac-76-NlU">
+            <objects>
+                <viewController storyboardIdentifier="TwoFingersGestureViewController" id="IsT-cF-A7M" customClass="TwoFingersGestureViewController" customModule="MemorizeItForever" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oi1-py-S6m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsN-mt-5jd">
+                                <rect key="frame" x="313" y="16" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="done:" destination="IsT-cF-A7M" eventType="touchUpInside" id="ESA-ZI-9oh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-gQ-WYU">
+                                <rect key="frame" x="24" y="56" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1x2-nc-NDx" customClass="MICardView" customModule="MemorizeItForever" customModuleProvider="target">
+                                <rect key="frame" x="24" y="101" width="327" height="542"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TwoFingers" translatesAutoresizingMaskIntoConstraints="NO" id="2iH-oY-SDt">
+                                        <rect key="frame" x="234" y="433" width="85" height="85"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="85" id="SZd-Te-jZu"/>
+                                            <constraint firstAttribute="width" secondItem="2iH-oY-SDt" secondAttribute="height" multiplier="1:1" id="c1O-gb-Udj"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="2iH-oY-SDt" secondAttribute="bottom" constant="24" id="i3c-SS-CQz"/>
+                                    <constraint firstAttribute="trailing" secondItem="2iH-oY-SDt" secondAttribute="trailing" constant="8" id="jjw-0K-jXB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ukx-C7-yiw" firstAttribute="trailing" secondItem="1x2-nc-NDx" secondAttribute="trailing" constant="24" id="2hv-Ho-nBI"/>
+                            <constraint firstItem="Ukx-C7-yiw" firstAttribute="bottom" secondItem="1x2-nc-NDx" secondAttribute="bottom" constant="24" id="4aR-kH-3St"/>
+                            <constraint firstItem="1x2-nc-NDx" firstAttribute="leading" secondItem="Ukx-C7-yiw" secondAttribute="leading" constant="24" id="DRN-H2-98e"/>
+                            <constraint firstItem="1x2-nc-NDx" firstAttribute="top" secondItem="5LN-gQ-WYU" secondAttribute="bottom" constant="24" id="QHo-64-ky2"/>
+                            <constraint firstItem="5LN-gQ-WYU" firstAttribute="top" secondItem="LsN-mt-5jd" secondAttribute="bottom" constant="10" id="RXc-cm-ECa"/>
+                            <constraint firstItem="5LN-gQ-WYU" firstAttribute="leading" secondItem="Ukx-C7-yiw" secondAttribute="leading" constant="24" id="SqP-ME-FMs"/>
+                            <constraint firstItem="Ukx-C7-yiw" firstAttribute="trailing" secondItem="LsN-mt-5jd" secondAttribute="trailing" constant="16" id="gMY-TA-3YB"/>
+                            <constraint firstItem="Ukx-C7-yiw" firstAttribute="trailing" secondItem="5LN-gQ-WYU" secondAttribute="trailing" constant="24" id="jGH-32-EGC"/>
+                            <constraint firstItem="LsN-mt-5jd" firstAttribute="top" secondItem="Ukx-C7-yiw" secondAttribute="top" constant="16" id="thn-ln-Pmq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ukx-C7-yiw"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardView" destination="1x2-nc-NDx" id="sfr-76-Fhb"/>
+                        <outlet property="doneButton" destination="LsN-mt-5jd" id="aLs-PU-x2E"/>
+                        <outlet property="twoFingersIcon" destination="2iH-oY-SDt" id="ajh-8u-79T"/>
+                        <outlet property="walkthroughDesc" destination="5LN-gQ-WYU" id="vFY-lm-r55"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUh-YL-wgH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960.79999999999995" y="37.331334332833585"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="TwoFingers" width="256" height="256"/>
+    </resources>
 </document>

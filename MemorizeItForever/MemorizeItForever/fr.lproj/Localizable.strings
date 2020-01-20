@@ -53,3 +53,5 @@
 "AddAll" = "Ajouter tout";
 "Cancel" = "Annuler";
 "AllowAccessToCamera" = "Autoriser l'accès à la caméra";
+"WalkthroughText" = "Il s'agit d'un texte multiligne : 1 à 100";
+"walkthroughDesc" = "Faites glisser deux doigts de haut en bas pour faire défiler le texte";

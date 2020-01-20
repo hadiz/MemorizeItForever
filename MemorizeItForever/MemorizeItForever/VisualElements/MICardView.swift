@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MICardView: UIView {
+final class MICardView: UIView {
     private var phrase: MICardViewLabel!
     private var meaning: MICardViewLabel!
     private var showingPhrase = true
@@ -61,6 +61,10 @@ class MICardView: UIView {
         if self.showingPhrase != showingPhrase{
             flip()
         }
+    }
+    
+    func setContentOffset(y: CGFloat) {
+        phrase.contentOffset.y = y
     }
     
     private func initSelf(addGesture: Bool){

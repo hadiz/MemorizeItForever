@@ -34,6 +34,8 @@ final class ReviewPhraseViewController: UIViewController, UIPopoverPresentationC
         super.viewDidLoad()
         
         initialize()
+        
+        TwoFingersGestureViewController.presentMe(sourceViewController: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {

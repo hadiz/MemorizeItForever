@@ -53,3 +53,5 @@
 "AddAll" = "Add all";
 "Cancel" = "Cancel";
 "AllowAccessToCamera" = "Allow Access to the Camera";
+"WalkthroughText" = "This is a multiline text: 1 to 100";
+"walkthroughDesc" = "Drag Up & Down with Two Fingers to Scroll the Text";

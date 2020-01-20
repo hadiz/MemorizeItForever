@@ -65,6 +65,8 @@ final class AddPhraseViewController: UIViewController, UIPopoverPresentationCont
         
         nextBarButtonItem.tintColor = ColorPicker.backgroundView
         doneBarButtonItem.tintColor = ColorPicker.backgroundView
+        saveBarButtonItem.tintColor = ColorPicker.backgroundView
+        previousBarButtonItem.tintColor = ColorPicker.backgroundView
         copyBarButton.tintColor = ColorPicker.backgroundView
         pasteBarButton.tintColor = ColorPicker.backgroundView
         

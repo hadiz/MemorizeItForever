@@ -30,6 +30,7 @@ public enum Settings: String{
     case meaningColor
     case defaultSet
     case capitalization
+    case twoFingersWalkthrough
 }
 enum MemorizeColumns: Int16 {
     case pre = 0
